@@ -1,0 +1,133 @@
+<apex:page standardController="report"  tabStyle="GTM_Top_Reports_Secure__tab" >
+
+
+<!-- Set-Up Table Column Widths -->
+
+<style>
+    .container{
+        width:100%;
+        height:90px;
+    }
+    .body{
+        width:100%;  
+    }
+    .Col1 { 
+        width: 1%;
+        padding-bottom: 10px;
+    }
+    .Col2 { 
+        width: 29%; 
+        padding-bottom: 10px;
+    }
+    .Col3 { 
+        width: 50%;    
+        padding-bottom: 10px;
+    }
+    .Col4 { 
+        width: 20%;
+        padding-bottom: 10px;
+    }  
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/soap/ajax/20.0/connection.js" type="text/javascript"></script>
+
+<script>  
+    function mapAuthentication(reportURL) { 
+    //var srcVal = "/apex/iframe?sfdc.tabName=01r40000000ACA2&url=" + encodeURIComponent(mapURL + reportURL + "&token=" + token);
+    var srcVal = "/apex/iframe/GTM_Secure_Open_Reports?viewname=" + reportURL;
+        window.open(srcVal);    
+     }
+</script>
+
+<apex:form >
+
+    <!--  Column Headers -->
+    <apex:pageblock title="Finance Top Reports (Secure)">
+        <apex:panelGrid columns="4" columnClasses="Col1, Col2, Col3, Col4" width="100%">            
+            <apex:outputText >&nbsp;</apex:outputText>
+            <apex:outputText ><strong><u>Report Name</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Description</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Remarks</u></strong></apex:outputText>
+        </apex:panelGrid>
+    <!--</apex:pageblock>-->
+    <br />
+    <!-- Rows -->
+    <apex:outputPanel layout="block" styleclass="body">
+        <!--<apex:pageBlock mode="view">-->
+        
+            <apex:pageBlockSection title="Reports/Dahboard" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">  
+                                                                     
+                  <apex:outputText >1.</apex:outputText>                           
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/GlobalFPADashboardGraphical-Lenovo/HistoricTrends?:embed=yes" >  Global FPA Dashboard Graphical- Lenovo</apex:outputLink>                  
+                    <apex:outputText >Global FPA Dashboard Graphical- Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                                                         
+                   <apex:outputText >2.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk/ScenarioBridgeByLenovoGeo?:embed=yes" > WoW Outlook</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >3.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk-NA/NAScenarioBridgeByCountry?:embed=yes" >  WoW Outlook Walk - NA</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook Walk - NA </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >4.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk-LA/LAScenarioBridgeByCountry?:embed=yes" >  WoW Outlook Walk - LA</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook Walk - LA</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >5.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk-EMEAI/EMEAIScenarioBridgeByCountry?:embed=yes" >  WoW Outlook Walk - EMEAI</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook Walk - EMEAI</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >6.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk-PRC/PRCScenarioBridgeBySegment?:embed=yes" > WoW Outlook Walk - PRC</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook Walk - PRC</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >7.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WoWOutlookWalk-RestofAsiaExcludingIndiaChina/RestofASIAExcludingIndiaChinaScenarioBridgeByCountry?:embed=yes" > WoW Outlook Walk - Rest of Asia(Excluding India/China</apex:outputLink>                  
+                    <apex:outputText >WoW Outlook Walk - Rest of Asia(Excluding India/China</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >8.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/SLTDashboard/Trends?:embed=yes" >  SLT Dashboard - WIP</apex:outputLink>                  
+                    <apex:outputText >SLT Dashboard - WIP</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >9.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/GlobalSupplyChainDashboard/Dashboard1?:embed=yes" > Global Supply Chain Dashboard - WIP</apex:outputLink>                                        
+                    <apex:outputText >Global Supply Chain Dashboard - WIP</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >10.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/WarrantyDashboard/WarrantyTrends?:embed=yes" >  Warranty Dashboard - WIP</apex:outputLink>                                       
+                    <apex:outputText >Warranty Dashboard - WIP</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >11.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://tableau.mot.com/t/Finance/views/OutlookDeck/PL?:embed=yes" >  Outlook Dashboard</apex:outputLink>                                       
+                    <apex:outputText >Outlook Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    
+                  </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Category 2" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                  
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+
+        <!--</apex:pageblock>-->
+    </apex:outputpanel>
+</apex:pageblock>
+</apex:form> 
+</apex:page>

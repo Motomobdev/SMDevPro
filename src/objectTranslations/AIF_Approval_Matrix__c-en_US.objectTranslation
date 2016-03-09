@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AIF Approval Matrix</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AIF Approval Matrices</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Requester --></label>
+        <name>Application_Requester__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (Application Requester) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Confirmation of Budget Approver: --></label>
+        <name>Confirmation_of_Budget_Approver__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (Confirmation of Budget Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DTS Approver: --></label>
+        <name>DTS_Approver__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (DTS Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device Name --></label>
+        <name>Device_Name__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- From related Device record --></help>
+        <label><!-- Device SA Status --></label>
+        <name>Device_SA_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- FMD Status Check Approver: --></label>
+        <name>FMD_Status_Check_Approver__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (FMD Status Check Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Finance Approver: --></label>
+        <name>Finance_Approver__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (Finance Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LRB Approver: --></label>
+        <name>LRB_Approver__c</name>
+        <relationshipLabel><!-- AIF Approval Matrices (LRB Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Routing Key --></label>
+        <name>Routing_Key__c</name>
+    </fields>
+    <layouts>
+        <layout>AIF Approval Matrix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>AIF Approval Matrix Layout API User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

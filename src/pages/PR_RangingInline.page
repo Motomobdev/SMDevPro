@@ -1,0 +1,7 @@
+<apex:page standardController="Project_Ranging__c"  extensions="PR_RangingInline">
+ <apex:form >
+
+ <apex:outputText value="{!strbody}" />
+
+ </apex:form>
+</apex:page>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Carrier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Carriers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract_Carrier External Unique ID --></label>
+        <name>Contract_Carrier_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Carriers --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Contract Carrier Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

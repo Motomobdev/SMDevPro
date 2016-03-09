@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SWKIT_SalesModel Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SWKIT_SalesModel Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current SWKIT_SM_Mapping --></label>
+        <name>Current_SWKIT_SM_Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDM_External_ID --></label>
+        <name>PDM_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDM_Last_Mod --></label>
+        <name>PDM_Last_Mod__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKIT_Name --></label>
+        <name>SWKIT_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Kit --></label>
+        <name>SW_Kit__c</name>
+        <relationshipLabel><!-- SWKIT_SalesModel Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SalesModelName --></label>
+        <name>SalesModelName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesModel_Name --></label>
+        <name>SalesModel_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Model --></label>
+        <name>Sales_Model__c</name>
+        <relationshipLabel><!-- SWKIT_SalesModel Relationships --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

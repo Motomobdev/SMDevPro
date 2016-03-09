@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to manage ranging of a product at an account level. This is typically managed by the Tech Sales team. The definition of product here means PMD project. Ranging is not at the product level.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Project_Combo__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Combination of account and project IDs to make the record unique. A workflow rule will combine the IDs and assign to this field</description>
+        <externalId>false</externalId>
+        <label>Account Project Combo</label>
+        <length>36</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Ranging</relationshipLabel>
+        <relationshipName>Ranging</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CR_Jira_Link__c</fullName>
+        <description>For links to Jira on any products in CR status</description>
+        <externalId>false</externalId>
+        <label>CR Jira Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Country__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Appearance_Sample__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Has the customer received an appearance sample of the product?</inlineHelpText>
+        <label>Has Appearance Sample</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Has_Working_Demo_Sample__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Has the customer received a working/demo sample of the product?</inlineHelpText>
+        <label>Has Working/Demo Sample</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Key_Account__c</fullName>
+        <description>Key Account</description>
+        <externalId>false</externalId>
+        <formula>Account__r.Key_Account__r.Name</formula>
+        <label>Key Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Milestone_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Milestone Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overwrite_predecessor_project_with__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used to overwrite the default Predecessor_Project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please use this field only if you want to overwrite the default Predecessor_Project. Select from the list and save.</inlineHelpText>
+        <label>Overwrite predecessor project with</label>
+        <referenceTo>PMD_Project__c</referenceTo>
+        <relationshipLabel>Ranging (Overwrite predecessor project with)</relationshipLabel>
+        <relationshipName>Ranging</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The person responsible for maintaining this ranging record status</inlineHelpText>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Ranging</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>POR_Status__c</fullName>
+        <description>For Launch Manager to control whether Ranging / Account are in POR or CR.</description>
+        <externalId>false</externalId>
+        <label>POR Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>POR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>POR_Volume__c</fullName>
+        <description>For Launch Manager to control POR volume commit.</description>
+        <externalId>false</externalId>
+        <label>POR FCSQ Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricing_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For documenting feedback from the customer around a product&apos;s pricing.</inlineHelpText>
+        <label>Pricing Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Refers to Portfolio Management Database&apos;s (PMD) projects (a level above the products in the hierarchy)</inlineHelpText>
+        <label>Project</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PMD_Project__c.Project_Status__c</field>
+                <operation>equals</operation>
+                <value>Discovery, Active, On Hold, Shipping, End of Life</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PMD_Project__c</referenceTo>
+        <relationshipLabel>Ranging</relationshipLabel>
+        <relationshipName>Project_Ranging</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RFQ_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The customer requested quote date</inlineHelpText>
+        <label>RFQ Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ranged_Date__c</fullName>
+        <description>This field remains null until the status changes to &quot;Ranged&quot;. This field will be updated by a workflow rule.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date in which the status changed to &quot;Ranged&quot;</inlineHelpText>
+        <label>Ranged Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ranging_Predecessor_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( Overwrite_predecessor_project_with__c ), Project__r.Predecessor_Project__r.Name,   Overwrite_predecessor_project_with__r.Name )</formula>
+        <label>Ranging Predecessor Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required for Not Pursued / Not Ranged status</inlineHelpText>
+        <label>Reason for Status</label>
+        <picklist>
+            <controllingField>Status__c</controllingField>
+            <picklistValues>
+                <fullName>Product</fullName>
+                <controllingFieldValues>Not pursued</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <controllingFieldValues>Not pursued</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promotion</fullName>
+                <controllingFieldValues>Not pursued</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distribution</fullName>
+                <controllingFieldValues>Not pursued</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <controllingFieldValues>Not pursued</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Specs_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For documenting feedback from the customer around a product&apos;s specifications.</inlineHelpText>
+        <label>Specs Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+CASE( Status__c, 
+&quot;Low Probability&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;Not pursued&quot;, &quot;/s.gif&quot;,
+&quot;Rejected&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;Mid Probability&quot;, &quot;/img/samples/flag_yellow.gif&quot;,
+&quot;Ranged&quot;, &quot;/img/samples/flag_green.gif&quot;, 
+&quot;High Probability&quot;, &quot;/img/samples/flag_green.gif&quot;,
+&quot;Needs Input&quot;, &quot;/s.gif&quot;,
+&quot;Not presented&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;/s.gif&quot;), 
+&quot;Status Flag&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not pursued</fullName>
+                <color>#666666</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs Input</fullName>
+                <color>#FFFFFF</color>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not presented</fullName>
+                <color>#CC66CC</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <color>#000000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Probability</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid Probability</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Probability</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranged</fullName>
+                <color>#3366FF</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Sub_Region__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timing_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For documenting feedback from the customer around a product&apos;s timing.</inlineHelpText>
+        <label>Timing Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Volume_Commit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated/committed volume from the customer</inlineHelpText>
+        <label>Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Ranging</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Key_Account__c</columns>
+        <columns>Next_Milestone_Date__c</columns>
+        <columns>Next_Step__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Project__c</columns>
+        <columns>Ranged_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Status_Flag__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PR-{00000}</displayFormat>
+        <label>PR #</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Ranging</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Next_Milestone_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Owner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Ranged_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_Flag__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Region__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Next_Milestone_Date_Is_Required</fullName>
+        <active>true</active>
+        <description>Next milestone date is required for these statuses:
+Not presented, Very low probability, Ranging in Progress</description>
+        <errorConditionFormula>AND(ISBLANK(Next_Milestone_Date__c),
+  OR(ISPICKVAL(Status__c, &apos;Not presented&apos;),
+     ISPICKVAL(Status__c, &apos;Very low probability&apos;),
+     ISPICKVAL(Status__c, &apos;Ranging in Progress&apos;)
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Next_Milestone_Date__c</errorDisplayField>
+        <errorMessage>Next milestone date is required for these statuses:
+Not presented, Very low probability, Ranging in Progress</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Next_Step_Is_Required</fullName>
+        <active>true</active>
+        <description>Next step is required for these statuses:
+Not presented,  Very low probability, Ranging in Progress</description>
+        <errorConditionFormula>AND(ISBLANK(Next_Step__c),
+  OR(ISPICKVAL(Status__c, &apos;Not presented&apos;),
+     ISPICKVAL(Status__c, &apos;Very low probability&apos;),
+     ISPICKVAL(Status__c, &apos;Ranging in Progress&apos;)
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Next_Step__c</errorDisplayField>
+        <errorMessage>Next step is required for these statuses:
+Not presented,  Very low probability, Ranging in Progress</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Edit_All_My_Accounts_Ranging_Records</fullName>
+        <availability>online</availability>
+        <description>Invokes Ranging grid without any filters</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit All My Accounts Ranging Records</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&quot;/apex/gblite__Grid?gname=Ranging&amp;sh=1&amp;ssb=0&amp;sbb=1&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Range_Records</fullName>
+        <availability>online</availability>
+        <description>Allows the user to mass edit ranging records for an account. Invokes the Ranging grid by passing account ID as the filter.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit Active Ranging Records</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&quot;/apex/gblite__Grid?gname=Ranging&amp;fpf=Account__c&amp;fpv={!Account.Id}&amp;sh=1&amp;ssb=0&amp;sbb=1&quot;);</url>
+    </webLinks>
+</CustomObject>

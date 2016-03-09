@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program  (PMD)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programs  (PMD)</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+        <picklistValues>
+            <masterLabel>Lenovo</masterLabel>
+            <translation><!-- Lenovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola</masterLabel>
+            <translation><!-- Motorola --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to determine whether a Program should no longer be shown on the POR Chart --></help>
+        <label><!-- Exclude from POR Experiences Chart --></label>
+        <name>Exclude_from_POR_Experiences_Chart__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the URL of the Ariane Device Launch Calendar created for the program, ex: https://ariane.motorola.com/area61001/calendar72001/ --></help>
+        <label><!-- LaunchCal Device Calendar URL --></label>
+        <name>LaunchCal_Device_Calendar_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- For D. Schuster&apos;s POR Charts --></help>
+        <label><!-- MR --></label>
+        <name>MR__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD External ID --></label>
+        <name>PMD_External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for POR chart grouping, for Dave S. --></help>
+        <label><!-- POR Grouping --></label>
+        <name>POR_Grouping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Activation Date --></label>
+        <name>Program_Activation_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Premium&quot;, &quot;Value&quot;, etc --></help>
+        <label><!-- Program Category --></label>
+        <name>Program_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code name when communicating related information with vendors and suppliers outside Motorola --></help>
+        <label><!-- External Code Name --></label>
+        <name>Program_Code_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program ID --></label>
+        <name>Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery</masterLabel>
+            <translation><!-- Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End of Life</masterLabel>
+            <translation><!-- End of Life --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Longer Shipping</masterLabel>
+            <translation><!-- No Longer Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested In Market Date --></label>
+        <name>Requested_In_Market_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Active Projects --></label>
+        <name>of_Active_Projects__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Total Projects --></label>
+        <name>of_Total_Projects__c</name>
+    </fields>
+    <layouts>
+        <layout>PMD Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Experiences1 --></label>
+        <name>Add_Experiences1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Experiences_old --></label>
+        <name>Add_Experiences_old</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Experiences --></label>
+        <name>Edit_Experiences</name>
+    </webLinks>
+</CustomObjectTranslation>

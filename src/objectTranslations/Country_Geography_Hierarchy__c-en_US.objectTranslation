@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Country Geography Hierarchy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Country Geography Hierarchy</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lenovo GEO --></label>
+        <name>Lenovo_GEO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lenovo Region --></label>
+        <name>Lenovo_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region Code --></label>
+        <name>Region_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subregion Code --></label>
+        <name>Subregion_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subregion --></label>
+        <name>Subregion__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

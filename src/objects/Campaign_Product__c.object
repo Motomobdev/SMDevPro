@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object to connect campaigns with PMD Products</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Lift__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Lift %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Actual_vs_Target__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Lift__c -  Target_Lift__c</formula>
+        <inlineHelpText>Actual minus Target, as an objective measure of success</inlineHelpText>
+        <label>Actual vs Target %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Baseline_SO_wk__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used as reference to Target lift</inlineHelpText>
+        <label>Baseline SO/wk</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundled_Product_Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Bundled Product Discount</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundled_Product_Price_or_Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Bundled Product Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundled_with__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies only if product sub-category = Bundling</inlineHelpText>
+        <label>Bundled with</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Effectiveness_Detail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional details from Sales/Marketing (post-promotion analytic outcome)</inlineHelpText>
+        <label>Campaign Effectiveness (Detail)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Effectiveness__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Effectiveness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Met Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did Not Meet Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Campaign Products</relationshipLabel>
+        <relationshipName>Campaign_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Communication_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Communication Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Store Signage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mailer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Retail Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incremental_Value__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter either Target Lift % or Incremental Value</inlineHelpText>
+        <label>Incremental Value</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Before_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies only if Promotion lever = price reduction</inlineHelpText>
+        <label>Product Price Before Campaign</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_During_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies only if Promotion lever = price reduction</inlineHelpText>
+        <label>Product Price During Campaign</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Campaign_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Campaign Details</label>
+        <length>2500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.Business_Unit__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>Product2.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Campaign Products</relationshipLabel>
+        <relationshipName>Campaign_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Program__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_PMD__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If you selected a product, leave this field (Project) empty.</inlineHelpText>
+        <label>Project</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PMD_Project__c.Project_Status__c</field>
+                <operation>equals</operation>
+                <value>Active, On Hold, Shipping, End of Life</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PMD_Project__c</referenceTo>
+        <relationshipLabel>Campaign Products</relationshipLabel>
+        <relationshipName>Campaign_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Lift__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Lift %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Campaign Product</label>
+    <nameField>
+        <displayFormat>CMP-{00000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Campaign Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Bundle_Promo</fullName>
+        <active>true</active>
+        <description>When the promotion is a BOGO or Bundle then Bundled With is Required</description>
+        <errorConditionFormula>AND( ISPICKVAL( Campaign__r.Category__c , &quot;Promotions&quot;),  
+ OR(CONTAINS(TEXT( Campaign__r.Sub_Category__c), &quot;Bundle&quot;),CONTAINS(TEXT( Campaign__r.Sub_Category__c), &quot;BOGO&quot;)),
+ ISBLANK(Bundled_with__c)
+)</errorConditionFormula>
+        <errorDisplayField>Bundled_with__c</errorDisplayField>
+        <errorMessage>Bundled With field must identify the additional product(s) when the promotion is BOGO or Bundle.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Bundle_Promo_Price</fullName>
+        <active>true</active>
+        <description>When the promotion is a BOGO or Bundle then Bundled Product Price or Discount is Required</description>
+        <errorConditionFormula>AND( ISPICKVAL( Campaign__r.Category__c , &quot;Promotions&quot;),  
+ OR(CONTAINS(TEXT( Campaign__r.Sub_Category__c), &quot;Bundle&quot;),CONTAINS(TEXT( Campaign__r.Sub_Category__c), &quot;BOGO&quot;)),
+ AND(ISBLANK(  Bundled_Product_Price_or_Discount__c ),ISBLANK( Bundled_Product_Discount__c ))
+)</errorConditionFormula>
+        <errorDisplayField>Bundled_Product_Price_or_Discount__c</errorDisplayField>
+        <errorMessage>Bundled Product Price or Bundled Product Discount amount is required when the type of promotion is a BOGO or Bundle.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Communication_Method_Required</fullName>
+        <active>true</active>
+        <description>Requires the method for communicating the promotion when category is Promotion</description>
+        <errorConditionFormula>AND( OR(ISPICKVAL( Campaign__r.Category__c , &quot;Promotions&quot;),ISPICKVAL( Campaign__r.Category__c , &quot;Permanent Move&quot;)),  
+ISBLANK( Communication_Method__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>Communication_Method__c</errorDisplayField>
+        <errorMessage>The Communication Method is required for promotion category of Permanent Move or Promotions</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Price_Drop_Before_Pricing</fullName>
+        <active>true</active>
+        <description>When Lever is a Price Drop the Before and During Price is Required</description>
+        <errorConditionFormula>AND( ISPICKVAL( Campaign__r.Sub_Category__c , &quot;Price Drop&quot;), ISNULL(Price_Before_Campaign__c))</errorConditionFormula>
+        <errorDisplayField>Price_Before_Campaign__c</errorDisplayField>
+        <errorMessage>Prices Before and During Campaign are required when the campaign Lever is a Price Drop.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Price_Drop_During_Pricing</fullName>
+        <active>true</active>
+        <description>When Lever is a Price Drop the Before and During Price is Required</description>
+        <errorConditionFormula>AND( ISPICKVAL( Campaign__r.Sub_Category__c , &quot;Price Drop&quot;),
+ISNULL(Price_During_Campaign__c))</errorConditionFormula>
+        <errorDisplayField>Price_During_Campaign__c</errorDisplayField>
+        <errorMessage>Prices Before and During Campaign are required when the campaign Lever is a Price Drop.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Or_Project_Is_Required</fullName>
+        <active>true</active>
+        <description>You must select a Project (PMD) or a Product</description>
+        <errorConditionFormula>AND(ISBLANK( Product__c), ISBLANK( Project_PMD__c))</errorConditionFormula>
+        <errorMessage>You must select a Project (PMD) or a Product</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Edit_Products</fullName>
+        <availability>online</availability>
+        <description>Allows the user to add/edit PMD products on the campaigns using a Grid</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mass Add/Edit Products</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&quot;/apex/gblite__Grid?gname=Campaigns&amp;ID={!Campaign.Id}&amp;sh=1&amp;ssb=0&amp;sbb=1&quot;);</url>
+    </webLinks>
+</CustomObject>

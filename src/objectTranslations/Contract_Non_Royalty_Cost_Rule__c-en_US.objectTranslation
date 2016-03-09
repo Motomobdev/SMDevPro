@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Non Royalty Cost Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Non Royalty Cost Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Completion Date --></label>
+        <name>Actual_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Department --></label>
+        <name>Charge_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Non Royalty Cost Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Name --></label>
+        <name>Cost_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasted Completion Date --></label>
+        <name>Forecasted_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maintenance Period End --></label>
+        <name>Maintenance_Period_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maintenance Period Start --></label>
+        <name>Maintenance_Period_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Due --></label>
+        <name>Payment_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Period End --></label>
+        <name>Service_Period_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Period Start --></label>
+        <name>Service_Period_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Maintenance</masterLabel>
+            <translation><!-- Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRE</masterLabel>
+            <translation><!-- NRE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Maintenance --></label>
+        <name>Maintenance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- NRE --></label>
+        <name>NRE</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service --></label>
+        <name>Service</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

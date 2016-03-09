@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+  <center>
+  <iframe src="https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site4/views/Global_Operations_Summary_BQ/GlobalOperationsSummary?&tableauSite=Site4&userName=lit&:refresh=yes&container=iframe&KEY_ACCOUNT={!URLENCODE(Account.Key_Account_Name__c)}" width="95%" height="450" scrolling="no" style="border: 0px"></iframe>
+  </center>
+</apex:page>

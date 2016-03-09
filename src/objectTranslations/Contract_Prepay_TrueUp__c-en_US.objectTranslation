@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Prepay TrueUp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Prepay TrueUps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Book Date --></label>
+        <name>Book_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Book Amount --></label>
+        <name>Book_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Prepay Financial Data --></label>
+        <name>Contract_Prepay_Financial_Data__c</name>
+        <relationshipLabel><!-- Contract Prepay TrueUps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepay Balance --></label>
+        <name>Prepay_Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Units --></label>
+        <name>Revenue_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Amount --></label>
+        <name>Royalty_Amount__c</name>
+    </fields>
+    <layouts>
+        <layout>Contract Prepay TrueUp Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

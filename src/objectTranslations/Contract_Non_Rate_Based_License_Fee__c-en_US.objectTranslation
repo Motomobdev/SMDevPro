@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Non Rate Based License Fee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Non Rate Based License Fee</value>
+    </caseValues>
+    <fields>
+        <label><!-- Beginning Period --></label>
+        <name>Beginning_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Non Rate Based License Fee --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Due After SA? --></label>
+        <name>Due_After_SA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ending Period --></label>
+        <name>Ending_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- License Fee or Prepay Amount --></label>
+        <name>License_Fee_or_Prepay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other/Explination --></label>
+        <name>Other_Explination__c</name>
+    </fields>
+    <fields>
+        <label><!-- P&amp;L Treatment --></label>
+        <name>P_L_Treatment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Due --></label>
+        <name>Payment_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Trigger --></label>
+        <name>Payment_Trigger__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recoverable if Units are not met? --></label>
+        <name>Recoverable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>Units__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

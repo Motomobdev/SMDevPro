@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html> 
+<head> 
+
+<link href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+<link href="/dCSS/Theme2/default/custom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+<link href="/dCSS/Theme2/default/setup.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+<link href="/css/assistive.css" type="text/css" media="aural,braille,embossed" rel="stylesheet" >
+
+<script src="/soap/ajax/10.0/connection.js" type="text/javascript"></script>
+
+<style>
+.smartButton{background-color:rgb(190,40,40); text-align:center; font-size:12pt; font-family:Arial; color:white; cursor:pointer; border-style:solid; border-width:5px; border-color:black; padding-left:5px; padding-top:3px; padding-right:5px; padding-bottom:3px}
+</style>
+
+</head>
+
+<body onload=init()>
+
+<!------------------------------------------------------------------------------------------------------------->
+<!----  EDIT THE TEXT IN THE FOLLOWING BOLD TAGS IF DESIRED  -------------------------------------------------->
+<!----  MAKE SURE TO REPLACE THE ID IN THE INNER DIV TAG WITH THE ID OF YOUR PAST DUE OPPORTUNITIES VIEW ID  -->
+<!------------------------------------------------------------------------------------------------------------->
+
+
+<div id="outside" style="padding-right: 10px">
+	<div class="smartButton" id="sbcontent" width="100%" onclick="top.window.location='/006?fcf=00B40000005VVN8';">
+		<b>
+			You Have Past<br>
+			Due Opportunities Click Here to View and Update
+		</b>
+	</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+var direction = "up";
+var skipsize = 4;
+var red;
+var green;
+var blue;
+
+function init() {
+
+
+	///// FUNCTION PREPARES COLOR VALUES FOR FLASHING EFFECT
+
+	document.getElementById("sbcontent").style.background="rgb(190,40,40)";
+
+	var color = document.getElementById("sbcontent").style.background;
+	var nums = color.substring(color.indexOf("(")+1,color.indexOf(")"));
+	red = nums.substring(0,nums.indexOf(","));
+	green = nums.substring(nums.indexOf(",")+1, nums.indexOf(",",nums.indexOf(",")+1) );
+	blue = nums.substring(nums.indexOf(",",nums.indexOf(",")+1)+1,nums.length);
+
+
+
+	///// FUNCTION GATHERS USER INFO
+
+	try{ 
+		var result=sforce.connection.getUserInfo(); 
+		var userid = result.userId; 
+	} 
+	catch(error){ 
+		alert(error);
+	}
+
+
+
+	///// FUNCTION QUERIES TO SEE IF THERE IS EVEN ONE PAST DUE OPP [note that we chose to give 7 days grace as shown in filter]
+
+	try{
+		var qr=sforce.connection.query("Select Id from Opportunity where OwnerId='" + userid + "' and CloseDate < LAST_N_DAYS:7 and IsClosed=FALSE Limit 1");
+	}
+	catch(error){ 
+		alert(error); 
+	}
+
+
+
+	///// IF NO PAST DUE OPPS, COLLAPSE SECTION TO 0 PIXELS TALL AND REMOVE THE TITLE "LOADING" FROM THE SCREEN
+
+	if(qr.size!=1){
+
+		window.top.document.getElementById("smartframe").style.height="0px";
+		var sidebar = window.top.document.getElementById("sidebarDiv");
+		var h2s = sidebar.getElementsByTagName("h2");
+
+		h2s[1].parentNode.parentNode.removeChild(h2s[1].parentNode);
+	}
+
+
+
+	///// IF THERE ARE PAST DUE OPPS, REMOVE TITLE "LOADING" FROM SCREEN AND BEGIN COLOR FLASHING SEQUENCE
+
+	else{
+
+		var sidebar = window.top.document.getElementById("sidebarDiv");
+		var h2s = sidebar.getElementsByTagName("h2");
+
+		h2s[1].parentNode.removeChild(h2s[1]);
+
+		var timed = setInterval("colorchange()",40);
+		resizeframe();
+	}
+
+}
+
+function colorchange() {
+
+
+	///// FUNCTION THAT MAKES THE BUTTON FLASH BY CHANGING THE BACKGROUND COLOR EVERY 40 MILLISECONDS
+
+
+	if(direction=="up"){
+
+		if(parseInt(green)<180){
+			green=parseInt(green)+skipsize;
+			blue=green;
+		}
+		else{
+			direction="down";
+		}
+
+	}
+	else{
+
+		if(parseInt(green)>20){
+			green=parseInt(green)-skipsize;
+			blue=green;
+		}
+		else{
+			direction="up";
+		}
+
+	}
+
+	document.getElementById("sbcontent").style.background="rgb(" + red + "," + green + "," + blue + ")";
+
+}
+
+function resizeframe() {
+
+
+	///// FUNCTION USED TO RESIZE THE IFRAME IN WHICH THE SCONTROL SITS
+
+
+	var itarget=top.document.getElementById("smartframe"); 
+	itarget.style.height=document.body.clientHeight + "px"; 
+
+}
+
+function onError(error){
+
+
+	///// FUNCTION TO DISPLAY ERROR MESSAGES IF ENCOUNTERED DURING QUERY CALLS
+
+
+	alert("An Error has Occurred: " + error);
+
+}
+
+
+</script>
+
+
+</body>
+</html>

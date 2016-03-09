@@ -1,0 +1,160 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" tabStyle="Apttus__APTS_Agreement__c"
+    extensions="Edit_Apttus_Deal_Lines">
+
+    <apex:sectionHeader title="Edit Agreement Lines"
+        subtitle="{!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}"/>
+    <apex:pageMessages id="msgs"/>
+    <apex:form >
+
+        <apex:pageBlock >
+
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!mySave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Agreement Parameters" collapsible="false">
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Apttus__APTS_Agreement__c.fields.APTPS_Purchase_Commitment_Type__c.label}"/>
+                    <apex:actionRegion immediate="true">
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Purchase_Commitment_Type__c}" required="true">
+                            <apex:actionSupport event="onchange" rerender="myProdTable" status="myStatus"/>
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.CurrencyIsoCode}" required="true"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Contract_Start_Date__c}" required="true"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Contract_End_Date__c}" required="true"/>
+            </apex:pageBlockSection>
+
+            <apex:actionStatus startText="Please wait..." stopText="" id="myStatus"/>
+
+            <apex:pageBlockSection title="Agreement Products" columns="1"
+                collapsible="false">
+
+                <apex:panelGrid columns="2">
+                    <apex:commandButton value="Add Product" action="{!addProductLine}"
+                    immediate="true" reRender="myProdTable,msgs"/>
+                </apex:panelGrid>
+
+                <apex:pageBlockTable value="{!prodCaglis}" var="pcagli" id="myProdTable">
+                    <!-- <apex:column value="{!pcagli.counter}"/> -->
+
+                    <apex:column headerValue="Action">
+                        <apex:commandLink value="Delete" action="{!deleteProduct}" immediate="true"
+                        reRender="myProdTable,msgs">
+                            <apex:param name="activeProdRowNum" value="{!pcagli.counter}"
+                                assignTo="{!activeProdRowNum}"/>
+                        </apex:commandLink>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Product2.fields.Name.label}">
+                        <apex:actionRegion immediate="true">
+                            <apex:inputField value="{!pcagli.agli.Apttus__ProductId__c}">
+                                <apex:actionSupport event="onchange" action="{!updateProductLine}"
+                                    reRender="myProdTable,msgs" status="myStatus">
+                                    <!-- Used for identifying the data row -->
+                                    <apex:param name="activeProdRowNum" value="{!pcagli.counter}"
+                                    assignTo="{!activeProdRowNum}"/>
+                                </apex:actionSupport>
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.Apttus__Description__c.label}">
+                        <apex:outputField value="{!pcagli.agli.Apttus__Description__c}"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Recommended_Retail_Price_Point__c.label}">
+                        <apex:inputField value="{!pcagli.agli.APTPS_Recommended_Retail_Price_Point__c}" required="true"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Minimum_Commitment_Quantity__c.label}"
+                        rendered="{!IF(CONTAINS(ag.APTPS_Purchase_Commitment_Type__c, 'Minimum Purchase'), true, false)}">
+                        <apex:inputField value="{!pcagli.agli.APTPS_Minimum_Commitment_Quantity__c}"
+                            required="true"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Vol_Target_Purchase_Quantity__c.label}"
+                        rendered="{!IF(CONTAINS(ag.APTPS_Purchase_Commitment_Type__c,'Volume Target Purchase'), true, false)}">
+                        <apex:inputField value="{!pcagli.agli.APTPS_Vol_Target_Purchase_Quantity__c}"
+                            required="true"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Initial_PO_Quantity__c.label}"
+                        rendered="{!IF(CONTAINS(ag.APTPS_Purchase_Commitment_Type__c, 'Initial Purchase Order'),true, false)}">
+                        <apex:inputField value="{!pcagli.agli.APTPS_Initial_PO_Quantity__c}"
+                            required="true"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Invoice_Price__c.label}">
+                        <apex:actionRegion immediate="true">
+                            <apex:inputField value="{!pcagli.agli.APTPS_Invoice_Price__c}" required="true">
+ <!--                                <apex:actionSupport event="onchange" immediate="true"
+                                reRender="myProdTable,msgs" status="myStatus"/> -->
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:column>
+
+<!--                     <apex:column headerValue="Total Commit">
+                        <apex:outputText value="{0, number, ###,##0.00}">
+                            <apex:param value="{!pcagli.totalCommit}"/>
+                        </apex:outputText>
+                    </apex:column> -->
+
+                </apex:pageBlockTable>
+
+            </apex:pageBlockSection>
+
+            <!-- Mods -->
+            <apex:pageBlockSection title="Agreement Mods" columns="1"
+                collapsible="false">
+
+                <apex:panelGrid columns="2">
+                    <apex:commandButton value="Add Modification" action="{!addModification}" immediate="true" reRender="myModTable"/>
+                </apex:panelGrid>
+
+                <apex:pageBlockTable value="{!modCaglis}" var="mcagli" id="myModTable">
+                   <apex:column headerValue="Action">
+                        <apex:commandLink value="Delete" action="{!deleteMod}"
+                            immediate="true" reRender="myModTable,msgs">
+                            <apex:param name="activeModRowNum" value="{!mcagli.counter}"
+                                assignTo="{!activeModRowNum}"/>
+                        </apex:commandLink>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Modification_To_Section__c.label}">
+                         <apex:inputField value="{!mcagli.agli.APTPS_Modification_To_Section__c}"
+                         style="width:250px;"/>
+                    </apex:column>
+
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.Apttus__Description__c.label}">
+                        <apex:inputField value="{!mcagli.agli.Apttus__Description__c}"
+                         style="width:250px;"/>
+                    </apex:column>
+                    <!--
+                    <apex:column headerValue="{!$ObjectType.Apttus__AgreementLineItem__c.fields.APTPS_Invoice_Price__c.label}">
+                        <apex:inputField value="{!mcagli.agli.APTPS_Invoice_Price__c}" required="true">
+                        </apex:inputField>
+                    </apex:column>
+                    -->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Agreement Approvers" columns="1"  collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Approver 1 (Finance)"/>
+                    <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Deal_Specific_Approver__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Approver 2 (Legal)"/>
+                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Business_Unit_Finance_Approver__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+
+    </apex:form>
+</apex:page>

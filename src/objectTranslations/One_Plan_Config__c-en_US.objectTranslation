@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>One Plan Config</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>One Plan Configs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Date to generate a One Plan Snapshot --></help>
+        <label><!-- Gererate Date --></label>
+        <name>Generate_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- One Plan description --></help>
+        <label><!-- Plan Description --></label>
+        <name>Plan_Description__c</name>
+    </fields>
+    <layouts>
+        <layout>One Plan Config Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

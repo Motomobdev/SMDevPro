@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD Fulfillment Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD Fulfillment Type</value>
+    </caseValues>
+    <fields>
+        <label><!-- CFC --></label>
+        <name>CFC__c</name>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS BRASIL</masterLabel>
+            <translation><!-- FLEXTRONICS BRASIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS FtW</masterLabel>
+            <translation><!-- FLEXTRONICS FtW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS MANUFACTURING TIANJIN</masterLabel>
+            <translation><!-- FLEXTRONICS MANUFACTURING TIANJIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foxconn Guan Lan</masterLabel>
+            <translation><!-- Foxconn Guan Lan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD - TDF</masterLabel>
+            <translation><!-- SKD - TDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD TDF</masterLabel>
+            <translation><!-- SKD TDF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Distribution Strategy --></label>
+        <name>Distribution_Strategy__c</name>
+        <picklistValues>
+            <masterLabel>Crossdock Flex FtW</masterLabel>
+            <translation><!-- Crossdock Flex FtW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crossdock at Flextronics FtW</masterLabel>
+            <translation><!-- Crossdock at Flextronics FtW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIRECT SHIP CHINA</masterLabel>
+            <translation><!-- DIRECT SHIP CHINA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Ship to Customer</masterLabel>
+            <translation><!-- Direct Ship to Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD - TDF</masterLabel>
+            <translation><!-- SKD - TDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD TDF</masterLabel>
+            <translation><!-- SKD TDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STANDARD SHIP BRAZIL</masterLabel>
+            <translation><!-- STANDARD SHIP BRAZIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STANDARD SHIP FLEXTRONICS FtW</masterLabel>
+            <translation><!-- STANDARD SHIP FLEXTRONICS FtW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Customer Shipment site --></label>
+        <name>Final_Customer_Shipment_site__c</name>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS BRASIL</masterLabel>
+            <translation><!-- FLEXTRONICS BRASIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS FtW</masterLabel>
+            <translation><!-- FLEXTRONICS FtW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS MANUFACTURING TIANJIN</masterLabel>
+            <translation><!-- FLEXTRONICS MANUFACTURING TIANJIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foxconn Guan Lan</masterLabel>
+            <translation><!-- Foxconn Guan Lan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD - TDF</masterLabel>
+            <translation><!-- SKD - TDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKD TDF</masterLabel>
+            <translation><!-- SKD TDF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fulfillment ID --></label>
+        <name>Fulfillment_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Account_Code --></label>
+        <name>Key_Account_Code__c</name>
+        <relationshipLabel><!-- CD Fulfillment Type --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Key Account Description --></label>
+        <name>Key_Account_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFG SITE --></label>
+        <name>MFG_SITE__c</name>
+        <picklistValues>
+            <masterLabel>ENDO - FLEXTRONICS MANUFACTURING TIANJIN</masterLabel>
+            <translation><!-- ENDO - FLEXTRONICS MANUFACTURING TIANJIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endo - FLEXTRONICS FtW</masterLabel>
+            <translation><!-- Endo - FLEXTRONICS FtW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS BRASIL</masterLabel>
+            <translation><!-- FLEXTRONICS BRASIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEXTRONICS MANUFACTURING TIANJIN</masterLabel>
+            <translation><!-- FLEXTRONICS MANUFACTURING TIANJIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foxconn Guan Lan</masterLabel>
+            <translation><!-- Foxconn Guan Lan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- XTJ - Flex TJ
+XFW - Flex FW
+XPT - Flex BZ
+X41 - Foxconn --></help>
+        <label><!-- ORG CODE --></label>
+        <name>ORG_CODE__c</name>
+        <picklistValues>
+            <masterLabel>X41</masterLabel>
+            <translation><!-- X41 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XFW</masterLabel>
+            <translation><!-- XFW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XPT</masterLabel>
+            <translation><!-- XPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XTJ</masterLabel>
+            <translation><!-- XTJ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Model --></label>
+        <name>Sales_Model__c</name>
+    </fields>
+    <layouts>
+        <layout>CD Fulfillment Type Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

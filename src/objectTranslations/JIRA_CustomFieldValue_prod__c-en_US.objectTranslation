@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>JIRA_CustomFieldValue_prod</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>JIRA_CustomFieldValue_prods</value>
+    </caseValues>
+    <fields>
+        <label><!-- CustomField ID --></label>
+        <name>CustomField_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateValue --></label>
+        <name>DateValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue ID --></label>
+        <name>Issue_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NumberValue --></label>
+        <name>NumberValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- StringValue --></label>
+        <name>StringValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Table ID --></label>
+        <name>Table_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- TextValue --></label>
+        <name>TextValue__c</name>
+    </fields>
+    <layouts>
+        <layout>JIRA_CustomFieldValue_prod Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

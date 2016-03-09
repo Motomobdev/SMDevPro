@@ -1,0 +1,36 @@
+<apex:page standardController="Project_Spend__c" extensions="SSRContractController" sidebar="false" showHeader="false">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <script>
+        
+    	$(document).ready(function(){
+            $('input[id$=refreshPage]').hide();
+        });
+    
+    	var child;
+        var timer;
+        
+        function refreshPage() {
+            if (child.closed) {
+                clearInterval(timer);
+                //window.location.reload();
+                $('input[id$=refreshPage]').click();
+            }
+        }
+    
+    	function openNewWindowAndRefresh(){
+        	child = window.open("/apex/AddSSRContract?id={!Project_Spend__c.id}");
+        	timer = setInterval(refreshPage, 250);
+        }
+    
+    </script>
+    <apex:form rendered="{!NOT(closed)}">
+        <apex:commandButton value="refresh" action="{!refresh}" id="refreshPage"/>
+        <input type="button" target="_blank" class="btn" onclick="openNewWindowAndRefresh()" value="Add Contract #"/>
+    </apex:form>
+    <apex:outputField value="{!Project_Spend__c.Name__c}" rendered="false"/>
+   	<apex:outputField value="{!Project_Spend__c.Vendor__c}" rendered="false"/>
+   	<apex:outputField value="{!Project_Spend__c.Start_Date__c}" rendered="false"/>
+	<apex:outputField value="{!Project_Spend__c.End_Date__c}" rendered="false"/>
+	<apex:outputField value="{!Project_Spend__c.Estimated_Spend__c}" rendered="false"/>
+	<apex:outputField value="{!Project_Spend__c.Contract__c}" rendered="false"/>
+</apex:page>

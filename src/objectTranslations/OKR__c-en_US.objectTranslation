@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OKR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OKRs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active? --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Detailed description of the OKR --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- OKR # --></label>
+        <name>OKR_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The PMD program this OKR relates to. --></help>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>Agate</masterLabel>
+            <translation><!-- Agate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agate Lite</masterLabel>
+            <translation><!-- Agate Lite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agate Turbo</masterLabel>
+            <translation><!-- Agate Turbo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ArgonMini</masterLabel>
+            <translation><!-- ArgonMini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asanti WE/LTE</masterLabel>
+            <translation><!-- Asanti WE/LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atlas Peak</masterLabel>
+            <translation><!-- Atlas Peak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atlas Peak Refresh</masterLabel>
+            <translation><!-- Atlas Peak Refresh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLE Keyring</masterLabel>
+            <translation><!-- BLE Keyring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banshee</masterLabel>
+            <translation><!-- Banshee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bluefin</masterLabel>
+            <translation><!-- Bluefin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bluefin IS</masterLabel>
+            <translation><!-- Bluefin IS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bluestone 2nd Source</masterLabel>
+            <translation><!-- Bluestone 2nd Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolt DFM</masterLabel>
+            <translation><!-- Bolt DFM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DVX</masterLabel>
+            <translation><!-- DVX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DVX LTE</masterLabel>
+            <translation><!-- DVX LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Destino</masterLabel>
+            <translation><!-- Destino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinara</masterLabel>
+            <translation><!-- Dinara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinara LT Dock</masterLabel>
+            <translation><!-- Dinara LT Dock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinara LT Navigation Dock</masterLabel>
+            <translation><!-- Dinara LT Navigation Dock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinara PTT</masterLabel>
+            <translation><!-- Dinara PTT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELX</masterLabel>
+            <translation><!-- ELX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUROPA</masterLabel>
+            <translation><!-- EUROPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elektro</masterLabel>
+            <translation><!-- Elektro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everglades Brazil</masterLabel>
+            <translation><!-- Everglades Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fairhall iDEN</masterLabel>
+            <translation><!-- Fairhall iDEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falcon Color Doors</masterLabel>
+            <translation><!-- Falcon Color Doors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falcon Flip Doors</masterLabel>
+            <translation><!-- Falcon Flip Doors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falcon Protective Case</masterLabel>
+            <translation><!-- Falcon Protective Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fawnridge</masterLabel>
+            <translation><!-- Fawnridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HAVOK</masterLabel>
+            <translation><!-- HAVOK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawk3.5</masterLabel>
+            <translation><!-- Hawk3.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawk4.0</masterLabel>
+            <translation><!-- Hawk4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hendrix Lite</masterLabel>
+            <translation><!-- Hendrix Lite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iconic 6W Improvements</masterLabel>
+            <translation><!-- Iconic 6W Improvements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iron Rock UMTS/iDEN</masterLabel>
+            <translation><!-- Iron Rock UMTS/iDEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JUPITER</masterLabel>
+            <translation><!-- JUPITER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jade</masterLabel>
+            <translation><!-- Jade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jasper</masterLabel>
+            <translation><!-- Jasper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jessup</masterLabel>
+            <translation><!-- Jessup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jorian</masterLabel>
+            <translation><!-- Jorian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lumineers</masterLabel>
+            <translation><!-- Lumineers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malibu</masterLabel>
+            <translation><!-- Malibu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maserati</masterLabel>
+            <translation><!-- Maserati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ONYX</masterLabel>
+            <translation><!-- ONYX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opal</masterLabel>
+            <translation><!-- Opal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orleans</masterLabel>
+            <translation><!-- Orleans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4000R</masterLabel>
+            <translation><!-- P4000R --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4000R II</masterLabel>
+            <translation><!-- P4000R II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Party Link</masterLabel>
+            <translation><!-- Party Link --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pax</masterLabel>
+            <translation><!-- Pax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Pack Fob</masterLabel>
+            <translation><!-- Power Pack Fob --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primus</masterLabel>
+            <translation><!-- Primus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primus Ferrari</masterLabel>
+            <translation><!-- Primus Ferrari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pyrite (P893 Refresh)</masterLabel>
+            <translation><!-- Pyrite (P893 Refresh) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pyrite II</masterLabel>
+            <translation><!-- Pyrite II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quantum</masterLabel>
+            <translation><!-- Quantum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quantum MAXX</masterLabel>
+            <translation><!-- Quantum MAXX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quantum sliM</masterLabel>
+            <translation><!-- Quantum sliM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUBY</masterLabel>
+            <translation><!-- RUBY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redwood Brazil</masterLabel>
+            <translation><!-- Redwood Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redwood Cost Reduction</masterLabel>
+            <translation><!-- Redwood Cost Reduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redwood Softbank</masterLabel>
+            <translation><!-- Redwood Softbank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scorpion Mini</masterLabel>
+            <translation><!-- Scorpion Mini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scorpion Mini (i)</masterLabel>
+            <translation><!-- Scorpion Mini (i) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sequoia P793 Battery Substitution</masterLabel>
+            <translation><!-- Sequoia P793 Battery Substitution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SilverClam</masterLabel>
+            <translation><!-- SilverClam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SilverQ</masterLabel>
+            <translation><!-- SilverQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SilverQ NA</masterLabel>
+            <translation><!-- SilverQ NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SilverSmart</masterLabel>
+            <translation><!-- SilverSmart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snap</masterLabel>
+            <translation><!-- Snap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solstice</masterLabel>
+            <translation><!-- Solstice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TinBoost</masterLabel>
+            <translation><!-- TinBoost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TinBoost+ CDMA</masterLabel>
+            <translation><!-- TinBoost+ CDMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Topaz</masterLabel>
+            <translation><!-- Topaz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra</masterLabel>
+            <translation><!-- Ultra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra M</masterLabel>
+            <translation><!-- Ultra M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra MAXX</masterLabel>
+            <translation><!-- Ultra MAXX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UrbanaSol</masterLabel>
+            <translation><!-- UrbanaSol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanquish</masterLabel>
+            <translation><!-- Vanquish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanquish MAXX</masterLabel>
+            <translation><!-- Vanquish MAXX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanquish/Vanquish MAXX Nav Dock</masterLabel>
+            <translation><!-- Vanquish/Vanquish MAXX Nav Dock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Whisper Module Licensing</masterLabel>
+            <translation><!-- Whisper Module Licensing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White OMTP Wired Headset</masterLabel>
+            <translation><!-- White OMTP Wired Headset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xfon</masterLabel>
+            <translation><!-- Xfon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xfon AFX</masterLabel>
+            <translation><!-- Xfon AFX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xplay</masterLabel>
+            <translation><!-- Xplay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xplus1</masterLabel>
+            <translation><!-- Xplus1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yangtze</masterLabel>
+            <translation><!-- Yangtze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yosemite Road iDEN</masterLabel>
+            <translation><!-- Yosemite Road iDEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zion Made in Brazil</masterLabel>
+            <translation><!-- Zion Made in Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iWhistler</masterLabel>
+            <translation><!-- iWhistler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xBLU</masterLabel>
+            <translation><!-- xBLU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>xEye</masterLabel>
+            <translation><!-- xEye --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The OKR belongs to this Quarter --></help>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- OKR belongs to this year --></help>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>OKR Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- GTM --></label>
+        <name>GTM</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Procurement --></label>
+        <name>Procurement</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Supports tickets for Apttus</description>
+    <frameHeight>600</frameHeight>
+    <hasSidebar>true</hasSidebar>
+    <label>Apttus Support</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom45: Ticket</motif>
+    <url>http://vhd.mot-mobility.com/sds_form.php?id=1292</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

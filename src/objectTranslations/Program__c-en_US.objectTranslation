@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Cost Current --></label>
+        <name>Application_Cost_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost High --></label>
+        <name>Application_Cost_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost Low --></label>
+        <name>Application_Cost_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOT Id --></label>
+        <name>MOT_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed &amp; Approved --></label>
+        <name>Reviewed_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW &amp; Apps Instructions --></label>
+        <name>SW_Apps_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stable this program is used by. If there are more than one stables using this program this field will be blank. --></help>
+        <label><!-- Stable --></label>
+        <name>Stable__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stables --></label>
+        <name>Stables__c</name>
+    </fields>
+    <fields>
+        <label><!-- FMD State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tech Team (MOT Id) --></label>
+        <name>Tech_Team_MOT_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tech Team --></label>
+        <name>Tech_Team__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Baseline</masterLabel>
+            <translation><!-- Baseline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total # of Applications on this Program --></help>
+        <label><!-- # of Apps --></label>
+        <name>of_Apps__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Royalty Costs --></label>
+            <section>Royalty Costs</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Royalty Costs --></label>
+            <section>Royalty Costs</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Base object to capture change request detail and early input from subject matter experts.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_Counter__c</fullName>
+        <description>Field used for gaining a grand summary of active records within dash board reporting.</description>
+        <externalId>false</externalId>
+        <formula>IF( Closed_Month__c =&quot;-&quot; , 1, 0)</formula>
+        <label>Active Counter</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Record_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Base Record ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Impact__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Impact</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Category_Manager_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Manager Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Category_Manager_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Category Manger to ensure the change is pertinent to the business.</description>
+        <externalId>false</externalId>
+        <label>Category Manager Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_Change_Requests2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Change_Description__c</fullName>
+        <description>Clear description of change including; comparison data and all historical data of similar approved changes (if available).</description>
+        <externalId>false</externalId>
+        <label>Change Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Change_Request_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Change Request Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Record</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eng Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Execution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eng Assessment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ECR Released</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting EOL Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Change_Type__c</fullName>
+        <description>Select the change type family that closest relates to the change request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EOL-if EOL last purchase date and last manufacture date to be visible
+Design- change leading to alteration of function
+Fab- Wafer fab for IC
+Location- final packaging or test of component
+Material- update of core materials used for production</inlineHelpText>
+        <label>Change Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2nd Source</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fab</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Material</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ship Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Month__c</fullName>
+        <description>Conversion of HCR Complete Date to MM-YYYY format.  For use in key metric reporting.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(MONTH(DATEVALUE(HCR_Complete_Date__c)))  &amp; &quot;-&quot; &amp;  TEXT (YEAR(DATEVALUE( HCR_Complete_Date__c  )))</formula>
+        <label>Closed Month</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Create_Month__c</fullName>
+        <description>Conversion of entry date to MM-YYYY format.  Field used for key volume metric.</description>
+        <externalId>false</externalId>
+        <formula>TEXT (YEAR( Entry_Date__c )) &amp; &quot;-&quot; &amp; IF( MONTH(Entry_Date__c )&lt;10, &quot;0&quot;&amp;TEXT( MONTH(Entry_Date__c )), TEXT( MONTH(Entry_Date__c )))</formula>
+        <label>Create Month</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Order__c</fullName>
+        <description>Sum of Month Number + Year Number to provide a proper list order within reports.</description>
+        <externalId>false</externalId>
+        <formula>MONTH( Entry_Date__c ) +  YEAR(Entry_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ECR_Approval_Date__c</fullName>
+        <description>Date ECR number was completed within MotoPDM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date ECR number was completed within MotoPDM</inlineHelpText>
+        <label>ECR Approval Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effected_Part_Numbers__c</fullName>
+        <description>Enter each effected part number separated by comma.</description>
+        <externalId>false</externalId>
+        <label>Effected Part Numbers</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <description>The &apos;need-by&apos; date provided by internal requester or supplier from Schedule Share PCN</description>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>Date request is released for approval, NOT just entered.</description>
+        <externalId>false</externalId>
+        <label>Entry Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Month__c</fullName>
+        <description>Number conversion for entry Date</description>
+        <externalId>false</externalId>
+        <formula>MONTH( Entry_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entry Month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Revenue__c</fullName>
+        <description>Estimated gross savings, revenue from supply shortage/avoidance, or savings/cost avoidance from quality improvement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated gross savings, revenue from supply shortage/avoidance, or savings/cost avoidance from quality improvement.</inlineHelpText>
+        <label>Estimated Revenue</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>External_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Request is externally generated</description>
+        <externalId>false</externalId>
+        <label>External Request</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Final_HCR_Status__c</fullName>
+        <description>Field for reporting the top most status of request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Change administrator to maintain throughout process.</inlineHelpText>
+        <label>Final HCR Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HCR_Complete_Date__c</fullName>
+        <description>Date stamp for tracking HCR record completion.</description>
+        <externalId>false</externalId>
+        <label>HCR Complete Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>HCR_Cycle_Time__c</fullName>
+        <description>Field recording the cycle time from HCR record creation to the time of setting Change Request stage to &apos;Complete&apos;</description>
+        <externalId>false</externalId>
+        <formula>IF(  ISBLANK( HCR_Complete_Date__c ) ,  NOW() - CreatedDate,  HCR_Complete_Date__c - CreatedDate)</formula>
+        <label>HCR Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HCR_Top_Status_Comment__c</fullName>
+        <description>Master comment field to track overall approval status.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Top status of approval, ensure to add road-blocks or critical dates to comments.  Important field for dashboard use.</inlineHelpText>
+        <label>HCR Top Status Comment</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Impacted_Components_and_Where_Use__c</fullName>
+        <description>Listing of component numbers and the impacted products</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Paste information from CRIS mass part report</inlineHelpText>
+        <label>Impacted Components and Where Use</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Internal_Request_Core_Id__c</fullName>
+        <description>Core Id for internal requester</description>
+        <externalId>false</externalId>
+        <label>Internal Request Core Id</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Request is internally generated.</description>
+        <externalId>false</externalId>
+        <label>Internal Request</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Requester_eMail__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Requester eMail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Manufacture_Date__c</fullName>
+        <description>If change type is EOL, enter the last manufacture date provided by supplier</description>
+        <externalId>false</externalId>
+        <label>Last Manufacture Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_PO_Date__c</fullName>
+        <description>If change type is EOL, enter the last accepted PO date.</description>
+        <externalId>false</externalId>
+        <label>Last PO Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MotoPDM_ECR_Number__c</fullName>
+        <description>ECR number associated with approval of the change.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ECR number associated with approval of the change.</inlineHelpText>
+        <label>MotoPDM ECR Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MotoPDM_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Member of the MotoPDM PCM team responsible for entry of the final ECR to track change acceptance.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Member of the MotoPDM PCM team responsible for entry of the final ECR to track change acceptance.</inlineHelpText>
+        <label>MotoPDM Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_Change_Requests4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Need_By__c</fullName>
+        <description>Initial date the change requester entered.  Effective date will be the &apos;living&apos; date when change is formally approved.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial date the change requester entered.  Effective date will be the &apos;living&apos; date when change is formally approved.</inlineHelpText>
+        <label>Original Need By:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Part_Category__c</fullName>
+        <description>Global part category</description>
+        <externalId>false</externalId>
+        <label>Part Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Batteries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Batteries/Coins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passives/Crystal Filters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crystal Filters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DLLO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrical, Packaging, Logistics &amp; Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logistics &amp; Repair Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repair Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mechanical &amp; Sub-Assemblies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acoustics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Antennas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flip &amp; Slider Assemblies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hinges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sheet Metal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Precision Stamping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extrusions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Die Casts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Die Cuts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keypads Stamped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flexes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastics/Paint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keypads/Rubber &amp; Die Cuts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCB/Rigid Flex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lens and Touch Panel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interconnects/Cables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LGF/EL Panel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Switches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keypads</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accessories/Companion Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLSI &amp; CDMA/iDEN—Qualcomm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLSI &amp; Common/SCT—Transceivers &amp; PA&apos;s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLSI &amp; GSM/UMTS—Micro-controllers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Strategy and MEM&apos;s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USB, GPS WLAN, NFC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Memory NAND &amp; Memory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Memory Cards, eMMC,  NOR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Imager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_1_Approval_Path__c</fullName>
+        <description>Approval path is a base line description of approval requirements.  See help text for detail.  Remember detail can be shared via comment section or attached document.</description>
+        <externalId>false</externalId>
+        <label>Product 1 Approval Path</label>
+        <picklist>
+            <controllingField>Product_1_Test_Required__c</controllingField>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Part</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve by Similarity</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineer Pilot + FLT</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Factory ALT + FLT</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLT Only</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_1_Eng_Comment__c</fullName>
+        <description>Supporting comments for product 1 validation plan, such as who will receive pilot XCVR.</description>
+        <externalId>false</externalId>
+        <label>Product 1 Eng Comment</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_1_Engineer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product engineer responsible for establishing HW validation plan, product 1.</description>
+        <externalId>false</externalId>
+        <label>Product 1 Engineer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_Change_Requests3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_1_Pilot_Qty__c</fullName>
+        <description>Number of engineering units required for assessment.</description>
+        <externalId>false</externalId>
+        <label>Product 1 Pilot Qty</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_1_Test_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is specific testing required for product 1.  If approval path is via similarity to other product, then box to remain unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only select test required if product level testing is absolutely necessary.  Rejection or qualification via similarity to other product testing does not warrant selection of this field.</inlineHelpText>
+        <label>Product 1 Test Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product utilizing a change request component.  Owned by product engineer 1.</description>
+        <externalId>false</externalId>
+        <label>Product 1</label>
+        <referenceTo>Device__c</referenceTo>
+        <relationshipLabel>HW Change Requests</relationshipLabel>
+        <relationshipName>HW_Change_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Request_Priority__c</fullName>
+        <description>Business priority as related to cost, quality, or supply continuity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Critical- significant cost avoidance, reduction, or good-to improvement.  Needed in &lt; 40 days.
+Moderate- significant cost avoidance, reduction, or good-to improvement.  Needed in &lt; 60 days.
+Low- common change request.  Needed in &lt; 90 days.</inlineHelpText>
+        <label>Request Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SC_Operations_Comment__c</fullName>
+        <description>Field for SC operations comment about EOL request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field size 255 characters.  Please enter brief comment.  If more detail required save a note or upload documentation at the bottom of this record.</inlineHelpText>
+        <label>SC Operations Comment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SC_Operations_Status__c</fullName>
+        <description>SC Operations field for highlighting acceptance/rejection of EOL notice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval will close this record and Schedule Share PCN without further processing.
+Rejection will reject this record and Schedule Share PCN without further processing.</inlineHelpText>
+        <label>SC Operations Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SDE_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>SDE Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SDE_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>SDE owner for category and supplier</description>
+        <externalId>false</externalId>
+        <label>SDE Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_Change_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SDE_Risk_Level_1__c</fullName>
+        <description>Highest possible risk to product performance or product quality.</description>
+        <externalId>false</externalId>
+        <label>SDE Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SME_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>SME Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SME_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Component/Category design expert.  Add to routing when change type is material or design related.</description>
+        <externalId>false</externalId>
+        <label>SME Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_Change_Requests1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SME_Risk_Level_1__c</fullName>
+        <description>Highest possible risk to product performance or product quality.</description>
+        <externalId>false</externalId>
+        <label>SME Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Contact_Name__c</fullName>
+        <description>First and Last Name of supplier contact</description>
+        <externalId>false</externalId>
+        <label>Supplier Contact Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Id__c</fullName>
+        <description>Supplier Id associated to change</description>
+        <externalId>false</externalId>
+        <label>Supplier Id</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Name__c</fullName>
+        <description>Supplier name associated to supplier id</description>
+        <externalId>false</externalId>
+        <label>Supplier Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_PCN__c</fullName>
+        <description>Supplier PCN from Schedule Share notification</description>
+        <externalId>false</externalId>
+        <label>Supplier PCN</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Phone__c</fullName>
+        <description>Internal requester or supplier contact phone number from PCN</description>
+        <externalId>false</externalId>
+        <label>Supplier Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_eMail__c</fullName>
+        <description>eMail of internal requester or supplier who released schedule share PCN</description>
+        <externalId>false</externalId>
+        <label>Supplier eMail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Base_Request_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE( Name , &quot;None Created&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>System Base Request Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HW Change Request  Base</label>
+    <listViews>
+        <fullName>ALL2</fullName>
+        <columns>Entry_Date__c</columns>
+        <columns>Request_Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>Change_Request_Stage__c</columns>
+        <columns>Supplier_Name__c</columns>
+        <columns>Change_Type__c</columns>
+        <columns>Part_Category__c</columns>
+        <columns>Supplier_Id__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <columns>Last_Manufacture_Date__c</columns>
+        <columns>Last_PO_Date__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>Effected_Part_Numbers__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Final_HCR_Status__c</field>
+            <operation>equals</operation>
+            <value>In Process</value>
+        </filters>
+        <label>ALL (open)</label>
+    </listViews>
+    <listViews>
+        <fullName>ALL_2013_2014_Qualcomm</fullName>
+        <columns>Entry_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>Final_HCR_Status__c</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>Change_Request_Stage__c</columns>
+        <columns>Supplier_Name__c</columns>
+        <columns>Part_Category__c</columns>
+        <columns>Change_Type__c</columns>
+        <columns>Supplier_Id__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Entry_Date__c</field>
+            <operation>greaterOrEqual</operation>
+        </filters>
+        <filters>
+            <field>Supplier_Id__c</field>
+            <operation>equals</operation>
+            <value>1009152</value>
+        </filters>
+        <label>ALL 2013_2014_Qualcomm</label>
+    </listViews>
+    <listViews>
+        <fullName>ALL_EOL_in_Process</fullName>
+        <columns>Supplier_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>Effected_Part_Numbers__c</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>Entry_Date__c</columns>
+        <columns>Last_PO_Date__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>Last_Manufacture_Date__c</columns>
+        <columns>SC_Operations_Comment__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <columns>Change_Request_Stage__c</columns>
+        <columns>Request_Priority__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Change_Type__c</field>
+            <operation>equals</operation>
+            <value>EOL</value>
+        </filters>
+        <filters>
+            <field>Final_HCR_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved,Rejected</value>
+        </filters>
+        <label>EOL in Process</label>
+    </listViews>
+    <listViews>
+        <fullName>ALL_HCR_In_Process_90_days</fullName>
+        <columns>Request_Priority__c</columns>
+        <columns>NAME</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <columns>Supplier_Name__c</columns>
+        <columns>Part_Category__c</columns>
+        <columns>Change_Type__c</columns>
+        <columns>Supplier_Id__c</columns>
+        <columns>Last_Manufacture_Date__c</columns>
+        <columns>Last_PO_Date__c</columns>
+        <columns>Effective_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Change_Request_Stage__c</field>
+            <operation>notEqual</operation>
+            <value>ECR Released,Complete</value>
+        </filters>
+        <filters>
+            <field>HCR_Cycle_Time__c</field>
+            <operation>lessThan</operation>
+            <value>90.1</value>
+        </filters>
+        <filters>
+            <field>Change_Type__c</field>
+            <operation>notEqual</operation>
+            <value>EOL</value>
+        </filters>
+        <label>ALL HCR In-Process &lt;90 days</label>
+    </listViews>
+    <listViews>
+        <fullName>ALL_HCR_not_complete</fullName>
+        <columns>NAME</columns>
+        <columns>Effected_Part_Numbers__c</columns>
+        <columns>Supplier_Name__c</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>SC_Operations_Comment__c</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <columns>Change_Request_Stage__c</columns>
+        <columns>Part_Category__c</columns>
+        <columns>Change_Type__c</columns>
+        <columns>Request_Priority__c</columns>
+        <columns>Impacted_Components_and_Where_Use__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Change_Request_Stage__c</field>
+            <operation>notEqual</operation>
+            <value>ECR Released,Complete</value>
+        </filters>
+        <filters>
+            <field>Change_Type__c</field>
+            <operation>notEqual</operation>
+            <value>EOL</value>
+        </filters>
+        <label>ALL HCR In-Process (non EOL)</label>
+    </listViews>
+    <listViews>
+        <fullName>Fairchild_PCN</fullName>
+        <columns>NAME</columns>
+        <columns>Effected_Part_Numbers__c</columns>
+        <columns>Supplier_Name__c</columns>
+        <columns>Supplier_PCN__c</columns>
+        <columns>HCR_Cycle_Time__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>SC_Operations_Comment__c</columns>
+        <columns>HCR_Top_Status_Comment__c</columns>
+        <columns>Change_Request_Stage__c</columns>
+        <columns>Part_Category__c</columns>
+        <columns>Change_Type__c</columns>
+        <columns>Request_Priority__c</columns>
+        <columns>Impacted_Components_and_Where_Use__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Supplier_Name__c</field>
+            <operation>contains</operation>
+            <value>Fairchild</value>
+        </filters>
+        <filters>
+            <field>Change_Request_Stage__c</field>
+            <operation>notEqual</operation>
+            <value>ECR Released,Complete</value>
+        </filters>
+        <filters>
+            <field>Change_Type__c</field>
+            <operation>notEqual</operation>
+            <value>EOL</value>
+        </filters>
+        <label>Fairchild PCN</label>
+    </listViews>
+    <nameField>
+        <displayFormat>HCR-{0000000}</displayFormat>
+        <label>HW Change Request  Base Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW Change Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Change_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Change_Request_Stage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Change_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Effective_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Entry_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Request_Priority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_Contact_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_eMail__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier_PCN__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Change_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Change_Request_Stage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Change_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Entry_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Effective_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Request_Priority__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Change_Request_Stage__c</searchFilterFields>
+        <searchFilterFields>Change_Type__c</searchFilterFields>
+        <searchFilterFields>Effective_Date__c</searchFilterFields>
+        <searchFilterFields>External_Request__c</searchFilterFields>
+        <searchFilterFields>Part_Category__c</searchFilterFields>
+        <searchResultsAdditionalFields>Change_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Change_Request_Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier_PCN__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Priority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Change_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Effective_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Entry_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>External_Request__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Internal_Request__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Schedule_Share</fullName>
+        <availability>online</availability>
+        <description>Link to Schedule Sharing for gathering supplier information</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Schedule Share</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://shamu.mot-mobility.com/</url>
+    </webLinks>
+</CustomObject>

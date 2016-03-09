@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deals</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Currency</value>
+        </caseValues>
+        <name>quote_currency</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Division</value>
+        </caseValues>
+        <name>quote_division</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Deal Fields</value>
+        </caseValues>
+        <name>quote_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal ID</value>
+        </caseValues>
+        <name>quote_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Information</value>
+        </caseValues>
+        <name>quote_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Name</value>
+        </caseValues>
+        <name>quote_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Number</value>
+        </caseValues>
+        <name>quote_number</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To</value>
+        </caseValues>
+        <name>quote_quoteto_address</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To City</value>
+        </caseValues>
+        <name>quote_quoteto_city</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Country</value>
+        </caseValues>
+        <name>quote_quoteto_country</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Country Code</value>
+        </caseValues>
+        <name>quote_quoteto_country_code</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Latitude</value>
+        </caseValues>
+        <name>quote_quoteto_latitude</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Longitude</value>
+        </caseValues>
+        <name>quote_quoteto_longitude</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Name</value>
+        </caseValues>
+        <name>quote_quoteto_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To State/Province</value>
+        </caseValues>
+        <name>quote_quoteto_state</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To State/Province Code</value>
+        </caseValues>
+        <name>quote_quoteto_state_code</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Street</value>
+        </caseValues>
+        <name>quote_quoteto_street</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal To Zip/Postal Code</value>
+        </caseValues>
+        <name>quote_quoteto_zip</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Deal Record Types</value>
+        </caseValues>
+        <name>quote_record_type</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Deal - Admin Layout</layout>
+        <sections>
+            <label><!-- Required to Submit for Approval --></label>
+            <section>Required to Submit for Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker Terms --></label>
+            <section>Value Maker Terms</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deal Layout</layout>
+        <sections>
+            <label><!-- Required to Submit for Approval --></label>
+            <section>Required to Submit for Approval</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deal Layout - Admin</layout>
+        <sections>
+            <label><!-- Required to Submit for Approval --></label>
+            <section>Required to Submit for Approval</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Quote Layout</layout>
+        <sections>
+            <label><!-- Required to Submit for Approval --></label>
+            <section>Required to Submit for Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker Terms --></label>
+            <section>Value Maker Terms</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

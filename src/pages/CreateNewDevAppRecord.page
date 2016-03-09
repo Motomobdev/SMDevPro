@@ -1,0 +1,42 @@
+<apex:page standardController="DeviceApplicationAssoc__c" recordSetVar="DeviceApplicationAssoc__c" extensions="CreateNewDevAppRecord" tabStyle="DeviceApplicationAssoc__c">
+    <apex:form id="theForm">
+    <apex:sectionHeader title="Add Application to Device"/>
+    <apex:pageMessage rendered="{!showSystemException}" strength="2" summary="The action could not be completed. System Error: {!SystemException}" severity="error" />
+    <apex:pageMessage rendered="{!isThisADevAppDuplicate}" strength="2" summary="This Device Application record already exists." severity="error" />
+    <apex:pageMessage rendered="{!!AreAllMatricesCreated}" strength="3" summary="This Device does NOT have its Matrices. Please create them before continuing." severity="error" />
+    <apex:pageMessage rendered="{!IsDeviceSWBOMApproved}" strength="3" summary="This Device's SW BOM has already been Reviewed and Approved. You cannot add new App's to it unless you reset SW BOM Reviewed and Approved." severity="error" />
+    <apex:pageMessage rendered="{!IsAppPostload}" strength="2" summary="The selected Application is a Postload and cannot be added to a Device." severity="error" />
+    <apex:pageMessage rendered="{!isThisAppNotAvailableForUse}" strength="2" summary="The selected Application has been marked as unavailable for use." severity="error" />
+    <apex:pageMessage rendered="{!!DoesApplicationHaveContract}" strength="2" summary="The selected Application does not have a governing Contract. Contact the partner manager {!partnerManager} to attach a Contract to the Application" severity="error" />
+    <!--<apex:pageMessage rendered="{!doesCountryMatch}" strength="2" summary="" severity="error" />-->
+
+    <apex:pageBlock >
+                <apex:pageBlockSection columns="2" collapsible="false">        
+            <apex:inputField value="{!DevApp.Device__c}"/>
+            <apex:inputField value="{!DevApp.Application__c}"/>
+            <apex:inputField value="{!DevApp.Include_in_BOM__c}"/>
+            <apex:inputField value="{!DevApp.Include_on_SD_Card__c}"/>            
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel >Specific Requirements</apex:outputLabel>
+            <apex:inputTextarea cols="50" rows="3" value="{!DevApp.Specific_Requirements__c}"/>        
+            </apex:pageBlockSectionItem>
+            <apex:inputField value="{!DevApp.DevApp_Item_Effective_Date__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+<!--
+**THIS Command Link styled as a button allows you to to call method and post parameter so that controller can get value
+            <apex:commandLink styleClass="btn" action="{!save}" value="Save">
+                <apex:param name="saveOption" value="1" />
+            </apex:commandLink>
+            
+-->         
+            <apex:commandButton action="{!save}" value="Save"/>      
+            <apex:commandButton action="{!saveAndCreateNewDevApp}" value="Save & New"/>   
+            <apex:commandButton action="{!saveAndSubmit}" value="Save & Submit"/>
+            <apex:commandButton action="{!saveAndSubmitAndCreateNewDevApp}" value="Save, Submit & New"/>            
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>  
+    </apex:form>
+
+</apex:page>

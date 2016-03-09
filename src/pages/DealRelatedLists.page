@@ -1,0 +1,111 @@
+<apex:page controller="DealViewController" tabStyle="Opportunity" showHeader="false">
+    <apex:form >
+        <c:ModalWaitingSpinner title="" message=""/>
+        <apex:pageBlock >
+            <apex:pageBlockSection collapsible="false" title="Attachments" columns="1" rendered="{!availableAttachments.size > 0}" >
+                <apex:pageblockTable value="{!availableAttachments}" var="attachment" border="1" width="705px">
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                            <center> Name</center>
+                        </apex:facet>
+                        <apex:outputfield value="{!attachment.Name}" style="text-align:center"/>
+                    </apex:column>
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                            <center> File</center>
+                        </apex:facet>
+                        <a href="/servlet/servlet.FileDownload?file={!attachment.id}" download="{!attachment.name}">{!attachment.name}</a>
+                    </apex:column>
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                            <center> Created Date</center>
+                        </apex:facet>
+                        <apex:outputfield value="{!attachment.CreatedDate}" style="text-align:center"/>
+                    </apex:column>       
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection collapsible="false" title="Deal Notes" columns="1" rendered="{!availableNotes.size > 0}" >
+                <apex:pageblockTable value="{!availableNotes}" var="note" border="1" width="705px" id="NotesTab">
+                    <apex:column style="text-align:center" width="30pt">
+                        <apex:facet name="header">
+                            <center></center>
+                        </apex:facet>
+                        <apex:commandLink action="{!notesPopUp}" value="Edit" id="EditLink" rerender="results"
+                          onclick="setTitle('Please Wait');setMessage('Opening Edit View...');showModal();" oncomplete="hideModal();">
+                            <apex:param value="{!note.id}" name="noteId"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                            <center> Title</center>
+                        </apex:facet>
+                        <apex:commandLink action="{!notesPopUp}" value="{!note.Title}" id="noteTitle" rerender="results"
+                            onclick="setTitle('Please Wait');setMessage('Opening Note...');showModal();" oncomplete="hideModal();">
+                            <apex:param value="{!note.id}" name="noteId"></apex:param>
+                            <apex:param name="Editable" value="True" ></apex:param>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                           <center> Created By</center>
+                        </apex:facet>
+                        <apex:outputfield value="{!note.CreatedById}" style="text-align:center"/>
+                    </apex:column> 
+                    <apex:column style="text-align:center" width="150pt">
+                        <apex:facet name="header">
+                                <center> Created Date</center>
+                        </apex:facet>
+                        <apex:outputfield value="{!note.CreatedDate}" style="text-align:center"/>
+                    </apex:column>       
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="results"> 
+            <apex:outputPanel id="popInnerOutputPnl" styleClass="customPopup" layout="block" rendered="{!notesPopUpShow}">
+                <style type="text/css">
+                    .customPopup 
+                    {
+                        background-color: white;
+                        border-style: solid;
+                        border-width: 2px;
+                        left: 25%;
+                        padding: 10px;
+                        position: absolute;
+                        z-index: 9999;
+                        /* These are the 3 css properties you will need to tweak so the pop 
+                        up displays in the center of the screen. First set the width. Then set 
+                        margin-left to negative half of what the width is. You can also add 
+                        the height property for a fixed size pop up.*/
+                        width: 800px;
+                        top: 5%;
+                    }     
+                </style>
+                <apex:pageBlock title="Note">  
+                    <apex:pageBlockButtons >
+                        <apex:commandButton action="{!saveNote}" value="Save" reRender="NotesTab, results, summaryNotes,executiveNotes" rendered="{!Not(editModeNote)}"
+                        onclick="setTitle('Please Wait');setMessage('Saving...');showModal();" oncomplete="hideModal();textNotes();"/>
+                        <apex:commandButton action="{!closenotesPopUp}" value="{!IF(Not(editModeNote),'Cancel','Close')}" reRender="results"
+                        onclick="setTitle('Please Wait');setMessage('Closing...');showModal();" oncomplete="hideModal();"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+                        <apex:pageBlockSectionItem >
+                          <apex:outputLabel value="Is Private" for="Private"/>
+                          <apex:inputCheckbox value="{!note.isPrivate}" id="Private" disabled="{!IF(Not(editModeNote),false,true)}"/>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                          <apex:outputLabel value="Title" for="title"/>
+                          <apex:inputText value="{!note.Title}" id="title" disabled="{!IF(Not(editModeNote),false,true)}"/>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                          <apex:outputLabel value="Body" for="body"/>
+                          <apex:inputTextarea value="{!note.body}" id="body" cols="80" rows="18" readonly="{!IF(Not(editModeNote),false,true)}"/>
+                        </apex:pageBlockSectionItem>
+
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel> 
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,197 @@
+<apex:page controller="SSC_DirectMaterialScoreCard" tabStyle="Account" sidebar="false" contentType="application/pdf" renderAs="pdf">
+    <apex:form >
+        <apex:pageBlock title="DM Scorecard"  >Score Card Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;
+            <apex:outputLabel value=" {!ScoreCard_Type }"></apex:outputLabel>
+            <br/>Supplier Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;
+            <apex:outputLabel value=" {!SelectedSupplier}"></apex:outputLabel>
+            <br/>Oracle Customer Number :&nbsp;&nbsp;
+            <apex:outputLabel value="     {!SupplierName}"></apex:outputLabel>
+            <br/>Score Card Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+            <apex:outputLabel value="  {!Dates}"></apex:outputLabel>
+            <br/>
+            <apex:panelGrid width="100%" columns="1" >
+                <apex:pageBlock >
+                    <h2> Level 1 Metrics </h2>
+                    <br/>   <br/> 
+                    <TABLE border="1" cellpadding="4" cellspacing="0" style="margin:0px auto;" width="100%" >
+                        <thead styleClass="controls" height="100%" cellpadding="4" cellspacing="0" width="100%" >
+                            <tr>
+                                <td height="20"  class="tblhead"   width ="15%" align="center" >Metric</td>
+                                <td  class="tblhead"  height="20"  width ="15%"  align="center" >Target Score</td>
+                                <td class="tblhead"  colspan="2" height="20"  width ="15%" align="center">Prior Qtr Scorecard</td>
+                                <td   class="tblhead"  colspan="2"   height="20"  width ="15%" align="center" >Current Qtr Scorecard</td>
+                            </tr>
+                        </thead>
+                        <tbody  >
+                            <apex:repeat value="{!TempWrapObject }" var="contact">
+                                <apex:repeat value="{!contact.MetricsList}" var="s">
+                                    <tr>
+                                        <td height="20"  width ="20%" align="center" >
+                                            {!s['Name']} 
+                                        </td>
+                                        <td height="20"  width ="20%" align="center" >
+                                            {!s['Target_Score__c']} % 
+                                        </td>
+                                        <td height="20"  width ="20%" align="center" >
+                                        <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(contact.MetricScoreMap[s['Name']],2)}" /></apex:outputText>%
+                                         </td>
+                                        <td style="background-color:{!contact.ColorList[s['Name']]}" > </td>
+                                        <td height="20"  width ="20%" align="center" >
+                                        <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(contact.mapToScore[s['Name']],2)}" /></apex:outputText>%   
+                                          </td>
+                                        <td style="background-color:{!contact.color[s['Name']]}"></td>
+                                    </tr>
+                                </apex:repeat>
+                            </apex:repeat>
+                            <tr>
+                                <td height="20" style="font-weight:bold;"   width ="20%" align="center" >Overall Score</td>
+                                <td height="20"  style="font-weight:bold;"  width ="20%" align="center" >
+                                <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(PriorQtrSum,2)}" /></apex:outputText>%
+                               </td>
+                                <td height="20" style="font-weight:bold;"   width ="20%" align="center" > 
+                                <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(MetricScoreMap['Overall'],2)}" /></apex:outputText>%
+                                 </td>
+                                <td  style="background-color:{!Colorforoverall1['Overall']}" ></td>
+                                <td height="20"  style="font-weight:bold;"  width ="20%" align="center" > 
+                                <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(mapToScore['Overall'],2)}" /></apex:outputText>%
+                                </td>
+                                <td  style="background-color:{!Colorforoverall['Overall']}"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </apex:pageblock>
+                <br/>   <br/> 
+                <apex:pageblock >
+                    <h2> Level 2 Sub Metrics </h2>
+                    <br/>   <br/> 
+                    <TABLE border="1"  style="margin:0px auto;" cellpadding="4" cellspacing="0" width="100%" >
+                        <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                            <tr>
+                                <td   class="tblhead"    height="20"  width ="20%" align="center" >Metric</td>
+                                <td    class="tblhead"   height="20"  width ="20%"  align="center" >Target Score</td>
+                                <td   class="tblhead"   colspan="2" height="20"   width ="20%" align="center">Prior Qtr Score</td>
+                                <td  class="tblhead"    colspan="2" height="20"   width ="20%" align="center" >Current Qtr Score</td>
+                            </tr>
+                        </thead>
+                        <apex:repeat value="{!TempWrapObject }" var="contact">
+                            <apex:repeat value="{!contact.CurrentScoringGuide }" var="dd">
+                                <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                                    <tr width ="100%">
+                                        <th colspan="6" width="100%">
+                                            <apex:outputText value="{!dd}"  ></apex:outputText>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody  >
+                                    <apex:repeat rendered="{!IF((dd!=account8[0].Metric_Name__r.Name),false,true)}" value="{!submetric}" var="x">
+                                        <tr>
+                                            <td  height="20"  width ="33%" align="Center" >
+                                                <apex:outputText value="{!x.name}" />
+                                            </td>
+                                            <td  height="20"  width ="10%" align="center" >
+                                                <apex:outputText value="{!x.TargetScore__c } %" />
+                                            </td>
+                                            <td  height="20"  width ="10%" align="center">  {!TempWrapObject .SubMetricMaptoScore[x.name]}%</td>
+                                            <td   width ="10%" style="background-color:{!TempWrapObject .L3SubMetricColor[x.name]}"></td>
+                                            <td  height="20"  width ="10%" align="center" > {!TempWrapObject .L3SubMetricMaptoScore[x.name]}%</td>
+                                            <td  width ="10%" style="background-color:{!TempWrapObject .PreviousQtrMetricColor[x.name]}" ></td>
+                                        </tr>
+                                    </apex:repeat>
+                                    <apex:repeat rendered="{!IF((dd!=account8[0].Metric_Name__r.Name),true,false)}" value="{!contact.CurrentScoringGuide [dd]}" var="z" >
+                                        <tr>
+                                            <td  height="20" value=""  width ="33%" align="center" >
+                                                <apex:outputText value="{!IF((z.SubMetric_Name__r.Metric_Name__r.Name!=account8[0].Metric_Name__r.Name),z.SubMetric_Name__r.Name,'')}" />
+                                            </td>
+                                            <td  height="20"  width ="10%"  align="center" >{!z.SubMetric_Name__r.TargetScore__c } %</td>
+                                            <td    width ="10%" align="center">
+                                                <apex:repeat value="{!contact.PriorQtrMetricData[dd]}" var="zz" >
+                                                   <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(IF((z.SubMetric_Name__r.Name=zz.SubMetric_Name__r.Name),Round(zz.Score__c,2),''),2)}" /></apex:outputText>
+                                                   
+                                                    
+                                                </apex:repeat>%
+                                            </td>
+                                            <td   width ="10%" style="background-color:{!TempWrapObject .MetricColor[z.SubMetric_Name__r.Name]}"></td>
+                                            <td  height="20"   width ="10%" align="center" >{!z.Score__c }%</td>
+                                            <td    width ="10%" style="background-color:{!TempWrapObject .SubMetricColor[z.SubMetric_Name__r.Name]}"  >  </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </apex:repeat>
+                        </apex:repeat>
+                    </table>
+                </apex:pageblock>
+                <br/>   <br/>  <br/>  <br/>
+                <apex:pageblock >
+                    <h2> Level 3 Sub Metrics </h2>
+                    <br/>   <br/> 
+                    <TABLE border="1"   style="margin:0px auto;" cellpadding="4" cellspacing="0" width="100%" >
+                        <thead styleClass="controls" height="100%" cellpadding="4" cellspacing="0" width="100%" >
+                            <tr>
+                                <td height="20"  class="tblhead"    width ="20%" align="center" >Metric</td>
+                                <td   class="tblhead"   height="20"  width ="20%"  align="center" >Target Score</td>
+                                <td    class="tblhead"   colspan="2" height="20"  width ="20%" align="center">Prior Qtr Score</td>
+                                <td  class="tblhead"    colspan="2"  height="20"  width ="20%" align="center" >Current Qtr Score</td>
+                            </tr>
+                        </thead>
+                        <apex:repeat value="{!TempWrapObject .PriorQtrSubMetricData}" var="contact">
+                            <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                                <tr>
+                                    <th colspan="6" width="100%">
+                                        <apex:outputText value="{!contact}"  ></apex:outputText>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody  >
+                                <apex:repeat value="{!TempWrapObject .PriorQtrSubMetricData[contact]}" var="z" >
+                                    <tr>
+                                        <td  height="20"  width ="33%" align="center" >
+                                            <apex:outputText value="{!z.L3SubMetricName__c}" />
+                                            <br/>
+                                        </td>
+                                        <td  height="20"  width ="10%"  align="center" >
+                                            <apex:repeat value="{! TempWrapObject .L3Submetricslist}" var="zz" >
+                                                <apex:outputText value="{!IF((zz.Name=z.L3SubMetricName__c),zz.Target_Score__c,'')}"></apex:outputText>
+                                            </apex:repeat> %
+                                        </td>
+                                        <td   height="20"   width ="13%" align="center">
+                                            <apex:repeat value="{! TempWrapObject .PriorQtrL3SubMetricData}" var="zz1" >
+                                                <apex:repeat value="{! TempWrapObject .PriorQtrL3SubMetricData[zz1]}" var="zz2" >
+                                                    <apex:outputText value="{!IF((ZZ2.L3SubMetricName__c==z.L3SubMetricName__c), zz2.Score__c ,'')   }"></apex:outputText>
+                                                </apex:repeat>
+                                            </apex:repeat>%
+                                        </td>
+                                        <td width ="10%"  style="background-color:{!TempWrapObject .PreviousQtrSubMetricColor[z.L3SubMetricName__c]}">
+                                        </td>
+                                        <td  height="20"   width ="13%" align="center" >{!z.Score__c }%</td>
+                                        <td  width ="10%"  style="background-color:{!TempWrapObject .PreviousL3SubMetricColor[z.L3SubMetricName__c]}"> </td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </apex:repeat>
+                    </table>
+                </apex:pageBlock>
+                <apex:pageBlock >
+                    <h2>Scoring Guide</h2>
+                    <br/>   <br/> 
+                    <TABLE border="1"    style="margin:0px auto;align:center" cellpadding="4" cellspacing="0" width="100%" >
+                        <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                            <tr>
+                                <td   height="20"   class="tblhead"    colspan="2" width ="20%" align="center" > Scoring Grade</td>
+                            </tr>
+                        </thead>
+                        <apex:repeat value="{!CurrentScoringGuide }" var="contact">
+                            <tbody  >
+                                <tr>
+                                    <td  height="20"  width ="20%" align="center" > {!contact.Min__c} % -- {!contact.Max__c} %</td>
+                                    <td  height="20"  width ="20%"  align="center"   style="background-color:{!contact.ColorGrade__c};">  {!contact.Caption__c}</td>
+                                </tr>
+                            </tbody>
+                        </apex:repeat>
+                    </table>
+                    <br/>     <br/>   
+                    <br/> <br/>
+                </apex:pageBlock>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

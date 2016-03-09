@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stable Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stable Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Source Id --></label>
+        <name>Application_Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Stable Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Current --></label>
+        <name>Cost_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Stable Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SFID_App --></label>
+        <name>SFID_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stable App Status --></label>
+        <name>Stable_App_Status__c</name>
+        <picklistValues>
+            <masterLabel>Candidate</masterLabel>
+            <translation><!-- Candidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mandatory</masterLabel>
+            <translation><!-- Mandatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stable --></label>
+        <name>Stable__c</name>
+        <relationshipLabel><!-- Stable Applications --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Stable Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

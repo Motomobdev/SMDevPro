@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Anticipated_Contract_Closure_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated Contract Closure Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Anticipated_SW_Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When will this Software be delivered?</inlineHelpText>
+        <label>Anticipated SW Delivery Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipName>Service_Type_Applications1</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Approved_for_inclusion_in_Games_Showcase__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto calculated field, based on MMI and Partner approval.  Once both sides approve, this field will be automatically set to &quot;Yes&quot;</inlineHelpText>
+        <label>Final Approved for Inclusion in Bundle</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Application_Contract_Governing_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Let_Expire__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Application_Contract_Let_Expire__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract - Let Expire</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Phase__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Application_Contract_Phase__c</formula>
+        <label>Contract Phase</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Differentiation__c</fullName>
+        <externalId>false</externalId>
+        <label>Differentiation</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MMI_Approval_for_Games_Showcase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this app approved yet by MMI, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this app approved yet by MMI, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion)</inlineHelpText>
+        <label>MMI Approval for for Bundle?</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Approval_for_Games_Showcase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this app approved yet by the Partner, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this app approved yet by the Partner, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion)</inlineHelpText>
+        <label>Partner Approval for Bundle?</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Attribute__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Application__r.Royalty_Payment_Attribute__c)</formula>
+        <label>Royalty Attribute</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Royalty_Current__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Royalty_Current__c</formula>
+        <label>Royalty Current</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_High__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Royalty_High__c</formula>
+        <label>Royalty High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Low__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Royalty_Low__c</formula>
+        <label>Royalty Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SWBundle_App_Item_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(and((Contract_End_Date__c &gt;= TODAY()+15),(Contract_Phase__c = &apos;Execution and Processing&apos;)), &apos;State 35&apos;, &apos;State 12&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SWBundle-App Item State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Bundle</label>
+        <referenceTo>SW_Bundle__c</referenceTo>
+        <relationshipLabel>SW Bundle Applications</relationshipLabel>
+        <relationshipName>Service_Type_Applications1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>SW Bundle Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ST-{000000000}</displayFormat>
+        <label>SW Bundle Application Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SW Bundle Applications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

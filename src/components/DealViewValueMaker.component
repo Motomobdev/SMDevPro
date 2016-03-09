@@ -1,0 +1,286 @@
+<apex:component >
+    <apex:attribute name="sdflabel" type="String" description="TODO: Describe me"/>
+    <apex:attribute name="totalItemCount" type="Integer" description="Total Item Count" />
+    <apex:attribute name="lineItemCount" type="Integer" description="Line Item Count" />
+    <apex:attribute name="lineItemColumns" type="lineItemCol[]" description="Line Item Columns" />
+    <apex:attribute name="totalColumns" type="totalCol[]" description="" />
+    <apex:attribute name="isExcelRender" type="Boolean" description="" />
+    <apex:attribute name="inApprovalProccess" type="Boolean" description="" />
+    <apex:attribute name="visibleOrNotSDF" type="Boolean" description="" />
+        
+    <table cellpadding="0" cellspacing="0" border="0" class="dataTable" >
+        <tr>
+            <td class="section-header" colspan="{!1+(3*lineItemCount)+(3*totalItemCount)}">Proposal Per Unit</td>
+        </tr>
+        <!--  BEGIN PRODUCT DISPLAY-->
+        <tr class="pad-top">
+                            <td></td>
+                            <td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="prod-header-vm" colspan="1">
+                                    <span> {!l.year}</span><br/>
+                                    <span> {!l.quarter}</span><br/>
+                                    <span> {!l.name}</span><br/>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                         <!--   <apex:repeat value="{!totalColumns}" var="l">
+                                <td class="prod-header total" colspan="2">
+                                    <span>{!l.year}</span><br/>
+                                    <span>{!l.quarter}</span><br/>
+                                    <span>Totals</span><br/>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>     -->                      
+                         </tr>
+                        <tr></tr>
+                        <!--  END PRODUCT DISPLAY-->
+                        <!--  BEGIN HEADER FIELDS-->
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Portfolio Segment</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{!l.cwvLineItem.Product_Portfolio_Segment__c}"/>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{!l.cwvLineItem.Product_Portfolio_Segment__c}"/>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Charger In-box</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{!l.cwvLineItem.Charger_In_Box__c}"/>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{!l.cwvLineItem.Charger_In_Box__c}"/>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label"># of Free Units</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{!l.cwvLineItem.Free_Units_Quantity__c}"/>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{!l.cwvLineItem.Free_Units_Quantity__c}"/>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Seedstock in MCPU</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{!l.cwvLineItem.Seedstock__c}" />
+                                    <apex:outputText rendered="{!isExcelRender}" value="{!l.cwvLineItem.Seedstock__c}" />
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Estimated Product DM/unit</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">
+                                        <apex:param value="{!l.cwvLineItem.Product_Direct_Material_Cost__c}"/>
+                                    </apex:outputText> 
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">
+                                        <apex:param value="{!l.cwvLineItem.Product_Direct_Material_Cost__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>                       
+                        <!--  END HEADER -->
+                        <!--  BEGIN VM UNIT TABLE -->
+                        <tr>
+                            <td class="section-header operator" colspan="{!1+(3*lineItemCount)+(3*totalItemCount)}" style="font-weight:bold;font-size:1.2em;text-transform:uppercase;border-bottom:1px solid #000;padding-top: 20px;">VM Unit Impact</td>
+                            <td></td>
+                        </tr> 
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Payment Terms</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">
+                                        <apex:param value="{!l.cwvLineItem.Payment_Terms__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Payment_Terms__c}"/>
+                                    </apex:outputText> 
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>                     
+                       <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Warranty Terms</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Warranty_Terms__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Warranty_Terms__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">InBox Adders</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.In_Box_Adjustments__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.In_Box_Adjustments__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Free Units</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">     
+                                        <apex:param value="{!l.cwvLineItem.Free_Units_Cost__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Free_Units_Cost__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Forecast</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Forecast__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Forecast__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                         <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Other</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Other__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">      
+                                        <apex:param value="{!l.cwvLineItem.Other__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                         <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Value Maker Total</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText rendered="{!NOT(isExcelRender)}" value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.VM_Unit_Total__c}"/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!isExcelRender}" value="{0, number, $###,##0.00}">     
+                                        <apex:param value="{!l.cwvLineItem.VM_Unit_Total__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>                       
+                        <!--  END PER UNIT -->
+                        
+                        <!--  BEGIN TOTAL TABLE -->
+                        <!--start of lower table-->
+                        <tr>
+                            <td class="section-header operator" colspan="{!1+(3*lineItemCount)+(3*totalItemCount)}" style="font-weight:bold;font-size:1.2em;text-transform:uppercase;border-bottom:1px solid #000;padding-top: 20px;">TOTAL</td>
+                            <td></td>
+                        </tr> 
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Payment Terms</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV total">
+                                    <apex:outputText value="{0, number, $###,##0.00}">
+                                        <apex:param value="{!l.cwvLineItem.Payment_Terms__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat> 
+                        </tr>                     
+                       <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Warranty Terms</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Warranty_Terms__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">InBox Adders</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText value="{0, number, $###,##0.00}">     
+                                        <apex:param value="{!l.cwvLineItem.In_Box_Adjustments__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Free Units</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Free_Units_Cost__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                        <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Forecast</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Forecast__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                         <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Other</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                     <apex:outputText value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.Other__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>
+                         <tr class="single-underscore" style="border-bottom:1px solid #000;">
+                            <td class="data-row-label">Value Maker Total</td><td></td>
+                            <apex:repeat value="{!lineItemColumns}" var="l">
+                                <td class="currency-cell showHideCWV">
+                                    <apex:outputText value="{0, number, $###,##0.00}">    
+                                        <apex:param value="{!l.cwvLineItem.VM_Unit_Total__c*l.cwvLineItem.Units__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-sep"></td>
+                            </apex:repeat>
+                        </tr>   
+ 
+    </table>
+</apex:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Submit_IT_Ticket</links>
+    <links>Request_New_Account</links>
+    <links>GTM_New_User_Training</links>
+    <links>GTM_Advanced_Training</links>
+    <links>Deal_Training</links>
+    <links>Salesforce_com_Help</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

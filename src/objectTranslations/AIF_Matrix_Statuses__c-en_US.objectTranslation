@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AIF Matrix Statuses</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AIF Matrix Statusess</value>
+    </caseValues>
+    <fields>
+        <label><!-- AIF Approval Matrix ID --></label>
+        <name>AIF_Approval_Matrix_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIF Status --></label>
+        <name>AIF_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Manager --></label>
+        <name>AppMgr_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (Application Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AppMgr Status --></label>
+        <name>AppMgr_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- ApplicationName --></label>
+        <name>ApplicationName__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DTS Approver --></label>
+        <name>DTS_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (DTS Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DTS Status --></label>
+        <name>DTS_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeviceName --></label>
+        <name>DeviceName__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device Application --></label>
+        <name>Device_Application__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FMD Approver --></label>
+        <name>FMD_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (FMD Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FMD Status --></label>
+        <name>FMD_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Approver --></label>
+        <name>Finance_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (Finance Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Finance Status --></label>
+        <name>Finance_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB Approver --></label>
+        <name>LRB_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (LRB Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LRB Status --></label>
+        <name>LRB_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- PartnerMgr Approver --></label>
+        <name>PartnerMgr_Approver__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (PartnerMgr Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PartnerMgr Status --></label>
+        <name>PartnerMgr_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor Status --></label>
+        <name>Requestor_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+        <relationshipLabel><!-- AIF Matrix Statusess (Requestor) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>AIF Matrix Statuses Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

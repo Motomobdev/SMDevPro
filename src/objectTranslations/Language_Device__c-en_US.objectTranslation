@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Language Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Language Devices</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please add all devices that are supported by this language. --></help>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Languages Supported --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please select all languages supported by this device --></help>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <relationshipLabel><!-- Devices Supported --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Language Device Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

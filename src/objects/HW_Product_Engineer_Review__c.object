@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object housing &apos;PE&apos; (Product Engineer) records.  These records associate base change (HCR) records to product families, and the current engineering owner.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ALT_Lab__c</fullName>
+        <description>Select location for ALT.  If other, relay detail in the HW distribution comments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select location for ALT.  
+Enter the owner core-id or name responsible for submitting ALT in HW distribution comments.
+If &apos;other&apos; location, relay detail in the HW distribution comments.</inlineHelpText>
+        <label>ALT Lab</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tianjin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Libertyville</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foxconn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ALT_Qty__c</fullName>
+        <description>Quantity to ship to ALT lab.  This can include more than standard 16 units if additional lab testing required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity to ship to ALT lab.  This can include more than standard 16 units if additional lab testing required.</inlineHelpText>
+        <label>ALT Qty</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Path__c</fullName>
+        <description>High level description of the path needed for change approval</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approve by Data= SDE/SME review and approval only
+Approve by Similarity = approval via testing completed on other product
+Factory FLT = shippable control build for use in monitoring test performance/stability
+Engineer Pilot = qty needed by engineer</inlineHelpText>
+        <label>Approval Path</label>
+        <picklist>
+            <controllingField>Test_Required__c</controllingField>
+            <picklistValues>
+                <fullName>Engineer Pilot + Factory FLT</fullName>
+                <controllingFieldValues>Yes</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Factory ALT + Factory FLT</fullName>
+                <controllingFieldValues>Yes</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve by Factory FLT</fullName>
+                <controllingFieldValues>Yes</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve by Similarity</fullName>
+                <controllingFieldValues>No</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve by Data</fullName>
+                <controllingFieldValues>No</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Part Required-update final status to reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do Not Pursue-update final status to reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NPI Process</fullName>
+                <controllingFieldValues>NPI Owned</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve by Factory ALT</fullName>
+                <controllingFieldValues>Yes</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Base_Change_Record_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>HW_Change_Request_Base__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Base Change Record Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Engineer_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Engineer Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PE Type 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE Type 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE Type 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Final_Engineering_Status__c</fullName>
+        <description>Selection of either value will result in closure of the PE record and possibly closure of the top HCR record.  Messages are generated to the administration group upon value selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection of either value will result in closure of the PE record and possibly closure of the top HCR record.  Messages are generated to the change administration group upon value selection.  Remember to select &apos;Save&apos; after selection.</inlineHelpText>
+        <label>Final Engineering Status</label>
+        <picklist>
+            <controllingField>Approval_Path__c</controllingField>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <controllingFieldValues>Approve by Data</controllingFieldValues>
+                <controllingFieldValues>Approve by Factory ALT</controllingFieldValues>
+                <controllingFieldValues>Approve by Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Approve by Similarity</controllingFieldValues>
+                <controllingFieldValues>Do Not Pursue-update final status to reject</controllingFieldValues>
+                <controllingFieldValues>Engineer Pilot + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Factory ALT + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>NPI Process</controllingFieldValues>
+                <controllingFieldValues>New Part Required-update final status to reject</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <controllingFieldValues>Approve by Factory ALT</controllingFieldValues>
+                <controllingFieldValues>Approve by Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Do Not Pursue-update final status to reject</controllingFieldValues>
+                <controllingFieldValues>Engineer Pilot + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Factory ALT + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>NPI Process</controllingFieldValues>
+                <controllingFieldValues>New Part Required-update final status to reject</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <controllingFieldValues>Approve by Data</controllingFieldValues>
+                <controllingFieldValues>Approve by Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Approve by Similarity</controllingFieldValues>
+                <controllingFieldValues>Engineer Pilot + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>Factory ALT + Factory FLT</controllingFieldValues>
+                <controllingFieldValues>NPI Process</controllingFieldValues>
+                <controllingFieldValues>Please Select</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HCR_Short_Description__c</fullName>
+        <description>Brief high level change description for easy reference when viewing PE records, Product Families, and Build Requests</description>
+        <externalId>false</externalId>
+        <label>HCR Short Description</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Change_Request_Base__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>HW Change Request  Base</label>
+        <referenceTo>HW_Change_Request_Base__c</referenceTo>
+        <relationshipName>Product_Engineer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HW_Distribution_Notes__c</fullName>
+        <description>Enter all special requirements for pilot HW distribution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter all special requirements for pilot HW distribution.</inlineHelpText>
+        <label>HW Distribution Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HW_Recipient_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Person to receive the pilot HW after build completion.  Person is responsible to distribute the units to required engineer(s).</description>
+        <externalId>false</externalId>
+        <label>HW Recipient 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Assessments_by_Engineer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HW_Recipient_2__c</fullName>
+        <description>Enter 2nd recipient as core id - First Name Last Name (i.e WLJS00-John Smith).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If other recipient is noted, please ensure to insert address into distribution comment section.</inlineHelpText>
+        <label>HW Recipient 2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PATH__c</fullName>
+        <description>2nd part of formula for determining if engineering has completed initial review process.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Approval_Path__c , &quot;Please Select&quot;) , null, &quot;Done&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PATH</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PE_REVIEW_PRIORITY__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Top_Eng_Review_Status__c = &quot;Review Pending&quot;, 2, CASE( Approval_Path__c , &quot;Reject-New Part Required&quot;, 1, &quot;Reject-Do Not Pursue&quot;, 1, 3))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PE REVIEW PRIORITY</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PE_Record_Change_Admin_Comment__c</fullName>
+        <description>Comment field for use in simplification of combined PSE assignment.  i.e. if iDEN team has multiple products impacted, they can be routed to iDEN PSE team instead of creating multiple PE records.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter comment if this is a combined PE assignment.  Example, list all impacted products supported by singular MOL/PSE team so that we may simplify approval routing of low-risk items.</inlineHelpText>
+        <label>PE Record Change Admin Comment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PS_C_Qty__c</fullName>
+        <description>Quantity to ship to specific PS&amp;C location</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity to ship to specific PS&amp;C location.  Highlight address or direction in the HW distribution comments.</inlineHelpText>
+        <label>PS&amp;C Qty</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_C_Recipient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If there is CCL impact, add the PS&amp;C representative who requires HW review.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If there is CCL impact, add the PS&amp;C representative who requires HW review.</inlineHelpText>
+        <label>PS&amp;C Recipient</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Assessments_by_Engineer1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Part_Numbers_Designators__c</fullName>
+        <description>Listing of impacted part numbers, reference designators, and mechanical assemblies.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use following examples for entry format:
+Part Number (ref designator)  -or- Part Number (mechanical sub assembly)
+List all parts necessary for evaluation; Part Number (ref designator), Part Number2 (ref designator)</inlineHelpText>
+        <label>Part Numbers + Designators</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Pilot_Quantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Pilot Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Component__c</fullName>
+        <description>Enter the primary change component for testing consideration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the primary change component for testing consideration.  If multiple parts are required, list the balance within comment section.</inlineHelpText>
+        <label>Primary Component</label>
+        <length>14</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductEngineers__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Engineers</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Product_Engineer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product 1</label>
+        <referenceTo>Device__c</referenceTo>
+        <relationshipLabel>HW CR Assessments by Engineer</relationshipLabel>
+        <relationshipName>Product_Engineer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A product family affected by the proposed HW Change</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A product family affected by the proposed HW Change</inlineHelpText>
+        <label>Product Family</label>
+        <referenceTo>Product_Family__c</referenceTo>
+        <relationshipLabel>HW CR Assessments by Engineer</relationshipLabel>
+        <relationshipName>HW_CR_Assessments_by_Engineer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name_PE__c</fullName>
+        <description>Holding field for trigger to write value.</description>
+        <externalId>false</externalId>
+        <label>Product Name PE</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient1_Qty__c</fullName>
+        <description>Quantity to ship to recipient 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity to ship to recipient 1</inlineHelpText>
+        <label>Recipient1 Qty</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient2_Qty__c</fullName>
+        <description>Quantity to ship to specific location</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity to ship to specific location.  Highlight location and address in HW Distribution comments.</inlineHelpText>
+        <label>Recipient2 Qty</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_Designator__c</fullName>
+        <description>Either the PCB Ref Des of the electrical component -OR- the purchased sub-assembly kit number (01, SH, SN Level) utilizing the mechanical part within the change request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Either the PCB Ref Des of the electrical component -OR- the purchased sub-assembly kit number (01, SH, SN Level) utilizing the mechanical part within the change request.</inlineHelpText>
+        <label>Reference Designator</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Test_Instruction__c</fullName>
+        <description>If HW testing required, share any special testing instructions.  This will ensure the factory has proper personnel available for assistance.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If HW testing required, share any special testing instructions.  This will ensure the factory has proper personnel available for assistance.</inlineHelpText>
+        <label>Special Test Instruction</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>TEST__c</fullName>
+        <description>Field is to determine if engineering has completed initial review of PE record.</description>
+        <externalId>false</externalId>
+        <formula>IF (ISPICKVAL( Test_Required__c , &quot;Please Select&quot;) , Null, &quot;Done&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TEST</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Test_Comments__c</fullName>
+        <description>Comments from testing results or findings</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments from testing results or findings</inlineHelpText>
+        <label>Test Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Test_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Mandatory input:  
+&apos;Yes&apos; = build required (ramping or post-SA product).
+&apos;No&apos; = team rejection or approval by  similarity to other product testing.
+ &apos;NPI Owned&apos; = NPI core team will manage approval.
+
+Owner to maintain status comment and final approval</inlineHelpText>
+        <label>Test Required?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NPI Owned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Top_Eng_Approval_Status__c</fullName>
+        <description>Top engineering status for report generation and status tracking.</description>
+        <externalId>false</externalId>
+        <formula>CASE( Final_Engineering_Status__c , &quot;Approved&quot;, &quot;Approved&quot;, &quot;Rejected&quot;, &quot;Rejected&quot;,&quot;In Process&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Top engineering status for report generation and status tracking. Product team can set object view by Product Family and Eng Approval Status. Status values: Approved, In Process, or Rejected.</inlineHelpText>
+        <label>Top Eng Approval Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Eng_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND( TEST__c = &quot;Done&quot;,  PATH__c = &quot;Done&quot;), &quot;Review Complete&quot;, &quot;Review Pending&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Top Eng Review Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HW CR Assessment by Engineer</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>ProductEngineers__c</columns>
+        <columns>Product_Family__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Test_Required__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Eng_Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved,Rejected</value>
+        </filters>
+        <label>All Change Requests by Engineer</label>
+    </listViews>
+    <listViews>
+        <fullName>Change_Requests_Pending</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>ProductEngineers__c</columns>
+        <columns>Product_Family__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Test_Required__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Eng_Review_Status__c</field>
+            <operation>contains</operation>
+            <value>Pending</value>
+        </filters>
+        <label>Change Requests Pending</label>
+    </listViews>
+    <listViews>
+        <fullName>IDEN_PE_MPH_All</fullName>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Product_Family__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Jorian,pax,kronos,asanti</value>
+        </filters>
+        <label>IDEN PE MPH - All</label>
+    </listViews>
+    <listViews>
+        <fullName>Jorian_In_Process_PE_MPH</fullName>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Jori</value>
+        </filters>
+        <filters>
+            <field>Top_Eng_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Process,Please Select</value>
+        </filters>
+        <label>Jorian In Process PE MPH</label>
+    </listViews>
+    <listViews>
+        <fullName>Jorian_PE_MPH_All</fullName>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>Final_Engineering_Status__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Jorian</value>
+        </filters>
+        <label>Jorian PE MPH - All</label>
+    </listViews>
+    <listViews>
+        <fullName>Maserati_PEs_MPH</fullName>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <columns>ProductEngineers__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Maserati</value>
+        </filters>
+        <filters>
+            <field>Top_Eng_Approval_Status__c</field>
+            <operation>contains</operation>
+            <value>process</value>
+        </filters>
+        <label>Maserati PEs MPH</label>
+    </listViews>
+    <listViews>
+        <fullName>Pax_PE_MPH_All</fullName>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Pax</value>
+        </filters>
+        <filters>
+            <field>Final_Engineering_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved,Rejected</value>
+        </filters>
+        <label>Pax PE records In Process</label>
+    </listViews>
+    <listViews>
+        <fullName>Scorpion_Mini_Family</fullName>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Scorp</value>
+        </filters>
+        <filters>
+            <field>Top_Eng_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Process,Please Select</value>
+        </filters>
+        <label>Scorpion Mini Family</label>
+    </listViews>
+    <listViews>
+        <fullName>Scorpion_PE_MPH_All</fullName>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Scorp</value>
+        </filters>
+        <label>Scorpion PE MPH - All</label>
+    </listViews>
+    <listViews>
+        <fullName>Spyder_Changes</fullName>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <columns>ProductEngineers__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Spyder</value>
+        </filters>
+        <label>Spyder Family</label>
+    </listViews>
+    <listViews>
+        <fullName>Targa_PEs</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>Top_Eng_Review_Status__c</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Top_Eng_Approval_Status__c</columns>
+        <columns>Test_Required__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>Solana</value>
+        </filters>
+        <label>Solana PE&apos;s MPH</label>
+    </listViews>
+    <listViews>
+        <fullName>Vanquish_PE_MPH_All</fullName>
+        <columns>NAME</columns>
+        <columns>HCR_Short_Description__c</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Family__c</field>
+            <operation>contains</operation>
+            <value>vanquish</value>
+        </filters>
+        <label>Vanquish PE MPH - All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PE-{00000000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW CR Assessments by Engineer</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

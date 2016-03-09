@@ -1,0 +1,10 @@
+<apex:page controller="NDA_DashboardRltsExcelCtr"
+    contenttype="text/csv#DashboardResults.csv" action="{!doaction}"
+    sidebar="false" showheader="false" cache="false">
+    File ID, Category, Region, Company, Disclosure Purpose, Modification Text, NDA Status, DPL Status, Requested By, Expires On
+    <apex:repeat value="{!lstNDA}" var="ndaVar"> 
+        {!ndaVar.NDAFileID__c}, {!ndaVar.Category__c}, {!ndaVar.NDARegion__c}, {!ndaVar.Company__r.name}, {!ndaVar.Disclosure_Purpose__c}, {!ndaVar.Modification_Text__c}, {!ndaVar.NDAStatus__c}, {!ndaVar.DPLStatus__c} , {!ndaVar.createdBy.name} , <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!ndaVar.Expires_On__c}" />
+        </apex:outputText>
+    </apex:repeat>
+</apex:page>

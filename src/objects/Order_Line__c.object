@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds order lines data from Oracle</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.APC__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>APC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Account__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AccountId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_To_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Bill To Address</label>
+        <referenceTo>Bill_To_Ship_To__c</referenceTo>
+        <relationshipLabel>Order Lines (Bill To Address)</relationshipLabel>
+        <relationshipName>Order_Line1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cancelled_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The quantity of item cancelled on a line.</inlineHelpText>
+        <label>Cancelled Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commercial_Invoice__c</fullName>
+        <externalId>false</externalId>
+        <label>Commercial Invoice #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Number__c</fullName>
+        <description>Pointer to oracle customer number</description>
+        <externalId>false</externalId>
+        <formula>Order__r.Account__r.Oracle_Customer_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_PO_Line_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer PO Line Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Requested_Ship_Date__c</fullName>
+        <description>Customer Requested Ship Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Requested Ship Date.</inlineHelpText>
+        <label>Customer Requested Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DP_Segment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.DP_Segment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DP Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extended_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Ordered_Quantity__c -  Cancelled_Quantity__c ) *  Selling_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Selling Price x the quantity  = Extended Price</inlineHelpText>
+        <label>Extended Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <inlineHelpText>The Oracle System Line ID.  Oracle system generated.</inlineHelpText>
+        <label>External ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>FOB__c</fullName>
+        <externalId>false</externalId>
+        <label>FOB</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fulfilled_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity fulfilled or shipped for the item.</inlineHelpText>
+        <label>Fulfilled Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Set__c</fullName>
+        <externalId>false</externalId>
+        <label>Fulfillment Set</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gap_to_Prom_SchShip__c</fullName>
+        <description>Calculation: Promise Date - Scheduled Ship Date Definition:( How am I controlling my own process? Gap)</description>
+        <externalId>false</externalId>
+        <formula>Promise_Ship_date__c - Scheduled_Ship_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculation: Promise Date - Scheduled Ship Date Definition:( How am I controlling my own process? Gap)</inlineHelpText>
+        <label>Gap to Prom-SchShip</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gap_to_Req_Prom__c</fullName>
+        <description>Calculation: Requested Date - Promise Date Definition:(Initial Communication to Customer Expectations - Gap)</description>
+        <externalId>false</externalId>
+        <formula>Customer_Requested_Ship_Date__c - Promise_Ship_date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculation: Requested Date - Promise Date Definition:(Initial Communication to Customer Expectations - Gap)</inlineHelpText>
+        <label>Gap to Req-Prom</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gap_to_Req_SchShip__c</fullName>
+        <description>Calculation: Requested Date - Scheduled Ship Date Definition:(How am I doing to Customer Requested Ship Date? Gap)</description>
+        <externalId>false</externalId>
+        <formula>Customer_Requested_Ship_Date__c - Scheduled_Ship_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculation: Requested Date - Scheduled Ship Date Definition:(How am I doing to Customer Requested Ship Date? Gap)</inlineHelpText>
+        <label>Gap to Req-SchShip</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Line_Holds__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If the line has a hold at the line level.  Example:  OM hold, Price Hold, AR hold.  etc.</inlineHelpText>
+        <label>Has Line Holds?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the line is invoiced.  Typically the same as shipped date. There is no ship date if the line is a SERVICE.</inlineHelpText>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number generated by the Oracle system for invoice tracking online.</inlineHelpText>
+        <label>Invoice Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Number__c</fullName>
+        <description>Line number starting at 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The line associated to the item being ordered.</inlineHelpText>
+        <label>Line Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Status for the line only.  Not the Order status.</inlineHelpText>
+        <label>Line Status</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Type_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the intention of the Line and it&apos;s Transaction Type. - No further information known.  (examples:  Standard Order, Invoice Only, Invoice with Inventory(Consignment), Return with Credit, etc.)</inlineHelpText>
+        <label>Line Transaction Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the intention of the line.  Displays the Line Type Category from Oracle.   
+Credit Memo Line for Return Category, Invoice Only Line for an Order Category, Standard line for an Order Category as examples.</inlineHelpText>
+        <label>Line Type</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>List_Price__c</fullName>
+        <description>Unit price defined in the selected price list</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Associated list price for this particular line for ALL Customers.  Normally in the &quot;00 LIST&quot; price book.</inlineHelpText>
+        <label>List Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Open_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Open_Quantity__c  *  Selling_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Open_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Ordered_Quantity__c  -  Fulfilled_Quantity__c  -  Cancelled_Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>Order Number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number assigned by the Oracle system for the order entered under a customer PO.</inlineHelpText>
+        <label>Order Number</label>
+        <referenceTo>Order_Header__c</referenceTo>
+        <relationshipLabel>Order Lines</relationshipLabel>
+        <relationshipName>Parent_Order</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Ordered_Item__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Part Number</inlineHelpText>
+        <label>Ordered Item</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ordered_Quantity__c</fullName>
+        <description>The quantity ordered by the customer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity of line being ordered.</inlineHelpText>
+        <label>Ordered Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.PO_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PO Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PO_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.PO_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PO Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Packing_Slip_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The shipping document number assigned by the warehouse when the product is picked for shipment.</inlineHelpText>
+        <label>Packing Slip Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pick_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Pick Release Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Picked_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Picked Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planning_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Oracle Planning Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Description</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Order Lines</relationshipLabel>
+        <relationshipName>Order_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Prom_OrderEnter__c</fullName>
+        <description>Calculation: Promise Date -Order Entered Date Definition:(Communicated Lead Time at Order Line Level)</description>
+        <externalId>false</externalId>
+        <formula>Promise_Ship_date__c - Order__r.Order_Entered_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculation: Promise Date -Order Entered Date Definition:(Communicated Lead Time at Order Line Level)</inlineHelpText>
+        <label>Prom-OrderEnter</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Promise_Ship_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The first scheduled ship date Motorola expects to ship the line for the customer.</inlineHelpText>
+        <label>Promise date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Remote_Ship_To_Site_UseId__c</fullName>
+        <description>Remote Ship To Site UseId</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Remote Ship To Site UseId</inlineHelpText>
+        <label>Remote Ship To Site UseId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Req_OrderEnter__c</fullName>
+        <description>Calculation:Requested Date - Order Entered Date Definition:(Market Order Lead Time)</description>
+        <externalId>false</externalId>
+        <formula>Customer_Requested_Ship_Date__c - Order__r.Order_Entered_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculation:Requested Date - Order Entered Date Definition:(Market Order Lead Time)</inlineHelpText>
+        <label>Req-OrderEnter</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Flag__c</fullName>
+        <description>Requested date greater than Scheduled Ship Date</description>
+        <externalId>false</externalId>
+        <formula>IF((Customer_Requested_Ship_Date__c - Scheduled_Ship_Date__c) &gt;0,&quot;True&quot;,&quot;False&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reserved_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Partially picked quantity</inlineHelpText>
+        <label>Reserved Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Return Reason Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revised_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Revised Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The expected date the line is to be shipped.  Could be lead time for that particular line.</inlineHelpText>
+        <label>Scheduled Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Selling_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>It is the selling price for this line associated to this particular customer.</inlineHelpText>
+        <label>Selling Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Set__c</fullName>
+        <externalId>false</externalId>
+        <label>Ship Set</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Line level ship to address. This field will be populated if a particular order line is shipped to a different location than order header&apos;s ship to location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where the line is being shipped.  The Oracle abbreviation for the the ship-to-address.</inlineHelpText>
+        <label>Ship To Address</label>
+        <referenceTo>Bill_To_Ship_To__c</referenceTo>
+        <relationshipLabel>Order Lines</relationshipLabel>
+        <relationshipName>Order_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Via__c</fullName>
+        <description>Shipped via company name such as DHL, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How the line is shipped.  (example:  AIR, Surface, etc.)</inlineHelpText>
+        <label>Shipping method</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipped_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Fulfilled_Quantity__c   *  Selling_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Shipped amount is the total shipped line amount.  It is =  Line Fulfilled Quantity x Selling Price plus TAX. (If any)</inlineHelpText>
+        <label>Shipped Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Completely__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Shipped_Quantity__c == Ordered_Quantity__c , &apos;Yes&apos;, &apos;No&apos;)</formula>
+        <label>Shipped Completely?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipped_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the line is shipped.  Typically the same as Invoice date.  There is no ship date if the line is a SERVICE.</inlineHelpText>
+        <label>Shipped Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The quantity of units shipped for that line.</inlineHelpText>
+        <label>Shipped Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Instructions</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Shipping_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number assigned to the line generated by the shipper for shipping tracking purposes.  Customers us this to track their packages.</inlineHelpText>
+        <label>Tracking Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fulfillment_center__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The shipping warehouse for the Line.  (At line level.)</inlineHelpText>
+        <label>Warehouse</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Ordered_Quantity__c</columns>
+        <columns>Cancelled_Quantity__c</columns>
+        <columns>Fulfilled_Quantity__c</columns>
+        <columns>Customer_Requested_Ship_Date__c</columns>
+        <columns>List_Price__c</columns>
+        <columns>Extended_Price__c</columns>
+        <columns>fulfillment_center__c</columns>
+        <columns>Invoice_Number__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Shipped_Quantity__c</columns>
+        <columns>Shipped_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Order Line</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Order Lines</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Account_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Ordered_Quantity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Requested_Ship_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Fulfilled_Quantity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Invoice_Image</fullName>
+        <availability>online</availability>
+        <description>Displays invoice image in a new window</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Invoice Image</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var url = &apos;/apex/InvAndPackingSlip?cust_number={!Order_Line__c.Customer_Number__c }&amp;inv_number={!Order_Line__c.Invoice_Number__c}&amp;doc_type=SI&amp;account_id={!Order_Line__c.AccountId__c}&apos;;
+
+var invNum = &apos;{!Order_Line__c.Invoice_Number__c}&apos;;
+
+if (invNum==null || invNum==&apos;&apos;) {
+alert(&apos;Cannot perform this action when Invoice Number is unavailable&apos;);
+}
+else
+{
+window.open(url,&apos;InvoiceImage&apos;,&apos;width=1200,height=675,menubar=yes,status=yes,resizable=yes&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Packingslip_Image</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Packingslip Image</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var url = &apos;/apex/InvAndPackingSlip?cust_number={!Order_Line__c.Customer_Number__c }&amp;inv_number={!Order_Line__c.Packing_Slip_Number__c}&amp;doc_type=PS&amp;account_id={!Order_Line__c.AccountId__c}&apos;;
+
+var invNum = &apos;{!Order_Line__c.Invoice_Number__c}&apos;;
+var psNum = &apos;{!Order_Line__c.Packing_Slip_Number__c}&apos;;
+
+if(psNum ==null || psNum ==&apos;&apos;)
+{
+alert(&apos;Cannot perform this action when Packingslip Number is unavailable&apos;);
+}
+else
+{
+window.open(url,&apos;PSimage&apos;,&apos;width=1200,height=675,menubar=yes,status=yes,resizable=yes&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Tracking_Number</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Tracking Number</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)}
+
+var traNum = &apos;{!Order_Line__c.Tracking_Number__c}&apos;;
+var shVia = &apos;{!Order_Line__c.Ship_Via__c}&apos;;
+var url = sforce.apex.execute(&quot;GenTrackingNumber&quot;, &quot;getTrkUrl&quot;,{carrCode :shVia,trkNum:traNum}); 
+
+if (traNum==null || traNum==&apos;&apos;) 
+{
+alert(&apos;Cannot perform this action when Tracking Number is unavailable&apos;);
+}
+else if(shVia ==null || shVia ==&apos;&apos;)
+{
+alert(&apos;Cannot perform this action when Ship Via is unavailable&apos;);
+}
+else if (url==null || url==&apos;&apos;) 
+{
+alert(&apos;Carrier tracking link not available.  Please consult your administrator.&apos;);
+}
+else
+{
+window.open(url,&apos;Tracking Number&apos;,&apos;width=1200,height=675,menubar=yes,status=yes,resizable=yes&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,45 @@
+<apex:page standardController="External_Spend_Request__c" 
+extensions="APTPS_ESR_Integration">
+    <apex:sectionHeader title="New Agreement" subtitle="Select Agreement Record Type"/>
+    
+    <apex:pageMessages />
+
+    <apex:form >
+       <apex:commandLink action="/{!esr.Id}" value="Return to previous screen."/>
+       <br/>
+    </apex:form>
+    
+    <apex:form rendered="{!NOT(hasErrors)}">
+        <apex:pageBlock title="Select Agreement Record Type">
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton action="{!myCreate}" value="Continue"></apex:commandButton>
+                <apex:commandButton action="{!cancel}" value="Cancel"></apex:commandButton>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1" showHeader="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Agreement Type" for="agType"/>
+                    <apex:selectList id="agType" value="{!selectedRecordTypeId}" size="1" required="true">
+                        <apex:selectOptions value="{!AgreementTypes}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:outputText value="Available Agreement Record Types"/>
+        
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!agreementRecTypes}" var="atd">
+                <apex:column >
+                    <apex:facet name="header">Record type Name</apex:facet>
+                    <apex:outputText >{!atd.Name}</apex:outputText>
+                 </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Description</apex:facet>
+                    <apex:outputText >{!atd.Description}</apex:outputText>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Android Submission</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Android Submissions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Google TA --></label>
+        <name>Google_TA__c</name>
+        <relationshipLabel><!-- Android Submissions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Matching Builds? --></label>
+        <name>Matching_Builds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Errors --></label>
+        <name>Number_of_Errors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Passes --></label>
+        <name>Number_of_Passes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Passed Waived Errors? --></label>
+        <name>Passed_Waived_Errors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Tests --></label>
+        <name>Total_Tests__c</name>
+    </fields>
+    <layouts>
+        <layout>Android Submission Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Metrics --></label>
+            <section>Summary Metrics</section>
+        </sections>
+        <sections>
+            <label><!-- Test Metrics --></label>
+            <section>Test Metrics</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Fail --></label>
+        <name>Fail</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pass --></label>
+        <name>Pass</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Send_to_APFE --></label>
+        <name>Send_to_APFE</name>
+    </webLinks>
+</CustomObjectTranslation>

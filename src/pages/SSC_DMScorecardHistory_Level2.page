@@ -1,0 +1,198 @@
+<apex:page controller="SSC_DirectMaterialScoreCardHistory"  tabStyle="Account" sidebar="false" >
+  
+    <style type="text/css">
+        .glowing-border {
+        border: 2px solid #dadada;
+        border-radius: 7px;
+        width: 200px;
+        height: 25px;
+        font-size:15px;
+        text-align:center;
+        }
+        .glowing-border:focus { 
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #9ecaed;
+        }
+        .glowing-border1 {
+        border: 2px solid #dadada;
+        border-radius: 7px;
+        width: 50px;
+        height: 15px;
+        font-size:14px;
+        text-align: center;
+        }
+        .glowing-border:focus1 { 
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #9ecaed;
+        }
+        .tblhead
+        {
+        line-height:25px;
+        color:#99D3F2;
+        font-weight:bold;
+        background-color:#99D3F2;
+        }
+        .col1 {width:70%; text-align:left;}
+        .col2 {width:30%; text-align:center;}
+        .tblbody
+        {
+        line-height:25px;
+        font-weight:bold;
+        }
+        .myClass { width: 400px;
+        height: 25px;
+        font-size:15px;
+        text-align:center;
+        }
+        .myClass1 { width: 50px;
+        height: 15px;
+        font-size:14px;
+        text-align: center;
+        }
+        .controls
+        {
+        background-color:LightSkyBlue ;
+        color:#ffffff;
+        }
+        ss
+        {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 12px;
+        margin: 45px;
+        width: 480px;
+        text-align: left;
+        border-collapse: collapse;}
+    </style>
+    <apex:form >
+        <apex:pageBlock title="DM Scorecard"  >
+            <apex:pageBlockButtons location="top">
+              <!--  <apex:commandButton title="Raw Data" image="{!$Resource.SSC_Gdrive}"   action="{!showPopup}" rerender="popup" />-->
+                <apex:commandButton title="Download PDF" image="{!$Resource.SSC_PDF}" action="{!RedirectPdf}"  />
+              <apex:commandButton title="Pull Schedule" image="{!$Resource.SSC_Calendar}"  action="{!Calendar}" />
+                <apex:commandButton title="Save Comments" image="{!$Resource.SSC_Save}"  action="{!getsave}"   />
+               <apex:commandButton title="Back" image="{!$Resource.SSC_Back}"  action="{!RedirectLevel1}" />
+                <apex:commandButton title="Scoring Guides" image="{!$Resource.SSC_ScoringGuides}"  action="{!RedirectScoringGuides}" />
+                <apex:outputPanel id="popup">
+                    <apex:outputPanel styleClass="popupBg" layout="block" rendered="{!displayPopUp}"/>
+                    <apex:outputPanel styleClass="popup" layout="block" rendered="{!displayPopUp}">
+                        <apex:commandLink style="font-weight:bold;font-size:15px;" value="CSR Template"  action="{!Rawdata2}" rerender="popup"/>
+                        &nbsp;&nbsp;    
+                        <apex:commandLink style="font-weight:bold;font-size:15px;" value="Ratings Template"  action="{!Rawdata}" rerender="popup"/>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:pageBlockButtons>
+            <apex:panelGrid columnClasses="col1, col2"   columns="2" >
+                <apex:pageBlock title="Generated Metric Scores " >
+                    <br/><br/>  <br/>
+                    <TABLE border="1"  style="margin:0px auto;" cellpadding="4" cellspacing="0" width="100%" >
+                        <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                            <tr>
+                                <td   class="tblhead"    height="20"  width ="20%" align="center" >Level - 2 Metrics</td>
+                                <td    class="tblhead"   height="20"  width ="20%"  align="center" >Target Score</td>
+                                <td   class="tblhead"   colspan="2" height="20"   width ="20%" align="center">Prior Qtr Scorecard<br/>{!PreviousMonth1}-{!PreviousYear1}</td>
+                                <td  class="tblhead"    colspan="2" height="20"   width ="20%" align="center" >Current Qtr Scorecard<br/>{!CurrentMonth1}-{!CurrentYear1}</td>
+                            </tr>
+                        </thead>
+                        <apex:repeat value="{!WrapperObject}" var="contact">
+                            <apex:repeat value="{!contact.CurrentScoringGuide}" var="dd">
+                                <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                                    <tr width ="100%">
+                                        <th colspan="6" width="100%">
+                                            <apex:commandLink value="{!dd}" onclick="{!Interchange}" />
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody  >
+                                    <apex:repeat rendered="{!IF((dd!=Metrics[0].Metric_Name__r.Name),false,true)}"  value="{!submetric}" var="x">
+                                        <tr>
+                                            <td  height="20"  width ="20%" align="center" >
+                                                <apex:CommandLink action="{!RedirectLevel3}" value="{!x.name}" />
+                                            </td>
+                                            <td  height="20"  width ="20%" align="center" >
+                                                <apex:outputText value="{!x.TargetScore__c }%" />
+                                            </td>
+                                            <td  height="20"  width ="20%" align="center">  
+                                            <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(WrapperObject.SubMetricScoreMap [x.name],2)}" /></apex:outputText>%
+                                         </td>  
+                                            <td style="background-color:{!WrapperObject.L3SubMetricColor[x.name]}"></td>
+                                            <td  height="20"  width ="20%" align="center" > 
+                                            <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(WrapperObject.L3SubMetricScoreMap [x.name],2)}" /></apex:outputText>%
+                                            </td>
+                                            <td style="background-color:{!WrapperObject.PreviousL3SubMetricColor[x.name]}" ></td>
+                                        </tr>
+                                    </apex:repeat>
+                                   <apex:repeat rendered="{!IF((dd!=Metrics[0].Metric_Name__r.Name),true,false)}" value="{!contact.CurrentScoringGuide[dd]}" var="z" >
+                                        <tr>
+                                            <td  height="20" value=""  width ="20%" align="center" >
+                                                <apex:commandLink value="{!IF((z.SubMetric_Name__r.Metric_Name__r.Name!=Metrics[0].Metric_Name__r.Name),z.SubMetric_Name__r.Name,'')}"  action="{!rawdata}"/>
+                                            </td>
+                                            <td  height="20"  width ="20%"  align="center" >{!z.SubMetric_Name__r.TargetScore__c }</td>
+                                            <td    width ="20%" align="center">
+                                                <apex:repeat value="{!contact.MetricsList7[dd]}" var="zz" >
+                                                    <apex:outputText value="{!IF((z.SubMetric_Name__r.Name=zz.SubMetric_Name__r.Name),zz.Score__c,'')} "></apex:outputText>
+                                                </apex:repeat>%
+                                            </td>
+                                            <td  style="background-color:{!WrapperObject.MetricColor[z.SubMetric_Name__r.Name]}"></td>
+                                            <td  height="20"   width ="20%" align="center" >{!z.Score__c } %</td>
+                                            <td  style="background-color:{!WrapperObject.SubMetricColor[z.SubMetric_Name__r.Name]}"  >  </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </apex:repeat>
+                        </apex:repeat>
+                         <tr>
+                                    <td height="20" style="font-weight:bold;"    width ="20%" align="center" >Overall Score</td>
+                                    <td height="20"  style="font-weight:bold;"   width ="20%" align="center" >{!PriorQtrSum}%</td>
+                                    <td height="20" style="font-weight:bold;"    width ="20%" align="center" > {!MetricScoreMap['Overall']}  %</td>
+                                    <td  style="background-color:{!Colorforoverall1['Overall']}" ></td>
+                                    <td height="20" style="font-weight:bold;"    width ="20%" align="center" > {!mapToScore['Overall']} %</td>
+                                    <td  style="background-color:{!Colorforoverall['Overall']}"> </td>
+                                </tr>
+                    </table>
+                    <br/>     <br/>
+                    <br/>    <br/>
+                </apex:pageBlock>
+                <apex:pageBlock title="ScoringGuide ">
+                    <br/><br/><br/>
+                    <TABLE border="1"   style="margin:0px auto;" cellpadding="3" cellspacing="0" width="100%"  >
+                        <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                            <tr>
+                                <td   height="50"    class="tblhead"  align="Center" > Comments</td>
+                                <apex:variable value="{!0}" var="index"/>
+                            </tr>
+                        </thead>
+                        <tbody  >
+                            <tr >
+                                <td  height="25"    width ="10%" align="Center" >
+                                    <br/>  <br/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[0].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[4].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[6].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[7].Comments__c}" styleClass="glowing-border"/>
+                                    <br/>    <br/>  <br/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"     value="{!CurrentQtrScores[1].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"     value="{!CurrentQtrScores[2].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"     value="{!CurrentQtrScores[5].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"     value="{!CurrentQtrScores[11].Comments__c}" styleClass="glowing-border"/>
+                                    <br/>    <br/> <br/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"      styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"  styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"    value="{!CurrentQtrScores[9].Comments__c}"    styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[12].Comments__c}" styleClass="glowing-border"/>
+                                    <br/>   <br/> <br/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[3].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[8].Comments__c}" styleClass="glowing-border"/>
+                                    <apex:inputText disabled="{!IF((ScoreCard_Type !='Current'),true,false)}"   value="{!CurrentQtrScores[10].Comments__c}" styleClass="glowing-border"/>
+                                    <br/>  <br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>  <br/>     <br/>       <br/>   
+                </apex:pageBlock>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

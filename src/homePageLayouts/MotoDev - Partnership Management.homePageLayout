@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <narrowComponents>NDA Menu</narrowComponents>
+    <narrowComponents>Contract Links</narrowComponents>
+    <narrowComponents>Contract Request Form</narrowComponents>
+    <narrowComponents>DASHBOARD - Master Contracts</narrowComponents>
+    <narrowComponents>standard-RecentItems</narrowComponents>
+    <narrowComponents>standard-CreateNew</narrowComponents>
+    <narrowComponents>PMD Links</narrowComponents>
+    <wideComponents>standard-Dashboard</wideComponents>
+    <wideComponents>Contract Requests</wideComponents>
+    <wideComponents>Device Application Approvals</wideComponents>
+    <wideComponents>Contract Approvals</wideComponents>
+    <wideComponents>standard-ProcessWorkitems</wideComponents>
+</HomePageLayout>

@@ -1,0 +1,1 @@
+<BODY bgcolor="#F3F3EC"><A href="http://npidashboard.mot.com/cgi/product_launch_status.pl?ProductID={!Device__c.NPI_Family_ID__c}&_tab=summary&loginto=267_390" target="NPIDB{!Device__c.NPI_Family_ID__c}"><font face="Arial" style="font-size: 9pt">{!Device__c.NPI_Family_ID__c}</font></A></BODY>

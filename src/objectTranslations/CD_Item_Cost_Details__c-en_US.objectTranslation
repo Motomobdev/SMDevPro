@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD Item Cost Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD Item Cost Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Avoid Duplicate Records --></label>
+        <name>Avoid_Duplicate_Records__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award --></label>
+        <name>Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- CD Item categories --></label>
+        <name>CD_Item_categories__c</name>
+        <relationshipLabel><!-- CD Item Cost Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Assy Name --></label>
+        <name>Cost_Assy_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Category IOD --></label>
+        <name>Cost_Category_IOD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Category --></label>
+        <name>Cost_Category__c</name>
+        <relationshipLabel><!-- CD Item Cost Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Type --></label>
+        <name>Cost_Type__c</name>
+        <picklistValues>
+            <masterLabel>LOS</masterLabel>
+            <translation><!-- LOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market</masterLabel>
+            <translation><!-- Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Should Be</masterLabel>
+            <translation><!-- Should Be --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ExternalKey --></label>
+        <name>ExternalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Cost ID --></label>
+        <name>Item_Cost_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number IOD --></label>
+        <name>Item_Number_IOD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number__c</name>
+        <relationshipLabel><!-- CD Item Cost Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LastModified --></label>
+        <name>LastModified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- SupplierName --></label>
+        <name>SupplierName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Number IOD --></label>
+        <name>Supplier_Number_IOD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier --></label>
+        <name>Supplier_del__c</name>
+        <relationshipLabel><!-- CD Item Cost Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- USD Price --></label>
+        <name>USD_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- USD WeightedAverage --></label>
+        <name>USD_WeightedAverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- WeightedAverage --></label>
+        <name>WeightedAverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

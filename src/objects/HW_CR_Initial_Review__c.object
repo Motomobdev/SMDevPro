@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Initial review from SDE, SME, and Category Team.  Goal: to determine risk and business priority of given change.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CM_Active_Cycle__c</fullName>
+        <description>Current cycle time tracking for open review records assigned to category manager.</description>
+        <externalId>false</externalId>
+        <formula>IF( Category_Manager_Reviewer__c  &lt;&gt; null, IF(  HW_CR_CM_Response_Count__c  &lt;&gt; 0, null, NOW() - CreatedDate ), null)</formula>
+        <label>CM Active Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  Category_Manager_Reviewer__c  = null, 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CM Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Business_Impact__c</fullName>
+        <externalId>false</externalId>
+        <label>CM Business Impact</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CM_Business_Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>CM Business Justification</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cost Reduction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply Continuity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CM_Close_Date__c</fullName>
+        <description>Final date stamp of category manager response to initial review</description>
+        <externalId>false</externalId>
+        <label>CM Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CM_Cycle_Time__c</fullName>
+        <description>If CM is assigned for review, field to track total cycle time from creation of record to completion of CM response.</description>
+        <externalId>false</externalId>
+        <formula>IF( CM_Assigned__c  = 1, CM_Close_Date__c - CreatedDate , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If CM is assigned for review, field to track total cycle time from creation of record to completion of CM response.</inlineHelpText>
+        <label>CM Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Reviewer_Comment__c</fullName>
+        <description>Comment section for CM to support the given business priority</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comment section for CM to support the given business priority</inlineHelpText>
+        <label>CM Reviewer Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CM_Reviewer_Status__c</fullName>
+        <description>Category managers acceptance to continue with approval process</description>
+        <externalId>false</externalId>
+        <label>CM Reviewer Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Require Further Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Category_Manager_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Category Manager Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Initial_Reviews2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Change_Description__c</fullName>
+        <description>Cut and paste of base HCR Change Description field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HW Change Administrator (Work Flow Administrator) to copy and paste exact change description from the base HCR record.</inlineHelpText>
+        <label>Change Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HW_CR_CM_Response_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( CM_Reviewer_Status__c , &quot;Reject&quot;, -10, &quot;Approve&quot;, 1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW CR CM Response Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_CR_SDE_Response_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  SDE_Reviewer_Status__c , &quot;Reject&quot;, -10, &quot;Approve&quot;, 1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW CR SDE Response Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_CR_SME_Response_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  SME_Reviewer_Status__c  , &quot;Reject&quot;, -10, &quot;Approve&quot;, 1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW CR SME Response Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_CR_Status_Sum__c</fullName>
+        <externalId>false</externalId>
+        <formula>(HW_CR_CM_Response_Count__c  +  HW_CR_SDE_Response_Count__c  +  HW_CR_SME_Response_Count__c) /  Reviewer_Assigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW CR Status Sum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_CR_Top_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( HW_CR_Status_Sum__c  &lt; 0, &quot;Rejected&quot;, 
+ IF( HW_CR_Status_Sum__c   &gt;=  1, &quot;Approved&quot;, &quot;In Process&quot; 
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW CR Top Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Change_Request_Base__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>HW Change Request  Base</label>
+        <referenceTo>HW_Change_Request_Base__c</referenceTo>
+        <relationshipLabel>HW CR Initial Reviews</relationshipLabel>
+        <relationshipName>Initial_Reviewer</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Review_Status__c</fullName>
+        <description>Field for tracking SDE input status</description>
+        <externalId>false</externalId>
+        <label>Initial Review Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Initial Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Initial_Reviews</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ODM_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>ODM Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ODM_Reviewer_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>ODM Reviewer Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ODM_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ODM Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Initial_Reviews4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ODM_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>ODM Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requester_Email__c</fullName>
+        <description>The email address for the requester of the change request.  This information to be gathered from the base HCR record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The email address for the requester of the change request.  This information to be gathered from the base HCR record.</inlineHelpText>
+        <label>Requester Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Review_Process_Status__c</fullName>
+        <description>Section status; ok to continue or reject and stop pursuit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Continue = Proceed with approval process
+Reject = Stop approval process</inlineHelpText>
+        <label>Reviewer Recomondation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Continue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reviewer_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>SDE_Assigned__c  +  SME_Assigned__c  +  CM_Assigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reviewer Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SDE_Active_Cycle__c</fullName>
+        <description>Active cycle time of record.  Only available if response not provided.</description>
+        <externalId>false</externalId>
+        <formula>IF( SDE_Reviewer__c  &lt;&gt; null, IF(  HW_CR_SDE_Response_Count__c   &lt;&gt; 0,  null,  NOW()  -  CreatedDate ) , null)</formula>
+        <label>SDE Active Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SDE_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( SDE_Reviewer__c  = null, 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SDE Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SDE_Close_Date__c</fullName>
+        <description>Capture SDE response date to initial review record</description>
+        <externalId>false</externalId>
+        <label>SDE Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SDE_Cycle_Time__c</fullName>
+        <description>Returns the number of days between record create date and SDE response date.</description>
+        <externalId>false</externalId>
+        <formula>IF( SDE_Assigned__c = 1, SDE_Close_Date__c -  CreatedDate, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Returns the number of days between record create date and SDE response date.</inlineHelpText>
+        <label>SDE Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SDE_Reviewer_Comment__c</fullName>
+        <description>Comment section for SDE to support the given risk level and recommend approval action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comment section for SDE to support the given risk level and recommend approval action.</inlineHelpText>
+        <label>SDE Reviewer Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SDE_Reviewer_Status__c</fullName>
+        <description>Supplier development engineering&apos;s acceptance to continue with approval process</description>
+        <externalId>false</externalId>
+        <label>SDE Reviewer Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Require Further Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SDE_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SDE Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Initial_Reviews1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SDE_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>SDE-Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SME_Active_Cycle__c</fullName>
+        <description>Cycle time tracking of open requests to SME</description>
+        <externalId>false</externalId>
+        <formula>IF( SME_Reviewer__c  &lt;&gt; null, IF(  HW_CR_SME_Response_Count__c  &lt;&gt; 0, null, NOW() - CreatedDate ), null)</formula>
+        <label>SME Active Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  SME_Reviewer__c   = null, 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SME Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Close_Date__c</fullName>
+        <description>Final date stamp of SME response to CR.</description>
+        <externalId>false</externalId>
+        <label>SME Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SME_Cycle_Time__c</fullName>
+        <description>If SME assigned, field will record total cycle time from creation of record to SME final response.</description>
+        <externalId>false</externalId>
+        <formula>IF( SME_Assigned__c = 1,  SME_Close_Date__c - CreatedDate , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If SME assigned, field will record total cycle time from creation of record to SME final response.</inlineHelpText>
+        <label>SME Cycle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Reviewer_Comment__c</fullName>
+        <description>Comment section for SME to support the given risk level and recommend approval action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comment section for SME to support the given risk level and recommend approval action.</inlineHelpText>
+        <label>SME Reviewer Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SME_Reviewer_Status__c</fullName>
+        <description>Subject matter experts acceptance to continue with approval process</description>
+        <externalId>false</externalId>
+        <label>SME Reviewer Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Require Further Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SME_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SME Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Initial_Reviews3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SME_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>SME-Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Please Select</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_PCN__c</fullName>
+        <description>Cut and paste of base HCR supplier PCN Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Change administrator (Work Flow Administrator) copy and paste exact PCN Number from HCR record.</inlineHelpText>
+        <label>Supplier PCN</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HW CR Initial Review</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>SDE_Reviewer__c</columns>
+        <columns>SME_Reviewer__c</columns>
+        <columns>Category_Manager_Reviewer__c</columns>
+        <columns>ODM_Reviewer__c</columns>
+        <columns>HW_CR_Top_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>equals</operation>
+            <value>CR-00001090</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>SDE_Reviewer__c</columns>
+        <columns>SDE_Reviewer_Status__c</columns>
+        <columns>SME_Reviewer__c</columns>
+        <columns>SME_Reviewer_Status__c</columns>
+        <columns>Category_Manager_Reviewer__c</columns>
+        <columns>CM_Reviewer_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>HW_CR_Top_Status__c</field>
+            <operation>notContain</operation>
+            <value>Approve,Reject</value>
+        </filters>
+        <label>All Active Initial Reviews</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_SME_RQI</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>SME_Reviewer__c</columns>
+        <columns>HW_CR_Top_Status__c</columns>
+        <columns>SME_Reviewer_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>HW_CR_Top_Status__c</field>
+            <operation>notContain</operation>
+            <value>Approve,Reject</value>
+        </filters>
+        <filters>
+            <field>SME_Reviewer_Status__c</field>
+            <operation>equals</operation>
+            <value>Require Further Info</value>
+        </filters>
+        <label>All Active SME RQI</label>
+    </listViews>
+    <listViews>
+        <fullName>SDE_Active_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>SDE_Reviewer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>SDE_Reviewer_Status__c</columns>
+        <columns>SDE_Active_Cycle__c</columns>
+        <columns>SDE_Risk_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SDE_Assigned__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>SDE_Reviewer_Status__c</field>
+            <operation>equals</operation>
+            <value>Please Select</value>
+        </filters>
+        <label>SDE Active Requests</label>
+        <sharedTo>
+            <role>HWCRBuildAdmin</role>
+            <role>HWCRCategoryManager</role>
+            <role>HWCRCategorySME</role>
+            <role>HWCRCentralSME</role>
+            <role>HWCREngineeringLeadPM</role>
+            <role>HWCREngineeringManager</role>
+            <role>HWCREngineeringPM</role>
+            <role>HWCRFactoryTOP</role>
+            <role>HWCRFactoryTOPManager</role>
+            <role>HWCRGlobalCategory</role>
+            <role>HWCRMotoPDMAdmin</role>
+            <role>HWCRProductEE</role>
+            <role>HWCRProductME</role>
+            <role>HWCRSCOperations</role>
+            <role>HWCRSDE</role>
+            <role>HWCRSDEManager</role>
+            <role>HWCRSalesforceAppManager</role>
+            <role>HWCRWorkflowAdmin</role>
+            <role>HWChangeManagement</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SME_Active_Requests_Fadi</fullName>
+        <columns>NAME</columns>
+        <columns>HW_Change_Request_Base__c</columns>
+        <columns>SME_Reviewer__c</columns>
+        <columns>SME_Reviewer_Status__c</columns>
+        <columns>SME_Reviewer_Comment__c</columns>
+        <columns>Change_Description__c</columns>
+        <columns>HW_CR_Top_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SME_Assigned__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>SME_Reviewer__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>HW_CR_Top_Status__c</field>
+            <operation>notEqual</operation>
+            <value>rejected,approved</value>
+        </filters>
+        <label>SME Active Requests</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CR-{00000000}</displayFormat>
+        <label>HW CR Initial Review Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW CR Initial Reviews</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Category_Manager_Link</fullName>
+        <availability>online</availability>
+        <description>Link to category manager data in CRIS</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Category Manager Link</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0Aqpm9naNKboxdEt5S2ZtYTZveHJ2YWNneFVGV0RrOXc#gid=0</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SDE_Assignments</fullName>
+        <availability>online</availability>
+        <description>Link to review current SDE to Supplier assignment</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>SDE Assignments</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AqUgZFjQwYUqdDVlVkl0NmRicXZCX1dyMm81eHZpSEE&amp;pli=1#gid=0</url>
+    </webLinks>
+</CustomObject>

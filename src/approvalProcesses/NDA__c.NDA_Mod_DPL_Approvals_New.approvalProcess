@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>NDAFileID__c</field>
+        <field>Company__c</field>
+        <field>Owner</field>
+        <field>Is_this_Multiparty__c</field>
+        <field>Modification_Text__c</field>
+        <field>Companion_Products__c</field>
+        <field>Companion_MCR__c</field>
+        <field>Companion_Prototype__c</field>
+        <field>Software__c</field>
+        <field>Software_MCR__c</field>
+        <field>Software_Prototype__c</field>
+        <field>Value_MCR__c</field>
+        <field>Value_Products__c</field>
+        <field>Value_Prototype__c</field>
+        <field>Premium_Products__c</field>
+        <field>Premium_MCR__c</field>
+        <field>Premium_Prototype__c</field>
+        <field>Name</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bckn002@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(  Premium_Products__c ,  IsProductNDA__c )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>NDA Approvals for Premium Products</label>
+        <name>NDAApprovalPremiumProduct</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bckn002@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(  Value_Products__c , IsProductNDA__c )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>NDA Approvals for Value Products</label>
+        <name>NDAApprovalValueProduct</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>west@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(  Companion_Products__c , IsProductNDA__c )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>NDA Approvals for CP Products</label>
+        <name>NDAApprovalCPProduct</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kmcdunn1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Software__c , IsProductNDA__c )</formula>
+        </entryCriteria>
+        <label>NDA Approvals for Software Products</label>
+        <name>NDAApprovalSoftwareProduct</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Approval process for Product NDAs with Modifications</description>
+    <emailTemplate>NDA_Email_Templates/NDA_Approval_Requested_for_DPL_VF1</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( IsProductNDA__c ,OR(ISPICKVAL(NDAStatus__c , &apos;Executed&apos;),ISPICKVAL(NDAStatus__c , &apos;Executed-Mod&apos;)) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>NDA_DPL_Approval_Accepted</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>NDA_Update_DPL_Approval_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>NDA_DPL_Approval_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>NDA_Update_DPL_Approval_StatusRejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>NDA_Update_NDA_status_as_Canelled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>NDA Mod DPL Approvals New</label>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NPI Device Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NPI Device Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- SF Device Name --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- NPI Device Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NPI Carrier --></label>
+        <name>NPI_Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Country --></label>
+        <name>NPI_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Product Family --></label>
+        <name>NPI_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Product Name --></label>
+        <name>NPI_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Region --></label>
+        <name>NPI_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales_Model_ID --></label>
+        <name>Sales_Model_ID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,41 @@
+<apex:page standardController="Quote" Extensions="DealDeepCloneController">
+  <apex:form id="mainForm">
+    <apex:sectionHeader title="Select Opportunity"/>
+
+    <apex:actionFunction name="searchServer" action="{!runSearch}"></apex:actionFunction>
+    
+    <apex:PageBlock title="Cloning Options">
+            <apex:outputPanel id="cloneOptionsPanel">
+                <apex:actionsupport action="{!selectCloneOption}" event="onclick"  rerender="mainForm">     
+                    <apex:selectRadio value="{!cloneOption}" layout="pageDirection">
+                        <apex:selectOptions value="{!cloneOptions}"/>
+                    </apex:selectRadio>
+                </apex:actionsupport>
+            </apex:outputPanel>
+        </apex:PageBlock>
+
+    <apex:pageBlock id="softclone" mode="edit">
+        <apex:pageBlockButtons >
+                <apex:commandButton value="Continue" action="{!executeDeepClone}" onClick="return confirm('{!cloneAccountOptionMsg}');"/>
+                <apex:commandButton value="Cancel" action="{!cancelOperation}" />
+        </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                    <apex:inputText value="{!oppName}" rendered="{!newOpp}" label="Opportunity Name"/>   
+                    <apex:outputText value="{!clonedQuoteOppIdTemp.Name}" rendered="{!currentOpp}"/>   
+                    <apex:outputText value="{!accountIdTemp.Account.Name}" rendered="{!currentOpp || newOpp}"/>   
+                    <apex:inputText value="{!oppName}"  label="Opportunity Name" rendered="{!NOT(currentOpp) && NOT(newOpp)}"/> 
+                     <apex:inputField value="{!selectedAccountLookUp.AccountId}" rendered="{!NOT(currentOpp) && NOT(newOpp)}">  
+                        <apex:actionSupport event="onchange" action="{!cloneQuoteToNewAccount}"/>
+                    </apex:inputField>  
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:pageMessages ></apex:pageMessages>
+  </apex:form>
+
+  <script type="text/javascript">
+  function doSearch(){
+    searchServer();
+  }
+  </script>
+</apex:page>

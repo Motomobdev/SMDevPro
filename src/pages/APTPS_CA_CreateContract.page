@@ -1,0 +1,1359 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" sidebar="false" showHeader="false" tabStyle="Apttus__APTS_Agreement__c" extensions="APTPS_CA_CreateContract" action="{!setRedirectFalse}" id="CreateContractPage">
+<div style="background-color:#545254;">  
+    <apex:outputPanel >
+        <apex:image value="{!$Resource.logo_imoto}"/>
+    </apex:outputPanel> 
+</div>
+<apex:sectionHeader id="motoheader" subtitle="{!strAgreementName}" title="Contract Management System"/>
+<apex:pageMessages id="msgs"/>
+<apex:stylesheet value="{!$Resource.APTPS_CA_CreateContractCSS}"/>       
+<apex:pageBlock id="CreateContractBlock">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+        window.onbeforeunload = function(){
+            document.getElementById('{!$Component.CreateContractPage.CreateContractBlock.agrForm.recordTab}').click();
+        }
+        
+        function emailRep(legalrepemail){
+            var legalrep = 'mailto:<' + legalrepemail + '>';
+        }    
+        function assignStyle() {
+          var chks = document.getElementsByClassName('menuButton googleDocMutton');
+          for (var i = 0; i < chks.length; i++) {
+            chks[i].style.display = 'none';            
+          }            
+         }             
+         
+         function confirmGenerate() {
+          return confirm('To Create Contract click CANCEL and then click CREATE CONTRACT. To Continue click OK. You must attach a Contract prior to sending for approval in Step 5');          
+         } 
+        
+        function dismissMsg(msgType){
+            if(msgType == 'createContract'){    
+                document.getElementById('{!$Component.CreateContractPage.CreateContractBlock.tab3Form.tab3Block.createContractMsg}').style.display = 'none';
+            }else if(msgType == 'activateContract'){
+                document.getElementById('{!$Component.CreateContractPage.CreateContractBlock.tab7Form.tab7pb.activateContractMsg}').style.display = 'none';
+            }
+        }
+        var j$ = jQuery.noConflict();
+
+        j$(document).ready(function(){
+            j$('.userType').hide(); 
+        });
+    
+    
+    </script>
+    <!--  <apex:outputPanel >              
+          <apex:outputField value="{!Apttus__APTS_Agreement__c.Progress_Bar__c}" rendered="{!IF(Apttus__APTS_Agreement__c.Apttus__Workflow_Trigger_Created_From_Clone__c = false,true, false)}"/>
+      </apex:outputPanel> -->
+      <apex:tabPanel id="theTabPanel" styleClass="theTabPanel" switchType="server" value="{!currentTab}" tabClass="theTabPanel" contentClass="tabContent" activeTabClass="activeTab" inactiveTabClass="inactiveTab1" disabledTabClass="disabledTab">
+      <!--  <apex:outputField value="{!Apttus__APTS_Agreement__c.Name}" style="font-size:20px" rendered="{!IF(Apttus__APTS_Agreement__c.Apttus__Workflow_Trigger_Created_From_Clone__c = false,true, false)}"/> -->
+      
+      
+      
+      <apex:tab label="Read Me" id="tab0" status="sLoading" reRender="theTabPanel">
+
+      <apex:form >
+      <apex:pageBlock > 
+         
+          <apex:pageBlockSection columns="4">                       
+
+           <apex:pageBlockSectionItem >
+               <apex:commandButton value="Cancel" styleClass="vpbButton" title="Quit without saving" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving you want to exit without saving?');" />
+          </apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                                                                        
+          <apex:pageBlockSectionItem >
+               <apex:commandButton value="Next" styleClass="vpbButton" title="Go to next screen" action="{!nextTabStep}"  />
+               </apex:pageBlockSectionItem>                          
+          </apex:pageBlockSection>
+
+      <div style="font-size: 13px; color: black; background-color:#E8E8E8 ; padding:20px;">
+
+      <br />
+        <p >
+     <b><u> Welcome to Contract Automation ! </u></b>
+      <br /><br />Before entering the Contract Management System, review and follow the instructions on the contracting homepage. 
+      The contracting site is located under <b>“Popular”</b> on Motorola’s enterprise homepage.
+      <br />You will find training materials and information on vendor setup by also following this link: <a href="https://sites.google.com/a/motorola.com/contracts/" target="_blank">https://sites.google.com/a/motorola.com/contracts/ </a>
+          <br /><br />
+          Help is available at <a href="http://vhd.mot-mobility.com/sds_form.php?id=1292" target="_blank">IT’s Virtual Help Desk</a>, 
+          the link is located at the left of your Salesforce Homepage under <b>Contract Links</b>. 
+          <br />Remember to include your Agreement Record Number in your trouble ticket description.
+          <br /><br /></p>
+          <b>These screens lead you thru the STEPS required to:</b>
+          <br />
+          STEP-1 :  Select Contract Template
+          <br />
+          STEP-2 :  Enter Contract Party information<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          - lookup your party in the specified compliance list
+          <br />
+          STEP-3 :  Enter Agreement information <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - click Create Contract (system emails you a template, and attaches a copy to your Salesforce agreement record).<br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          - You can also upload other  applicable documents here from your desktop (e.g., revised agreements, amendments, etc.)<br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - If you have unnecessary or old draft templates, you can also delete them at the bottom of Step 3.
+          <br />
+          STEP-4 :  Enter Executive Summary data to secure Spend Approvals<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - For Sales, please notify Finance at this Step.
+          <br />
+          STEP-5 :  Select contract Approvers and send for Approval <br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - GTM and Marketing have predefined routing tables.<br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - Direct and Indirect users select approvers from a defined table specific to their business function.
+            You may also add additional approvers.
+          <br />
+          STEP-6 :  After obtaining internal Approvals, enter signers and Send for electronic signature<br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+          - EchoSign will route automatically (to third parties and internally) and advise you of status via emails.<br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - Note: Spend Approvals and Signatures are not the same! 
+          <br />
+          STEP-7 :  Final Activation <br />
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - Enter signing dates (when fully signed) and Activate your contract in the system.
+          <br />
+          <br />Each STEP may require completion of the preceding steps. <b>Save your work often.</b> 
+          <br />You can enter and exit the system to update your record and check status. 
+          <br />Remember to ultimately finish off your record through Activation at STEP 7 to close off in the system.
+          <br /><br />
+          <p>
+          Some basics:
+          <br /><li> 
+              The Contract Management System does not do Vendor Setup, nor process PO’s. Apttus only processes contracts.</li>
+          <br /><li>
+              The system provides basic templates for common contracts tailored to your business function.
+              If you need to change them or need something different consult your attorney.</li>
+          <br />
+          <li>Editing your contract record must be done thru the STEP screens. 
+              You cannot edit a record in Detailed View. Detailed View provides a one-screen view of record data.</li>
+          <br /><li>
+              The system requires some mandatory data, these are marked with <span style="color:red">red bars </span>. 
+              This data is used to auto-populate Contract and Spend Approval templates.</li>
+          <br /><li>
+              Connected Persons - We are required to conform to Lenovo compliance policies regarding who we do business with and our spend approval levels. <br />
+            &nbsp;&nbsp;STEP2 will ask you to check that you are not contracting with a party found on a special list of Connected Persons. 
+          Follow the screen instructions. </li>
+          <br />
+          </p>
+          
+          </div>                 
+
+          <apex:pageBlockSection columns="4">                       
+
+           <apex:pageBlockSectionItem >
+               <apex:commandButton value="Cancel" styleClass="vpbButton" title="Quit without saving" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving you want to exit without saving?');" />
+          </apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                                                                        
+          <apex:pageBlockSectionItem >
+               <apex:commandButton value="Next" styleClass="vpbButton" title="Go to next screen" action="{!nextTabStep}"  />
+               </apex:pageBlockSectionItem>                          
+          </apex:pageBlockSection>
+
+          </apex:pageBlock>  
+          </apex:form>      
+          </apex:tab>
+        
+        <apex:tab label="Step-1: Select Contract Template" id="tab1" status="sLoading" disabled="{!availableTab < 1}" >      
+            <div class="imgWrap" style="padding-left:40px;">
+                  <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+                  <p class="imgDescriptionSTEP1"><b>Start your Contract here!</b><br /><br />Select contract type at ''I want to create''.<br />Mandatory fields in RED.<br />NEXT button advances to next STEP.</p>
+              </div> 
+              <apex:form id="TheForm">
+              <apex:pageBlock mode="edit">                                  
+        
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                    
+                    <apex:pageBlockSection columns="1" collapsible="false" >
+                         <apex:pageBlockSectionItem rendered="{!boolIsSpecialAccess}">                           
+                            <apex:outputLabel value="Select Business Group" for="cprecordType" styleClass="lbStyle" />                                                                                                                                      
+                             <apex:actionRegion immediate="true">                                     
+                                 <apex:selectList value="{!strRecordType}" label="Business Group" multiselect="false" size="1" id="cprecordType" required="true" style="width:250px;">
+                                    <apex:selectOptions value="{!RecordTypes}"/>
+                                    <apex:actionsupport event="onchange" action="{!updateRecordType}" rerender="cprecordType,cpcontractType"/>
+                                 </apex:selectList>  
+                             </apex:actionRegion>                                                               
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="I want to Create" for="cpcontractType" styleClass="lbStyle" />
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_subtype__c}" id="cpcontractType" required="true" style="width:350px;" > 
+                                <apex:actionSupport event="onchange" reRender="conditionalEntryFieldDiv,cpagreeType,parentagreement" action="{!fnShowParent}" />
+                             </apex:inputField>
+                        </apex:pageBlockSectionItem>
+                      </apex:pageBlockSection>  
+                </apex:outputPanel>   
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0" id="conditionalEntryFieldDiv">
+                    <apex:pageBlockSection columns="1" collapsible="false" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Other'),true,false)}" >
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="If OTHER please explain and see your attorney" styleClass="lbStyle" for="cpagreeType" />                                
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Other_Agreement_Type__c}" id="cpagreeType" /> 
+                         </apex:pageBlockSectionItem> 
+                         <apex:pageBlockSectionItem >
+                            <apex:outputtext value="If select Other - must upload an approved legal template/contract." styleClass="lbStyle" />                               
+                         </apex:pageBlockSectionItem>                                                                                                 
+                     </apex:pageBlockSection>
+                </apex:outputPanel>
+             
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0" id="parentagreement">
+                    <apex:pageBlockSection columns="1" collapsible="false" >
+                        <apex:pageBlockSectionItem >
+                             <apex:outputLabel rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Amendment' || Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Change Order (for Statements of Work)' 
+                             || Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Statement of Work (SOW)' || Apttus__APTS_Agreement__c.APTPS_subtype__c =='Corporate Supply Agreement Product Schedule'                                  
+                             || Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Statement of Work (Marketing)' ), true, false)}" styleClass="messageStyleSTEP5" 
+                             value="The contract selected is of type Child Agreement. Please choose ''Yes'' and search for parent agreement below"  /> 
+                        </apex:pageBlockSectionItem>                            
+                   </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" collapsible="false" >
+                    <apex:pageBlockSectionItem >
+                         <apex:outputLabel value="Is this an Amendment, Supplement or SOW to a Master Agreement?" styleClass="lbStyle"/>
+                           <apex:selectRadio value="{!boolShowParent}" id="chooseMaster" >
+                                  <apex:selectOption itemValue="true" itemLabel="Yes"  />
+                                  <apex:selectOption itemValue="false" itemLabel="No" />
+                                  <apex:actionSupport event="onchange" reRender="TheForm,parent2ID" action="{!fnShowParent}"  /> 
+                            </apex:selectRadio>                         
+                    </apex:pageBlockSectionItem>
+                   </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1" collapsible="false" rendered="{!boolShowParent}" id="parent2ID" >
+                         <apex:pageBlockSectionItem >
+                              <apex:outputLabel value="If yes, search for Parent Agreement by Parent Company Name" styleClass="lbStyle" />
+                              <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Parent_Agreement__c}" style="width:400px;" id="cpParent" />
+                            <!--  <apex:actionRegion immediate="true">
+                                  <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Parent_Agreement__c}" style="width:400px;" id="cpParent">
+                                    <apex:actionSupport event="onchange" reRender="cpAccountBlock,cpRegion,cpSubRegion,cpCountry,cpTypeOfWork,cpAddress,msgs,cpParent" action="{!populateChannelPartnerInfo}" /></apex:inputField>
+                              </apex:actionRegion> -->
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                             <apex:outputLabel value="If you can not locate the Parent agreement; create Parent agreement first and then come back to select the Parent agreement" styleClass="lbStyle" />
+                        </apex:pageBlockSectionItem>                            
+                   </apex:pageBlockSection>
+                 </apex:outputPanel>              
+                 
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection columns="1" collapsible="false" >
+                     <apex:pageBlockSectionItem >
+                          <apex:outputLabel value="If you do not know which contract to select or have questions about parent agreements, please contact Legal." styleClass="messageStyle" />
+                     </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem id="cpDept">
+                         <apex:outputLabel value="Check here for department legal representative" styleClass="lbStyle" />
+                         <apex:actionRegion immediate="true">
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Contract_Departments__c}" style="width:350px;" id="cpLegal">
+                                  <apex:actionSupport event="onchange" reRender="cpDept,cpLegalRep,repBlock,TheForm" action="{!populateLegalRep}" />
+                             </apex:inputField>
+                        </apex:actionRegion> 
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="repBlock" >
+                          <apex:outputLabel value="Your Legal Representative is" styleClass="lbStyle" /> 
+                          <apex:outputLink target="_blank" value="{!'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to='+legalRep.email}" styleClass="lbStyle" id="cpLegalRep">{!legalRep.name + ' ' + legalRep.email}</apex:outputLink>                      
+                     </apex:pageBlockSectionItem>
+                 </apex:pageBlockSection>
+                </apex:outputPanel>  
+                                               
+            
+                <apex:pageBlockSection columns="5">                        
+                    <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Cancel" styleClass="vpbButton" title="Quit without saving" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving you want to exit without saving?');" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Next" styleClass="vpbButton" title="Go to next screen" action="{!nextTabStep1}"  />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}" rendered="false"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            
+            </apex:pageBlock>  
+            </apex:form>
+        </apex:tab>
+        
+        
+        <apex:tab label="Step-2: Contract Party Information" id="tab2" status="sLoading" disabled="{!availableTab < 2}">
+              <div class="imgWrap" style="padding-left:250px;">
+                  <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+                  <p class="imgDescriptionSTEP22">Third party company must be set-up in Motorola's vendor management system. Contact finance to set up.<br /><b>Unable to set up now?</b><br />Enter ''NO eGVM'' 
+                  and add Company Name to proceed.<br />Note: You must have Company set up before you will be able to finalize and approve your contract.</p>
+              </div>
+              
+              <apex:form >
+              <apex:pageBlock mode="edit">                      
+   
+            <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection columns="2" collapsible="false" id="cpBlock" >
+                <apex:facet name="header">
+                     <span style="font-size:17px; color:black">Input Third Party Information</span>
+                 </apex:facet>
+                    <apex:pageBlockSectionItem > 
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem > 
+                    </apex:pageBlockSectionItem>
+                                       
+                   <apex:pageBlockSectionItem id="cpAccountBlock" helpText="{!$ObjectType.Apttus__APTS_Agreement__c.fields.Apttus__Account__c.inlineHelpText}"> 
+                        <apex:outputLabel value="Company Name" styleClass="lbStyle" title="Name of vendor/channel partner that ties to finance. Search for ''No eGVM'' if customer/vendor not found." />                            
+                        <apex:actionRegion immediate="true">
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Account__c}"
+                            required="true" style="width:200px;" id="cpAccount" >
+                            <apex:actionSupport event="onchange"
+                                reRender="cpBlock,cpAccountBlock,cpAddress,msgs" action="{!populateChannelPartnerInfo}" /></apex:inputField>
+                        </apex:actionRegion> 
+                  </apex:pageBlockSectionItem>  
+                  <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Company Address" styleClass="lbStyle"/>
+                        <apex:outputText value="{!channelPartner.BillingStreet + ', '
+                                                + channelPartner.BillingCity + ', '
+                                                + channelPartner.BillingState + ', '
+                                                + channelPartner.BillingPostalCode + ', '
+                                                + channelPartner.BillingCountry}"
+                                                id="cpAddress" styleClass="lbStyle"/> 
+                    </apex:pageBlockSectionItem>             
+                    
+                    <apex:pageBlockSectionItem >  
+                        <apex:outputLabel value="" styleClass="lbStyle" />
+                        <apex:outputText value="Search for customer/vendor that ties to finance.  If not found, select ''No eGVM''. You must update eGVM or R12 (Customer) Company account data before you finalize and approve your contract." style="width:200px;" styleClass="lbStyle"/> 
+                        <!-- Name of vendor/channel partner that ties to finance. Search for ''No eGVM'' if customer/vendor not found. You must update eGVM Company account data before you finalize and approve your contract. Check with finance." style="width:200px;" styleClass="lbStyle"/> -->
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                  
+                    
+                    <apex:pageBlockSectionItem helpText="Enter ''No eGVM'' into Company Name Field above in order to use this field." >
+                        <apex:outputLabel value="If 3rd Party Not Found, Input Company Name" styleClass="lbStyle" title="Enter ''No eGVM'' into Company Name Field above in order to use this field." />                                                       
+                        <apex:inputField required="{!IF((Apttus__APTS_Agreement__c.Apttus__Account__c == '0014000000nNDo0AAG'), true, false)}" value="{!Apttus__APTS_Agreement__c.Non_eGVM_Account_Name__c}" style="width:200px;" id="cpNoEVGM"/> 
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                        
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Primary Contact Name" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Primary_Contact__c}" required="true" style="width:200px;" />
+                    </apex:pageBlockSectionItem>  
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Primary Contact Email" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Primary_Contact_Email__c}" required="true" style="width:200px;"/> 
+                    </apex:pageBlockSectionItem>
+                    
+                  <!--  <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Primary Contact Phone" styleClass="lbStyle"/>
+                        <apex:outputText value="{!phone}"  id="cpPhone" styleClass="lbStyle"/> 
+                    </apex:pageBlockSectionItem>
+                    
+                     <apex:pageBlockSectionItem id="cpContactBlock" rendered="{!IF((Apttus__APTS_Agreement__c.Apttus__Account__c != '0014000000nNDo0AAG'), true, false)}" helpText="Please setup Contact  if not found in search and then select contact here.">
+                        <apex:outputLabel value="Primary Contact Name" styleClass="lbStyle" title="Please setup Contact  if not found in search and then select contact here."  />
+                               
+                        <apex:actionRegion immediate="true" >
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Primary_Contact__c}"
+                            required="false" style="width:200px;" id="cpContact" >
+                            <apex:actionSupport event="onchange" reRender="cpContactBlock,cpPhone,cpEmail,msgs"
+                            action="{!populateContactInfo}" />
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:pageBlockSectionItem>  -->                                      
+            
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Is this a Multiparty Contract?" styleClass="lbStyle"/>                          
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Is_this_a_Multiparty_Contract__c}" />
+                    </apex:pageBlockSectionItem>                        
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="If Multiparty Contract, list the company names" styleClass="lbStyle"/>                                 
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_If_Yes_list_the_party_names__c}" /> 
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection columns="2" title="Connected Persons Certification" collapsible="false" id="connectedSection" >      
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="You must search whether this third party entity or individual (i.e., vendor, supplier, customer, carrier) is on the List of Connected Persons." style="width:200px;" styleClass="lbStyle" />                                                       
+                        <apex:commandLink immediate="true" action="https://drive.google.com/a/motorola.com/file/d/0B15Ju4gKHaX2VDVBMWlCY0o5OFU/view?usp=sharing" value="List of Connected Persons (pdf) last updated Jun 30th,2015" target="_blank" style="width:200px;" styleClass="lbStyle"/>
+                       
+                   </apex:pageBlockSectionItem>
+                   <apex:pageBlockSectionItem >
+                    <apex:commandLink immediate="true" action="https://drive.google.com/a/motorola.com/file/d/0B15Ju4gKHaX2a2pBckc2TkhUNVU/view?usp=sharing" value="List of Connected Persons (Excel) last updated Jun 30th,2015" target="_blank" style="width:200px;" styleClass="lbStyle"/>
+                    </apex:pageBlockSectionItem>                   
+                  
+                   <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Is the third party on the List of Connected Persons?" styleClass="lbStyle" />                                                       
+                        <apex:actionRegion immediate="true">
+                            <apex:inputField required="true" value="{!Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c}" style="width:200px;" id="cpConnectedinp"  > 
+                                <span style="font-size:13px; color:red">By your selection you certify that you have searched for your third party entity or individual on the List of Connected Persons.</span>
+                                <apex:actionSupport event="onchange" reRender="connectedSection" />
+                            </apex:inputField>
+                        </apex:actionRegion>
+                   </apex:pageBlockSectionItem>                         
+                     <apex:pageBlockSectionItem rendered="{!IF((boolIsSpecialAccess == false), true, false)}"> 
+                        <apex:outputLabel value="Connected Persons Approval" styleClass="lbStyle" />                                                       
+                        <apex:outputLabel value="{!Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c}" id="cpConnectedout" styleClass="lbStyle"> 
+                         <br></br><span style="font-size:13px; color:red">If this third party is on the List, approval is required before contract approval and signature. If your request is pending review with Legal; you will be notified on status via email.</span>   
+                        </apex:outputLabel>                           
+                     </apex:pageBlockSectionItem> 
+                      
+                     <apex:pageBlockSectionItem id="cpConnectedsec" rendered="{!IF((boolIsSpecialAccess && Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes'), true, false)}"> 
+                       <apex:outputLabel value="Connected Persons Approval" styleClass="lbStyle" />                                                       
+                       <apex:inputField value="{!Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c}" style="width:200px;" id="cpConnected">
+                           <br></br><span style="font-size:13px; color:red">If this third party is on the List, approval is required before contract approval and signature. If your request is pending review with Legal; you will be notified on status via email.</span>   
+                       </apex:inputField>      
+                     </apex:pageBlockSectionItem>                  
+               </apex:pageBlockSection>
+              </apex:outputPanel>
+   
+                
+              <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection collapsible="false" columns="2" id="cpLoc">
+                   <apex:facet name="header">
+                     <span style="font-size:17px; color:black">Input Motorola Information</span>
+                  </apex:facet>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Motorola Contract Entity" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_MMI_Contracting_Entity__c}" required="true" style="width:400px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Region" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Region__c}" id="cpRegion" required="true" />
+                     </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Your Business Function" styleClass="lbStyle" />
+                        <apex:outputtext value="{!Apttus__APTS_Agreement__c.APTPS_Practice_Area__c}" id="cpPracticeArea" style="width:200px;" styleClass="lbStyle" />
+                     </apex:pageBlockSectionItem> 
+                    <apex:pageBlockSectionItem >                         
+                        <apex:outputLabel value="Sub Region" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Sub_Region__c}" id="cpSubRegion"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Country" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Country__c}" id="cpCountry"/>
+                     </apex:pageBlockSectionItem> 
+                     <apex:pageBlockSectionItem rendered="{!IF((strRecordType == '01240000000QJ1MAAW'), true, false)}"  >
+                        <apex:outputLabel value="Type of Account" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Type_of_Work__c}" id="cpTypeOfWork" required="true" />
+                     </apex:pageBlockSectionItem>                                                 
+               </apex:pageBlockSection>
+               </apex:outputPanel>
+            
+                <apex:pageBlockSection columns="6">                       
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:commandButton value="Cancel" rendered="false" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving?');"/> 
+                            <apex:commandButton value="Save"  title="Save the input data" styleClass="vpbButton" action="{!mySave}" />
+                        </apex:pageBlockSectionItem> 
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                                                                        
+                        <apex:pageBlockSectionItem >
+                            <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true"/>
+                            <apex:commandButton value="Next" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+                 </apex:pageBlockSection>
+            
+            </apex:pageBlock>  
+           </apex:form>      
+    </apex:tab>
+    
+    
+    <apex:tab label="Step-3: Agreement Information" id="tab3" status="sLoading" disabled="{!availableTab < 3}">
+        <div class="imgWrap" style="padding-left:450px;">
+            <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+            <p class="imgDescription"><b>Enter key Contract terms here.</b><br /> Enter required contract START DATE and if known END DATE or TERM (MONTHS).<br /> Enter Agreement TERM (MONTHS) as 0 for contracts with no term.<br /><br />Click ''SAVE'' and then ''CREATE CONTRACT'' to access and download your Contract.<br />Work with your legal contact on any changes.</p>
+        </div> 
+        <apex:form id="tab3Form">
+        <apex:pageBlock mode="edit" id="tab3Block">
+        <apex:pageMessage severity="{!createContractMsgSev}" strength="2" summary="{!createContractMsg}" id="createContractMsg" rendered="{!createContractMsgSev != ''}">
+            &nbsp;&nbsp;&nbsp;&nbsp;<apex:outputLink value="/servlet/servlet.FileDownload?file={!createContractId}" rendered="{!createContractMsgSev = 'Confirm'}">View Contract</apex:outputLink> 
+            &nbsp;&nbsp;&nbsp;<apex:outputLink onclick="dismissMsg('createContract'); return false;">Dismiss</apex:outputLink>
+        </apex:pageMessage>  
+        <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+            <apex:pageBlockSection columns="1" collapsible="false" id="cpBlock" >
+                  <apex:facet name="header">
+                     <span style="font-size:17px; color:black">Input Template Data</span>
+                  </apex:facet>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Agreement Start Date" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Contract_Start_Date__c}" required="true"/>
+                     </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Agreement End Date" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Contract_End_Date__c}" />
+                     </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Agreement Term (months)" styleClass="lbStyle" />
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Term_Months__c}" />
+                     </apex:pageBlockSectionItem>  
+                    <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Master Services Agreement (MSA)'), true, false)}" >
+                        <apex:outputLabel value="" styleClass="lbStyle" />
+                        <apex:outputText styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c == 'Master Services Agreement (MSA)'), true, false)}" value="Recommend MSA initial term should be 12 months (1 year)" />
+                     </apex:pageBlockSectionItem>                                   
+            </apex:pageBlockSection>     
+            <apex:pageBlockSection columns="2" title="Additional Information" collapsible="false" id="cpBlock1" >                      
+                    <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Target Close Date (When do you need to finalize/close this contract?)" styleClass="lbStyle" />
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.Target_Close_Month__c}" required="true" />
+                    </apex:pageBlockSectionItem> 
+                    <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Target Close Reason" styleClass="lbStyle" />
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_TargetClose_Reason__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Projected Value or Spend" styleClass="lbStyle" />
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Projected_Value_or_Spend__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                                                                
+            </apex:pageBlockSection>                
+         </apex:outputPanel>           
+         <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+            <apex:pageBlockSection columns="2" collapsible="false" id="cpBlock34" >                      
+                      <apex:facet name="header">
+                         <span style="font-size:17px; color:black">After you Save, click ''Create Contract'':</span><br />
+                         <span style="font-size:12px; color:black">After you Create Contract, you must send to the Third Party before proceeding to Step 4</span>
+                         </apex:facet>
+                     <apex:pageBlockSectionItem >
+                         <apex:commandButton value="Save" title="Save the input data" styleClass="vpbButton" action="{!mySave}" /> 
+                         <apex:commandButton value="Create Contract" title="To generate contract document" action="{!createContract}" styleClass="vpbButtonSP" /> 
+                        
+                          </apex:pageBlockSectionItem> 
+                        <!-- <apex:commandButton value="Create Contract DL" title="To generate contract document" action="{!URLFOR($Action.Apttus__APTS_Agreement__c.Run_DDP, Apttus__APTS_Agreement__c.Id)}" styleClass="vpbButtonSP" /> -->                                              
+                                            
+            </apex:pageBlockSection> 
+           </apex:outputPanel> 
+       
+         <apex:pageBlockSection columns="6">                        
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Cancel" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving?');"/>                       
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                   
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true"/> 
+                   <apex:commandButton value="Next" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}" onclick="if (!confirmGenerate()) return false;" />
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+               </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+                    
+                    
+        </apex:pageBlock>
+       </apex:form>    
+        <apex:relatedList subject="{!$CurrentPage.parameters.relatedId}"  title="Attachments" list="CombinedAttachments" />        
+    </apex:tab>
+    
+     <apex:tab label="Step-4: Business Approval Information" id="tab4" status="sLoading" disabled="{!availableTab < 4}">
+     
+        
+        <apex:form rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" id="form4">
+            <apex:pageBlock mode="edit" >                  
+               <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                   
+                    <apex:pageBlockSection columns="1" collapsible="false" id="cpBlocknotifier" >                            
+                                 <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}">
+                                            <apex:outputLabel value="Finance Owner" styleClass="lbStyle" />
+                                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Functional_Finance_Approver__c}" required="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" />
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}">
+                                             <apex:outputLabel value="If need help with Executive Summary Click here:" styleClass="lbStyle" />
+                                            <apex:commandButton styleClass="vpbButtonSP" value="Notify Finance Owner" action="{!notifyFinance}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" />                                          
+                                </apex:pageBlockSectionItem>                                 
+                   </apex:pageBlockSection>  
+               </apex:outputPanel>
+            </apex:pageBlock> 
+        </apex:form>
+        
+        
+          
+           <apex:form id="step4i">                     
+         <apex:pageBlock mode="edit">
+            <div class="imgWrap" style="padding-left:40px;">
+            <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+            <p class="imgDescription">Enter required terms (red) and risks to Generate Executive Summary.<br />- Total Agreement Value: If unknown, 
+            enter an estimate and input details of estimate in Explanation box.<br />- Work Partners: Complete name of required work partner via lookup selection<br /> 
+            - See Welcome Page for Contract and approval details provided by business category.<br /><br /> <b>Click ''SAVE'' or ''GENERATE EXECUTIVE SUMMARY'' to save and generate.</b></p>
+        </div>      
+           <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                   
+                <apex:pageBlockSection columns="1" collapsible="false" id="businessBlock" >                                  
+                      <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Business Approval Information </span>             
+                      </apex:facet>    
+                
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                    <apex:pageBlockSection columns="2" collapsible="false" id="cpBlock34" >                      
+                              <apex:facet name="header">
+                                 <span style="font-size:12px; color:black">After you Save, click ''Generate Executive Summary'':</span>
+                              </apex:facet>                          
+                             <apex:pageBlockSectionItem >                            
+                                   <apex:actionRegion immediate="true" >
+                                       <apex:commandButton value="Save" title="Save the input data" styleClass="vpbButton" action="{!mySave}" />
+                                   </apex:actionRegion>
+                                   <apex:commandButton value="Generate Executive Summary" styleClass="vpbButtonSP" action="{!reviewExSummary}" title="Generate Executive Summary"/>
+                             </apex:pageBlockSectionItem>                              
+                    </apex:pageBlockSection> 
+               </apex:outputPanel> 
+                      
+                    <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0" id="valuepanel">
+                        <apex:pageBlockSection title="FINANCIALS:" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'GTM' && Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Indirect Supply Chain'), true, false)}" >
+                                <apex:outputLabel value="Contract Summary/Strategic Importance" styleClass="lbStyle"/>  
+                                  <apex:inputTextarea value="{!Apttus__APTS_Agreement__c.APT_Contract_Summary_StrategicImportance__c}"/>
+                             </apex:pageBlockSectionItem> 
+                           </apex:pageBlockSection>
+                           <apex:pageBlockSection collapsible="false" columns="2"> 
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Total Agreement Value" styleClass="lbStyle"/>
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <div class="requiredBlock"></div>
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Total_Contract_Value__c}" required="{!boolIsRequired}" id="totalvalue" />
+                                </apex:outputPanel>                                    
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'|| Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                                  <apex:outputLabel value="Strategic Importance" styleClass="lbStyle"/>  
+                                  <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Stategic_Importance__c}"/>
+                             </apex:pageBlockSectionItem>
+                         <!--     <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >                                    
+                               </apex:pageBlockSectionItem> -->
+                             <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Explanation of Total Agreement Value" styleClass="lbStyle"/>                           
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <div class="requiredBlock"></div>
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Explanation_of_LCV__c}" required="{!boolIsRequired}"/>
+                                </apex:outputPanel>
+                             </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Marketing'), true, false)}">
+                                <apex:outputLabel value="Department Being Charged" styleClass="lbStyle"/>                           
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <div class="requiredBlock"></div>
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Department_Being_Charged__c}" required="{!boolIsRequired}"/>
+                                 </apex:outputPanel>
+                             </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Marketing'), true, false)}">
+                                <apex:outputLabel value="Department Being Charged:Additional Info" styleClass="lbStyle"/>                           
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Department_Being_Charged_Add_Info__c}"/>
+                             </apex:pageBlockSectionItem>                                
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Estimated Lifetime Volume" styleClass="lbStyle"/>  
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Estimated_Lifetime_Volume__c}" /> 
+                               </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Explanation of Lifetime Volume" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Explanation_of_Lifetime_Volume__c}" />  
+                               </apex:pageBlockSectionItem>
+                               
+                               <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="MDF/SDF Discount %" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.MDF_SDF_Discount__c}" />  
+                               </apex:pageBlockSectionItem>                     
+                               <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Strategic Volume Mix Discount %" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.Strategic_Volumne_Mix_Discount__c}" />  
+                               </apex:pageBlockSectionItem>
+                               <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="COOP Discount %" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.COOP_Discount__c}" />  
+                               </apex:pageBlockSectionItem>                                
+                              <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Supplement #" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Supplement_Number__c}" />  
+                               </apex:pageBlockSectionItem>                            
+                              <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                                <apex:outputLabel value="Description" styleClass="lbStyle"/> 
+                                <apex:inputTextarea value="{!Apttus__APTS_Agreement__c.Apttus__Description__c}"/>
+                             </apex:pageBlockSectionItem>                                
+                        </apex:pageBlockSection>
+                   </apex:outputPanel>
+                   
+                    <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                           
+                    <apex:pageBlockSection columns="1" Title="Work Partners" collapsible="false" id="cpBlock2" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}">                     
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing' ), true, false)}">
+                                <apex:outputLabel value="Legal Owner" styleClass="lbStyle" />
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Legal_Owner__c}" required="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' && boolIsRequired), true, false)}"/>
+                                 </apex:outputPanel>
+                             </apex:pageBlockSectionItem>                          
+                             <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Internal Business Owner" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}" />
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Internal_Business_Owner__c}" required="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Direct Supply Chain' && boolIsRequired), true, false)}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}" />
+                                 </apex:outputPanel>
+                             </apex:pageBlockSectionItem>                       
+                              <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing' && Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'GTM'), true, false)}">
+                                <apex:outputLabel value="Procurement Owner" styleClass="lbStyle" />
+                                <apex:outputpanel layout="block" styleclass="requiredInput">                                        
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Secondary_Legal_Owner__c}" required="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain' && boolIsRequired), true, false)}" />
+                                 </apex:outputPanel>
+                             </apex:pageBlockSectionItem>                                 
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1" collapsible="false" id="cpBlock3" >                     
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing' ), true, false)}">
+                                <apex:outputLabel value="Product Category" styleClass="lbStyle" />
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Product_Category__c}" />
+                             </apex:pageBlockSectionItem>                                           
+                              <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                <apex:outputLabel value="Global Category Lead" styleClass="lbStyle"  />
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <div class="requiredBlock"></div>
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Category__c}" required="{!boolIsRequired}" />
+                                </apex:outputPanel>
+                             </apex:pageBlockSectionItem>                                                                                            
+                    </apex:pageBlockSection>
+                    </apex:outputPanel>
+                   
+                   <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0"> 
+                   <apex:pageBlockSection columns="2" Title="Term" collapsible="false" id="cpBlock1" >                       
+                        <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Auto Renew" styleClass="lbStyle" />
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Auto_Renewal__c}" />
+                        </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Renewal Notice Days" styleClass="lbStyle" />
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Renewal_Notice_Days__c}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Evergreen (Continuous Term) - Legacy agreements Only" styleClass="lbStyle" />
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Evergreen__c}"/>                                  
+                        </apex:pageBlockSectionItem>                                            
+                        <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Renewal Term (Months)" styleClass="lbStyle" />
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Auto_Renew_Term_Months__c}" />
+                        </apex:pageBlockSectionItem> 
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                                                                                                                       
+                        <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Explanation of Renewal Terms" styleClass="lbStyle" />
+                                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Auto_Renewal_Terms__c}" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    
+                    <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">  
+                    <apex:pageBlockSection title="PAYMENT TERMS:" collapsible="false" columns="2">                     
+                       <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Marketing' ), true, false)}" >
+                          <apex:outputLabel value="Payment Term From" styleClass="lbStyle" /> 
+                          <apex:outputpanel layout="block" styleclass="requiredInput">
+                              <div class="requiredBlock"></div>
+                              <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Payment_Term_From__c}" required="{!boolIsRequired}" />
+                          </apex:outputpanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Marketing'), true, false)}" >
+                             <apex:outputLabel value="If Pay Terms other or < 90 Explain" styleClass="lbStyle"/>   
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_If_Payment_terms_90_days_Explain__c}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Marketing'), true, false)}" >
+                             <apex:outputLabel value="Payment Term Days" styleClass="lbStyle"/> 
+                             <apex:outputpanel layout="block" styleclass="requiredInput">
+                                 <div class="requiredBlock"></div>  
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Payment_Term_Days__c}" required="{!boolIsRequired}" /> 
+                             </apex:outputpanel> 
+                         </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                        
+                         <apex:pageBlockSection collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Pre-pay Commitment" styleClass="lbStyle"/>  
+                                  <apex:outputpanel layout="block" styleclass="requiredInput">
+                                     <div class="requiredBlock"></div>                 
+                                     <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Pre_pay_Commitment__c}" required="{!boolIsRequired}" />
+                                   </apex:outputpanel> 
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="If Yes, describe Pre-pay Commitment" styleClass="lbStyle"/>
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_If_Yes_describe_Pre_pay_Commitment__c}" />
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Minimum Purchase Commitment" styleClass="lbStyle"/> 
+                                  <apex:outputpanel layout="block" styleclass="requiredInput">
+                                     <div class="requiredBlock"></div>                            
+                                     <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Minimum_Committment__c}" required="{!boolIsRequired}" />
+                                 </apex:outputpanel>
+                             </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="If Yes, describe Min Purchase Commitment" styleClass="lbStyle"/>                                 
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.If_Yes_describe_Min_Purchase_Commitment__c}" /> 
+                             </apex:pageBlockSectionItem>  
+                      </apex:pageBlockSection>
+                       <apex:pageBlockSection collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Minimum Purchase Commitment" styleClass="lbStyle"/>  
+                                 <apex:outputpanel layout="block" styleclass="requiredInput">
+                                     <div class="requiredBlock"></div>                  
+                                     <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Minimum_Committment__c}" required="{!boolIsRequired}" />
+                                 </apex:outputpanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Pricing at or above invoice pricing" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Pricing_included_at_or_above__c}" />
+                            </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Units" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Units__c}" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="NSAD" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_NSAD__c}" />
+                            </apex:pageBlockSectionItem> 
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="NSBD" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_NSBD__c}" />
+                            </apex:pageBlockSectionItem>   
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Gross Margin (%)" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Gross_Margin__c}" />
+                            </apex:pageBlockSectionItem> 
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                                 <apex:outputLabel value="Gross Margin ($)" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Gross_Margin__c}" />
+                            </apex:pageBlockSectionItem> 
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM'), true, false)}" >
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                             </apex:pageBlockSectionItem> 
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Payment Terms Based on Receipt" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.Payment_Terms_Based_on_Receipt__c}"  />
+                            </apex:pageBlockSectionItem>  
+                             <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain'), true, false)}" >
+                                 <apex:outputLabel value="Payment Terms Based on Invoice/Shipping" styleClass="lbStyle"/>                   
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.Payment_Terms_Based_on_Invoice_Shipping__c}" />
+                            </apex:pageBlockSectionItem> 
+                                             
+                        </apex:pageBlockSection>
+                </apex:outputPanel>
+                 <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                    <apex:pageBlockSection title="OTHER KEY TERMS:" collapsible="false" columns="2">                    
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Product Segment" styleClass="lbStyle"/>                                 
+                             <apex:outputpanel layout="block" styleclass="requiredInput">
+                                     <div class="requiredBlock"></div>  
+                                     <apex:inputField required="{!boolIsRequired}" value="{!Apttus__APTS_Agreement__c.APTPS_Product_Segment__c}" />
+                             </apex:outputpanel>
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                            <apex:outputLabel value="NRE & One Time Costs" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.NRE_One_Time_Costs__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                            <apex:outputLabel value="If Yes, Explan NRE & One Time Costs" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Explanation_NRE_One_Time_Costs__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                            <apex:outputLabel value="Agreement valid for all Vendor Subsidiaries?" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Agreement_valid_for_all_Subsidiaries__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                            <apex:outputLabel value="Vendor is Preferred Supplier?" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Vendor_is_Preferred_Supplier__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain'), true, false)}" >
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}">
+                            <apex:outputLabel value="New Product Introduced" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_New_Product_Introduced__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}">
+                            <apex:outputLabel value="New Product Summary" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_New_Product_Summary__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Terms Accepted Without Change" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Terms_Accepted__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="MML Products Involved" styleClass="lbStyle"/>                                 
+                              <apex:outputpanel layout="block" styleclass="requiredInput">
+                                 <div class="requiredBlock"></div>
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_MMI_Products__c}" required="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Indirect Supply Chain' && boolIsRequired), true, false)}" />
+                             </apex:outputpanel>
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Can Motorola terminate for Convenience?" styleClass="lbStyle"/>   
+                             <apex:outputpanel layout="block" styleclass="requiredInput">
+                                 <div class="requiredBlock"></div>                              
+                                 <apex:inputField value="{!Apttus__APTS_Agreement__c.Can_Motorola_terminate_for_Convenience__c}" required="{!boolIsRequired}" />
+                             </apex:outputpanel>
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Number of Days Notice Required" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_NumberOfDaysNoticeRequired__c}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="MML Assignability Without Consent" styleClass="lbStyle"/>  
+                            <apex:outputpanel layout="block" styleclass="requiredInput">
+                                <div class="requiredBlock"></div>                               
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Assignability_without_consent__c}" required="{!boolIsRequired}" />
+                            </apex:outputpanel>
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="MML Assignability Explanation" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Assignability_Explanation__c}" />
+                         </apex:pageBlockSectionItem> 
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Late Payment fees" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Late_Payment_fees__c}" />
+                         </apex:pageBlockSectionItem> 
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Enter Late Payment fees" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Enter_Late_Payment_fees__c}" />
+                         </apex:pageBlockSectionItem> 
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Early Termination fees" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Early_Termination_fees__c}" />
+                         </apex:pageBlockSectionItem> 
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Enter Early Termination fees" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Enter_Early_Termination_fees__c}" />
+                         </apex:pageBlockSectionItem> 
+                                                 
+                 </apex:pageBlockSection>
+                 <apex:pageBlockSection collapsible="false" columns="1"> 
+                          <apex:pageBlockSectionItem >
+                             <apex:outputLabel value="Summary of Other Key Terms" styleClass="lbStyle"/>                              
+                            <apex:inputTextarea value="{!Apttus__APTS_Agreement__c.APTPS_Summary_of_Other_Key_Terms__c}" />
+                         </apex:pageBlockSectionItem>     
+                      <!--   <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="If Yes, describe Min Purchase Commitment" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Description__c}" /> 
+                         </apex:pageBlockSectionItem>      -->                                   
+                 </apex:pageBlockSection>
+               </apex:outputPanel>                     
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                    <apex:pageBlockSection title="CONTRACT RISKS:  (If answer ''Yes'' to any risks below, please complete explanation box.)" collapsible="false" columns="2">                    
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Significant Risk" styleClass="lbStyle"/>
+                            <apex:outputpanel layout="block" styleclass="requiredInput">
+                                <div class="requiredBlock"></div>                                  
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Unusual_Risk__c}" required="{!boolIsRequired}" />
+                            </apex:outputpanel>
+                         </apex:pageBlockSectionItem>                             
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Explanation for Significant Risk" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Explaination_for_Unusual_Risk__c}" />
+                         </apex:pageBlockSectionItem>                                                       
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Value of Risk" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Value_of_Risk__c}" />
+                         </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                             <apex:outputLabel value="" styleClass="lbStyle" />
+                             <apex:outputText styleClass="lbStyle" value="Significant Risk Examples:  Exclusivity, Non-refundable expenses, Cannot terminate relationship, Unlimited Motorola indemnification or non-assert. Review Signature/Spend policy for other examples.  Discuss questions with legal.">
+                             </apex:outputText>
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="IP Risk - Lack of Supplier Indemnity" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.IP_Risk__c}" />
+                         </apex:pageBlockSectionItem>                              
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Explanation for IP Risk - Lack of Supplier Indemnity" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.IP_Risk_Desc__c}" />
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Risk to MML IP" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Motorola_IP_Risk__c}" />    
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Explanation for Risk to MML IP" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Motorola_IP_Risk_Desc__c}" />    
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Risk to 3rd party IP" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Risk_MML_IP__c}" />   
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Explanation for Risk to 3rd party IP" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.IP_Risk_Details__c}" />   
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Other Business Risks" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Other_Business_Risks__c}" />  
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Explanation for Other Business Risks" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Other_Business_Risks_Description__c}" /> 
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}">
+                            <apex:outputLabel value="Is Stamp Approval Required" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Is_Stamp_Approval_Required__c}" /> 
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}">
+                            <apex:outputLabel value="Explanation of Stamp Approval" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Explanation_of_Stamp_Approval__c}" />
+                         </apex:pageBlockSectionItem> 
+                         <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                            
+                         <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c != 'Marketing'), true, false)}" >
+                            <apex:outputLabel value="Stamp Approval #" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Stamp_Approval__c}" /> 
+                         </apex:pageBlockSectionItem>                                           
+                     </apex:pageBlockSection>
+                </apex:outputPanel>                    
+                 
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+            
+            <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+            <apex:pageBlockSection columns="2" collapsible="false" id="cpBlock34" >                      
+                      <apex:facet name="header">
+                         <span style="font-size:12px; color:black">After you Save, click ''Generate Executive Summary'':</span>
+                      </apex:facet>                          
+                     <apex:pageBlockSectionItem >                            
+                           <apex:actionRegion immediate="true">
+                                <apex:commandButton value="Save" title="Save the input data" styleClass="vpbButton" action="{!mySave}" />
+                            </apex:actionRegion>
+                           <apex:commandButton value="Generate Executive Summary" styleClass="vpbButtonSP" action="{!reviewExSummary}" title="Generate Executive Summary"/>
+                     </apex:pageBlockSectionItem>                              
+            </apex:pageBlockSection> 
+           </apex:outputPanel> 
+           
+            <apex:pageBlockSection columns="6">                        
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Cancel" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving?');"/>
+                  <!-- <apex:commandButton value="Save" styleClass="vpbButton" action="{!mySave}"  /> -->
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true" onclick="return confirm('Are you sure you want to go to previous screen without saving?');"/> 
+                   <apex:commandButton value="Next" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}" />
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>      
+        </apex:pageBlock>
+       </apex:form> 
+    </apex:tab>    
+    
+    <apex:tab label="Step-5: Approval" id="tab5" status="sLoading" disabled="{!availableTab < 5}">
+        <div class="imgWrap" style="padding-left:780px;">
+            <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+            <p class="imgDescriptionSTEP2">Approval must comply with Motorola's Spend and Signature Policy. Select internal approvers in the 
+            lookup fields. Includes legal (if the contract was changed), finance, your manager and other executives with requisite approval 
+            authority. <br /><br />REMEMBER: Vendor must be set up in eGVM before routing. <br /><br /><b>Ready to Route?</b> <br /><br />Click ''SEND FOR APPROVAL'' - Contract and Executive 
+            Summary will route for approval. Look for email updates of status.</p>
+        </div>  
+        
+        <apex:relatedList subject="{!$CurrentPage.parameters.relatedId}" title="Attachments" list="CombinedAttachments" />      
+        
+        <apex:form >
+        <apex:pageBlock mode="edit">    
+        
+         <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+         <apex:pageBlockSection columns="1" collapsible="false" title="Connected Persons Certification" rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c != 'Approved'), true, false)}"> 
+               <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c != 'Approved'),true,false)}">
+                   <apex:outputLabel rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c != 'Approved'),true,false)}"  
+                    styleClass="messageStyleSTEP5" value="Connected Person approval required before you can route the contract for approval and execute."></apex:outputLabel> 
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c != 'Approved'),true,false)}">
+                   <apex:outputLabel rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c != 'Approved'),true,false)}"  
+                    styleClass="messageStyleSTEP5" value="Your request is pending review with Legal and you will be notified on status via email."></apex:outputLabel> 
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem id="cpConnectedsec" rendered="{!IF((boolIsSpecialAccess && Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes'), true, false)}"> 
+                   <apex:outputLabel value="Connected Persons Approval" styleClass="lbStyle" />                                                       
+                   <apex:inputField required="true" value="{!Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c}" style="width:200px;" id="cpConnected"/> 
+               </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>  
+         </apex:outputPanel>           
+
+       <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                    
+                <apex:pageBlockSection columns="1" collapsible="false" title="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Marketing'), 'Input Additional Approvers', 'Input Approval Routing')}" >                    
+                <!--  <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Input Approval Routing</span>
+                   </apex:facet> -->                   
+               <apex:outputLabel styleClass="messageStyleSTEP5" value="You must upload your final Contract before submitting for approval. Please use ''Attach File'' button above."></apex:outputLabel> 
+               <apex:outputLabel rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='GTM' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Marketing'), true, false)}" styleClass="messageStyleSTEP5" value="Required approvers have been pre selected. You can enter additional approvers if any required."></apex:outputLabel> 
+                <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0" >
+                    <apex:pageBlockSection columns="1" collapsible="false" title="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c =='Direct Supply Chain'), 'Level 1 Approvers', '')}">   
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 1" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Deal_Specific_Approver__c}" required="{!IF((Apttus__APTS_Agreement__c.Apttus__Status_Category__c != 'In Filing' && (Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c == 'Direct Supply Chain')), true, false)}"/> 
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 2" styleClass="lbStyle"/>                                 
+                             <apex:inputField value="{!Apttus__APTS_Agreement__c.Business_Unit_Finance_Approver__c}"/> 
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 3" styleClass="lbStyle"/>                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Business_VP__c}" />
+                         </apex:pageBlockSectionItem>
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 4" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Procurement_Approver__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection> 
+                     <apex:pageBlockSection columns="1" collapsible="false" title="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c =='Direct Supply Chain'), 'Level 2 & Above Approvers', '')}"> 
+                          <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 5" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.Legal_Approver__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 6" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Procurement_VP__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 7" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_1__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 8" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_2__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 9" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_3__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Indirect Supply Chain' || Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 10" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_10__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 11" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_11__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 12" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_12__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Approver 13" styleClass="lbStyle" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />                                 
+                            <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Staff_Level_SLT_13__c}" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_Practice_Area__c=='Direct Supply Chain'), true, false)}" />
+                         </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+             </apex:pageBlockSection>
+            </apex:outputPanel> 
+           
+            <apex:pageBlockSection columns="6">                        
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Cancel" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving?');"/>
+                   <apex:commandButton value="Save" title="Save the input data" styleClass="vpbButton" action="{!mySave}"  /> 
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Send for Approval" action="{!fnSubmitApproval}" styleClass="vpbButtonSP" title="Send for internal approvals" rendered="{!IF((Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'Yes' && Apttus__APTS_Agreement__c.Connected_Party_Approval_Status__c == 'Approved') || Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == 'No' || Apttus__APTS_Agreement__c.Is_Supplier_Customer_on_Connected_Party__c == '',true,false)}"  />
+                   <!--rendered="{!IF(Apttus__APTS_Agreement__c.APTPS_Executive_Summary_Generated__c && Apttus__APTS_Agreement__c.Apttus_Approval__Approval_Status__c == 'Not Submitted',true,false)}"  /> -->
+               </apex:pageBlockSectionItem>
+               
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true" onclick="return confirm('Are you sure you want to go to previous screen without saving?');"/> 
+                   <apex:commandButton value="Next" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}" />
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>        
+        
+        </apex:pageBlock>  
+        </apex:form>            
+       
+        <apex:relatedList subject="{!$CurrentPage.parameters.relatedId}" list="Apttus_Approval__R00N70000001lyBVEAY__r" />
+    </apex:tab> 
+    
+    <apex:tab label="Step-6: Echosign" id="tab6" status="sLoading" disabled="{!availableTab < 6}">
+      <div class="imgWrap" style="padding-left:900px;">
+         <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+         <p class="imgDescriptionSTEP6"><b>Congratulations! Your Contract is approved and ready to sign. Lets route for electronic signature.</b><br /><br /> 
+            Enter the signing party emails.<br />REMEMBER:  Select the CORRECT FINAL contract to sign.</p>
+       </div> 
+       
+       <apex:form >
+            <apex:pageBlock mode="edit">                  
+               <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                   
+                    <apex:pageBlockSection collapsible="false" columns="2">                      
+                        <apex:pageBlockSectionItem >     
+                                <apex:outputLabel value="If Agreement signed on paper - Confirm signed agreement is uploaded and ''Click Next'' to proceed" styleClass="lbStyle"/> 
+                                <apex:actionRegion immediate="true">
+                                    <apex:inputCheckbox required="true" value="{!Apttus__APTS_Agreement__c.APTPS_No_Signature_Required__c}" id="nosignerCheckID" >
+                                        <apex:actionSupport event="onchange" action="{!fnShowThirdSigner}" reRender="skipSignatureID" /> 
+                                    </apex:inputCheckbox> 
+                                </apex:actionRegion>
+                        </apex:pageBlockSectionItem> 
+                         <apex:outputPanel id="skipSignatureID">
+                            <apex:pageBlockSectionItem rendered="{!Apttus__APTS_Agreement__c.APTPS_No_Signature_Required__c}">                                
+                                <apex:outputLabel styleClass="messageStyleSTEP5" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_No_Signature_Required__c==true && Apttus__APTS_Agreement__c.Apttus_Approval__Approval_Status__c!='Approved'), true, false)}" value="You must get approvals before proceeding for Activation."></apex:outputLabel> 
+                               <apex:commandButton value="Next" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_No_Signature_Required__c==true && Apttus__APTS_Agreement__c.Apttus_Approval__Approval_Status__c=='Approved'), true, false)}" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}"  />
+                            </apex:pageBlockSectionItem>
+                         </apex:outputPanel>
+                     </apex:pageBlockSection> 
+               </apex:outputPanel>
+            </apex:pageBlock> 
+        </apex:form>
+       
+       <apex:form >
+        <apex:pageBlock mode="edit">    
+             <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                 <apex:outputLabel rendered="{!IF((Apttus__APTS_Agreement__c.Apttus__Status__c=='Other Party Signatures'), true, false)}" styleClass="messageStyleSTEP5" value="Your agreement is sent for eSignatures. You will be notified once signatures complete."></apex:outputLabel>
+                 <apex:pageBlockSection collapsible="false" columns="1" id="cpLoc" rendered="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c!='RFQ Letter Template'), true, false)}">
+                      <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Third Party Signatory</span>
+                      </apex:facet>
+                       <apex:pageBlockSectionItem >    
+                                <apex:outputLabel value="Name" styleClass="lbStyle"/> 
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.Outside_Party_Signatory_Name__c}" style="width:200px;" required="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c!='RFQ Letter Template'), true, false)}"  />
+                       </apex:pageBlockSectionItem>                                
+                       <apex:pageBlockSectionItem >    
+                                <apex:outputLabel value="Email" styleClass="lbStyle"/> 
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.Outside_Party_Signatory_Email__c}" style="width:200px;" required="{!IF((Apttus__APTS_Agreement__c.APTPS_subtype__c!='RFQ Letter Template'), true, false)}"/>
+                       </apex:pageBlockSectionItem>
+                                               
+                        <apex:pageBlockSectionItem >    
+                            <apex:outputLabel value="Is there Additional Third Party Signatory to sign this agreement?" styleClass="lbStyle"/>   
+                            <apex:actionRegion immediate="true">
+                                <apex:inputCheckbox value="{!boolShowThirdSigner}" id="signerCheckID">
+                                     <apex:actionSupport event="onchange" action="{!fnShowThirdSigner}" reRender="signerID" /> 
+                                </apex:inputCheckbox> 
+                                </apex:actionRegion>
+                        </apex:pageBlockSectionItem> 
+                      </apex:pageBlockSection>
+                      <apex:outputPanel id="signerID"> 
+                      <apex:pageBlockSection title="Additional Third Party Signatory" collapsible="false" columns="1" rendered="{!boolShowThirdSigner}">                  
+                             <apex:pageBlockSectionItem >    
+                                <apex:outputLabel value="Name" styleClass="lbStyle"/> 
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.Outside_Party_Signatory_2_Name__c}" required="true" style="width:200px;" />
+                            </apex:pageBlockSectionItem>                                
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Email" styleClass="lbStyle"/> 
+                                <apex:inputField value="{!Apttus__APTS_Agreement__c.Outside_Party_Signatory_2_Email__c}" required="true" style="width:200px;"/>
+                            </apex:pageBlockSectionItem>                               
+                        </apex:pageBlockSection>
+                      </apex:outputPanel>                                   
+
+           </apex:outputPanel>               
+           <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection collapsible="false" columns="1">                        
+                    <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Motorola Signatory</span>
+                      </apex:facet>
+                    <apex:pageBlockSectionItem >    
+                         <apex:outputLabel value="Name" styleClass="lbStyle"/>
+                          <apex:inputField value="{!Apttus__APTS_Agreement__c.Motorola_Signatory__c}" required="true" style="width:200px;" id="cpMoto" />
+                   </apex:pageBlockSectionItem>                               
+                </apex:pageBlockSection>
+           </apex:outputPanel>
+           <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection collapsible="false" columns="1">                        
+                    <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Send copies to: (optional)</span>
+                      </apex:facet>                        
+                   <apex:pageBlockSectionItem >    
+                                <apex:outputLabel value="Copy to" styleClass="lbStyle"/> 
+                                <apex:inputText value="{!sendcc}" style="width:300px;"/>
+                   </apex:pageBlockSectionItem> 
+                   <apex:pageBlockSectionItem >    
+                         <apex:outputLabel styleClass="lbStyle"/>
+                         <apex:outputText value="Separate email addresses by commas" styleClass="lbStyle"/>
+                   </apex:pageBlockSectionItem>                               
+                </apex:pageBlockSection>
+           </apex:outputPanel>               
+           <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+                <apex:pageBlockSection collapsible="false" columns="1">
+                    <apex:facet name="header">
+                         <span style="font-size:17px; color:black">Agreement Detail</span>
+                      </apex:facet>
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Agreement Name" styleClass="lbStyle"/>
+                        <apex:outputText value="{!Apttus__APTS_Agreement__c.Name}" styleClass="lbStyle" />            
+                    </apex:pageBlockSectionItem>                      
+                    <apex:pageBlockTable value="{!ApttusAttachments}" var="Att">
+                       <apex:column >
+                         <apex:inputCheckbox value="{!Att.selected}" title="{!Att.attach.Name}"/>
+                         <apex:outputLabel value="{!Att.attach.Name}"/>
+                       </apex:column>                           
+                       <apex:column value="{!Att.attach.createddate}"/>
+                       <apex:column value="{!Att.attach.createdById}"/>                        
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+           </apex:outputPanel>
+            
+           <apex:pageBlockSection columns="6">                        
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Cancel" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to exit without saving?');"/>
+                   <apex:commandButton value="Save" title="Save the input data" styleClass="vpbButton" action="{!mySave}"  /> 
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Send for eSignature" styleClass="vpbButtonSP" action="{!fnSendforSignatures}" title="Send for electronic signatures"  />
+               </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true"/> 
+                   <apex:commandButton value="Next" title="Save and go to next screen" styleClass="vpbButton" action="{!nextTab}" />
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have saved before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+           
+        </apex:pageBlock> 
+       </apex:form> 
+       <!-- <apex:relatedList subject="{!$CurrentPage.parameters.relatedId}"  title="Attachments" list="CombinedAttachments" /> -->
+        <apex:relatedList subject="{!Apttus__APTS_Agreement__c.id}" list="Apttus_Echosign__Agreements__r"/> 
+    </apex:tab>
+    
+    <apex:tab label="Step-7: Finalize and Activate Contract" id="tab7" status="sLoading" disabled="{!availableTab <> 7}">
+        <div class="imgWrap" style="padding-left:1000px;">
+             <apex:image value="{!$Resource.Apttus_Help}" height="30px" width="30px"/>
+             <p class="imgDescriptionSTEP6"><b>Last Step - You made it!</b><br /><br /> ''ACTIVATE'' and finalize your contract in the system so we know this Contract is in force.</p>
+        </div> 
+        <apex:form id="tab7Form">
+        <apex:pageBlock mode="edit" id="tab7pb">          
+        <apex:pageMessage severity="{!activateContractMsgSev}" strength="2" summary="{!activateContractMsg}" id="activateContractMsg" rendered="{!activateContractMsgSev != ''}">
+            &nbsp;&nbsp;&nbsp;&nbsp;<apex:outputLink onclick="dismissMsg('activateContract'); return false;">Dismiss</apex:outputLink>
+        </apex:pageMessage>
+        <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">
+            <apex:pageBlockSection columns="1" collapsible="false" id="cpBlock" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Third Party Signature Date" styleClass="lbStyle" />
+                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Other_Party_Signed_Date__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Motorola Signature Date" styleClass="lbStyle" />
+                    <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Company_Signed_Date__c}" />     
+                </apex:pageBlockSectionItem>              
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+         <apex:outputLabel styleClass="messageStyleSTEP5" rendered="{!IF((Apttus__APTS_Agreement__c.Apttus__Status__c!='Activated'), true, false)}" value="You must complete this step to finalize your contract in the system"></apex:outputLabel>
+        <apex:pageBlockSection columns="6">                        
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Close" title="Quit without saving" styleClass="vpbButton" action="{!cancelTab}"  immediate="true" onclick="return confirm('Are you sure you want to close?');"/>
+                 <!--  <apex:commandButton value="Save" styleClass="vpbButton" action="{!mySave}"  /> -->
+               </apex:pageBlockSectionItem>                   
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Activate Contract" title="Save and Activate Contract"  styleClass="vpbButtonSP" action="{!Activate}"  />
+               </apex:pageBlockSectionItem>
+               <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                                                   
+               <apex:pageBlockSectionItem >
+                   <apex:commandButton value="Previous" title="Go to previous screen without saving current screen" styleClass="vpbButton" action="{!prevTab}" immediate="true"/>
+               </apex:pageBlockSectionItem> 
+               <apex:pageBlockSectionItem >
+                        <apex:commandButton value="Detailed View" styleClass="vpbButtonSPD" title="Open Detailed View and exit current screen" action="{!detailViewTab}"  immediate="true" onclick="return confirm('Confirm you have Activated before exiting page.');" />
+                    </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>            
+        </apex:pageBlock> 
+       </apex:form> 
+       <apex:relatedList subject="{!$CurrentPage.parameters.relatedId}" list="Apttus__Agreement_Document__r"/>
+    </apex:tab>
+     
+ </apex:tabpanel>
+  <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0" id="agrPanel">
+  <apex:form id="agrForm">
+      <apex:pageBlock id="agrBlock">
+          <apex:pageBlockSection columns="2" id="agrBlockSection">
+              <apex:facet name="header">
+                 <span style="font-size:17px; color:black">Agreement Status</span>
+               </apex:facet>                                        
+               <apex:outputField value="{!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}" />
+               <apex:outputField value="{!Apttus__APTS_Agreement__c.Apttus__Status__c}" rendered="true" />
+               <apex:outputField value="{!Apttus__APTS_Agreement__c.Apttus__Status_Category__c}" id="agrStatusCategory"/>                   
+               <apex:outputField value="{!Apttus__APTS_Agreement__c.Apttus_Approval__Approval_Status__c}" id="agrStatus1"/>                   
+               <apex:outputField value="{!Apttus__APTS_Agreement__c.OwnerId}"/>                
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:inputField value="{!Apttus__APTS_Agreement__c.Redirect_User__c}" style="display:none"/>
+        <apex:inputField value="{!Apttus__APTS_Agreement__c.Return_to_Tab__c}" style="display:none"/>
+        <apex:inputField value="{!Apttus__APTS_Agreement__c.Available_Tab__c}" style="display:none"/>
+        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Executive_Summary_Generated__c}" style="display:none"/> 
+        <apex:commandbutton value="RecordTab" action="{!recordTab}" id="recordTab" style="display:none"/>
+      </apex:form>
+ </apex:outputPanel>      
+</apex:pageBlock>
+</apex:page>

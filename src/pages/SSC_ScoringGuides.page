@@ -1,0 +1,130 @@
+<apex:page controller="SSC_Scoringguide">
+
+<head>
+<style>
+ .custPopup{
+            background-color: white;
+            border-width: 4px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+            font-weight:bold;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+.tblhead
+{
+line-height:25px;
+color:white;
+font-weight:bold;
+background-color:#58ACFA;
+}
+.tblbody
+{
+line-height:20px;
+font-weight:bold;
+}
+
+.btn
+{
+background:black; 
+color:white; 
+font-size:12px; 
+font-weight:bold; 
+border:outset; 
+text-align:center; 
+border-color:black;
+         }
+
+</style>
+</head>
+<apex:form id="frm" >
+ <apex:outputPanel id="tstpopup">
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                Do You Want to save? <br/><br/><br/>
+                <apex:commandButton style="font-weight:bold;" value="   SAVE!!   " action="{!saveScore}" />
+                <apex:commandButton style="font-weight:bold;" value="   CANCEL  " action="{!closePopup}"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        
+  <apex:pageBlock title="Edit Scoring Guide" id="pblk">
+  
+   
+
+ 
+     <br/> <br/> <br/>
+     
+ 
+  
+       <table cellpadding="0" cellspacing="0" width="50%"  style="margin:0px auto;" border="1">
+      <tr>
+      <td align="center" class="tblhead" colspan="4">Scoring Guide </td>
+      </tr>
+      <tr>
+      <td  align="center" class="tblhead" width="20%">Value</td>
+      <td  align="center" class="tblhead" width="20%">Value</td>
+      <td  align="center" class="tblhead" width="20%">Caption</td>
+      <td  align="center" class="tblhead" width="20%">Color</td>
+      </tr>
+      
+      <apex:repeat value="{!ScoringGuideList}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.Min__c}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            hideOnEdit="saveButton" event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td><td class="tblbody" align="center" width="20%">
+      
+       <apex:outputField value="{!sg.Max__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton" 
+                            hideOnEdit="saveButton" event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+       
+       </td>
+      <td class="tblbody" align="center" style="background-color:{!sg.ColorGrade__c}">{!sg.Caption__c}</td>
+<td class="tblbody" align="center" style="background-color:{!sg.ColorGrade__c}">
+<apex:outputField value="{!sg.ColorGrade__c}">
+<apex:inlineEditSupport showOnEdit="saveButton" 
+                            hideOnEdit="saveButton" event="ondblclick" 
+                            changedStyleClass="myBoldClass" /> </apex:outputField>
+</td>
+      </tr>
+      </apex:repeat>
+      
+      </table> 
+      <br/>
+      <br/>
+      
+ 
+      
+     
+     
+      
+
+       &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="  SAVE  " id="saveButtonscore"  action="{!showPopup}"  status="sts"  />  
+      
+
+  </apex:pageBlock>
+</apex:form> 
+</apex:page>

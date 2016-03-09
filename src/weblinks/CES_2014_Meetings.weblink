@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>CES 2014 meeetings and their attachments</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>CES 2014 Meetings</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&apos;/apex/CES?id={!$User.Id}&amp;year=2014&apos;);</url>
+</CustomPageWebLink>

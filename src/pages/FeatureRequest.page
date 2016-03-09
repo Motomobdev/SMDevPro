@@ -1,0 +1,91 @@
+<apex:page controller="FeatureReqController" sidebar="{!headerBoolTrueVar}" showHeader="{!headerBoolTrueVar}">
+<!-- <apex:page standardController="Feature__c" extensions="FeatureReqController"> -->
+<div style="background-color:#545254;">  
+    <apex:outputPanel rendered="{!controllerBoolTrueVar}">
+        <apex:image value="{!$Resource.logo_imoto}" rendered="{!controllerBoolTrueVar}"/>
+    </apex:outputPanel> 
+</div>
+
+<apex:form enctype="multipart/form-data">
+<apex:pageBlock mode="edit">
+
+<div style="margin-left:430px;font-size:20px;font-weight:bold;">
+<b><p>
+Salesforce Feature Request Form
+</p></b>
+</div>
+<br />
+<div style="margin-left:350px;align:center;border:1px solid;width:500px;height:75px">
+<b><p>
+Welcome to the Business Operations Salesforce feature request page for MMI’s Ecosystem, Partner Management &amp; SW Readiness Teams. Please fill out the form with as much detail as possible. Once submitted, your feature request will be reviewed and you will be notified of its status.
+</p></b>
+</div>
+
+<br /><br />
+<div style="background-color:white;align:center;">
+<apex:pageBlockSection >
+
+<apex:panelGrid columns="2" >
+<apex:outputLabel value="Your Name:" for="fowner" rendered="{!controllerBoolTrueVar}" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:10px;margin-left:450px;text-align:right;"/> 
+        <apex:inputField value="{!feature.Owner_Hidden__c}" id="fowner" rendered="{!controllerBoolTrueVar}" style="width:150px;" required="true"/> 
+
+<apex:outputLabel value="Feature Name:" for="fname" title="Enter a short feature name to describe this request" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:433px;text-align:right;"/> 
+        <apex:inputField value="{!feature.Name}" id="fname" required="true" style="width:150px;"/> 
+
+<div style="font-size:12px;float:left;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:13px;">
+<p><b>
+Feature Description (include reason for request):</b><br /><br />
+<div style="font-size:10px;float:left;border:1px solid;">
+<p>Note: Please include as much detail as possible:<br />
+(1)&#160;&#160; Why is this feature needed? What problems are you <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;currently encountering that need to be addressed? <br />
+(2)&#160;&#160; What are your current processes and what is the end <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;result you would like to see from the addition of this<br />&#160;&#160;&#160;&#160;&#160;&#160; feature? <br />   
+</p>
+</div>
+</p>
+</div>
+<apex:inputField value="{!feature.Description__c}" id="desc" style="width:150px;text-align:left;height:150px;" required="true"/>
+</apex:panelGrid>
+<apex:outputlink value="{!EmailLink}" style="float:left;"> 
+Click here if the User does not exist
+</apex:outputlink>
+<apex:pageBlockSectionItem helpText="{!$ObjectType.Feature__c.Fields.Priority__c.inlineHelpText}" >
+<apex:outputLabel value="Priority:" for="priority" title="1) High - This is a critical feature/ Severe impact on daily business operations     2) Medium - This is an important feature/ Moderate impact on daily business operations     3) Low - This feature would be helpful/ Slight impact on daily business operations" style="line-height:200%;color:black;font-size:12px;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:470px;text-align:right;"/> 
+        <apex:inputField value="{!feature.Priority__c}" id="priority" style="width:150px;" required="true"/>
+</apex:pageBlockSectionItem> 
+<br /><br />
+<apex:panelGrid columns="2" >
+<apex:outputLabel value="Type:" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:488px;text-align:right;"/>
+<apex:actionregion > 
+<apex:inputField value="{!feature.Type__c}" style="width:150px;" required="true">
+<apex:actionsupport event="onchange" action="{!updateFeatureType}" rerender="StepToReproduce"/>
+</apex:inputField>
+</apex:actionregion>
+</apex:panelGrid>
+<br /><br />
+<apex:panelGrid columns="2" id="StepToReproduce" >
+<apex:outputText rendered="{!feature.Type__c=='Bug'}" escape="false" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:410px;text-align:right;" value="Step to Reproduce:<br/><br/><p style='font-size:10px;float:left;border:1px solid;white-space:nowrap;margin-right:auto;margin-left:265px;text-align:right;'>Note: Please include steps to reproduce this issue.</p>"/>
+<apex:inputField rendered="{!feature.Type__c=='Bug'}" value="{!feature.Step_to_Reproduce__c}" id="step_to_reproduce" style="width:150px;text-align:left;height:150px;" required="true"/>
+</apex:panelGrid>
+<br/>
+<apex:panelGrid columns="2" >
+<apex:outputLabel value="Requested Completion Date:" for="fReqDate" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:10px;margin-left:347px;text-align:right;"/> 
+        <apex:inputField value="{!feature.Requested_Completion_Date__c}" id="fReqDate" style="width:150px;" required="true"/> 
+</apex:panelGrid>
+<br/>
+<apex:panelGrid columns="2" >
+<apex:outputLabel value="Attachment < 300KB:" for="featureAttachment" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:10px;margin-left:387px;text-align:right;"/> 
+        <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" style="width:150px;" required="true"/> 
+</apex:panelGrid>
+
+</apex:pageBlockSection>
+</div>
+
+<br /><br />
+<apex:commandButton action="{!submit}" value="Submit" style="align:center;margin-right:auto;margin-left:500px;" />
+</apex:pageBlock>
+
+
+
+</apex:form>
+
+</apex:page>

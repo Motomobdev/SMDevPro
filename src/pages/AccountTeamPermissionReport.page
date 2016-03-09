@@ -1,0 +1,23 @@
+<apex:page id="page" controller="AccountTeamPermissionReportCtr" readOnly="true" contenttype="application/vnd.ms-excel#Report.xls" showHeader="false" showChat="false" sidebar="false">
+
+<apex:pageBlock rendered="{!isAdmin}" >
+    
+    <apex:pageBlockTable value="{!atpList}" var="usr">
+        <apex:column value="{!usr.UserId}" headerValue="User ID" />
+        <apex:column value="{!usr.FirstName}" headerValue="First Name" />
+        <apex:column value="{!usr.LastName}" headerValue="Last Name" />
+        <apex:column value="{!usr.RoleName}" headerValue="User Role" />
+        <apex:column value="{!usr.AccountId}" headerValue="Account ID" />
+        <apex:column value="{!usr.AccountName}" headerValue="Account Name" />
+        <apex:column value="{!usr.TeamMemberRole}" headerValue="Team Member Role" />
+        <apex:column value="{!usr.AccountAccessLevel}" headerValue="Account Access Level" />
+        <apex:column value="{!usr.OpportunityAccessLevel}" headerValue="Opportunity Access Level" />
+    </apex:pageBlockTable>
+    
+</apex:pageBlock>
+
+<apex:outputPanel rendered="{!NOT(isAdmin)}">
+    <strong>You do not have required privilege to generate this report. Please contact Salesforce administrator (SFDC@motorola.com).</strong>
+</apex:outputPanel>
+
+</apex:page>

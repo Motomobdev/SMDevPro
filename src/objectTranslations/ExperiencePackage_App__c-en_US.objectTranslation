@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExperiencePackage_App</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExperiencePackage_Apps</value>
+    </caseValues>
+    <fields>
+        <label><!-- AppCurrRoyalty --></label>
+        <name>AppCurrRoyalty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Experience Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Experience Package --></label>
+        <name>Experience_Package__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Royalty Current --></label>
+        <name>Royalty_Current__c</name>
+    </fields>
+    <layouts>
+        <layout>ExperiencePackage_App Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

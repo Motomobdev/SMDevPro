@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Seeding</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Seeding Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- BLUR CorporateSync --></label>
+        <name>BLUR_CorporateSync__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR Created --></label>
+        <name>BLUR_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR Last Date --></label>
+        <name>BLUR_Last_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR_State --></label>
+        <name>BLUR_State__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Seeding Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Trained --></label>
+        <name>Date_Trained__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Used --></label>
+        <name>Days_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Contact --></label>
+        <name>Do_Not_Contact__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding Campaign --></label>
+        <name>Seeding_Campaign__c</name>
+        <picklistValues>
+            <masterLabel>AT&amp;T Atrix HD</masterLabel>
+            <translation><!-- AT&amp;T Atrix HD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AT&amp;T Atrix HD - MAC</masterLabel>
+            <translation><!-- AT&amp;T Atrix HD - MAC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Attempted</masterLabel>
+            <translation><!-- Attempted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey 1</masterLabel>
+            <translation><!-- Survey 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey 2</masterLabel>
+            <translation><!-- Survey 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trained</masterLabel>
+            <translation><!-- Trained --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Type --></label>
+        <name>Training_Type__c</name>
+        <picklistValues>
+            <masterLabel>Could Not Contact</masterLabel>
+            <translation><!-- Could Not Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Group</masterLabel>
+            <translation><!-- F2F Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Individual</masterLabel>
+            <translation><!-- F2F Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Group</masterLabel>
+            <translation><!-- Virtual Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Individual</masterLabel>
+            <translation><!-- Virtual Individual --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Seeding Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Seeding Record Type --></label>
+        <name>Seeding_Record_Type</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,145 @@
+<apex:component controller="z_SampleChargeSectionController" allowDML="true">
+  <apex:includeScript value="{!$Resource.zqu__JQuery142}" />
+  <script>
+    function javascriptActionProxy(funcName, charges_pageblockId, type) {
+      var j$ = jQuery.noConflict();
+      switch (funcName) {
+      case 'disableInput4QuoteCharge':
+        {
+          (function (_charges_pageblockId) {
+            j$("[id=" + _charges_pageblockId + "]" + " input[type$='text']").attr('disabled', 'disabled');
+          })(charges_pageblockId);
+          break;
+        }
+      case 'disableOpr4QuoteCharges':
+        {
+          (function (_charges_pageblockId, _type) {
+            j$("[id=" + _charges_pageblockId + "]" + " [type$='submit']").attr('disabled', 'disabled');
+            j$("[id=" + _charges_pageblockId + "]" + " [type$='submit']").attr('value', _type + '...    ');
+          })(charges_pageblockId, type);
+          break;
+        }
+      }
+    } 
+  </script>
+
+  <apex:attribute name="chargeGroup" 
+  				  type="zqu.zChargeGroup" 
+  				  assignTo="{!currentChargeGroup}" 
+  				  required="true" 
+  				  description="Quote charges data for displaying and calculating." />
+  <apex:attribute name="quoteIdVal" 
+  				  type="String" 
+  				  assignTo="{!quoteId}" 
+  				  required="true" 
+  				  description="Quote Id is passed to the component." />
+  <apex:attribute name="editableVal" 
+  				  type="boolean" 
+  				  assignTo="{!editable}" 
+  				  required="true" 
+  				  description="Component is editable." />
+  <apex:attribute name="editButton" 
+  				  type="boolean" 
+  				  assignTo="{!editButtonAvail}" 
+  				  required="false" 
+  				  description="We can either see or not see the edit button." />
+  <apex:attribute name="appId" 
+  				  type="String" 
+  				  assignTo="{!applicationId}" 
+  				  required="false" 
+  				  description="Application ID Associated with Name." />
+  <apex:attribute name="from"
+                  description="Identifying from where this component is invoked"
+                  type="String"
+                  required="false"
+                  assignTo="{!fromName}"/>
+	
+  <apex:pageBlock id="chargeGroupBlock">
+    <apex:pageMessages id="pageErrors" />
+<!--                 <apex:pageBlockButtons location="bottom"> -->
+<!--                     <apex:commandButton value="Edit" action="{!editGroup}"> -->
+<!--                     </apex:commandButton> -->
+<!--                 </apex:pageBlockButtons> -->
+
+    <apex:outputPanel id="chargeGrouppanel">
+      <!--                  <apex:pageBlockTable value="{!listWrappedCharges}" var="wc" style="margin-top:1em; margin-bottom: 1em;" > -->
+      <apex:pageBlockTable value="{!currentChargeGroup.zCharges}" var="wc" style="margin-top:1em; margin-bottom: 1em;">
+        <apex:column >
+          <apex:facet name="header">Charge Name</apex:facet>
+          <apex:outputText value="{!wc.NAME}" />
+        </apex:column>
+        <apex:column rendered="{!!editable}" > 
+          <apex:facet name="header">Application Name </apex:facet>
+          <apex:outputText value="{!wc.chargeObject['ApplicationName__c']}" />
+		</apex:column>
+		
+        <apex:column headerValue="Cumulative From" width="5%">
+          <apex:outputField value="{!wc.chargeObject['CumulativeFrom__c']}"  rendered="{!!editable}"/>
+            <apex:inputField value="{!wc.chargeObject['CumulativeFrom__c']}" rendered="{!editable}" id="CumulativeFrom" >
+			    <apex:actionSupport event="onchange" 
+			    					reRender="chargeGrouppanel" 
+			    					action="{!defaultCumulationVal}"
+			    					status="changeStatus"
+			    					focus="CumulativeTo">
+			   		<apex:param name="changedCharge" value="{!wc.NAME}" assignTo="{!changedCharge}"/>
+		   		</apex:actionSupport>
+			</apex:inputField>
+        </apex:column>
+
+        <apex:column headerValue="Cumulative To" width="5%">
+          	<apex:outputField value="{!wc.chargeObject['CumulativeTo__c']}" rendered="{!!editable}"/>
+            <apex:inputField value="{!wc.chargeObject['CumulativeTo__c']}" rendered="{!editable}"  id="CumulativeTo">
+			    <apex:actionSupport event="onchange" 
+			    					reRender="chargeGrouppanel" 
+			    					action="{!defaultCumulationVal}"
+			    					status="changeStatus" 
+			    					focus="EffectivePrice">
+			   		<apex:param name="changedCharge" value="{!wc.NAME}" assignTo="{!changedCharge}"/>
+		   		</apex:actionSupport>
+			</apex:inputField>
+        </apex:column>
+
+        <apex:column headerValue="Prepaid" width="2%">
+          <apex:outputField value="{!wc.chargeObject['Prepaid__c']}"  rendered="{!!editable}"/>
+            <apex:selectList size="1" value="{!wc.chargeObject['Prepaid__c']}" rendered="{!editable&&LEFT(wc.UNIT_OF_MEASURE,3)!=('Pre')}"  >
+            	<apex:selectOptions value="{!prepaid}"/> 
+			    <apex:actionSupport event="onchange" reRender="chargeGrouppanel" action="{!defaultCumulationVal}">
+			   		<apex:param name="changedCharge" value="{!wc.NAME}" assignTo="{!changedCharge}"/>
+		   		</apex:actionSupport>
+			</apex:selectList>
+        </apex:column>
+
+        <apex:column >
+          <apex:facet name="header">Model</apex:facet>
+          <apex:outputText value="{!wc.MODEL}" /></apex:column>
+
+        <apex:column value="{!wc.CHARGE_TYPE}" headerValue="Type" width="12%" />
+
+        
+         <apex:column headerValue="Effective Price" width="7%"> 
+          <apex:inputField value="{!wc.chargeObject['EffectivePrice_Display__c']}" rendered="{!editable}" id="EffectivePrice">
+				<apex:actionSupport event="onchange" 
+			    					reRender="chargeGrouppanel" 
+			    					action="{!effectiveChange}"
+			    					status="changeStatus"
+			    					focus="CumulativeFrom" >
+<!--             		<apex:param value="{!wc.EFFECTIVE_PRICE}" assignTo="{!changedEffPrice}" name="chargeVal"/> -->
+						<apex:param name="changedCharge" value="{!wc.NAME}" assignTo="{!changedCharge}"/>
+            	</apex:actionSupport>
+          </apex:inputField>
+          <apex:outputText value="{!wc.chargeObject['EffectivePrice_Display__c']}" rendered="{!!editable}" />
+        </apex:column> 
+
+
+        <apex:column >
+          <apex:facet name="header">Period</apex:facet>
+          <apex:outputText value="{!wc.PERIOD}" /></apex:column>
+      </apex:pageBlockTable>
+    </apex:outputPanel>
+    
+                                                        
+                                                                        
+     <apex:actionStatus id="changeStatus" onstart="javascriptActionProxy('disableInput4QuoteCharge', '{!$Component.chargeGrouppanel}'); javascriptActionProxy('disableOpr4QuoteCharges', '{!$Component.chargeGrouppanel}', 'Calculating');">
+                        </apex:actionStatus>
+  </apex:pageBlock>
+</apex:component>

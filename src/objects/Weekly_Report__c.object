@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This will store weekly report information like function or week ending date. All weekly report items will reference to one of the record from this object. There will always be one record created for each function per week.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Drawloop_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For massloop functionality</description>
+        <externalId>false</externalId>
+        <label>Drawloop Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Weekly Reports</relationshipLabel>
+        <relationshipName>Weekly_Reports</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>GTM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biz Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Week_Ending__c</fullName>
+        <externalId>false</externalId>
+        <label>Week Ending</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Weekly Report</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Function__c</columns>
+        <columns>Week_Ending__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Null_Week_End</fullName>
+        <columns>NAME</columns>
+        <columns>Week_Ending__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Function__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Week_Ending__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Null Week End</label>
+    </listViews>
+    <nameField>
+        <label>Weekly Report Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Weekly Reports</pluralLabel>
+    <searchLayouts>
+        <listViewButtons>Generate_Weekly_Mass</listViewButtons>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <webLinks>
+        <fullName>Generate_Weekly</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Generate Weekly</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Weekly_Report__c.Id}&amp;sessionId={!$Api.Session_ID}&amp;ddpids=a23M00000019Nbg&amp;autorun=true&amp;deploy=a22M0000000104p</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Weekly_Mass</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Weekly Mass</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+var ids = {!GETRECORDIDS($ObjectType.Weekly_Report__c)};
+if (!ids || ids.length &lt; 1)
+    alert(&apos;Please select at least one record.&apos;);
+else
+{
+    var url = &quot;/apex/loop__masslooplus?retURL=&quot; + encodeURI(window.location.pathname+window.location.search) + &quot;&amp;contactfield=Drawloop_Contact__c&quot;;
+    url += &quot;&amp;recordIds=&quot;+ids.join(&apos;,&apos;);
+    url += &quot;&amp;sessionId={!$Api.Session_ID}&quot;;
+    url += &quot;&amp;ddpIds=a23M00000019Nbg&quot;;
+    window.location.href = url;
+}</url>
+    </webLinks>
+</CustomObject>

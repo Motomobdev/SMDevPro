@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>24</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account assoicated with this payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account assoicated with this payment</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Payments</relationshipLabel>
+        <relationshipName>Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Check__c</fullName>
+        <externalId>false</externalId>
+        <label>Check #</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Center</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_of_contracts__c</fullName>
+        <externalId>false</externalId>
+        <label>Count_of_contracts</label>
+        <summaryForeignKey>ContPaymentAssoc__c.Payment__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Date_Cleared__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Cleared</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Paid</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_in_Current_Phase__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE (  Payment_Phase__c  ,
+&apos;1 - Active Phase &apos;, TODAY()-  DATEVALUE( CreatedDate ) ,
+&apos;2 - In Process Phase &apos;,TODAY()-  Phase_1_Complete_Date__c ,
+&apos;3 - Tigers Approval Phase &apos;,TODAY()-  Phase_2_Complete_Date__c ,
+&apos;4 - Received Phase &apos;,TODAY()-  Phase_3_Complete_Date__c ,
+&apos;5 - AP Requested Phase &apos;,TODAY()-  Phase_4_Complete_Date__c ,
+&apos;6 - Paid Phase&apos;,IF(ISNULL(Phase_6_Complete_Date__c),TODAY()-  Phase_5_Complete_Date__c,TODAY()-Phase_6_Complete_Date__c),null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days in Current Phase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Done_by_Bus_Ops__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Done by Bus Ops?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Payment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_at_AP__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(CONTAINS(Invoice__c, &quot;RC&quot;), &quot;NO&quot;, 
+IF(LEN(Invoice__c) &lt; 1, &quot;NO&quot;, 
+if(CONTAINS(Invoice__c,&quot;not&quot;), &quot;NO&quot;,
+&quot;YES&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice at AP?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Approver_Tigers__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Next Approver in Tigers</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Payments (Next Approver in Tigers)</relationshipLabel>
+        <relationshipName>Payments1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>On_Behald_of_Field__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>On Behalf of Field</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Payments</relationshipLabel>
+        <relationshipName>Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>On_Behalf_Of__c</fullName>
+        <externalId>false</externalId>
+        <label>On Behalf Of</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO__c</fullName>
+        <externalId>false</externalId>
+        <label>PO #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PR__c</fullName>
+        <externalId>false</externalId>
+        <label>PR #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Mgr_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Partner Manager Approves this Payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Partner Manager Approves this Payment</inlineHelpText>
+        <label>Partner Mgr Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Method__c</fullName>
+        <description>payment method according to AP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>payment method according to AP</inlineHelpText>
+        <label>Pay Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Payment_External_Unique_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Payment External Unique ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Notes</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Phase</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0 - Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 - Active Phase</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 - In Process Phase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 - SMART Approval Phase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4 - Received Phase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5 - AP Requested Phase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6 - Paid Phase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PAID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOT PAID</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CANCELLED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>License Fee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expenses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NRE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outsourced Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepayment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Royalty Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support / Maintenance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rev Share</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Period_Paid_For_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Paid For Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Period_Paid_for_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Paid for End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_1_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase 1 – Active</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_1_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL( Phase_1_Complete_Date__c ) , null, Phase_1_Complete_Date__c - DATEVALUE(CreatedDate) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 1 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_2_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase 2 – In Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_2_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_2_Complete_Date__c ) , null,  Phase_2_Complete_Date__c  -  Phase_1_Complete_Date__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 2 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_3_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase 3 – Tigers Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_3_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_3_Complete_Date__c ) , null,  Phase_3_Complete_Date__c  -  Phase_2_Complete_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 3 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_4_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase 4 – Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_4_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_4_Complete_Date__c ) , null,  Phase_4_Complete_Date__c  -  Phase_3_Complete_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 4 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_5_Complete_Date__c</fullName>
+        <description>This is the date that AP receives the invoice from the vendor.  The details are hidden in the BATCH details at the top.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An example is NP4747842.  At the top it says: BATCH: OB10_US_20090914_01. This means that AP recieved the invoice on 9/14/09 from OB10.</inlineHelpText>
+        <label>Phase 5 – AP Invoice Receipt</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_5_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_5_Complete_Date__c ) , null,  Phase_5_Complete_Date__c  -  Phase_4_Complete_Date__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 5 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_6_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase 6 – Paid</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pmt_Direction__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is Motorola paying a vendor or are we taking payment in?</inlineHelpText>
+        <label>Payment Direction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Payable</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Receivable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quarter_Paid_For__c</fullName>
+        <externalId>false</externalId>
+        <label>Quarter Paid For</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2013 Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_ID__c</fullName>
+        <description>The Tigers Receipt ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Tigers Receipt ID</inlineHelpText>
+        <label>Receipt ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Posted_on_Compass__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is the royalty report posted on Compass , for the PM to review?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the royalty report posted on Compass , for the PM to review?</inlineHelpText>
+        <label>COMPASS Report Ready for PM Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Req_cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Req cancelled?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tigers_Approval_Time_days__c</fullName>
+        <externalId>false</externalId>
+        <formula>Phase_4_Complete_Date__c - Phase_2_Complete_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tigers Approval Time (days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tigers_Project_Application__c</fullName>
+        <description>Project field from Tigers. We are using it to store Application Id so we can auto-create Payment to Application junction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project field from Tigers. We are using it to store Application Id so we can auto-create Payment to Application junction.</inlineHelpText>
+        <label>Tigers Project - Application</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tigers_Task_Contract__c</fullName>
+        <description>Task field from Tigers. We are using it to store Contract Id so we can auto-create Payment to Contract junction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Task field from Tigers. We are using it to store Contract Id so we can auto-create Payment to Contract junction.</inlineHelpText>
+        <label>Tigers Task - Contract</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Paid_Time_days__c</fullName>
+        <externalId>false</externalId>
+        <formula>Date_Paid__c -  Phase_2_Complete_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Paid Time (days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variable_Fixed__c</fullName>
+        <externalId>false</externalId>
+        <label>Variable_Fixed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>egvm_contact_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.EGVM_Contact__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>egvm contact ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>egvm_contact_email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.EGVM_Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>egvm_contact_email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>egvm_contact_firstname__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.EGVM_Contact__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>egvm_contact_firstname</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>egvm_contact_lastname__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.EGVM_Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>egvm_contact_lastname</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>egvm_num__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.eGVM_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>egvm_num</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ob10__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Account__r.OB10__c, &quot;YES&quot;, &quot;NO&quot;)</formula>
+        <label>ob10?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Payment</label>
+    <listViews>
+        <fullName>ALL_NOT_PAID_NO_INVOICE_PAYMENTS</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>PO__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Invoice__c</columns>
+        <columns>Phase_4_Complete_Date__c</columns>
+        <columns>Invoice_at_AP__c</columns>
+        <columns>ob10__c</columns>
+        <columns>Payment_Notes__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Pay_Method__c</columns>
+        <columns>Phase_5_Complete_Date__c</columns>
+        <columns>Expected_Payment_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>NOT PAID</value>
+        </filters>
+        <filters>
+            <field>Invoice__c</field>
+            <operation>contains</operation>
+            <value>RC</value>
+        </filters>
+        <label>ALL NOT PAID NO INVOICE PAYMENTS</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ALL_NOT_PAID_PAYMENTS</fullName>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Payment_Phase__c</columns>
+        <columns>Payment_Status__c</columns>
+        <columns>PO__c</columns>
+        <columns>PR__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>NOT PAID</value>
+        </filters>
+        <label>ALL NOT PAID PAYMENTS</label>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Compass_Royalty_Check</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Payment_Phase__c</columns>
+        <columns>Payment_Status__c</columns>
+        <columns>Partner_Mgr_Approval__c</columns>
+        <columns>Report_Posted_on_Compass__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Q111 royalty</value>
+        </filters>
+        <label>Compass Royalty Check</label>
+        <sharedTo>
+            <role>MotoDevBusOpsAdmin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>REV_SHARE_PMTS</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Projected_Amount__c</columns>
+        <columns>Quarter_Paid_For__c</columns>
+        <columns>Period_Paid_For_Start_Date__c</columns>
+        <columns>Period_Paid_for_End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Payment_Type__c</field>
+            <operation>equals</operation>
+            <value>Rev Share</value>
+        </filters>
+        <label>REV SHARE PMTS</label>
+    </listViews>
+    <listViews>
+        <fullName>X2010_NRE</fullName>
+        <booleanFilter>1 AND 2 AND 3  AND 4 and  5 and 6 and 7</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Payment_Status__c</columns>
+        <columns>Payment_Phase__c</columns>
+        <columns>Account__c</columns>
+        <columns>PO__c</columns>
+        <columns>PR__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Expected_Payment_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>q110</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>q210</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>royalty</value>
+        </filters>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>notEqual</operation>
+            <value>CANCELLED</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>license</value>
+        </filters>
+        <filters>
+            <field>Expected_Payment_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2010</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>lessThan</operation>
+            <value>1/1/2010 12:00 AM</value>
+        </filters>
+        <label>2010 NRE</label>
+    </listViews>
+    <listViews>
+        <fullName>have_invoice_waiting_payment_date</fullName>
+        <columns>NAME</columns>
+        <columns>Expected_Payment_Date__c</columns>
+        <columns>Invoice__c</columns>
+        <columns>PO__c</columns>
+        <columns>PR__c</columns>
+        <columns>Payment_Status__c</columns>
+        <columns>Payment_Phase__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Pay_Method__c</columns>
+        <columns>Check__c</columns>
+        <columns>Date_Paid__c</columns>
+        <columns>Date_Cleared__c</columns>
+        <columns>Phase_6_Complete_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Invoice__c</field>
+            <operation>notContain</operation>
+            <value>RC</value>
+        </filters>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>NOT PAID</value>
+        </filters>
+        <filters>
+            <field>Invoice__c</field>
+            <operation>notContain</operation>
+            <value>not</value>
+        </filters>
+        <filters>
+            <field>Expected_Payment_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2000</value>
+        </filters>
+        <label>have invoice, waiting payment date</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>not_in_AP_bucket_new</fullName>
+        <columns>NAME</columns>
+        <columns>Invoice__c</columns>
+        <columns>PO__c</columns>
+        <columns>PR__c</columns>
+        <columns>Payment_Status__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Account__c</columns>
+        <columns>Phase_1_Complete_Date__c</columns>
+        <columns>Phase_2_Complete_Date__c</columns>
+        <columns>Phase_3_Complete_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Invoice__c</field>
+            <operation>notContain</operation>
+            <value>RC</value>
+        </filters>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>NOT PAID</value>
+        </filters>
+        <filters>
+            <field>Invoice__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Pmt_Direction__c</field>
+            <operation>notEqual</operation>
+            <value>Receivable</value>
+        </filters>
+        <label>not in AP bucket new</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>payment_errors_contracts_not_linked</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Count_of_contracts__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operation>notEqual</operation>
+            <value>CANCELLED</value>
+        </filters>
+        <label>payment errors contracts not linked</label>
+    </listViews>
+    <nameField>
+        <label>Payment Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Payments</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invoice__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PO__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Payment_Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Invoice__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Invoice_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PO__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PR__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Invoice__c</lookupFilterFields>
+        <lookupFilterFields>PO__c</lookupFilterFields>
+        <lookupFilterFields>Payment_Type__c</lookupFilterFields>
+        <lookupFilterFields>Amount__c</lookupFilterFields>
+        <lookupFilterFields>PR__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Invoice__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Invoice_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PO__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PO__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PR__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Payment_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Paid__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice_at_AP__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expected_Payment_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Relate_Account</fullName>
+        <active>true</active>
+        <errorConditionFormula>and(text(Payment_Type__c) = &quot;Rev Share&quot; ,isblank(Account__c))</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>If this is a Rev Share entry, please relate it to an ACCOUNT</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rev_share_amounts_must_be_negative</fullName>
+        <active>true</active>
+        <description>If payment is Rev Share type, Amount should be negative number.</description>
+        <errorConditionFormula>AND( ISPICKVAL( Payment_Type__c , &apos;Rev Share&apos;) , (  Amount__c   &gt;=  0 ) )</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>A rev share payment must have a negative amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cancelled_phase_and_status_must_match</fullName>
+        <active>true</active>
+        <description>If Phase is Cancelled, Status must also be Cancelled</description>
+        <errorConditionFormula>IF( OR( AND( ISPICKVAL( Payment_Status__c , &apos;CANCELLED&apos;) , !ISPICKVAL( Payment_Phase__c , &apos;0 - Cancelled&apos;) ) , AND( !ISPICKVAL( Payment_Status__c , &apos;CANCELLED&apos;) , ISPICKVAL( Payment_Phase__c , &apos;0 - Cancelled&apos;) ) ) , true, false)</errorConditionFormula>
+        <errorMessage>If Phase is &quot;0 - Cancelled&quot;, Status must also show as &quot;CANCELLED&quot; also if status is &quot;CANCELLED&quot; then Phase must be &quot;0 - Cancelled&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>paid_phase_and_status_must_match</fullName>
+        <active>true</active>
+        <description>If Phase is Paid, Status must also be PAID</description>
+        <errorConditionFormula>IF( OR( AND( ISPICKVAL( Payment_Status__c , &apos;PAID&apos;) , !ISPICKVAL( Payment_Phase__c , &apos;6 - Paid Phase&apos;) ) , AND( !ISPICKVAL( Payment_Status__c , &apos;PAID&apos;) , ISPICKVAL( Payment_Phase__c , &apos;6 - Paid Phase&apos;) ) ) , true, false)</errorConditionFormula>
+        <errorMessage>If Phase is &quot;6 - Paid Phase&quot;, Status must also show as &quot;PAID&quot; or is Status is &quot;PAID&quot; then phase but also be &quot;6 - Paid Phase&quot;</errorMessage>
+    </validationRules>
+</CustomObject>

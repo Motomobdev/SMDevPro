@@ -1,0 +1,30 @@
+<apex:page standardController="Campaign" extensions="ShowchildForCampaignCLS">
+<apex:form >
+<apex:pageBlock >
+
+ <apex:pageblockTable value="{!campaignList}" var="cl">
+ 
+      <apex:column headerValue="Name">
+      <apex:outputLink target="_blank" value="/{!cl.Id}">{!cl.Name}</apex:outputLink>
+        </apex:column>
+     <apex:column value="{!cl.Category__c}"/>
+     <apex:column value="{!cl.Sub_Category__c }"/>
+    
+      <apex:column value="{!cl.StartDate}"/>
+   <apex:column value="{!cl.EndDate}"/>
+    <apex:column value="{!cl.BudgetedCost}"/>
+    </apex:pageblockTable>
+      <apex:pageBlockSection title="TotalBudgetedCost" >
+     <apex:pageBlockSectionItem id="Empty1" />
+    
+    <apex:pageBlockSectionItem dataStyle="text-align:right;width:30%">
+                                           
+  <apex:outputField value="{!Campaign.HierarchyBudgetedCost}" />
+  </apex:pageBlockSectionItem>
+    </apex:pageBlockSection> 
+          
+ 
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

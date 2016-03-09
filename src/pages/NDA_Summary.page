@@ -1,0 +1,44 @@
+<apex:page standardController="NDA__c" extensions="NDA_SummaryCtr"
+    tabstyle="NDA__c" action="{!fnAction}">
+    <apex:form >
+        <apex:pageBlock id="ps">
+            <apex:Messages layout="table" />
+            <apex:pageBlockSection id="pgBlk1" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText id="messageID" value="{!strMessage}"
+                        style="color:blue;font-size:14pt" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+    <!-- <apex:relatedList list="NotesAndAttachments" />
+        <apex:relatedList subject="{!strNDAFileID}" list="Agreements__r"/> 
+        <apex:relatedList list="NDA_Disclosure_Requests__r"/> 
+        <apex:relatedList list="ProcessSteps" ></apex:relatedList>  
+      -->
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Contact Support" collapsible="false"
+            columns="1">
+            <html>
+<body>
+    <p style="font-family: arial; font-size: 12px;">
+        Provide feedback and report testing issues at <a target="_blank"
+            href="https://docs.google.com/forms/d/1PmpDa9VjzA2DgRMmPYArp05We7nO44dZEBgzNMsE6NU/viewform"
+            style="color: blue; font-weight: bold">goto/ndafeedback</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        <a target="_blank"
+            href="http://vhd.mot-mobility.com/sds_form.php?id=1103"
+            style="color: blue; font-weight: bold">Submit NDA Help desk
+            ticket</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        Contact NDA Specialist <a target="_blank"
+            href="mailto:nda@motorola.com" style="color: blue; font-weight: bold">nda@motorola.com</a>
+    </p>
+</body>
+            </html>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

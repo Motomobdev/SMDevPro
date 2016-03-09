@@ -1,0 +1,139 @@
+<apex:page standardcontroller="Contract" extensions="LRBInitialDealController" sidebar="false">
+
+<style>
+    .headerStyle{background-color:#787878 !important;color:#787878;}
+</style>
+    
+<body>
+<!-- <table width="1280" align="center" border=".5" cellspacing="0" cellpadding="0"> -->
+<table width="100%" align="center" border=".5" cellspacing="0" cellpadding="0">
+<tr>
+<!-- <td width="1280"> -->
+<td>
+<apex:form >
+    <apex:pageBlock mode="edit">
+    
+    <h1>
+        <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+            <span style="font-size:20px;color:#FFFFFF;align:center;"><strong>LRB INITIAL DEAL REQUEST FORM (Page 4b/5)</strong></span>
+        </div>
+    </h1>
+
+      
+    <br />
+    <span style="font-size:12px;font-style:italic;"> Note: After adding/saving a Finance Rule, double-click on the field of the saved record to edit the value, and hit ENTER key (or Click outside) to save the new value</span>
+    <br />   
+    <br />
+
+    <h2>
+        <span style="font-size:20px;color:#000000;align:center;"><strong>Add Rate Based Royalty Rule:</strong></span>
+    </h2>
+    <br />
+    <br />   
+
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:250%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Rate Based Royalty Rule</strong></span>
+    </div>                 
+    <apex:pageBlock id="rateBasedRoyaltyBlock">
+    <apex:dataTable value="{!errorMessageRateBasedRoyalty}" var="varerrorMessageRateBasedRoyalty">
+        <apex:column >
+            <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageRateBasedRoyalty)>0}"/>
+            <apex:outputText value="{!errorMessageRateBasedRoyalty}" style="margin-left:1%;color:red;" rendered="{!LEN(errorMessageRateBasedRoyalty)>0}" />
+        </apex:column>
+        <apex:column >   
+        	<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorNoRowsEntered)>0}"/>
+    		<apex:outputText value="{!errorNoRowsEntered}" style="color:red;margin-left:1%;" rendered="{!LEN(errorNoRowsEntered)>0}"/>
+   		</apex:column>
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!rateBasedRoyaltyRow}" var="varrateBasedRoyaltyRow" >
+        <apex:column style="width:50px;" >
+            <apex:commandButton action="{!saveRateBasedRoyaltyRow}" value="Save" reRender="rateBasedRoyaltyBlock, rateBasedRoyaltyListBlock"/>            
+        </apex:column>   
+                
+        <apex:column headerValue="Tier">
+            <apex:inputField value="{!varrateBasedRoyaltyRow.Tier__c}"/>          
+        </apex:column>        
+        <apex:column headerValue="Low Volume">
+            <apex:inputField value="{!varrateBasedRoyaltyRow.Low_Volume__c}"/>          
+        </apex:column>
+        <apex:column headerValue="High Volume (For infinity enter 999999999999, twelve 9's)" title="(For Infinity enter 999999999999, twelve 9's)" >
+            <apex:inputField value="{!varrateBasedRoyaltyRow.High_Volume__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Rate per Unit">
+            <apex:inputField value="{!varrateBasedRoyaltyRow.Rate_per_Unit__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Currency" >
+            <apex:inputField value="{!varrateBasedRoyaltyRow.CurrencyIsoCode}"/>          
+        </apex:column>         
+    </apex:pageBlockTable>       
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="rateBasedRoyaltyListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!rateBasedRoyaltyRow}" var="varrateBasedRoyaltyRow">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapRateRowList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapRateRowList}" var="varwrapRateRowList" rendered="{!(wrapRateRowList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delRateBasedRoyalty}" value="Delete" reRender="rateBasedRoyaltyBlock, rateBasedRoyaltyListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapRateRowList.rateId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>   
+
+        <apex:column headerValue="Tier">
+            <apex:outputField value="{!varwrapRateRowList.rateBasedRoyaltyRowList.Tier__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Low Volume">
+            <apex:outputField value="{!varwrapRateRowList.rateBasedRoyaltyRowList.Low_Volume__c}"/>                      
+        </apex:column>
+        <apex:column headerValue="High Volume">
+            <apex:outputField value="{!varwrapRateRowList.rateBasedRoyaltyRowList.High_Volume__c}"/>          
+        </apex:column>        
+        <apex:column headerValue="Rate per Unit">
+            <apex:outputField value="{!varwrapRateRowList.rateBasedRoyaltyRowList.Rate_per_Unit__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Currency" >
+            <apex:inputField value="{!varwrapRateRowList.rateBasedRoyaltyRowList.CurrencyIsoCode}"/>          
+        </apex:column>           
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+           
+    <br />
+    <br />
+       
+    <div align="center">
+    <apex:panelGrid columns="4" id="theGrid">
+    	<apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        <apex:commandButton action="{!previousCreateRateTableForSelectedApps1}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+		<apex:commandButton action="{!addRateTableToContractAppAndSaveAtCurrentLocation}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:auto;" />
+        <apex:commandButton action="{!addRateTableToContractAppAndGoToNextScreen}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+    </apex:panelGrid>
+    <!-- <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:35%;">
+        <apex:column >
+            <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        </apex:column>       
+        <apex:column >
+            <apex:commandButton action="{!previousCreateRateTableForSelectedApps1}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>
+        <apex:column >
+           	<apex:commandButton action="{!addRateTableToContractAppAndSaveAtCurrentLocation}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:10%;" />
+       	</apex:column>
+        <apex:column >
+            <apex:commandButton action="{!addRateTableToContractAppAndGoToNextScreen}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>
+    </apex:dataTable>
+     -->
+    </div>
+    <br /> 
+    </apex:pageBlock>                    
+</apex:form>
+
+</td>
+</tr>
+</table>
+</body>
+</apex:page>

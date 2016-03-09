@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Google TA</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Google TAs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approved --></label>
+        <name>Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Google TAs --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Google TA Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Approve --></label>
+        <name>Approve</name>
+    </webLinks>
+</CustomObjectTranslation>

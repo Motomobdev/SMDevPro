@@ -1,0 +1,114 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" tabStyle="Apttus__APTS_Agreement__c" extensions="Create_Apttus_Deal">
+
+    <apex:sectionHeader title="Create" subtitle="Agreement"/>
+    <apex:pageMessages id="msgs"/>
+
+    <apex:form >
+        <apex:pageBlock mode="edit">
+
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save & Add Products" action="{!mySave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Product Family">
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Product_Family__c}" required="true"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Channel Partner: Account & Contact Information" columns="2" collapsible="false" id="cpBlock">
+
+                <apex:pageBlockSectionItem id="cpAccountBlock">
+                    <apex:outputLabel value="{!$ObjectType.Apttus__APTS_Agreement__c.fields.Apttus__Account__c.label}"/>
+                    <apex:actionRegion immediate="true">
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Account__c}"
+                        required="true" style="width:250px;" id="cpAccount">
+                        <apex:actionSupport event="onchange"
+                            reRender="cpAccountBlock,cpRegion,cpSubRegion,cpCountry,cpTypeOfWork,cpPlace,cpAddress,msgs"
+                            action="{!populateChannelPartnerInfo}"/>
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Billing Address"/>
+                    <apex:outputText value="{!channelPartner.BillingStreet + ', '
+                                            + channelPartner.BillingCity + ', '
+                                            + channelPartner.BillingState + ', '
+                                            + channelPartner.BillingPostalCode + ', '
+                                            + channelPartner.BillingCountry}"
+                                            id="cpAddress"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="cpContactBlock">
+                    <apex:outputLabel value="{!$ObjectType.Apttus__APTS_Agreement__c.fields.Apttus__Primary_Contact__c.label}"/>
+
+                    <apex:actionRegion immediate="true" >
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.Apttus__Primary_Contact__c}"
+                        required="true" style="width:250px;" id="cpContact">
+                        <apex:actionSupport event="onchange"
+                            reRender="cpContactBlock,cpPhone,cpEmail,msgs"
+                            action="{!populateContactInfo}"/>
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone"/>
+                    <apex:outputText value="{!phone}"  id="cpPhone"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email Address"/>
+                    <apex:outputText value="{!email}" style="width:250px;" id="cpEmail"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Channel Partner: Legal Place of Business (Appears on the contract)" collapsible="false" id="cpPlace">
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Entity_Established_State_Country__c}" required="true" style="width:250px;"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Type_of_Entity__c}" required="true"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Location Details" collapsible="false" columns="2" id="cpLoc">
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APT_Region__c}" id="cpRegion"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Country__c}" id="cpCountry"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Sub_Region__c}" id="cpSubRegion"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Type_of_Work__c}" id="cpTypeOfWork"/>
+                <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Authorized_Countries__c}" required="true"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Motorola: Legal Place of Business (Appears on the contract)" collapsible="false" id="motoBlock">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Apttus__APTS_Agreement__c.fields.APTPS_Motorola_Legal_Entity__c.label}"/>
+
+                    <apex:actionRegion immediate="true" >
+                        <apex:inputField value="{!Apttus__APTS_Agreement__c.APTPS_Motorola_Legal_Entity__c}"
+                        required="true" style="width:250px;">
+                        <apex:actionSupport event="onchange" reRender="motoAddress,motoState,motoEntityType,msgs"
+                            action="{!populateMotorolaAccountInfo}"/>
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Billing Address"/>
+                    <apex:outputText value="{!motorolaAccount.BillingStreet + ', '
+                                            + motorolaAccount.BillingCity + ', '
+                                            + motorolaAccount.BillingState + ', '
+                                            + motorolaAccount.BillingPostalCode + ', '
+                                            + motorolaAccount.BillingCountry}"
+                                             id="motoAddress"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:outputField value="{!motorolaAccount.Entity_Established_State_Country__c}" id="motoState"/>
+                <apex:outputField value="{!motorolaAccount.Business_Entity_Type__c}" id="motoEntityType"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Note: These comments are for internal reference only and will not be printed on the contract." columns="1" >
+                <apex:inputTextArea value="{!Apttus__APTS_Agreement__c.Apttus__Description__c}" rows="5" cols="2" style="width:60%;"/>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

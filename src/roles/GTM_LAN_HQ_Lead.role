@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>GTM - LAN HQ Lead</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>GTM - LAN HQ Lead</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>GTM_LAN_Account_GM</parentRole>
+</Role>

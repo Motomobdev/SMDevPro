@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;iframe id=&quot;smartframe&quot; src=&quot;/servlet/servlet.Integration?lid=01N400000009abC&amp;amp;ic=1&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; scrolling=&quot;no&quot; height=&quot;0&quot;&gt;&lt;/iframe&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

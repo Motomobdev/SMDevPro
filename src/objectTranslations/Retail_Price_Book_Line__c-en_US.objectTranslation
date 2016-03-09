@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Retail Price Book Line</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Retail Price Book Lines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Retail Price Book Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The business to which this product belongs to. --></help>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Companion Product</masterLabel>
+            <translation><!-- Companion Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handset</masterLabel>
+            <translation><!-- Handset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <picklistValues>
+            <masterLabel>AAT BRAZIL</masterLabel>
+            <translation><!-- AAT BRAZIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATT</masterLabel>
+            <translation><!-- ATT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AVANTEL</masterLabel>
+            <translation><!-- AVANTEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bell Canada</masterLabel>
+            <translation><!-- Bell Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boost</masterLabel>
+            <translation><!-- Boost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONSUMER CELLULAR</masterLabel>
+            <translation><!-- CONSUMER CELLULAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNA COMMS</masterLabel>
+            <translation><!-- DNA COMMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>METROPCS</masterLabel>
+            <translation><!-- METROPCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOTOROLA ISRAEL MCIL</masterLabel>
+            <translation><!-- MOTOROLA ISRAEL MCIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL</masterLabel>
+            <translation><!-- NEXTEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL CHILE</masterLabel>
+            <translation><!-- NEXTEL CHILE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL-ARG</masterLabel>
+            <translation><!-- NEXTEL-ARG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL-BRA</masterLabel>
+            <translation><!-- NEXTEL-BRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL-MEX</masterLabel>
+            <translation><!-- NEXTEL-MEX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXTEL-PERU</masterLabel>
+            <translation><!-- NEXTEL-PERU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rogers</masterLabel>
+            <translation><!-- Rogers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOUTHERN LINC.</masterLabel>
+            <translation><!-- SOUTHERN LINC. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint</masterLabel>
+            <translation><!-- Sprint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T-Mobile</masterLabel>
+            <translation><!-- T-Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TELUS CANADA</masterLabel>
+            <translation><!-- TELUS CANADA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracfone</masterLabel>
+            <translation><!-- Tracfone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USC</masterLabel>
+            <translation><!-- USC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virgin Mobile</masterLabel>
+            <translation><!-- Virgin Mobile --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manufacturer Suggested Retail Price --></help>
+        <label><!-- MSRP --></label>
+        <name>MSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Retail Price Book Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- First quarter: Average Selling Price --></help>
+        <label><!-- Q1 ASP --></label>
+        <name>Q1_ASP__c</name>
+    </fields>
+    <fields>
+        <help><!-- First quarter: Motorola Cost Per Unit --></help>
+        <label><!-- Q1 MCPU --></label>
+        <name>Q1_MCPU__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second quarter: Average Selling Price --></help>
+        <label><!-- Q2 ASP --></label>
+        <name>Q2_ASP__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second quarter: Motorola Cost Per Unit --></help>
+        <label><!-- Q2 MCPU --></label>
+        <name>Q2_MCPU__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third quarter: Average Selling Price --></help>
+        <label><!-- Q3 ASP --></label>
+        <name>Q3_ASP__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third quarter: Motorola Cost Per Unit --></help>
+        <label><!-- Q3 MCPU --></label>
+        <name>Q3_MCPU__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fourth quarter: Average Selling Price --></help>
+        <label><!-- Q4 ASP --></label>
+        <name>Q4_ASP__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fourth quarter: Motorola Cost Per Unit --></help>
+        <label><!-- Q4 MCPU --></label>
+        <name>Q4_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Price Book --></label>
+        <name>Retail_Price_Book__c</name>
+        <relationshipLabel><!-- Retail Price Book Lines --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Retail Price Book Line Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Quarters --></label>
+            <section>Quarters</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Experience</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Experiences</value>
+    </caseValues>
+    <fields>
+        <label><!-- BSR Included? --></label>
+        <name>BLUR_Included__c</name>
+        <picklistValues>
+            <masterLabel>BLUR</masterLabel>
+            <translation><!-- BLUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO BLUR</masterLabel>
+            <translation><!-- NO BLUR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Advertising</masterLabel>
+            <translation><!-- Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audio</masterLabel>
+            <translation><!-- Audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Browser</masterLabel>
+            <translation><!-- Browser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commerce</masterLabel>
+            <translation><!-- Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Messaging</masterLabel>
+            <translation><!-- Consumer Messaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Messaging</masterLabel>
+            <translation><!-- Enterprise Messaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gaming</masterLabel>
+            <translation><!-- Gaming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging</masterLabel>
+            <translation><!-- Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location</masterLabel>
+            <translation><!-- Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music</masterLabel>
+            <translation><!-- Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Synchronization</masterLabel>
+            <translation><!-- Synchronization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UI</masterLabel>
+            <translation><!-- UI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verticals</masterLabel>
+            <translation><!-- Verticals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Widgets</masterLabel>
+            <translation><!-- Widgets --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- MAP Release --></label>
+        <name>MAP_Release__c</name>
+        <picklistValues>
+            <masterLabel>MAP1</masterLabel>
+            <translation><!-- MAP1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAP2</masterLabel>
+            <translation><!-- MAP2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAP3</masterLabel>
+            <translation><!-- MAP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAP4</masterLabel>
+            <translation><!-- MAP4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Date --></label>
+        <name>Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Aloqa</masterLabel>
+            <translation><!-- Aloqa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Best</masterLabel>
+            <translation><!-- Best --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Better</masterLabel>
+            <translation><!-- Better --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Experience Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

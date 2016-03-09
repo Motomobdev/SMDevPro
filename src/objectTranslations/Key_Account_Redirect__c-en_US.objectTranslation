@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Key Account Redirect</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Key Account Redirects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- New Key Account to map the Key Account &amp; Country combination to --></help>
+        <label><!-- Key Account Map --></label>
+        <name>Key_Account_Map__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

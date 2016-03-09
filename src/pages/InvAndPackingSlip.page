@@ -1,0 +1,4 @@
+<apex:page controller="InvAndPackingSlipImageController" action="{!getPdf}">
+    {!pdf}
+    <apex:pageMessages />
+</apex:page>

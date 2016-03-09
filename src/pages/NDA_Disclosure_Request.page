@@ -1,0 +1,196 @@
+<apex:page standardController="NDA_Disclosure_Request__c"
+    extensions="NDA_DisclosureRequest" tabstyle="NDA_Disclosure_Request__c"
+    action="{!fnAction}">
+    <apex:sectionHeader title="Step 2. Request disclosure approval" />
+    <apex:form >
+        <apex:pageBlock id="pb">
+            <style>
+            .ndaButton {
+                background: #236FBD !important;
+                color: white !important;
+                font-size: 12px !important;
+                font-style: inherit !important;
+            }
+            .ndaButtonDisable {
+                background: #C0C0C0 !important;
+                color: white !important;
+                font-size: 12px !important;
+                font-style: inherit !important;
+            }
+</style>
+            <apex:Messages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Update" 
+                    rendered="{!IF(objNDAdr.DPL_Status__c == 'Pending' || objNDAdr.DPL_Status__c == 'Rejected', true, false)}"
+                   action="{!fnUpdate}" styleClass="ndaButton" />
+                <apex:commandButton value="Submit for Approval"
+                    action="{!fnSubmitApproval}" styleClass="{!IF(objNDAdr.DPL_Status__c == 'Pending', 'ndaButtonDisable', 'ndaButton')}" 
+                    disabled="{!IF(objNDAdr.DPL_Status__c == 'Pending', true, false)}" rendered="{!IF(objNDAdr.DPL_Status__c == 'Pending' || objNDAdr.DPL_Status__c =='Not Submitted', true, false)}"/> 
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="pgBlk1" columns="1"
+                title="Enter Disclosure Details" collapsible="false">
+                <apex:pageBlockSectionItem rendered="false">
+                        NDA ID  <apex:outputfield value="{!objNDAdr.NDA__c}" id="fileID" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                        File ID  <apex:outputLink style="font-weight:bold;color:blue;" value="/{!objNDAdr.NDA__c}"
+                        id="ndafileID">{!objNDAdr.NDAFileID__c}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                        Approval Status  <apex:outputText value="{!objNDAdr.DPL_Status__c}" id="dplstatusID" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="pgBlk2" columns="1" collapsible="false">
+                
+                <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Please describe purpose for disclosure (optional)"></apex:outputLabel>
+                   <apex:inputTextarea value="{!objNDAdr.Disclosure_Approval_Purpose__c}" style="width:30%;" />                        
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Premium Products"
+                        style="font-weight:bold;color:black" for="premiumID" />
+                    <apex:actionRegion immediate="true">
+                        <apex:inputCheckbox value="{!objNDAdr.Premium_Products__c}"
+                            id="premiumID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}">
+                            <apex:actionSupport event="onchange" action="{!fnShowPremium}"
+                                reRender="premiumpanelID" />
+                        </apex:inputCheckbox>
+                        <apex:outputLabel value="High end, leading edge products."
+                            style="color:black" />
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Value Products"
+                        style="font-weight:bold;color:black" for="valueID" />
+                    <apex:actionRegion immediate="true">
+                        <apex:inputCheckbox value="{!objNDAdr.Value_Products__c}"
+                            id="valueID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}">
+                            <apex:actionSupport event="onchange" action="{!fnShowValue}"
+                                reRender="valuepanelID" />
+                        </apex:inputCheckbox>
+                        <apex:outputLabel value="Products that deliver value for cost-aware consumers."
+                            style="color:black" />
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Companion Products"
+                        style="font-weight:bold;color:black" for="companionID" />
+                    <apex:actionRegion immediate="true">
+                        <apex:inputCheckbox value="{!objNDAdr.Companion_Products__c}"
+                            id="companionID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}">
+                            <apex:actionSupport event="onchange" action="{!fnShowCompanion}"
+                                reRender="companionpanelID" />
+                        </apex:inputCheckbox>
+                        <apex:outputLabel value="Accessories like power packs, headphones and speakers."
+                            style="color:black" />
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Software"
+                        style="font-weight:bold;color:black" for="softwareID" />
+                    <apex:actionRegion immediate="true">
+                        <apex:inputCheckbox value="{!objNDAdr.Software__c}"
+                            id="softwareID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}">
+                            <apex:actionSupport event="onchange" action="{!fnShowSoftware}"
+                                reRender="softwarepanelID" />
+                        </apex:inputCheckbox>
+                        <apex:outputLabel value="Applications and product experiences."
+                            style="color:black" />
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:outputPanel id="premiumpanelID">
+                <apex:pageBlockSection title="Choose Premium Products disclosure options" columns="1"
+                    collapsible="false" rendered="{!objNDAdr.Premium_Products__c}">
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Premium_MCR__c}"
+                            id="prMCRID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind information about unreleased Motorola products, services, or software
+                          </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Premium_Prototype__c}"
+                            id="prprotID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind a prototype
+                          </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel id="valuepanelID">
+                <apex:pageBlockSection title="Choose Value Products disclosure options" columns="1"
+                    collapsible="false" rendered="{!objNDAdr.Value_Products__c}">
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Value_MCR__c}"
+                            id="valueMCRID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind information about unreleased Motorola products, services, or software
+                         </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Value_Prototype__c}"
+                            id="valueprotID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind a prototype
+                       </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel id="companionpanelID">
+                <apex:pageBlockSection title="Choose Companion Products disclosure options" columns="1"
+                    collapsible="false" rendered="{!objNDAdr.Companion_Products__c}">
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Companion_MCR__c}"
+                            id="companionMCRID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind information about unreleased Motorola products, services, or software
+                           </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Companion_Prototype__c}"
+                            id="companionprotID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind a prototype
+                           </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel id="softwarepanelID">
+                <apex:pageBlockSection title="Choose Software disclosure options"
+                    columns="1" collapsible="false" rendered="{!objNDAdr.Software__c}">
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Software_MCR__c}"
+                            id="softwareMCRID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind information about unreleased Motorola products, services, or software
+                        </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!objNDAdr.Software_Prototype__c}"
+                            id="softwareprotID"
+                            disabled="{!IF(objNDAdr.DPL_Status__c == 'Approved', true, false)}" /> We will leave behind a prototype
+                        </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Contact Support" collapsible="false"
+                columns="1">
+                <html>
+<body>
+    <p style="font-family: arial; font-size: 12px;">
+        Provide feedback and report testing issues at <a target="_blank"
+            href="https://docs.google.com/forms/d/1PmpDa9VjzA2DgRMmPYArp05We7nO44dZEBgzNMsE6NU/viewform"
+            style="color: blue; font-weight: bold">goto/ndafeedback</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        <a target="_blank"
+            href="http://vhd.mot-mobility.com/sds_form.php?id=1103"
+            style="color: blue; font-weight: bold">Submit NDA Help desk
+            ticket</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        Contact NDA Specialist <a target="_blank"
+            href="mailto:nda@motorola.com" style="color: blue; font-weight: bold">nda@motorola.com</a>
+    </p>
+</body>
+                </html>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:relatedList list="ProcessSteps" rendered="true"></apex:relatedList>
+</apex:page>

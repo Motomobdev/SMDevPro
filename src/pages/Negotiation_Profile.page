@@ -1,0 +1,86 @@
+<apex:page standardController="Negotiation_Profile__c" extensions="NegotiationController" id="Page" tabstyle="Negotiation_Profile__c">
+
+  <script type="text/javascript"> 
+  function openLookup(baseURL, width, modified, searchParam){
+    var originalbaseURL = baseURL;
+    var originalwidth = width;
+    var originalmodified = modified;
+    var originalsearchParam = searchParam;
+    
+    //var lookupType = baseURL.substr(baseURL.length-3, 3);
+    var lookupType = baseURL.substr(baseURL.indexOf('lktp')+5, 3);
+    if (modified == '1') baseURL = baseURL + searchParam;
+    
+    var isCustomLookup = false;
+    
+    // Following "003" is the lookup type for Contact object so change this as per your standard or custom object
+    if(lookupType == "003"){
+      var lkfield = document.getElementById('Page:myForm:PageBlock:j_id5:AccountID_lkid').value;
+      
+      if (lkfield == "" || lkfield == null){
+          alert('Please select Company to search for Contact');
+          return false;
+      }
+      
+      var urlArr = baseURL.split("&");
+      var txtId = '';
+      if(urlArr.length > 2) {
+        urlArr = urlArr[1].split('=');
+        txtId = urlArr[1];
+      }
+      
+      // Following is the url of Custom Lookup page. You need to change that accordingly
+      baseURL = "/apex/CustomContactLookup?txt=" + txtId;
+      
+      // Following is the id of apex:form control "myForm". You need to change that accordingly
+      baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+      if (modified == '1') {
+        baseURL = baseURL + "&lksearch=" + searchParam + "&accid=" + lkfield;
+      }
+      
+      // Following is the ID of inputField that is the lookup to be customized as custom lookup
+      if(txtId.indexOf('KeyContact1') > -1  || txtId.indexOf('KeyContact2') > -1){
+        isCustomLookup = true;
+      }
+    }
+    
+    
+    if(isCustomLookup == true){
+      openPopup(baseURL, "lookup", 350, 480, "width="+width+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    }
+    else {
+      if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+      openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    } 
+  }
+</script>
+
+<apex:sectionHeader title="Negotiation Profile Information" />
+
+    <apex:form id="myForm">  
+        <apex:PageBlock id="PageBlock">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>   
+            <apex:pageBlockSection columns="1" title="Company Profile">
+                <apex:inputField id="AccountID" label="Name of Company" value="{!contact.Company_Name__c}" required="true" />                
+                <apex:inputField label="Identify key pain points, leverage points and trade offs made, or key behaviors; what commercial/legal terms does the company care most about?" value="{!contact.Key_Points__c}" />
+                <apex:inputField label="Other facts and information Motorolans might find useful in future negotiations with the company" value="{!contact.Other_facts_and_information__c}" style="width:95%;" />
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection columns="2" title="Key Contact Profile">
+                <apex:inputField id="KeyContact1" label="Name of Person" value="{!contact.Key_Contact_1__c}"  />
+                <apex:inputField label="Personal Negotiation Style & Behaviors" value="{!contact.Personal_Negotiation_Style_Behaviors_1__c}"  />
+                <apex:inputField label="Work/Career/Educational Information" value="{!contact.Work_Career_Educational_Information_1__c}"  />
+                <apex:inputField label="Home Life Information" value="{!contact.Home_Life_Information_1__c}"  />                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Additional Key Contact Profile">
+                <apex:inputField id="KeyContact2" label="Name of Person" value="{!contact.Key_Contact_2__c}"  />
+                <apex:inputField label="Personal Negotiation Style & Behaviors" value="{!contact.Personal_Negotiation_Style_Behaviors_2__c}"  />
+                <apex:inputField label="Work/Career/Educational Information" value="{!contact.Work_Career_Educational_Information_2__c}"  />
+                <apex:inputField label="Home Life Information" value="{!contact.Home_Life_Information_2__c}"  />
+            </apex:pageBlockSection>
+        </apex:PageBlock>
+    </apex:form>
+       
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>650</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Activation Summary</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom62: Chalkboard</motif>
+    <url>https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0Ap5grvB6kgqxdGhCQ3JKS21YZC1pQi04UjNGbGhzN2c#gid=31</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

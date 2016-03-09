@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MotoReady_Recent_Add_Delete</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MotoReady_Recent_Add_Deletes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActionBy --></label>
+        <name>ActionBy__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActionDate --></label>
+        <name>ActionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- AppType --></label>
+        <name>AppType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- MotoReady_Recent_Add_Deletes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CarrierFurnished --></label>
+        <name>CarrierFurnished__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- MotoReady_Recent_Add_Deletes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last_Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- MotoReadyPM --></label>
+        <name>MotoReadyPM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

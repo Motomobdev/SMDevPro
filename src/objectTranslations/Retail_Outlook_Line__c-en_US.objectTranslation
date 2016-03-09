@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Retail Outlook Line</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Retail Outlook Lines</value>
+    </caseValues>
+    <fields>
+        <label><!-- ASP --></label>
+        <name>ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Otlk Adj GM H/M RO --></label>
+        <name>Adjusted_GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjusted GM % --></label>
+        <name>Adjusted_GM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Otlk Adj Sales H/M RO --></label>
+        <name>Adjusted_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Otlk Adj Units H/M RO --></label>
+        <name>Adjusted_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Backlog --></label>
+        <name>Backlog__c</name>
+    </fields>
+    <fields>
+        <label><!-- Biz Ops Comments --></label>
+        <name>Biz_Ops_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+    </fields>
+    <fields>
+        <help><!-- Collaborative Planning and Forecast Review --></help>
+        <label><!-- CPFR --></label>
+        <name>CPFR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outlook Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta CPFR --></label>
+        <name>Delta_CPFR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Outlook --></label>
+        <name>Delta_Outlook__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outlook GM --></label>
+        <name>GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- GM % --></label>
+        <name>GM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory On Hand --></label>
+        <name>Inventory_On_Hand__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCPU --></label>
+        <name>MCPU__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manufacturer Suggested Retail Price --></help>
+        <label><!-- MSRP --></label>
+        <name>MSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan ASP --></label>
+        <name>Plan_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Delta GM Amount --></label>
+        <name>Plan_Delta_GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Delta GM % --></label>
+        <name>Plan_Delta_GM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Delta Sales --></label>
+        <name>Plan_Delta_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Delta Units --></label>
+        <name>Plan_Delta_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan GM Amount --></label>
+        <name>Plan_GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan GM % --></label>
+        <name>Plan_GM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan MCPU --></label>
+        <name>Plan_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Sales --></label>
+        <name>Plan_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Units --></label>
+        <name>Plan_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prev Week Retail Outlook Line --></label>
+        <name>Prev_Week_Retail_Outlook_Line__c</name>
+        <relationshipLabel><!-- Retail Outlook Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO Price --></label>
+        <name>RO_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO Units --></label>
+        <name>RO_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Forecast Line --></label>
+        <name>Retail_Forecast_Line__c</name>
+        <relationshipLabel><!-- Retail Outlook Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Retail Outlook --></label>
+        <name>Retail_Outlook__c</name>
+        <relationshipLabel><!-- Retail Outlook Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Outlook Sales --></label>
+        <name>Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell Through --></label>
+        <name>Sell_Through__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipments --></label>
+        <name>Shipments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supply Issue --></label>
+        <name>Supply_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outlook Units --></label>
+        <name>Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>Units_outlook__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW Adjusted GM --></label>
+        <name>WOW_Adjusted_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW Adjusted Sales --></label>
+        <name>WOW_Adjusted_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW Adjusted Units --></label>
+        <name>WOW_Adjusted_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW GM Amount --></label>
+        <name>WOW_GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW GM % --></label>
+        <name>WOW_GM_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW Sales --></label>
+        <name>WOW_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- WOW Units --></label>
+        <name>WOW_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weeks On Hand --></label>
+        <name>Weeks_On_Hand__c</name>
+    </fields>
+    <layouts>
+        <layout>Retail Outlook Line Layout</layout>
+        <sections>
+            <label><!-- Adjusted --></label>
+            <section>Adjusted</section>
+        </sections>
+        <sections>
+            <label><!-- Busniess Ops --></label>
+            <section>Busniess Ops</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Delta --></label>
+            <section>Delta</section>
+        </sections>
+        <sections>
+            <label><!-- Relation --></label>
+            <section>Relation</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot change outlook line on a locked outlook. --></errorMessage>
+        <name>Locked_outlook_cannot_be_modified</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,119 @@
+<apex:page title="Score Card Pull Schedule">
+    <apex:pageblock title="PULL SCHEDULE">
+        <html>
+
+        <head></head>
+
+        <body>
+            <script language="javascript">
+                // Purpose : fill the month table with column headings
+                function day_title(day_name) {
+                    document.write("<TD color=#FFFFFF bgcolor=#0066FF ALIGN=center WIDTH=35><FONT COLOR=#FFFFFF >" + day_name + " </FONT></TD>")
+                }
+                 // purpose : fill the month table with numbers
+                function fill_table(month, month_length) {
+                    count = 0
+                    day = 1
+                    // purpose : Begin the new month table
+                    document.write("<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=%3><TR>")
+                    document.write("<TD bgcolor=#000080 COLSPAN=7 ALIGN=center><FONT COLOR=#FFFFFF ><B>" + month + "  " + year + "</B></FONT><TR>")
+                    //purpose : column headings
+                    day_title("S")
+                    day_title("M")
+                    day_title("T")
+                    day_title("W")
+                    day_title("T")
+                    day_title("F")
+                    day_title("S")
+                    // purpose : pad cells before first day of month
+                    document.write("</TR><TR>")
+                    for (var i = 1; i < start_day; i++) {
+                        document.write("<TD bgcolor=#FAFAFA >")
+                    }
+                    // purpose : fill the first week of days
+                    if (start_day == 1) {
+                        count = 5
+                    }
+                    for (var i = start_day; i < 8; i++) {
+                        if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6) {
+                            count++
+                        }
+                        document.write("<TD bgcolor=#FAFAFA ALIGN=center>" + day + "</TD>")
+                        day++
+                    }
+                    document.write("<TR bgcolor=#FAFAFA>")
+                    //purpose : fill the remaining weeks. This includes 7th work day calculation as 7th week day always falls in second or third week
+                    while (day <= month_length) {
+                        for (var i = 1; i <= 7 && day <= month_length; i++) {
+                            if (i == 2 || i == 3 || i == 4 || i == 5 || i == 6) {
+                                count++
+                            }
+                            if (count == 7) // change this variable to get nth week day
+                            {
+                                document.write("<TD bgcolor=#66FF66 ALIGN=center>" + day + "</TD>")
+                                count = 8
+                            } else {
+                                document.write("<TD bgcolor=#FAFAFA ALIGN=center>" + day + "</TD>")
+                            }
+                            day++
+                        }
+                        document.write("</TR><TR>")
+                        //purpose : the first day of the next month
+                        start_day = i
+                    }
+                    document.write("</TR></TABLE><BR>")
+                }
+            </script>
+            <script language="javascript">
+                // purpsoe : change the below variable to the current year for demonstration of any year
+                year = new Date().getFullYear()
+                 //purpose : first day of the week of the new year
+                 today = new Date("January 1, " + year)
+                 start_day = today.getDay() + 1 // starts with 0
+                 document.write("<TABLE BORDER=0 CELLSPACING=3 CELLPADDING=%3><TR>")
+                 document.write("<TD >")
+                 fill_table("January", 31)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 if (year % 4 == 0) {
+                    fill_table("February", 29)
+                } else {
+                    fill_table("February", 28)
+                }
+                document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("March", 31)
+                 document.write("</TD></TR>")
+                 document.write("<TR> <TD>")
+                 fill_table("April", 30)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("May", 31)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("June", 30)
+                 document.write("</TD ></TR>")
+                 document.write("<TR> <TD>")
+                 fill_table("July", 31)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("August", 31)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("September", 30)
+                 document.write("</TD > </TR>")
+                 document.write("<TR ><TD>")
+                 fill_table("October", 31)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("November", 30)
+                 document.write("</TD >")
+                 document.write("<TD >")
+                 fill_table("December", 31)
+                 document.write("</TD ></TR>")
+            </script>
+        </body>
+
+        </html>
+    </apex:pageblock>
+</apex:page>

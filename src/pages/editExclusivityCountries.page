@@ -1,0 +1,192 @@
+<apex:page controller="editExclusivityCountries" showHeader="false">
+    <style type="text/css"> 
+        .myTable td{ 
+        border:#999 1px solid; 
+        } 
+        .topL{ 
+        text-align:left; 
+        vertical-align: top; 
+        }
+        
+        .topC{ 
+        text-align:center; 
+        vertical-align: top; 
+        }
+        
+        .topR{ 
+        text-align:right; 
+        vertical-align: top; 
+        }
+        
+        .midL{ 
+        text-align:left; 
+        vertical-align: middle; 
+        }
+        
+        .midC{ 
+        text-align:center; 
+        vertical-align: middle; 
+        }
+        
+        .midR{ 
+        text-align:right; 
+        vertical-align: middle; 
+        }
+        
+        .botL{ 
+        text-align:left; 
+        vertical-align: bottom; 
+        }
+        
+        .botC{ 
+        text-align:center; 
+        vertical-align: bottom; 
+        }
+        
+        .botR{ 
+        text-align:right; 
+        vertical-align: bottom; 
+        } 
+        
+       .customPopup{
+            background-color: white;
+            border-style: solid;
+            border-width: 2px;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            z-index: 9999;
+            /* These are the 3 css properties you will need to tweak so the pop 
+            up displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can also add 
+            the height property for a fixed size pop up.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+        }
+    </style>
+    <script language="javascript">   
+        function reloadParentAndClose()
+        {           
+            //window.opener.timedRefresh(4000);
+            parent.window.opener.location.href = "/{!targetId}";            
+            window.close();         
+        }
+        function timedSave()
+        {
+            var t=setTimeout("reloadParentAndClose()",4000);
+            
+        }
+        function refresh()
+        {
+            //window.parent.location.replace('/{!$CurrentPage.parameters.id}');
+            parent.window.opener.location.replace('/{!$CurrentPage.parameters.id}');
+            window.close();
+        }
+            
+    </script>     
+
+    <apex:form id="theForm">
+        <center>
+        <apex:commandButton action="{!save}" value="Save" oncomplete="refresh();"/>
+        <!--<apex:commandButton action="{!save}" value="Save2" onclick="timedSave();"/>  --> 
+        <apex:commandButton value="Cancel" onclick="window.close();"/>
+        </center>
+    
+        <table >
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="topR">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="na, africa, sa, ca, australia, asia, middleeast, europe" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="topL">    
+                        <apex:pageBlock title="North America"> 
+                            <apex:commandLink action="{!selectAllNorthAmerica}" value="Select All/None" rerender="na" />                             
+                            <apex:pageBlockTable value="{!northAmerica}" var="c4" id="na">
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c4.selected}"/>
+                                    {!c4.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>                    
+                        <apex:pageBlock title="Sub-Saharan Africa">       
+                            <apex:commandLink action="{!selectAllSubAfrica}" value="Select All/None" rerender="africa" />  
+                            <apex:pageBlockTable value="{!subSaharanAfrica}" var="c4" id="africa">
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c4.selected}"/>
+                                    {!c4.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>                                         
+                    </td>            
+                    <td class="topL">    
+                        <apex:pageBlock title="South America">
+                            <apex:commandLink action="{!selectAllSouthAmerica}" value="Select All/None" rerender="sa" />          
+                            <apex:pageBlockTable value="{!southAmerica}" var="c4" id="sa">
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c4.selected}"/>
+                                    {!c4.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>
+                        <apex:pageBlock title="Central America and the Caribbean">
+                            <apex:commandLink action="{!selectAllCentralAmerica}" value="Select All/None" rerender="ca" />          
+                            <apex:pageBlockTable value="{!centralAmericaAndTheCaribbean}" var="c3" id="ca" >
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c3.selected}"/>
+                                    {!c3.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>                          
+                        <apex:pageBlock title="Australia and Oceania">
+                            <apex:commandLink action="{!selectAllAustralia}" value="Select All/None" rerender="australia" />          
+                            <apex:pageBlockTable value="{!australiaAndOceania}" var="c2" id="australia" >
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c2.selected}"/>
+                                    {!c2.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>                                     
+                    </td>                
+                    <td class="topL">
+                        <apex:pageBlock title="Asia" >
+                            <apex:commandLink action="{!selectAllAsia}" value="Select All/None" rerender="asia" /> 
+                            <apex:pageBlockTable value="{!asia}" var="c1" id="asia" >
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c1.selected}"/>
+                                    {!c1.countryName}
+                                </apex:column>
+                             </apex:pageBlockTable>                
+                        </apex:pageBlock>
+                        
+                        <apex:pageBlock title="Middle East and North Africa">
+                            <apex:commandLink action="{!selectAllMiddleEast}" value="Select All/None" rerender="middleeast" />          
+                            <apex:pageBlockTable value="{!middleEastAndNorthAfrica}" var="c4" id="middleeast" >
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c4.selected}"/>
+                                    {!c4.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>                    
+                    </td>
+                    <td class="topL">
+                        <apex:pageBlock title="Europe">
+                            <apex:commandLink action="{!selectAllEurope}" value="Select All/None" rerender="europe" />          
+                            <apex:pageBlockTable value="{!europe}" var="c4" id="europe" >
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!c4.selected}"/>
+                                    {!c4.countryName}
+                                </apex:column>
+                            </apex:pageBlockTable>            
+                        </apex:pageBlock>    
+                    </td>
+                </tr>
+            </tbody>
+        </table>  
+    </apex:form> 
+</apex:page>

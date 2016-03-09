@@ -1,0 +1,445 @@
+<apex:page controller="UCD_Controller" cache="true" sidebar="False" contenttype="application/vnd.ms-excel#UcdReport.xls" showheader="false" standardstylesheets="false">
+  <style>
+  tfoot{display:none;}
+  </style>
+  
+  <apex:outputPanel rendered="true" id="blockResult" >
+       
+                 <apex:outputPanel rendered="{!IF(AND(NOT(ISNULL(listOfQtrWrapperObj)),listOfQtrWrapperObj.Size>0),true,false)}">
+                     <b>Quarterly</b>
+                 </apex:outputPanel>
+                 <apex:dataTable value="{!listOfQtrWrapperObj}" var="wrapper" width="100%"
+                                 rendered="{!IF(AND(NOT(ISNULL(listOfQtrWrapperObj)),listOfQtrWrapperObj.Size>0),true,false)}"  
+                                 styleClass="qrtrView" id="qrtrView"
+                                 >
+                    <!-- Account -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align:left !important;" rendered="{!IF(isGrpByAcc,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Account Name" style="float: left !important;" />   
+                        </apex:facet>
+                        <!--apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountName}" style="text-align: left !important" />   
+                        </apex:facet -->
+                        <apex:outputLink value="/{!wrapper.accountid}" target="_blank">{!wrapper.accountName}</apex:outputLink> 
+                    </apex:column>
+                    
+                    <!-- Sub Region rendered if Group By Sub Region  -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important; " rendered="{!isGrpBySubRegion}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Sub_Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountSubRegion}" style="text-align: left !important"/>   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountSubRegion}"/>
+                    </apex:column> 
+                    
+                    <!-- Country rendered if Group By Country-->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!isGrpByCountry}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Country__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountCountry}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountCountry}" style="{!IF(wrapper.accountCountry=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                     
+                    <!-- Region rendered if Group By Account,Sub Region, Country-->  
+                   
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(isGrpByAcc,isGrpBySubRegion,isGrpByCountry)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountRegion}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountRegion}"/>
+                    </apex:column> 
+                    
+                     <!-- Region -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByRegion,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].region}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.region}" style="{!IF(wrapper.region=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Sub Region rendered if Group By Account Country -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(OR(isGrpByAcc,isGrpByCountry),true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Sub_Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountSubRegion}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountSubRegion}"/>
+                    </apex:column> 
+                    
+                    <!-- Country rendered if Group By Account-->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!isGrpByAcc}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Country__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountCountry}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountCountry}" style="{!IF(wrapper.accountCountry=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Opportunity Stage -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByOppStage,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.StageName.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].stage}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.stage}" style="{!IF(wrapper.stage=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Forecast -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByForecast,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.Fields.Product_Forecast_Category__c.label}"  style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].forecast}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.forecast}" style="{!IF(wrapper.forecast=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column> 
+                    
+                    <!-- Project -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Project" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].project}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.project}"/> 
+                    </apex:column>
+                    
+                    <!-- Product -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProduct)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Product" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].product}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.product}"/> 
+                    </apex:column>
+                    
+                    <!-- Program -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IsGrpByProgram}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Program" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].Program}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.Program}"/> 
+                    </apex:column>
+                    
+                    <!-- Product Family -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProgram,IsGrpByProductFamily,IsGrpByProduct,IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Product Family" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].programFamily}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.programFamily}"/> 
+                    </apex:column>
+                    
+                    <!-- Program -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProduct,IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Program" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].Program}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.Program}"/> 
+                    </apex:column>
+                    
+                    
+                    <!-- Business Unit -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProductFamily,IsGrpByProduct)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Business Unit" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].businessUnit}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.businessUnit}"/> 
+                    </apex:column>   
+                            
+                    <apex:repeat value="{!qtrHeaders}" var="key" >
+                        <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align:left">
+                            <apex:facet name="header" >
+                                <apex:outputLabel value="{!key}" style="{!IF(key=TotalHeader,'font-weight:bold;','')}"/> 
+                            </apex:facet>
+                             <apex:outputText value="{0,number,#,###,###}" style="{!IF(OR(wrapper.accountCountry=TotalHeader,wrapper.stage=TotalHeader,wrapper.region=TotalHeader,wrapper.forecast=TotalHeader,key=TotalHeader),'font-weight:bold;','')}">
+                                <apex:param value="{!wrapper.headerWiseQtySum[key]}" />
+                            </apex:outputText>
+                        </apex:column>  
+                    </apex:repeat>
+                </apex:dataTable>
+                <apex:dataTable rows="{!(listOfUCDQtrWrapperObj.Size-1)}" value="{!listOfUCDQtrWrapperObj}" var="wrapper" width="100%" rendered="{!IF(AND(NOT(ISNULL(listOfUCDQtrWrapperObj)),listOfUCDQtrWrapperObj.Size>0),true,false)}">
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align:left !important" rendered="{!IF(isGrpByForecast,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.Fields.Product_Forecast_Category__c.label}"  style="float: left !important;"/>   
+                        </apex:facet>
+                        <apex:outputlabel value="{!wrapper.forecast}"/>
+                    </apex:column>          
+                    <apex:repeat value="{!qtrHeaders}" var="key" >
+                        <apex:column style="white-space:nowrap;border-bottom-width:1px;{!IF(OR(key=TotalHeader),'font-weight:bold;','')}">
+                            <apex:facet name="header" >
+                                <apex:outputLabel value="{!key}"/> 
+                            </apex:facet>
+                            <apex:outputText value="{0,number,#,###,###}" >
+                                <apex:param value="{!wrapper.headerWiseQtySum[key]}"/>
+                            </apex:outputText>
+                        </apex:column>  
+                    </apex:repeat> 
+                </apex:dataTable>
+               
+                 <apex:outputPanel rendered="{!IF(AND(NOT(ISNULL(listOfMonthWrapperObj)),listOfMonthWrapperObj.Size>0),true,false)}">
+                         <b>Monthly</b>
+                 </apex:outputPanel>   
+                 <apex:dataTable value="{!listOfMonthWrapperObj}" 
+                                 rendered="{!IF(AND(NOT(ISNULL(listOfMonthWrapperObj)),listOfMonthWrapperObj.Size>0),true,false)}"
+                                 var="wrapper" width="100%" styleClass="monthView">
+                    <!-- Account -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align:left !important;" rendered="{!IF(isGrpByAcc,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Account Name" style="float: left !important;" />   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountName}" style="text-align: left !important" />   
+                        </apex:facet -->
+                        <apex:outputLink value="/{!wrapper.accountid}" target="_blank">{!wrapper.accountName}</apex:outputLink> 
+                    </apex:column>
+                    
+                    <!-- Sub Region rendered if Group By Sub Region  -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important; " rendered="{!isGrpBySubRegion}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Sub_Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountSubRegion}" style="text-align: left !important"/>   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountSubRegion}"/>
+                    </apex:column> 
+                    
+                    <!-- Country rendered if Group By Country-->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!isGrpByCountry}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Country__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountCountry}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountCountry}" style="{!IF(wrapper.accountCountry=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                     
+                    <!-- Region rendered if Group By Account,Sub Region, Country-->  
+                   
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(isGrpByAcc,isGrpBySubRegion,isGrpByCountry)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountRegion}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountRegion}"/>
+                    </apex:column> 
+                    
+                     <!-- Region -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByRegion,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].region}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.region}" style="{!IF(wrapper.region=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Sub Region rendered if Group By Account Country -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(OR(isGrpByAcc,isGrpByCountry),true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Sub_Region__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountSubRegion}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountSubRegion}"/>
+                    </apex:column> 
+                    
+                    <!-- Country rendered if Group By Account-->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!isGrpByAcc}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Account.Fields.Country__c.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].accountCountry}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.accountCountry}" style="{!IF(wrapper.accountCountry=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Opportunity Stage -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByOppStage,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.StageName.label}" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].stage}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.stage}" style="{!IF(wrapper.stage=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column>
+                    
+                    <!-- Forecast -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IF(isGrpByForecast,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.Fields.Product_Forecast_Category__c.label}"  style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].forecast}" />   
+                        </apex:facet -->
+                        <apex:outputlabel value="{!wrapper.forecast}" style="{!IF(wrapper.forecast=TotalHeader,'font-weight:bold;','')}"/>
+                    </apex:column> 
+                    
+                    <!-- Project -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Project" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].project}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.project}"/> 
+                    </apex:column>
+                    
+                    <!-- Product -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProduct)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Product" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].product}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.product}"/> 
+                    </apex:column>
+                    
+                    <!-- Program -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!IsGrpByProgram}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Program" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].Program}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.Program}"/> 
+                    </apex:column>
+                    
+                    <!-- Product Family -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProgram,IsGrpByProductFamily,IsGrpByProduct,IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Product Family" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].programFamily}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.programFamily}"/> 
+                    </apex:column>
+                    
+                    <!-- Program -->
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProduct,IsGrpByProject)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Program" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].Program}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.Program}"/> 
+                    </apex:column>
+                    
+                    
+                    <!-- Business Unit -->
+                    
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important;" rendered="{!OR(IsGrpByProductFamily,IsGrpByProduct)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="Business Unit" style="float: left !important;"/>   
+                        </apex:facet>
+                        <!-- apex:facet name="footer" >
+                            <apex:outputLabel value="{!listOfQtrWrapperObj[listOfQtrWrapperObj.Size-1].businessUnit}" />   
+                        </apex:facet -->
+                        <apex:outputLabel value="{!wrapper.businessUnit}"/> 
+                    </apex:column>   
+                          
+                    <apex:repeat value="{!monthHeaders}" var="key" >
+                        <apex:column style="white-space:nowrap;border-bottom-width:1px;{!IF(OR(key=TotalHeader),'font-weight:bold;','')}">
+                            <apex:facet name="header" >
+                                <apex:outputLabel value="{!key}"/> 
+                            </apex:facet>
+                            <apex:facet name="" >
+                                <apex:outputText value="{0,number,#,###,###}" >
+                                    <apex:param value="{!listOfMonthWrapperObj[listOfMonthWrapperObj.Size-1].headerWiseQtySum[key]}" />   
+                                </apex:outputText>
+                            </apex:facet>
+                                <apex:outputText value="{0,number,#,###,###}" >
+                                     <apex:param value="{!wrapper.headerWiseQtySum[key]}"/>
+                                </apex:outputText>
+                        </apex:column>
+                      </apex:repeat>  
+                </apex:dataTable>
+                <apex:dataTable rows="{!(listOfUCDMonthWrapperObj.Size-1)}" value="{!listOfUCDMonthWrapperObj}" var="wrapper" width="100%" rendered="{!IF(AND(NOT(ISNULL(listOfUCDMonthWrapperObj)),listOfUCDMonthWrapperObj.Size>0),true,false)}">
+                    <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align:left !important"  rendered="{!IF(isGrpByForecast,true,false)}">
+                        <apex:facet name="header" >
+                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.Fields.Product_Forecast_Category__c.label}" style="float: left !important;" />   
+                        </apex:facet>
+                        <apex:outputlabel value="{!wrapper.forecast}"/>
+                    </apex:column>          
+                    <apex:repeat value="{!monthHeaders}" var="key" >
+                        <apex:column style="white-space:nowrap;border-bottom-width:1px;{!IF(OR(key=TotalHeader),'font-weight:bold;','')}">
+                            <apex:facet name="header" >
+                                <apex:outputLabel value="{!key}"/> 
+                            </apex:facet>
+                            <apex:outputText value="{0,number,#,###,###}" >
+                                <apex:param value="{!wrapper.headerWiseQtySum[key]}"/>
+                            </apex:outputText>
+                        </apex:column>  
+                    </apex:repeat>
+                </apex:dataTable>
+                
+               <apex:outputpanel rendered="{!IF(AND(listOfQtrWrapperObj.Size=0,listOfMonthWrapperObj.Size=0),true,false)}">
+                    No record(s) found.
+               </apex:outputpanel>
+            
+        </apex:outputPanel> 
+</apex:page>

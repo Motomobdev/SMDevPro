@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Base FBR build planning object for creation of factory build request.  This is header data associated to a product family.  Product engineer records (PE) must be associated via use of the related object.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ALT_Number__c</fullName>
+        <description>If pilot requires Tianjin ALT, record ALT number here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If pilot requires Tianjin ALT, record ALT number here.</inlineHelpText>
+        <label>ALT Number</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Additionall_FBR_Detail__c</fullName>
+        <description>Detail to help with factory build coordination; work instructions, shipping instructions, general FYI.  You may also upload documentation to assist with instructions and reference the document here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Detail to help with factory build coordination; work instructions, shipping instructions, general FYI.  You may also upload documentation to assist with instructions and reference the document here.</inlineHelpText>
+        <label>Additionall FBR Detail</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Build_Completion_Date__c</fullName>
+        <description>Completion date of build.  Assumption is HW shipment information will be entered within a day of completion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Completion date of build.  Assumption is HW shipment information will be entered within a day of completion.</inlineHelpText>
+        <label>Build Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Build_Transceiver__c</fullName>
+        <description>Actual hardware kit for build and distribution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual hardware kit for build and distribution.</inlineHelpText>
+        <label>Build Transceiver</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CFC_Flex_Required__c</fullName>
+        <description>Do the units being constructed require customer SW.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If customer SW is needed for testing, this should be &apos;Yes&apos;</inlineHelpText>
+        <label>CFC Flex Required</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Central_Engineer_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineer group contact with top interest in execution statuses.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineer group contact with top interest in execution statuses.</inlineHelpText>
+        <label>Central Engineer Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Build_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Flag__c</fullName>
+        <description>Flag used to determine master build request status</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Build_Completion_Date__c), 0,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Completed Flag</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Build_Qty__c</fullName>
+        <description>Factory confirmed build quantity.  Issued PO(s) to match HW kit and total quantity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Factory confirmed build quantity.  Issued PO(s) to match HW kit and total quantity.</inlineHelpText>
+        <label>Confirmed Build Qty</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_1_Ref_Des__c</fullName>
+        <description>Product reference designation for electrical component 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product reference designation for electrical component 1</inlineHelpText>
+        <label>EE 1 Ref-Des</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_2_Ref_Des__c</fullName>
+        <description>Product reference designation for electrical component 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product reference designation for electrical component 2</inlineHelpText>
+        <label>EE 2 Ref-Des</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_3_Ref_Des__c</fullName>
+        <description>Product reference designation for electrical component 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product reference designation for electrical component 3</inlineHelpText>
+        <label>EE 3 Ref-Des</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_4_Ref_Des__c</fullName>
+        <description>Product reference designation for electrical component 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product reference designation for electrical component 4</inlineHelpText>
+        <label>EE 4 Ref-Des</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_5_Ref_Des__c</fullName>
+        <description>Product reference designation for electrical component 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product reference designation for electrical component 5</inlineHelpText>
+        <label>EE 5 Ref-Des</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_Component_1__c</fullName>
+        <description>Use the primary component listed within the PE record.</description>
+        <externalId>false</externalId>
+        <label>EE Component 1</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_Component_2__c</fullName>
+        <description>Electrical component associated to engineering record 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Electrical component associated to engineering record 2</inlineHelpText>
+        <label>EE Component 2</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_Component_3__c</fullName>
+        <description>Electrical component associated to engineering record 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Electrical component associated to engineering record 3</inlineHelpText>
+        <label>EE Component 3</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_Component_4__c</fullName>
+        <description>Electrical component associated to engineering record 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Electrical component associated to engineering record 4</inlineHelpText>
+        <label>EE Component 4</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EE_Component_5__c</fullName>
+        <description>Electrical component associated to engineering record 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Electrical component associated to engineering record 5</inlineHelpText>
+        <label>EE Component 5</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engineer_Test_Record_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Test record for change associated to component number</description>
+        <externalId>false</externalId>
+        <label>Engineer Test Record 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Assessment product has now related engineer requirement, check the product name and try again.</errorMessage>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_1__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Name__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engineer_Test_Record_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>See description for Engineer_Test_Record_1</description>
+        <externalId>false</externalId>
+        <label>Engineer Test Record 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Product chosen does not have an engineering plan associated.  Verify the product information.</errorMessage>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_1__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Name__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engineer_Test_Record_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>See description Engineering Test Record 1</description>
+        <externalId>false</externalId>
+        <label>Engineer Test Record 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Product selected does not have any pending engineering activity.  Check product name.</errorMessage>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_1__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Name__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engineer_Test_Record_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>See description for record 1</description>
+        <externalId>false</externalId>
+        <label>Engineer Test Record 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_1__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Name__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engineer_Test_Record_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>See description for test record 1</description>
+        <externalId>false</externalId>
+        <label>Engineer Test Record 5</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Estimate_Build_Start__c</fullName>
+        <description>Field used to provide the initial estimate for build scheduled start  Factory to update scheduled start after capacity review.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(Scheduled_Build_Date__c)  ,  Ship_Date_Less_Seven__c,  Scheduled_Build_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimate Build Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FBR_All_Day_Event__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;True&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR All Day Event</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Build_Record_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Build Record Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Calendar_End_Time__c</fullName>
+        <description>End time of HW CR FBR</description>
+        <externalId>false</externalId>
+        <formula>&quot;12:00:00&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Calendar End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Calendar_Reminder__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Off&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Calendar Reminder</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Calendar_Start_Time__c</fullName>
+        <description>Time for google calendar export function.</description>
+        <externalId>false</externalId>
+        <formula>&quot;12:00:00&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Calendar Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Calendar_Subject__c</fullName>
+        <description>Calendar subject name for import to Google.</description>
+        <externalId>false</externalId>
+        <formula>Name  + &quot; &quot;  +   FBR_Product_Name_Assigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Calendar Subject</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Product_Name_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Product Name Assigned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Ready_for_Build__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Select once build plan is ready for factory scheduling</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select once build plan is ready for factory scheduling</inlineHelpText>
+        <label>FBR Ready for Build</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FBR_Reminder_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;NA&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Reminder Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Reminder_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;12:00:00&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Reminder Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Status_Sum__c</fullName>
+        <description>Sum used to assess master status of FBR record</description>
+        <externalId>false</externalId>
+        <formula>Completed_Flag__c +  Submit_Flag__c +  Planned_Flag__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FBR Status Sum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Status__c</fullName>
+        <description>FBR status field to reflect current status of build request.</description>
+        <externalId>false</externalId>
+        <formula>CASE( FBR_Status_Sum__c , 0, &quot;Pending&quot;, 1, &quot;Submitted&quot;, 2, &quot;Scheduled&quot;, &quot;Complete&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>FBR status field to reflect current status of build request.</inlineHelpText>
+        <label>FBR Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Factory_TOP_Build_Comments__c</fullName>
+        <description>Factory TOP or ASE team members build summary.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Factory TOP or ASE team members build summary.</inlineHelpText>
+        <label>Factory TOP Build Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Factory_Test_Reports__c</fullName>
+        <description>Entry used to highlight any reporting desired by engineering.  For instance, board test summary.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entry used to highlight any reporting desired by engineering.  For instance, board test summary.</inlineHelpText>
+        <label>Factory Test  Reports</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HW_CR_Build_Allocation_Comment__c</fullName>
+        <description>Details surrounding ship quantities and allocation.  Specifics listed within the product engineer (PE) record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Details surrounding ship quantities and allocation.  Specifics listed within the product engineer (PE) record.</inlineHelpText>
+        <label>HW CR Build Allocation Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HW_CR_Build_Quantity__c</fullName>
+        <description>Total quantity for pilot build.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total quantity for pilot build.</inlineHelpText>
+        <label>HW CR Build Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Change_Request_Base__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Base Change Request Record (HCR) for direct reference.</description>
+        <externalId>false</externalId>
+        <label>HW Change Request Base</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Top_Eng_Review_Status__c</field>
+                <operation>equals</operation>
+                <value>&quot;Review Pending&quot;</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (HW Change Request Base)</relationshipLabel>
+        <relationshipName>HW_CR_Build_PlansCdk2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Join_Product__c</fullName>
+        <description>Product field used for joining engineering record to build request</description>
+        <externalId>false</externalId>
+        <formula>IF( Product_Name__c = null, &quot; &quot;,  Product_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Join Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_EE_Engineer__c</fullName>
+        <description>Entry for listing key EE engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entry for listing key EE engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</inlineHelpText>
+        <label>Key EE Engineer</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_ME_engineer__c</fullName>
+        <description>Entry for listing key ME engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entry for listing key ME engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</inlineHelpText>
+        <label>Key ME engineer</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_SW_Engineer__c</fullName>
+        <description>Entry for listing key SW engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entry for listing key SW engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00)</inlineHelpText>
+        <label>Key SW Engineer</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_1_Parent_Assb__c</fullName>
+        <description>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</inlineHelpText>
+        <label>ME 1 Parent Assb</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_2_Parent_Assb__c</fullName>
+        <description>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</inlineHelpText>
+        <label>ME 2 Parent Assb</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_3_Parent_Assb__c</fullName>
+        <description>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</inlineHelpText>
+        <label>ME 3 Parent Assb</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_4_Parent_Assb__c</fullName>
+        <description>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</inlineHelpText>
+        <label>ME 4 Parent Assb</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_5_Parent_Assb__c</fullName>
+        <description>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing.</inlineHelpText>
+        <label>ME 5 Parent Assb</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Component_1__c</fullName>
+        <description>Mechanical component associated to engineering record 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mechanical component associated to engineering record 1</inlineHelpText>
+        <label>ME Component 1</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Component_2__c</fullName>
+        <description>Mechanical component associated to engineering record 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mechanical component associated to engineering record 2</inlineHelpText>
+        <label>ME Component 2</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Component_3__c</fullName>
+        <description>Mechanical component associated to engineering record 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mechanical component associated to engineering record 3</inlineHelpText>
+        <label>ME Component 3</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Component_4__c</fullName>
+        <description>Mechanical component associated to engineering record 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mechanical component associated to engineering record 4</inlineHelpText>
+        <label>ME Component 4</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Component_5__c</fullName>
+        <description>Mechanical component associated to engineering record 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mechanical component associated to engineering record 5</inlineHelpText>
+        <label>ME Component 5</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ME_Test_Record_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineering build and test requirements for ME component 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering build and test requirements for ME component 1</inlineHelpText>
+        <label>ME Test Record 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (ME Test Record 1)</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ME_Test_Record_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineering build and test requirements for ME component 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering build and test requirements for ME component 2</inlineHelpText>
+        <label>ME Test Record 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (ME Test Record 2)</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ME_Test_Record_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineering build and test requirements for ME component 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering build and test requirements for ME component 3</inlineHelpText>
+        <label>ME Test Record 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (ME Test Record 3)</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ME_Test_Record_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineering build and test requirements for ME component 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering build and test requirements for ME component 4</inlineHelpText>
+        <label>ME Test Record 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (ME Test Record 4)</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ME_Test_Record_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Engineering build and test requirements for ME component 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering build and test requirements for ME component 5</inlineHelpText>
+        <label>ME Test Record 5</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Product_Name__c</field>
+                <operation>equals</operation>
+                <valueField>HW_Product_Engineer_Review__c.Product_1__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans (ME Test Record 5)</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans9</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PO_1_Ship_Quantity__c</fullName>
+        <description>Quantity shipping against PO number 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity shipping against PO number 1.</inlineHelpText>
+        <label>PO 1 Ship Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_1_Ship_Tracking__c</fullName>
+        <description>Shipment tracking information for PO 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shipment tracking information for PO 1.</inlineHelpText>
+        <label>PO 1 Ship Tracking</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_1__c</fullName>
+        <description>PO for HW distribution.</description>
+        <externalId>false</externalId>
+        <label>PO 1</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_2_Ship_Quantity__c</fullName>
+        <description>HW ship quantity against PO number 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HW ship quantity against PO number 2.</inlineHelpText>
+        <label>PO 2 Ship Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_2_Ship_Tracking__c</fullName>
+        <description>Shipment tracking information for PO 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shipment tracking information for PO 2.</inlineHelpText>
+        <label>PO 2 Ship Tracking</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_2__c</fullName>
+        <description>PO used for HW distribution</description>
+        <externalId>false</externalId>
+        <label>PO 2</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_3_Ship_Quantity__c</fullName>
+        <description>HW quantity shipping against PO 3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HW quantity shipping against PO 3.</inlineHelpText>
+        <label>PO 3 Ship Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_3_Ship_Tracking__c</fullName>
+        <description>Shipment tracking information for PO 3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shipment tracking information for PO 3.</inlineHelpText>
+        <label>PO 3 Ship Tracking</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_3__c</fullName>
+        <description>PO for hardware distribution</description>
+        <externalId>false</externalId>
+        <label>PO 3</label>
+        <length>14</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Flag__c</fullName>
+        <description>Used to determine build request master status</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Scheduled_Build_Date__c), 0,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Planned Flag</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product Family for use in build planning</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Family for use in build planning</inlineHelpText>
+        <label>Product Family</label>
+        <referenceTo>Product_Family__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of product to be used for assessment.</description>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <referenceTo>Device__c</referenceTo>
+        <relationshipLabel>HW CR Build Plans</relationshipLabel>
+        <relationshipName>HW_CR_Build_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Blank_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Blank 1</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Ship_Date__c</fullName>
+        <description>Requested HW ship date.  Necessary to meet approval need-by dates.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requested HW ship date.</inlineHelpText>
+        <label>Requested Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Required_XCVR__c</fullName>
+        <description>If a specific test XCVR is required, enter this information (i.e. SJUG####AA).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If a specific test XCVR is required, enter this information (i.e. SJUG####AA).</inlineHelpText>
+        <label>Required XCVR</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Requirements__c</fullName>
+        <description>Section used to highlight SW requirements.  If HW change is associated to SW CR, the baseline containing this CR should be specifically noted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Software Requirements (PA Table link, Bootloader, SW Version, Reflash File, etc).  If no special SW need, then enter &quot;Production&quot;</inlineHelpText>
+        <label>SW Requirements</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Build_Date__c</fullName>
+        <description>Planned start date of build</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned start date of build</inlineHelpText>
+        <label>Scheduled Build Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Date_Less_Seven__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Ship_Date__c -7</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ship Date Less Seven</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Submit_Flag__c</fullName>
+        <description>Used for assessing build request master status</description>
+        <externalId>false</externalId>
+        <formula>IF( FBR_Ready_for_Build__c = True, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Submit Flag</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TOP_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Factory Technical Operations Contact.  Person responsible for monitoring build schedule, performance, and completion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Factory Technical Operations Contact.  Person responsible for monitoring build schedule, performance, and completion.</inlineHelpText>
+        <label>TOP Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Build_Plans1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Transceiver_Cost__c</fullName>
+        <description>Transfer cost of hardware kit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Transfer cost of hardware kit</inlineHelpText>
+        <label>Transceiver Cost</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>XCVR_Security__c</fullName>
+        <description>This is the HW security established by IC fusing.  Most units should be engineering secure, for testing, with a production IMEI or MEID.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Engineering Secure=Open for engineering debug or SW reflashing.
+Customer Secure=Locked, will only accept certain SW reflash
+Non-Secure=Open for engineering AND software debug.  Full prototype unit.</inlineHelpText>
+        <label>XCVR Security</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Engineering Secure</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Secure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Secure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>HW CR Build Planning</label>
+    <listViews>
+        <fullName>ALL1</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Family__c</columns>
+        <columns>FBR_Status__c</columns>
+        <columns>HW_CR_Build_Quantity__c</columns>
+        <columns>Requested_Ship_Date__c</columns>
+        <columns>Scheduled_Build_Date__c</columns>
+        <columns>Additionall_FBR_Detail__c</columns>
+        <columns>Build_Completion_Date__c</columns>
+        <columns>Build_Transceiver__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>ALL</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Family__c</columns>
+        <columns>FBR_Status__c</columns>
+        <columns>HW_CR_Build_Quantity__c</columns>
+        <columns>Requested_Ship_Date__c</columns>
+        <columns>Scheduled_Build_Date__c</columns>
+        <columns>Additionall_FBR_Detail__c</columns>
+        <columns>Build_Completion_Date__c</columns>
+        <columns>Build_Transceiver__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Ship_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>12/28/2012</value>
+        </filters>
+        <label>ALL 2013 for chart</label>
+    </listViews>
+    <listViews>
+        <fullName>TJ_FBR_Released_To_Factory</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Family__c</columns>
+        <columns>FBR_Status__c</columns>
+        <columns>HW_CR_Build_Quantity__c</columns>
+        <columns>Requested_Ship_Date__c</columns>
+        <columns>Scheduled_Build_Date__c</columns>
+        <columns>Build_Completion_Date__c</columns>
+        <columns>Additionall_FBR_Detail__c</columns>
+        <columns>Confirmed_Build_Qty__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>FBR_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Complete</value>
+        </filters>
+        <label>TJ FBR Active</label>
+    </listViews>
+    <nameField>
+        <displayFormat>FBR{0000000}</displayFormat>
+        <label>HW CR Build Planning Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW CR Build Plans</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>HW_Change_Build_Plan</fullName>
+        <active>true</active>
+        <description>Record type to be used in generation of factory (public) events so that users can view build activity via a public calendar.</description>
+        <label>HW Change Build Plan</label>
+        <picklistValues>
+            <picklist>CFC_Flex_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>XCVR_Security__c</picklist>
+            <values>
+                <fullName>Customer Secure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering Secure</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Non-Secure</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>TJ_Build_Event</fullName>
+        <availability>online</availability>
+        <description>Button used to schedule event within the Tianjin public build calendar.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>TJ Build Event</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://cs12.salesforce.com/00U/c?cType=1&amp;cal=HW+CR+Tianjin+Factory+Build+Calendar&amp;cal_lkid=023V00000004zqd&amp;cal_lkold=HW+CR+Tianjin+Factory+Build+Calendar&amp;cal_lspf=1&amp;md0=2011&amp;md1=8</url>
+    </webLinks>
+</CustomObject>

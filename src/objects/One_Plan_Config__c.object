@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Table used to configure dates to run One Plan scenarios</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Generate_Date__c</fullName>
+        <description>Date to generate a One Plan Snapshot</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date to generate a One Plan Snapshot</inlineHelpText>
+        <label>Gererate Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Description__c</fullName>
+        <defaultValue>&quot;&lt;Month-Year&gt; One Plan&quot;</defaultValue>
+        <description>One Plan description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>One Plan description</inlineHelpText>
+        <label>Plan Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>One Plan Config</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Generate_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>One Plan Config ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>One Plan Configs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Generate_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Plan_Description__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Generate_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Plan_Description__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Generate_Date__c</searchFilterFields>
+        <searchFilterFields>Plan_Description__c</searchFilterFields>
+        <searchResultsAdditionalFields>Generate_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Plan_Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

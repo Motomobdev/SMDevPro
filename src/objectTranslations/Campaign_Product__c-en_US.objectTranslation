@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Lift % --></label>
+        <name>Actual_Lift__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual minus Target, as an objective measure of success --></help>
+        <label><!-- Actual vs Target % --></label>
+        <name>Actual_vs_Target__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used as reference to Target lift --></help>
+        <label><!-- Baseline SO/wk --></label>
+        <name>Baseline_SO_wk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bundled Product Discount --></label>
+        <name>Bundled_Product_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bundled Product Price --></label>
+        <name>Bundled_Product_Price_or_Discount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applies only if product sub-category = Bundling --></help>
+        <label><!-- Bundled with --></label>
+        <name>Bundled_with__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional details from Sales/Marketing (post-promotion analytic outcome) --></help>
+        <label><!-- Campaign Effectiveness (Detail) --></label>
+        <name>Campaign_Effectiveness_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Effectiveness --></label>
+        <name>Campaign_Effectiveness__c</name>
+        <picklistValues>
+            <masterLabel>Did Not Meet Expectations</masterLabel>
+            <translation><!-- Did Not Meet Expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Met Expectations</masterLabel>
+            <translation><!-- Met Expectations --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Campaign Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Communication Method --></label>
+        <name>Communication_Method__c</name>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Store Signage</masterLabel>
+            <translation><!-- In Store Signage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mailer</masterLabel>
+            <translation><!-- Mailer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola.com</masterLabel>
+            <translation><!-- Motorola.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Retail Advertisement</masterLabel>
+            <translation><!-- National Retail Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter either Target Lift % or Incremental Value --></help>
+        <label><!-- Incremental Value --></label>
+        <name>Incremental_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applies only if Promotion lever = price reduction --></help>
+        <label><!-- Product Price Before Campaign --></label>
+        <name>Price_Before_Campaign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applies only if Promotion lever = price reduction --></help>
+        <label><!-- Product Price During Campaign --></label>
+        <name>Price_During_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Campaign Details --></label>
+        <name>Product_Campaign_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Campaign Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you selected a product, leave this field (Project) empty. --></help>
+        <label><!-- Project --></label>
+        <name>Project_PMD__c</name>
+        <relationshipLabel><!-- Campaign Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Target Lift % --></label>
+        <name>Target_Lift__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Post Campaign Summary --></label>
+            <section>Post Campaign Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Product Layout - Admin View</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Post Campaign Summary --></label>
+            <section>Post Campaign Summary</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Bundled With field must identify the additional product(s) when the promotion is BOGO or Bundle. --></errorMessage>
+        <name>Bundle_Promo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Bundled Product Price or Bundled Product Discount amount is required when the type of promotion is a BOGO or Bundle. --></errorMessage>
+        <name>Bundle_Promo_Price</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Communication Method is required for promotion category of Permanent Move or Promotions --></errorMessage>
+        <name>Communication_Method_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Prices Before and During Campaign are required when the campaign Lever is a Price Drop. --></errorMessage>
+        <name>Price_Drop_Before_Pricing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Prices Before and During Campaign are required when the campaign Lever is a Price Drop. --></errorMessage>
+        <name>Price_Drop_During_Pricing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select a Project (PMD) or a Product --></errorMessage>
+        <name>Product_Or_Project_Is_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Edit_Products --></label>
+        <name>Add_Edit_Products</name>
+    </webLinks>
+</CustomObjectTranslation>

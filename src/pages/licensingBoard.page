@@ -1,0 +1,19 @@
+<apex:page controller="licensingBoard" tabStyle="Contract" action="{!redirect}">
+    <!--<apex:form >
+        <apex:pageBlock title="Contract's for Licensing Board Review">
+            <apex:pageBlockTable value="{!allContracts}" var="c">
+                <apex:column headerValue="Type" value="{!c.reviewType}"/>
+                 <apex:column headerValue="Contract Number" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Contract.View, c.contractId)}">{!c.contractNumber}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Account Owner" value="{!c.aOwner}"/>
+                <apex:column headerValue="Requested Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!c.requestedDate}" /> 
+                    </apex:outputText>
+                </apex:column> 
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    -->
+</apex:page>

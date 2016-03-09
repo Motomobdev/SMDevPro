@@ -1,0 +1,38 @@
+<apex:page controller="GPSFileUpload" showHeader="false" sidebar="false">
+    <c:Logo />
+    <apex:messages />
+    <apex:form >
+        <apex:pageBlock >
+            
+            <apex:pageBlockSection title="Enter Application" >
+            	<apex:inputField value="{!ParentAppHolder.Application__c}" rendered="{!NOT(hasApplication)}"/>
+                <apex:outputField value="{!ParentAppHolder.Application__c}" rendered="{!hasApplication}"/>
+                <apex:commandButton value="Next" action="{!AssignApplication}" rendered="{!NOT(hasApplication)}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" title="Overall Files" rendered="{!hasApplication}">
+                <apex:pageBlockSectionItem rendered="{!insertedOverall}">
+                	<apex:outputLabel for="overall_Installs"> Overall_installs.csv</apex:outputLabel>
+                    <apex:outputText value="{!overall_Installs}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!insertedOverall}">
+                	<apex:outputLabel for="overall_ratings"> Overall_ratings.csv</apex:outputLabel>
+                    <apex:outputText value="{!overall_ratings}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!NOT(insertedOverall)}">
+                	<apex:outputLabel for="overall_Installs"> Overall_installs.csv</apex:outputLabel>
+                    <apex:inputFile fileName="{!overall_Installs_Name}" value="{!overall_Installs}" id="overall_Installs"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(insertedOverall)}">
+                	<apex:outputLabel for="overall_ratings"> Overall_ratings.csv</apex:outputLabel>
+                    <apex:inputFile fileName="{!overall_ratings_Name}" value="{!overall_ratings}" id="overall_ratings"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(insertedOverall)}">
+                    <apex:outputLabel for="next_Overall_button"> </apex:outputLabel>
+                	<apex:commandButton value="Next" action="{!insertOverallStats}" id="next_Overall_button"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

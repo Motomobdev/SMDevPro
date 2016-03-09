@@ -1,0 +1,1998 @@
+<apex:page tabStyle="Opportunity" controller="DealViewController" standardStylesheets="true" sidebar="false" id="myPage">
+    <script> var previousOnload = window.onload; window.onload = function() { if (previousOnload) { previousOnload(); } hideVMforBundle(); } </script>
+    <apex:variable var="lineItemCount" value="{!lineItemCount}"/>
+    <apex:includeScript value="{!$Resource.jQuery1111}" />
+    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+        <link rel="stylesheet" href="{!IF(Not(isExcelRender),'//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css','#')}"/>
+        <style>
+            .dataTable {border-collapse:collapse;}
+            .dataTable td {padding:2px 2px 2px 2px;}
+            .section-header {font-weight:bold;font-size:1.2em;text-transform:uppercase;border-bottom:1px solid #000;height: 40px;}            
+            .section-header.operator{padding-top: 20px;}
+            .prod-header {font-weight:bold;text-align:center;font-size:1.2em;line-height: 26px;}
+            .prod-header-vm {font-weight:bold;text-align:center;font-size:1.2em;line-height: 26px;}
+            .prod-sub-header {font-weight:bold;text-align:center; border-bottom:1px solid #000;}
+            .currency-cell {text-align:right;width:80px;}
+            .currency-cell-single-underscore .inlineEditDiv input,
+            .currency-cell .inlineEditDiv input{width:60px !important;}
+            .inlineEditWrite{background-color: #DAF3FF;}
+            .data-row-label {font-weight:bold; min-width:90px;}
+            .data-row-sub-label {font-weight:bold ;font-size:.95em;padding-left:10px; min-width:90px;}
+            .blank-row {height:25px;}
+            .notesStyle{border: 2px solid #e5c130;}
+            .notesPanel{float:right;}
+            .notesPadding{padding-bottom: 33px;}
+            #notesTabPanel{margin-bottom: 23px;}
+            #notesVMTabPanel{margin-bottom: 23px;}
+            
+            .hiddenButtons{width: 24%;margin: 0 auto;display: inline;margin-left: 38%;}
+            .pad-top td {padding-top:20px;}
+            .col-sep {width:9px;}
+            
+            
+            .single-underscore td {border-bottom:1px solid #000;}
+            .double-underscore td {border-bottom:3px double #000;}
+              
+            
+            #filter-fields {padding:0;margin:0;list-style:none;}
+            #filter-fields li {margin:0 5px 0 0; padding:0; float:left;}    
+            #filter-fields li label {display:block; font-weight:bold; padding-bottom:3px;}
+            
+            .pager {display:block;padding:8px; text-align:center;}
+            .page-count {margin:0 20px;}
+            .disabled-text {color:#ccc;}
+            
+            .spinner-16 {display:block; height:16px; width:16px; background:url('/img/loading.gif');}
+            
+            .overflow {max-height:400px; overflow:auto; border-color:#E0E3E5; border-style:solid; border-width:1px 0 1px 0;}
+            
+            .clear-floats {clear:both;}
+            
+            .multilist {min-width:200px;}
+        </style>
+    </apex:variable> 
+    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+        <c:ModalWaitingSpinner title="" message=""/>
+    </apex:variable>
+    <apex:form enctype="multipart/form-data" id="myForm">
+        <apex:actionFunction name="discardChangesFun" immediate="true" action="{!getProducts}" oncomplete="hideModal()" reRender="tablePanel" />
+        
+        <apex:sectionHeader rendered="{!Not(isExcelRender)}" title="{!thisQuote.Name}" subtitle="{!IF(thisQuote.RecordTypeId == qotBRT,'Bundle Deal Products', 'Deal Products')}" />
+        <apex:pageMessages id="showmsg" escape="false"></apex:pageMessages>
+    <apex:inputHidden id="hfSelectedQuoteId" value="{!thisQuote.RecordTypeId}"/>
+    <apex:inputHidden id="hfSelectedQuoteBundleId" value="{!qotBRT}"/>
+    <apex:inputHidden id="hfSelectedQuoteIsParent" value="{!thisQuote.ParentQuote__c}"/>
+        <apex:outputLink value="/{!recId}" target="_blank" rendered="{!Not(isExcelRender)}">Click For Quote Details {!thisQuote.Name}</apex:outputLink>
+    
+         <!-- Parent and Children Deals Navigation -->
+        <apex:actionFunction name="openRelativeDeal" action="{!openRelativeDeal}" status="status"/>
+        <apex:selectList value="{!selectedBundleDeal}" size="1" style="float: right;margin-bottom: 5px;" onchange="openRelativeDeal()" rendered="{!bundleDeal}">
+            <apex:selectOptions value="{!dealFamily}"/>
+        </apex:selectList>
+
+        <apex:inputTextarea style="width:600px;height:200px;" rendered="{!IF(ISNULL(feedbackMsg),false,true) }" value="{!feedbackMsg}" />
+    
+        <!--<apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+            <c:ModalWaitingSpinner title="" message=""/>
+        </apex:variable>-->
+        <apex:pageBlock title="Select Product" id="optionBlock" rendered="{!Not(isExcelRender) && hasProducts}">
+            <apex:outputPanel id="multiSelectPanel">
+                <c:MultiSelectAll leftLabel="Available Products" leftOptionsAttr="{!availableOptions}" rightLabel="Selected Products" rightOptionsAttr="{!selectedOptions}" size="8" width="auto" />
+            </apex:outputPanel>
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="View Deal Products" action="{!loadTable}" onclick="setTitle('Please Wait');setMessage('Getting Products...');showModal();" oncomplete="hideModal();checkList();checkFormulaError();" reRender="tablePanel" />                 
+                <apex:OutputLabel id="quoteStatusId" value="DEAL STATUS: {!quoteStatus.Status}"/> 
+            </apex:pageBlockButtons>
+            <apex:OutputLabel id="quoteStatusId1" value="AccountName: {!AccountName}"/>
+        </apex:pageBlock>
+        <apex:outputPanel id="tablePanel">
+            <apex:pageBlock mode="inlineEdit" rendered="{!isTableVisible}">
+                <apex:pageBlockButtons location="top" rendered="{!NOT(isVisible) && Not(isExcelRender)}"> 
+                    <apex:commandButton id="btnSaveChanges" value="Save Changes" action="{!saveChanges}" onclick="setTitle('Please Wait');setMessage('Saving Changes...');showModal()" oncomplete="hideModal()" reRender="tablePanel" rendered="{!Not(inApprovalProccess)  && NOT(IsBundleParent)}"/>
+                    <apex:commandButton id="btnAddDeal" value="Add Deal Product" action="{!setDisplayPanelVisibility}" rendered="{!Not(inApprovalProccess)}" status="status"/>
+                    <!--<apex:commandButton id="btnCancel" immediate="true" value="Discard Changes" action="{!getProducts}" onclick="return discardChanges();" oncomplete="hideModal()" reRender="tablePanel" rendered="{!Not(inApprovalProccess) && NOT(IsBundleParent)}"/> -->
+                    <apex:outputPanel rendered="{!Not(inApprovalProccess) && NOT(IsBundleParent)}" >
+                        <input type="button" id="btnCancel" value="Discard Changes" class="btn" onclick="discardChanges();" />
+                    </apex:outputPanel>
+                    
+                     <apex:commandbutton value="Update Deal Review Date" action="{!redirectUser}" />
+                     <apex:commandbutton id="btnditinExcel" value="Edit in Excel" action="{!EditinExcel}" rendered="{!Not(inApprovalProccess) && NOT(IsBundleParent)}" />
+                     
+                    <input type="button" id="btnExport" value="Export to Excel" class="btn"/> 
+                             
+                    <script type="text/javascript">
+                        // jescamilla@levementum.com 10/31/14 Description: Export to excel functionality;.
+                        jQuery.noConflict();
+                        jQuery(document).ready(function( $ ) {
+                            jQuery('#btnExport').click(function(){
+                                if(jQuery( "[aria-selected='true'] a").html().trim() == 'Summary'){ //summary tab export to excel
+                                    window.open("/apex/DealViewExcel?exportMode=summary&qId={!$CurrentPage.parameters.qId}","Export to Excel");
+                                }else if(jQuery( "[aria-selected='true'] a").html().trim() == 'Deal View'){ //deal view export to excel
+                                    window.open("/apex/DealViewExcel?exportMode=dealview&qId={!$CurrentPage.parameters.qId}","Export to Excel");
+                                }else{
+                                    alert('This Tab cannot be exported, choose Summary or Deal View and try again.');
+                                }
+                              });
+                        });
+                        function hideVMforBundle() {
+                            var quoteid = document.getElementById('myPage:myForm:hfSelectedQuoteId');
+                            var bundleQuoteId = document.getElementById('myPage:myForm:hfSelectedQuoteBundleId');
+                            var parentQuote = document.getElementById('myPage:myForm:hfSelectedQuoteIsParent');
+                            var tbl = document.getElementById('notesVMTabPanel');                           
+                            if (quoteid.value == bundleQuoteId.value && (parentQuote.value == null || parentQuote.value =='')) {                   
+                                tbl.style.display="none";
+                                document.getElementById('VMTotaltr').style.display="none";
+                                document.getElementById('pocketMargintr').style.display="none";
+                            } else {
+                                tbl.style.display="show";
+                                document.getElementById('VMTotaltr').style.display="show";
+                                document.getElementById('pocketMargintr').style.display="show";
+                            }   
+                        }
+                    </script>               
+                    <!-- <input type="button" id="btnEditAll" value="Edit All" class="btn" reRender="none" style="{!IF(Not(inApprovalProccess),'display:inline;','display:none;')}" onClick="TestJG();"/> -->
+                    <apex:commandButton id="btnEditAll" value="Edit All"  rendered="{!Not(inApprovalProccess) && NOT(IsBundleParent)}" onclick="setTitle('Please Wait');setMessage('Edit All...');showModal();" oncomplete="hideModal();EditAll();"/>
+                    <apex:commandButton action="{!attachmentsPopUp}" value="Attachment" rendered="{!Not(inApprovalProccess)}" onclick="setTitle('Please Wait');setMessage('Opening...');showModal();" oncomplete="hideModal();" rerender="Attachmentsresults"/>
+                    <apex:commandButton action="{!notesPopUp}" value="Notes" rendered="{!Not(inApprovalProccess)}" onclick="setTitle('Please Wait');setMessage('Opening New Note...');showModal();" oncomplete="hideModal();" rerender="results"/>
+                    <!-- BEGIN Submit for Approval Button -->
+                        <!-- SINGLE Deal submit for approval -->
+                    <apex:commandButton action="{!approvalProcess}" value="Submit for Approval" rendered="{!Not(inApprovalProccess) && Not(bundleDeal) && (thisQuote.status != 'Approved' && thisQuote.status != 'Rejected')}" />
+                        <!-- BUNDLE Deal submit for approval -->
+                    <apex:commandButton action="{!approvalBundleDealsProcess}" value="Submit for Approval" rendered="{!Not(inApprovalProccess) && bundleDeal && parentDeal && (thisQuote.status != 'Approved' && thisQuote.status != 'Rejected')}" />
+                    <!-- END Submit for Approval Button -->
+                    <apex:commandButton action="{!deleteSelectedColumns}" value="Delete Selected" rendered="{!Not(inApprovalProccess)}"/>
+                    <!--BEGIN Recall Approval Button -->
+                    <!-- Recall Button for NON Bundle Deals -->
+                    <apex:commandButton action="{!recallProcess}" value="Recall Approval Request" 
+                    rendered="{!submitterWorkItems && Not(bundleDeal)}"/>
+                    <!-- Recall Button for Bundle Deals Parent Only -->
+                    <apex:commandButton action="{!recallProcess}" value="Recall Approval Request" 
+                    rendered="{!submitterWorkItems && isBundleParent}"/>
+                    <!--END Recall Approval Button -->
+                    <!--BEGIN Recall Approval Button -->
+                        <!-- Approve and Reject SINGLE Deal -->
+                    <apex:commandButton action="{!acceptWorkItem}" value="Approve" rendered="{!hasWorkItems && Not(bundleDeal)}"/>
+                    <apex:commandButton action="{!rejectWorkItem}" value="Reject" rendered="{!hasWorkItems && Not(bundleDeal)}"/>
+                        <!-- Approve and Reject BUNDLE Deal -->
+                    <apex:commandButton action="{!acceptWorkItem}" value="Approve" rendered="{!hasWorkItems && isBundleParent}"/>
+                    <apex:commandButton action="{!rejectWorkItem}" value="Reject" rendered="{!hasWorkItems && isBundleParent}"/>
+                    <!--END Recall Approval Button -->
+
+                    <!--Add Campaign Button> -->
+                    <apex:commandButton value="Add Campaign" action="{!addCampaignPopup}" rendered="{!Not(inApprovalProccess)}" onclick="setTitle('Please Wait');setMessage('Opening Add Campaign...');showModal();" oncomplete="hideModal();" reRender="campaignResults"/>
+                    <!--End -->
+                </apex:pageBlockButtons>
+                
+                <!-- BEGIN ADD PRODUCTS -->
+                <apex:outputPanel rendered="{!displayPanel || NOT(hasProducts)}" id="productsAddArea">
+                    <div id="newProdForm">
+                        <!-- PRODUCT QUEUE AREA -->
+                         <apex:pageBlock tabStyle="Product2" title="Products Queue" rendered="{!productsQueue.size > 0}" id="productQueueBlock">
+                                <apex:pageBlockButtons location="top">
+                                    <apex:commandButton id="btnSaveProduct" value="Save Products to Bundle Deal" rendered="{!IF(thisQuote.RecordTypeId == qotBRT, true, false)}" action="{!createBundleLineItemsFromQueue}"/> 
+
+                                    <!-- Save products to BUNDLE DEAL -->
+                                    <apex:commandButton id="btnSaveProductBundle" value="Save Products to Deal" rendered="{!IF(thisQuote.RecordTypeId != qotBRT, true, false)}" action="{!createLineItemsFromQueue}"/>
+                                    <!-- Save products to REGULAR DEAL -->
+                                    <apex:commandButton id="btnRemoveProduct" value="Remove Selected" action="{!removeProductsFromQueue}" reRender="productsAddArea" onclick="setTitle('Please Wait');setMessage('Removing Products from Queue...');showModal();" oncomplete="hideModal();"/>
+
+                                    <apex:commandButton id="btnCancelProduct" value="Cancel" action="{!cancelQueue}"/>
+                                </apex:pageBlockButtons>
+                                <div class="overflow">
+                                    <apex:pageBlockTable value="{!productsQueue}" var="pq" id="productsQueueTable">
+                                        <apex:column >
+                                           <apex:inputCheckbox value="{!pq.remove}"/>
+                                        </apex:column>
+                                         <apex:column headerValue="Quarter"> 
+                                            <a href="/{!pq.pbe.Product2Id}">{!pq.quarter}</a>
+                                        </apex:column>
+                                        <apex:column headerValue="Year"> 
+                                            <a href="/{!pq.pbe.Product2Id}">{!pq.year}</a>
+                                        </apex:column>
+                                         <apex:column headerValue="Product Name"> 
+                                            <a href="/{!pq.pbe.Product2Id}">{!pq.pbe.Product2.Name}</a>
+                                        </apex:column>
+                                        <apex:column headerValue="Project">
+                                            {!pq.pbe.Product2.Project__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Program">
+                                            {!pq.pbe.Product2.Program__c}``
+                                        </apex:column>
+                                        <apex:column headerValue="Product Family">
+                                            {!pq.pbe.Product2.Family}
+                                        </apex:column>
+                                        <apex:column headerValue="Product Family">
+                                            {!pq.pbe.Product2.Family}
+                                        </apex:column>
+                                        <apex:column headerValue="Standard Price">
+                                            {!pq.pbe.UnitPrice}
+                                        </apex:column>
+                                        <apex:column headerValue="Business Unit">
+                                            {!pq.pbe.Product2.Business_Unit__c}
+                                        </apex:column>
+                                         
+                                    </apex:pageBlockTable>
+                                </div>
+                        </apex:pageBlock>
+                         <!-- FIND PRODUCT AREA -->
+                        <apex:pageBlock tabStyle="Product2" title="Find Products" rendered="{!NOT(hasProducts) || hasProducts}">
+                            <div id="filter-controls">
+                                <ul id="filter-fields"> 
+                                    <li>
+                                        <label>By Keyword</label>
+                                        <apex:inputText value="{!selectedKeywords}" />
+                                    </li>
+                                </ul>
+                                <div class="clear-floats">
+                                    <apex:commandButton value="Search" action="{!searchButtonClick}" reRender="searchresults" onclick="jQuery('#search-spinner').show();jQuery('#filter-controls').hide();" oncomplete="jQuery('#search-spinner').hide();jQuery('#filter-controls').show();" />
+                                </div>
+                            </div>
+                            <img alt="" src="/s.gif" class="spinner-16" id="search-spinner" style="margin:0 auto;display:none;" />
+                        </apex:pageBlock>
+                         <!-- PRODUCT SELECTION AREA -->
+                        <apex:outputPanel id="searchresults" rendered="{!NOT(hasProducts) || hasProducts}">
+                            <apex:inputHidden id="hfSelectedId" value="{!selectedIdString}"/>
+                            <apex:pageBlock tabStyle="Product2"> 
+                                <apex:pageBlockButtons location="top">
+                                    <apex:commandButton id="q1" value="{!fiscalYearValueQ1}" action="{!checkQuarterQ1}" onclick="getCheckedBoxes();setTitle('Please Wait');setMessage('Adding Product to Queue...');showModal();clearPersistenceCookie();" />
+                                    <apex:commandButton id="q2" value="{!fiscalYearValueQ2}" action="{!checkQuarterQ2}" onclick="getCheckedBoxes();setTitle('Please Wait');setMessage('Adding Product to Queue...');showModal();clearPersistenceCookie()" />
+                                    <apex:commandButton id="q3" value="{!fiscalYearValueQ3}" action="{!checkQuarterQ3}" onclick="getCheckedBoxes();setTitle('Please Wait');setMessage('Adding Product to Queue...');showModal();clearPersistenceCookie()" />
+                                    <apex:commandButton id="q4" value="{!fiscalYearValueQ4}" action="{!checkQuarterQ4}" onclick="getCheckedBoxes();setTitle('Please Wait');setMessage('Adding Product to Queue...');showModal();clearPersistenceCookie()" />
+                                    <br/>
+                                    <div style="padding-top:10px;">
+                                    <label style="margin-left:50px; font-weight: bold;">Custom </label>
+                                    <apex:selectList value="{!customQuarter}" size="1">
+                                        <apex:selectOptions value="{!quarterList}"/>
+                                    </apex:selectList>
+                                    <apex:selectList value="{!customYear}" size="1">
+                                        <apex:selectOptions value="{!yearsList}"/>
+                                    </apex:selectList>
+                                    <apex:commandButton id="customQY" value="Add to Queue" action="{!checkCustomQY}" onclick="getCheckedBoxes();setTitle('Please Wait');setMessage('Adding Product to Queue...');showModal();clearPersistenceCookie()" />
+                                    </div>
+                                </apex:pageBlockButtons>
+                                <div class="overflow">
+                                    <apex:pageBlockTable value="{!currentList}" var="sr" >
+                                        <apex:column >
+                                            <input type="checkbox" name="pidcheckboxes" id="ccbb-{!sr.Product2Id}" onChange= "persistCheckBox(this);" />
+                                        </apex:column>
+                                        <apex:column headerValue="Product Name"> 
+                                            <a href="/{!sr.Product2Id}" target="_blank">{!sr.Product2.Name}</a>
+                                        </apex:column>
+                                        <apex:column headerValue="Project">
+                                            {!sr.Product2.Project__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Program">
+                                            {!sr.Product2.Program__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Product Family">
+                                            {!sr.Product2.Family}
+                                        </apex:column>
+                                        <apex:column headerValue="Product Family">
+                                            {!sr.Product2.Family}
+                                        </apex:column>
+                                        <apex:column headerValue="Standard Price">
+                                            {!sr.UnitPrice}
+                                        </apex:column>
+                                        <apex:column headerValue="Business Unit">
+                                            {!sr.Product2.Business_Unit__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Portfolio Segment">
+                                            {!sr.product2.PMD_Product__r.Product_Segment__c}
+                                        </apex:column>
+                                    </apex:pageBlockTable>
+                                </div>
+                                <apex:facet name="footer">
+                                    <apex:outputPanel styleClass="pager" rendered="{!totalPages > 1}">
+                                        <div id="page-controls">
+                                            <apex:commandLink value="<< Previous Page" action="{!goToPreviousPage}" rendered="{!NOT(onFirstPage)}" reRender="searchresults"  onclick="jQuery('#pagination-spinner').show();jQuery('#page-controls').hide();restorePersistedCheckBoxes();" oncomplete="jQuery('#pagination-spinner').hide();jQuery('#page-controls').show();restorePersistedCheckBoxes();"/>
+                                            <apex:outputText value="<< Previous Page" rendered="{!onFirstPage}" styleClass="disabled-text" />
+                                            <span class="page-count"> Page {!CurrentPage} of {!totalPages}</span>
+                                            <apex:commandLink value="Next Page >>" action="{!goToNextPage}" rendered="{!NOT(onLastPage)}" reRender="searchresults" onclick="jQuery('#pagination-spinner').show();jQuery('#page-controls').hide();restorePersistedCheckBoxes();" oncomplete="jQuery('#pagination-spinner').hide();jQuery('#page-controls').show();restorePersistedCheckBoxes();" />
+                                            <apex:outputText value="Next Page >>" rendered="{!onLastPage}" styleClass="disabled-text" />
+                                        </div>
+                                        <img alt="" src="/s.gif" class="spinner-16" id="pagination-spinner" style="margin:0 auto;display:none;" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlock>
+
+            <apex:pageBlock rendered="{!showTable && Not(isExcelRender)}">
+                <div class="hiddenButtons">
+                   Hide Totals <input type="checkbox" name="hidetotals" value="hidetotals" id="hidetotals" />
+                   Hide Empty Discount Rows <input type="checkbox" onclick="toggleEmptyDiscountRows(this.checked)" />
+                   <apex:inputText id="inputTabSel" value="{!tabPosition}" style="display:none;"></apex:inputText>
+                </div>
+            </apex:pageBlock>
+
+            <!--Note PopUp -->
+            <apex:outputPanel id="results"> 
+                <apex:outputPanel id="popInnerOutputPnl" styleClass="customPopup" layout="block" rendered="{!notesPopUpShow}">
+                    <style type="text/css">
+                        .customPopup {
+                        background-color: white;
+                        border-style: solid;
+                        border-width: 2px;
+                        left: 25%;
+                        padding: 10px;
+                        position: absolute;
+                        z-index: 9999;
+                        /* These are the 3 css properties you will need to tweak so the pop 
+                        up displays in the center of the screen. First set the width. Then set 
+                        margin-left to negative half of what the width is. You can also add 
+                        the height property for a fixed size pop up.*/
+                        width: 800px;
+                        top: 5%;
+                        }     
+                    </style>
+                    <apex:pageBlock title="Note">  
+                        <apex:pageBlockButtons >
+                            <!--<apex:commandButton action="{!saveNote}" value="Save" reRender="NotesTab, results, summaryNotes,executiveNotes" rendered="{!Not(editModeNote)}"
+                            onclick="setTitle('Please Wait');setMessage('Saving...');showModal();" oncomplete="hideModal();textNotes();"/> -->
+                            <apex:commandButton action="{!saveNote}" value="Save" reRender="myForm" rendered="{!Not(editModeNote)}"
+                            onclick="setTitle('Please Wait');setMessage('Saving...');showModal();" oncomplete="hideModal();textNotes();"/> 
+                            <apex:commandButton action="{!closenotesPopUp}" value="{!IF(Not(editModeNote),'Cancel','Close')}" reRender="results"
+                            onclick="setTitle('Please Wait');setMessage('Closing...');showModal();" oncomplete="hideModal();"/>
+                        </apex:pageBlockButtons>
+
+                        <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Is Private" for="Private"/>
+                                <apex:inputCheckbox value="{!note.isPrivate}" id="Private" disabled="{!IF(Not(editModeNote),false,true)}"/>
+                            </apex:pageBlockSectionItem>
+
+                            <apex:pageBlockSectionItem >
+                              <apex:outputLabel value="Title" for="title"/>
+                              <apex:inputText value="{!note.Title}" id="title" disabled="{!IF(Not(editModeNote),false,true)}"/>
+                            </apex:pageBlockSectionItem>
+
+                            <apex:pageBlockSectionItem >
+                              <apex:outputLabel value="Body" for="body"/>
+                              <apex:inputTextarea value="{!note.body}" id="body" cols="80" rows="18" readonly="{!IF(Not(editModeNote),false,true)}"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:outputPanel> 
+            </apex:outputPanel>
+            <!--End Of Notes PopUp -->
+
+            <!-- Attachments PopUp -->
+            <apex:actionFunction name="attachmentsPopUp" action="{!attachmentsPopUp}" rerender="Attachmentsresults"/>
+            <apex:outputPanel id="Attachmentsresults" > 
+                <apex:outputPanel id="popInnerOutputPnlattachments" styleClass="customPopup" layout="block" rendered="{!attachmentsPopUpShow}">
+                    <style type="text/css">
+                        .customPopup {
+                        background-color: white;
+                        border-style: solid;
+                        border-width: 2px;
+                        left: 25%;
+                        padding: 10px;
+                        position: absolute;
+                        z-index: 9999;
+                        /* These are the 3 css properties you will need to tweak so the pop 
+                        up displays in the center of the screen. First set the width. Then set 
+                        margin-left to negative half of what the width is. You can also add 
+                        the height property for a fixed size pop up.*/
+                        width: 400px;
+                        top: 5%;
+                        }     
+                    </style>
+                    <apex:pageBlock title="Upload an Attachment">
+                        <apex:pageBlockButtons >
+                            <apex:commandButton action="{!upload}" value="Save"/>
+                            <apex:commandButton action="{!closeAttachmentsPopUp}" value="Cancel"/>
+                        </apex:pageBlockButtons>
+
+                        <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+
+                            <apex:pageBlockSectionItem >
+                              <apex:outputLabel value="File" for="file"/>
+                                 <apex:inputFile value="{!a.body}" filename="{!a.name}" id="file"/>
+                            </apex:pageBlockSectionItem>
+
+                            <apex:pageBlockSectionItem >
+                              <apex:outputLabel value="Description" for="description"/>
+                              <apex:inputTextarea value="{!a.description}" id="description" cols="40" rows="10"/>
+                            </apex:pageBlockSectionItem>
+
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:outputPanel> 
+            </apex:outputPanel>
+            <!--End Of Attachments PopUp -->
+
+            <!-- Add Campaign Popup Start -->
+            <apex:outputPanel id="campaignResults">
+                <apex:outputPanel styleClass="customPopup" rendered="{!addCampaignPopupShow}" >
+                    <style type="text/css">
+                        .customPopup {
+                        background-color: white;
+                        border-style: solid;
+                        border-width: 2px;
+                        left: 25%;
+                        padding: 10px;
+                        position: absolute;
+                        z-index: 9999;
+                        /* These are the 3 css properties you will need to tweak so the pop 
+                        up displays in the center of the screen. First set the width. Then set 
+                        margin-left to negative half of what the width is. You can also add 
+                        the height property for a fixed size pop up.*/
+                        width: 700px;
+                        top: 5%;
+                        }     
+                    </style>
+                    <apex:pageBlock title="Add/Edit Campaign">
+                        <apex:pageBlockButtons >
+                            <apex:commandButton action="{!addCampaign}" value="Save"/>
+                            <apex:commandButton action="{!closeAddCampaign}" value="Cancel"/>
+                        </apex:pageBlockButtons>
+                        <apex:pageBlockSection showHeader="false" id="block1" columns="1" >
+                            <apex:outputText value="{!thisQuote.Name}" />
+                            <apex:inputField value="{!thisQuote.Campaign__c}" />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Primary Campaign Source" />
+                                <input type="checkbox" checked="checked" disabled="disabled" />
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:outputPanel> 
+            </apex:outputPanel>
+            <!-- Add Campaign Popup End -->
+
+            <apex:outputPanel rendered="{!showTable}">
+            <!--Tab Panel -->  
+                <c:Tabpanel >
+                    <c:Tab title="{!IF(Not(isExcelRender),'Summary',' ')}">
+                        <apex:pageBlock title="Executive Notes" rendered="{!Not(isExcelRender)}" id="executiveNotes">
+                            <img alt="" src="/s.gif" class="spinner-16" id="executive-notes-spinner" style="margin-top: -43px; margin-left: 400px; float: right;display:none;" />
+                            <apex:pageBlockButtons location="top" rendered="{!NOT(isVisible) && Not(isExcelRender)}"> 
+                                <apex:commandButton id="EditExecutiveNote" value="Edit Executive Note" action="{!editExecutiveSummaryNote}" reRender="newDesc2,executiveNotes" rendered="{!editExecutiveSummaryNote && Not(inApprovalProccess)}" onComplete="textNotes();jQuery('#executive-notes-spinner').hide();" style="font-size: 0.9em;font-family: Arial,Helvetica,sans-serif;" onclick="jQuery('#executive-notes-spinner').show();"></apex:commandButton>
+                                <apex:commandButton id="SaveExecutiveNote" value="Save Executive Note" onclick="jQuery('#executive-notes-spinner').show();" action="{!SaveExecutiveSummaryNote}" reRender="newDesc2,executiveNotes" rendered="{!Not(editExecutiveSummaryNote)}" onComplete="textNotes();jQuery('#executive-notes-spinner').hide();" style="font-size: 0.9em;font-family: Arial,Helvetica,sans-serif;">
+                                </apex:commandButton>
+                            </apex:pageBlockButtons>
+
+                            <apex:outputPanel id="SummaryExecNotess">
+                                <table> 
+                                    <tr>
+                                        <td>
+                                            <apex:outputText value="Created By: {!execWrapper.u.FirstName + ' ' + execWrapper.u.LastName}"/>
+                                        </td>
+                                        <td>
+                                            <apex:outputText value="Title: Executive Summary"/>                                 
+                                        </td>
+                                        <td>
+                                            <apex:outputPanel id="notesPanel2">
+                                                <apex:outputText value="Date Created:"></apex:outputText> 
+                                                <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                                                    <apex:param value="{!execWrapper.q.CreatedDate}" />
+                                                </apex:outputText>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan='3' class='notesPadding'>
+                                            <div class='notesStyle'>
+                                                <apex:inputTextarea styleClass="newDesc" id="newDesc2" cols="121" readonly="{!editExecutiveSummaryNote}" value="{!execWrapper.q.ExecutiveSummary__c}" rows="10" >
+                                                </apex:inputTextarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </apex:outputPanel>
+                        </apex:pageBlock>
+
+                        <apex:outputPanel rendered="{!IF(Not(isExcelRender), true, IF(tabPosition == 'Summary',true, false))}">
+                            <table cellpadding="0" cellspacing="0" border="0" id="summaryTabPanel">
+                                <tr>
+                                    <td class="data-row-label">Account Name: </td>
+                                    <td class="col-sep"></td>
+                                    <td class="data-row-label"> <apex:outputfield value="{!thisQuote.Account__r.Name}" /></td>                                                       
+                                </tr>                        
+                            </table>
+                            <table cellpadding="0" cellspacing="0" border="0" class="dataTable" id="notesTabPanel">
+                                <tr>
+                                    <td></td>
+                                    <td class="prod-header"></td>
+                                    <td class="prod-header" ></td>
+                                    <td class="prod-header" ></td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="prod-header" colspan="3">
+                                            <span> {!l.ProductName}</span>
+                                        </td>                                   
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="prod-sub-header"></td>
+                                    <td class="prod-sub-header" ></td>
+                                    <td class="prod-sub-header" ></td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="prod-sub-header" colspan="3">
+                                            <span> {!l.yearQuarter}</span>
+                                        </td>                                    
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="prod-sub-header">Plan</td>
+                                    <td class="prod-sub-header" >Other</td>
+                                    <td class="prod-sub-header" >Proposal</td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="prod-sub-header">Plan</td>
+                                        <td class="prod-sub-header" >Other</td>
+                                        <td class="prod-sub-header" >Proposal</td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Units</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.units_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.units_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.units_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                       <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.units_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.units_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.units_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                       <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">- Minimum Commit</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.minCommit_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.minCommit_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.minCommit_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.minCommit_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.minCommit_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.minCommit_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">NSBD</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}"> 
+                                            <apex:param value="{!summaryColumns.porLineItem.nsbd_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.nsbd_dis}"/>
+                                        </apex:outputText>
+                                    </td>                            
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.nsbd_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.nsbd_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.nsbd_dis}"/>
+                                            </apex:outputText>
+                                        </td>                            
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.nsbd_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Total Discount</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.discount_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.discount_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.discount_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.discount_dis}"/>
+                                            </apex:outputText>
+                                        </td>    
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.discount_dis}"/>
+                                            </apex:outputText>
+                                        </td>                        
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.discount_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">NSAD</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.nsad_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.nsad_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.nsad_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.nsad_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.nsad_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.nsad_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Gross Margin</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.grossMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.grossMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.grossMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.grossMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.grossMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.grossMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="data-row-label">GM%</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.porLineItem.totalGMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.othLineItem.totalGMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.totalGMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0,number,0.00}%">
+                                                <apex:param value="{!l.porLineItem.gm}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0,number,0.00}%">
+                                                <apex:param value="{!l.othLineItem.gm}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0,number,0.00}%">
+                                                <apex:param value="{!l.cwvLineItem.gm}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>                       
+                                <tr>
+                                    <td class="data-row-label">A&amp;P</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.aAndP_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.aAndP_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.aAndP_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.aAndP_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.aAndP_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.aAndP_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Motoagents</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.motoagents_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.motoagents_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.motoagents_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.motoagents_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.motoagents_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.motoagents_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Contribution Margin</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.porLineItem.contributionMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.othLineItem.contributionMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0}">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.contributionMargin_dis}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.porLineItem.contributionMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.othLineItem.contributionMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0}">
+                                                <apex:param value="{!l.cwvLineItem.contributionMargin_dis}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">CM%</td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.porLineItem.totalCMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.othLineItem.totalCMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!summaryColumns.cwvLineItem.totalCMPercentage}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!l.porLineItem.cm}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!l.othLineItem.cm}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">
+                                            <apex:param value="{!l.cwvLineItem.cm}"/>
+                                        </apex:outputText>
+                                    </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr id="VMTotaltr">
+                                    <td class="data-row-label">Value Maker</td>
+                                    <td class="currency-cell"></td>
+                                    <td class="currency-cell"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.vmUnitTotal_dis}"/>
+                                    </td>
+                                    <!-- <td class="currency-cell">
+                                     <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.vmUnitTotal"/>
+                                        </apex:outputText>
+                                    </td> -->
+                                    <td colspan = "{!1 + (4 * lineItemCount)}"></td>
+                                    <td class="col-sep"></td>
+                                </tr>
+                                <tr id="pocketMargintr">
+                                    <td class="data-row-label">Pocket Margin</td>
+                                    <td class="currency-cell"></td>
+                                    <td class="currency-cell"></td>
+                                    <td class="currency-cell">
+                                       <apex:outputText value="{0,number,0.00}%">      
+                                            <apex:param value="{!summaryColumns.cwvLineItem.pocketMargin}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep" colspan="{!2+4*lineItemCount}"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="{!5+4*lineItemCount}" width="10px"><div></div></td>
+                                </tr>
+                                
+                                <!--   ******************************************   -->
+                                <!--   *****   VALUE MAKER IMPACT section   *****   -->
+                                <!--   ******************************************   -->
+                                <tr>
+                                    <td class="prod-sub-header">Value Maker Impact</td>
+                                    <td class="col-sep"></td>
+                                    <td class="prod-sub-header">Total Summary</td>
+                                    <td class="prod-sub-header">Per Unit</td>
+                                    <td class="col-sep"></td>
+
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="prod-sub-header">Total Proposal</td>
+                                        <td class="prod-sub-header">Per Unit Proposal</td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Payment Terms</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.payment_dis}">
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitPayment}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.payment_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitpayment}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Warranty Terms</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.warranty_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitWarranty}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.warranty_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitWarranty}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Charger In-box</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.inbox_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitInbox}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.inbox_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitInbox}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Free Units</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.freeunitsCost_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitFreeunitsCost}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="col-sep"></td>
+                                    <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.freeunitsCost_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitFreeunitsCost}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Forecast</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.forecast_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">        
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitForecast}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.forecast_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitForecast}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Other</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.other_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitOther}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.other_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitOther}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Value Maker Total</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{!summaryColumns.cwvLineItem.vmUnitTotal_dis}"/>
+                                    </td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0, number, $###,##0.00}">    
+                                            <apex:param value="{!summaryColumns.cwvLineItem.unitVmUnitTotal}"/>
+                                        </apex:outputText>
+                                    </td>
+                                   <td class="col-sep"></td>
+                                   <apex:repeat value="{!summaryProductColumns}" var="l" >
+                                        <td class="col-sep"></td>
+                                        <td class="currency-cell" >
+                                            <apex:outputText value="{!l.cwvLineItem.vmUnitTotal_dis}"/>
+                                        </td>
+                                        <td class="currency-cell">
+                                            <apex:outputText value="{0, number, $###,##0.00}">
+                                                <apex:param value="{!l.cwvLineItem.unitVmUnitTotal}"/>
+                                            </apex:outputText>
+                                        </td>
+                                        <td class="col-sep"></td>
+                                    </apex:repeat>
+                                </tr>
+                                <tr class="pad-top">
+                                    <td class="data-row-label">Adj CM%</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">      
+                                            <apex:param value="{!summaryColumns.cwvLineItem.pocketMargin}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell"></td>
+                                   <td class="col-sep"></td>                               
+                                </tr>
+                                <tr>
+                                    <td class="data-row-label">Value Maker GM/CM Impact</td>
+                                    <td class="col-sep"></td>
+                                    <td class="currency-cell">
+                                        <apex:outputText value="{0,number,0.00}%">  
+                                            <apex:param value="{!summaryColumns.cwvLineItem.vmGMCMImpact}"/>
+                                        </apex:outputText>
+                                    </td>
+                                    <td class="currency-cell"></td>
+                                   <td class="col-sep"></td>                               
+                                </tr>
+                                <!--   **********************************************   -->
+                                <!--   *****   end VALUE MAKER IMPACT section   *****   -->
+                                <!--   **********************************************   -->
+
+                            </table>
+                        
+                        
+                            <apex:pageBlock title="Summary Notes" rendered="{!Not(isExcelRender)}" id="summaryNotes">
+                                <apex:repeat value="{!summaryNotes}" var="summaryNote">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <apex:outputText value="Created By: {!summaryNote.Owner.FirstName + ' ' + summaryNote.Owner.LastName}">
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="Title: {!summaryNote.Title}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputPanel id="notesPanel">
+                                                    <apex:outputText value="Date Created:"></apex:outputText> 
+                                                    <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                                                        <apex:param value="{!summaryNote.CreatedDate}" />
+                                                    </apex:outputText>
+                                                </apex:outputPanel>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan='3' class='notesPadding'>
+                                                <div class='notesStyle'>
+                                                    <textarea wrap="hard" class="newDesc" id="newDesc" cols="80" rows="10" readonly='true'>{!summaryNote.Body}</textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </apex:repeat>
+                            </apex:pageBlock>
+                        </apex:outputPanel>
+                    </c:Tab>
+            <!--First Tab-->  
+                    <apex:outputPanel id="NotesTab">
+                        <c:Tab title="{!IF(Not(isExcelRender),'Deal View',' ')}" >  
+                            <apex:outputPanel rendered="{!IF(Not(isExcelRender), true, IF(tabPosition == 'Deal View',true, false))}">
+                                <!-- BUNDLE PARENT PER UNIT TABLE -->
+                                <!--<c:DealViewBundleDealParentLocked rendered="{!isBundleParent}"
+                                        totalItemCount="{!totalItemCount}" 
+                                        lineItemCount="{!lineItemCount}" 
+                                        lineItemColumns="{!lineItemColumns}"
+                                        totalColumns="{!totalColumns}"
+                                        isExcelRender="{!isExcelRender}" 
+                                        inApprovalProccess="{!inApprovalProccess}" 
+                                        visibleOrNotSDF="{!visibleOrNotSDF}"  
+                                        SDFLabel="{!SDFLabel}" 
+                                        COOPLabel="{!COOPLabel}" 
+                                        MDFLabel="{!MDFLabel}" 
+                                        iMDFLabel="{!iMDFLabel}" 
+                                        IPPLabel="{!IPPLabel}" 
+                                        CSATLabel="{!CSATLabel}" 
+                                        NationalLabel="{!NationalLabel}" 
+                                        QPLabel="{!QPLabel}" 
+                                        TCLabel="{!TCLabel}" 
+                                        ILWLabel="{!ILWLabel}" 
+                                        TDFLabel="{!TDFLabel}" 
+                                        SVMLabel="{!SVMLabel}" 
+                                        FeesLabel="{!FeesLabel}" 
+                                        NegotiationLabel="{!NegotiationLabel}" 
+                
+                                        visibleOrNot1="{!visibleOrNot1}"  
+                                        visibleOrNot2="{!visibleOrNot2}"  
+                                        visibleOrNot3="{!visibleOrNot3}"  
+                                        visibleOrNot4="{!visibleOrNot4}"  
+                                        visibleOrNot5="{!visibleOrNot5}"  
+                                        visibleOrNot6="{!visibleOrNot6}"  
+                                        visibleOrNot7="{!visibleOrNot7}"  
+                                        visibleOrNot8="{!visibleOrNot8}"  
+                                        visibleOrNot9="{!visibleOrNot9}"  
+                                        visibleOrNot10="{!visibleOrNot10}"  
+                                        visibleOrNot11="{!visibleOrNot11}"  
+                                        visibleOrNot12="{!visibleOrNot12}"  
+                                        visibleOrNot13="{!visibleOrNot13}"  />-->
+                                <!-- REGULAR PER UNIT TABLE -->
+                                <c:DealViewMain totalItemCount="{!totalItemCount}" 
+                                        lineItemCount="{!lineItemCount}" 
+                                        lineItemColumns="{!lineItemColumns}"
+                                        totalColumns="{!totalColumns}"
+                                        isExcelRender="{!isExcelRender}" 
+                                        inApprovalProccess="{!inApprovalProccess}" 
+                                        visibleOrNotSDF="{!visibleOrNotSDF}"  
+                                        SDFLabel="{!SDFLabel}" 
+                                        COOPLabel="{!COOPLabel}" 
+                                        MDFLabel="{!MDFLabel}" 
+                                        iMDFLabel="{!iMDFLabel}" 
+                                        IPPLabel="{!IPPLabel}" 
+                                        CSATLabel="{!CSATLabel}" 
+                                        NationalLabel="{!NationalLabel}" 
+                                        QPLabel="{!QPLabel}" 
+                                        TCLabel="{!TCLabel}" 
+                                        ILWLabel="{!ILWLabel}" 
+                                        TDFLabel="{!TDFLabel}" 
+                                        SVMLabel="{!SVMLabel}" 
+                                        FeesLabel="{!FeesLabel}" 
+                                        NegotiationLabel="{!NegotiationLabel}" 
+                                        isBundleParent="{!isBundleParent}"
+                
+                                        visibleOrNot1="{!visibleOrNot1}"  
+                                        visibleOrNot2="{!visibleOrNot2}"  
+                                        visibleOrNot3="{!visibleOrNot3}"  
+                                        visibleOrNot4="{!visibleOrNot4}"  
+                                        visibleOrNot5="{!visibleOrNot5}"  
+                                        visibleOrNot6="{!visibleOrNot6}"  
+                                        visibleOrNot7="{!visibleOrNot7}"  
+                                        visibleOrNot8="{!visibleOrNot8}"  
+                                        visibleOrNot9="{!visibleOrNot9}"  
+                                        visibleOrNot10="{!visibleOrNot10}"  
+                                        visibleOrNot11="{!visibleOrNot11}"  
+                                        visibleOrNot12="{!visibleOrNot12}"  
+                                        visibleOrNot13="{!visibleOrNot13}"  />
+                            </apex:outputPanel>
+                        </c:Tab> <!--End Tab -->
+                        <c:Tab title="{!IF(Not(isExcelRender),'Notes &amp; Attachments',' ')}" display="{!IF(OR(availableNotes.size > 0, availableAttachments.size > 0),'inline','none')}" >
+                            <iframe frameborder="0" src="/apex/DealRelatedLists?qId={!thisQuote.id}" width="100%" height="500px" />
+                     </c:Tab>         
+
+                    </apex:outputPanel>                
+                    
+
+                    <c:Tab title="{!IF(Not(isExcelRender),'Campaign',' ')}" display="{!IF(NOT(ISBLANK(thisQuote.Campaign__c)),'inline','none')}">
+                        <apex:pageBlock >
+                            <apex:pageBlockSection title="Campaign" collapsible="false" >
+                                <apex:outputField value="{!thisQuote.Campaign__r.Name}" />
+                                <apex:outputField value="{!thisQuote.Campaign__r.OwnerId}" />
+                                <apex:outputField value="{!thisQuote.Campaign__r.Status}" />
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Primary Campaign Source" />
+                                    <input type="checkbox" checked="checked" disabled="disabled" />
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </c:Tab>
+            
+                   <!-- The two tabs below will be merged into one - Related Lists. 
+                   <c:Tab title="{!IF(Not(isExcelRender),'Attachments',' ')}" backgroundColor="{!IF(hasNewAttachments,'#00CC00','')}" display="{!IF(hasAttachments,'inline','none')}">
+                        <apex:outputPanel rendered="{!NOT(isExcelRender)}">
+                            <apex:pageblock >
+                                <apex:pageblockTable value="{!availableAttachments}" var="attachment" border="1" width="705px">
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> Name</center>
+                                        </apex:facet>
+                                        <apex:outputfield value="{!attachment.Name}" style="text-align:center"/>
+                                    </apex:column>
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> File</center>
+                                        </apex:facet>
+                                        <a href="/servlet/servlet.FileDownload?file={!attachment.id}" download="{!attachment.name}">{!attachment.name}</a>
+                                    </apex:column>
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> Created Date</center>
+                                        </apex:facet>
+                                        <apex:outputfield value="{!attachment.CreatedDate}" style="text-align:center"/>
+                                    </apex:column>       
+                                </apex:pageblockTable>
+                            </apex:pageblock>
+                        </apex:outputPanel>
+                    </c:Tab>
+
+                    <c:Tab title="{!IF(Not(isExcelRender),'Deal Notes',' ')}">
+                        <apex:outputPanel rendered="{!NOT(isExcelRender)}">
+                            <apex:pageblock >
+                                <apex:pageblockTable value="{!availableNotes}" var="note" border="1" width="705px" id="NotesTab">
+                                    <apex:column style="text-align:center" width="30pt">
+                                        <apex:facet name="header">
+                                            <center></center>
+                                        </apex:facet>
+                                        <apex:commandLink action="{!notesPopUp}" value="Edit" id="EditLink" rerender="results"
+                                          onclick="setTitle('Please Wait');setMessage('Opening Edit View...');showModal();" oncomplete="hideModal();">
+                                            <apex:param value="{!note.id}" name="noteId"/>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> Title</center>
+                                        </apex:facet>
+                                        <apex:commandLink action="{!notesPopUp}" value="{!note.Title}" id="noteTitle" rerender="results"
+                                          onclick="setTitle('Please Wait');setMessage('Opening Note...');showModal();" oncomplete="hideModal();">
+                                            <apex:param value="{!note.id}" name="noteId"></apex:param>
+                                            <apex:param name="Editable" value="True" ></apex:param>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> Created By</center>
+                                        </apex:facet>
+                                        <apex:outputfield value="{!note.CreatedById}" style="text-align:center"/>
+                                    </apex:column> 
+                                    <apex:column style="text-align:center" width="150pt">
+                                        <apex:facet name="header">
+                                            <center> Created Date</center>
+                                        </apex:facet>
+                                        <apex:outputfield value="{!note.CreatedDate}" style="text-align:center"/>
+                                    </apex:column>       
+                                </apex:pageblockTable>
+                            </apex:pageblock>
+                        </apex:outputPanel>
+                    </c:Tab> -->
+                         
+                    <!--Value Maker Tab-->  
+            <c:Tab title="{!IF(Not(isExcelRender),'Value Maker',' ')}" rendered="{!NOT(isBundleParent)}">  
+                        <apex:outputPanel rendered="{!IF(Not(isExcelRender), true, IF(tabPosition == 'Value Maker',true, false))}">
+                             <apex:outputPanel styleClass="grey" layout="block" style="background:#E0E0E0">                        
+                                <apex:pageBlock >
+                                <apex:pageBlockSection columns="1" collapsible="false" >
+                                    <apex:pageBlockSectionItem > 
+                                        <apex:outputLabel value="Account Region" />
+                                          <apex:outputfield value="{!thisQuote.Account_Region__c}" />
+                                      </apex:pageBlockSectionItem>
+                                      <apex:pageBlockSectionItem > 
+                                        <apex:outputLabel value="Negotiated Payment Term (days)" />
+                                          <apex:outputfield value="{!thisQuote.Payment_Term__c}" />
+                                      </apex:pageBlockSectionItem>
+                                      <apex:pageBlockSectionItem > 
+                                        <apex:outputLabel value="Negotiated Warranty Period" />
+                                          <apex:outputfield value="{!thisQuote.Warranty_Period__c}" />
+                                      </apex:pageBlockSectionItem>
+                                      <apex:pageBlockSectionItem > 
+                                        <apex:outputLabel value="Customer Forecast Weeks Binding on EOL" />
+                                          <apex:outputfield value="{!thisQuote.Forecast_Weeks_Binding__c}" />
+                                      </apex:pageBlockSectionItem>  
+                                  </apex:pageBlockSection>
+                                </apex:pageBlock>
+                            </apex:outputPanel>
+                            
+                            <!-- VALUEMAKER PER UNIT TABLE -->
+                               <c:DealViewValueMaker rendered="{!NOT(isBundleParent)}" 
+                                    totalItemCount="{!totalItemCount}" 
+                                    lineItemCount="{!lineItemCount}" 
+                                    lineItemColumns="{!lineItemColumns}"
+                                    totalColumns="{!totalColumns}"
+                                    isExcelRender="{!isExcelRender}" 
+                                    inApprovalProccess="{!inApprovalProccess}"             />
+                        </apex:outputPanel>
+                    </c:Tab> <!--End Tab -->
+                    
+                    <c:Tab title="{!IF(Not(isExcelRender),'Stop Light',' ')}" rendered="{!NOT(isBundleParent)}">
+                        <apex:outputPanel >
+                           <!-- <apex:image value="http://www.track.unodc.org/Style%20Library/Track/Website_Under_Construction.gif" alt="Under Construction" rendered="{!Not(isExcelRender)}"/> -->
+                           <!-- <apex:iframe src="{!IF(thisQuote.HasStoplight__c == true, /apex/DealStopLightView?quoteid={!thisQuote.Id},/apex/DealStopLight?quoteid={!thisQuote.Id})}" scrolling="true"/> -->
+                            
+                            <apex:iframe src="/apex/DealStopLight?quoteid={!thisQuote.Id}" scrolling="true" rendered="{!IF(thisQuote.HasStoplight__c == false, true, false)}"/>
+                            <apex:iframe src="/apex/DealStopLightView?quoteid={!thisQuote.Id}" scrolling="true" rendered="{!IF(thisQuote.HasStoplight__c == true, true, false)}"/>
+                        </apex:outputPanel>
+                    </c:Tab>
+
+                    <apex:actionFunction action="{!stopEditMode}" name="stopEditMode" oncomplete="loadComplete();" />
+                    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+                        <script>
+                        jQuery.noConflict();
+                        jQuery( document ).ready(function( $ ) {
+                            jQuery('.currency-cell span').html(function(i,val){
+                                return val.replace('USD','$');
+                              });
+                        });
+                        </script> 
+                    </apex:variable>
+                </c:Tabpanel><!--End Tabs Panel -->
+            </apex:outputPanel>
+
+            <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+            <script>
+
+                function hideblocker(){
+                    jQuery('#modalBlocker').each(function(){
+                        $(this).css('display', 'none');
+                    })
+                }
+         
+                function checkList()
+                {
+                    if('{!listEmpty}' == 'true')
+                    {
+                        alert('Please select a product.'); 
+                        //window.location.href=window.location.href; 
+                    }
+                }
+                
+                function checkFormulaError()
+                {
+                    if('{!formulaError}' == 'true')
+                    {
+                        alert('An error has ocurred. Please contact your administrator.'); 
+                    }
+                }
+         
+                // BEGIN cmunoz@levementum.com 9/2/2014. Description: Add collpase buttons for Parent rows
+                // @imageAlt: the alternative tag defined for the image. "-" is the default
+                // @imgId: the image id defined as "#<someId>" where someId is the id of the image selected
+                function getAttribute(imageAlt, imgId)
+                {
+                    try
+                    {
+                        if(imageAlt == '-')
+                        {
+                            jQuery(imgId).attr('alt', '+');  
+                            jQuery(imgId).attr('src', 'https://cdn0.iconfinder.com/data/icons/super-mono-reflection/blue/toggle-expand_blue.png');   
+                        }
+                        else
+                        {
+                            jQuery(imgId).attr('alt', '-');  
+                            jQuery(imgId).attr('src', 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqSa2sEJ7qTG2EFEGAFKaDVUH8p5TASg7RDFS7bbBIhStp5a1TdfdsPg');
+                        }
+                    }
+                    catch(err)
+                    {
+                        alert(err); 
+                    }
+                }           
+                // END cmunoz@levementum.com
+                
+                // BEGIN jescamilla@levementum.com  8/27/14 Description:  Enable the Edit All button.
+                jQuery.noConflict();
+                jQuery( document ).ready(function( $ ) {
+                 restorePersistedCheckBoxes();
+                    jQuery('.inlineEditWrite').dblclick();   
+                    jQuery('.dataTable').click();
+                     jQuery('#btnEditAll').click(function(){                        
+                        jQuery('.inlineEditWrite span').hide();
+                        jQuery('.inlineEditDiv').show();                   
+                        jQuery('.inlineEditUndo').hide(); 
+
+                        /**
+                         * @author: jescamilla@levementum.com
+                         * @date: 9/25/14
+                         * @brief: UAT-30 - Fix for 2 tabs required to move between input boxes
+                         */
+                         jQuery('.inlineEditUndoLink').each(function(){
+                            $(this).attr('tabindex', '-1')
+                         });
+
+
+                     });
+                     
+
+                    jQuery('.inlineEditDiv input').change(function(data){
+
+                            var eleId = jQuery(this).attr('id');
+                            var eleVal = jQuery(this).val();
+                            if(jQuery('#'+eleId+'_value').length){
+                                jQuery('#'+eleId+'_value').val(eleVal);
+                            }else{
+                                jQuery(this).append('<input id="' + eleId + '_value" type="hidden" style="display: none;" name="'+eleId+'" value="'+ eleVal +'"/>'); 
+                            }
+                    });
+
+                    jQuery('.visibleOrNot').change(function(){
+                        //console.log(jQuery(this).prop('checked'));
+                        //console.log(jQuery(this).next("span").prop('title'));
+                        if(jQuery(this).prop('checked')){
+                           jQuery(this).next("span").html('Visible' + ' ' + jQuery(this).next("span").prop('title'));
+                        }else{
+                           jQuery(this).next("span").html('Non Visible' + ' ' + jQuery(this).next("span").prop('title'));
+                        }
+                        
+
+                    });
+                
+                
+                // BEGIN cmunoz@levementum.com 9/2/2014. Description: Add collpase buttons for Parent rows
+                jQuery('[id*="collapsedIconD"]').click(function(){
+                    jQuery('.collapsableD').toggle(350);
+                    getAttribute(jQuery('[id*="collapsedIconD"]').attr('alt'), '[id*="collapsedIconD"]')
+                });
+                
+                jQuery('[id*="collapsedIconUOp"]').click(function(){
+                    jQuery('.collapsableUOp').toggle(350);
+                    getAttribute(jQuery('[id*="collapsedIconUOp"]').attr('alt'), '[id*="collapsedIconUOp"]')
+                });
+                
+                jQuery('[id*="collapsedIconNS"]').click(function(){
+                    jQuery('.collapsableNS').toggle(350);
+                    getAttribute(jQuery('[id*="collapsedIconNS"]').attr('alt'), '[id*="collapsedIconNS"]')
+                });
+                    
+                
+                // BEGIN cmunoz@levementum.com 9/4/2014. Removed background color for collapsable option on left hand side of page
+                jQuery('#handle').mouseover(function(){
+                        jQuery("#handle").css('background-color', 'transparent');
+                });
+                // END cmunoz@levementum.com
+
+                 //jgarcia@levementum.com 8/27/14 Description: Hide CWV when checkbox checked
+                     jQuery('#hideCWV').change(function(){
+                        if (jQuery(this).is(':checked')){
+                            jQuery('#hidePOR').prop('checked', false);
+                            jQuery('#hideBoth').prop('checked', false);
+                            jQuery('.showHideCWV').hide();
+                            jQuery('.prod-header').attr('colspan',1);
+                            jQuery('.showHidePOR').show();
+                            
+                        }
+                    });
+                    
+                    jQuery('#hideCWV').change(function(){
+                        if (!jQuery(this).is(':checked')){
+                            jQuery('.showHideCWV').show();
+                            jQuery('.prod-header').attr('colspan',2);
+                        }    
+                    });
+
+
+                //jgarcia@levementum.com 8/27/14 Description: Hide POR when checkbox checked
+                    jQuery('#hidePOR').change(function(){
+                        if (jQuery(this).is(':checked')){
+                            jQuery('#hideCWV').prop('checked', false);
+                            jQuery('#hideBoth').prop('checked', false);
+                            jQuery('.showHidePOR').hide();
+                            jQuery('.prod-header').attr('colspan',1);
+                            jQuery('.showHideCWV').show();
+                            
+                        }
+                    });
+                    
+                    jQuery('#hidePOR').change(function(){
+                        if (!jQuery(this).is(':checked')){
+                            jQuery('.showHidePOR').show();
+                            jQuery('.prod-header').attr('colspan',2);
+                        }    
+                    });
+                    
+                    //jgarcia@levementum.com 8/27/14 Description: Hide Both when checkbox checked
+                    jQuery('#hideBoth').change(function(){
+                        if (jQuery(this).is(':checked')){  
+                            jQuery('.showHidePOR').hide();
+                            jQuery('.showHideCWV').hide();
+                            jQuery('#hideCWV').prop('checked', false);
+                            jQuery('#hidePOR').prop('checked', false);
+                        }
+                    });
+                    
+                    jQuery('#hideBoth').change(function(){
+                        if (!jQuery(this).is(':checked')){
+                            jQuery('.showHideCWV').show();
+                            jQuery('.showHidePOR').show();
+                            jQuery('.prod-header').attr('colspan',2);
+                        }    
+                    });
+
+                    jQuery('#hidetotals').change(function(){
+                        if (jQuery(this).is(':checked')){
+                            jQuery('.total').hide();
+                            jQuery('.prod-header').attr('colspan',3);
+                        }    
+                    });
+
+                    jQuery('#hidetotals').change(function(){
+                        if (!jQuery(this).is(':checked')){
+                            jQuery('.total').show();
+                            jQuery('.prod-header').attr('colspan',3);
+                        }    
+                    });
+                    
+                    jQuery('.inlineEditWrite').dblclick(function(e){
+                     
+                        if(jQuery(this).find('div').length >= 2){
+                           jQuery(this).find('div:eq(1)').hide();
+                           
+                        }
+                    });
+                    
+                    //cmunoz@levementum.com: 09/18/14. Description: Add styling float:right to date crate label under notes
+                    jQuery('span[id*="notesPanel"]').css('float', 'right');
+                    
+                    //cmunoz@levementum.com: 09/19/14. Description: Add styling to deal status label
+                    jQuery('label[id*="quoteStatusId"]').css({"float": "right","color": "#000","font-size": "1.1em","font-weight": "bold"});
+                    
+                    //cmunoz@levementum.com: 09/19/14. Description: Add styling to deal status label
+                    jQuery('label[id*="quoteStatusId"]').css({"float": "right","color": "#000","font-size": "1.1em","font-weight": "bold"});
+                    
+                    //cmunoz@levementum.com: 09/19/14. Description: Autoadjust text area row size for notes under Summary tab
+                    jQuery(function () {
+                        jQuery('textarea').each(function(){
+                            var obj = jQuery(this).val();
+                            if(typeof obj !== "undefined")
+                            {
+                                if(jQuery(this).attr('class') == "newDesc")
+                                {
+                                    var stringLength = jQuery(this).val().length;
+                                    var count = Math.ceil( stringLength / this.cols ); 
+                                    // jescamilla@levementum.com 10/29/14 Description: Increasing the number of rows to provide a wider box.
+                                    jQuery(this).attr('rows', count + 5);
+                                }
+                            }
+                        });
+                    });                   
+
+                });
+                     
+            </script>
+            </apex:variable>
+        </apex:outputPanel>
+        <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+            <script>
+                function alignDealStatus()
+                {
+                    try
+                    {
+                        //cmunoz@levementum.com: 09/19/14. Description: Add styling to deal status label
+                        jQuery('label[id*="quoteStatusId"]').css({"float": "right","color": "#000","font-size": "1.1em","font-weight": "bold"});
+                    }
+                    catch(err)
+                    {
+                    }
+                }
+            
+                function textNotes()
+                {
+                    try
+                    {
+                        jQuery('textarea').each(function(){
+                                var obj = jQuery(this).val();
+                                if(typeof obj !== "undefined")
+                                {
+                                    if(jQuery(this).attr('class') == "newDesc")
+                                    {
+                                        var stringLength = jQuery(this).val().length;
+                                        var count = Math.ceil( stringLength / this.cols ); 
+                                        jQuery(this).attr('rows', count + 5);
+                                    }
+                                }
+                            });
+                            jQuery('span[id*="notesPanel"]').css('float', 'right');
+                    }
+                    catch(err)
+                    {
+                    }
+                }
+            
+                function getCheckedBoxes() {
+                    var checkboxes = document.getElementsByName('pidcheckboxes');
+                    var checkboxesChecked = [];
+                    for (var i=0; i<checkboxes.length; i++) {
+                        if (checkboxes[i].checked) {
+                            checkboxesChecked.push(checkboxes[i].id.replace('ccbb-',''));
+                        }
+                    }
+                    var output = '';
+                    if(checkboxesChecked.length > 0){
+                        output = checkboxesChecked.join(',');
+                    }
+                    else
+                    {
+                        //alert('Please Select a Product');
+                        //window.location.href=window.location.href;
+                    }
+                   jQuery('input[id*="hfSelectedId"]').val(output);
+                }
+                
+                // This function reads the cookie and checks/unchecks all elements
+                // that have been stored inside. It will NOT mess with checkboxes 
+                // whose state has not yet been recorded at all.
+                function restorePersistedCheckBoxes() {
+                    var aStatus = getPersistedCheckStatus();
+                    for(var i = 0; i < aStatus.length; i++) {
+                        var aPair = aStatus[i].split(':');
+                        var el = document.getElementById(aPair[0]);
+                        if(el) {
+                            el.checked = aPair[1] == '1';
+                        }
+                    }
+                }
+            
+                // This function takes as input an input type="checkbox" element and
+                // stores its check state in the persistence cookie. It is smart
+                // enough to add or replace the state as appropriate, and not affect
+                // the stored state of other checkboxes.    
+                function persistCheckBox(el) {
+                    var found = false;
+                    var currentStateFragment = el.id + ':' + (el.checked ? '1' : '0');
+                    var aStatus = getPersistedCheckStatus();
+                    for(var i = 0; i < aStatus.length; i++) {
+                        var aPair = aStatus[i].split(':');
+                        if(aPair[0] == el.id) {
+                            // State for this checkbox was already present; replace it
+                            aStatus[i] = currentStateFragment;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if(!found) {
+                        // State for this checkbox wasn't present; add it
+                        aStatus.push(currentStateFragment);
+                    }
+                    // Now that the array has our info stored, persist it
+                    setPersistedCheckStatus(aStatus);
+                }
+            
+                // This function simply returns the checkbox persistence status as
+                // an array of strings. "Hides" the fact that the data is stored
+                // in a cookie.
+                function getPersistedCheckStatus() {
+                    var stored = getPersistenceCookie();
+                    return stored.split(',');
+                }
+                
+                // This function stores an array of strings that represents the 
+                // checkbox persistence status. "Hides" the fact that the data is stored
+                // in a cookie.
+                function setPersistedCheckStatus(aStatus) {
+                    setPersistenceCookie(aStatus.join(','));
+                }
+                
+                // Retrieve the value of the persistence cookie.
+                function getPersistenceCookie()
+                {
+                  // cookies are separated by semicolons
+                  var aCookie = document.cookie.split('; ');
+                  for (var i=0; i < aCookie.length; i++)
+                  {
+                    // a name/value pair (a crumb) is separated by an equal sign
+                    var aCrumb = aCookie[i].split('=');
+                    if ('JS_PERSISTENCE_COOKIE' == aCrumb[0]) 
+                      return unescape(aCrumb[1]);
+                  }
+                  return ''; // cookie does not exist
+                }
+                
+                // Sets the value of the persistence cookie.
+                // Does not affect other cookies that may be present.
+                function setPersistenceCookie(sValue) {
+                    document.cookie = 'JS_PERSISTENCE_COOKIE=' + escape(sValue);
+                }
+                
+                // Removes the persistence cookie.
+                function clearPersistenceCookie() { 
+                    document.cookie = 'JS_PERSISTENCE_COOKIE=' + 
+                                      ';expires=Fri, 31 Dec 1999 23:59:59 GMT;';
+                }
+            
+                //Added by csechelski@levementum.com on 9/25/2014
+                //Hides empty discount rows
+                function toggleEmptyDiscountRows(hide){
+                    jQuery('.dataTable tr').each(function (i,row){
+                        var l = jQuery(row).find('.data-row-sub-label');
+                        
+                        if(l.text() != undefined && l.text() != null && l.text().length > 0 && l.text().trim() != '- Minimum Commit'){
+                            //determine if the comment input is blank
+                            var hasComment = false;
+                            var commentCell = jQuery(row).children('td').eq(1);
+                            if(jQuery(commentCell).find('input[type="text"]').length){
+                                hasComment = jQuery(commentCell).find('input[type="text"]').first().val().length > 0;
+                            }
+                            
+                            //get the total of all of the currency in the row
+                            var total = 0;
+                            var cells = jQuery(row).find('.currency-cell');
+                            
+                            jQuery(cells).each(function(i,cell){
+                                //Determine if the cell has inline edit
+                                if(jQuery(cell).find('div.inlineEditDiv').length){
+                                    //for now lets only look at commited changes so we will grab the value of the span tag and ignore the input
+                                    var spanContent = jQuery(cell).find('span span span').first().text().replace('$','').trim();
+                                }
+                                else{
+                                    var spanContent = jQuery(cell).text().replace('$','').trim();
+                                }
+                                    
+                                total += parseFloat(spanContent);
+                                
+                            });
+                            if(total == 0 && !hasComment){
+                                if(hide){
+                                    jQuery(row).hide();    
+                                }
+                                else{
+                                    jQuery(row).show();    
+                                }
+                            }
+                        }
+                    });
+                }
+            
+                function EditAll(){
+                    jQuery('.inlineEditWrite').each(function(){
+                        var pSpanId = jQuery(this).attr('id'); //parent span acting as the container cell.
+                       pSpanId =  pSpanId.replace('_ilecell','');
+                        var pSpanValue = jQuery('#' + pSpanId + '_ileinner').html(); //span that holds the read only value
+                        pSpanValue = pSpanValue.replace('$ ', '');
+
+                        jQuery(this).append('<div class="inlineEditDiv" id="' + pSpanId + '_ileinneredit" style="display: block;">'+
+                           '<input type="text" id="' + pSpanId + '" value="' + pSpanValue + '"></div>');
+                    });
+
+                    jQuery('.inlineEditWrite span').hide();                              
+                    jQuery('.inlineEditUndo').hide();
+                    jQuery('.inlineEditDiv input').change(function(data){
+                         //console.log('Input Value Changed');
+                         var eleId = jQuery(this).attr('id');
+                         var eleVal = jQuery(this).val();
+                         if(jQuery('#'+eleId+'_value').length){
+                             jQuery('#'+eleId+'_value').val(eleVal);
+                         }else{
+                             jQuery(this).append('<input id="' + eleId + '_value" type="hidden" style="display: none;" name="'+eleId+'" value="'+ eleVal +'"/>'); 
+                         }
+                    });             
+                }
+
+                function nFormatter(num) {
+                    if (num >= 1000000000) {
+                        return (num / 1000000000).toFixed(1) + 'G';
+                    }
+                    if (num >= 1000000) {
+                        return (num / 1000000).toFixed(1) + 'M';
+                    }
+                    if (num >= 1000) {
+                        return (num / 1000).toFixed(1) + 'K';
+                    }
+                    return num;
+                }            
+            </script>
+        </apex:variable>
+    </apex:form>
+    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+        <script>
+            jQuery.noConflict();
+            jQuery( document ).ready(function( $ ) {
+
+                 /**
+                 * @author: jescamilla@levementum.com
+                 * @date: 9/25/14
+                 * @brief: When the View Loaded products is complete this function will fire to check for Edit Mode.
+                 */
+                 
+                jQuery(function () {
+                    loadComplete = function(){
+                       //console.log('Enabling Edit All');
+                       /**
+                       * @author: jescamilla@levementum.com
+                       * @date: 9/26/14
+                       * @brief: Simulate inline editing, as Jquery scope changed and clicking the edit all button programatically was not an option
+                       */
+                       jQuery('.inlineEditWrite').each(function(){
+                            var pSpanId = jQuery(this).attr('id'); //parent span acting as the container cell.
+                           pSpanId =  pSpanId.replace('_ilecell','');
+                            var pSpanValue = jQuery('#' + pSpanId + '_ileinner').html(); //span that holds the read only value
+                            pSpanValue = pSpanValue.replace('$ ', '');
+
+                            jQuery(this).append('<div class="inlineEditDiv" id="' + pSpanId + '_ileinneredit" style="display: block;">'+
+                               '<input type="text" id="' + pSpanId + '" value="' + pSpanValue + '"></div>');
+                       });
+
+
+                        jQuery('.inlineEditWrite span').hide();
+
+                        jQuery('.inlineEditDiv input').change(function(data){
+                             //console.log('Input Value Changed');
+                             var eleId = jQuery(this).attr('id');
+                             var eleVal = jQuery(this).val();
+                             if(jQuery('#'+eleId+'_value').length){
+                                 jQuery('#'+eleId+'_value').val(eleVal);
+                             }else{
+                                 jQuery(this).append('<input id="' + eleId + '_value" type="hidden" style="display: none;" name="'+eleId+'" value="'+ eleVal +'"/>'); 
+                             }
+                        });
+
+                        //Disable the Edit All Button, we are already in Edit Mode.
+                        jQuery('#btnEditAll').hide();
+
+                    }
+                });
+
+                /**
+                 * @author: jgarcia@levementum.com
+                 * @date: 9/25/14
+                 * @brief: Autoclick the Edit All if there is a paramete vfpEditMode == 'true' in the URL
+                 */
+                 //Sfdc.onReady(function(){
+                   jQuery(function () {
+                    if({!vfpEditMode} == true){
+                           //console.log('Stopping Edit Mode vfpEditMode: ' + {!vfpEditMode});
+                           stopEditMode();
+                          // loadComplete();
+                       }
+                   });
+                  //  });
+                
+                jQuery('.inlineEditWrite').dblclick(function(e){
+                 
+                    if(jQuery(this).find('div').length >= 2){
+                       jQuery(this).find('div:eq(1)').hide();
+                       jQuery(this).focusout(function(){
+                        jQuery(this).find("span[id*='_ileinner']").html('');
+                          //jQuery(this).find("span[id*='_ileinner']").hide();
+                       });        
+                    }
+                })
+
+            });
+        </script> 
+    </apex:variable>
+    <script>
+        function discardChanges(){
+            if(confirm('Are you sure you want to discard all changes you made?')){
+                setTitle('Please Wait');
+                setMessage('Discarding Changes...');
+                showModal();
+                discardChangesFun();
+            }
+        }
+    </script>
+</apex:page>

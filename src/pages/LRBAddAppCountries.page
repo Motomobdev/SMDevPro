@@ -1,0 +1,77 @@
+<apex:page standardcontroller="Contract" extensions="LRBInitialDealController" sidebar="false"> 
+
+<style>
+    .headerStyle{
+        background-color:#787878 !important;
+        color:#787878;
+    }
+</style>
+        
+<body>
+<!-- <table width="1280" align="center" border=".5" cellspacing="0" cellpadding="0"> -->
+<table width="100%" align="center" border=".5" cellspacing="0" cellpadding="0">
+<tr>
+<!-- <td width="1280"> -->
+<td>
+  <apex:form >
+  <apex:pageBlock mode="edit">
+  <h1>
+        <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+            <span style="font-size:20px;color:#FFFFFF;align:center;"><strong>LRB INITIAL DEAL REQUEST FORM (Page 3/5)</strong></span>
+        </div>
+    </h1>
+
+    <br />   
+    <br />
+
+    <h2>
+        <span style="font-size:20px;color:#000000;align:center;"><strong>Select the Available Countries for each Application:</strong></span>
+    </h2>
+    <br />
+    
+  	<apex:outputText value="No Application Selected" style="font-size:16px;font-style:italic;margin-left:1%;" rendered="{!appNameList.size==0}"/>
+  	<apex:repeat value="{!appNameList}" var="rec">          
+      	<br />        	
+      	<strong><apex:outputText value="{!AppNameMap[rec.Application__c]}" style="font-size:16px;"/></strong>
+      	<!-- <apex:outputField value="{!rec.Application__c}"/> -->
+      	<apex:iframe src="/apex/LRBviewAppCountries?id={!rec.Application__c}"/><br/>  
+  	</apex:repeat>
+  	<br />
+  	<br />
+        
+    <div align="center">
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageSubmit)>0}"/>
+    <apex:outputText value="{!errorMessageSubmit}" style="margin-left:1%;color:red;" rendered="{!LEN(errorMessageSubmit)>0}" />
+    <apex:panelGrid columns="4" id="theGrid">
+	    <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+	    <apex:commandButton action="{!previousAppLegalCountries}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+	    <apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:auto;" />
+	    <apex:commandButton action="{!nextCreateRateTableForSelectedApps1}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+    </apex:panelGrid>
+    <!-- <apex:dataTable value="{!contract}" var="app" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:35%;">    
+        <apex:column >
+            <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        </apex:column>     
+        
+        <apex:column >
+            <apex:commandButton action="{!previousAppLegalCountries}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>       
+        
+        <apex:column >
+            <apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:10%;" />
+        </apex:column>
+         
+        <apex:column >
+            <apex:commandButton action="{!nextCreateRateTableForSelectedApps1}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>        
+    </apex:dataTable>
+     -->
+    </div>
+    <br />
+    </apex:pageBlock>          
+  </apex:form>
+</td>
+</tr>
+</table>
+</body>
+</apex:page>

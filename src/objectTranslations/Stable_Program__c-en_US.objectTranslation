@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stable Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stable Program</value>
+    </caseValues>
+    <fields>
+        <label><!-- Program Cost Current --></label>
+        <name>Program_Cost_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Cost High --></label>
+        <name>Program_Cost_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Cost Low --></label>
+        <name>Program_Cost_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Type --></label>
+        <name>Program_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Stable Program --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stable --></label>
+        <name>Stable__c</name>
+        <relationshipLabel><!-- Stable Program --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Total number of Programs that show as Reviewed and Approved for this Stable --></help>
+        <label><!-- Total # of R&amp;A Programs --></label>
+        <name>Total_of_R_A_Programs__c</name>
+    </fields>
+    <layouts>
+        <layout>Stable Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

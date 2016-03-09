@@ -1,0 +1,137 @@
+<apex:page controller="NDA_DashboradSearchCtr" tabstyle="NDA__c"
+    action="{!doaction}">
+    <apex:sectionHeader title="Dashboard" subtitle="My NDAs" />
+
+    <apex:form >
+        <apex:pageBlock id="pb">
+            <style>
+.ndaButton {
+    background: #236FBD !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-style: inherit !important;
+}
+</style>
+            <apex:pageBlockButtons >
+                <apex:commandButton status="fetchStatus" reRender="pb"
+                    value="Search" action="{!fnSeacrh}" title="Search"
+                    styleClass="ndaButton" />
+
+                <!-- TODO : add clear button -->
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1" title="Search Criteria   ">
+                <apex:pageBlockSectionItem >    
+                   Region  <!-- <apex:selectList id="regionID" value="{!objNDA.NDARegion__c}" size="1" title="Region">
+                        <apex:selectOptions value="{!NDARegions}"></apex:selectOptions>
+                    </apex:selectList>-->
+                    <apex:inputField value="{!objNDA.NDARegion__c}" id="regionID"></apex:inputField>
+                </apex:pageBlockSectionItem>
+                <!-- <apex:pageBlockSectionItem >    
+                    NDA File ID <apex:inputText value="{!objNDA.NDAFileID__c}" id="fileID" />
+                </apex:pageBlockSectionItem> -->
+                <apex:pageBlockSectionItem >    
+                    Outside Party Name  
+                    <apex:inputText id="companytwo"
+                        value="{!companytwo}">
+                        <c:AutoComplete objectname="NDA_Company__c"
+                            autocomplete_textbox="{!$Component.companytwo}" />
+                    </apex:inputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >    
+                    Include Expired and Cancelled NDAs <apex:inputCheckbox value="{!boolInclude}" id="includID" />
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+            <!--                      -- Results Section : Starts --         -->
+            <apex:outputPanel rendered="{!IF(ndaRecords != null, true, false)}">
+                <apex:commandButton value="Export Results" action="{!fnExportExcel}"
+                    title="Export Excel" styleClass="ndaButton" />
+                <apex:pageBlockTable value="{!NdaRecordlist}" var="ndaVar">
+                    <apex:column headerValue="NDA File ID">
+                        <apex:outputLink style="color:blue" value="/{!ndaVar.id}">{!ndaVar.NDAFileID__c} </apex:outputLink>
+                    </apex:column>
+                    <!--   <apex:column headerValue="Category Name">
+                        {!ndaVar.Category__c}                
+                    </apex:column> -->
+                    <apex:column headerValue="Region">
+                        {!ndaVar.NDARegion__c}                  
+                    </apex:column>
+                    <apex:column headerValue="Company">
+                        {!ndaVar.Company__r.name}               
+                    </apex:column>
+                    <apex:column headerValue="Disclosure Purpose">
+                        {!ndaVar.Disclosure_Purpose__c}                 
+                    </apex:column>
+                    <apex:column headerValue="Created On">
+                        <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!ndaVar.CreatedDate}" />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Modification Text">
+                        {!ndaVar.Modification_Text__c}                  
+                    </apex:column>
+                    <apex:column headerValue="NDA Status">
+                        {!ndaVar.NDAStatus__c}                  
+                    </apex:column>
+                    <apex:column headerValue="DPL Status">
+                        {!ndaVar.DPLStatus__c}               
+                    </apex:column>
+                    <apex:column headerValue="Requested By">
+                        {!ndaVar.createdBy.name}                   
+                    </apex:column>
+                    <apex:column headerValue="Expires On">
+                        <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!ndaVar.Expires_On__c}" />
+                        </apex:outputText>
+                    </apex:column>
+
+                </apex:pageBlockTable>
+                <apex:panelGrid columns="7">
+                    <apex:commandButton status="fetchStatus" reRender="pb" value="|<"
+                        action="{!ndaRecords.first}" disabled="{!!ndaRecords.hasPrevious}"
+                        title="First Page" />
+                    <apex:commandButton status="fetchStatus" reRender="pb" value="<"
+                        action="{!ndaRecords.previous}"
+                        disabled="{!!ndaRecords.hasPrevious}" title="Previous Page" />
+                    <apex:commandButton status="fetchStatus" reRender="pb" value=">"
+                        action="{!ndaRecords.next}" disabled="{!!ndaRecords.hasNext}"
+                        title="Next Page" />
+                    <apex:commandButton status="fetchStatus" reRender="pb" value=">|"
+                        action="{!ndaRecords.last}" disabled="{!!ndaRecords.hasNext}"
+                        title="Last Page" />
+                    <apex:outputText >{!(ndaRecords.pageNumber * intSize)+1-intSize}-{!IF((ndaRecords.pageNumber * intSize)>intNoOfRecords, intNoOfRecords,(ndaRecords.pageNumber * intSize))} of {!intNoOfRecords}</apex:outputText>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="fetchStatus" startText="Fetching..."
+                            stopText="" />
+                    </apex:outputPanel>
+                </apex:panelGrid>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        <!--                      -- Results Section : Ends--         -->
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Contact Support" collapsible="false"
+                columns="1">
+                <html>
+<body>
+    <p style="font-family: arial; font-size: 12px;">
+        Provide feedback and report testing issues at <a target="_blank"
+            href="https://docs.google.com/forms/d/1PmpDa9VjzA2DgRMmPYArp05We7nO44dZEBgzNMsE6NU/viewform"
+            style="color: blue; font-weight: bold">goto/ndafeedback</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        <a target="_blank"
+            href="http://vhd.mot-mobility.com/sds_form.php?id=1103"
+            style="color: blue; font-weight: bold">Submit NDA Help desk
+            ticket</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        Contact NDA Specialist <a target="_blank"
+            href="mailto:nda@motorola.com" style="color: blue; font-weight: bold">nda@motorola.com</a>
+    </p>
+</body>
+                </html>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>New object for Kevin and Dave, to track Experience packages + costing</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Cost_of_Related_Applications__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of Royalty Current of all related Applications listed below (in related list)</inlineHelpText>
+        <label>Cost of Related Applications</label>
+        <summarizedField>ExperiencePackage_App__c.Royalty_Current__c</summarizedField>
+        <summaryForeignKey>ExperiencePackage_App__c.Experience_Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Cost_of_Related_SW_Components_CWV__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost of Related SW Components (CWV)</label>
+        <summarizedField>ExperiencePackage_Component__c.Cost_CWV__c</summarizedField>
+        <summaryFilterItems>
+            <field>ExperiencePackage_Component__c.Component_Type__c</field>
+            <operation>equals</operation>
+            <value>SW</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ExperiencePackage_Component__c.Experience_Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Cost_of_Related_SW_Components_Opp__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost of Related SW Components (Opp)</label>
+        <summarizedField>ExperiencePackage_Component__c.Cost_Opp__c</summarizedField>
+        <summaryFilterItems>
+            <field>ExperiencePackage_Component__c.Component_Type__c</field>
+            <operation>equals</operation>
+            <value>SW</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ExperiencePackage_Component__c.Experience_Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ExpPack_POR_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>ExpPack POR Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>IN - Fully approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cond IN - Conditionally Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D - Discovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OUT - Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOL - End-Of-Life, no longer supported</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Experience_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Experience Description</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Experience_Description_text__c</fullName>
+        <externalId>false</externalId>
+        <label>Experience Description_text</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Experience_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Experience detail deck (URL)</inlineHelpText>
+        <label>Experience Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Full_Name__c</fullName>
+        <description>Concatenation of Name + Year + Variant</description>
+        <externalId>false</externalId>
+        <formula>Name &amp;&quot;-&quot;&amp; Year__c &amp;&quot;-&quot;&amp; text(Variant__c)</formula>
+        <inlineHelpText>Concatenation of Name + Year + Variant</inlineHelpText>
+        <label>Full Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Costs_CWV__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Includes all HW Components listed below</inlineHelpText>
+        <label>HW Costs (CWV)</label>
+        <summarizedField>ExperiencePackage_Component__c.Cost_CWV__c</summarizedField>
+        <summaryFilterItems>
+            <field>ExperiencePackage_Component__c.Component_Type__c</field>
+            <operation>equals</operation>
+            <value>HW</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ExperiencePackage_Component__c.Experience_Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>HW_Costs_Opp__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Includes all HW Components listed below</inlineHelpText>
+        <label>HW Costs (Opp)</label>
+        <summarizedField>ExperiencePackage_Component__c.Cost_Opp__c</summarizedField>
+        <summaryFilterItems>
+            <field>ExperiencePackage_Component__c.Component_Type__c</field>
+            <operation>equals</operation>
+            <value>HW</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ExperiencePackage_Component__c.Experience_Package__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Message</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Platform_Assumptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Platform Assumptions</label>
+        <length>1500</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Area</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core + Cloud</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Imaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Issues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mind Reader</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moto</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Network</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Next Devices</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wearables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SW_Costs_CWV__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cost_of_Related_Applications__c +  Cost_of_Related_SW_Components_CWV__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Includes all SW Components listed below, plus all related Applications listed below</inlineHelpText>
+        <label>SW Costs (CWV)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SW_Costs_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cost_of_Related_Applications__c +  Cost_of_Related_SW_Components_Opp__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Includes all SW Components listed below, plus all related Applications listed below</inlineHelpText>
+        <label>SW Costs (Opp)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SW_Product_Manager_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Product_Manager__r.DisplayLastName__c</formula>
+        <label>SW Product Manager Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Product_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SW Product Manager</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Motorola_Core_Directory__c.DirectoryStatus__c</field>
+                <operation>equals</operation>
+                <value>A</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>ExperiencePackages</relationshipLabel>
+        <relationshipName>ExperiencePackages</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_CWV__c</fullName>
+        <externalId>false</externalId>
+        <formula>HW_Costs_CWV__c +  SW_Costs_CWV__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of HW + SW costs (CWV)</inlineHelpText>
+        <label>Total Cost (CWV)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>HW_Costs_Opp__c +  SW_Costs_Opp__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of HW + SW costs (Opp)</inlineHelpText>
+        <label>Total Cost (Opp)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Variant__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to distinguish variants of same ExperiencePackage (ie. China vs ROW)</inlineHelpText>
+        <label>Variant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ExperiencePackage</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Variant__c</columns>
+        <columns>Year__c</columns>
+        <columns>Experience_Description__c</columns>
+        <columns>ExpPack_POR_Status__c</columns>
+        <columns>SW_Product_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>ExperiencePackage Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ExperiencePackages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Variant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Year__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ExpPack_POR_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SW_Product_Manager__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Variant__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ExpPack_POR_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SW_Product_Manager__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Variant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Year__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExpPack_POR_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SW_Product_Manager__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

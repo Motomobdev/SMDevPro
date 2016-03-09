@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Benefit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Benefits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Benefit Amount --></label>
+        <name>Actual_Benefit_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Benefit Realized --></label>
+        <name>Actual_Benefit_Realized__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit Classification --></label>
+        <name>Benefit_Classification__c</name>
+        <picklistValues>
+            <masterLabel>Increased Revenue</masterLabel>
+            <translation><!-- Increased Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational Efficiency</masterLabel>
+            <translation><!-- Operational Efficiency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduced Costs</masterLabel>
+            <translation><!-- Reduced Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulatory / Mandate</masterLabel>
+            <translation><!-- Regulatory / Mandate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Benefit Description --></label>
+        <name>Benefit_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tangible benefits can be tied directly to a number. --></help>
+        <label><!-- Benefit Type --></label>
+        <name>Benefit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Intangible</masterLabel>
+            <translation><!-- Intangible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tangible</masterLabel>
+            <translation><!-- Tangible --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Benefit Amount --></label>
+        <name>Planned_Benefit_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Benefits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please associate to the proper business unit work request. --></help>
+        <label><!-- Work Request --></label>
+        <name>Work_Request__c</name>
+        <relationshipLabel><!-- Benefits --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Benefit Layout</layout>
+        <sections>
+            <label><!-- Benefit Description --></label>
+            <section>Benefit Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

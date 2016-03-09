@@ -1,0 +1,253 @@
+<apex:page id="page" standardController="Contract_Request__c" extensions="ContractRequestFormCtr" tabStyle="Contract_Request__c" cache="false" >
+
+<apex:sectionHeader title="Motorola Mobility" subtitle="Request Form"/>
+
+<style>
+    .status
+    {
+        padding-left: 30px;
+        background: url('{!$Resource.LoadingNew}') no-repeat left center; 
+    }
+</style>
+
+<script type="text/javascript">
+    function validateOnEnter(e)
+    {
+        if(e.which == 13 || e.keyCode == 13)
+        {
+            var mmid = document.getElementById('{!$Component.page.form1.pbReqDetail.pbsMMID.pbsiMMID.txtMMID}');
+            
+            if(mmid != null && mmid.value.trim().length > 0)
+            {
+                document.getElementById('{!$Component.page.form1.pbReqDetail.pbsMMID.pbsiMMID.btnValidateMMID}').click();
+            }
+            
+            return false;
+        }
+        else
+            return true;
+    }
+    function checkIfHighUrgency(val)
+    {
+        var lbl = document.getElementById('{!$Component.page.form2.pb2.pbs2.pbsi2.lblHighReason}');
+        var fld = document.getElementById('{!$Component.page.form2.pb2.pbs2.pbsi2.fldHighReason}');
+        
+        if(val == "High")
+        {
+            lbl.style.display = 'block';
+            fld.style.display = 'block';
+            fld.value = '';
+        }
+        else
+        {
+            lbl.style.display = 'none';
+            fld.style.display = 'none';
+            fld.value = '-NA-';
+        }
+    }
+    function setCompanyName()
+    {
+        var c = document.getElementById('page:form2:pb2:pbs2:pbsiCompanyName:companyName');
+        
+        if(c != null)
+            c.value = 'No eGVM Needed';
+        
+        return false;
+    }
+    function isBlankMMID()
+    {
+        var mmid = document.getElementById('{!$Component.page.form1.pbReqDetail.pbsMMID.pbsiMMID.txtMMID}');
+        
+        if(mmid != null && mmid.value.trim().length == 0)
+        {
+            alert('Please enter your MMID.');
+            mmid.value = '';
+            mmid.focus();
+            return false;
+        }
+        else
+            return true;
+    }
+</script>
+
+<apex:form id="form1" >
+
+<apex:pageMessages id="msg1" rendered="{!NOT(isVaidDirectoryUser)}" />
+
+<apex:pageBlock title="Requester Detail" id="pbReqDetail">
+   
+    <apex:pageBlockSection id="pbsMMID" columns="1" >
+        
+        <apex:pageBlockSectionItem id="pbsiMMID" helpText="Enter Core ID if you don't have MMID" >
+            <apex:outputLabel value="Enter Your MMID" />
+            <apex:outputPanel >
+                <apex:inputText id="txtMMID" value="{!MMID}" disabled="{!isVaidDirectoryUser}" maxlength="20" style="width: 150px;" onkeydown="return validateOnEnter(event);" />
+                &nbsp;
+                <apex:commandButton id="btnValidateMMID" value="Validate" action="{!validateMMID}" onclick="if(isBlankMMID() == false) return false;" reRender="form1,form2" rendered="{!NOT(isVaidDirectoryUser)}" status="status1"  />
+                <apex:commandButton id="btnChangeMMID" value="Change" action="{!changeMMID}" reRender="form1,form2,form3" rendered="{!isVaidDirectoryUser}" status="status1" />
+                &nbsp;&nbsp;
+                <apex:actionStatus id="status1" startStyleClass="status" />
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="2" rendered="{!isVaidDirectoryUser}">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Name" />
+            <apex:outputText value="{!directoryUser.Name}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Email" />
+            <apex:outputText value="{!LOWER(directoryUser.MMID__c)}@motorola.com" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Phone" />
+            <apex:outputText value="{!'(W) ' + directoryUser.WorkPhone__c + ', (M) ' + directoryUser.MobilePhone__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Department" />
+            <apex:outputText value="{!directoryUser.OrgLevel1__c + ' / ' + directoryUser.OrgLevel2__c + ' / ' + directoryUser.OrgLevel3__c}" />
+        </apex:pageBlockSectionItem>
+        
+    </apex:pageBlockSection>
+    
+</apex:pageBlock>
+
+</apex:form>
+
+<apex:form id="form2" >
+
+<apex:pageMessages id="msg2" rendered="{!AND(isVaidDirectoryUser,NOT(isSubmitted))}" />
+
+<apex:actionFunction name="checkUrgency" action="{!checkIfHighUrgency}" immediate="true" reRender="pbs2" status="status2" >
+    <apex:param name="p1" assignTo="{!urgency}" value="{!Contract_Request__c.Urgency__c}" />
+</apex:actionFunction>
+<apex:actionFunction name="checkAgreement" action="{!checkAgreement}" immediate="true" reRender="pbs2" status="status3" >
+    <apex:param name="p2" assignTo="{!agreement}" value="{!Contract_Request__c.Agreement_Type__c}" />
+</apex:actionFunction>
+
+<apex:pageBlock title="Request Detail" id="pb2" rendered="{!AND(isVaidDirectoryUser,NOT(isSubmitted))}" >
+
+    <apex:pageBlockSection columns="2" id="pbs2" >
+    
+        <apex:pageBlockSectionItem id="pbsiCompanyName">
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Company_Name__c.label}" />
+            <apex:inputField id="companyName" value="{!Contract_Request__c.Company_Name__c}" taborderhint="1" style="width: 200px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Agreement_Type__c.label}" />
+            <apex:outputPanel >
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <apex:inputField value="{!Contract_Request__c.Agreement_Type__c}" required="true" onchange="checkAgreement(this.value);" taborderhint="6" style="width: 200px;" />
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;<apex:actionStatus id="status3" startStyle="display: inline;" startStyleClass="status" />
+                        </td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="" />
+            <apex:outputPanel >
+                <apex:outputText value="If account is unknown at this time, enter " style="font-size: 8pt;" />
+                <a style="color: #333333; font-weight: bold; font-size: 8pt; cursor: pointer;" onclick="setCompanyName()">No eGVM Needed</a>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Request_Type__c.label}" rendered="{!(agreement == 'N/A')}" />
+            <apex:inputField value="{!Contract_Request__c.Request_Type__c}" required="true" taborderhint="7" style="width: 200px;" rendered="{!(agreement == 'N/A')}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="" />
+            <apex:outputLabel value="" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Date_Required__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Date_Required__c}" taborderhint="8" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Partner_Contact_Name__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Partner_Contact_Name__c}" taborderhint="2" style="width: 200px;"  />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Urgency__c.label}" />
+            <apex:outputPanel >
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <apex:inputField value="{!Contract_Request__c.Urgency__c}" required="true" onchange="checkUrgency(this.value);" taborderhint="9" style="width: 80px;" />
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;<apex:actionStatus id="status2" startStyle="display: inline;" startStyleClass="status" />
+                        </td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Partner_Contact_Phone__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Partner_Contact_Phone__c}" taborderhint="3" style="width: 200px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.High_Urgency_Reason__c.label}" rendered="{!(urgency == 'High')}" />
+            <apex:inputField value="{!Contract_Request__c.High_Urgency_Reason__c}" required="true" rendered="{!(urgency == 'High')}" taborderhint="10" style="width: 200px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Partner_Contact_Email__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Partner_Contact_Email__c}" taborderhint="4" style="width: 200px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Team__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Team__c}" required="true" taborderhint="11" style="width: 200px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.What_Software_Requested__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.What_Software_Requested__c}" taborderhint="5" style="width: 195px;"  />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Which_Device__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Which_Device__c}" taborderhint="12" style="width: 195px;" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="" />
+            <apex:outputLabel value="" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Contract_Request__c.fields.Comments__c.label}" />
+            <apex:inputField value="{!Contract_Request__c.Comments__c}" taborderhint="13" style="width: 195px;" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+    <apex:pageBlockButtons location="bottom">
+        <apex:commandButton id="btnSubmitRequest" value="Submit Request" action="{!save}" reRender="form2,form3" status="status4" tabindex="15" />
+        &nbsp;&nbsp;
+        <apex:actionStatus id="status4" startStyleClass="status" />
+    </apex:pageBlockButtons>
+
+</apex:pageBlock>
+
+</apex:form>
+
+<apex:form id="form3">
+
+<apex:pageBlock rendered="{!AND(isVaidDirectoryUser,isSubmitted)}">
+
+    <apex:pageMessages id="msg3" />
+    
+    <apex:pageBlockButtons location="bottom">
+        <apex:commandButton id="btnNewRequest" value="Submit Another Request" action="{!newRequest}" reRender="form2,form3" status="status4" />
+        &nbsp;&nbsp;
+        <apex:actionStatus id="status4" startStyleClass="status" />
+    </apex:pageBlockButtons>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

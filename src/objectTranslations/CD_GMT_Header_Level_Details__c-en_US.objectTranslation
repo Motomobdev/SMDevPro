@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD GMT Header Level Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD GMT Header Level Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Demand qty from User --></label>
+        <name>Demand_qty_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand qty from Demantra --></label>
+        <name>Demand_qty_from_Demantra__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE-Financial Plan MCPU --></label>
+        <name>Financial_Plan_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT_PROD_HDR_DTL --></label>
+        <name>GMT_PROD_HDR_DTL__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE- Launch GM --></label>
+        <name>LE_Launch_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE - Launch MCPU --></label>
+        <name>LE_Launch_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE-Launch ASP --></label>
+        <name>Launch_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Gm formula --></label>
+        <name>Launch_Gm_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name IOD OUT --></label>
+        <name>Product_Name_IOD_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+        <relationshipLabel><!-- CD GMT Header Level Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO-Financial Plan MCPU --></label>
+        <name>RO_Financial_Plan_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO-Launch ASP --></label>
+        <name>RO_Launch_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO- Launch GM --></label>
+        <name>RO_Launch_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO - Launch MCPU --></label>
+        <name>RO_Launch_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO-Target GM --></label>
+        <name>RO_Target_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO-Target MCPU --></label>
+        <name>RO_Target_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Date --></label>
+        <name>Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE-Financial Plan MCPU --></label>
+        <name>SBE_Financial_Plan_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE-Launch ASP --></label>
+        <name>SBE_Launch_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE- Launch GM --></label>
+        <name>SBE_Launch_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE - Launch MCPU --></label>
+        <name>SBE_Launch_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE-Target GM --></label>
+        <name>SBE_Target_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBE-Target MCPU --></label>
+        <name>SBE_Target_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE-Target GM --></label>
+        <name>Target_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE-Target MCPU --></label>
+        <name>Target_MCPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

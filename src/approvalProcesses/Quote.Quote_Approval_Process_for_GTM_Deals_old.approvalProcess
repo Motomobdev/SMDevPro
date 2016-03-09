@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account</field>
+        <field>CreatedBy</field>
+        <field>Deal_Review_Date__c</field>
+        <field>ExecutiveSummary__c</field>
+        <field>Portfolio_Segment__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Notify_Owner_when_approved</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>c15223.md@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>carlof@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ftnr68.md@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>q14126.md@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteriaItems>
+                <field>Quote.IsASPFloor__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Is_A_P_Requested__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Quote.Substantial_Risk_Items__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>RejectRecord</ifCriteriaNotMet>
+        <label>SLT Global Approval</label>
+        <name>SLT_Global_Approval</name>
+        <rejectionActions>
+            <action>
+                <name>Notify_Creator_when_Rejected</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <emailTemplate>Deal_Templates/Deal_Approval_Notification</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( 
+HasStoplight__c = TRUE, 
+HasExecutiveSummary__c = TRUE, 
+NOT(ISPICKVAL(IsASPFloor__c,&apos;&apos;)), 
+OR(NOT(ISPICKVAL(HasMDFSDFDiscount__c,&apos;&apos;)), 
+AND(ISPICKVAL(HasMDFSDFDiscount__c,&apos;Yes&apos;), 
+NOT(ISPICKVAL(IsMDFSDFDiscount500k__c,&apos;&apos;)) 
+) 
+), 
+NOT(ISPICKVAL(IsTotalDiscount100k__c,&apos;&apos;)), 
+NOT(ISPICKVAL(IsNSBD25M__c,&apos;&apos;)) 
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Deal_Approved_2</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Deal_Approved_Notice</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Deal_Rejected_2</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Deal_Rejection_Notice</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Deal_Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Deal_Submission_Counter</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Quote Approval Process for GTM Deals OLD</label>
+    <recallActions>
+        <action>
+            <name>Deal_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

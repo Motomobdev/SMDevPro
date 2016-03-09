@@ -1,0 +1,15 @@
+<apex:page controller="CD_Copy_BPA_LOS" >
+<br/> &nbsp;&nbsp;&nbsp;   <img src="{!$Resource.cd_Motorola}" />
+<apex:outputlabel style="font-size:25px;" value="Copy BPA To LOS"></apex:outputlabel>
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+
+<apex:commandButton value="Copy BPA To LOS" action="{!costNotif}" />
+<apex:outputPanel rendered="{!display}">
+Please check your mail in 20 minutes for the list of LOS cost items with zero price.
+</apex:outputPanel>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

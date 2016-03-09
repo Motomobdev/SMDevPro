@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NDA</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NDAs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amendment Sent --></label>
+        <name>AmendmentSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amendment Signed --></label>
+        <name>AmendmentSigned__c</name>
+        <picklistValues>
+            <masterLabel>false</masterLabel>
+            <translation><!-- false --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>true</masterLabel>
+            <translation><!-- true --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approved By --></label>
+        <name>Approved_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Companion Products</masterLabel>
+            <translation><!-- Companion Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium Products</masterLabel>
+            <translation><!-- Premium Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Products</masterLabel>
+            <translation><!-- Value Products --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Companion MCR --></label>
+        <name>Companion_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Companion Products --></label>
+        <name>Companion_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Companion Prototype --></label>
+        <name>Companion_Prototype__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays contacts for the Outide party selected --></help>
+        <label><!-- NDA Company Contact --></label>
+        <name>Company_Contact__c</name>
+        <relationshipLabel><!-- NDAs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NDA Company --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- NDAs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Connected Party Approval Status --></label>
+        <name>Connected_Party_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DPL Status --></label>
+        <name>DPLStatus__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DPL Approved On --></label>
+        <name>DPL_Approved_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- DPL Comments --></label>
+        <name>DPL_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Approval Purpose --></label>
+        <name>Disclosure_Approval_Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Period --></label>
+        <name>Disclosure_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Purpose --></label>
+        <name>Disclosure_Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expires On --></label>
+        <name>Expires_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- FPL UserID --></label>
+        <name>FPL_UserID__c</name>
+    </fields>
+    <fields>
+        <label><!-- GPPD Color --></label>
+        <name>GPPD_Color__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governing Law --></label>
+        <name>Governing_Law__c</name>
+        <picklistValues>
+            <masterLabel>Alberta</masterLabel>
+            <translation><!-- Alberta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina</masterLabel>
+            <translation><!-- Argentina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation><!-- Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahamas</masterLabel>
+            <translation><!-- Bahamas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barbados</masterLabel>
+            <translation><!-- Barbados --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belize</masterLabel>
+            <translation><!-- Belize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bermuda</masterLabel>
+            <translation><!-- Bermuda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolivia</masterLabel>
+            <translation><!-- Bolivia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brasil</masterLabel>
+            <translation><!-- Brasil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Columbia</masterLabel>
+            <translation><!-- British Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chile</masterLabel>
+            <translation><!-- Chile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China P.R.</masterLabel>
+            <translation><!-- China P.R. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colombia</masterLabel>
+            <translation><!-- Colombia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica</masterLabel>
+            <translation><!-- Costa Rica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuba</masterLabel>
+            <translation><!-- Cuba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denmark</masterLabel>
+            <translation><!-- Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dominican Republic</masterLabel>
+            <translation><!-- Dominican Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecuador</masterLabel>
+            <translation><!-- Ecuador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Salvador</masterLabel>
+            <translation><!-- El Salvador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>England and Wales</masterLabel>
+            <translation><!-- England and Wales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guatemala</masterLabel>
+            <translation><!-- Guatemala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guiana</masterLabel>
+            <translation><!-- Guiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haiti</masterLabel>
+            <translation><!-- Haiti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honduras</masterLabel>
+            <translation><!-- Honduras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong</masterLabel>
+            <translation><!-- Hong Kong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Israel</masterLabel>
+            <translation><!-- Israel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamaica</masterLabel>
+            <translation><!-- Jamaica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japan</masterLabel>
+            <translation><!-- Japan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malaysia</masterLabel>
+            <translation><!-- Malaysia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico</masterLabel>
+            <translation><!-- Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicaraqua</masterLabel>
+            <translation><!-- Nicaraqua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ontario</masterLabel>
+            <translation><!-- Ontario --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panama</masterLabel>
+            <translation><!-- Panama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraguay</masterLabel>
+            <translation><!-- Paraguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peru</masterLabel>
+            <translation><!-- Peru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation><!-- Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation><!-- Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Republic of Korea</masterLabel>
+            <translation><!-- Republic of Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Federation</masterLabel>
+            <translation><!-- Russian Federation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore</masterLabel>
+            <translation><!-- Singapore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation><!-- South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suriname</masterLabel>
+            <translation><!-- Suriname --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switzerland</masterLabel>
+            <translation><!-- Switzerland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taiwan</masterLabel>
+            <translation><!-- Taiwan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trinidad</masterLabel>
+            <translation><!-- Trinidad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation><!-- United Kingdom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uruguay</masterLabel>
+            <translation><!-- Uruguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venezuela</masterLabel>
+            <translation><!-- Venezuela --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Victoria-Australia</masterLabel>
+            <translation><!-- Victoria-Australia --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Internal Product ID --></label>
+        <name>Internal_Product_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is this Product NDA --></label>
+        <name>IsProductNDA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Outside Party on Connected Person --></label>
+        <name>Is_Outside_Party_on_Connected_Person__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is this Multiparty? --></label>
+        <name>Is_this_Multiparty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Disclosure Type --></label>
+        <name>Legacy_Disclosure_Type__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Only</masterLabel>
+            <translation><!-- Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MCR Content --></label>
+        <name>MCR_Content__c</name>
+        <picklistValues>
+            <masterLabel>Leave</masterLabel>
+            <translation><!-- Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show</masterLabel>
+            <translation><!-- Show --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Modification Text --></label>
+        <name>Modification_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Entity --></label>
+        <name>Motorola_Entity__c</name>
+        <picklistValues>
+            <masterLabel>2013 Intellectual Property Investments, LLC</masterLabel>
+            <translation><!-- 2013 Intellectual Property Investments, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>280 North, Inc.</masterLabel>
+            <translation><!-- 280 North, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4thpass Inc.</masterLabel>
+            <translation><!-- 4thpass Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AirDefense, Inc. a wholly owned subsidiary of Motorola, Inc.</masterLabel>
+            <translation><!-- AirDefense, Inc. a wholly owned subsidiary of Motorola, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DP Acquisition 2006, LLC</masterLabel>
+            <translation><!-- DP Acquisition 2006, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dansk Beredskabskommunikation A/S</masterLabel>
+            <translation><!-- Dansk Beredskabskommunikation A/S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digianswer A/S</masterLabel>
+            <translation><!-- Digianswer A/S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Authorization Services, Inc.</masterLabel>
+            <translation><!-- General Instrument Authorization Services, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Belgium BVBA</masterLabel>
+            <translation><!-- General Instrument Belgium BVBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Canada Ltd.</masterLabel>
+            <translation><!-- General Instrument Canada Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Corporation</masterLabel>
+            <translation><!-- General Instrument Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Czech Republic s.r.o.</masterLabel>
+            <translation><!-- General Instrument Czech Republic s.r.o. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Germany GmbH</masterLabel>
+            <translation><!-- General Instrument Germany GmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Holdings, Inc.</masterLabel>
+            <translation><!-- General Instrument Holdings, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Israel LTD</masterLabel>
+            <translation><!-- General Instrument Israel LTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument LLC (Russia)</masterLabel>
+            <translation><!-- General Instrument LLC (Russia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Netherlands B.V.</masterLabel>
+            <translation><!-- General Instrument Netherlands B.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument New Zealand Limited</masterLabel>
+            <translation><!-- General Instrument New Zealand Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Poland sp. z o.o.</masterLabel>
+            <translation><!-- General Instrument Poland sp. z o.o. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Portugal, Unipessoal LDA</masterLabel>
+            <translation><!-- General Instrument Portugal, Unipessoal LDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Sweden AB</masterLabel>
+            <translation><!-- General Instrument Sweden AB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument Vietnam LLC</masterLabel>
+            <translation><!-- General Instrument Vietnam LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument de Guatemala S.A.</masterLabel>
+            <translation><!-- General Instrument de Guatemala S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument del Ecuador Getrument del Ecuador S.A.</masterLabel>
+            <translation><!-- General Instrument del Ecuador Getrument del Ecuador S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Instrument of Taiwan, Ltd.</masterLabel>
+            <translation><!-- General Instrument of Taiwan, Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Technology, Inc., a wholly owned subsidiary of Motorola, Inc.</masterLabel>
+            <translation><!-- Good Technology, Inc., a wholly owned subsidiary of Motorola, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hangzhou General Instrument Technologies Ltd.</masterLabel>
+            <translation><!-- Hangzhou General Instrument Technologies Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Engines, Inc.</masterLabel>
+            <translation><!-- Human Engines, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INO Servs. Esp. de Telecomunications Ltda.</masterLabel>
+            <translation><!-- INO Servs. Esp. de Telecomunications Ltda. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iridium Central America and Mexico, Inc.</masterLabel>
+            <translation><!-- Iridium Central America and Mexico, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorla Communications Israel Limited</masterLabel>
+            <translation><!-- Motorla Communications Israel Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola (Suisse) S.A.</masterLabel>
+            <translation><!-- Motorola (Suisse) S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola (Thailand) Ltd.</masterLabel>
+            <translation><!-- Motorola (Thailand) Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola A.B.</masterLabel>
+            <translation><!-- Motorola A.B. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola A/S, Denmark</masterLabel>
+            <translation><!-- Motorola A/S, Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Arabia Communications, Inc.</masterLabel>
+            <translation><!-- Motorola Arabia Communications, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Arabia, Inc.</masterLabel>
+            <translation><!-- Motorola Arabia, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Asia Limited</masterLabel>
+            <translation><!-- Motorola Asia Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Bretagne SAS</masterLabel>
+            <translation><!-- Motorola Bretagne SAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Centre de Recherche Crolles</masterLabel>
+            <translation><!-- Motorola Centre de Recherche Crolles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Comercial, S.A. de C.V.</masterLabel>
+            <translation><!-- Motorola Comercial, S.A. de C.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Communications Philippines, Inc.</masterLabel>
+            <translation><!-- Motorola Communications Philippines, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Cyprus Holding Limited</masterLabel>
+            <translation><!-- Motorola Cyprus Holding Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola EAD Bulgaria</masterLabel>
+            <translation><!-- Motorola EAD Bulgaria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Egypt Limited</masterLabel>
+            <translation><!-- Motorola Egypt Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Electronica de Puerto Rico, Inc.</masterLabel>
+            <translation><!-- Motorola Electronica de Puerto Rico, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Electronics Sdn. Bhd.</masterLabel>
+            <translation><!-- Motorola Electronics Sdn. Bhd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Finance B.V. Netherlands</masterLabel>
+            <translation><!-- Motorola Finance B.V. Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Hungary Communications Limited</masterLabel>
+            <translation><!-- Motorola Hungary Communications Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Inversiones S.A.</masterLabel>
+            <translation><!-- Motorola Inversiones S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Ireland Limited</masterLabel>
+            <translation><!-- Motorola Ireland Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Israel Information Systems Limited</masterLabel>
+            <translation><!-- Motorola Israel Information Systems Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Izhradio Services Center Russia</masterLabel>
+            <translation><!-- Motorola Izhradio Services Center Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Korea Technology Center, Ltd.</masterLabel>
+            <translation><!-- Motorola Korea Technology Center, Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Korea, Inc.</masterLabel>
+            <translation><!-- Motorola Korea, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola MCSC, Inc.</masterLabel>
+            <translation><!-- Motorola MCSC, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Maroc SA</masterLabel>
+            <translation><!-- Motorola Maroc SA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobile Communications, Russia</masterLabel>
+            <translation><!-- Motorola Mobile Communications, Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobilite ve Telekomunikasyon Cihazlari Limited Sirketi</masterLabel>
+            <translation><!-- Motorola Mobilite ve Telekomunikasyon Cihazlari Limited Sirketi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Australia Pty Ltd</masterLabel>
+            <translation><!-- Motorola Mobility Australia Pty Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Austria GmgH</masterLabel>
+            <translation><!-- Motorola Mobility Austria GmgH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Aviation Holdings N158M, LLC</masterLabel>
+            <translation><!-- Motorola Mobility Aviation Holdings N158M, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Aviation Holdings N550M, LLC</masterLabel>
+            <translation><!-- Motorola Mobility Aviation Holdings N550M, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Canada Limited</masterLabel>
+            <translation><!-- Motorola Mobility Canada Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Chennai Private Limited</masterLabel>
+            <translation><!-- Motorola Mobility Chennai Private Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Chile Limitada</masterLabel>
+            <translation><!-- Motorola Mobility Chile Limitada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Colombia S.A.S.</masterLabel>
+            <translation><!-- Motorola Mobility Colombia S.A.S. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Comércio de Produtos Eletrônicos Ltda.</masterLabel>
+            <translation><!-- Motorola Mobility Comércio de Produtos Eletrônicos Ltda. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility España, S.L</masterLabel>
+            <translation><!-- Motorola Mobility España, S.L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility France S.A.S.</masterLabel>
+            <translation><!-- Motorola Mobility France S.A.S. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Germany GmbH</masterLabel>
+            <translation><!-- Motorola Mobility Germany GmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Greece</masterLabel>
+            <translation><!-- Motorola Mobility Greece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Holdings B.V.</masterLabel>
+            <translation><!-- Motorola Mobility Holdings B.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Holdings LLC</masterLabel>
+            <translation><!-- Motorola Mobility Holdings LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Hong Kong Limited</masterLabel>
+            <translation><!-- Motorola Mobility Hong Kong Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility India Private Limited</masterLabel>
+            <translation><!-- Motorola Mobility India Private Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility International Capital LLC</masterLabel>
+            <translation><!-- Motorola Mobility International Capital LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility International Sales</masterLabel>
+            <translation><!-- Motorola Mobility International Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Investments, LLC</masterLabel>
+            <translation><!-- Motorola Mobility Investments, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Ireland</masterLabel>
+            <translation><!-- Motorola Mobility Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Italia S.r.l.</masterLabel>
+            <translation><!-- Motorola Mobility Italia S.r.l. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Japan Inc.</masterLabel>
+            <translation><!-- Motorola Mobility Japan Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility LLC</masterLabel>
+            <translation><!-- Motorola Mobility LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Mobile Communication Technologies Greece Single-Partner E.P.E.</masterLabel>
+            <translation><!-- Motorola Mobility Mobile Communication Technologies Greece Single-Partner E.P.E. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Netherlands One Cooperatief U.A.</masterLabel>
+            <translation><!-- Motorola Mobility Netherlands One Cooperatief U.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Netherlands Two B.V.</masterLabel>
+            <translation><!-- Motorola Mobility Netherlands Two B.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Peru S.R.L.</masterLabel>
+            <translation><!-- Motorola Mobility Peru S.R.L. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Poland Sp.z.o.o.</masterLabel>
+            <translation><!-- Motorola Mobility Poland Sp.z.o.o. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Puerto Rico</masterLabel>
+            <translation><!-- Motorola Mobility Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Sales and Services, Inc.</masterLabel>
+            <translation><!-- Motorola Mobility Sales and Services, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Singapore Pte. Ltd.</masterLabel>
+            <translation><!-- Motorola Mobility Singapore Pte. Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility South Africa (Proprietary) Limited</masterLabel>
+            <translation><!-- Motorola Mobility South Africa (Proprietary) Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Taiwan Ltd.</masterLabel>
+            <translation><!-- Motorola Mobility Taiwan Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd.</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Beijing Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Beijing Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Chengdu Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Chengdu Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Guangzhou Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Guangzhou Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Nanjing Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Nanjing Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Shanghai Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Shanghai Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Technologies (China) Co., Ltd. Shenzhen Branch</masterLabel>
+            <translation><!-- Motorola Mobility Technologies (China) Co., Ltd. Shenzhen Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility UK Limited</masterLabel>
+            <translation><!-- Motorola Mobility UK Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility UK Ltd. Dubai Branch</masterLabel>
+            <translation><!-- Motorola Mobility UK Ltd. Dubai Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility Venezuela S.A.</masterLabel>
+            <translation><!-- Motorola Mobility Venezuela S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility de Mexico, S.A. de C.V.</masterLabel>
+            <translation><!-- Motorola Mobility de Mexico, S.A. de C.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Mobility of Argentina S.A.</masterLabel>
+            <translation><!-- Motorola Mobility of Argentina S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Multimedia Sdn. Bhd.</masterLabel>
+            <translation><!-- Motorola Multimedia Sdn. Bhd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Nigeria Limited</masterLabel>
+            <translation><!-- Motorola Nigeria Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Norway A/S</masterLabel>
+            <translation><!-- Motorola Norway A/S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Polska Electronics Sp.z.o.o.</masterLabel>
+            <translation><!-- Motorola Polska Electronics Sp.z.o.o. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Radio Systems BV The Netherlands</masterLabel>
+            <translation><!-- Motorola Radio Systems BV The Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Romania SRL</masterLabel>
+            <translation><!-- Motorola Romania SRL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola S.p.A Italy</masterLabel>
+            <translation><!-- Motorola S.p.A Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Semiconductor Hong Kong Ltd.</masterLabel>
+            <translation><!-- Motorola Semiconductor Hong Kong Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Semiconductor Israel Limited</masterLabel>
+            <translation><!-- Motorola Semiconductor Israel Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Seniconducteurs S.A.S.</masterLabel>
+            <translation><!-- Motorola Seniconducteurs S.A.S. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Smartnet Pty Limited</masterLabel>
+            <translation><!-- Motorola Smartnet Pty Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola South - Israel Limited</masterLabel>
+            <translation><!-- Motorola South - Israel Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola South Asia Pte Ltd</masterLabel>
+            <translation><!-- Motorola South Asia Pte Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Technologies Lanka Private Limited</masterLabel>
+            <translation><!-- Motorola Technologies Lanka Private Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Technology Sdn. Bhd.</masterLabel>
+            <translation><!-- Motorola Technology Sdn. Bhd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Telecommunications Bangladesh Private Limited</masterLabel>
+            <translation><!-- Motorola Telecommunications Bangladesh Private Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Trademark Holdings, LLC</masterLabel>
+            <translation><!-- Motorola Trademark Holdings, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Trading Center Pte. Ltd.</masterLabel>
+            <translation><!-- Motorola Trading Center Pte. Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Ukraine TZOV</masterLabel>
+            <translation><!-- Motorola Ukraine TZOV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Uruguay S.A.</masterLabel>
+            <translation><!-- Motorola Uruguay S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Bolivia S.A.</masterLabel>
+            <translation><!-- Motorola de Bolivia S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Centro America S.A.</masterLabel>
+            <translation><!-- Motorola de Centro America S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Costa Rica S.A.</masterLabel>
+            <translation><!-- Motorola de Costa Rica S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de El Salvador S.A.</masterLabel>
+            <translation><!-- Motorola de El Salvador S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Guatemala S.A.</masterLabel>
+            <translation><!-- Motorola de Guatemala S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Juarez, S de R.L. de C.V.</masterLabel>
+            <translation><!-- Motorola de Juarez, S de R.L. de C.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Nogales S.A. de C.V.</masterLabel>
+            <translation><!-- Motorola de Nogales S.A. de C.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de Reynosa, S. de R.L. de C.V.</masterLabel>
+            <translation><!-- Motorola de Reynosa, S. de R.L. de C.V. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola de la Republica Dominicana S.A.</masterLabel>
+            <translation><!-- Motorola de la Republica Dominicana S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola del Peru S.A.</masterLabel>
+            <translation><!-- Motorola del Peru S.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola(Beijing) Mobility Technologies Co., Ltd.</masterLabel>
+            <translation><!-- Motorola(Beijing) Mobility Technologies Co., Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT Motorola Mobility Indonesia</masterLabel>
+            <translation><!-- PT Motorola Mobility Indonesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soundbuzz Australia Pty Ltd</masterLabel>
+            <translation><!-- Soundbuzz Australia Pty Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soundbuzz India Pvt. Ltd.</masterLabel>
+            <translation><!-- Soundbuzz India Pvt. Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soundbuzz Pte ltd</masterLabel>
+            <translation><!-- Soundbuzz Pte ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbol Technologies India Private Limited</masterLabel>
+            <translation><!-- Symbol Technologies India Private Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbol Technologies Limited</masterLabel>
+            <translation><!-- Symbol Technologies Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbol Technologies, Inc., the Enterprise Mobility business of Motorola, Inc.</masterLabel>
+            <translation><!-- Symbol Technologies, Inc., the Enterprise Mobility business of Motorola, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TETRON Sicherheitsnetz Einrichtungs- und BetriebsgmbH</masterLabel>
+            <translation><!-- TETRON Sicherheitsnetz Einrichtungs- und BetriebsgmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTP Communications Ltd</masterLabel>
+            <translation><!-- TTP Communications Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTPCom Consultancy (Shanghai) Company Ltd</masterLabel>
+            <translation><!-- TTPCom Consultancy (Shanghai) Company Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTPCom Ltd</masterLabel>
+            <translation><!-- TTPCom Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Three Laws Mobility, Inc</masterLabel>
+            <translation><!-- Three Laws Mobility, Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viewdle Inc</masterLabel>
+            <translation><!-- Viewdle Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WR Hambrecht Ventures II-B, LLC</masterLabel>
+            <translation><!-- WR Hambrecht Ventures II-B, LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zecter, Inc</masterLabel>
+            <translation><!-- Zecter, Inc --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Multiparty Company --></label>
+        <name>Multiparty_Company__c</name>
+        <relationshipLabel><!-- NDAs (NDA_Company) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NDA File ID --></label>
+        <name>NDAFileID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDAID Migration --></label>
+        <name>NDAID_Migration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>NDARegion__c</name>
+        <picklistValues>
+            <masterLabel>Asia Pac - Chinese</masterLabel>
+            <translation><!-- Asia Pac - Chinese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia Pac - English</masterLabel>
+            <translation><!-- Asia Pac - English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia-Pacific (Japan)</masterLabel>
+            <translation><!-- Asia-Pacific (Japan) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia-Pacific (North Asia)</masterLabel>
+            <translation><!-- Asia-Pacific (North Asia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brasil - Portuguese</masterLabel>
+            <translation><!-- Brasil - Portuguese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil  - English</masterLabel>
+            <translation><!-- Brazil  - English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - Spanish</masterLabel>
+            <translation><!-- Brazil - Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - English</masterLabel>
+            <translation><!-- EMEA - English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe - German</masterLabel>
+            <translation><!-- Europe - German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe - Poland</masterLabel>
+            <translation><!-- Europe - Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe - Spanish</masterLabel>
+            <translation><!-- Europe - Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe, Middle East &amp; Africa</masterLabel>
+            <translation><!-- Europe, Middle East &amp; Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - English &amp; Portuguese</masterLabel>
+            <translation><!-- Latin America - English &amp; Portuguese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - English &amp; Spanish</masterLabel>
+            <translation><!-- Latin America - English &amp; Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - Spanish</masterLabel>
+            <translation><!-- Latin America - Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America - English</masterLabel>
+            <translation><!-- North America - English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russia</masterLabel>
+            <translation><!-- Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation><!-- United Kingdom --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NDA Status --></label>
+        <name>NDAStatus__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executed</masterLabel>
+            <translation><!-- Executed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executed-Mod</masterLabel>
+            <translation><!-- Executed-Mod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Save</masterLabel>
+            <translation><!-- Save --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NDA Color --></label>
+        <name>NDA_Color__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays contact for multiparty company selected --></help>
+        <label><!-- NDA Multiparty Company Contact --></label>
+        <name>NDA_Multiparty_Company_Contact__c</name>
+        <relationshipLabel><!-- NDAs (NDA Multiparty Company Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NDA Specialist --></label>
+        <name>NDA_Specialist__c</name>
+        <picklistValues>
+            <masterLabel>cmwf84@motorola.com</masterLabel>
+            <translation><!-- cmwf84@motorola.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>cwnj83@motorola.com</masterLabel>
+            <translation><!-- cwnj83@motorola.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>esw001c@motorola.com</masterLabel>
+            <translation><!-- esw001c@motorola.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mwcp74@motorola.com</masterLabel>
+            <translation><!-- mwcp74@motorola.com --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NDA file signed date --></label>
+        <name>NDA_file_signed_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium MCR --></label>
+        <name>Premium_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Products --></label>
+        <name>Premium_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Prototype --></label>
+        <name>Premium_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prototype --></label>
+        <name>Prototype__c</name>
+        <picklistValues>
+            <masterLabel>Leave</masterLabel>
+            <translation><!-- Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show</masterLabel>
+            <translation><!-- Show --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested By Name --></label>
+        <name>Requested_By_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested By --></label>
+        <name>Requested_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Core Directory --></label>
+        <name>Requester__c</name>
+        <relationshipLabel><!-- NDAs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Software MCR --></label>
+        <name>Software_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software Prototype --></label>
+        <name>Software_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software --></label>
+        <name>Software__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term of Protection --></label>
+        <name>Term_of_Protection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ToBeApprovedByID --></label>
+        <name>ToBeApprovedByID__c</name>
+    </fields>
+    <fields>
+        <label><!-- VP Name 2 --></label>
+        <name>VP_Name_2__c</name>
+        <relationshipLabel><!-- NDAs (NDA) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- VP Name --></label>
+        <name>VP_Name__c</name>
+        <relationshipLabel><!-- NDAs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Value MCR --></label>
+        <name>Value_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Products --></label>
+        <name>Value_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Prototype --></label>
+        <name>Value_Prototype__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin NDA Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>NDA Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- NDA --></label>
+        <name>NDA</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- EchoSign --></label>
+        <name>EchoSign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Loop_Attach_as_PDF --></label>
+        <name>Loop_Attach_as_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Loop_Plus --></label>
+        <name>Loop_Plus</name>
+    </webLinks>
+</CustomObjectTranslation>

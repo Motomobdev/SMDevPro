@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meeting External Attendee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meeting External Attendees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Customer Meeting --></label>
+        <name>Customer_Meeting__c</name>
+        <relationshipLabel><!-- Meeting External Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Attendee --></label>
+        <name>External_Attendee__c</name>
+        <relationshipLabel><!-- Meeting External Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

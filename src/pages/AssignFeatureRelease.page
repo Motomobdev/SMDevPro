@@ -1,0 +1,24 @@
+<apex:page standardcontroller="Feature__c" extensions="AssignFeatureReleaseExtension" recordSetVar="features">
+<apex:Messages />
+<apex:form >
+<apex:pageblock title="Assign Feature Release">
+<apex:pageBlockButtons >
+<apex:commandButton action="{!doSave}" value="Save"/>
+<apex:commandButton action="{!doCancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Select nothing will assign blank to features" collapsible="false">
+<apex:inputField value="{!featureRelease.Release__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1" title="Selected Features">
+<apex:pageBlockTable value="{!selectedFeatures}" var="sf">
+<apex:column value="{!sf.name}"/>
+<apex:column value="{!sf.Release__c}"/>
+<apex:column value="{!sf.Feature__c}"/>
+<apex:column value="{!sf.Phase__c}"/>
+<apex:column value="{!sf.Type__c}"/>
+<apex:column value="{!sf.Description__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageblock>
+</apex:form>
+</apex:page>

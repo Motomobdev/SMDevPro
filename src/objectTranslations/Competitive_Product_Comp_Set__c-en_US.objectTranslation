@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competitive Product Comp Set</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitive Product Comp Set</value>
+    </caseValues>
+    <fields>
+        <label><!-- Competitor Products --></label>
+        <name>Competitor_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- CreatedOn --></label>
+        <name>CreatedOn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Product --></label>
+        <name>Motorola_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Side by Side Link --></label>
+        <name>Side_by_Side_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Competitive Product Comp Set --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Competitive Product Comp Set Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

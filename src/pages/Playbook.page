@@ -1,0 +1,44 @@
+<apex:page standardController="Retail_Playbook__c" extensions="PlaybookCtr">
+
+    <apex:sectionHeader title="Playbook"/>
+    <apex:pageMessages />
+        
+    <apex:form id="form" title="Playbook" >
+
+        <apex:actionFunction name="statusChange" action="{!checkIfStatusReasonRequired}" reRender="form" immediate="true" >
+            <apex:param name="newStatus" assignTo="{!newStatus}" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="typeChange" action="{!checkIfTypeOKR}" reRender="form" immediate="true" >
+            <apex:param name="newType" assignTo="{!newType}" value="" />
+        </apex:actionFunction>
+    
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" >
+                <apex:inputField value="{!Retail_Playbook__c.Account__c}" required="true"/>
+                <apex:inputField value="{!Retail_Playbook__c.Period_Year__c}" required="true"/>
+                <apex:inputField value="{!Retail_Playbook__c.Period_Quarter__c}" required="true"/>
+
+                <apex:inputField value="{!Retail_Playbook__c.Type__c}" required="true" onchange="typeChange(this.value)"/>
+                <apex:inputField value="{!Retail_Playbook__c.OKR__c}" rendered="{!(Retail_Playbook__c.Type__c == 'OKR' && newType == null) || newType == 'OKR'}" required="true" />
+                <apex:pageBlockSectionItem rendered="{!Retail_Playbook__c.Id == null}">
+                    <apex:outputLabel value="Status" />
+                    <apex:outputText value="On Plan" />
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!Retail_Playbook__c.Status__c}" required="true" onchange="statusChange(this.value)" rendered="{!Retail_Playbook__c.Id != null}"/>
+                <apex:inputField value="{!Retail_Playbook__c.Status_Reason__c}" rendered="{!(Retail_Playbook__c.Status__c == 'Behind Plan' && newStatus == null) || newStatus == 'Behind Plan'}" required="true"/>
+                <apex:inputField value="{!Retail_Playbook__c.Status_Reason_Description__c}" rendered="{!(Retail_Playbook__c.Status__c == 'Behind Plan' && newStatus == null) || newStatus == 'Behind Plan'}" required="true"/>
+                
+                <apex:inputField value="{!Retail_Playbook__c.Description__c}"/>
+                <apex:inputField value="{!Retail_Playbook__c.Playbook_Details__c}" style="width:90%"/>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

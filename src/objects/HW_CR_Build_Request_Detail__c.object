@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Related listing item for association of product engineering review records (PE) to factory build requests (FBR).  Specific engineering requirements and component numbers will be contained within each record.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EE_Reference_Designator__c</fullName>
+        <description>PCBA reference designator</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PCBA reference designator</inlineHelpText>
+        <label>EE Ref-Des</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Product_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Planner must reselect the product name for the proper related list filter.  Product selection must match the product name listed within the FBR planning object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planner must reselect the product name for the proper related list filter.  Product selection must match the product name listed within the FBR planning object.</inlineHelpText>
+        <label>FBR Product Name</label>
+        <referenceTo>Device__c</referenceTo>
+        <relationshipLabel>Build Request Details</relationshipLabel>
+        <relationshipName>Build_Request_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HW_CR_PE_Record__c</fullName>
+        <description>Direct link to the engineering review record associated to the pilot build being created and scheduled.  Field will link FBR record to PE record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Direct link to the engineering review record associated to the pilot build being created and scheduled.  Field will link FBR record to PE record.</inlineHelpText>
+        <label>HW CR PE Record</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Top_Eng_Review_Status__c</field>
+                <operation>equals</operation>
+                <value>&quot;Review Complete&quot;</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>&quot;Yes&quot;</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_Family__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Family__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Top_Eng_Approval_Status__c</field>
+                <operation>equals</operation>
+                <value>&quot;In Process&quot;</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>Build Request Details</relationshipLabel>
+        <relationshipName>Build_Request_Details</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ME_Reference_Assembly__c</fullName>
+        <description>Top purchased assembly level of internal factory or EMS.  Enter &apos;01&apos;, &apos;SNN&apos;, &apos;SHN&apos;, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Top purchased assembly level of internal factory or EMS.  Enter &apos;01&apos;, &apos;SNN&apos;, &apos;SHN&apos;, etc.</inlineHelpText>
+        <label>ME Ref Assembly</label>
+        <length>14</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PE_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(HW_CR_PE_Record__c   &lt;&gt; null,  HW_CR_PE_Record__r.Id, null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PE Record</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Description__c</fullName>
+        <description>Part description as listed within MotoPDM or Oracle</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Part description as listed within MotoPDM or Oracle</inlineHelpText>
+        <label>Part Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <description>Part number associated to change request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If electrical part ensure to enter reference designator, if mechanical part ensure to reference the top MMI kit purchased for use within manufacturing.</inlineHelpText>
+        <label>Part Number</label>
+        <length>14</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Type__c</fullName>
+        <description>Select top level part type in order to help factory to determine if it is a front-end SMT placement or back-end assembly.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select top level part type in order to help factory to determine if it is a front-end SMT placement or back-end assembly.</inlineHelpText>
+        <label>Part Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Electrical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mechanical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A product family impacted by specific line item HW Change</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A product family impacted by specific line item HW Change</inlineHelpText>
+        <label>Product Family</label>
+        <referenceTo>Product_Family__c</referenceTo>
+        <relationshipLabel>Build Request Details</relationshipLabel>
+        <relationshipName>Build_Request_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_FBR_Number__c</fullName>
+        <description>The master FBR number associated with the build detail.</description>
+        <externalId>false</externalId>
+        <label>Related FBR Number</label>
+        <referenceTo>HW_CR_Build_Planning__c</referenceTo>
+        <relationshipLabel>Build Request Details</relationshipLabel>
+        <relationshipName>Build_Request_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Related_Ship_Tracking__c</fullName>
+        <description>Field to record shipment tracking of particular supplier samples.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to record shipment tracking of particular supplier samples.</inlineHelpText>
+        <label>Related Ship Tracking</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HW CR Build Request Detail</label>
+    <nameField>
+        <label>Line</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Build Request Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

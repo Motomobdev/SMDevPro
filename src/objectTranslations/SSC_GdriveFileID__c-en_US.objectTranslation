@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Supplier GDrive File</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Supplier GDrive Files</value>
+    </caseValues>
+    <fields>
+        <label><!-- File ID --></label>
+        <name>File_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generation Date --></label>
+        <name>Generation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Identifier --></label>
+        <name>Template_Identifier__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,101 @@
+<apex:page standardcontroller="Contract" extensions="LRBInitialDealController" sidebar="false"> 
+
+<style>
+    .headerStyle{
+        background-color:#787878 !important;
+        color:#787878;
+    }
+</style>
+        
+<body>
+<!-- <table width="1280" align="center" border=".5" cellspacing="0" cellpadding="0"> -->
+<table width="100%" align="center" border=".5" cellspacing="0" cellpadding="0">
+<tr>
+<!-- <td width="1280"> -->
+<td>
+    <apex:form >
+    <apex:pageBlock mode="edit">
+    <h1>
+        <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+            <span style="font-size:20px;color:#FFFFFF;align:center;"><strong>LRB INITIAL DEAL REQUEST FORM (Page 4a/5)</strong></span>
+        </div>
+    </h1>
+
+    <br />   
+    <br />
+
+    <h2>
+        <span style="font-size:20px;color:#000000;align:center;"><strong>Add Royalty Based Rate Table(s) for each Application. Select one or more to enter a table for:</strong></span>
+    </h2>
+    <br />
+    <br />  
+    <apex:outputText value="No Application Selected" style="font-size:16px;font-style:italic;margin-left:1%;" rendered="{!appNameList.size==0}"/>    
+    <apex:pageBlockTable value="{!wrapApplicationNameList}" var="app" title="These are the Applications that need a Rate Based Royalty Rule Table" id="appNameTable">
+        <apex:column headerValue="Selected">
+            <apex:facet name="header">
+                <apex:commandLink action="{!selectAllAppsInWrapAppNameList}" value="Select All/None" rerender="appNameTable" />
+            </apex:facet>                
+            <apex:inputCheckbox value="{!app.selected}"/>
+        </apex:column> 
+        <apex:column headerValue="Application Name">
+            <apex:outputText value="{!app.appName}"/>
+        </apex:column>                
+    </apex:pageBlockTable>
+    <br />
+    <br />
+    <h2>
+        <span style="font-size:16px;color:#000000;align:center;">These Applications already have Rate Based Royalty Tables added (Tables open in new window/tab):</span>
+    </h2>
+    <apex:pageBlockTable value="{!conAppsWithExistingRateTables}" var="conapp" title="Applications that already have Rate Based Royalty Tables. (Tables open in new window)" id="appRateTable">        
+        <apex:column headerValue="Application Name">
+            <apex:outputText value="{!conapp.Application__r.Name}"/>
+        </apex:column>
+        <apex:column headerValue="Rate Based Royalty Table Name (Clicking link will open table into new tab for you to see or edit the data)"> 
+        	<apex:outputLink value="{!URLFOR($Action.Contract_Rate_Based_Royalty__c.View, conapp.Contract_Rate_Based_Royalty_Table__c)}" target="_blank">{!conapp.Contract_Rate_Based_Royalty_Table__r.Name}</apex:outputLink> 
+        </apex:column>          
+    </apex:pageBlockTable>
+    <br />
+    <br />
+        
+    <div align="center">
+        <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageSubmit)>0}"/>
+        <apex:outputText value="{!errorMessageSubmit}" style="margin-left:1%;color:red;" rendered="{!LEN(errorMessageSubmit)>0}" />
+        <apex:panelGrid columns="5" id="theGrid">
+	    	<apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+	    	<apex:commandButton action="{!previousAppAvailableCountries}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+	    	<apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:auto;" />
+	    	<apex:commandButton rendered="{!!areThereMoreAppsToAddRateTables}" action="{!createBlankRateTableForSelectedApps}" value="Selected Apps Have No Rate Table" style="width:200px;align:center;margin-right:auto;margin-left:auto;" />
+	    	<apex:commandButton rendered="{!!areThereMoreAppsToAddRateTables}" action="{!nextCreateRateTableForSelectedApps2}" value="Add Rate Table For Selected Apps" style="width:200px;align:center;margin-right:auto;margin-left:auto;" />
+	    	<apex:commandButton rendered="{!areThereMoreAppsToAddRateTables}" action="{!nextAccMemo}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+	    </apex:panelGrid>
+        <!-- <apex:dataTable value="{!contract}" var="app" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:21%;">
+            <apex:column >
+                <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+            </apex:column>     
+            
+            <apex:column >
+                <apex:commandButton action="{!previousAppAvailableCountries}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+            </apex:column>
+            
+            <apex:column >
+            	<apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:10%;" />
+        	</apex:column>
+             
+            <apex:column >
+                <apex:commandButton action="{!createBlankRateTableForSelectedApps}" value="Selected Apps Have No Rate Table" style="width:200px;align:center;margin-right:auto;margin-left:8%;" />
+            </apex:column>
+            
+            <apex:column >
+                <apex:commandButton action="{!nextCreateRateTableForSelectedApps2}" value="Add Rate Table For Selected Apps" style="width:200px;align:center;margin-right:auto;margin-left:8%;" />
+            </apex:column>            
+        </apex:dataTable>
+         -->
+    </div>
+    <br />
+    </apex:pageBlock>          
+    </apex:form>
+</td>
+</tr>
+</table>
+</body>
+</apex:page>

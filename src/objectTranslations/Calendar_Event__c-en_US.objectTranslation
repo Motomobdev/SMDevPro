@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Calendar Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Calendar Events</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Description --></label>
+        <name>Event_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Name --></label>
+        <name>Event_Name__c</name>
+        <picklistValues>
+            <masterLabel>Appelate Court</masterLabel>
+            <translation><!-- Appelate Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contempt of Court proceedings</masterLabel>
+            <translation><!-- Contempt of Court proceedings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Patent Court (Nullity)</masterLabel>
+            <translation><!-- Federal Patent Court (Nullity) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lower Court</masterLabel>
+            <translation><!-- Lower Court --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PI proceedings</masterLabel>
+            <translation><!-- PI proceedings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Court of Federal Appeals (CAFC)</masterLabel>
+            <translation><!-- US Court of Federal Appeals (CAFC) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Reference Number --></label>
+        <name>File_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Case --></label>
+        <name>Legal_Case__c</name>
+        <relationshipLabel><!-- Calendar Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Patent --></label>
+        <name>Patent__c</name>
+        <relationshipLabel><!-- Calendar Events --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

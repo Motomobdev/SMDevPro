@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>RO_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Price</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO_Probability__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Probability</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RO_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Demand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RO_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Units</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO__c</fullName>
+        <externalId>false</externalId>
+        <label>RO</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Outlook_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Retail Outlook Line</label>
+        <referenceTo>Retail_Outlook_Line__c</referenceTo>
+        <relationshipLabel>Retail Outlook ROs</relationshipLabel>
+        <relationshipName>Retail_Outlook_ROs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Retail Outlook RO</label>
+    <nameField>
+        <displayFormat>WOLRO-{000000}</displayFormat>
+        <label>Retail Outlook RO</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Retail Outlook ROs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Deny_Upd_Outlook_RO_Prc_if_Outook_Lockd</fullName>
+        <active>true</active>
+        <description>User cannot update RO Price field if Outlook is locked.</description>
+        <errorConditionFormula>AND( Retail_Outlook_Line__r.Retail_Outlook__r.Outlook_Locked__c, 
+OR(AND(ISNULL(PRIORVALUE( RO_Price__c)),NOT(ISNULL(RO_Price__c))),
+AND(NOT(ISNULL(PRIORVALUE( RO_Price__c))),ISNULL(RO_Price__c)),
+PRIORVALUE(RO_Price__c) &lt;&gt; RO_Price__c))</errorConditionFormula>
+        <errorMessage>You cannot change RO Price if Outlook is locked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Deny_Upd_Outlook_RO_Units_ifOutook_Lockd</fullName>
+        <active>true</active>
+        <description>User cannot update RO Units field if Outlook is locked.</description>
+        <errorConditionFormula>AND( Retail_Outlook_Line__r.Retail_Outlook__r.Outlook_Locked__c, 
+OR(AND(ISNULL(PRIORVALUE( RO_Units__c)),NOT(ISNULL(RO_Units__c))),
+AND(NOT(ISNULL(PRIORVALUE( RO_Units__c))),ISNULL(RO_Units__c)),
+PRIORVALUE(RO_Units__c) &lt;&gt; RO_Units__c))</errorConditionFormula>
+        <errorMessage>You cannot change RO Units if Outlook is locked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Deny_Upd_RO_Probability_if_Outlook_Lockd</fullName>
+        <active>true</active>
+        <description>Users cannot change RO Probability on locked outlooks.</description>
+        <errorConditionFormula>AND( Retail_Outlook_Line__r.Retail_Outlook__r.Outlook_Locked__c, 
+TEXT(PRIORVALUE(RO_Probability__c)) &lt;&gt; TEXT(RO_Probability__c))</errorConditionFormula>
+        <errorMessage>You cannot change the RO Probability field for locked outlooks.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RO_Probability_Validate_Null</fullName>
+        <active>true</active>
+        <description>User must select value for Probability</description>
+        <errorConditionFormula>TEXT(RO_Probability__c) = NULL</errorConditionFormula>
+        <errorDisplayField>RO_Probability__c</errorDisplayField>
+        <errorMessage>must select value for Probability</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RO_Type_Validation_Price</fullName>
+        <active>true</active>
+        <description>Validate that if type of &quot;Price&quot; is selected, the price field is non-null and a positive number.</description>
+        <errorConditionFormula>AND(TEXT(RO_Type__c) = &apos;Price&apos;, ISBLANK(RO_Price__c))</errorConditionFormula>
+        <errorMessage>If you select a type of Price, you must provide a valid price value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RO_Type_Validation_Units</fullName>
+        <active>true</active>
+        <description>If a type of anything other than &quot;Price&quot; is selected, units must be a positive integer.</description>
+        <errorConditionFormula>AND( TEXT( RO_Type__c ) != &apos;Price&apos; , ISBLANK( RO_Units__c ) )</errorConditionFormula>
+        <errorMessage>If you select a type of Demand, Supply or Other, you must provide a valid units value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RO_Validate_Null</fullName>
+        <active>true</active>
+        <description>User must select a value for RO</description>
+        <errorConditionFormula>TEXT(RO__c) = NULL</errorConditionFormula>
+        <errorMessage>You must select a value for RO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ro_Type_Validate_Null</fullName>
+        <active>true</active>
+        <description>User must select value for Type</description>
+        <errorConditionFormula>TEXT(RO_Type__c) = NULL</errorConditionFormula>
+        <errorMessage>You must select value for Probability</errorMessage>
+    </validationRules>
+</CustomObject>

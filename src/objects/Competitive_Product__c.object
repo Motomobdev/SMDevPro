@@ -1,0 +1,3643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Specs of Motorola and Competitor&apos;s products</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ASP_Range__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ASP__c &gt; 0, &apos;$&apos; &amp; (TEXT(ROUND(ASP__c - 5, 0)) &amp; &apos; - &apos; &amp; &apos;$&apos; &amp; TEXT(ROUND(ASP__c + 5, 0))), &apos;NA&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ASP Range</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>ASP ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Accelerometer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Accelerometer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Analog_TV__c</fullName>
+        <externalId>false</externalId>
+        <label>Analog TV</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Audio_Player__c</fullName>
+        <externalId>false</externalId>
+        <label>Audio Player</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Barometer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Barometer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Battery_Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Battery Capacity (mAh)</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bluetooth__c</fullName>
+        <externalId>false</externalId>
+        <label>Bluetooth</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ACER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ALCATEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ALLVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMAZON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMOI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMTEK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APPLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARCHOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASUS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BEIDOU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACKBERRY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CELKON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COOLPAD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DELL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FUJITSU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G&apos;FIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIGABYTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIONEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAIER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HASEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HISENSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HTC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HUAWEI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICEMOBILE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JIAYU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KARBONN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K-TOUCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KYOCERA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAVA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LENOVO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAXX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MEIZU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MICROMAX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOTOROLA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEC CASIO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEXIAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOKIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OPPO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORANGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PANASONIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PANTECH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PHILIPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAMSUNG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SHARP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMARTFREN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SONY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SONY ERICSSON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TCL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T-MOBILE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOSHIBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UMI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VERYKOOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIDEOCON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIVO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VODAFONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WIKO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XIAOMI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XOLO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Browser__c</fullName>
+        <externalId>false</externalId>
+        <label>Browser</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPU__c</fullName>
+        <externalId>false</externalId>
+        <label>CPU</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Camera_Burst_Mode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Camera Burst Mode</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Camera__c</fullName>
+        <externalId>false</externalId>
+        <label>Camera (MP)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chipset__c</fullName>
+        <externalId>false</externalId>
+        <label>Chipset</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clockspeed__c</fullName>
+        <externalId>false</externalId>
+        <label>Clockspeed (MHz)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DLNA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DLNA</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Device_Picture__c</fullName>
+        <description>URL to device picture</description>
+        <externalId>false</externalId>
+        <label>Device Picture</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Dimensions__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(X__c), &apos;-&apos;, TEXT(X__c)) &amp; &apos; X &apos; &amp; IF(ISBLANK(Y__c), &apos;-&apos;, TEXT(Y__c)) &amp; &apos; X &apos; &amp; IF(ISBLANK(Z__c), &apos;-&apos;, TEXT(Z__c))</formula>
+        <label>Dimensions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Resolution__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Resolution</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Size</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Technology__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Technology</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display__c</fullName>
+        <description>comma separated list</description>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(
+ SUBSTITUTE(
+  SUBSTITUTE(
+   IF(ISBLANK(Display_Size__c), &apos;&apos;, &apos;{&apos; &amp; TEXT(Display_Size__c) &amp; &apos;&quot;}&apos;) &amp;
+   IF(ISBLANK(Display_Technology__c), &apos;&apos;, &apos;{&apos; &amp; Display_Technology__c &amp; &apos;}&apos;) &amp;
+   IF(ISBLANK(Display_Resolution__c), &apos;&apos;, &apos;{&apos; &amp; Display_Resolution__c &amp; &apos;}&apos;),
+  &apos;}{&apos;,&apos;, &apos;),
+ &apos;{&apos;,&apos;&apos;),
+&apos;}&apos;,&apos;&apos;)</formula>
+        <label>Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Domain__c</fullName>
+        <externalId>false</externalId>
+        <label>Domain</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smartphone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Dual_SIM__c</fullName>
+        <externalId>false</externalId>
+        <label>Dual SIM</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EDGE__c</fullName>
+        <externalId>false</externalId>
+        <label>EDGE</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Period_Diff__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Entry_Period__c) == &apos;&apos;,
+   0,
+   TODAY() - DATE(VALUE(RIGHT(TEXT(Entry_Period__c), 4)), CASE(LEFT(TEXT(Entry_Period__c), 2), &apos;Q1&apos;, 1, &apos;Q2&apos;, 4, &apos;Q3&apos;, 7, &apos;Q4&apos;, 10, 1), 1)
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entry Period Diff</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entry_Period_Reversed__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Entry_Period__c) != &apos;&apos;,
+   RIGHT(TEXT(Entry_Period__c), 4) &amp; &apos; &apos; &amp; LEFT(TEXT(Entry_Period__c), 2),
+   TEXT(Entry_Period__c))</formula>
+        <label>Entry Period Reversed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entry_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Q4 2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4 2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4 2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4 2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4 2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4 2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3 2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2 2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q1 2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Experiences__c</fullName>
+        <externalId>false</externalId>
+        <label>Experiences</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_Memory_Inbox__c</fullName>
+        <externalId>false</externalId>
+        <label>External Memory Inbox</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flash__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Focus__c</fullName>
+        <externalId>false</externalId>
+        <label>Focus</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Form_Factor__c</fullName>
+        <externalId>false</externalId>
+        <label>Form Factor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CLAMSHELL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLIP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QWERTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QWERTY TOUCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QWERTY TOUCH SLIDER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLIDER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOUCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOUCH SLIDER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UNCONFIRMED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>GPRS__c</fullName>
+        <externalId>false</externalId>
+        <label>GPRS</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GPS__c</fullName>
+        <externalId>false</externalId>
+        <label>GPS</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GPU__c</fullName>
+        <externalId>false</externalId>
+        <label>GPU</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HD_Video_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>HD Video Call</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HSDPA__c</fullName>
+        <externalId>false</externalId>
+        <label>HSDPA</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Secondary_Camera__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISBLANK(Secondary_Camera__c))</formula>
+        <label>Has Secondary Camera?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hotspot__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hotspot</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IPXX__c</fullName>
+        <externalId>false</externalId>
+        <label>IPXX</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Instant_Camera__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Instant Camera</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Integrated_Phone_Experience__c</fullName>
+        <externalId>false</externalId>
+        <label>Integrated Phone Experience</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Java__c</fullName>
+        <externalId>false</externalId>
+        <label>Java</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Life_Proof__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Scratch_Resistant__c == true, CONTAINS(IPXX__c, &apos;IP&apos;)), IPXX__c,
+ IF(AND(Scratch_Resistant__c == true, Water_Repellent__c == true), &apos;Scratch Resistant, Water Repellent&apos;, 
+  IF(Scratch_Resistant__c == true, &apos;Scratch Resistant&apos;, 
+   IF(CONTAINS(IPXX__c, &apos;IP&apos;), IPXX__c, 
+    IF(Water_Repellent__c == true, &apos;Water Repellent&apos;, &apos;NO&apos;)))))</formula>
+        <label>Life Proof</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multi_Touch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Multi Touch</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NFC__c</fullName>
+        <externalId>false</externalId>
+        <label>NFC</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Colors__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Colors</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OS_Upgrade__c</fullName>
+        <externalId>false</externalId>
+        <label>Upgrade OS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.1 (Éclair)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.2.1 (Froyo)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.2 (Froyo)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.3 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.4 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.5 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.6 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v3.0 (Honeycomb)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.0 (Ice Cream Sandwich)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.1 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.2 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.3 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.4.x</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.4 (KitKat)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bada OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bada v2.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BlackBerry OS 10.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BlackBerry OS 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 7.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry Tablet OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BREW 3.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BREW OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Firefox OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MeeGo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MeeGo 1.2 Harmattan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MMP OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nokia Asha OS 1.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS 2.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S40 Asha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S60 V9.4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbian Anna OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbian Belle OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ThreadX OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7.5 Mango</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7.8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7 Mango</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8 Black</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OS_Version_Number__c</fullName>
+        <description>Get major OS Version Number for color coding in the report</description>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(OS__c, &apos;&apos;), NOT(BEGINS(TEXT(OS__c), &apos;Android OS, v&apos;))), 0.0, VALUE(MID(TEXT(OS__c), 14,  3)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Android Version Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OS__c</fullName>
+        <externalId>false</externalId>
+        <label>Launch OS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.1 (Éclair)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.2.1 (Froyo)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.2 (Froyo)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.3 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.4 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.5 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3.6 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v2.3 (Gingerbread)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v3.0 (Honeycomb)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.0 (Ice Cream Sandwich)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.1 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.2 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.3 (Jelly Bean)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.4.x</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v4.4 (KitKat)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bada OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bada v2.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BlackBerry OS 10.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BlackBerry OS 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry OS 7.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry Tablet OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BREW 3.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BREW OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Firefox OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS 8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MeeGo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MeeGo 1.2 Harmattan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MMP OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nokia Asha OS 1.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nokia Asha OS 1.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS 2.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S40 Asha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S60 V9.4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbian Anna OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbian Belle OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ThreadX OS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tizen OS v2.2.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7.5 Mango</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7.8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 7 Mango</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Phone 8 Black</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v5.0 (Lollipop)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v5.0.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v5.0.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v5.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android OS, v5.1.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Operator_ATT__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AT&amp;T</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Operator_Sprint__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sprint</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Operator_T_Mobile__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>T-Mobile</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Operator_US_Cellular__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>US Cellular</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Operator_Verizon__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Verizon</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Operators__c</fullName>
+        <description>comma separated list of Operators</description>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF(Operator_ATT__c == true, &apos;{AT&amp;T}&apos;, &apos;&apos;) &amp;
+                                 IF(Operator_Sprint__c == true, &apos;{Sprint}&apos;, &apos;&apos;) &amp;
+                                 IF(Operator_T_Mobile__c == true, &apos;{T-Mobile}&apos;, &apos;&apos;) &amp;
+                                 IF(Operator_US_Cellular__c == true, &apos;{US Cellular}&apos;, &apos;&apos;) &amp;
+                                 IF(Operator_Verizon__c == true, &apos;{Verizon}&apos;, &apos;&apos;),
+                      &apos;}{&apos;,&apos;,&apos;),
+           &apos;{&apos;,&apos;&apos;),
+&apos;}&apos;,&apos;&apos;)</formula>
+        <label>Operators</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POP_IMAP__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>POP / IMAP Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Video_Frame_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Video Frame Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Processor_Cores__c</fullName>
+        <externalId>false</externalId>
+        <label>Processor Cores</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Single Core Multithreading</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dual Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dual Core Multithreading</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quad Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quad Core Multithreading</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Octa Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Octa Core Multithreading</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hexa Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hexa Core Multithreading</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Processor__c</fullName>
+        <description>comma separated value</description>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(
+ SUBSTITUTE(
+  SUBSTITUTE(
+   IF(ISBLANK(Chipset__c), &apos;&apos;, &apos;{&apos; &amp; Chipset__c &amp; &apos;}&apos;) &amp;
+   IF(ISBLANK(Clockspeed__c), &apos;&apos;, &apos;{&apos; &amp; TEXT(Clockspeed__c) &amp; &apos; MHz}&apos;) &amp;
+   IF(ISBLANK(CPU__c), &apos;&apos;, &apos;{&apos; &amp; CPU__c &amp; &apos;}&apos;) &amp;
+   IF(ISPICKVAL(Processor_Cores__c, &apos;&apos;), &apos;&apos;, &apos;{&apos; &amp; TEXT(Processor_Cores__c) &amp; &apos;}&apos;),
+  &apos;}{&apos;,&apos;, &apos;),
+ &apos;{&apos;,&apos;&apos;),
+&apos;}&apos;,&apos;&apos;)</formula>
+        <label>Processor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>80</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proximity_Sensor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Proximity Sensor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RAM_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>RAM (MB)</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROM__c</fullName>
+        <externalId>false</externalId>
+        <label>ROM (GB)</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Radio__c</fullName>
+        <externalId>false</externalId>
+        <label>Radio</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region_Asia__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Asia</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_China__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>China</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_Global__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Global</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_India__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>India</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_LATAM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LATAM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_NAM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NAM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_NPI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NPI</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Region_WE__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>WE</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Regions__c</fullName>
+        <description>Comma separated list of Regions</description>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF(Region_Asia__c == true, &apos;{Asia}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_China__c == true, &apos;{China}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_Global__c == true, &apos;{Global}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_India__c == true, &apos;{India}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_LATAM__c == true, &apos;{LATAM}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_NAM__c == true, &apos;{NAM}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_NPI__c == true, &apos;{NPI}&apos;, &apos;&apos;) &amp;
+                                 IF(Region_WE__c == true, &apos;{WE}&apos;, &apos;&apos;),
+                      &apos;}{&apos;,&apos;, &apos;),
+           &apos;{&apos;,&apos;&apos;),
+&apos;}&apos;,&apos;&apos;)</formula>
+        <label>Regions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SD_Card_Support__c</fullName>
+        <externalId>false</externalId>
+        <label>SD Card Support</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scratch_Resistant__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Scratch Resistant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Camera__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Camera</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Display__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Display</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Social_Networking__c</fullName>
+        <externalId>false</externalId>
+        <label>Social Networking</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standby__c</fullName>
+        <externalId>false</externalId>
+        <label>Standby (Hrs)</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TV_OUT__c</fullName>
+        <externalId>false</externalId>
+        <label>TV-OUT</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Talktime__c</fullName>
+        <externalId>false</externalId>
+        <label>Talktime (Mins)</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_GHz__c</fullName>
+        <description>Get total number of processor GHz. Used in reports.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Clockspeed__c), 0.0,
+IF(OR(ISPICKVAL(Processor_Cores__c, &apos;&apos;), ISPICKVAL(Processor_Cores__c, &apos;Proprietary&apos;), ISPICKVAL(Processor_Cores__c, &apos;Single Core&apos;)), Clockspeed__c, 
+IF(ISPICKVAL(Processor_Cores__c, &apos;Single Core Multithreading&apos;), Clockspeed__c * 1.5, 
+IF(ISPICKVAL(Processor_Cores__c, &apos;Dual Core&apos;), Clockspeed__c * 2.0, 
+IF(ISPICKVAL(Processor_Cores__c, &apos;Dual Core Multithreading&apos;), Clockspeed__c * 2.5, 
+IF(ISPICKVAL(Processor_Cores__c, &apos;Quad Core&apos;), Clockspeed__c * 4.0, 
+IF(ISPICKVAL(Processor_Cores__c, &apos;Quad Core Multithreading&apos;), Clockspeed__c * 4.5,
+IF(ISPICKVAL(Processor_Cores__c, &apos;Octa Core&apos;), Clockspeed__c * 8.0,
+IF(ISPICKVAL(Processor_Cores__c, &apos;Octa Core Multithreading&apos;), Clockspeed__c * 8.5,
+IF(ISPICKVAL(Processor_Cores__c, &apos;Hexa Core&apos;), Clockspeed__c * 16.0,
+IF(ISPICKVAL(Processor_Cores__c, &apos;Hexa Core Multithreading&apos;), Clockspeed__c * 16.5, 0.0)))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total GHz</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Touch_Screen__c</fullName>
+        <externalId>false</externalId>
+        <label>Touch Screen</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>USB__c</fullName>
+        <externalId>false</externalId>
+        <label>USB</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Calling__c</fullName>
+        <externalId>false</externalId>
+        <label>Video Calling</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Player__c</fullName>
+        <externalId>false</externalId>
+        <label>Video Player</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Recording__c</fullName>
+        <externalId>false</externalId>
+        <label>Video Recording</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Water_Repellent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Water Repellent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight (g)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wi_Fi_Direct__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Wi-Fi Direct</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Wi_Fi__c</fullName>
+        <externalId>false</externalId>
+        <label>Wi-Fi</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X35_mm_Jack__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>3.5 mm Jack</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X3D_Display__c</fullName>
+        <externalId>false</externalId>
+        <label>3D Display</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3G__c</fullName>
+        <externalId>false</externalId>
+        <label>3G</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X4G__c</fullName>
+        <externalId>false</externalId>
+        <label>4G</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X__c</fullName>
+        <externalId>false</externalId>
+        <label>X (mm)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Y__c</fullName>
+        <externalId>false</externalId>
+        <label>Y (mm)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Z__c</fullName>
+        <externalId>false</externalId>
+        <label>Z (mm)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isMotorola__c</fullName>
+        <description>Used in Report. Do no change.</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(Brand__c, &apos;MOTOROLA&apos;)</formula>
+        <label>isMotorola</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Competitive Product</label>
+    <listViews>
+        <fullName>All_Competitor_Products</fullName>
+        <columns>NAME</columns>
+        <columns>Brand__c</columns>
+        <columns>Product__c</columns>
+        <columns>Entry_Period__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Brand__c</field>
+            <operation>notEqual</operation>
+            <value>MOTOROLA</value>
+        </filters>
+        <label>All Competitor Products</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Motorola_Products</fullName>
+        <columns>NAME</columns>
+        <columns>Brand__c</columns>
+        <columns>Product__c</columns>
+        <columns>Entry_Period__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Brand__c</field>
+            <operation>equals</operation>
+            <value>MOTOROLA</value>
+        </filters>
+        <label>All Motorola Products</label>
+    </listViews>
+    <listViews>
+        <fullName>All_NPI_Products</fullName>
+        <columns>NAME</columns>
+        <columns>Brand__c</columns>
+        <columns>Product__c</columns>
+        <columns>Entry_Period__c</columns>
+        <columns>Region_Global__c</columns>
+        <columns>Region_Asia__c</columns>
+        <columns>Region_China__c</columns>
+        <columns>Region_India__c</columns>
+        <columns>Region_LATAM__c</columns>
+        <columns>Region_NAM__c</columns>
+        <columns>Region_WE__c</columns>
+        <columns>Regions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Region_NPI__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All NPI Products</label>
+    </listViews>
+    <listViews>
+        <fullName>Coming_Soon_Rumored</fullName>
+        <columns>NAME</columns>
+        <columns>Brand__c</columns>
+        <columns>Product__c</columns>
+        <columns>Entry_Period__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Entry_Period__c</field>
+            <operation>equals</operation>
+            <value>Coming Soon,Rumored</value>
+        </filters>
+        <label>Coming Soon &amp; Rumored</label>
+    </listViews>
+    <listViews>
+        <fullName>Recently_Added</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Recently Added</label>
+    </listViews>
+    <nameField>
+        <label>Brand-Product</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Competitive Products</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Competitor_Product</fullName>
+        <active>true</active>
+        <description>Competitor products</description>
+        <label>Competitor Product</label>
+        <picklistValues>
+            <picklist>Brand__c</picklist>
+            <values>
+                <fullName>ACER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCATEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALLVIEW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMAZON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMOI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMTEK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APPLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCHOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BEIDOU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACKBERRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CELKON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COOLPAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DELL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUJITSU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G%27FIVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GIGABYTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GIONEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAIER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HASEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HISENSE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUAWEI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICEMOBILE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JIAYU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K-TOUCH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KARBONN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KYOCERA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAVA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LENOVO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEIZU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MICROMAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEC CASIO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEXIAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOKIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PANASONIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PANTECH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHILIPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAMSUNG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHARP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMARTFREN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SONY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SONY ERICSSON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T-MOBILE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TCL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOSHIBA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UMI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VERYKOOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIDEOCON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIVO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VODAFONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WIKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIAOMI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XOLO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZTE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Domain__c</picklist>
+            <values>
+                <fullName>Mobile Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smartphone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Period__c</picklist>
+            <values>
+                <fullName>Q1 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2015</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Factor__c</picklist>
+            <values>
+                <fullName>BAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CLAMSHELL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLIP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY TOUCH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY TOUCH SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOUCH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOUCH SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNCONFIRMED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OS_Upgrade__c</picklist>
+            <values>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E1 %28Éclair%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2%2E1 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E4 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E5 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E6 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v3%2E0 %28Honeycomb%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E0 %28Ice Cream Sandwich%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E1 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E2 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E3 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4 %28KitKat%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4%2Ex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW 3%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada v2%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 10%2E2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry Tablet OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firefox OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MMP OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo 1%2E2 Harmattan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nokia Asha OS 1%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 2%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S40 Asha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S60 V9%2E4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Anna OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Belle OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ThreadX OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E5 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8 Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 8</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OS__c</picklist>
+            <values>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E1 %28Éclair%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2%2E1 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E4 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E5 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E6 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v3%2E0 %28Honeycomb%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E0 %28Ice Cream Sandwich%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E1 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E2 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E3 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4 %28KitKat%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4%2Ex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0 %28Lollipop%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0%2E2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E1%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW 3%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada v2%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 10%2E2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry Tablet OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firefox OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MMP OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo 1%2E2 Harmattan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nokia Asha OS 1%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nokia Asha OS 1%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 2%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S40 Asha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S60 V9%2E4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Anna OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Belle OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ThreadX OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tizen OS v2%2E2%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E5 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8 Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 8</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processor_Cores__c</picklist>
+            <values>
+                <fullName>Dual Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dual Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hexa Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hexa Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Octa Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Octa Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quad Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quad Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Motorola_Product</fullName>
+        <active>true</active>
+        <description>Motorola products</description>
+        <label>Motorola Product</label>
+        <picklistValues>
+            <picklist>Brand__c</picklist>
+            <values>
+                <fullName>MOTOROLA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SMARTFREN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIVO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Domain__c</picklist>
+            <values>
+                <fullName>Mobile Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smartphone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Period__c</picklist>
+            <values>
+                <fullName>Q1 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3 2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4 2015</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Factor__c</picklist>
+            <values>
+                <fullName>BAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CLAMSHELL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLIP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY TOUCH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QWERTY TOUCH SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOUCH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOUCH SLIDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNCONFIRMED</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OS_Upgrade__c</picklist>
+            <values>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E1 %28Éclair%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2%2E1 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E4 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E5 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E6 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v3%2E0 %28Honeycomb%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E0 %28Ice Cream Sandwich%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E1 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E2 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E3 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4 %28KitKat%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4%2Ex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW 3%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BREW OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bada v2%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 10%2E2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BlackBerry OS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry OS 7%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blackberry Tablet OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firefox OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MMP OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MeeGo 1%2E2 Harmattan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nokia Asha OS 1%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 2%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S40 Asha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S60 V9%2E4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Anna OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Symbian Belle OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ThreadX OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E5 Mango</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 7%2E8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Phone 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS 7</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OS__c</picklist>
+            <values>
+                <fullName>Android OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E1 %28Éclair%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E2%2E1 %28Froyo%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E3 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E4 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E5 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v2%2E3%2E6 %28Gingerbread%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v3%2E0 %28Honeycomb%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E0 %28Ice Cream Sandwich%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E1 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E2 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E3 %28Jelly Bean%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4 %28KitKat%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v4%2E4%2Ex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0 %28Lollipop%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E0%2E2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Android OS%2C v5%2E1%2E1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processor_Cores__c</picklist>
+            <values>
+                <fullName>Dual Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dual Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hexa Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hexa Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Octa Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Octa Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proprietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quad Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quad Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Core Multithreading</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Entry_Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASP_Range__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Regions__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Operators__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Display__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Processor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RAM_Size__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Entry_Period__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASP_Range__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Regions__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Operators__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Brand__c</searchFilterFields>
+        <searchFilterFields>Product__c</searchFilterFields>
+        <searchFilterFields>Regions__c</searchFilterFields>
+        <searchFilterFields>Operators__c</searchFilterFields>
+        <searchFilterFields>OS__c</searchFilterFields>
+        <searchFilterFields>OS_Upgrade__c</searchFilterFields>
+        <searchFilterFields>Display__c</searchFilterFields>
+        <searchFilterFields>Processor__c</searchFilterFields>
+        <searchFilterFields>RAM_Size__c</searchFilterFields>
+        <searchResultsAdditionalFields>Entry_Period__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASP_Range__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Regions__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Operators__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

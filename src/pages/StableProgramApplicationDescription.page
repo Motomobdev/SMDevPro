@@ -1,0 +1,10 @@
+<apex:page StandardController="Stable_Application__c" extensions="StableProgramApplicationDescription" sidebar="false" label="PGM APP DSC">
+<apex:pageBlock mode="maindetail" tabstyle="Stable_Application__c">
+<apex:pageBlockSection columns="1" showHeader="false" collapsible="false">
+<apex:outputField value="{!description.Description__c}" rendered="{!isPgmAppDescription}"/>
+<apex:outputField value="{!description.Application_Description__c}" rendered="{!NOT(isPgmAppDescription)}"/>
+<apex:outputField value="{!description.Instructions__c}" rendered="{!isPgmAppInstructions}"/>
+<apex:outputField value="{!description.Application_Instructions__c}" rendered="{!NOT(isPgmAppInstructions)}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

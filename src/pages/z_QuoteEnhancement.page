@@ -1,0 +1,6 @@
+<apex:page controller="z_QuoteEnhancement">
+
+	<zqu:SelectBillingAccount title="New Quote" subTitle="Select Billing Account" opportunityId="{!$CurrentPage.parameters.oppid}" 
+		newQuotePage="{!newQuoteUrl}" amendQuotePage="{!amendQuoteUrl}"/>
+		
+</apex:page>

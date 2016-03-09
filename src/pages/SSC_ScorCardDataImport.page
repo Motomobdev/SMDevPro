@@ -1,0 +1,181 @@
+<apex:page controller="SSC_scoreCardDataImport" >
+<apex:form >
+<apex:PageBlock title="Instructions">
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+Process to upload files into the system:
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+1.If the scorecard is being generated for the first time in month,Please click "Take Backup of current scores" Button.
+<br/>
+Please wait for 20 minutes a mail will be sent to the inbox after the process is completed.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+2.If the scorecard is being generated for second or third time then 
+<br/>
+click "Clear existing Scores Button" This will delete all the existing scores for current month.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+3.Please wait for 20 minutes a mail will be sent to the inbox after the process is completed and 
+<br/>
+then upload files into the system one by one in the corresponding sections.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+4.If the file for the selected month already exists then the system asks for confirmation whether to overwrite the existing records.
+<br/>
+Please Confirm with "Yes" or "NO" or "Cancel".
+</apex:outputText>
+<br/>
+
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+5.If selected yes the records will be overridden.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+6.After all the three files are uploaded successfully a notification will be displayed for each file saying it is uploaded successfully.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+7.Click Generate scorecard button and wait for 20 minutes.A mail willbe sent to user's inbox with the status.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+8.You will receive a mail that scores are calculated and you can check the scorecards.
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+9.If data is being loaded for previous months then no need to take backup of current scores or delete existing scores. 
+That is no need to click buttons "Take backup of current scores" or "Clear Existing scores".
+</apex:outputText>
+<br/>
+<apex:outputText style="float:left;text-align:center;font-size: 15px;weight:bold;" >
+10.If data is being loaded for previous months then directly you can upload the three files into the system 
+after selecting appropriate month and year.
+After all three files are uploaded successfully then click "Generate ScoreCard" button.
+You will receive a mail that scores are calculated and you can check the scorecards.
+</apex:outputText>
+
+</apex:pageblock>
+
+<apex:outputPanel rendered="{!insConCsr}">
+CSR DashBoard Data is Uploaded successfully into the system.
+</apex:outputPanel>
+<apex:outputPanel rendered="{!insConCst}">
+Cost Innovation Data is Uploaded successfully into the system.
+</apex:outputPanel>
+<apex:outputPanel rendered="{!insConQlty}">
+Quality Delivery Data is Uploaded successfully into the system.
+</apex:outputPanel>
+<apex:pageBlock title="ScoreCard Data Upload Period Selection" >
+   <apex:PageblockSection columns="1" >
+   
+   
+ <apex:outputlabel style="float:left;text-align:center;font-size: 13px;weight:bold;"  value="Select the month and year for Data Upload"> </apex:outputlabel>
+
+
+ <!-- <apex:outputlabel style="float:left;text-align:center;font-size: 13px;weight:bold;"  value="Month"> </apex:outputlabel> -->
+
+ <apex:selectlist size="1" style="float:left;text-align:left;font-size: 13px;"    value="{!month}" title="Month" label="Month" >
+            <apex:selectOption itemValue="January" itemLabel="January"/>
+            <apex:selectOption itemValue="February" itemLabel="February"/>
+            <apex:selectOption itemValue="March" itemLabel="March"/>
+            <apex:selectOption itemValue="April" itemLabel="April"/>
+            <apex:selectOption itemValue="May" itemLabel="May"/>
+            <apex:selectOption itemValue="June" itemLabel="June"/>
+            <apex:selectOption itemValue="July" itemLabel="July"/>
+            <apex:selectOption itemValue="August" itemLabel="August"/>
+            <apex:selectOption itemValue="September" itemLabel="September"/>
+            <apex:selectOption itemValue="October" itemLabel="October"/>
+            <apex:selectOption itemValue="November" itemLabel="November"/>
+            <apex:selectOption itemValue="December" itemLabel="December"/>
+            </apex:selectList>
+       
+<!-- <apex:outputlabel style="float:left;text-align:center;font-size: 13px;weight:bold;"  value="Year"> </apex:outputlabel>  -->    
+ <apex:selectlist size="1"   style="float:left;text-align:left;font-size: 13px;"  value="{!year}" label="Year" >
+         
+         
+         <apex:selectoptionS value="{!years}" ></apex:selectoptions>
+        
+          
+         </apex:selectlist>     
+          
+         
+</apex:PageblockSection>
+ </apex:Pageblock>
+  <apex:pageBlock rendered="{!confirm}">
+     <apex:outputText style="float:left;text-align:left;font-size: 13px;">   Cost DashBoard Data is already Present for the selected month.Do you wish to override it? </apex:outputText>
+   
+    <apex:commandButton action="{!yesConfirm1}" value="Yes" style="background:#216BB5;color:white; width:4%;" /> 
+     <apex:commandButton action="{!noConfirm}" value="No" style="background:#216BB5;color:white; width:4%;" />
+     <apex:commandButton action="{!noConfirm}" value="Cancel" style="background:#216BB5;color:white; width:6%;" />
+     
+     </apex:pageBlock> 
+     
+     <apex:pageBlock rendered="{!confirm1}">
+     <apex:outputText style="float:left;text-align:left;font-size: 13px;">   Cost Innovation Data is already Present for the selected month.Do you wish to override it? </apex:outputText>
+   
+     <apex:commandButton action="{!yesConfirm2}" value="Yes" style="background:#216BB5;color:white; width:4%;" />
+     <apex:commandButton action="{!noConfirm}" value="No" style="background:#216BB5;color:white; width:4%;" />
+     <apex:commandButton action="{!noConfirm}" value="Cancel" style="background:#216BB5;color:white; width:6%;" />
+     
+     </apex:pageBlock> 
+     
+      <apex:pageBlock rendered="{!confirm2}">
+     <apex:outputText style="float:left;text-align:left;font-size: 13px;">   Quality Delivery Data is already Present for the selected month.Do you wish to override it? </apex:outputText>
+   
+     <apex:commandButton action="{!yesConfirm3}" value="Yes" style="background:#216BB5;color:white; width:4%;" />
+     <apex:commandButton action="{!noConfirm}" value="No" style="background:#216BB5;color:white; width:4%;" />
+     <apex:commandButton action="{!noConfirm}" value="Cancel" style="background:#216BB5;color:white; width:6%;" />
+     
+     </apex:pageBlock> 
+     <apex:pageBlock title="Backup Before Scorecard"  >
+             <center>
+            <apex:commandButton style="background:#216BB5;color:white; width:20%;" value="Take Backup of current scores " action="{!socrecardBackup}"/>
+             </center>
+     </apex:pageBlock>    
+     <apex:pageBlock title="Clear Existing Scores"  >
+             <center>
+            <apex:commandButton style="background:#216BB5;color:white; width:10%;" value="Clear Existing Scores" action="{!clearExistingScores}"/>
+             </center>
+     </apex:pageBlock>     
+     
+ <apex:pageBlock title="CSR DashBoard File Upload"  >
+             <center>
+             <br/>
+             Please choose your file to upload : <apex:inputFile value="{!csvFile1}" filename="{!csrFile}" /> <br/>
+             <br/><br/><apex:commandButton action="{!importdatacsr}" value="Insert" id="theButton" style="background:#216BB5;color:white; width:10%;" />
+            
+             </center>
+     </apex:pageBlock>    
+
+ <apex:pageBlock title="Cost Innvovation File Upload"  >
+             <center>
+             <br/>
+             Please choose your file to upload : <apex:inputFile value="{!csvFile2}" filename="{!cstFile}" /> <br/>
+             <br/><br/><apex:commandButton action="{!importdatacst}" value="Insert" id="theButton1" style="background:#216BB5;color:white; width:10%;" />
+            
+             </center>
+     </apex:pageBlock>   
+    
+     
+ <apex:pageBlock title="Quality Delivery File Upload"  >
+             <center>
+             <br/>
+             Please choose your file to upload : <apex:inputFile value="{!csvFile3}" filename="{!qltyFile}" /> <br/>
+             <br/><br/><apex:commandButton action="{!importdataQlty}" value="Insert" id="theButton2" style="background:#216BB5;color:white; width:10%;" />
+            
+             </center>
+     </apex:pageBlock>    
+           
+         
+      <apex:pageBlock title="Genrate Scorecard"  >
+             <center>
+            <apex:commandButton style="background:#216BB5;color:white; width:10%;" value="Generate ScoreCard " action="{!CalculateScores}"/>
+             </center>
+     </apex:pageBlock>          
+         
+     </apex:form>
+</apex:page>

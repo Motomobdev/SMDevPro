@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ContractAppDEVICE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ContractAppDEVICES</value>
+    </caseValues>
+    <fields>
+        <help><!-- From NPI, mapped to &quot;APC&quot; field --></help>
+        <label><!-- APC --></label>
+        <name>APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountName_Full --></label>
+        <name>AccountName_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+        <relationshipLabel><!-- ContractAppDEVICES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AccountOwner --></label>
+        <name>AccountOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- AlphaDate --></label>
+        <name>AlphaDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android_Release --></label>
+        <name>Android_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android --></label>
+        <name>Android__c</name>
+    </fields>
+    <fields>
+        <label><!-- AppName_Full --></label>
+        <name>AppName_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- AppName --></label>
+        <name>AppName__c</name>
+        <relationshipLabel><!-- ContractAppDEVICES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- App_Category --></label>
+        <name>App_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- App_Type --></label>
+        <name>App_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- App_sub_type --></label>
+        <name>App_sub_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval_Status --></label>
+        <name>Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- BetaDate --></label>
+        <name>BetaDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancelled --></label>
+        <name>Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractName --></label>
+        <name>ContractName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNumber_Full --></label>
+        <name>ContractNumber_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNumber --></label>
+        <name>ContractNumber__c</name>
+        <relationshipLabel><!-- ContractAppDEVICES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ContractOwner --></label>
+        <name>ContractOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractPhase --></label>
+        <name>ContractPhase__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractStatus --></label>
+        <name>ContractStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateAppAddedToDevice --></label>
+        <name>DateAppAddedToDevice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeviceName_Full --></label>
+        <name>DeviceName_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeviceName --></label>
+        <name>DeviceName__c</name>
+        <relationshipLabel><!-- ContractAppDEVICES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device_Fully_Approved --></label>
+        <name>Device_Fully_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndDate --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalName --></label>
+        <name>ExternalName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governing --></label>
+        <name>Governing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include_on_sd_card --></label>
+        <name>Include_on_sd_card__c</name>
+    </fields>
+    <fields>
+        <label><!-- InternalName --></label>
+        <name>InternalName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB_Date --></label>
+        <name>LRB_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB_PipelineID --></label>
+        <name>LRB_PipelineID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola_Entity --></label>
+        <name>Motorola_Entity__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Family ID --></label>
+        <name>NPI_Family_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NRE_Cost --></label>
+        <name>NRE_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- OS --></label>
+        <name>OS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner_country_of_incorp --></label>
+        <name>Partner_country_of_incorp__c</name>
+    </fields>
+    <fields>
+        <label><!-- PercentAppsApproved --></label>
+        <name>PercentAppsApproved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform_Versions --></label>
+        <name>Platform_Versions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevShareApp --></label>
+        <name>RevShareApp__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevShareDetails --></label>
+        <name>RevShareDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyCurrent --></label>
+        <name>RoyaltyCurrent__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyDescr --></label>
+        <name>RoyaltyDescr__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyHigh --></label>
+        <name>RoyaltyHigh__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyLow --></label>
+        <name>RoyaltyLow__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyPaymentAttribute --></label>
+        <name>RoyaltyPaymentAttribute__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Contract? --></label>
+        <name>Royalty_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- SA_Date --></label>
+        <name>SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Application --></label>
+        <name>SFID_Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Contract --></label>
+        <name>SFID_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Device --></label>
+        <name>SFID_Device__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped and Completed --></label>
+        <name>Shipped_and_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software_Apps_Lead --></label>
+        <name>Software_Apps_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartDate --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technology --></label>
+        <name>Technology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Concatenation --></label>
+        <name>U_Concat__c</name>
+    </fields>
+    <fields>
+        <label><!-- include_in_bom --></label>
+        <name>include_in_bom__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

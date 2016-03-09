@@ -1,0 +1,143 @@
+<apex:page standardController="Device__c">
+    <apex:sectionHeader title="{!$ObjectType.Device__c.label}" subtitle="{!Device__c.name}"/>
+    <apex:pageBlock title="{!$ObjectType.Device__c.label} Detail">
+        <apex:pageBlockButtons >
+            <apex:form >
+                <apex:outputLink value="/apex/Device_GTA_Edit?id={!Device__c.id}">Edit</apex:outputLink>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:form>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection showHeader="true" title="Device" columns="2">
+            <apex:outputField value="{!Device__c.Name}"/>
+            <apex:scontrol controlName="Device_ID_Link" height="18" width="-100"/>
+            <apex:outputField value="{!Device__c.Status_Flag__c}"/>
+            <apex:scontrol controlName="NPI_Product_Key_Link" height="18" width="-100"/>
+            <apex:outputField value="{!Device__c.Market_Region__c}"/>
+            <apex:scontrol controlName="GPPD_Product_Key_Link" height="18" width="-100"/>
+            <apex:outputField value="{!Device__c.Country__c}"/>
+            <apex:outputField value="{!Device__c.Platform__c}"/>
+            <apex:outputField value="{!Device__c.Carrier__c}"/>
+            <apex:outputField value="{!Device__c.Android_Release__c}"/>
+            <apex:outputField value="{!Device__c.SA_Release_Type__c}"/>
+            <apex:outputField value="{!Device__c.APP_Version__c}"/>
+            <apex:outputField value="{!Device__c.SA_Date__c}"/>
+            <apex:outputField value="{!Device__c.MAPS_Versions__c}"/>
+            <apex:outputField value="{!Device__c.SA_Status__c}"/>
+            <apex:outputField value="{!Device__c.BLUR_Version__c}"/>
+            <apex:outputField value="{!Device__c.SWBOM_Reviewed_and_Approved__c}"/>
+            <apex:outputField value="{!Device__c.BLUR_Version_String__c}"/>
+            <apex:outputField value="{!Device__c.Reason_Code__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Google TA Submission" columns="2">
+            <apex:outputField value="{!Device__c.Priority__c}"/>
+            <apex:outputField value="{!Device__c.Number_of_days_allotted_for_approval__c}"/>
+            <apex:outputField value="{!Device__c.Requested_Date_for_Google_TA__c}"/>
+            <apex:outputField value="{!Device__c.Number_of_days_since_complete_submission__c}"/>
+            <apex:outputField value="{!Device__c.Hardware_Provided__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Device Contacts" columns="2">
+            <apex:scontrol controlName="GTA_Contacts_Source_Instruction" height="30" width="-100"/>
+            <apex:pageBlockSectionItem />
+            <apex:outputField value="{!Device__c.Program_Manager_Name__c}"/>
+            <apex:outputField value="{!Device__c.Program_Manager_Email__c}"/>
+            <apex:outputField value="{!Device__c.SW_Apps_Lead__c}"/>
+            <apex:outputField value="{!Device__c.Software_and_Applications_Lead_Email__c}"/>
+            <apex:outputField value="{!Device__c.SW_Eng_Lead__c}"/>
+            <apex:outputField value="{!Device__c.Software_Engineering_Lead_Email__c}"/>
+            <apex:outputField value="{!Device__c.GMS_Technical_Lead_Name__c}"/>
+            <apex:outputField value="{!Device__c.GMS_Technical_Lead_Email__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Technical_Lead_Name__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Technical_Lead_Email__c}"/>
+            <apex:outputField value="{!Device__c.Google_Relationship_Manager_Name__c}"/>
+            <apex:outputField value="{!Device__c.Google_Relationship_Manager_Email__c}"/>
+            <apex:outputField value="{!Device__c.MOT_GTAM__c}"/>
+            <apex:outputField value="{!Device__c.MOT_GTAM_Email__c}"/>
+            <apex:outputField value="{!Device__c.Business_Operations_Analyst__c}"/>
+            <apex:outputField value="{!Device__c.Business_Operations_Analyst_Email__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Coordinator_Name__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Coordinator_Email__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Launch Addendum Submission" columns="2">
+            <apex:outputField value="{!Device__c.Launch_Addendum_ID__c}"/>
+            <apex:outputField value="{!Device__c.Launch_Addendum_Status__c}"/>
+            <apex:scontrol controlName="Blank_Launch_Addendum_Template_Link" height="18" width="-100"/>
+            <apex:pageBlockSectionItem />
+            <apex:outputField value="{!Device__c.Launch_Addendum_Template__c}"/>
+            <apex:outputField value="{!Device__c.Date_Launch_Addendum_Template_Provided__c}"/>
+            <apex:outputField value="{!Device__c.Launch_Addendum__c}"/>
+            <apex:outputField value="{!Device__c.Date_Launch_Addendum_Submitted_to_Google__c}"/>
+            <apex:outputField value="{!Device__c.Launch_Addendum_Executed_by_MOT__c}"/>
+            <apex:outputField value="{!Device__c.Date_Launch_Addendum_Executed_by_MOT__c}"/>
+            <apex:outputField value="{!Device__c.Launch_Addendum_Executed_by_Google__c}"/>
+            <apex:outputField value="{!Device__c.Date_Launch_Addendum_Executed_by_Google__c}"/>
+            <apex:outputField value="{!Device__c.Launch_Addendum_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="GMS Submissions - Lab Entry" columns="2">
+            <apex:pageBlockSectionItem />
+            <apex:outputField value="{!Device__c.LE_GMS_Submission_Status__c}"/>
+            <apex:outputField value="{!Device__c.LE_GMS_Software_Checklist__c}"/>
+            <apex:outputField value="{!Device__c.Date_LE_GMS_SW_Checklist_Provided__c}"/>
+            <apex:outputField value="{!Device__c.LE_GMS_Last_SW_Submitted__c}"/>
+            <apex:outputField value="{!Device__c.Date_LE_GMS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:outputField value="{!Device__c.LE_GMS_Comments__c}"/>
+            <apex:outputField value="{!Device__c.Date_LE_GMS_Conditional_Approval_by_Ggle__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="CTS Submissions - Lab Entry" columns="2">
+            <apex:pageBlockSectionItem />
+            <apex:outputField value="{!Device__c.LE_CTS_Submission_Status__c}"/>
+            <apex:outputField value="{!Device__c.LE_CTS_Software_Checklist__c}"/>
+            <apex:outputField value="{!Device__c.Date_LE_CTS_SW_Checklist_Provided__c}"/>
+            <apex:outputField value="{!Device__c.LE_CTS_Last_SW_Submitted__c}"/>
+            <apex:outputField value="{!Device__c.Date_LE_CTS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:outputField value="{!Device__c.LE_CTS_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="GMS Submissions - Final Software" columns="2">
+            <apex:scontrol controlName="Blank_GMS_Checklist_Link" height="18" width="-100"/>
+            <apex:outputField value="{!Device__c.GMS_Submission_Status__c}"/>
+            <apex:outputField value="{!Device__c.GMS_Software_Checklist__c}"/>
+            <apex:outputField value="{!Device__c.Date_GMS_SW_Checklist_Provided__c}"/>
+            <apex:outputField value="{!Device__c.GMS_Last_SW_Submitted__c}"/>
+            <apex:outputField value="{!Device__c.Date_GMS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:outputField value="{!Device__c.GMS_Comments__c}"/>
+            <apex:outputField value="{!Device__c.Date_GMS_Conditional_Approval_by_Google__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="CTS Submissions - Final Software" columns="2">
+            <apex:scontrol controlName="Blank_CTS_Checklist_Link" height="18" width="-100"/>
+            <apex:outputField value="{!Device__c.CTS_Submission_Status__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Software_Checklist__c}"/>
+            <apex:outputField value="{!Device__c.Date_CTS_SW_Checklist_Provided__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Last_SW_Submitted__c}"/>
+            <apex:outputField value="{!Device__c.Date_CTS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:outputField value="{!Device__c.CTS_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Google Technical Acceptance Approval - Final Software" columns="2">
+            <apex:outputField value="{!Device__c.Approval_Document_from_Google__c}"/>
+            <apex:outputField value="{!Device__c.Google_TA_Approval_Status__c}"/>
+            <apex:outputField value="{!Device__c.White_Listed_Build_Fingerprint__c}"/>
+            <apex:outputField value="{!Device__c.Approval_Type__c}"/>
+            <apex:outputField value="{!Device__c.Google_TA_Comments__c}"/>
+            <apex:outputField value="{!Device__c.Respin__c}"/>
+            <apex:outputField value="{!Device__c.Submission_Completion_Time__c}"/>
+            <apex:outputField value="{!Device__c.of_Respin__c}"/>
+            <apex:outputField value="{!Device__c.Date_of_Google_TA_Approval_by_Google__c}"/>
+            <apex:outputField value="{!Device__c.Reason_for_Last_Respin__c}"/>
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="false" columns="2">
+            <apex:outputField value="{!Device__c.CreatedById}"/>
+            <apex:outputField value="{!Device__c.LastModifiedById}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Custom Links" columns="3">
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:relatedList list="CombinedAttachments"/>
+    <apex:relatedList list="Devices__r"/>
+</apex:page>

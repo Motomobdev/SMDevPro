@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampaignSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>All_Campaigns_Are_Visible_to_GTM</fullName>
+        <sharedTo>
+            <roleAndSubordinatesInternal>GTM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Promotion</value>
+        </criteriaItems>
+        <campaignAccessLevel>Edit</campaignAccessLevel>
+        <name>All Campaigns Are Visible to GTM</name>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>GTM_Finance_Campaigns</fullName>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Finance</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Promotion</value>
+        </criteriaItems>
+        <campaignAccessLevel>Edit</campaignAccessLevel>
+        <description>Grants access to campaigns for GTM Finance</description>
+        <name>GTM Finance Campaigns</name>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Marketing_Users_Have_Access_To_All_Campaigns</fullName>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Marketing</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Promotion</value>
+        </criteriaItems>
+        <campaignAccessLevel>Edit</campaignAccessLevel>
+        <description>Marketing users have edit rights on all promotion campaigns</description>
+        <name>Marketing Users Have Access To All Campaigns</name>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Promotions_are_shared_with_Marketing_Campaign_Managers</fullName>
+        <sharedTo>
+            <group>Promotion_Campaign_Manager</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Promotion</value>
+        </criteriaItems>
+        <campaignAccessLevel>All</campaignAccessLevel>
+        <description>Promotions are shared with Marketing Campaign Managers</description>
+        <name>Promotions are shared with Marketing Campaign Managers</name>
+    </criteriaBasedRules>
+    <ownerRules>
+        <fullName>KnowWho_Users_Self_Sharing_Rule</fullName>
+        <sharedTo>
+            <roleAndSubordinatesInternal>KnowWho</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>KnowWho</roleAndSubordinatesInternal>
+        </sharedFrom>
+        <campaignAccessLevel>Edit</campaignAccessLevel>
+        <name>KnowWho Users Self-Sharing Rule</name>
+    </ownerRules>
+</CampaignSharingRules>

@@ -1,0 +1,25 @@
+<apex:page standardController="Core_Device_Package__c" extensions="CloneCoreDevicePackage" tabStyle="Core_Device_Package__c" >
+    <apex:form >    
+        <apex:pageBlock title="Create Clone From Core Device Package '{!existingCore.Name}'" id="pageBlock">   
+            <apex:pageBlockSection columns="2" collapsible="false">        
+                <apex:inputField value="{!newCore.Name}" style="width:300px"/>
+            </apex:pageBlockSection> 
+            
+            <BR/>
+            
+            <div align="center">
+                <apex:actionStatus id="mySaveStatus">  
+                    <apex:facet name="stop">    
+                        <apex:commandButton value="Create Core Device Package" action="{!createNewCore}" status="mySaveStatus" rerender="pageBlock"> </apex:commandButton>  
+                    </apex:facet>  
+                    <apex:facet name="start">    
+                        <apex:commandButton value="Saving..." disabled="true" action="{!createNewCore}" status="mySaveStatus" rerender="pageBlock"> </apex:commandButton>  
+                    </apex:facet>
+                </apex:actionStatus>
+                
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </div>
+
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,193 @@
+<apex:page standardController="Quote" Extensions="DealDeepCloneController">
+	<head>
+		<!-- jescamilla@levementum.com 11/6/14 Description: Added Support for JQUERY. -->
+		<apex:includeScript value="{!URLFOR($Resource.jquery_1_11_1_min, 'jquery-1.11.1.min.js')}"  />
+	</head>
+	<apex:form id="mainForm"> 
+		<apex:sectionHeader title="Deal Soft Cloning"/> 
+		<apex:PageBlock title="Cloning Options">
+			<apex:outputPanel id="cloneOptionsPanel">
+				<apex:actionsupport action="{!selectCloneOption}" event="onclick"  rerender="mainForm"> 	
+					<apex:selectRadio value="{!cloneOption}" layout="pageDirection">
+	            		<apex:selectOptions value="{!cloneOptions}"/>
+	    			</apex:selectRadio>
+	    		</apex:actionsupport>
+			</apex:outputPanel>
+		</apex:PageBlock>
+		
+		<apex:pageBlock id="softclone" mode="edit">
+			<apex:pageBlockButtons >
+                <apex:commandButton value="Continue" action="{!executeSoftClone}" onClick="return confirm('{!cloneAccountOptionMsg}');"/>
+                <apex:commandButton value="Edit" action="{!editMode}" rerender="queue,msg"/>
+                <apex:commandButton value="Cancel" action="{!cancelOperation}" />
+                <!-- <apex:commandButton value="Create Deal" action="{!createDeal}" rendered="{!createDealViewer}" /> -->
+        	</apex:pageBlockButtons>
+        
+        	<!-- CURRENT AND NEW OPPORTUNITY OPTIONS -->
+        	<apex:outputPanel id="mainPanel" rendered="{!currentOpp || newOpp}">
+        		<apex:pageBlockSection columns="2">
+		        	<apex:inputField value="{!clonedQuoteTemp.OpportunityId}" rendered="{!newOpp}">   
+		        		<apex:actionSupport event="onchange" action="{!fetchAccountName}" rerender="quoteAccountName"/>
+		        	</apex:inputField>
+		        	<apex:outputText value="{!accountIdTemp.Name}" rendered="{!currentOpp}">   
+		        	</apex:outputText>
+		        	<apex:pageBlockSectionItem >
+		        		<apex:outputLabel value="Account Name" for="quoteAccountName"/>
+		        		<apex:outputText value="{!accountName}" id="quoteAccountName"/>   
+		        	</apex:pageBlockSectionItem> 
+		    	</apex:pageBlockSection>
+
+		 		<apex:outputPanel id="msg">
+					<apex:pageMessages ></apex:pageMessages>
+				</apex:outputPanel>
+	
+				<!-- PRODUCTS AREA --><br/>
+				<apex:pageBlock id="productClone" mode="edit" title=" Product Selection">
+					<apex:pageBlockTable value="{!dealLineItems}" var="dliWrapper">    <!-- The pageBlockTable iterates through the list of the custom Class -->
+			            <apex:column > <apex:inputCheckbox value="{!dliWrapper.dliSelected}"/></apex:column>    <!-- Stores the input value from the user -->
+			        	<apex:column value="{!dliWrapper.dli.Year__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.Quarter__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.Deal_Type__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.product2.Name}"/>
+			        	<apex:column value="{!dliWrapper.dli.Quantity}"/>
+			        	<apex:column value="{!dliWrapper.dli.UnitPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.ListPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.Subtotal}"/>
+			        	<apex:column value="{!dliWrapper.dli.TotalPrice}"/>
+	        		</apex:pageblocktable>
+	     		</apex:pageblock>
+	     	</apex:outputPanel>
+	     	
+	     	
+	     	<!-- NEW ACCOUNT OPTION -->
+	     	<apex:outputPanel id="accountPanel" rendered="{!NOT(currentOpp) && NOT(newOpp)}">
+        		<apex:pageBlockSection columns="2">
+        			<!-- <apex:inputField value="{!selectedOppLookUp.OpportunityId}" rendered="{!NOT(existingOpp) && oppAssociation}">
+        				<apex:actionSupport event="onchange" action="{!cloneQuoteToNewAccount}"/>   
+		        	</apex:inputField>-->
+		        	<apex:inputField value="{!selectedAccountLookUp.AccountId}">   
+		        		<apex:actionSupport event="onchange" action="{!cloneQuoteToNewAccount}"/>
+		        	</apex:inputField>
+		    	</apex:pageBlockSection>
+		 		<apex:outputPanel >
+					<apex:pageMessages ></apex:pageMessages>
+				</apex:outputPanel>
+				
+				<!-- PRODUCTS AREA WHEN CURRENT OPPORTUNITY--><br/>
+				<apex:pageBlock id="productsFromAccountOption" mode="edit" title=" Product Selection" rendered="{!NOT(existingOpp) && oppAssociation}">
+					<apex:pageBlockTable value="{!dealLineItems}" var="dliWrapper">    <!-- The pageBlockTable iterates through the list of the custom Class -->
+			            <apex:column > <apex:inputCheckbox value="{!dliWrapper.dliSelected}"/></apex:column>    <!-- Stores the input value from the user -->
+			        	<apex:column value="{!dliWrapper.dli.Year__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.Quarter__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.Deal_Type__c}"/>
+			        	<apex:column value="{!dliWrapper.dli.product2.Name}"/>
+			        	<apex:column value="{!dliWrapper.dli.Quantity}"/>
+			        	<apex:column value="{!dliWrapper.dli.UnitPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.ListPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.Subtotal}"/>
+			        	<apex:column value="{!dliWrapper.dli.TotalPrice}"/>
+	        		</apex:pageblocktable>
+	     		</apex:pageblock>
+				
+	     	</apex:outputPanel>
+	     	
+     	</apex:pageBlock>
+     		<apex:inputTextarea style="width:600px;height:200px;" rendered="{!IF(ISNULL(feedbackMsg),false,true) }" value="{!feedbackMsg}" />
+	    	<style>
+				.editable{background-color: #DAF3FF;}
+			</style>
+	
+			<script type="text/javascript"> 
+			 	function openLookup(baseURL, width, modified, searchParam)
+			 	{
+			 		try
+			 		{
+					    var originalbaseURL = baseURL;
+					    var originalwidth = width;
+					    var originalmodified = modified;
+					    var originalsearchParam = searchParam;
+					    
+					    var lookupType = baseURL.substr(baseURL.length-3, 3);
+					    if (modified == '1') baseURL = baseURL + searchParam;
+					    
+					    var isCustomLookup = false;
+					    
+					    // Following "006" is the lookup type for Opportunity object so change this as per your standard or custom object
+					    //if(lookupType == "006"){
+					  
+					      var urlArr = baseURL.split("&");
+					      var txtId = '';
+					      if(urlArr.length > 2) {
+					        urlArr = urlArr[1].split('=');
+					        txtId = urlArr[1];
+					      }
+					      
+					      // Following is the url of Custom Lookup page. You need to change that accordingly
+					      baseURL = "/apex/CustomLookup?quoteId=" + '{!quoteId}' +  "&txt=" + txtId;
+					      
+					      // Following is the id of apex:form control "myForm". You need to change that accordingly
+					      baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+					      if (modified == '1') {
+					        baseURL = baseURL + "&lksearch=" + searchParam;
+					      }
+					      
+					      // Following is the ID of inputField that is the lookup to be customized as custom lookup
+					      if(txtId.indexOf('Prod') > -1 ){
+					        isCustomLookup = true;
+					      }
+					    //}
+					    
+					    
+					    if(isCustomLookup == true){
+					      openPopup(baseURL, "lookup", 350, 480, "width="+width+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+					    }
+					    else {
+					      if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+					      openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+					    }
+					}
+					catch(err)
+					{
+						alert(err);
+					} 
+			  	}
+			  	
+			  	function displayPopup(msg)
+			  	{
+			  		alert('AAAA');
+			  	}
+			</script>
+    		<apex:outputPanel id="queue" > 
+	    		<apex:pageBlock title="Products Queue" rendered="{!IF(selectedProducts == null, false, true)}">	    		
+					<apex:pageBlockButtons >
+		                <apex:commandButton value="Save" action="{!addToProductSelection}"/>
+		                <apex:commandButton value="Cancel" action="{!cancel}"/>
+        			</apex:pageBlockButtons>
+					<apex:pageBlockTable value="{!selectedProducts}" var="dliWrapper"> 
+	        			<apex:column headerValue="Year">
+	        				<apex:selectList value="{!dliWrapper.dli.Year__c}" multiselect="false" size="1">
+                				<apex:selectOptions value="{!yearOptions}"/>
+            				</apex:selectList>
+	        			</apex:column>
+	        			<apex:column headerValue="Quarter">
+	        				<apex:inputField value="{!dliWrapper.dli.Quarter__c}"/>
+           				</apex:column>
+			        	<apex:column value="{!dliWrapper.dli.Deal_Type__c}"/>
+			        	<apex:column headerValue="Name">
+	        				<apex:inputField id="Prod" value="{!dliWrapper.dli.Product2Id}"/>
+           				</apex:column>
+			        	<apex:column value="{!dliWrapper.dli.Quantity}"/>
+			        	<apex:column value="{!dliWrapper.dli.UnitPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.ListPrice}"/>
+			        	<apex:column value="{!dliWrapper.dli.Subtotal}"/>
+			        	<apex:column value="{!dliWrapper.dli.TotalPrice}"/>
+	        		</apex:pageblocktable>
+				</apex:pageblock>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("[id$='Prod']").attr('readonly','readonly');
+					});
+				</script>
+    		</apex:outputPanel>
+		</apex:form>
+</apex:page>

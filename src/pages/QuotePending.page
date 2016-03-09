@@ -1,0 +1,141 @@
+<apex:page controller="QuoteApprovalRequest" id="DealApproverPage" sidebar="false" readOnly="true" docType="HTML-5.0">
+
+ <apex:includeScript value="{!$Resource.jQuery}"/>
+<apex:includeScript value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/js/jquery.dataTables.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/jquery.dataTables.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/styles.for.salesforce.css')}"/>
+<apex:form >
+<script>
+       $(document).ready(function() {
+        $(".dealTable,.approverTable").dataTable({"iDisplayLength": 25   
+         });
+      });
+</script>
+    <apex:sectionHeader title="Deal Pending" subtitle="Deal Agenda/Approvers" />
+    <apex:pageBlock >
+        <center><b>Filter </b> 
+            <apex:selectList value="{!userType}" size="1">
+                <apex:selectoption itemlabel="This Weeks Agenda" itemValue="This Weeks Agenda" ></apex:selectoption>      
+                <apex:selectoption itemlabel="Next Weeks Agenda" itemValue="Next Weeks Agenda"></apex:selectoption> 
+                <apex:selectoption itemlabel="All Submitted Deals" itemValue="All Deals"></apex:selectoption>
+                 <apex:selectoption itemlabel="All Approved Deals" itemValue="All Approved Deals"></apex:selectoption>
+                <apex:selectoption itemlabel="All Draft Deals" itemValue="View Draft Deals"></apex:selectoption>
+               <apex:selectoption itemlabel="Custom Date Search" itemValue="Selected Week Deals"></apex:selectoption>
+                                  
+             </apex:selectList> &nbsp;
+             <apex:commandButton action="{!search}" value="Search"/>
+             
+        </center>
+        <center>
+           <apex:outputtext rendered="{!userType = 'Selected Week Deals'}"> StartDate
+        </apex:outputtext>
+        <apex:input type="date" value="{!StartDate}"  rendered="{!userType = 'Selected Week Deals'}"/><br></br>
+        <apex:outputtext rendered="{!userType = 'Selected Week Deals'}"> EndDate
+        </apex:outputtext>
+        <apex:input type="date" value="{!endDate}"  rendered="{!userType = 'Selected Week Deals'}" label="EndDate"/><br></br>
+        <apex:commandButton action="{!search}" value="Deals Search" rendered="{!userType = 'Selected Week Deals'}"/>
+         </center>
+        <!-- Results section -->    
+        <br></br>
+        <apex:outputText rendered="{!!blnShowTable && showNoRecordsFound}"> No Results Found</apex:outputText>
+                                
+        <apex:pageBlockTable value="{!Records}" var="Record" rendered="{!blnShowTable && userType !='Selected Week Deals' && (userType = 'View Draft Deals' || userType ='All Approved Deals' || userType ='All Deals' || userType ='Next Weeks Agenda' || userType ='This Weeks Agenda')}"  id="DATable1"  rowClasses="odd,even" styleClass="dealTable">
+        <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputLink value="/{!Record.Id}" target="_blank">
+
+       <apex:outputText value="{!Record.QuoteNumber}" />
+        </apex:outputLink>
+        </apex:column>
+         <apex:column >
+        <apex:facet name="header">View Deal</apex:facet>
+                <apex:outputLink value="/apex/DealView?qId={!Record.Id}&vfpEditMode=true" target="_blank">
+                    <apex:outputtext value="{!Record.QuoteNumber}"/>
+                </apex:outputLink>
+                </apex:column>
+                 <apex:column >
+                <apex:facet name="header">Quote Name</apex:facet>
+                <apex:outputField value="{!Record.Name}" />
+                
+            </apex:column>
+        <apex:column >
+        <apex:facet name="header">Quote ReviewDate</apex:facet>
+        <apex:outputtext value="{0,date,MM'/'dd'/'yyyy}">
+        <apex:param value="{!Record.Deal_Review_Date__c}"/>
+        </apex:outputtext>
+        </apex:column>
+        <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!Record.Account__r.Name}"/>
+        </apex:column>
+          
+            <apex:column >
+                <apex:facet name="header">Country</apex:facet>
+                <apex:outputField value="{!Record.Account_Country__c}" />
+            </apex:column>
+     
+            <apex:column >
+                <apex:facet name="header">Region</apex:facet>
+                <apex:outputField value="{!Record.Account_Region__c}" />
+            </apex:column>
+                           <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputField value="{!Record.Status}" />
+            </apex:column> 
+            <apex:column >
+                <apex:facet name="header">CreatedBy</apex:facet>
+                <apex:outputField value="{!Record.CreatedById}" />
+            </apex:column>      
+        </apex:pageBlockTable>
+        <apex:pageBlockTable value="{!Records3}" var="Record3" rendered="{!blnShowTable && userType = 'Selected Week Deals'}"  id="DATable4"  rowClasses="odd,even" styleClass="dealTable">
+        <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputLink value="/{!Record3.Id}" target="_blank">
+
+       <apex:outputText value="{!Record3.QuoteNumber}" />
+        </apex:outputLink>
+        </apex:column>
+         <apex:column >
+        <apex:facet name="header">View Deal</apex:facet>
+                <apex:outputLink value="/apex/DealView?qId={!Record3.Id}&vfpEditMode=true" target="_blank">
+                    <apex:outputtext value="{!Record3.QuoteNumber}"/>
+                </apex:outputLink>
+                </apex:column>
+                 <apex:column >
+                <apex:facet name="header">Quote Name</apex:facet>
+                <apex:outputField value="{!Record3.Name}" />
+                </apex:column>
+        <apex:column >
+        <apex:facet name="header">Quote ReviewDate</apex:facet>
+        <apex:outputtext value="{0,date,MM'/'dd'/'yyyy}">
+        <apex:param value="{!Record3.Deal_Review_Date__c}"/>
+        </apex:outputtext>
+        </apex:column>
+        <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!Record3.Account__r.Name}"/>
+        </apex:column>
+          
+            <apex:column >
+                <apex:facet name="header">Country</apex:facet>
+                <apex:outputField value="{!Record3.Account_Country__c}" />
+            </apex:column>
+     
+            <apex:column >
+                <apex:facet name="header">Region</apex:facet>
+                <apex:outputField value="{!Record3.Account_Region__c}" />
+            </apex:column>
+            
+               <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputField value="{!Record3.Status}" />
+            </apex:column> 
+            <apex:column >
+                <apex:facet name="header">CreatedBy</apex:facet>
+                <apex:outputField value="{!Record3.CreatedById}" />
+            </apex:column>        
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock>
+  </apex:form>
+  </apex:page>

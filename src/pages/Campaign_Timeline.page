@@ -1,0 +1,224 @@
+<apex:page standardController="Campaign" extensions="Campaign_Timeline">
+
+    <apex:sectionHeader title="Campaign Timeline"/>
+    <apex:messages id="messages"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization', 'version':'1','packages':['timeline', 'controls']}]}">
+    </script>
+
+    <script type="text/javascript">
+        function setFocusOnLoad() {
+            $("hiddenElement").focus();
+        }
+ 
+        $(document).ready(function(){
+            draw_chart();
+        });
+
+        // draw_chart();
+        function draw_chart() {
+
+            var data = {!JsonData};
+            if (data == 0)
+                return false;
+
+            console.log(data);
+
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn('string', 'Campaign');
+            dataTable.addColumn('string', 'Account');
+            dataTable.addColumn('date', 'Start Date');
+            dataTable.addColumn('date', 'End Date');
+
+            $.each(data, function (i, record) {
+                var k = dataTable.addRow();
+                //dataTable.setCell(k, 0, record['Account__r']['Name']);
+                dataTable.setCell(k, 0, record['Account__r']['Friendly_Account_Name__c']);
+                dataTable.setCell(k, 1, record['Name']);
+
+                var sdate = record['StartDate'].split('-');
+                dataTable.setCell(k, 2, new Date(Number(sdate[0]),
+                    Number(sdate[1]) - 1, Number(sdate[2])));
+
+                var edate = record['EndDate'].split('-');
+                dataTable.setCell(k, 3, new Date(Number(edate[0]),
+                    Number(edate[1]) - 1, Number(edate[2])));
+            });
+
+            var container = document.getElementById('chart_div');
+            var chart = new google.visualization.Timeline(container);
+
+            chart.draw(dataTable);
+        }
+    </script>
+
+    <apex:form >
+        <input id="hiddenElement" type="hidden" />
+        
+        <apex:actionFunction name="loadPrograms" action="{!populateProgramMap}" reRender="program,project,product" status="status"/>
+        <apex:actionFunction name="loadProjects" action="{!populateProjects}" reRender="project,product" status="status"/>
+        <apex:actionFunction name="loadProducts" action="{!populateProducts}" reRender="product" status="status"/>
+
+        <apex:pageBlock id="timeline">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Submit" action="{!submit}"/>
+                <apex:commandButton value="Reset" action="{!reset}" reRender="timeline,chart_block,results_block" status="waitStatus"/>
+                <apex:actionStatus id="waitStatus" rendered="true">
+                    <apex:facet name="start">
+                        <span style="font-weight:bold; color: red;">
+                            Please Wait...<img src="/img/loading.gif" />
+                        </span>
+                    </apex:facet>
+                </apex:actionStatus>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="4" id="acct_dtls">
+                <apex:pageBlockSectionItem id="region">
+                    <apex:outputlabel value="Region" />
+                    <apex:selectList value="{!selectedRegions}" 
+                                     multiselect="true" id="regions" size="6">
+                        <apex:selectOptions value="{!regions}"/>
+                        <apex:actionSupport event="onchange" action="{!populateSubRegions}" 
+                                            rerender="subregion,country,account,messages" status="status" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Sub Region" />
+                    <apex:selectList value="{!selectedSubRegions}" multiselect="true" id="subregion" size="6">
+                        <apex:selectOptions value="{!subRegions}"/>
+                        <apex:actionSupport event="onchange" action="{!populateCountries}" 
+                                            rerender="country,account,messages" status="status" />
+                    </apex:selectList>      
+                </apex:pageBlockSectionItem>    
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Country" />
+                    <apex:selectList value="{!selectedCountries}" multiselect="true" id="country" size="6">
+                        <apex:selectOptions value="{!countries}"/>
+                        <apex:actionSupport event="onchange" action="{!populateAccounts}" 
+                                            rerender="account,messages" status="status" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Account" />
+                    <apex:selectList value="{!selectedAccounts}" multiselect="true" id="account" size="6">
+                        <apex:selectOptions value="{!accounts}" />                        
+                    </apex:selectList>      
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.PMD_Product__c.Fields.Product_Segment__c.label}" />
+                    <apex:selectList value="{!selectedPortfolioSegment}" multiselect="false" size="1"
+                        id="portSegment" onchange="loadPrograms();">
+                        <apex:selectOptions value="{!portfolioSegments}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+                <!-- <apex:inputField value="{!pmdProduct.Product_Segment__c}" onchange="loadPrograms();"/> -->
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Product2.Fields.Program__c.label}"/>
+                    <apex:selectList value="{!selectedProgram}" multiselect="false" size="1" id="program" onchange="loadProjects();">
+                        <apex:selectOptions value="{!programs}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Product2.Fields.Project__c.label}"  />
+                    <apex:selectList value="{!selectedProject}" multiselect="false" size="1" id="project" onchange="loadProducts();">
+                        <apex:selectOptions value="{!projects}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.PMD_Product__c.label}" />
+                    <apex:selectList value="{!selectedProduct}" multiselect="false" size="1" id="product">
+                        <apex:selectOptions value="{!products}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.Status.label}" />
+                    <apex:selectList value="{!selectedCampaignStatus}" multiselect="false" size="1" id="cmpgStatus">
+                        <apex:selectOptions value="{!campaignStatus}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.StartDate.label}" />
+                    <apex:inputField value="{!cmpg.StartDate}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.EndDate.label}" />
+                    <apex:inputField value="{!cmpg.EndDate}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.Category__c.label}" />
+                    <apex:inputField value="{!cmpg.Category__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.Sub_Category__c.label}" />
+                    <apex:inputField value="{!cmpg.Sub_Category__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.Target__c.label}" />
+                    <apex:inputField value="{!cmpg.Target__c}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="{!$ObjectType.Campaign.Fields.type.label}" />
+                    <apex:inputField value="{!cmpg.type}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="message">
+                    <apex:actionStatus id="status" rendered="true">
+                        <apex:facet name="start">
+                            <span style="font-weight:bold; color: red;">
+                                Please Wait...<img src="/img/loading.gif" />
+                            </span>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Chart" id="chart_block">
+            <apex:pageBlockSection collapsible="true" columns="1">
+                <apex:pageBlockSectionItem >
+                    <div id="chart_div" style="width: 100%; height: 400px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Grid" id="results_block">
+
+            <apex:pageBlockTable value="{!campaigns}" var="c" id="results_table">
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Campaign.label}</apex:facet>
+                    <apex:outputLink value="/{!c.id}" target="_blank">{!c.name}</apex:outputLink>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Account.Fields.Friendly_Account_Name__c.label}</apex:facet>
+                    <apex:outputLink value="/{!c.Account__c}" target="_blank">{!c.account__r.Friendly_Account_Name__c}</apex:outputLink>
+                </apex:column>
+
+                <apex:column value="{!c.Status}"/>
+                <apex:column value="{!c.account__r.Country__c}"/>
+                <apex:column value="{!c.startDate}"/>
+                <apex:column value="{!c.endDate}"/>
+
+                <apex:column value="{!c.type}"/>
+                <apex:column value="{!c.Category__c}"/>
+                <apex:column value="{!c.Sub_Category__c}"/>
+                <apex:column value="{!c.Target__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

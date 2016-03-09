@@ -1,0 +1,46 @@
+<apex:page standardController="Device__c" extensions="CopyAppsToExistingDevice">
+    <style type="text/css">        
+        .messageText2{
+        color:darkred;
+        font-style:italic;
+        //font-weight:bold;
+        font-size:13px;
+        }        
+    </style>
+    
+    <apex:form >
+        <apex:pageBlock title="Copy Device Applications To Existing Device" mode="edit">
+            <apex:pageMessage severity="error" strength="3" rendered="{!ShowError}" summary="{!ErrorMessage}"/>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!copyApps}" value="Copy Device Applications" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Device Information" columns="1" >
+                <apex:outputField value="{!OriginalDevice.name}"/>
+                <apex:inputField value="{!OriginalDevice.Destination_Device__c}"/>
+
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Applications from the original Device that are not available for use and will not be copied." columns="1" rendered="{!showAppsNotAvailable}" >
+                <apex:dataTable value="{!appsNotAvailableForUse}" var="app" cellpadding="2">
+                    <apex:column >
+                       <apex:facet name="header">Application Name</apex:facet>
+                       <apex:outputLink value="/{!app.id}" id="theLink" target="_blank">{!app.Name}</apex:outputLink>
+                   </apex:column>
+                   <apex:column >
+                       <apex:facet name="header">Account Manager</apex:facet>
+                       <apex:outputText value="{!app.Description__c}" id="acctMgr"/>
+                   </apex:column>
+                </apex:dataTable>
+                <BR/>
+                <apex:outputText styleclass="messageText2" value="Contact the appropriate Account Manager if you have any questions about why an Application is no longer available for use."/>
+                <apex:outputText styleclass="messageText2" value="Ensure that these apps are removed from the software for the Destination Device, to make sure the acual software matches the SW BOM."/>               
+            </apex:pageBlockSection> 
+                    
+        </apex:pageBlock>
+ 
+           
+    </apex:form>
+
+</apex:page>

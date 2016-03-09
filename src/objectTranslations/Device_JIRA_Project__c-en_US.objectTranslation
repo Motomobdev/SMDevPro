@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device SW Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Device SW Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Device SW Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- JIRA Project --></label>
+        <name>JIRA_Project__c</name>
+        <relationshipLabel><!-- Device SW Projects --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

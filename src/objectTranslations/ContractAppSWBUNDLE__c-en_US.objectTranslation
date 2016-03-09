@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ContractAppSWBUNDLE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ContractAppSWBUNDLES</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountName_Full --></label>
+        <name>AccountName_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+        <relationshipLabel><!-- ContractAppSWBUNDLES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AccountOwner --></label>
+        <name>AccountOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android --></label>
+        <name>Android__c</name>
+    </fields>
+    <fields>
+        <label><!-- AppName_Full --></label>
+        <name>AppName_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- AppName --></label>
+        <name>AppName__c</name>
+        <relationshipLabel><!-- ContractAppSWBUNDLES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- App_Category --></label>
+        <name>App_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- App_Type --></label>
+        <name>App_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractName --></label>
+        <name>ContractName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNumber_Full --></label>
+        <name>ContractNumber_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNumber --></label>
+        <name>ContractNumber__c</name>
+        <relationshipLabel><!-- ContractAppSWBUNDLES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ContractOwner --></label>
+        <name>ContractOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractPhase --></label>
+        <name>ContractPhase__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractStatus --></label>
+        <name>ContractStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndDate --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governing --></label>
+        <name>Governing__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB_Date --></label>
+        <name>LRB_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB_PipelineID --></label>
+        <name>LRB_PipelineID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- NRE_Cost --></label>
+        <name>NRE_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- No_of_Apps --></label>
+        <name>No_of_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevShareApp --></label>
+        <name>RevShareApp__c</name>
+    </fields>
+    <fields>
+        <label><!-- RevShareDetails --></label>
+        <name>RevShareDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyDescr --></label>
+        <name>RoyaltyDescr__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyHigh --></label>
+        <name>RoyaltyHigh__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoyaltyLow --></label>
+        <name>RoyaltyLow__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Application --></label>
+        <name>SFID_Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Contract --></label>
+        <name>SFID_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Service --></label>
+        <name>SFID_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWBundle_Full --></label>
+        <name>SWBundle_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWBundle --></label>
+        <name>SWBundle__c</name>
+        <relationshipLabel><!-- ContractAppSWBUNDLES --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ServiceDescr --></label>
+        <name>ServiceDescr__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartDate --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique_ID --></label>
+        <name>Unique_ID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

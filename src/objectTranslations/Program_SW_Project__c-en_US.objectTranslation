@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program SW Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program SW Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Experience Product Area --></label>
+        <name>Experience_Product_Area__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines if this is to show on the Release Chart  (uncheck for sunset releases) --></help>
+        <label><!-- Include on Release Chart? --></label>
+        <name>Include_on_Release_Chart__c</name>
+    </fields>
+    <fields>
+        <help><!-- If EOL, please enter &quot;1/1/2099&quot; --></help>
+        <label><!-- MR Date --></label>
+        <name>MR_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Experiences --></help>
+        <label><!-- MR_Exp --></label>
+        <name>MR_Exp__c</name>
+        <picklistValues>
+            <masterLabel>EOL</masterLabel>
+            <translation><!-- EOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR0</masterLabel>
+            <translation><!-- MR0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR1</masterLabel>
+            <translation><!-- MR1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR2</masterLabel>
+            <translation><!-- MR2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR3</masterLabel>
+            <translation><!-- MR3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR4</masterLabel>
+            <translation><!-- MR4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR5</masterLabel>
+            <translation><!-- MR5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR6</masterLabel>
+            <translation><!-- MR6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR7</masterLabel>
+            <translation><!-- MR7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR8</masterLabel>
+            <translation><!-- MR8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR9</masterLabel>
+            <translation><!-- MR9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For Release --></help>
+        <label><!-- MR Label --></label>
+        <name>MR_Label__c</name>
+        <picklistValues>
+            <masterLabel>EOL</masterLabel>
+            <translation><!-- EOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR0</masterLabel>
+            <translation><!-- MR0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR1</masterLabel>
+            <translation><!-- MR1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR2</masterLabel>
+            <translation><!-- MR2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR3</masterLabel>
+            <translation><!-- MR3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR4</masterLabel>
+            <translation><!-- MR4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR5</masterLabel>
+            <translation><!-- MR5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR6</masterLabel>
+            <translation><!-- MR6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR7</masterLabel>
+            <translation><!-- MR7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR8</masterLabel>
+            <translation><!-- MR8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR9</masterLabel>
+            <translation><!-- MR9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- POR Grouping Exp --></label>
+        <name>POR_Grouping_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program  (PMD) --></label>
+        <name>Program_PMD__c</name>
+        <relationshipLabel><!-- SW Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Release Status --></label>
+        <name>Program_Release_Status__c</name>
+        <picklistValues>
+            <masterLabel>Concept Approved</masterLabel>
+            <translation><!-- Concept Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery Approved</masterLabel>
+            <translation><!-- Discovery Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End of Life</masterLabel>
+            <translation><!-- End of Life --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POR Approved</masterLabel>
+            <translation><!-- POR Approved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project Type --></label>
+        <name>SW_Project_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project --></label>
+        <name>SW_Project__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Experience Support Status --></label>
+        <name>Support_Status__c</name>
+        <picklistValues>
+            <masterLabel>Fully Supported (PlayStore/MR update)</masterLabel>
+            <translation><!-- Fully Supported (PlayStore/MR update) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Supported at NPI Launch</masterLabel>
+            <translation><!-- Fully Supported at NPI Launch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Supported</masterLabel>
+            <translation><!-- Not Supported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Supported</masterLabel>
+            <translation><!-- Partially Supported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Program SW Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- SW Experience Details  (if Type is EXPERIENCE) --></label>
+            <section>SW Experience Details  (if Type is EXPERIENCE)</section>
+        </sections>
+        <sections>
+            <label><!-- SW Release Details  (if Type is RELEASE) --></label>
+            <section>SW Release Details  (if Type is RELEASE)</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,30 @@
+<apex:component controller="Tab_Con">
+    <apex:attribute required="true" type="String" name="title" description="Header/title of the Accordion section"/>
+    <apex:attribute type="String" name="backgroundColor" description="colcor for the tab"/>
+    <apex:attribute type="String" name="display" description="display or hide the tab]"/>
+    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+    <ul class="easyTab9">
+        <li>
+            <a href="#tabs-{!randomSuffix}" onclick="
+               document.getElementById('j_id0:j_id6:j_id146:inputTabSel').value = this.innerHTML;  
+                   /*alert('Tab Clicked');
+                    var inputs = document.getElementsByTagName('input');
+                     for(var i = 0; i < inputs.length; i++) {
+                        if(inputs[i].name.indexOf('inputTabSel') > 0) {
+                            console.log('Changing Tab Value: ' + this.innerHTML);
+                            inputs[i].value = this.innerHTML;
+                        }
+                     }*/" 
+               style="background-color:{!backgroundColor}; display:{!display};">
+                <apex:outputText value="{!title}" escape="false"/>
+            </a>
+        </li>
+    </ul>
+    </apex:variable>
+    <div id="tabs-{!randomSuffix}" class="easyTabBody9">
+        <p>
+            <apex:componentBody />
+        </p>
+    </div>
+
+</apex:component>

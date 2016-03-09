@@ -1,0 +1,3743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APPLE_Top_10_Free_App_Rank__c</fullName>
+        <externalId>false</externalId>
+        <label>APPLE Top 10 Free App Rank</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>APPLE_Top_10_Free_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>APPLE Top 10 Free App?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>APPLE_Top_10_Paid_App_Rank__c</fullName>
+        <externalId>false</externalId>
+        <label>APPLE Top 10 Paid App Rank</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>APPLE_Top_10_Paid_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>APPLE Top 10 Paid App?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>Name of this applications account.</description>
+        <externalId>false</externalId>
+        <formula>Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctOwnerAppID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AcctOwnerAppID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctOwnerApp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Acct_App_concatenate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Name + &quot; : &quot; + Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Acct_App_concatenate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Alpha__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Alpha</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Beta__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Beta</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_GM_Release_Candidate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_GM__c -14</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Actual GM minus two weeks</inlineHelpText>
+        <label>Actual GM Release Candidate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_GM__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual GM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Added_to_Solutions_Catalog__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this application in the Solutions Catalog? Check this box it is has been added.</description>
+        <externalId>false</externalId>
+        <label>Added to Solutions Catalog?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Android_3_0_related_app__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Checks if Android 3.0 is listed as a related platform;
+Field visible to ADMINS only  (for reporting purposes)</inlineHelpText>
+        <label>Android 3.0 related app?</label>
+        <summaryFilterItems>
+            <field>PlatformApp__c.Platform__c</field>
+            <operation>equals</operation>
+            <value>a2A4000000000qgEAA</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PlatformApp__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Android_Availability_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Android Availability Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Android_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Android Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Committed / Started</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivered / Shipped</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Android_Top_100__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Android Top 100</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Android_Top_10_FREE__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Android Top 10 FREE</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Android_Top_10_PAID__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Android Top 10 PAID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Android_Top_Showcase_Apps_on_Marketplace__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Top Android App on Marketplace</description>
+        <externalId>false</externalId>
+        <label>Android Top Showcase Apps on Marketplace</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Android__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this application build on Android</inlineHelpText>
+        <label>Android</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>App_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>SFDC Power of One formula . When creating reports, please use this to sum up the total # of Applications</inlineHelpText>
+        <label>App Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Risk_Flag_Condition__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(text(App_Risk_Flag__c ) = &quot;Red&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlHw&quot;, &quot;Red&quot;),
+IF(text(App_Risk_Flag__c ) = &quot;Yellow&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI1&quot;, &quot;Yellow&quot;),
+IF(text(App_Risk_Flag__c ) = &quot;Green&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI6&quot;, &quot;Green&quot;),
+&quot;&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>App Risk Flag Condition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Risk_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>App Risk Flag</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core SW: Device Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core SW: Drivers &amp; Stacks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core SW: Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Core SW: Voice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Embedded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>e-Publishing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Games</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health &amp; Fitness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Imaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LBS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifestyle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media SW: Audio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media SW: Codecs &amp; DRM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media SW: Image &amp; Camera</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media SW: Sync</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media SW: Video</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Messaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Commerce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Music</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Productivity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User Interface: Fonts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User Interface: GUI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User Interface: Input Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utilities (Backup, Tools, etc)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weather</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Widget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Decision__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract_Decision</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conditional Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Governing_End_Date__c</fullName>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Governing End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_LRB_Approved_Device__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract_LRB_Approved_Device</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_LRB_Approved_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract_LRB_Approved_Region</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_LRB_Pipeline_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract_LRB_Pipeline_ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Let_Expire__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Contract Let Expire</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Name__c</fullName>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Number__c</fullName>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Phase__c</fullName>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Phase</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Status__c</fullName>
+        <description>From related Contract record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section</inlineHelpText>
+        <label>Contract Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_External_Unique_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Application External Unique ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If this App belongs to an overall &quot;grouping&quot;, for cumulative royalty calculation purposes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this App belongs to an overall &quot;grouping&quot;, for cumulative royalty calculation purposes</inlineHelpText>
+        <label>Current Ship Volume</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Application_Group__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_ID__c</fullName>
+        <displayFormat>82SF{00000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Application ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Application_Instructions__c</fullName>
+        <description>Enter any peculiarities or information specific to this application that you would like the MotoReady PM to be aware of</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any peculiarities or information specific to this application that you would like the MotoReady PM to be aware of</inlineHelpText>
+        <label>Application Instructions</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applicable if Type is Preload or Services</inlineHelpText>
+        <label>Application Sub Type</label>
+        <picklist>
+            <controllingField>Application_Type__c</controllingField>
+            <picklistValues>
+                <fullName>API</fullName>
+                <controllingFieldValues>Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Content</fullName>
+                <controllingFieldValues>Postload</controllingFieldValues>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data</fullName>
+                <controllingFieldValues>Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GMS - Google Mobile Services</fullName>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSS Feed</fullName>
+                <controllingFieldValues>Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stand Alone App</fullName>
+                <controllingFieldValues>Postload</controllingFieldValues>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URL</fullName>
+                <controllingFieldValues>Postload</controllingFieldValues>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <controllingFieldValues>Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WAP Link / Stub</fullName>
+                <controllingFieldValues>Postload</controllingFieldValues>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Widget</fullName>
+                <controllingFieldValues>Postload</controllingFieldValues>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IP License</fullName>
+                <controllingFieldValues>Other</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trademark License</fullName>
+                <controllingFieldValues>Other</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HW Functional Activation</fullName>
+                <controllingFieldValues>Other</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MMI Owned</fullName>
+                <controllingFieldValues>Other</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MotoPlay App</fullName>
+                <controllingFieldValues>Preload</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Embedded</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Preload</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Postload</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <color>#A845DC</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IP Settlement</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier App</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Automate_Partner_Checklist_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to auto-approve DevApps or skip the Partner Manager approval step when an Applications Countries match with the associated Devices Countries.</inlineHelpText>
+        <label>Automate Partner Checklist Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Automated_from_GPPD__c</fullName>
+        <description>Field used to communicate to SW BOM Managers/Owners  that the application is automatically added and deleted from SW BOMs based on data specified by the Product Teams in the GPPD tool.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field used to communicate to SW BOM Managers/Owners  that the application is automatically added and deleted from SW BOMs based on data specified by the Product Teams in the GPPD tool.</inlineHelpText>
+        <label>Automated into SW BOM from GPPD Specs</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Available_Commercially__c</fullName>
+        <externalId>false</externalId>
+        <label>Available Commercially?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Available_For_Use__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Mark this app as available for use on a device or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Can this app be added to devices or copied from one device to another? If the app is already on a device but is no longer available for use it must be manually removed from the device.</inlineHelpText>
+        <label>Available For Use</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Binary_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Binary Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CURRENT_ROYALTY_TIER__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This data is fed in from the SSAS Financial system</inlineHelpText>
+        <label>CURRENT_ROYALTY_TIER</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branded__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this a Carrier Branded App?</inlineHelpText>
+        <label>Carrier Branded?</label>
+        <picklist>
+            <controllingField>Application_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Furnished__c</fullName>
+        <description>Is the application carrier furnished or is there a considerable amount of involvement by Motorola?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the application carrier furnished or is there a considerable amount of involvement by Motorola?</inlineHelpText>
+        <label>Carrier Furnished?</label>
+        <picklist>
+            <controllingField>Application_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Carrier Managed</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Managed</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Mandated__c</fullName>
+        <description>Is this a Carrier Mandated application?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this a Carrier Mandated application?</inlineHelpText>
+        <label>Carrier Mandated?</label>
+        <picklist>
+            <controllingField>Application_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <controllingFieldValues>Carrier App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Commercial_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Commercial Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Commercial_Review_legal_license_indem__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Commercial Review (legal, license, indemnity, warranty)</inlineHelpText>
+        <label>Commercial Review</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commercial_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Commercial Reviewer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Employee must be Active in the Core Directory</errorMessage>
+            <filterItems>
+                <field>Motorola_Core_Directory__c.HRStatus__c</field>
+                <operation>equals</operation>
+                <value>A</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>Applications (Commercial Reviewer)</relationshipLabel>
+        <relationshipName>Applications2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Commercial_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Commercial Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>C0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Connectivity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If your application is dependent on a server/network/wireless/SMS connection or any connectivity outside the handset, then select Network Connected.
+If the application can run solely on the handset (eg a game), then select Stand-Alone</inlineHelpText>
+        <label>Connectivity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Network Connected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stand-Alone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Per_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Per Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_ComptApps__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of ComptApps</label>
+        <summaryForeignKey>Competitive_Source_Apps__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_Gov__c</fullName>
+        <externalId>false</externalId>
+        <label>Count_of_Gov</label>
+        <summaryFilterItems>
+            <field>ContApplAssoc__c.Governing_End_Date__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ContApplAssoc__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_SW_Projects__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of SW Projects</label>
+        <summaryForeignKey>SW_Project_Application__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Countries_Status__c</fullName>
+        <description>Field to track whether IP Settlements have correct countries filled out in preparation for Automation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to track whether IP Settlements have correct countries filled out in preparation for Automation</inlineHelpText>
+        <label>Countries Status</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Ship_Volume__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Current shipped volume for this Application.This data is fed in from the SSAS Financial system</inlineHelpText>
+        <label>Current Ship Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Danger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Danger?</inlineHelpText>
+        <label>Danger</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Defects_Include_on_BOM__c</fullName>
+        <description>Dev-App # of Defects with Include on BOM checked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dev-App # of Defects with Include on BOM checked</inlineHelpText>
+        <label># Defects (Include on BOM)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Defects_auto_generated__c</fullName>
+        <description>Dev-App # of Defects (not included on BOM but unnecessarily created and associated with Device)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dev-App # of Defects (not included on BOM but unnecessarily created and associated with Device)</inlineHelpText>
+        <label># Defects (auto-generated)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Demo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Demo?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Basic description of what the app does on the phone. Is it a game, a photo editor, fonts, etc.? What does the app do?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Basic description of what the app does on the phone. Is it a game, a photo editor, fonts, etc.? What does the app do?</inlineHelpText>
+        <label>Description</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Design_End_Date__c</fullName>
+        <description>Sunset field VHD#86773</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day the contract would allow us add an app to a new platform design or APC</inlineHelpText>
+        <label>Design End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Device_End_Date__c</fullName>
+        <description>Sunset field VHD#86773</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day the contract would allow us add and app to a new device within in existing APC</inlineHelpText>
+        <label>Device End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Complete__c</fullName>
+        <description>Business disclosure by MDM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business disclosure by MDM</inlineHelpText>
+        <label>Disclosure Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ECCN_subECCN_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>ECCN.subECCN Value</label>
+        <picklist>
+            <picklistValues>
+                <fullName>5D992.c</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D991NR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D002.a</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D002.b</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D002.c.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D002.c.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D992.a</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5D992.b</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EAR99NR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ENC_License_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>ENC License Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mass Market Components: 742.15.b.3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC-Restricted: 740.17.b.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC-Unrestricted: 740.17.b.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC-Unrestricted: 740.17.b.3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC-Unrestricted: 740.17.b.4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mass Market Finished Goods: 742.15.b.1</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other 5A992.a and 5D992.a items</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Earliest_Competitive_App_Listing_Date__c</fullName>
+        <description>First &quot;Date Sourced&quot; out of all the Competitive Source&apos;s listed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Earliest &quot;Date Sourced&quot; out of all competitive sources listed.</inlineHelpText>
+        <label>Earliest Competitive App Listing Date</label>
+        <summarizedField>Competitive_Source_Apps__c.Date_Sourced__c</summarizedField>
+        <summaryForeignKey>Competitive_Source_Apps__c.Application__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Exclusion_Filter_Rules_Copied__c</fullName>
+        <description>Field used to document the Exclusion Filter Rules for IP team review</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field used to document the Exclusion Filter Rules for IP team review</inlineHelpText>
+        <label>Exclusion Filter Rules - Copied</label>
+        <length>800</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Exclusion_Filter_Rules_Status__c</fullName>
+        <description>Status field for Exclusion Reports Filter Rules</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status field for Exclusion Reports Filter Rules</inlineHelpText>
+        <label>Exclusion Filter Rules Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Exclusion_Report_Status__c</fullName>
+        <description>Status field for Exclusion Reports</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status field for Exclusion Reports</inlineHelpText>
+        <label>Exclusion Report Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Exclusion_Report__c</fullName>
+        <description>Report to capture incorrectly applied Dev-Apps related to IP Settlements &amp; some IP Licenses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report to capture incorrectly applied Dev-Apps related to IP Settlements &amp; some IP Licenses</inlineHelpText>
+        <label>Exclusion Report</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Exclusivity_End__c</fullName>
+        <description>When does the Exclusive period end?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When does the Exclusive period end?</inlineHelpText>
+        <label>Exclusivity End</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exclusivity_Start__c</fullName>
+        <description>When does the Exclusive period start?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When does the Exclusive period start?</inlineHelpText>
+        <label>Exclusivity Start</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exclusivity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether this app is exclusive to Motorola</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this app Exclusive to Motorola?</inlineHelpText>
+        <label>Exclusivity?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Alpha__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Alpha</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Beta__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Beta</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_GM_Release_Candidate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Expected_GM__c -14</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Expected GM minus two weeks</inlineHelpText>
+        <label>Expected GM Release Candidate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_GM__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected GM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EzX__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on EzX?</inlineHelpText>
+        <label>EzX</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FMD_Feature_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>FMD Feature ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Request_ID__c</fullName>
+        <description>Corresponding Feature Request ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corresponding Feature Request ID</inlineHelpText>
+        <label>Corresponding Feature Request ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Filter_Rules_Owner__c</fullName>
+        <description>Field to capture who is working on the filter rules for each of the Apps for Automation project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to capture who is working on the filter rules for each of the Apps for Automation project</inlineHelpText>
+        <label>Filter Rules Owner</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GMS_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this Application a Google Mobile Service?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application a Google Mobile Service?</inlineHelpText>
+        <label>GMS App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GPPD_Automation_Implemented_in_Sandbox__c</fullName>
+        <description>Field to show whether IP Settlement has been Automated in the SF Sandbox</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to show whether IP Settlement has been Automated in the SF Sandbox</inlineHelpText>
+        <label>GPPD Automation Implemented in Sandbox</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>GPPD_Fields_Audit_Report__c</fullName>
+        <description>Audit report URL for GPPD Fields required for IP Settlement Automation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Audit report URL for GPPD Fields required for IP Settlement Automation</inlineHelpText>
+        <label>GPPD Fields Audit Report</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>GPPD_Fields__c</fullName>
+        <description>GPPD Fields used by IP Licensing team to determine exposure and impact of IP Settlements.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>GPPD Fields used by IP Licensing team to determine exposure and impact of IP Settlements.</inlineHelpText>
+        <label>GPPD Fields</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Handango_Award__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Winner of a Handango App of the Year Award</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Winner of a Handango App of the Year Award</inlineHelpText>
+        <label>Handango Award</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Heap_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Heap Size</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IP_Settlement_License_Type__c</fullName>
+        <description>Field for *IP-S* Automation project which captures whether the patent license is Perpetual or Term-based.  Resulting data will be fed into existing FR092649 and then field will be deleted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field for *IP-S* Automation project which captures whether the patent license is Perpetual or Term-based.  Resulting data will be fed into existing FR092649 and then field will be deleted.</inlineHelpText>
+        <label>IP Settlement License Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Perpetual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Inclusion_Filter_Rules_Copied__c</fullName>
+        <description>Field used to document the Inclusion Filter Rules for IP team review</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field used to document the Inclusion Filter Rules for IP team review</inlineHelpText>
+        <label>Inclusion Filter Rules - Copied</label>
+        <length>600</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Inclusion_Filter_Rules_Status__c</fullName>
+        <description>Captures status of IP Settlement Rules for Inclusion Reports</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures status of IP Settlement Rules for Inclusion Reports</inlineHelpText>
+        <label>Inclusion Filter Rules Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Rules Written</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rules Reviewed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rules Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Inclusion_Report_Status__c</fullName>
+        <description>Status of Inclusion Report</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of Inclusion Report</inlineHelpText>
+        <label>Inclusion Report Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inclusion_Report__c</fullName>
+        <description>Report that identifies the products that need related IP Settlements</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report that identifies the products that need related IP Settlements</inlineHelpText>
+        <label>Inclusion Report</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Influencing_Reason_Specific_Event__c</fullName>
+        <description>If Event was selected as the Influencing Reason, which specific event?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Event was selected as the Influencing Reason, which specific event?</inlineHelpText>
+        <label>Influencing Reason_Specific Event</label>
+        <picklist>
+            <controllingField>Influencing_Reason__c</controllingField>
+            <picklistValues>
+                <fullName>MOTODEV Summit - San Diego Oct&apos;09</fullName>
+                <controllingFieldValues>Event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CTIA - San Diego Oct&apos;09</fullName>
+                <controllingFieldValues>Event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sprint Developer Conf - Santa Clara Oct&apos;09</fullName>
+                <controllingFieldValues>Event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Influencing_Reason__c</fullName>
+        <description>What was the primary influencing reason that this app is being developed for Android?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What was the primary influencing reason that this app is being developed for Android?</inlineHelpText>
+        <label>Influencing Reason</label>
+        <picklist>
+            <controllingField>Motorola_Influenced_Android_Development__c</controllingField>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>App Store Pitch Deck</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecosystem Pitch Deck</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Meeting</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold Call</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Ship_End_Date__c</fullName>
+        <description>Sunset field VHD#86773</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day the contract would allow us to ship a previously built unit from the factory</inlineHelpText>
+        <label>Inventory Ship End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Java_or_Native__c</fullName>
+        <externalId>false</externalId>
+        <label>Java or Native</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Java</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Native</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Legally_Shippable__c</fullName>
+        <description>Hidden concatenated field of all legally shippable countries for this application for Microgen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hidden concatenated field of all legally shippable countries for this application for Microgen</inlineHelpText>
+        <label>Legally Shippable Countries Microgen</label>
+        <length>30000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Leveraging_Motorola_Proprietary_APIs__c</fullName>
+        <description>Whether or not the app needs Motorola APIs that are not accessed through Android in order to function</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether or not the app needs Motorola APIs that are not accessed through Android in order to function</inlineHelpText>
+        <label>Leveraging Motorola Proprietary APIs?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Link to Google Doc</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MOTOREADY_App_Status__c</fullName>
+        <description>Pertaining to App Risk Flag</description>
+        <externalId>false</externalId>
+        <label>MOTOREADY App Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Manufacture_End_Date__c</fullName>
+        <description>Sunset field VHD#86773</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day the contract would allow us to manufacture a device with that app</inlineHelpText>
+        <label>Manufacture End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Market_Name__c</fullName>
+        <description>The name of this app on Android Market; visible only to ATS/DTS profiles</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of this app on Android Market; visible only to ATS/DTS profiles</inlineHelpText>
+        <label>Market Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marketing_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_TradeMark_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing/TradeMark Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Memory_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Memory Size</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Method_of_Download__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How will the user download the app? (applies to demos and trials) e.g. WAP Link, OTA download, bundled in a memory card, etc.</inlineHelpText>
+        <label>Method of Download</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Microgen_Application_ID__c</fullName>
+        <description>Used to duplicate application id so Microgen webmethods can repost application id to it instead of overwriting the real field.</description>
+        <externalId>false</externalId>
+        <label>Microgen Application ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Microgen_Reviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is checked, this Application ID has been reviewed and royalty data related to it have been sent to Microgen.</inlineHelpText>
+        <label>Microgen Reviewed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MotoPlay_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>MotoPlay Type</label>
+        <picklist>
+            <controllingField>Application_Sub_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Fishfood</fullName>
+                <controllingFieldValues>MotoPlay App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dogfood</fullName>
+                <controllingFieldValues>MotoPlay App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utililites</fullName>
+                <controllingFieldValues>MotoPlay App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal</fullName>
+                <controllingFieldValues>MotoPlay App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wearables</fullName>
+                <controllingFieldValues>MotoPlay App</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Motorola_Influenced_Android_Development__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Did Motorola influence the development of this app for Android</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did Motorola influence the development of this app for Android?</inlineHelpText>
+        <label>Motorola Influenced Android Development?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Motorola_Proprietary_APIs_supported_list__c</fullName>
+        <description>This is a list of the motorola proprietary api&apos;s. This is a required field is the &quot;leveraging motorola api&apos;s&quot; picklist is checked &quot;yes&quot;.</description>
+        <externalId>false</externalId>
+        <label>Motorola Proprietary APIs supported list</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPI_Fields__c</fullName>
+        <description>Fields required out of NPI for Automation project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fields required out of NPI for Automation project</inlineHelpText>
+        <label>NPI Fields</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Nokia_Showcased_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Showcased Apps on Nokia&apos;s MOSH beta site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Showcased Apps on Nokia&apos;s MOSH beta site</inlineHelpText>
+        <label>Nokia Showcased App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Nokia_Top_10_Handango_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Nokia Top 10 Handango App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Nokia_Top_10_Handmark_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Nokia Top 10 Handmark App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ODM_Propriotory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ODM Proprietary OS</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OSS_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>OSS Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OSS_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>OSS Review</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OTA_Replacement_Functionality__c</fullName>
+        <description>Field to capture whether an application can be replaced through a software replacement over-the-air (OTA).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to capture whether an application can be replaced through a software replacement over-the-air (OTA).</inlineHelpText>
+        <label>OTA Replacement Functionality?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OTA_Upgrade_Functionality__c</fullName>
+        <description>Field to capture whether an application can be provided as a software upgrade over-the-air (OTA).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to capture whether an application can be provided as a software upgrade over-the-air (OTA).</inlineHelpText>
+        <label>OTA Upgrade Functionality?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>P2K_P08_1_2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on P2K P08.1.2?</inlineHelpText>
+        <label>P2K P08.1.2</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Package_Name__c</fullName>
+        <description>The name of the apk package if applicable</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the name of the apk package if applicable</inlineHelpText>
+        <label>Package Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Palm_WebOS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Palm WebOS</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Priv_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Privacy Reviewer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Employee must be Active in the Core Directory</errorMessage>
+            <filterItems>
+                <field>Motorola_Core_Directory__c.HRStatus__c</field>
+                <operation>equals</operation>
+                <value>A</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>Applications (Privacy Reviewer)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pursue_for_China__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Pursue for China?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RIM_Blackberry_Top_10_Handango_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>RIM/Blackberry Top 10 Handango App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RIM_Blackberry_Top_10_Handmark_APp__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>RIM/Blackberry Top 10 Handmark App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RIM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on RIM?</inlineHelpText>
+        <label>RIM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rank_Priority__c</fullName>
+        <description>For Compliance/Privacy report sorting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for sorting in Reporting/Dashboards</inlineHelpText>
+        <label>Rank Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>3 - High Priority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 - Medium Priority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 - Low Priority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Release_End_Date__c</fullName>
+        <description>Sunset field VHD#86773</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day the contract would allow us send out software with that app included in it (i.e. MOL)</inlineHelpText>
+        <label>Release End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rev_Share_App_Microgen__c</fullName>
+        <description>Hidden Microgen field used for backend processing.</description>
+        <externalId>false</externalId>
+        <formula>if( Rev_Share_App__c = TRUE, &quot;Y&quot;, &quot;N&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Hidden Microgen field used for backend processing.</inlineHelpText>
+        <label>Rev Share App Microgen</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rev_Share_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rev Share App?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rev_Share_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Rev Share Details</label>
+        <length>12000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Royalty_Cumulative__c</fullName>
+        <description>Requested field for Microgen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fed in nightly from SSAS via webMethods</inlineHelpText>
+        <label>Royalty Cumulative</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Current__c</fullName>
+        <defaultValue>Royalty_High__c</defaultValue>
+        <externalId>false</externalId>
+        <label>Royalty Current</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Description__c</fullName>
+        <description>What does the royalty cover?  What is Motorola paying for?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What does the royalty cover?  What is Motorola paying for?</inlineHelpText>
+        <label>Royalty Description</label>
+        <length>15000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Royalty_High__c</fullName>
+        <description>The highest possible amount for the Royalty.</description>
+        <externalId>false</externalId>
+        <label>Royalty High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Low__c</fullName>
+        <description>The lowest possible amount for the royalty</description>
+        <externalId>false</externalId>
+        <label>Royalty Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Royalty_Payment_Attribute__c</fullName>
+        <externalId>false</externalId>
+        <label>Royalty Payment Attribute</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Allocated Cost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Per-unit Cap Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Per-unit Cap Perpetual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Per Unit Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepaid Long-Term</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepaid Short-Term</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rate Table Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rate Table Perpetual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rate Table Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Royalty Free</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Shipment activation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rules_Development_Status__c</fullName>
+        <description>Field to track Salesforce IT development status for IP Settlement automation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to track Salesforce IT development status for IP Settlement automation</inlineHelpText>
+        <label>Rules Development Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SF IT - Rules Development Not Started</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SF IT - Rules Development Written</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SF IT - Rules Development In Testing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SF IT - Rules Development Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SHOP4APPS_Availability__c</fullName>
+        <description>Is this app available on SHOP4APPS, and if so, what region?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this app available on SHOP4APPS, and if so, what region?</inlineHelpText>
+        <label>SHOP4APPS Availability</label>
+        <picklist>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SW_Part_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SW Part Number</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>APK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Binary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>File</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Code Snippet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Fields__c</fullName>
+        <description>Name of Salesforce Fields utilized for Automation project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Salesforce Fields utilized for Automation project</inlineHelpText>
+        <label>Salesforce Fields</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Readiness__c</fullName>
+        <description>For internal Biz Ops purposes - to track status of mapping GPPD fields --&gt; NPI --&gt; SF for Automation project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For internal Biz Ops purposes - to track status of mapping GPPD fields --&gt; NPI --&gt; SF for Automation project</inlineHelpText>
+        <label>Automation Readiness</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Security_Architecture_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Security/Architecture Review</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Security Reviewer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Employee must be Active in the Core Directory</errorMessage>
+            <filterItems>
+                <field>Motorola_Core_Directory__c.HRStatus__c</field>
+                <operation>equals</operation>
+                <value>A</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Risk Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Skip_LRB_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by DevApp approval process.</description>
+        <externalId>false</externalId>
+        <label>Skip LRB Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Stable_count__c</fullName>
+        <externalId>false</externalId>
+        <label>Stable_count</label>
+        <summaryForeignKey>Stable_Application__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Accounting_Input__c</fullName>
+        <description>Technical Accounting guidance about whether Remaining Balance can be written off for lump-sum IP Settlement</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Technical Accounting guidance about whether Remaining Balance can be written off for lump-sum IP Settlement</inlineHelpText>
+        <label>Technical Accounting Input</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DIRECTION NEEDED - CREDIT BALANCE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HOLD - BORDERLINE BALANCE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO - LOW BALANCE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YES - AUTOMATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Top_10_Competitive_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This app is part of a Top 10 Competitive app list</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This app is part of a Top 10 Competitive app list;
+The field is automatically checked, based on whether the app is related to a Competitive Source</inlineHelpText>
+        <label>Top 10 Competitive App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_of_incorrectly_generated_Dev_App__c</fullName>
+        <description>Total = #Defects (Include on BOM) + #Defects (auto-generated) for Automation project metric tracking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total = #Defects (Include on BOM) + #Defects (auto-generated) for Automation project metric tracking</inlineHelpText>
+        <label>Total # of incorrectly generated Dev-App</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URL_for_Download__c</fullName>
+        <description>If the app is NOT available via Android Market, please enter the URL where it is available for download</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the app is NOT available via Android Market, please enter the URL where it is available for download</inlineHelpText>
+        <label>URL for Download</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Unique_App__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unique_App</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WM_7_Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile 7.0 Java?</inlineHelpText>
+        <label>WM 7 Java</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_7_Native__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile 7 Native?</inlineHelpText>
+        <label>WM 7 Native</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Pocket_PC_5_x_Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Pocket PC 5.x Java?</inlineHelpText>
+        <label>WM Pocket PC 5.x Java</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Pocket_PC_5_x_Native__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Pocket PC 5.x Native?</inlineHelpText>
+        <label>WM Pocket PC 5.x Native</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Pocket_PC_6_x_Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Pocket PC 6.x Java?</inlineHelpText>
+        <label>WM Pocket PC 6.x Java</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Pocket_PC_6_x_Native__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Pocket PC 6.x Native?</inlineHelpText>
+        <label>WM Pocket PC 6.x Native</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Smartphone_5_x_Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Smartphone 5.x Java??</inlineHelpText>
+        <label>WM Smartphone 5.x Java</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Smartphone_5_x_Native__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Smartphone 5.x Native?</inlineHelpText>
+        <label>WM Smartphone 5.x Native</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Smartphone_6_x_Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Smartphone 6.x Java?</inlineHelpText>
+        <label>WM Smartphone 6.x Java</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WM_Smartphone_6_x_Native__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on Windows Mobile Smartphone 6.x Native?</inlineHelpText>
+        <label>WM Smartphone 6.x Native</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Welcome_Package_Sent__c</fullName>
+        <description>Technical and process info provided by EMD PM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Technical and process info provided by EMD PM</inlineHelpText>
+        <label>Welcome Package Sent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>WinMo_Top_10_Handango_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>WinMo Top 10 Handango App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WinMo_Top_10_Handmark_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>WinMo Top 10 Handmark App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WinMobile_Catalog_Top_5_Smartphone_App__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Windows Mobile Catalog Top 5 - Smartphone (Non-Touchscreen)</description>
+        <externalId>false</externalId>
+        <label>WinMobile Catalog Top 5 Smartphone App</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this application require 3rd party approval?</inlineHelpText>
+        <label>3rd Party Approval Required?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>iPad__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>iPad</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>iPhone_App_Directory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Listed in the iPhone App Directory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Listed in the iPhone App Directory</inlineHelpText>
+        <label>iPhone App Directory</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>iPhone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application build on iPhone?</inlineHelpText>
+        <label>iPhone</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>of_App_Versions__c</fullName>
+        <externalId>false</externalId>
+        <label># of App Versions</label>
+        <summaryForeignKey>App_Version__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>of_Avalible_Countries__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total # of countries where this application is available. This does NOT mean MOT can legally ship to this country.</inlineHelpText>
+        <label># of Avalible Countries</label>
+        <summaryFilterItems>
+            <field>Application_Country__c.Relationship__c</field>
+            <operation>equals</operation>
+            <value>Available</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Application_Country__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>of_Devices__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total # of devices this app is on</inlineHelpText>
+        <label># of Devices</label>
+        <summaryForeignKey>DeviceApplicationAssoc__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>of_MOT_Legally_Shippable_Countries__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total # of countries where MOT can legally ship this application to</inlineHelpText>
+        <label># of MOT Legally Shippable Countries</label>
+        <summaryFilterItems>
+            <field>Application_Country__c.Relationship__c</field>
+            <operation>equals</operation>
+            <value>Legal</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Application_Country__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>of_Mandatory_Stables__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total # of Stables this application is Mandatory on.</inlineHelpText>
+        <label># of Mandatory Stables</label>
+        <summaryFilterItems>
+            <field>Stable_Application__c.Stable_App_Status__c</field>
+            <operation>equals</operation>
+            <value>Mandatory</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Stable_Application__c.Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>third_party_account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If this is a CARRIER APP, who is the 3rd Party Account?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is a CARRIER APP, who is the 3rd Party Account?</inlineHelpText>
+        <label>3rd Party Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Applications (3rd Party Account)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Application</label>
+    <listViews>
+        <fullName>All_Apps</fullName>
+        <columns>NAME</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Application_Sub_Type__c</columns>
+        <columns>Package_Name__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Apps</label>
+    </listViews>
+    <listViews>
+        <fullName>BLUR_Apps</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Cost_Per_Unit__c</columns>
+        <columns>Royalty_Low__c</columns>
+        <columns>Royalty_High__c</columns>
+        <columns>Rev_Share_App__c</columns>
+        <columns>Rev_Share_Details__c</columns>
+        <columns>Royalty_Description__c</columns>
+        <columns>Application_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>BLUR Apps</label>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Carrier_Apps_needing_Royalty_Data</fullName>
+        <booleanFilter>(1 AND 2 AND 3) or (1 AND 2 AND 4) or (1 AND 2 AND 5)</booleanFilter>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Royalty_Low__c</columns>
+        <columns>Royalty_High__c</columns>
+        <columns>Royalty_Current__c</columns>
+        <columns>Royalty_Payment_Attribute__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Contract_Number__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>Carrier App</value>
+        </filters>
+        <filters>
+            <field>Royalty_Low__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Royalty_High__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Royalty_Current__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Carrier Apps needing Royalty Data</label>
+    </listViews>
+    <listViews>
+        <fullName>IP_Apps</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>IP Settlement</value>
+        </filters>
+        <label>IP Apps</label>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Jill_s_Games_Apps</fullName>
+        <booleanFilter>1</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Android_Availability_Date__c</columns>
+        <columns>Android_Top_100__c</columns>
+        <columns>Account__c</columns>
+        <columns>Android_Status__c</columns>
+        <columns>OBJECT_ID</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Category__c</field>
+            <operation>equals</operation>
+            <value>Games</value>
+        </filters>
+        <label>Jill&apos;s Games Apps</label>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Apps_Mahad</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Application_Sub_Type__c</columns>
+        <columns>Available_For_Use__c</columns>
+        <columns>Carrier_Furnished__c</columns>
+        <columns>Carrier_Branded__c</columns>
+        <columns>Carrier_Mandated__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Account__c</field>
+            <operation>startsWith</operation>
+            <value>partner</value>
+        </filters>
+        <label>Partner Apps (Mahad)</label>
+    </listViews>
+    <listViews>
+        <fullName>Preload_Apps_that_need_sub_type</fullName>
+        <columns>NAME</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Application_Sub_Type__c</columns>
+        <columns>Account__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>AcctOwnerApp__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>contains</operation>
+            <value>reed</value>
+        </filters>
+        <label>Preload Apps that need sub-type</label>
+    </listViews>
+    <listViews>
+        <fullName>Preloads_with_NO_Sub</fullName>
+        <columns>Account_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Application_Sub_Type__c</columns>
+        <columns>AcctOwnerApp__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>Preload</value>
+        </filters>
+        <filters>
+            <field>Application_Sub_Type__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Preloads with NO Sub</label>
+    </listViews>
+    <listViews>
+        <fullName>Pursue_for_China</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Pursue_for_China__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Android__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Embedded,Services</value>
+        </filters>
+        <label>Pursue for China</label>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevBusOpsAdmin</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevDirector</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveCLevel</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveSVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevManager</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrDirector</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Services_Type_Field_NOT_NULL</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>Services Type Field NOT NULL</label>
+        <sharedTo>
+            <role>MotoDevAdmin</role>
+            <roleAndSubordinates>MotoDevExecutiveVP</roleAndSubordinates>
+            <roleAndSubordinates>MotoDevSrManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>all_tiered_royalty_applications</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Royalty_Current__c</columns>
+        <columns>Royalty_Description__c</columns>
+        <columns>Royalty_Payment_Attribute__c</columns>
+        <columns>Royalty_High__c</columns>
+        <columns>Royalty_Low__c</columns>
+        <columns>Application_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Royalty_Payment_Attribute__c</field>
+            <operation>equals</operation>
+            <value>Rate Table Perpetual,Rate Table Annual,Allocated Cost</value>
+        </filters>
+        <label>all tiered royalty applications</label>
+    </listViews>
+    <listViews>
+        <fullName>ip_settlement_apps</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Royalty_Current__c</columns>
+        <columns>Royalty_Description__c</columns>
+        <columns>Royalty_High__c</columns>
+        <columns>Royalty_Low__c</columns>
+        <columns>Royalty_Payment_Attribute__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>IP Settlement</value>
+        </filters>
+        <label>ip settlement apps</label>
+    </listViews>
+    <nameField>
+        <label>Application Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Applications</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Application_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Available_For_Use__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Account__c</lookupFilterFields>
+        <lookupFilterFields>Application_Type__c</lookupFilterFields>
+        <lookupFilterFields>Application_Sub_Type__c</lookupFilterFields>
+        <searchFilterFields>Account_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Royalty_Current__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Application_must_have_an_Account</fullName>
+        <active>false</active>
+        <description>App must have a related Account</description>
+        <errorConditionFormula>(Account__c )=&quot;&quot;</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>There must be a related Account for this Application</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Carrier_Branded_required_if_Carrier_Ap</fullName>
+        <active>true</active>
+        <description>Carrier Branded field cannot be blank if an app is Type &quot;Carrier App&quot;</description>
+        <errorConditionFormula>and(ISPICKVAL(Application_Type__c ,&quot;Carrier App&quot;) ,ISPICKVAL(Carrier_Branded__c ,&quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Carrier_Branded__c</errorDisplayField>
+        <errorMessage>If this is a Carrier App, please select a value for the field &quot;Carrier Branded&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Carrier_Furnished_required_if_Carrier_Ap</fullName>
+        <active>true</active>
+        <description>Carrier Furnished field cannot be blank if an app is Type &quot;Carrier App&quot;</description>
+        <errorConditionFormula>and(ISPICKVAL(Application_Type__c ,&quot;Carrier App&quot;) ,ISPICKVAL( Carrier_Furnished__c,&quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Carrier_Furnished__c</errorDisplayField>
+        <errorMessage>If this is a Carrier App, please select a value for the field &quot;Carrier Furnished&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Carrier_Mandated_required_if_Carrier_Ap</fullName>
+        <active>true</active>
+        <description>Carrier Mandated field cannot be blank if an app is Type &quot;Carrier App&quot;</description>
+        <errorConditionFormula>and(ISPICKVAL(Application_Type__c ,&quot;Carrier App&quot;) ,ISPICKVAL(  Carrier_Mandated__c ,&quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Carrier_Mandated__c</errorDisplayField>
+        <errorMessage>If this is a Carrier App, please select a value for the field &quot;Carrier Mandated&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_for_Single_GOV</fullName>
+        <active>true</active>
+        <description>Checks to ensure only a single contract is GOV</description>
+        <errorConditionFormula>Count_of_Gov__c &gt;1</errorConditionFormula>
+        <errorMessage>Error:  Only one related Contract may be checked as &quot;Governing&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contracts_Current_Phase_Require_Royalty</fullName>
+        <active>false</active>
+        <description>If an app is related to a contract in Phase &quot;Approvals&quot; or &quot;Execution and Processing&quot; , ensure that the three Royalty fields on the app record (High, Low, Current) are populated as well as the field &quot;Royalty Payment Attribute&quot;.</description>
+        <errorConditionFormula>AND(OR(Application_Contract_Phase__c == &apos;Approvals&apos;, Application_Contract_Phase__c == &apos;Execution and Processing&apos;), OR(  ISNULL( Royalty_Current__c ),  ISNULL( Royalty_High__c ) ,  ISNULL( Royalty_Low__c ), ISPICKVAL( Royalty_Payment_Attribute__c , &apos;&apos;)  ))</errorConditionFormula>
+        <errorMessage>This application is tied to a contract in Phase &quot;Approvals&quot; or &quot;Execution and Processing&quot;. You must select an appropriate royalty payment attribute and enter values for Royalty High, Royalty Current and Royalty Low fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_required_if_Exclusive_1</fullName>
+        <active>true</active>
+        <description>Date required if the Exclusive box is checked</description>
+        <errorConditionFormula>AND(Exclusivity__c  = TRUE,isnull( Exclusivity_Start__c))</errorConditionFormula>
+        <errorDisplayField>Exclusivity_Start__c</errorDisplayField>
+        <errorMessage>&quot;Exclusive&quot; box is checked, so please enter a START Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_required_if_Exclusive_2</fullName>
+        <active>true</active>
+        <description>Date required if the Exclusive box is checked</description>
+        <errorConditionFormula>AND(Exclusivity__c = TRUE,isnull( Exclusivity_End__c))</errorConditionFormula>
+        <errorDisplayField>Exclusivity_End__c</errorDisplayField>
+        <errorMessage>&quot;Exclusive&quot; box is checked, so please enter an END Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mot_Proprietary_API</fullName>
+        <active>true</active>
+        <description>If this app contains a mot proprietary api, then require them to be listed</description>
+        <errorConditionFormula>ISPICKVAL( Leveraging_Motorola_Proprietary_APIs__c , &quot;Yes&quot;) &amp;&amp;
+( Motorola_Proprietary_APIs_supported_list__c == NULL)</errorConditionFormula>
+        <errorMessage>If the Leveraging Motorola Proprietary API picklist is marked yes, then enter the motorola proprietary api supported list</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_executed_contract_without_royalty</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( AND( ISCHANGED( Application_Contract_Status__c ), Application_Contract_Status__c = &apos;Fully Executed&apos;, OR( ISNULL(Royalty_Low__c ) , ISNULL(Royalty_High__c ) ) ) , true, false)</errorConditionFormula>
+        <errorMessage>Contract cannot be set to Fully Executed without it&apos;s Royalty High/Low/Current fields being filled out.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Preload_Apps_must_has_SubType</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISPICKVAL( Application_Type__c , &apos;Preload&apos;)  &amp;&amp;  ISPICKVAL( Application_Sub_Type__c ,  &apos;&apos; )</errorConditionFormula>
+        <errorDisplayField>Application_Sub_Type__c</errorDisplayField>
+        <errorMessage>Must select a SubType for Preload Applications.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Available_for_Use</fullName>
+        <active>false</active>
+        <description>Prior to &quot;Automate Partner Checklist Approval&quot; being checked, &quot;Available for Use&quot; should be checked.</description>
+        <errorConditionFormula>AND( Automate_Partner_Checklist_Approval__c == true,  Available_For_Use__c == false )</errorConditionFormula>
+        <errorMessage>&apos;Available for Use&apos; MUST be checked if &apos;Automate Partner Checklist Approval&apos; gets checked.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>List_of_Active_Devices</fullName>
+        <availability>online</availability>
+        <description>List of all ACTIVE devices that have this app on the BOM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>1024</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>List of Active Devices</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mobility.my.salesforce.com/00O40000002nMVt?pv0={!Application__c.Application_ID__c}</url>
+        <width>1400</width>
+    </webLinks>
+</CustomObject>

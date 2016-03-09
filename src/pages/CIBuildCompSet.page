@@ -1,0 +1,794 @@
+<apex:page id="page" controller="CI_BuildCompSetCtr" >
+
+<style>
+    .input-list
+    {
+        width: 250px;
+    }
+    .no-margin
+    {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .float-right
+    {
+        float: right;
+    }
+    .float-left
+    {
+        float: left;
+    }
+    .button-1
+    {
+    }
+    .button-2
+    {
+        width: 70px;
+    }
+    .button-3
+    {
+        width: 120px;
+    }
+    .status
+    {
+        padding-left: 30px;
+        background: url('{!$Resource.LoadingNew}') no-repeat left center; 
+    }
+</style>
+
+<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_3_custom, 'css/smoothness/jquery-ui-1.10.3.custom.min.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.jQuery_UI_1_10_3_custom, 'js/jquery-1.10.0.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.jQuery_UI_1_10_3_custom, 'js/jquery-ui-1.10.3.custom.min.js')}" />
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        showHideSections();
+    });
+    
+    function showHideSections()
+    {
+        var hdnVisibleSection = document.getElementById('{!$Component.page.form.hdnVisibleSection}');
+
+        var visibleSections = $(".hideListButton");
+        var hiddenSections = $(".showListButton");
+        
+        for(var i=0;i<visibleSections.length;i++)
+        {
+            if(visibleSections[i].id.indexOf(hdnVisibleSection.value) == -1)
+                twistSection(visibleSections[i]);
+        }
+        for(var i=0;i<hiddenSections.length;i++)
+        {
+            if(hiddenSections[i].id.indexOf(hdnVisibleSection.value) != -1)
+                twistSection(visibleSections[i]);
+        }
+        
+        $(".hideListButton").attr("onclick", null).attr("onkeypress",null).attr("alt",null).attr("title",null).css("cursor","");
+        $(".showListButton").attr("onclick", null).attr("onkeypress",null).attr("alt",null).attr("title",null).css("cursor","");
+        
+        //For Alert Message
+        var hdnAlertMessage= document.getElementById('{!$Component.page.form.hdnAlertMessage}');
+        
+        if(hdnAlertMessage.value.length > 0)
+        {
+            alert(hdnAlertMessage.value);
+            hdnAlertMessage.value = '';
+        }
+
+        
+        //For Report Popup
+        var hdnCompSetId = document.getElementById('{!$Component.page.form.hdnCompSetId}');
+        var hdnCompSetData = document.getElementById('{!$Component.page.form.hdnCompSetData}');
+        
+        if(hdnCompSetId.value.length > 0)
+        {
+            window.open("/apex/CIReport?CompSetId=" + hdnCompSetId.value);
+            hdnCompSetId.value = '';
+        }
+        if(hdnCompSetData.value.length > 0)
+        {
+            window.open("/apex/CIReport?CompSetData=" + hdnCompSetData.value);
+            hdnCompSetData.value = '';
+        }
+    }
+    
+    function showSliders()
+    {
+        showSliderCamera();
+        showSliderSecCamera();
+        showSliderPriceTier();
+        showSliderScreenSize();
+        showSliderClockspeed();
+        showSliderRAM();
+        showSliderBatteryCapacity();
+    }
+    
+    function showSliderCamera()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinCameraMP}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxCameraMP}');
+        var minVal = {!minValCameraMP};
+        var maxVal = {!maxValCameraMP};
+        var step = {!stepValCameraMP};
+        
+        $("#sliderCamera").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelCamera").text("Any MPix");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelCamera").text("Above " + (maxVal - step) + "MP");
+                else if(ui.values[1] == maxVal)
+                    $("#labelCamera").text(ui.values[0] + "MP and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelCamera").text(ui.values[1] + "MP and below");
+                else
+                    $("#labelCamera").text(ui.values[0] + "MP - " + ui.values[1] + "MP");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelCamera").text("Any MPix");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelCamera").text("Above " + (maxVal - step) + "MP");
+        else if(hdnMax.value == maxVal)
+            $("#labelCamera").text(hdnMin.value + "MP and above");
+        else if(hdnMin.value == minVal)
+            $("#labelCamera").text(hdnMax.value + "MP and below");
+        else
+            $("#labelCamera").text(hdnMin.value + "MP - " + hdnMax.value + "MP");
+    }
+    
+    function showSliderSecCamera()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinSecCameraMP}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxSecCameraMP}');
+        var minVal = {!minValSecCameraMP};
+        var maxVal = {!maxValSecCameraMP};
+        var step = {!stepValSecCameraMP};
+        
+        $("#sliderSecCamera").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelSecCamera").text("Any MPix");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelSecCamera").text("Above " + (maxVal - step) + "MP");
+                else if(ui.values[1] == maxVal)
+                    $("#labelSecCamera").text(ui.values[0] + "MP and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelSecCamera").text(ui.values[1] + "MP and below");
+                else
+                    $("#labelSecCamera").text(ui.values[0] + "MP - " + ui.values[1] + "MP");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelSecCamera").text("Any MPix");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelSecCamera").text("Above " + (maxVal - step) + "MP");
+        else if(hdnMax.value == maxVal)
+            $("#labelSecCamera").text(hdnMin.value + "MP and above");
+        else if(hdnMin.value == minVal)
+            $("#labelSecCamera").text(hdnMax.value + "MP and below");
+        else
+            $("#labelSecCamera").text(hdnMin.value + "MP - " + hdnMax.value + "MP");
+    }
+
+    function showSliderPriceTier()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinPrice}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxPrice}');
+        var minVal = {!minValPrice};
+        var maxVal = {!maxValPrice};
+        var step = {!stepValPrice};
+        
+        $("#sliderPriceTier").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelPriceTier").text("Any Price");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelPriceTier").text("Above $" + (maxVal - step));
+                else if(ui.values[1] == maxVal)
+                    $("#labelPriceTier").text("$" + ui.values[0] + " and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelPriceTier").text("$" + ui.values[1] + " and below");
+                else
+                    $("#labelPriceTier").text("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelPriceTier").text("Any Price");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelPriceTier").text("Above $" + (maxVal - step));
+        else if(hdnMax.value == maxVal)
+            $("#labelPriceTier").text("$" + hdnMin.value + " and above");
+        else if(hdnMin.value == minVal)
+            $("#labelPriceTier").text("$" + hdnMax.value + " and below");
+        else
+            $("#labelPriceTier").text("$" + hdnMin.value + " - $" + hdnMax.value);
+    }
+
+    function showSliderScreenSize()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinScreenSize}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxScreenSize}');
+        var minVal = {!minValScreenSize};
+        var maxVal = {!maxValScreenSize};
+        var step = {!stepValScreenSize};
+        
+        $("#sliderScreenSize").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelScreenSize").text("Any Screen Size");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelScreenSize").text((maxVal - step) + "\"");
+                else if(ui.values[1] == maxVal)
+                    $("#labelScreenSize").text(ui.values[0] + "\" and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelScreenSize").text(ui.values[1] + "\" and below");
+                else
+                    $("#labelScreenSize").text(ui.values[0] + "\" - " + ui.values[1] + "\"");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelScreenSize").text("Any Screen Size");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelScreenSize").text((maxVal - step) + "\"");
+        else if(hdnMax.value == maxVal)
+            $("#labelScreenSize").text(hdnMin.value + "\" and above");
+        else if(hdnMin.value == minVal)
+            $("#labelScreenSize").text(hdnMax.value + "\" and below");
+        else
+            $("#labelScreenSize").text(hdnMin.value + "\" - " + hdnMax.value + "\"");
+    }
+    
+    function showSliderClockspeed()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinClockspeed}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxClockspeed}');
+        var minVal = {!minValClockspeed};
+        var maxVal = {!maxValClockspeed};
+        var step = {!stepValClockspeed};
+        
+        $("#sliderClockspeed").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelClockspeed").text("Any Clockspeed");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelClockspeed").text("Above " + (maxVal - step) + " GHz");
+                else if(ui.values[1] == maxVal)
+                    $("#labelClockspeed").text(ui.values[0] + " GHz and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelClockspeed").text(ui.values[1] + " GHz and below");
+                else
+                    $("#labelClockspeed").text(ui.values[0] + " GHz - " + ui.values[1] + " GHz");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelClockspeed").text("Any Clockspeed");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelClockspeed").text("Above " + (maxVal - step) + " GHz");
+        else if(hdnMax.value == maxVal)
+            $("#labelClockspeed").text(hdnMin.value + " GHz and above");
+        else if(hdnMin.value == minVal)
+            $("#labelClockspeed").text(hdnMax.value + " GHz and below");
+        else
+            $("#labelClockspeed").text(hdnMin.value + " GHz - " + hdnMax.value + " GHz");
+    }
+    
+    function showSliderRAM()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinRAM}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxRAM}');
+        var minVal = {!minValRAM};
+        var maxVal = {!maxValRAM};
+        var step = {!stepValRAM};
+        
+        $("#sliderRAM").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelRAM").text("Any RAM");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelRAM").text("Above " + (maxVal - step) + " MB");
+                else if(ui.values[1] == maxVal)
+                    $("#labelRAM").text(ui.values[0] + " MB and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelRAM").text(ui.values[1] + " MB and below");
+                else
+                    $("#labelRAM").text(ui.values[0] + " MB - " + ui.values[1] + " MB");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelRAM").text("Any RAM");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelRAM").text("Above " + (maxVal - step) + " MB");
+        else if(hdnMax.value == maxVal)
+            $("#labelRAM").text(hdnMin.value + " MB and above");
+        else if(hdnMin.value == minVal)
+            $("#labelRAM").text(hdnMax.value + " MB and below");
+        else
+            $("#labelRAM").text(hdnMin.value + " MB - " + hdnMax.value + " MB");
+    }
+    
+    function showSliderBatteryCapacity()
+    {
+        var hdnMin = document.getElementById('{!$Component.page.form.hdnMinBatteryCapacity}');
+        var hdnMax = document.getElementById('{!$Component.page.form.hdnMaxBatteryCapacity}');
+        var minVal = {!minValBatteryCapacity};
+        var maxVal = {!maxValBatteryCapacity};
+        var step = {!stepValBatteryCapacity};
+        
+        $("#sliderBatteryCapacity").slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: step,
+            values: [hdnMin.value, hdnMax.value],
+            slide: function(event, ui) {
+                hdnMin.value = ui.values[0];
+                hdnMax.value = ui.values[1];
+                
+                if(ui.values[0] == minVal && ui.values[1] == maxVal)
+                    $("#labelBatteryCapacity").text("Any Battery Capacity");
+                else if(ui.values[0] == maxVal && ui.values[1] == maxVal)
+                    $("#labelBatteryCapacity").text("Above " + (maxVal - step) + " mAh");
+                else if(ui.values[1] == maxVal)
+                    $("#labelBatteryCapacity").text(ui.values[0] + " mAh and above");
+                else if(ui.values[0] == minVal)
+                    $("#labelBatteryCapacity").text(ui.values[1] + " mAh and below");
+                else
+                    $("#labelBatteryCapacity").text(ui.values[0] + " mAh - " + ui.values[1] + " mAh");
+            }
+        });
+        
+        if(hdnMin.value == minVal && hdnMax.value == maxVal)
+            $("#labelBatteryCapacity").text("Any Battery Capacity");
+        else if(hdnMin.value == maxVal && hdnMax.value == maxVal)
+            $("#labelBatteryCapacity").text("Above " + (maxVal - step) + " mAh");
+        else if(hdnMax.value == maxVal)
+            $("#labelBatteryCapacity").text(hdnMin.value + " mAh and above");
+        else if(hdnMin.value == minVal)
+            $("#labelBatteryCapacity").text(hdnMax.value + " mAh and below");
+        else
+            $("#labelBatteryCapacity").text(hdnMin.value + " mAh - " + hdnMax.value + " mAh");
+    }
+    
+    function mutualExclusive4G(con)
+    {
+        if(con.checked)
+        {
+            var yes4G = document.getElementById('{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsi4G.chkYes4G}');
+            var no4G = document.getElementById('{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsi4G.chkNo4G}');
+        
+            if(con.id.indexOf("chkYes4G") != -1)
+                no4G.checked = false;
+            else
+                yes4G.checked = false;
+        }
+    }
+    
+    function filterByRegionCheck()
+    {
+        var motoProduct = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsOne.pbsiMotoProduct.listMotoProduct}"]').val();
+        var region = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsOne.pbsiRegion.listRegion}"]').val() || [];
+        
+        var msg = "";
+        
+        if(motoProduct == "- Select -")
+            msg += "\n\u2022 Motorola Product";
+        if(region.length == 0)
+            msg += "\n\u2022 Region";
+        
+        if(msg.length > 0)
+        {
+            alert("Please select required values:\n" + msg);
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function nextToProductSelectionCheck()
+    {
+        //var operator = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiOperator.listOperator}"]').val() || [];
+        var brand = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiBrand.listBrand}"]').val() || [];
+        var os = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiOS.listOS}"]').val() || [];
+        var entryPeriod = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiEntryPeriod.listEntryPeriod}"]').val() || [];
+        var formFactor = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiFormFactor.listFormFactor}"]').val() || [];
+        var processor = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiProcessor.listProcessorCores}"]').val() || [];
+        var yes4G = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsi4G.chkYes4G}"]').prop('checked');
+        var no4G = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsi4G.chkNo4G}"]').prop('checked');
+        //var ipxx = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiLifeProof.chkIpxx}"]').prop('checked');
+        //var scrRes = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiLifeProof.chkScratchResistant}"]').prop('checked');
+        var nfc = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiOthers.chkNfc}"]').prop('checked');
+        var fmRadio = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiOthers.chkFmRadio}"]').prop('checked');
+        var dualSim = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsTwo.pbsiOthers.chkDualSim}"]').prop('checked');
+        var minScreenSize = document.getElementById('{!$Component.page.form.hdnMinScreenSize}').value;
+        var maxScreenSize = document.getElementById('{!$Component.page.form.hdnMaxScreenSize}').value;
+        var minCameraMP = document.getElementById('{!$Component.page.form.hdnMinCameraMP}').value;
+        var maxCameraMP = document.getElementById('{!$Component.page.form.hdnMaxCameraMP}').value;
+        var minSecCameraMP = document.getElementById('{!$Component.page.form.hdnMinSecCameraMP}').value;
+        var maxSecCameraMP = document.getElementById('{!$Component.page.form.hdnMaxSecCameraMP}').value;
+        var minPrice = document.getElementById('{!$Component.page.form.hdnMinPrice}').value;
+        var maxPrice = document.getElementById('{!$Component.page.form.hdnMaxPrice}').value;
+        var minClockspeed = document.getElementById('{!$Component.page.form.hdnMinClockspeed}').value;
+        var maxClockspeed = document.getElementById('{!$Component.page.form.hdnMaxClockspeed}').value;
+        var minRAM = document.getElementById('{!$Component.page.form.hdnMinRAM}').value;
+        var maxRAM = document.getElementById('{!$Component.page.form.hdnMaxRAM}').value;
+        var minBatteryCapacity = document.getElementById('{!$Component.page.form.hdnMinBatteryCapacity}').value;
+        var maxBatteryCapacity = document.getElementById('{!$Component.page.form.hdnMaxBatteryCapacity}').value;
+
+        if(brand.length == 0 &&
+           os.length == 0 &&
+           entryPeriod.length == 0 &&
+           formFactor.length == 0 &&
+           processor.length == 0 &&
+           yes4G == false &&
+           no4G == false &&
+           //ipxx == false &&
+           //scrRes == false &&
+           nfc == false &&
+           fmRadio == false &&
+           dualSim == false &&
+           minScreenSize == {!minValScreenSize} &&
+           maxScreenSize == {!maxValScreenSize} &&
+           minCameraMP == {!minValCameraMP} &&
+           maxCameraMP == {!maxValCameraMP} &&
+           minSecCameraMP == {!minValSecCameraMP} &&
+           maxSecCameraMP == {!maxValSecCameraMP} &&
+           minPrice == {!minValPrice} &&
+           maxPrice == {!maxValPrice} &&
+           minClockspeed == {!minValClockspeed} &&
+           maxClockspeed == {!maxValClockspeed} &&
+           minRAM == {!minValRAM} &&
+           maxRAM == {!maxValRAM} &&
+           minBatteryCapacity == {!minValBatteryCapacity} &&
+           maxBatteryCapacity == {!maxValBatteryCapacity})
+        {
+            alert("You have not selected any filter.\nPlease select at least one filter value.");
+            return false;
+        }
+
+        return true;
+    }
+    
+    function checkIfCompProductIsSelected()
+    {
+        var compProduct = $('[id$="{!$Component.page.form.pbBuildCompSet.pbsThree.pbsiCompProduct.listCompProduct}"]').val() || [];
+        
+        if(compProduct.length == 0)
+        {
+            alert("Please select at least one Competitor Product.");
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function confirmCompSetName()
+    {
+        if(!checkIfCompProductIsSelected())
+            return false;
+        
+        var compSetName = window.prompt("Please provide Comp Set name:");
+        
+        if(compSetName != null && compSetName.trim() != "")
+        {
+            var hdnCompSetName = document.getElementById('{!$Component.page.form.hdnCompSetName}');
+            
+            hdnCompSetName.value = compSetName;
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>
+
+<apex:sectionHeader title="Competitive Intelligence Report" subtitle="Build Comp-Set" />
+
+<apex:pageMessages id="msg" />
+
+<apex:form id="form" >
+
+    <apex:outputPanel id="pnlInputHidden" >
+        <apex:inputHidden id="hdnVisibleSection" value="{!visibleSection}" />
+        <apex:inputHidden id="hdnCompSetId" value="{!compSetId}" />
+        <apex:inputHidden id="hdnCompSetData" value="{!compSetData}" />
+        <apex:inputHidden id="hdnMinCameraMP" value="{!minCameraMP}" />
+        <apex:inputHidden id="hdnMaxCameraMP" value="{!maxCameraMP}" />
+        <apex:inputHidden id="hdnMinSecCameraMP" value="{!minSecCameraMP}" />
+        <apex:inputHidden id="hdnMaxSecCameraMP" value="{!maxSecCameraMP}" />
+        <apex:inputHidden id="hdnMinPrice" value="{!minPrice}" />
+        <apex:inputHidden id="hdnMaxPrice" value="{!maxPrice}" />
+        <apex:inputHidden id="hdnMinScreenSize" value="{!minScreenSize}" />
+        <apex:inputHidden id="hdnMaxScreenSize" value="{!maxScreenSize}" />
+        <apex:inputHidden id="hdnMinClockspeed" value="{!minClockspeed}" />
+        <apex:inputHidden id="hdnMaxClockspeed" value="{!maxClockspeed}" />
+        <apex:inputHidden id="hdnMinRAM" value="{!minRAM}" />
+        <apex:inputHidden id="hdnMaxRAM" value="{!maxRAM}" />
+        <apex:inputHidden id="hdnMinBatteryCapacity" value="{!minBatteryCapacity}" />
+        <apex:inputHidden id="hdnMaxBatteryCapacity" value="{!maxBatteryCapacity}" />
+        <apex:inputHidden id="hdnCompSetName" value="{!compSetName}" />
+        <apex:inputHidden id="hdnAlertMessage" value="{!clientSideAlertMessage}" />
+    </apex:outputPanel>
+    
+    <apex:pageBlock id="pbBuildCompSet" >
+    
+        <apex:pageBlockSection id="pbsOne" columns="1" collapsible="true" title="MOTOROLA PRODUCT & REGION" showHeader="true">
+            
+            <apex:pageBlockSectionItem id="pbsiMotoProduct">
+                <apex:outputLabel value="Select Motorola Product" />
+                <apex:selectList id="listMotoProduct" value="{!motoProduct}" multiselect="false" size="1" styleClass="input-list">
+                    <apex:selectOptions value="{!motoProductOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiRegion">
+                <apex:outputLabel value="Select Region" />
+                <apex:selectList id="listRegion" value="{!region}" multiselect="true" size="8" styleClass="input-list">
+                    <apex:selectOptions value="{!regionOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="" />
+                <apex:outputPanel >
+                    <apex:commandButton id="btnFilterByRegion" value="Show Parameters based on Selected Region" onclick="if(!filterByRegionCheck()) return false;" action="{!filterByRegion}" status="status1" reRender="pbsTwo,pnlInputHidden,msg" oncomplete="showSliders(); showHideSections();" />
+                    &nbsp;&nbsp;
+                    <apex:actionStatus id="status1" startStyleClass="status" />
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+        </apex:pageBlockSection>
+    
+        <apex:pageBlockSection id="pbsTwo" columns="2" collapsible="true" title="PARAMETERS BASED ON SELECTED REGION">
+            <!--
+            <apex:pageBlockSectionItem id="pbsiOperator">
+                <apex:outputLabel value="Operator" />
+                <apex:selectList id="listOperator" value="{!operator}" multiselect="true" size="6" styleClass="input-list">
+                    <apex:selectOptions value="{!operatorOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            -->
+            <apex:pageBlockSectionItem id="pbsiEntryPeriod">
+                <apex:outputLabel value="Entry Period" />
+                <apex:selectList id="listEntryPeriod" value="{!entryPeriod}" multiselect="true" size="10" styleClass="input-list">
+                    <apex:selectOptions value="{!entryPeriodOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>           
+            <apex:pageBlockSectionItem id="pbsiBrand">
+                <apex:outputLabel value="Brand" />
+                <apex:selectList id="listBrand" value="{!brand}" multiselect="true" size="10" styleClass="input-list">
+                    <apex:selectOptions value="{!brandOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem id="pbsi4G">
+                <apex:outputLabel value="4G" />
+                <apex:outputPanel styleClass="no-margin">
+                    <apex:inputCheckbox id="chkYes4G" onchange="mutualExclusive4G(this)" value="{!yes4G}" />&nbsp;Yes
+                    <br />
+                    <apex:inputCheckbox id="chkNo4G" onchange="mutualExclusive4G(this)" value="{!no4G}" />&nbsp;No
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiDomain">
+                <apex:outputLabel value="Domain" />
+                <apex:outputPanel styleClass="no-margin">
+                    <apex:inputCheckbox id="chkFeaturePhone" value="{!featurePhone}" />&nbsp;Feature Phone
+                    <br />
+                    <apex:inputCheckbox id="chkSmartPhone" value="{!smartPhone}" />&nbsp;Smart Phone
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiPriceTier">
+                <apex:outputLabel value="Price Tier" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelPriceTier"></div>
+                    <br />
+                    <div id="sliderPriceTier" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiScreenSize">
+                <apex:outputLabel value="Screen Size" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelScreenSize"></div>
+                    <br />
+                    <div id="sliderScreenSize" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiDisplayResolution">
+                <apex:outputLabel value="Display Resolution" />
+                <apex:outputPanel >
+                    <apex:selectList id="listDisplayResolution" value="{!displayResolutions}" multiselect="true" size="10" styleClass="input-list">
+                        <apex:selectOptions value="{!displayResolutionsOptions}" />
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiProcessor">
+                <apex:outputLabel value="Processor" />
+                <apex:outputPanel >
+                    <div id="labelClockspeed"></div>
+                    <br />
+                    <div id="sliderClockspeed" style="width: 250px;"></div>
+                    <br />
+                    <apex:selectList id="listProcessorCores" value="{!processorCores}" multiselect="true" size="6" styleClass="input-list">
+                        <apex:selectOptions value="{!processorCoresOptions}" />
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiCamera">
+                <apex:outputLabel value="Primary Camera" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelCamera"></div>
+                    <br />
+                    <div id="sliderCamera" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>                     
+            <apex:pageBlockSectionItem id="pbsiSecCamera">
+                <apex:outputLabel value="Secondary Camera" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelSecCamera"></div>
+                    <br />
+                    <div id="sliderSecCamera" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>                        
+            <apex:pageBlockSectionItem id="pbsiRAM">
+                <apex:outputLabel value="RAM" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelRAM"></div>
+                    <br />
+                    <div id="sliderRAM" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiBatteryCapacity">
+                <apex:outputLabel value="Battery Capacity" />
+                <apex:pageBlockSectionItem >
+                    <div id="labelBatteryCapacity"></div>
+                    <br />
+                    <div id="sliderBatteryCapacity" style="width: 250px;"></div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSectionItem>
+            <!--
+            <apex:pageBlockSectionItem id="pbsiLifeProof">
+                <apex:outputLabel value="Life Proof" />
+                <apex:outputPanel styleClass="no-margin">
+                    <apex:inputCheckbox id="chkIpxx" value="{!ipxx}" />&nbsp;IPXX
+                    <br />
+                    <apex:inputCheckbox id="chkScratchResistant" value="{!scratchResistant}" />&nbsp;Scratch Resistant
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            -->
+            <apex:pageBlockSectionItem id="pbsiOS">
+                <apex:outputLabel value="OS" />
+                <apex:selectList id="listOS" value="{!os}" multiselect="true" size="6" styleClass="input-list">
+                    <apex:selectOptions value="{!osOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiFormFactor">
+                <apex:outputLabel value="Form Factor" />
+                <apex:selectList id="listFormFactor" value="{!formFactor}" multiselect="true" size="6" styleClass="input-list">
+                    <apex:selectOptions value="{!formFactorOptions}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>            
+            <apex:pageBlockSectionItem id="pbsiOthers">
+                <apex:outputLabel value="Others" />
+                <apex:outputPanel styleClass="no-margin">
+                    <apex:inputCheckbox id="chkFmRadio" value="{!fmRadio}" />&nbsp;FM Radio
+                    <br />
+                    <apex:inputCheckbox id="chkDualSim" value="{!dualSim}" />&nbsp;Dual SIM
+                    <br />
+                    <apex:inputCheckbox id="chkNfc" value="{!nfc}" />&nbsp;NFC
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsiEmpty">
+
+            </apex:pageBlockSectionItem>
+            
+            <apex:outputPanel styleClass="float-right">
+                <apex:commandButton id="btnBackToRegionSelection" value="Back" action="{!backToRegionSelection}" status="status2" reRender="pbsOne,pnlInputHidden,msg" oncomplete="showHideSections()" styleClass="button-2" />
+                &nbsp;&nbsp;&nbsp;
+                <apex:commandButton id="btnClearParameterSelections" value="Clear" action="{!clearParameterSelections}" status="status2" reRender="pbsTwo,pnlInputHidden,msg" oncomplete="showSliders(); showHideSections()" styleClass="button-2" />
+            </apex:outputPanel>
+            <apex:outputPanel styleClass="float-left">
+                <apex:commandButton id="btnNextToProductSelection" value="Next" onclick="if(!nextToProductSelectionCheck()) return false;" action="{!nextToProductSelection}" status="status2" reRender="pbsTwo,pbsThree,pnlInputHidden,msg" oncomplete="showHideSections()" styleClass="button-2" />
+                &nbsp;&nbsp;&nbsp;
+                <apex:actionStatus id="status2" startStyleClass="status" />
+            </apex:outputPanel>    
+        </apex:pageBlockSection>
+    
+        <apex:pageBlockSection id="pbsThree" columns="1" collapsible="true" title="PRODUCTS MATCHING YOUR CRITERIA">
+        
+            <apex:pageBlockSectionItem id="pbsiCompProduct">
+                <apex:outputLabel value="Select Competitor Products (Max. 15)" />
+                <apex:outputPanel >
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <apex:selectList id="listCompProduct" value="{!compProducts}" multiselect="true" size="10" styleClass="input-list">
+                                    <apex:selectOptions value="{!compProductOptions}" />
+                                </apex:selectList>
+                            </td>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <apex:commandButton id="btnRunReport" value="Compare Products" onclick="if(!checkIfCompProductIsSelected()) return false;" action="{!runReport}" status="status3" reRender="pnlInputHidden,msg" oncomplete="showHideSections()" styleClass="button-3" />
+                                &nbsp;&nbsp;
+                                <apex:actionStatus id="status3" startStyleClass="status" />
+                                <br />
+                                <apex:commandButton id="btnAddToFavourite" value="Save Comp Set" onclick="if(!confirmCompSetName()) return false;" action="{!addToFavourite}" status="status4" reRender="pnlInputHidden,msg" oncomplete="showHideSections()" styleClass="button-3" />
+                                &nbsp;&nbsp;
+                                <apex:actionStatus id="status4" startStyleClass="status" />
+                                <br />
+                                <apex:commandButton id="btnBackToParamSelection" value="Back" onclick="if(!confirm('All filters will be cleared, do you want to continue?')) return false;" action="{!backToParamSelection}" status="status5" reRender="pbsTwo,pnlInputHidden,msg" oncomplete="showSliders(); showHideSections();" styleClass="button-3" />
+                                &nbsp;&nbsp;
+                                <apex:actionStatus id="status5" startStyleClass="status" />
+                                <br />
+                                <apex:commandButton id="btnBuildNewCompSet" value="New" action="{!buildNewCompSet}" status="status6" reRender="pbsOne,pnlInputHidden,msg" oncomplete="showHideSections()" styleClass="button-3" />
+                                &nbsp;&nbsp;
+                                <apex:actionStatus id="status6" startStyleClass="status" />
+                            </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

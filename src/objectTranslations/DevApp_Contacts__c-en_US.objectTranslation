@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DevApp_Contacts</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DevApp External Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ApplicationName --></label>
+        <name>ApplicationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Type --></label>
+        <name>Contact_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Program Responsibility --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DeviceName --></label>
+        <name>DeviceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Application --></label>
+        <name>Device_Application__c</name>
+        <relationshipLabel><!-- DevApp External Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Function --></label>
+        <name>Job_Function__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

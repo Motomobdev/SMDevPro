@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>CustomerMeeting</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>CustomerMeeting</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>CustomerMeeting</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>GTM_Meeting_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Account__c</fields>
+        <fields>PublicCalendar__c</fields>
+        <fields>Meeting_Type__c</fields>
+        <label>GTM - Meeting Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Meetings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Agenda__c</fullName>
+        <externalId>false</externalId>
+        <label>Agenda</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Business</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Handset</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Companion Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CalendarSameAsAccount__c</fullName>
+        <description>Is Public Calendar same as related Account&apos;s Public Calendar?</description>
+        <externalId>false</externalId>
+        <formula>TEXT(PublicCalendar__c) == TEXT(Account__r.PublicCalendar__c)</formula>
+        <label>CalendarSameAsAccount?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Attendees_and_Titles__c</fullName>
+        <description>used by enterprise sales team</description>
+        <externalId>false</externalId>
+        <label>Customer Attendees and Titles</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EndDate_d__c</fullName>
+        <description>The field has has _d in the name to denote the fact that it is only the date portion of the DateTime object Meeting_End_Date</description>
+        <externalId>false</externalId>
+        <label>Meeting End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Executive_Summary__c</fullName>
+        <description>This field serves as a &quot;short&quot; summary of the post meeting comments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A &quot;short&quot; summary of the post meeting comments.</inlineHelpText>
+        <label>Executive Summary</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_Attendees__c</fullName>
+        <externalId>false</externalId>
+        <label>External Attendees and Title</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>First_Post_Meeting_Notes_Entry_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date on which the first post meeting notes was entered.</inlineHelpText>
+        <label>First Post Meeting Notes Entry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Has_Attachments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Attachments?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Attendees__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Attendees</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Key_Meetings_Pending__c</fullName>
+        <description>for use in enterprise sales</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Upcoming Meeting details including: Meeting date, external attendees and title, main topic of meeting.</inlineHelpText>
+        <label>Key Meetings Pending</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Meeting End Date and Time</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Meeting Start Date and Time</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Meeting Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Companion Product Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOR Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Supplier Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QBR Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFQ Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply Chain Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tech. Sales Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Next_Steps__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Steps</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Num_of_days_since_the_meeting_start_date__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOW()  -  Meeting_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days since the start of this customer meetings.</inlineHelpText>
+        <label>Num of days since the meeting start date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Objective</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Original creator of the Meeting if created through Gmail</description>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Meetings</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Playbook__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Playbook</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Retail_Playbook__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Retail_Playbook__c</referenceTo>
+        <relationshipName>Meetings</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Post_Meeting_Notes_Text_Length__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Post Meeting Notes Text Length</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Post_Meeting_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Post Meeting Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority_Scope__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority Scope</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Local</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PublicCalendar__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Calendar</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Lenovo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CES - Consumer Electronics Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Companion Products (CP)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CTIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iDEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America North</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America South</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA ATT/TMO/Sprint/RONA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA VZW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Sales (NA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Sales (Non NA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MWC - Mobile World Congress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ranging_Record__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ranging Record</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Account__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Ranging__c.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Ranging__c</referenceTo>
+        <relationshipLabel>Meetings</relationshipLabel>
+        <relationshipName>Meetings</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>StartDate_d__c</fullName>
+        <description>The field has has _d in the name to denote the fact that it is only the date portion of the DateTime object Meeting_Start_Date</description>
+        <externalId>false</externalId>
+        <label>Meeting Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Meeting</label>
+    <listViews>
+        <fullName>All_Meeting</fullName>
+        <columns>NAME</columns>
+        <columns>Business__c</columns>
+        <columns>Location__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>StartDate_d__c</columns>
+        <columns>EndDate_d__c</columns>
+        <columns>Owner__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Meetings</label>
+    </listViews>
+    <listViews>
+        <fullName>CES_Meetings</fullName>
+        <columns>NAME</columns>
+        <columns>PublicCalendar__c</columns>
+        <columns>Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PublicCalendar__c</field>
+            <operation>equals</operation>
+            <value>CES - Consumer Electronics Show</value>
+        </filters>
+        <label>CES Meetings</label>
+    </listViews>
+    <listViews>
+        <fullName>CTIA_Meetings</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>StartDate_d__c</columns>
+        <columns>Post_Meeting_Notes__c</columns>
+        <columns>Has_Attachments__c</columns>
+        <columns>Owner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PublicCalendar__c</field>
+            <operation>equals</operation>
+            <value>CTIA</value>
+        </filters>
+        <label>CTIA Meetings</label>
+    </listViews>
+    <listViews>
+        <fullName>Meetings_with_wrong_calendar</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>PublicCalendar__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CalendarSameAsAccount__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PublicCalendar__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Meetings with wrong calendar</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Meetings</fullName>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Business__c</columns>
+        <columns>Location__c</columns>
+        <columns>StartDate_d__c</columns>
+        <columns>EndDate_d__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Meetings</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Meetings</fullName>
+        <columns>NAME</columns>
+        <columns>Business__c</columns>
+        <columns>Location__c</columns>
+        <columns>StartDate_d__c</columns>
+        <columns>EndDate_d__c</columns>
+        <columns>Owner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <nameField>
+        <label>Meeting Subject</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Meetings</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>GTM</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>GTM_Meeting_Compact_Layout</compactLayoutAssignment>
+        <description>Default GTM record type</description>
+        <label>GTM</label>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Companion Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Meeting_Type__c</picklist>
+            <values>
+                <fullName>Companion Product Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ranging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tech%2E Sales Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority_Scope__c</picklist>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PublicCalendar__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Lenovo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CES - Consumer Electronics Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CTIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Companion Products %28CP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America North</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MWC - Mobile World Congress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA ATT%2FTMO%2FSprint%2FRONA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA VZW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Sales %28NA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Sales %28Non NA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Ops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iDEN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Procurement</fullName>
+        <active>true</active>
+        <label>Procurement</label>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Companion Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Meeting_Type__c</picklist>
+            <values>
+                <fullName>MOR Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Supplier Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QBR Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFQ Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority_Scope__c</picklist>
+            <values>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PublicCalendar__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America North</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA ATT%2FTMO%2FSprint%2FRONA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA VZW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Sales %28NA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail Sales %28Non NA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Ops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iDEN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Meeting_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Playbook__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>EndDate_d__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>End_date_cannot_be_lower_than_start_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Meeting_Start_Date__c &gt; Meeting_End_Date__c</errorConditionFormula>
+        <errorDisplayField>Meeting_End_Date__c</errorDisplayField>
+        <errorMessage>The meeting end date and time must occur after the start date and time</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Copy_Agenda_to_Weekly</fullName>
+        <availability>online</availability>
+        <description>Copy Agenda items to Weekly Report</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Copy Agenda to Weekly</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+
+if({!ISNULL(Customer_Meeting__c.Agenda__c)}){
+  alert(&apos;Meeting agenda is Empty, please update the agenda before submitting to Weekly&apos;);
+} 
+else {
+  var weeklyItem = new sforce.SObject(&apos;Weekly_Report_Item__c&apos;);
+  weeklyItem.Summary__c = &quot;{!JSENCODE(Customer_Meeting__c.Agenda__c)}&quot;;
+  weeklyItem.Category__c =&apos;Highlights&apos;;
+  weeklyItem.Function__c = &apos;GTM&apos;;
+  weeklyItem.Current_Week__c = &apos;true&apos;;
+  weeklyItem.Meeting__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+  weeklyItem.Include_In_Report__c = &apos;true&apos;;
+  weeklyItem.Source_ID__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+  weeklyItem.Source_Link__c = &apos;https://&apos;+ window.location.hostname + &apos;/&apos; + &apos;{!Customer_Meeting__c.Id}&apos;;
+  weeklyItem.Source_Type__c = &apos;Meeting&apos;;
+  weeklyItem.Account__c = &apos;{!Customer_Meeting__c.AccountId__c}&apos;;
+  weeklyItem.Playbook__c = &apos;{!Customer_Meeting__c.PlaybookId__c}&apos;;
+  weeklyItem.Business__c = &apos;{!Customer_Meeting__c.Business__c}&apos;;
+
+  result = sforce.connection.create([weeklyItem]);
+  if(result[0].success == &apos;true&apos;)
+  {
+      alert(&apos;Weekly Report Item created from Agenda Successfully.&apos;);
+      window.location.reload();
+  }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Copy_Comments_to_Weekly</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Copy Comments to Weekly</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+
+if({!ISNULL(Customer_Meeting__c.Post_Meeting_Notes__c)}){
+  alert(&apos;Post Meeting Notes field is Empty, please update the post meeting notes before submitting to Weekly&apos;);
+}
+else{
+  try{
+    var weeklyItem = new sforce.SObject(&apos;Weekly_Report_Item__c&apos;);
+
+    var htmlText = &apos;{!JSENCODE(Customer_Meeting__c.Post_Meeting_Notes__c)}&apos;;
+    var div = document.createElement(&apos;div&apos;);
+    div.innerHTML = htmlText;
+    var summary = div.textContent || div.innerText || &apos;&apos;;
+    if(summary.lengeth &gt; 2000){
+      alert(&apos;Post Meeting Notes field is more than 2000 characters, please update the post meeting notes before submitting to Weekly&apos;);
+    }
+    else{
+      weeklyItem.Summary__c = summary;
+      weeklyItem.Category__c =&apos;Highlights&apos;;
+      weeklyItem.Function__c = &apos;GTM&apos;;
+      weeklyItem.Current_Week__c = &apos;true&apos;;
+      weeklyItem.Meeting__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Include_In_Report__c = &apos;true&apos;;
+      weeklyItem.Source_ID__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Source_Link__c = &apos;https://&apos;+ window.location.hostname + &apos;/&apos; + &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Source_Type__c = &apos;Meeting&apos;;
+      weeklyItem.Account__c = &apos;{!Customer_Meeting__c.AccountId__c}&apos;;
+      weeklyItem.Playbook__c = &apos;{!Customer_Meeting__c.PlaybookId__c}&apos;;
+      weeklyItem.Business__c = &apos;{!Customer_Meeting__c.Business__c}&apos;;
+          
+      result = sforce.connection.create([weeklyItem]);
+
+      if(result[0].success == &apos;true&apos;){
+          alert(&apos;Weekly Report Item created from Post Meeting Notes Successfully.&apos;);
+          window.location.reload();
+      }
+    }
+  }
+  catch(err){
+    alert(&apos;There was an error in submitting your request&apos; + err.message);
+  }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Copy_Summary_to_Weekly</fullName>
+        <availability>online</availability>
+        <description>Copy executive summary to current week&apos;s weekly report.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Copy Summary to Weekly</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+
+if({!ISNULL(Customer_Meeting__c.Executive_Summary__c)}){
+  alert(&apos;Post Meeting Notes field is Empty, please update the post meeting notes before submitting to Weekly&apos;);
+}
+else{
+  try{
+    var weeklyItem = new sforce.SObject(&apos;Weekly_Report_Item__c&apos;);
+
+    var htmlText = &apos;{!JSENCODE(Customer_Meeting__c.Executive_Summary__c)}&apos;;
+    var div = document.createElement(&apos;div&apos;);
+    div.innerHTML = htmlText;
+    var summary = div.textContent || div.innerText || &apos;&apos;;
+    if(summary.lengeth &gt; 2000){
+      alert(&apos;Executive Summary field is more than 2000 characters, please update the post meeting notes before submitting to Weekly&apos;);
+    }
+    else{
+      weeklyItem.Summary__c = summary;
+      weeklyItem.Category__c =&apos;Highlights&apos;;
+      weeklyItem.Function__c = &apos;GTM&apos;;
+      weeklyItem.Current_Week__c = &apos;true&apos;;
+      weeklyItem.Meeting__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Include_In_Report__c = &apos;true&apos;;
+      weeklyItem.Source_ID__c = &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Source_Link__c = &apos;https://&apos;+ window.location.hostname + &apos;/&apos; + &apos;{!Customer_Meeting__c.Id}&apos;;
+      weeklyItem.Source_Type__c = &apos;Meeting&apos;;
+      weeklyItem.Account__c = &apos;{!Customer_Meeting__c.AccountId__c}&apos;;
+      weeklyItem.Playbook__c = &apos;{!Customer_Meeting__c.PlaybookId__c}&apos;;
+      weeklyItem.Business__c = &apos;{!Customer_Meeting__c.Business__c}&apos;;
+          
+      result = sforce.connection.create([weeklyItem]);
+
+      if(result[0].success == &apos;true&apos;){
+          alert(&apos;Weekly Report Item created from Executive Summary Successfully.&apos;);
+          window.location.reload();
+      }
+    }
+  }
+  catch(err){
+    alert(&apos;There was an error in submitting your request&apos; + err.message);
+  }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Download_as_PDF</fullName>
+        <availability>online</availability>
+        <description>Download meeting details as PDF</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Download as PDF</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var url = &quot;/apex/loop__looplus?eid={!Customer_Meeting__c.Id}&amp;sessionid={!$Api.Session_ID}&amp;autorun=true&amp;ddpIds=a2340000000LERc&amp;header=false&amp;sidebar=false&quot;;
+
+window.open(url, &quot;Customer Meeting Download&quot;, &quot;location=no,menubar=no,toolbar=no,width=500,height=300&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Attendees</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Edit Attendees</masterLabel>
+        <openType>sidebar</openType>
+        <page>CustomerMeetingAttendees</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Meeting</fullName>
+        <availability>online</availability>
+        <description>Create meeting from Playbook. Auto populate Playbook &amp; Account lookup.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Meetings</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CustomerMeeting?CF00N40000002VMeQ={!Retail_Playbook__c.Name}&amp;CF00N40000002VMeQ_lkid={!Retail_Playbook__c.Id}&amp;CF00N40000002VMeH={!Retail_Playbook__c.Account__c}&amp;CF00N40000002VMeH_lkid={!Retail_Playbook__c.AccountId__c}&amp;scontrolCaching=1&amp;retURL=%2F{!Retail_Playbook__c.Id}&amp;sfdc.override=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Meeting_Ranging</fullName>
+        <availability>online</availability>
+        <description>Invokes customer meeting page with account and ranging record IDs</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Meeting (Ranging)</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CustomerMeeting?account={!Project_Ranging__c.AccountId__c}&amp;ranging={!Project_Ranging__c.Id}&amp;type=Ranging</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Meetings</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Meeting</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>window.parent.location.href = &quot;apex/CustomerMeeting?&amp;Account__c={!Account.Id}&quot;</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Bundle Line</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Bundle Lines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Bundle --></label>
+        <name>Product_Bundle__c</name>
+        <relationshipLabel><!-- Product Bundle Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Product Bundle Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Bundle Line Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

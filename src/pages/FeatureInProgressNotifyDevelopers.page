@@ -1,0 +1,14 @@
+<apex:page standardController="Feature_Release__c" extensions="FeatureInProgressNotifyDevelopersC">
+<apex:messages />
+<apex:pageblock rendered="{!hasMessages}">
+<apex:form >
+<apex:commandbutton action="{!goBack}" value="Close"/></apex:form>
+</apex:pageblock>
+<apex:pageblock title="Notify Following Developers" rendered="{!NOT(hasMessages)}">
+<apex:pageblocktable value="{!developers}" var="developer">
+<apex:column value="{!developer.name}"/>
+<apex:column value="{!developer.email}"/>
+</apex:pageblocktable>
+</apex:pageblock>
+<apex:form ><apex:commandbutton action="{!sendEmail}" value="Send"/></apex:form>
+</apex:page>

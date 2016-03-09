@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Office PC Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Office PC Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Legislative Offices or Committees --></label>
+        <name>Legislative_Offices__c</name>
+        <relationshipLabel><!-- Political Consultants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Political Consultant --></label>
+        <name>Political_Consultants__c</name>
+        <relationshipLabel><!-- Assigned Legislative Offices or Committees --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Account PC Junction Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

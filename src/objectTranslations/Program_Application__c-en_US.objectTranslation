@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Cost Current --></label>
+        <name>Application_Cost_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost High --></label>
+        <name>Application_Cost_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost Low --></label>
+        <name>Application_Cost_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost --></label>
+        <name>Application_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description taken from the Applications detail page. --></help>
+        <label><!-- Application Description --></label>
+        <name>Application_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Instructions taken from Applications detail page. --></help>
+        <label><!-- Application Instructions --></label>
+        <name>Application_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Program Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Description specific to the Application as used on this Program. --></help>
+        <label><!-- Program Application Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Instructions specific to the Application as used on this Program. --></help>
+        <label><!-- Program Application Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Program Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Candidate</masterLabel>
+            <translation><!-- Candidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mandatory</masterLabel>
+            <translation><!-- Mandatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Program Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cannot delete this Program Application because the Program has been checked as Reviewed and Approved. --></errorMessage>
+        <name>Cannot_delete_if_Program_is_Reviewed</name>
+    </validationRules>
+</CustomObjectTranslation>

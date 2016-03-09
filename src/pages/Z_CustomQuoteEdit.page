@@ -1,0 +1,10 @@
+<apex:page standardController="zqu__Quote__c" 
+		   extensions="Z_CustomQuoteEdit">
+		   <apex:form >
+		 
+        <zqu:PropertyComponent options="{!theOptions}" saveButtonLabel="Save" >
+        
+        </zqu:PropertyComponent>
+        
+    </apex:form>
+</apex:page>

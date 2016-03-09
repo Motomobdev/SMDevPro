@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Local Counsel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Local Counsels</value>
+    </caseValues>
+    <fields>
+        <label><!-- Local Counsel Firm Address --></label>
+        <name>Local_Counsel_Firm_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm FAX Number --></label>
+        <name>Local_Counsel_Firm_FAX_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm Main Office Phone Num --></label>
+        <name>Local_Counsel_Firm_Main_Office_Phone_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm Name --></label>
+        <name>Local_Counsel_Firm_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm email address --></label>
+        <name>Local_Counsel_Firm_email_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Counsel Core ID --></label>
+        <name>Motorola_Counsel_Core_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm --></label>
+        <name>Motorola_Counsel_Lead_Account__c</name>
+        <relationshipLabel><!-- Local Counsels --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Motorola Counsel Lead (Motorolan) --></label>
+        <name>Motorola_Counsel_Lead_MCD__c</name>
+        <relationshipLabel><!-- Local Counsels --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Local Counsel Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Both the account and Motorola core directory lookups cannot be populated at the same time. Please select only one --></errorMessage>
+        <name>Only_Select_One_Counsel</name>
+    </validationRules>
+</CustomObjectTranslation>

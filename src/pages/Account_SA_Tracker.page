@@ -1,0 +1,35 @@
+<apex:page standardController="Account" readOnly="true"
+            extensions="Account_SA_Tracker" action="{!init}">
+
+    <apex:pageMessages />
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!sa_tracker_data}" var="sa">
+            <apex:column value="{!sa.product__r.name}">
+                <apex:facet name="header">Product</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.Business_Unit__c}"/>
+            <apex:column value="{!sa.NPI_APC__c}">
+                <apex:facet name="header">APC</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.NPI_Segment_Code__c}">
+                <apex:facet name="header">Segment Code</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.NPI_Country__c}">
+                <apex:facet name="header">Country</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.NPI_SA_Date__c}">
+                <apex:facet name="header">SA Date</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.NPI_FSC_Date__c}" title="First Customer Shipment Date or Ship Date">
+                <apex:facet name="header">Ship Date</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.NPI_In_Market_Date__c}" title="Launch Date">
+                <apex:facet name="header">Launch Date</apex:facet>
+            </apex:column>
+            <apex:column value="{!sa.SA_Status__c}"/>
+            <apex:column value="{!sa.NPI_FCS_Qty__c}" title="First Customer Shipment Quantity or Ship Quantity">
+                <apex:facet name="header">Ship Quantity</apex:facet>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

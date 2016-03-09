@@ -1,0 +1,1 @@
+<BODY bgcolor="#F3F3EC"><A href="http://npidashboard.mot.com/cgi/sa_status.pl?ProductID={!Device__c.NPI_Family_ID__c}&GPPDID={!Device__c.GPPD_ID__c}&SAID={!Device__c.Device_ID__c}&_tab=sa_status&_VIEW=launchView&loginto=267_390" target="GPPD{!Device__c.GPPD_ID__c}"><font face="Arial" style="font-size: 9pt">{!Device__c.Device_ID__c}</font></A></BODY>

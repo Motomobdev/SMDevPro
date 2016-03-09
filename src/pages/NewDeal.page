@@ -1,0 +1,161 @@
+<apex:page tabStyle="Opportunity" controller="NewDealController" >
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<head>
+   <apex:stylesheet value="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css"/>
+    <apex:includeScript value="https://code.jquery.com/jquery-2.1.1.min.js"/>
+    <apex:includeScript value="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"/>
+<script type="text/javascript">
+    $(function() {
+    var dateToday = new Date(); 
+    
+    $('[id$=datepicker]').datepicker(
+        {
+         minDate: 0,
+          beforeShowDay:function(date){
+             return [(date.getDay() != 2 && date.getDay() != 4 && date.getDay() != 6 && date.getDay() != 0), ''];
+          }
+        }
+    );
+    }
+    );
+
+</script>
+</head>
+<style>
+    .centered{width: 72%;margin: 0 auto;margin-top:46px;}
+    .fontStyle{text-align: right;font-size: 91%;font-weight: bold;color: #333;padding-left: 17px;margin-right: 13px;display:inherit;}
+    .centeredElems{width: 73%;margin: 0 auto;text-align: left;display: flex;padding-top: 10px;}
+    .nextLine{display: flex;margin-left: 13.5%;padding-top: 14px;}
+    .titleBanner{background-image: url('/img/alohaSkin/opacity75.png');border-width: 0;color: #000;padding: 4px 16px;background-color: #bfbc5a;border-color: #bfbc5a;}
+    .requiredFields{float:right;}
+    .requiredFieldsColor{background-color: #bfbc5a !important;}
+    #execSummBox{margin-left:18%;}
+    .labelFormatting{color: #4a4a56;text-align: right;font-size: 91%;font-weight: bold;}
+   
+</style>
+    <apex:sectionHeader subtitle="Create New Deal" title="{!IF(acct != null, acct.name, associatedAccount)}" />
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock rendered="{!pageIsValid}">
+            <div class='titleBanner'>
+                <span class="requiredFields"><span class="requiredFieldColor">
+                    <span class="requiredExampleOuter"><span class="requiredExample">&nbsp;</span>
+                </span>
+                <span class="requiredMark">*</span>
+                <span class="requiredText"> = Required Information</span></span></span>
+                <h3>Information<span class="titleSeparatingColon">:</span></h3>
+            </div>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Deal Name" />
+                        <apex:inputField value="{!oppt.Name}" />                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2">
+                <!-- <apex:inputText required="true" value="{!acct.Name}"  rendered="{!NOT(fromOpportunity)}"/> -->
+                <apex:outputText value="{!acct.Name}"/>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is this incremental to the Outlook?"/>
+                    <apex:inputField value="{!qt.Is_this_Incremental_to_the_outlook__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                  
+                
+                <!-- <apex:outputLabel value="Opportunity Currency" />
+                    <apex:inputField required="true" value="{!oppt.CurrencyIsoCode}" /> -->
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2">
+                <apex:inputField required="true" value="{!oppt.Year__c}" rendered="{!NOT(fromOpportunity)}"/>
+                    <apex:outputField value="{!oppObj[0].Year__c}" label="Year" rendered="{!fromOpportunity}" styleClass="labelFormatting"></apex:outputField>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is ASP < Floor?"/>
+                    <apex:inputField value="{!qt.IsASPFloor__c}"/>                      
+                </apex:pageBlockSectionItem>        
+<!--
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is NSBD > $25M?"/> 
+                    <apex:outputField value="{!qt.IsNSBD25M__c}"/>                       
+                </apex:pageBlockSectionItem>
+-->
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2">             
+                    
+                    <apex:inputField required="true" value="{!oppt.Quarter__c}" rendered="{!NOT(fromOpportunity)}"/>   
+                    <apex:outputField value="{!oppObj[0].Quarter__c}" label="Quarter" rendered="{!fromOpportunity}" styleClass="labelFormatting"></apex:outputField>                  
+
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="A&P Request to Spend?"/>
+                    <apex:inputField value="{!qt.Is_A_P_Requested__c}" required="true"/>                   
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Deal Review Date" />
+                  <!--  <apex:inputText required="true" id="datepicker" value="{!qt.Deal_Review_Date__c}" /> -->
+                    <apex:inputfield required="true" value="{!qt.Deal_Review_Date__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Substantial Risk?"/>
+                    <apex:inputField value="{!qt.Substantial_Risk_Items__c}"/>             
+                </apex:pageBlockSectionItem>
+<!--
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is Total Discount > $1M?"/>
+                    <apex:outputField value="{!qt.IsTotalDiscount100k__c}"/>                
+                </apex:pageBlockSectionItem>
+-->
+            </apex:pageBlockSection>
+            
+            <div class='titleBanner'>
+                <h3>Description<span class="titleSeparatingColon">:</span></h3>
+            </div>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Executive Summary"/>
+                    <apex:outputPanel >
+                        <!--<div class = "requiredInput">
+                            <div class = "requiredBlock"></div>-->
+                            <apex:inputTextarea value="{!execNote.Body}" rows="10" cols="80" label="Executive Summary"/>
+                       <!--</div>--->
+                   </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <div class='titleBanner'>
+                <h3>Portfolio Segment<span class="titleSeparatingColon">:</span></h3>
+            </div>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Portfolio Segment"/>
+                    <apex:inputField required="true" value="{!qt.Portfolio_Segment__c}"/>         
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Cancel" immediate="true" action="{!cancel}" />
+                <apex:commandButton value="Create Deal" action="{!createDeal}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!pageIsValid}">
+        </apex:pageBlock>
+        <script>
+            //cmunoz@levementum.com
+            //Added query expiration to reset checkbox selection on Deal View. Otherwise, checkboxes would remain active 
+            $(document).ready(function()
+            {
+                document.cookie = 'JS_PERSISTENCE_COOKIE=' +
+                              ';expires=Fri, 31 Dec 1999 23:59:59 GMT;';
+                
+                jQuery('label[id*="componentId"]').addClass("fontStyle");
+                jQuery('div[id*="elementsAdded"]').addClass("centeredElems");
+                jQuery('span[id*="nextLineId"]').addClass("nextLine");
+                jQuery('textArea[id*="execSummary"]').css({"margin-left":"18%"});
+                jQuery('label[id*="execSummaryLabel"]').css({"margin-left":"10%", "text-align": "right","font-size": "91%", "font-weight": "bold","color": "#333","padding-left": "8%","display": "inherit"});
+            });
+        </script>
+    </apex:form>
+</apex:page>

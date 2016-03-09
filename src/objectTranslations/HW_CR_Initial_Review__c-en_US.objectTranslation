@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR Initial Review</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW CR Initial Reviews</value>
+    </caseValues>
+    <fields>
+        <label><!-- CM Active Cycle --></label>
+        <name>CM_Active_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- CM Assigned --></label>
+        <name>CM_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- CM Business Impact --></label>
+        <name>CM_Business_Impact__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CM Business Justification --></label>
+        <name>CM_Business_Justification__c</name>
+        <picklistValues>
+            <masterLabel>Cost Reduction</masterLabel>
+            <translation><!-- Cost Reduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Continuity</masterLabel>
+            <translation><!-- Supply Continuity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CM Close Date --></label>
+        <name>CM_Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If CM is assigned for review, field to track total cycle time from creation of record to completion of CM response. --></help>
+        <label><!-- CM Cycle Time --></label>
+        <name>CM_Cycle_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comment section for CM to support the given business priority --></help>
+        <label><!-- CM Reviewer Comment --></label>
+        <name>CM_Reviewer_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- CM Reviewer Status --></label>
+        <name>CM_Reviewer_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Require Further Info</masterLabel>
+            <translation><!-- Require Further Info --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category Manager Reviewer --></label>
+        <name>Category_Manager_Reviewer__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews (Category Manager Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- HW Change Administrator (Work Flow Administrator) to copy and paste exact change description from the base HCR record. --></help>
+        <label><!-- Change Description --></label>
+        <name>Change_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR CM Response Count --></label>
+        <name>HW_CR_CM_Response_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR SDE Response Count --></label>
+        <name>HW_CR_SDE_Response_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR SME Response Count --></label>
+        <name>HW_CR_SME_Response_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR Status Sum --></label>
+        <name>HW_CR_Status_Sum__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR Top Status --></label>
+        <name>HW_CR_Top_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW Change Request  Base --></label>
+        <name>HW_Change_Request_Base__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Review Status --></label>
+        <name>Initial_Review_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Reviewer --></label>
+        <name>Initial_Reviewer__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews (Initial Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ODM Review Status --></label>
+        <name>ODM_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ODM Reviewer Comment --></label>
+        <name>ODM_Reviewer_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- ODM Reviewer --></label>
+        <name>ODM_Reviewer__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews (ODM Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ODM Risk Level --></label>
+        <name>ODM_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The email address for the requester of the change request.  This information to be gathered from the base HCR record. --></help>
+        <label><!-- Requester Email --></label>
+        <name>Requester_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Continue = Proceed with approval process
+Reject = Stop approval process --></help>
+        <label><!-- Reviewer Recomondation --></label>
+        <name>Review_Process_Status__c</name>
+        <picklistValues>
+            <masterLabel>Continue</masterLabel>
+            <translation><!-- Continue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reviewer Assigned --></label>
+        <name>Reviewer_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDE Active Cycle --></label>
+        <name>SDE_Active_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDE Assigned --></label>
+        <name>SDE_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDE Close Date --></label>
+        <name>SDE_Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns the number of days between record create date and SDE response date. --></help>
+        <label><!-- SDE Cycle Time --></label>
+        <name>SDE_Cycle_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comment section for SDE to support the given risk level and recommend approval action. --></help>
+        <label><!-- SDE Reviewer Comment --></label>
+        <name>SDE_Reviewer_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDE Reviewer Status --></label>
+        <name>SDE_Reviewer_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Require Further Info</masterLabel>
+            <translation><!-- Require Further Info --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SDE Reviewer --></label>
+        <name>SDE_Reviewer__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews (SDE Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SDE-Risk Level --></label>
+        <name>SDE_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SME Active Cycle --></label>
+        <name>SME_Active_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME Assigned --></label>
+        <name>SME_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME Close Date --></label>
+        <name>SME_Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If SME assigned, field will record total cycle time from creation of record to SME final response. --></help>
+        <label><!-- SME Cycle Time --></label>
+        <name>SME_Cycle_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comment section for SME to support the given risk level and recommend approval action. --></help>
+        <label><!-- SME Reviewer Comment --></label>
+        <name>SME_Reviewer_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME Reviewer Status --></label>
+        <name>SME_Reviewer_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Require Further Info</masterLabel>
+            <translation><!-- Require Further Info --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SME Reviewer --></label>
+        <name>SME_Reviewer__c</name>
+        <relationshipLabel><!-- HW CR Initial Reviews (SME Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SME-Risk Level --></label>
+        <name>SME_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Change administrator (Work Flow Administrator) copy and paste exact PCN Number from HCR record. --></help>
+        <label><!-- Supplier PCN --></label>
+        <name>Supplier_PCN__c</name>
+    </fields>
+    <layouts>
+        <layout>HW CR Initial Review Admin View</layout>
+        <sections>
+            <label><!-- Category Manager Section --></label>
+            <section>Category Manager Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ODM Section --></label>
+            <section>ODM Section</section>
+        </sections>
+        <sections>
+            <label><!-- SDE Section --></label>
+            <section>SDE Section</section>
+        </sections>
+        <sections>
+            <label><!-- SME Section --></label>
+            <section>SME Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>HW CR Initial Reviewer View</layout>
+        <sections>
+            <label><!-- CM Update Section --></label>
+            <section>CM Update Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ODM Section --></label>
+            <section>ODM Section</section>
+        </sections>
+        <sections>
+            <label><!-- SDE Update Section --></label>
+            <section>SDE Update Section</section>
+        </sections>
+        <sections>
+            <label><!-- SME Update Section --></label>
+            <section>SME Update Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>HW CR Initial View All Locked</layout>
+        <sections>
+            <label><!-- CM Update Section --></label>
+            <section>CM Update Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ODM Section --></label>
+            <section>ODM Section</section>
+        </sections>
+        <sections>
+            <label><!-- SDE Update Section --></label>
+            <section>SDE Update Section</section>
+        </sections>
+        <sections>
+            <label><!-- SME Update Section --></label>
+            <section>SME Update Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Category_Manager_Link --></label>
+        <name>Category_Manager_Link</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SDE_Assignments --></label>
+        <name>SDE_Assignments</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- Task assignment to HW CR Administration to create new engineering review and planning records. (PE Record Ids) --></description>
+        <name>Create_Engineering_PE_Records</name>
+        <subject><!-- Create Engineering PE Records --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Initial review record is rejected.  Review rejection comments.  If change will not be pursued, update the HCR record to a top-status of &apos;rejected.&apos;  If change requires a new part number or additional action, follow comments then resubmit a new &apos;CR&apos; record --></description>
+        <name>Initial_Change_Review_Rejection_Notice</name>
+        <subject><!-- Initial Change Review Rejection Notice --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Brad,
+&quot;Yen TianLeong&quot; is inactive. I am assigning this task to you.
+ 
+A new PCN has been submitted into Schedule Share. 
+Please review the impacted parts and and list parts that need to be evaluated by the ODM team in the ODM Reviewer Comment section. --></description>
+        <name>ODM_Reviewer_Comments_needed</name>
+        <subject><!-- ODM Reviewer Comments needed --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- A new PCN has been submitted into Schedule Share. 
+Please review the impacted parts and and list parts that need to be evaluated by the ODM team in the ODM Reviewer Comment section --></description>
+        <name>ODM_Reviewer_Comments_needed2</name>
+        <subject><!-- ODM Reviewer Comments needed --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Reject the CR record and associated HCR record for lack of response from assigned reviewers.  Ensure the reviewer name is listed as the contact within the Schedule Sharing PCN rejection comment. --></description>
+        <name>Reject_HCR_Resulting_from_CR_Delay</name>
+        <subject><!-- Reject HCR Resulting from CR Delay --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Task assignment to HW CR Entry Admin to personally follow with SDE assignment. --></description>
+        <name>X5_Day_Delay_Require_SDE_Assignment</name>
+        <subject><!-- 5 Day Delay, Require SDE Assignment --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

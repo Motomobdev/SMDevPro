@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NDA Company</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NDA Companies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- LegacyCompanyID --></label>
+        <name>LegacyCompanyID__c</name>
+    </fields>
+    <layouts>
+        <layout>NDACompany Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_NDA --></label>
+        <name>Create_NDA</name>
+    </webLinks>
+</CustomObjectTranslation>

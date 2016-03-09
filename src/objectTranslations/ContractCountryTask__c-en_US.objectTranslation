@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ContractCountryTask</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ContractCountryTasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- ContractCountryTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BLUR Contract? --></label>
+        <name>BLUR_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR Release --></label>
+        <name>BLUR_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR Type --></label>
+        <name>BLUR_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Number --></label>
+        <name>Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Phase --></label>
+        <name>Contract_Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Status --></label>
+        <name>Contract_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- ContractCountryTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Anticipated --></label>
+        <name>Date_Anticipated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Required --></label>
+        <name>Date_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqueID --></label>
+        <name>UniqueID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

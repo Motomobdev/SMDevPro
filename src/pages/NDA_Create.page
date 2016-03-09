@@ -1,0 +1,479 @@
+<apex:page id="thePage" standardController="NDA__c" extensions="NDA_CreateCtr" docType="html-5.0" sidebar="true" standardStylesheets="false"
+    tabstyle="NDA__c" action="{!fnAction}">
+    
+     <head>
+      <!-- Every version of your webapp should include a list of all versions. -->
+      <link rel="alternate" href="/apex/DesktopVersion" id="desktop" media="only screen and (touch-enabled: 0)"/>
+      <link rel="alternate" href="/apex/PhoneVersion" id="phone" media="only screen and (max-device-width: 640px)"/>
+      <link rel="alternate" href="/apex/TabletVersion" id="tablet" media="only screen and (min-device-width: 641px)"/>
+      <meta name="viewport" content="width=device-width, user-scalable=no"/>
+      <script src="{!URLFOR($Resource.Device_js)}"/>
+    </head>
+    <apex:sectionHeader title="Create NDA"
+        subtitle="{!IF(boolIsInserted == true || boolIsSubmitted == true, 'Step 3 - Review and Execute the NDA', 'Step 2 - Enter NDA details')}" />
+    <style type="text/css">
+        table.exceptionText td {
+            font-style: italic;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: red;
+        }
+        
+        .dateFormat {
+            visibility: hidden;
+        }
+        
+        .compName {
+            color: blue !important;
+            text-decoration-color: red !important;
+            font-weight: bold !important;
+        }
+        
+        .ndaButton {
+            background: #236FBD !important;
+            color: white !important;
+            font-size: 12px !important;
+            font-style: inherit !important;
+        }
+        .ndaButtonDisable {
+            background: #C0C0C0 !important;
+            color: white !important;
+            font-size: 12px !important;
+            font-style: inherit !important;
+        }
+    </style>
+    <input id="hiddenElementId" type="hidden" />
+    <script type="text/javascript">
+            window.onload = setFocus
+            function setFocus()
+            {
+                 document.getElementById("hiddenElementId").focus();
+            }
+            
+            changed = false;
+            document.getElementById("thePage\:theForm\:pb\:j_id4\:update").disabled = true;
+            document.getElementById("thePage\:theForm\:pb\:j_id4\:bottom\:update").disabled = true;
+            
+            function setVar(){
+              changed = true;
+              if (changed) {     
+                 if(document.getElementById("thePage\:theForm\:pb\:j_id4\:update") != null)
+                  {                                               
+                      document.getElementById("thePage\:theForm\:pb\:j_id4\:update").disabled = false;
+                      document.getElementById("thePage\:theForm\:pb\:j_id4\:update").className = 'btn ndaButton';                  
+                      document.getElementById("thePage\:theForm\:pb\:j_id4\:bottom\:update").disabled = false;
+                      document.getElementById("thePage\:theForm\:pb\:j_id4\:bottom\:update").className = 'btn ndaButton'; 
+                  }  
+               }             
+            }
+            
+             function checkVar(){
+              if (changed) {               
+                alert("You need to click Update to save your data before sending for eSignature!");
+                  return false; 
+              }
+              return true; 
+            } 
+    </script>
+    <apex:form id="theForm">
+        <apex:pageBlock id="pb" mode="edit">
+            <apex:messages style="font-weight:bold;color:red" />
+
+            
+            <apex:pageBlockSection columns="2" title="Connected Persons Certification" collapsible="false" id="connectedSection" >      
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Please search Outside Party Name in the List of Connected Persons" style="width:200px;" styleClass="lbStyle" />                                                       
+                             <apex:commandLink immediate="true" action="https://drive.google.com/a/motorola.com/file/d/0B15Ju4gKHaX2VDVBMWlCY0o5OFU/view?usp=sharing" value="List of Connected Persons (pdf) last updated Jun 30th,2015" target="_blank" style="width:200px;" styleClass="lbStyle"/>                          
+                       </apex:pageBlockSectionItem>
+                       
+                       <apex:pageBlockSectionItem >
+                            <apex:commandLink immediate="true" action="https://drive.google.com/a/motorola.com/file/d/0B15Ju4gKHaX2a2pBckc2TkhUNVU/view?usp=sharing" value="List of Connected Persons (Excel) last updated Jun 30th,2015" target="_blank" style="width:200px;" styleClass="lbStyle"/>
+                        </apex:pageBlockSectionItem>                   
+                      
+                       <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Is Outside Party in the List of Connected Persons?" styleClass="lbStyle" />                                                       
+                                <apex:inputField required="true" value="{!objNDA.Is_Outside_Party_on_Connected_Person__c}" style="width:200px;" id="cpConnectedinp"  > 
+                                    <span style="font-size:13px; color:red">By your selection you certify that you have searched for your Outside Party on the List of Connected Persons.</span>
+                                </apex:inputField>
+                       </apex:pageBlockSectionItem>                         
+                         <apex:pageBlockSectionItem rendered="{!IF((boolIsSpecialAccess == false), true, false)}"> 
+                            <apex:outputLabel value="Connected Persons Approval" styleClass="lbStyle" />                                                       
+                            <apex:outputLabel value="{!objNDA.Connected_Party_Approval_Status__c}" id="cpConnectedout" styleClass="lbStyle"> 
+                             <br></br><span style="font-size:13px; color:red">If Outside Party is on the List, approval is required before NDA signature.If your request is pending review with Legal; you will be notified on status via email.</span>   
+                            </apex:outputLabel>                           
+                         </apex:pageBlockSectionItem> 
+                          
+                         <apex:pageBlockSectionItem id="cpConnectedsec" rendered="{!IF((boolIsSpecialAccess && objNDA.Is_Outside_Party_on_Connected_Person__c == 'Yes'), true, false)}"> 
+                           <apex:outputLabel value="Connected Persons Approval" styleClass="lbStyle" />                                                       
+                           <apex:inputField value="{!objNDA.Connected_Party_Approval_Status__c}" style="width:200px;" id="cpConnected">
+                               <br></br><span style="font-size:13px; color:red">If Outside Party is on the List, approval is required before NDA signature.If your request is pending review with Legal; you will be notified on status via email.</span>   
+                           </apex:inputField>      
+                         </apex:pageBlockSectionItem>                  
+              </apex:pageBlockSection>
+                   
+              <apex:pageBlockButtons rendered="{!boolShowRegionDepend}" location="both">
+                <apex:commandButton value="Update" id="update" action="{!fnUpdateNDA}"
+                    rendered="{!IF(objNDA.NDAStatus__c == 'Pending', true, false)}"
+                    styleClass="ndaButtonDisable" />                
+                <apex:commandButton value="Save" action="{!fnSaveAsDraft}"
+                    rendered="{!IF(boolIsSubmitted == false && boolIsInserted == false, true, false)}"
+                    styleClass="ndaButton" />
+                <apex:commandButton value="Submit Modification"
+                    action="{!fnSubmitAfterMod}"
+                    rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}"
+                    styleClass="ndaButton" />
+                <apex:commandButton value="Send for e-sign" action="{!fnCallEchosignDDP}" disabled="{!IF(boolIsSubmitted == false && boolIsInserted == false, true, false)}" rendered="{!IF(((objNDA.Is_Outside_Party_on_Connected_Person__c == 'Yes' && objNDA.Connected_Party_Approval_Status__c != 'Pending') && (objNDA.Is_Outside_Party_on_Connected_Person__c == 'Yes' && objNDA.Connected_Party_Approval_Status__c != 'Rejected')) || objNDA.Is_Outside_Party_on_Connected_Person__c == 'No' || objNDA.Is_Outside_Party_on_Connected_Person__c ==''  , true, false)}"                   
+                    styleClass="{!IF(boolIsSubmitted == false && boolIsInserted == false, 'ndaButtonDisable', 'ndaButton')}" onclick="return checkVar();" />
+                <apex:commandButton value="Request Disclosure Approval"
+                    action="{!fnNDADisclosure}"
+                    rendered="{!IF(((objNDA.NDAStatus__c == 'Executed' || objNDA.NDAStatus__c == 'Executed-Mod') && boolIsProduct == true), true, false)}"
+                    styleClass="ndaButton" />
+                <apex:commandButton value="Request NDA Renewal"
+                    action="{!fnNDAAmendment}"
+                    rendered="{!IF((objNDA.NDAStatus__c == 'Executed' || objNDA.NDAStatus__c == 'Executed-Mod'), true, false)}"
+                    styleClass="ndaButton" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="pgBlk1" columns="1"
+                title="Agreement Information" collapsible="false">
+                <apex:pageBlockSectionItem rendered="{!IF(boolIsInserted == true || boolIsSubmitted == true, true, false)}">
+                        NDA File ID  <apex:outputText value="{!objNDA.NDAFileID__c}" id="fileID" />
+                </apex:pageBlockSectionItem>
+               <!-- <apex:pageBlockSectionItem rendered="{!IF(boolIsInserted == true || boolIsSubmitted == true, true, false)}">
+                        NDA Status  <apex:outputText value="{!objNDA.NDAStatus__c}" id="statusID" />
+                </apex:pageBlockSectionItem> -->                
+                <apex:pageBlockSectionItem id="statusSection" rendered="{!IF((boolIsSpecialAccess == true && (boolIsInserted == true || boolIsSubmitted == true)), true, false)}">
+                        NDA Status <apex:inputField required="true"  value="{!objNDA.NDAStatus__c}" id="statusSection" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF(((boolIsInserted == true || boolIsSubmitted == true) && boolIsSpecialAccess == false), true, false)}">
+                        NDA Status <apex:outputText value="{!objNDA.NDAStatus__c}" id="statusID" />
+                </apex:pageBlockSectionItem>               
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == true && boolIsProduct == true), true, false)}">
+                        DPL Status  <apex:outputText value="{!objNDA.DPLStatus__c}" id="dplstatusID" />
+                </apex:pageBlockSectionItem>
+
+
+                <!--    Company Info Tab    -->
+                <apex:pageBlockSectionItem >  
+                           Outside Party Name (Click the name to edit) <apex:outputField value="{!objNDA.Company__c}" id="compID" styleClass="compName" />
+                    <!-- <apex:outputLink style="font-weight:bold;color:blue;" value="/{!objNDA.Company__c}" id="compID" >{!objNDACompany.Name}</apex:outputLink> -->
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                        Contact Name <apex:inputField value="{!objNDACompanyContact.Full_Name__c}" id="compContact" onchange="setVar();" />                 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted == true), true, false)}">   
+                        Contact Name <apex:outputField value="{!objNDACompanyContact.Full_Name__c}" id="compContact" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                        Contact Email <apex:inputField value="{!objNDACompanyContact.Email__c}" id="compEmailID" onchange="setVar();" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted == true), true, false)}">   
+                        Contact Email <apex:outputField value="{!objNDACompanyContact.Email__c}" id="compEmailID"  />
+                </apex:pageBlockSectionItem>
+                
+                
+                
+
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}">
+                            Region (Select the region where the Motorola entity you are serving is located) <apex:actionRegion immediate="true">
+                        <apex:inputField value="{!objNDA.NDARegion__c}" id="r1"
+                            required="true">
+                            <apex:actionSupport event="onchange" action="{!fnShowVpPanel}"
+                                reRender="VpPanelID" />
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">
+                        Region  <apex:outputField value="{!objNDA.NDARegion__c}" id="r1" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                       Motorola Entity (Select the Motorola entity that will execute this NDA) <apex:inputField value="{!objNDA.Motorola_Entity__c}" id="entityID" required="true" onchange="setVar();"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}}">   
+                       Motorola Entity  <apex:outputField value="{!objNDA.Motorola_Entity__c}" id="entityID" />
+                </apex:pageBlockSectionItem>
+
+                <apex:outputPanel id="VpPanelID">
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                               Motorola VP Name
+                               <apex:outputPanel layout="block"
+                                styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock" />
+                                <apex:selectList label="Motorola VP Name" id="vpId"
+                                    value="{!strSelectedVpName}" size="1" title="VP Name"
+                                    disabled="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}"
+                                    required="true" onchange="setVar();" >
+                                    <apex:selectOptions value="{!VpNames}"></apex:selectOptions>
+                                </apex:selectList>
+                                <script>var vpid= document.getElementById("{!$Component.vpId}");</script>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">   
+                               Motorola VP Name  <apex:outputField value="{!objNDA.VP_Name__r.VP_Name__c}" id="vpIDout" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                                Governing Law (If you don't know what to pick, select the country where the Motorola Entity is located.) <apex:inputField value="{!objNDA.Governing_Law__c}" id="govID" required="true" onchange="setVar();" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">
+                                Governing Law  <apex:outputField value="{!objNDA.Governing_Law__c}" id="govIDout" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+
+                <!--    Multi-party Info Tab    -->
+                <apex:pageBlockSectionItem rendered="{!boolShowMultiCompany}">    
+                        Click here to add a second outside party to this NDA  
+                        <apex:actionRegion immediate="true">
+                        <apex:inputCheckbox value="{!boolShowMultiCompany}"
+                            id="multiCheckID"
+                            disabled="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">
+                            <apex:actionSupport event="onchange"
+                                action="{!fnShowMultiCompany}" reRender="multiCimpanyID" />
+                        </apex:inputCheckbox>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:outputPanel id="multiCimpanyID">
+                    <apex:pageBlockSection title="Second Outside Party"
+                        rendered="{!boolShowMultiCompany}" columns="1" collapsible="false">
+                        <apex:pageBlockSectionItem >  
+                                    Outside Party 2 Name (Click the name to edit) <apex:outputField value="{!objNDA.Multiparty_Company__c}" id="comp2ID" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                                Contact Name<apex:inputField value="{!objNDAMultiCompanyContact.Full_Name__c}"
+                                id="comp2Contact" onchange="setVar();" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">   
+                                Contact Name<apex:outputField value="{!objNDAMultiCompanyContact.Full_Name__c}"
+                                id="comp2Contact" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}"> 
+                                Contact Email<apex:inputField value="{!objNDAMultiCompanyContact.Email__c}"
+                                id="comp2EmailIDout" onchange="setVar();" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">   
+                                Contact Email<apex:outputField value="{!objNDAMultiCompanyContact.Email__c}"
+                                id="comp2EmailIDout" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == false || objNDA.NDAStatus__c == 'Pending'), true, false)}">
+                                Start Date <apex:inputField required="true" value="{!objNDA.Start_Date__c}" id="startID" onchange="setVar();" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!IF((objNDA.NDAStatus__c != 'Pending' && boolIsSubmitted), true, false)}">
+                                Start Date <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" id="startIDout">
+                        <apex:param value="{!objNDA.Start_Date__c}" />
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+
+               <!-- <apex:outputPanel id="expIDPanel"> 
+                    <apex:pageBlockSection> -->
+                        <apex:pageBlockSectionItem rendered="{!IF((boolIsSpecialAccess == true && (objNDA.NDAStatus__c == 'Executed' || objNDA.NDAStatus__c == 'Executed-Mod' || objNDA.NDAStatus__c == 'Expired')), true, false)}"> 
+                             Expiry Date <apex:inputField required="true" value="{!objNDA.Expires_On__c}" id="expID" />
+                        </apex:pageBlockSectionItem>
+               <!--     </apex:pageBlockSection>
+                </apex:outputPanel> -->
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted == true && boolIsSpecialAccess == false), true, false)}">
+                        Expiry Date <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" id="expiryIDout">
+                        <apex:param value="{!objNDA.Expires_On__c}" />
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+
+                <apex:outputPanel id="pdtpanelId">
+                    <apex:pageBlockSection columns="1" rendered="{!boolIsProduct}"
+                        Title="Choose product categories">
+                        
+                        <apex:pageBlockSectionItem >
+                             <apex:outputLabel value="Please describe purpose for disclosure" />                             
+                              <apex:outputPanel >
+                              <div class="requiredInput">
+                                <div class="requiredBlock"></div>                                                              
+                                <apex:inputTextarea value="{!objNDA.Disclosure_Approval_Purpose__c}" style="width:30%;" onkeyup="setVar();" required="true" />  
+                             </div> 
+                          </apex:outputPanel>                       
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Premium Products"
+                                style="font-weight:bold;color:black" for="premiumID" />
+                            <apex:actionRegion immediate="true">
+                                <apex:inputCheckbox value="{!objNDA.Premium_Products__c}"
+                                    id="premiumID"
+                                    disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}">
+                                    <apex:actionSupport event="onchange" action="{!fnShowPremium}"
+                                        reRender="prpanelID" />
+                                </apex:inputCheckbox>
+                                <apex:outputLabel value="High end, leading edge products."
+                                    style="color:black" />
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Value Products"
+                                style="font-weight:bold;color:black" for="valueID" />
+                            <apex:actionRegion immediate="true">
+                                <apex:inputCheckbox value="{!objNDA.Value_Products__c}"
+                                    id="valueID"
+                                    disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}">
+                                    <apex:actionSupport event="onchange" action="{!fnShowValue}"
+                                        reRender="valuepanelID" />
+                                </apex:inputCheckbox>
+                                <apex:outputLabel value="Products that deliver value for cost-aware consumers."
+                                    style="color:black" />
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Companion Products"
+                                style="font-weight:bold;color:black" for="companionID" />
+                            <apex:actionRegion immediate="true">
+                                <apex:inputCheckbox value="{!objNDA.Companion_Products__c}"
+                                    id="companionID"
+                                    disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}">
+                                    <apex:actionSupport event="onchange"
+                                        action="{!fnShowCompanion}" reRender="companionpanelID" />
+                                </apex:inputCheckbox>
+                                <apex:outputLabel value="Accessories like power packs, headphones and speakers."
+                                    style="color:black" />
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Software"
+                                style="font-weight:bold;color:black" for="softwareID" />
+                            <apex:actionRegion immediate="true">
+                                <apex:inputCheckbox value="{!objNDA.Software__c}"
+                                    id="softwareID"
+                                    disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}">
+                                    <apex:actionSupport event="onchange" action="{!fnShowSoftware}"
+                                        reRender="softwarepanelID" />
+                                </apex:inputCheckbox>
+                                <apex:outputLabel value="Applications and product experiences."
+                                    style="color:black" />
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:outputPanel id="prpanelID">
+                            <apex:pageBlockSection title="Choose Premium Products disclosure options" columns="1"
+                                collapsible="false" rendered="{!objNDA.Premium_Products__c}">
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Premium_MCR__c}"
+                                        id="prMCRID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind information about unreleased Motorola products, services, or software
+                                     </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Premium_Prototype__c}"
+                                        id="prprotID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind a prototype
+                                     </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="valuepanelID">
+                            <apex:pageBlockSection title="Choose Value Products disclosure options" columns="1"
+                                collapsible="false" rendered="{!objNDA.Value_Products__c}">
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Value_MCR__c}"
+                                        id="valueMCRID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind information about unreleased Motorola products, services, or software
+                                     </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Value_Prototype__c}"
+                                        id="valueprotID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind a prototype
+                                     </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="companionpanelID">
+                            <apex:pageBlockSection title="Choose Companion Products disclosure options" columns="1"
+                                collapsible="false" rendered="{!objNDA.Companion_Products__c}">
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Companion_MCR__c}"
+                                        id="companionMCRID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind information about unreleased Motorola products, services, or software
+                                     </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Companion_Prototype__c}"
+                                        id="companionprotID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind a prototype
+                                     </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="softwarepanelID">
+                            <apex:pageBlockSection title="Choose Software disclosure options"
+                                columns="1" collapsible="false" rendered="{!objNDA.Software__c}">
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Software_MCR__c}"
+                                        id="softwareMCRID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind information about unreleased Motorola products, services, or software
+                                     </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!objNDA.Software_Prototype__c}"
+                                        id="softwareprotID"
+                                        disabled="{!IF((objNDA.DPLStatus__c == 'Approved'), true, false)}" onchange="setVar();" /> We will leave behind a prototype
+                                     </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Submit NDA modification request for review"
+                rendered="{!IF((boolIsSubmitted), true, false)}">
+                <apex:pageBlockSectionItem rendered="{!IF((boolIsSubmitted), true, false)}">    
+                        Describe the changes you want to make to the NDA <apex:inputTextarea value="{!objNDA.Modification_Text__c}" id="compID"
+                        style="width:80%;" onkeyup="setVar();" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <!--    Upload Alternative template -->
+
+    <c:NDA_AddAdditionalIndividuals rendered="{!IF(boolShowRegionDepend == true && boolIsSubmitted == true, true, false)}"
+        NDAId="{!objNDA.id}" />
+    <apex:pageBlock rendered="{!IF(boolShowRegionDepend == true && boolIsSubmitted == true, true, false)}">
+        <apex:pageBlockSection columns="1"
+            rendered="{!IF(lstNotifiersAttached != null, true, false)}">
+            <apex:pageBlockSectionItem rendered="{!IF(lstNotifiersAttached != null, true, false)}">
+                <apex:pageBlockTable value="{!lstNotifiersAttached}" var="varB"
+                    id="pgBlkId2">
+                    <apex:column rendered="{!IF(lstNotifiersAttached != null, true, false)}">
+                        <apex:facet name="header">Additional Notifier Name</apex:facet>
+                        <apex:outputLink value="/{!varB.id}"> {!varB.Notifier__r.DisplayFirstName__c} {!varB.Notifier__r.DisplayLastName__c} </apex:outputLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:relatedList list="CombinedAttachments" />
+    <apex:relatedList list="NDA_Disclosure_Requests__r"
+        rendered="{!IF(boolIsProduct == true, true, false)}" />
+    <apex:relatedList subject="{!objNDA.id}" list="Agreements__r" />
+    <apex:relatedList list="ProcessSteps"
+        rendered="{!IF(boolIsProduct == true, true, false)}"></apex:relatedList>
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Contact Support" collapsible="false"
+            columns="1">
+            <html>
+<body>
+    <p style="font-family: arial; font-size: 12px;">
+        Provide feedback and report testing issues at <a target="_blank"
+            href="https://docs.google.com/forms/d/1PmpDa9VjzA2DgRMmPYArp05We7nO44dZEBgzNMsE6NU/viewform"
+            style="color: blue; font-weight: bold">goto/ndafeedback</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        <a target="_blank"
+            href="http://vhd.mot-mobility.com/sds_form.php?id=1103"
+            style="color: blue; font-weight: bold">Submit NDA Help desk
+            ticket</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        Contact NDA Specialist <a target="_blank"
+            href="mailto:nda@motorola.com" style="color: blue; font-weight: bold">nda@motorola.com</a>
+    </p>
+</body>
+            </html>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Weekly Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Weekly Reports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Drawloop Contact --></label>
+        <name>Drawloop_Contact__c</name>
+        <relationshipLabel><!-- Weekly Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Function --></label>
+        <name>Function__c</name>
+        <picklistValues>
+            <masterLabel>Biz Ops</masterLabel>
+            <translation><!-- Biz Ops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTM</masterLabel>
+            <translation><!-- GTM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Ops</masterLabel>
+            <translation><!-- Product Ops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Ops</masterLabel>
+            <translation><!-- Sales Ops --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Week Ending --></label>
+        <name>Week_Ending__c</name>
+    </fields>
+    <layouts>
+        <layout>Weekly Report Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Generate_Weekly --></label>
+        <name>Generate_Weekly</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Weekly_Mass --></label>
+        <name>Generate_Weekly_Mass</name>
+    </webLinks>
+</CustomObjectTranslation>

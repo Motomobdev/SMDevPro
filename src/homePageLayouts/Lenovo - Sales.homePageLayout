@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
+    <narrowComponents>standard-CreateNew</narrowComponents>
+    <narrowComponents>NDA Menu</narrowComponents>
+    <narrowComponents>Lenovo Links</narrowComponents>
+    <narrowComponents>standard-RecentItems</narrowComponents>
+    <wideComponents>standard-Tasks</wideComponents>
+    <wideComponents>My Delegated Tasks</wideComponents>
+    <wideComponents>standard-Calendar</wideComponents>
+    <wideComponents>standard-ProcessWorkitems</wideComponents>
+</HomePageLayout>

@@ -1,0 +1,63 @@
+<!-- 
+    Apttus Approvals Management
+    ApprovalAction
+     
+    @2010-2011 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+           extensions="APTPS_MassApprovalController">
+       
+ <script type="text/javascript">  
+    function doSave(date) {  
+        paraFunction(document.getElementById(date).value);  
+    }  
+    </script>  
+
+
+        
+    <apex:form >
+        <apex:pageBlock >
+
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons >
+                
+               <apex:commandButton action="{!doApprove}" 
+                                    value="{!$Label.Apttus_Approval__Approve}" />
+            
+               
+                <apex:commandButton action="{!doReject}" 
+                                    value="{!$Label.Apttus_Approval__Reject}"/>
+                                    
+                <apex:commandButton action="{!doSuspend}" value="Suspend"/>
+                
+              <apex:commandButton action="{!doAddComment}" 
+                                    value="{!$Label.Apttus_Approval__AddComment}" />                
+
+                <apex:commandButton action="{!doCancel}" 
+                                    value="{!$Label.Apttus_Approval__Cancel}" />
+                                  
+            
+            </apex:pageBlockButtons>
+
+
+            <apex:pageBlockSection columns="1">
+            
+            <apex:inputTextarea value="{!textComment}" label="Comments"/>
+            <!--
+                <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Request_Comments__c}"
+                                  style="font-weight:bold;" />
+                    
+                <apex:inputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Approver_Comments__c}"
+                                 style="height:100px;width:400px;" />
+           -->                  
+ 
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+
+</apex:page>

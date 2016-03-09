@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement Type --></label>
+        <name>Agreement_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amendment</masterLabel>
+            <translation><!-- Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSA</masterLabel>
+            <translation><!-- CSA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluation Agreement</masterLabel>
+            <translation><!-- Evaluation Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NDA</masterLabel>
+            <translation><!-- NDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLDA</masterLabel>
+            <translation><!-- SLDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOW</masterLabel>
+            <translation><!-- SOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments / Notes --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Company Name not found then please enter Other. --></help>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+        <relationshipLabel><!-- Contract Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Value will be set automatically on selecting Contract Owner --></help>
+        <label><!-- Contract Owner&apos;s Email --></label>
+        <name>Contract_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Owner&apos;s Name --></label>
+        <name>Contract_Owner_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Contract Owner based on above key contact information. --></help>
+        <label><!-- Contract Owner --></label>
+        <name>Contract_Owner__c</name>
+        <relationshipLabel><!-- Contract Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Link to Contract record created from this request. --></help>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Required --></label>
+        <name>Date_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted --></label>
+        <name>Date_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- High Urgency Reason --></label>
+        <name>High_Urgency_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Contact Email --></label>
+        <name>Partner_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Contact Name --></label>
+        <name>Partner_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Contact  Phone --></label>
+        <name>Partner_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason for rejecting the new contract request. --></help>
+        <label><!-- Reason for Rejection --></label>
+        <name>Reason_for_Rejection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>BOM clean up</masterLabel>
+            <translation><!-- BOM clean up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance (royalty, payments, etc.)</masterLabel>
+            <translation><!-- Finance (royalty, payments, etc.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Internal Projects</masterLabel>
+            <translation><!-- Software Internal Projects --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester&apos;s Email --></label>
+        <name>Requester_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>Requester__c</name>
+        <relationshipLabel><!-- Contract Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+        <picklistValues>
+            <masterLabel>ATAP</masterLabel>
+            <translation><!-- ATAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Companion Products</masterLabel>
+            <translation><!-- Companion Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Management</masterLabel>
+            <translation><!-- Product Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain</masterLabel>
+            <translation><!-- Supply Chain --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Urgency --></label>
+        <name>Urgency__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter no more than a few sentences. --></help>
+        <label><!-- Software/Work Requested --></label>
+        <name>What_Software_Requested__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter no more than a few sentences. --></help>
+        <label><!-- Which Device(s) --></label>
+        <name>Which_Device__c</name>
+    </fields>
+    <layouts>
+        <layout>Contract Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Request Detail --></label>
+            <section>Request Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Contract --></label>
+        <name>Create_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reject_Request --></label>
+        <name>Reject_Request</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Objectives Key Results</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Detailed description of the OKR</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OKR_Number__c</fullName>
+        <displayFormat>OKR-{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>OKR #</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The PMD program this OKR relates to.</inlineHelpText>
+        <label>Program</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agate Lite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agate Turbo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ArgonMini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asanti WE/LTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atlas Peak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atlas Peak Refresh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banshee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLE Keyring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bluefin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bluefin IS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bluestone 2nd Source</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bolt DFM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Destino</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinara LT Dock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinara LT Navigation Dock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinara PTT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DVX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DVX LTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elektro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ELX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUROPA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Everglades Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fairhall iDEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Falcon Color Doors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Falcon Flip Doors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Falcon Protective Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fawnridge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAVOK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hawk3.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hawk4.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hendrix Lite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iconic 6W Improvements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iron Rock UMTS/iDEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iWhistler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jasper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jessup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jorian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JUPITER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lumineers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malibu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maserati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ONYX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orleans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4000R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4000R II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Party Link</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Pack Fob</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primus Ferrari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pyrite (P893 Refresh)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pyrite II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quantum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quantum MAXX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quantum sliM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redwood Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redwood Cost Reduction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redwood Softbank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUBY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scorpion Mini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scorpion Mini (i)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sequoia P793 Battery Substitution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SilverClam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SilverQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SilverQ NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SilverSmart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Snap</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solstice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TinBoost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TinBoost+ CDMA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Topaz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultra M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultra MAXX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UrbanaSol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vanquish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vanquish MAXX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vanquish/Vanquish MAXX Nav Dock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Whisper Module Licensing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White OMTP Wired Headset</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>xBLU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>xEye</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xfon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xfon AFX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xplay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xplus1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yangtze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yosemite Road iDEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zion Made in Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The OKR belongs to this Quarter</inlineHelpText>
+        <label>Quarter</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>OKR belongs to this year</inlineHelpText>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>OKR</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Year__c</columns>
+        <columns>Quarter__c</columns>
+        <columns>OKR_Number__c</columns>
+        <columns>Active__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>OKR Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>OKRs</pluralLabel>
+    <recordTypes>
+        <fullName>GTM</fullName>
+        <active>true</active>
+        <description>Go To Market OKRs</description>
+        <label>GTM</label>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>Agate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agate Lite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agate Turbo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ArgonMini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asanti WE%2FLTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas Peak Refresh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLE Keyring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banshee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluefin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluefin IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluestone 2nd Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bolt DFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVX LTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Destino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara LT Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara LT Navigation Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara PTT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUROPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elektro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Everglades Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fairhall iDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Color Doors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Flip Doors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Protective Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fawnridge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAVOK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawk3%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawk4%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hendrix Lite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic 6W Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iron Rock UMTS%2FiDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUPITER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jasper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jorian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lumineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malibu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maserati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orleans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4000R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4000R II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Link</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Pack Fob</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primus Ferrari</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pyrite %28P893 Refresh%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pyrite II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum sliM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUBY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Cost Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Softbank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorpion Mini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorpion Mini %28i%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sequoia P793 Battery Substitution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverClam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverQ NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverSmart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solstice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TinBoost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TinBoost%2B CDMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Topaz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UrbanaSol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish%2FVanquish MAXX Nav Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Whisper Module Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White OMTP Wired Headset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xfon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xfon AFX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xplay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xplus1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yangtze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yosemite Road iDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zion Made in Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iWhistler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xBLU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xEye</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quarter__c</picklist>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Procurement</fullName>
+        <active>true</active>
+        <description>Procurement OKRs</description>
+        <label>Procurement</label>
+        <picklistValues>
+            <picklist>Program__c</picklist>
+            <values>
+                <fullName>Agate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agate Lite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agate Turbo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ArgonMini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asanti WE%2FLTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas Peak</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlas Peak Refresh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLE Keyring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banshee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluefin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluefin IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bluestone 2nd Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bolt DFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVX LTE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Destino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara LT Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara LT Navigation Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinara PTT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUROPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elektro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Everglades Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fairhall iDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Color Doors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Flip Doors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Falcon Protective Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fawnridge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAVOK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawk3%2E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawk4%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hendrix Lite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic 6W Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iron Rock UMTS%2FiDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUPITER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jasper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jessup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jorian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lumineers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malibu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maserati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONYX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orleans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4000R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4000R II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Link</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Pack Fob</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primus Ferrari</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pyrite %28P893 Refresh%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pyrite II</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantum sliM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUBY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Cost Reduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redwood Softbank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorpion Mini</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorpion Mini %28i%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sequoia P793 Battery Substitution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverClam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverQ NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SilverSmart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solstice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TinBoost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TinBoost%2B CDMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Topaz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultra MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UrbanaSol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish MAXX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vanquish%2FVanquish MAXX Nav Dock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Whisper Module Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White OMTP Wired Headset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xfon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xfon AFX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xplay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xplus1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yangtze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yosemite Road iDEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zion Made in Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iWhistler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xBLU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>xEye</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quarter__c</picklist>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

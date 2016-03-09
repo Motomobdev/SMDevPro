@@ -1,0 +1,13 @@
+<apex:page controller="CD_Itemcostexporter" action="{!Exporttocsv}" readOnly="true"  contentType="text/csv#CD_ItemCostDetails.csv" language="en-US" cache="True">{!header}
+
+
+
+<apex:repeat value="{!excelList}" var="items">
+ {!items.costType},'{!items.ItemNum},'{!items.supplier},{!items.Category},{!items.currencyCode}, {!items.Q1Price},{!items.Q1Award},{!items.Q2Price},{!items.Q2Award},{!items.Q3Price},{!items.Q3Award},"{!items.Q4Price}","{!items.Q4Award}",{!items.Q5Price},{!items.Q5Award},{!items.Q6Price},{!items.Q6Award},"{!items.SupplierName}","{!items.itemDesc}",{!items.gcl},{!items.catMgr},{!items.cat},{!items.subCat1},{!items.subCat2},{!items.subCat3}
+   
+    
+    </apex:repeat>
+
+    
+ 
+</apex:page>

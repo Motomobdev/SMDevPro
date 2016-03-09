@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meeting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meetings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agenda --></label>
+        <name>Agenda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Combination</masterLabel>
+            <translation><!-- Combination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Companion Product</masterLabel>
+            <translation><!-- Companion Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handset</masterLabel>
+            <translation><!-- Handset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CalendarSameAsAccount? --></label>
+        <name>CalendarSameAsAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Attendees and Titles --></label>
+        <name>Customer_Attendees_and_Titles__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting End Date --></label>
+        <name>EndDate_d__c</name>
+    </fields>
+    <fields>
+        <help><!-- A &quot;short&quot; summary of the post meeting comments. --></help>
+        <label><!-- Executive Summary --></label>
+        <name>Executive_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Attendees and Title --></label>
+        <name>External_Attendees__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date on which the first post meeting notes was entered. --></help>
+        <label><!-- First Post Meeting Notes Entry Date --></label>
+        <name>First_Post_Meeting_Notes_Entry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Attachments? --></label>
+        <name>Has_Attachments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Attendees --></label>
+        <name>Internal_Attendees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upcoming Meeting details including: Meeting date, external attendees and title, main topic of meeting. --></help>
+        <label><!-- Key Meetings Pending --></label>
+        <name>Key_Meetings_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting End Date and Time --></label>
+        <name>Meeting_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Start Date and Time --></label>
+        <name>Meeting_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Type --></label>
+        <name>Meeting_Type__c</name>
+        <picklistValues>
+            <masterLabel>Companion Product Meeting</masterLabel>
+            <translation><!-- Companion Product Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Meeting</masterLabel>
+            <translation><!-- Executive Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Meeting</masterLabel>
+            <translation><!-- General Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOR Meeting</masterLabel>
+            <translation><!-- MOR Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing Meeting</masterLabel>
+            <translation><!-- Marketing Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Supplier Meeting</masterLabel>
+            <translation><!-- Other Supplier Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QBR Meeting</masterLabel>
+            <translation><!-- QBR Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFQ Meeting</masterLabel>
+            <translation><!-- RFQ Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranging</masterLabel>
+            <translation><!-- Ranging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Meeting</masterLabel>
+            <translation><!-- Sales Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain Meeting</masterLabel>
+            <translation><!-- Supply Chain Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech. Sales Meeting</masterLabel>
+            <translation><!-- Tech. Sales Meeting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Next Steps --></label>
+        <name>Next_Steps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days since the start of this customer meetings. --></help>
+        <label><!-- Num of days since the meeting start date --></label>
+        <name>Num_of_days_since_the_meeting_start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objective --></label>
+        <name>Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Playbook --></label>
+        <name>Playbook__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Post Meeting Notes Text Length --></label>
+        <name>Post_Meeting_Notes_Text_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Meeting Notes --></label>
+        <name>Post_Meeting_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority Scope --></label>
+        <name>Priority_Scope__c</name>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local</masterLabel>
+            <translation><!-- Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional</masterLabel>
+            <translation><!-- Regional --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Public Calendar --></label>
+        <name>PublicCalendar__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All Lenovo</masterLabel>
+            <translation><!-- All Lenovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CES - Consumer Electronics Show</masterLabel>
+            <translation><!-- CES - Consumer Electronics Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CTIA</masterLabel>
+            <translation><!-- CTIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Companion Products (CP)</masterLabel>
+            <translation><!-- Companion Products (CP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America North</masterLabel>
+            <translation><!-- Latin America North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America South</masterLabel>
+            <translation><!-- Latin America South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MWC - Mobile World Congress</masterLabel>
+            <translation><!-- MWC - Mobile World Congress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA ATT/TMO/Sprint/RONA</masterLabel>
+            <translation><!-- NA ATT/TMO/Sprint/RONA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA VZW</masterLabel>
+            <translation><!-- NA VZW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement</masterLabel>
+            <translation><!-- Procurement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Sales (NA)</masterLabel>
+            <translation><!-- Retail Sales (NA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Sales (Non NA)</masterLabel>
+            <translation><!-- Retail Sales (Non NA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Ops</masterLabel>
+            <translation><!-- Sales Ops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iDEN</masterLabel>
+            <translation><!-- iDEN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ranging Record --></label>
+        <name>Ranging_Record__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Meeting Start Date --></label>
+        <name>StartDate_d__c</name>
+    </fields>
+    <layouts>
+        <layout>Meeting Layout</layout>
+        <sections>
+            <label><!-- Agenda --></label>
+            <section>Agenda</section>
+        </sections>
+        <sections>
+            <label><!-- Attendees --></label>
+            <section>Attendees</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Objectives --></label>
+            <section>Objectives</section>
+        </sections>
+        <sections>
+            <label><!-- Post Meeting Comments --></label>
+            <section>Post Meeting Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Weekly Summary --></label>
+            <section>Weekly Summary</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- GTM --></label>
+        <name>GTM</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Procurement --></label>
+        <name>Procurement</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The meeting end date and time must occur after the start date and time --></errorMessage>
+        <name>End_date_cannot_be_lower_than_start_date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Copy_Agenda_to_Weekly --></label>
+        <name>Copy_Agenda_to_Weekly</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Copy_Comments_to_Weekly --></label>
+        <name>Copy_Comments_to_Weekly</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Copy_Summary_to_Weekly --></label>
+        <name>Copy_Summary_to_Weekly</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Download_as_PDF --></label>
+        <name>Download_as_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Attendees --></label>
+        <name>Edit_Attendees</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Meeting --></label>
+        <name>New_Meeting</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Meeting_Ranging --></label>
+        <name>New_Meeting_Ranging</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Meetings --></label>
+        <name>New_Meetings</name>
+    </webLinks>
+</CustomObjectTranslation>

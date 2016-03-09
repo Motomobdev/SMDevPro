@@ -1,0 +1,91 @@
+<apex:page standardController="Customer_Meeting__c" title="Meeting Attendees" tabStyle="Customer_Meeting__c" extensions="MeetingAttendeesController">
+<script type="text/javascript">
+var typingDelayUser;
+var typingDelayCont;
+var typingInterval = 700;
+
+function addDelayUser()
+{		
+	clearTimeout(typingDelayUser);
+    typingDelayUser = setTimeout(function(){callApexFunctionUser()}, typingInterval);   
+    return true;
+}
+
+function callApexFunctionUser(){
+    showUserList();
+}
+
+function addDelayCont()
+{		
+	clearTimeout(typingDelayCont);
+    typingDelayCont = setTimeout(function(){callApexFunctionCont()}, typingInterval);   
+    return true;
+}
+
+function callApexFunctionCont(){
+    showContList();
+}
+</script>
+    <apex:pageMessages id="msgs"/> 
+    <apex:sectionHeader title="Meeting"/>
+    <apex:form >
+        <apex:pageBlock title="Meeting Information">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!attendeesSave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlock >                                                                                           
+                <apex:pageBlockSection columns="1" title="Internal Attendees" collapsible="false">
+                	<apex:actionRegion >                    
+                    	<apex:outputLabel value="Search User: " for="searchUser"/>
+                    	<apex:actionFunction name="showUserList" rerender="internal" status="intStatus"/>
+                    	<apex:inputText value="{!searchTextUser}" id="searchUser" onkeyup="return addDelayUser();">                    		
+          			    </apex:inputText>
+          			    &nbsp;
+          			    <apex:actionStatus id="intStatus">
+                           <apex:facet name="start">
+						      <apex:image url="{!$Resource.AjaxLoadingDots}" width="43" height="11"/>
+						   </apex:facet>
+                        </apex:actionStatus>
+                                                              
+	                    <apex:outputPanel id="internal">
+	                    	<c:MultiselectPicklist leftLabel="Available Users"
+	                            leftOption="{!allUsers}"
+	                            rightLabel="Internal Attendees"
+	                            rightOption="{!internalAttendees}"
+	                            size="14"
+	                            width="200px"/>
+	                    </apex:outputPanel>
+                    </apex:actionRegion>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="2" title="External Attendees" collapsible="false">
+                	<apex:actionRegion >                                                               
+                    	<apex:outputLabel value="Search Contact: " for="searchContact"/>
+                    	<apex:actionFunction name="showContList" rerender="external" status="extStatus"/>
+                    	<apex:inputText value="{!searchTextContact}" id="searchContact" onkeyup="return addDelayCont();">
+          			    </apex:inputText>
+          			    &nbsp;
+          			    <apex:actionStatus id="extStatus" rendered="true">
+          			    	<apex:facet name="start">
+						       <apex:image url="{!$Resource.AjaxLoadingDots}" width="43" height="11"/>
+						   </apex:facet>
+						</apex:actionStatus>
+                        &nbsp;&nbsp;&nbsp;
+                        <apex:outputLabel value="Show Contacts from unrelated Accounts?" for="unrestrictContacts"/>
+                        <apex:inputCheckbox id="unrestrictContacts" value="{!unrestrictedContacts}">
+                        	<apex:actionSupport event="onchange" rerender="external" status="extStatus"/>
+                        </apex:inputCheckbox>                                                       
+	                    <apex:outputPanel id="external">
+	                    	<c:MultiselectPicklist leftLabel="Available Contacts"
+	                            leftOption="{!allContacts}"
+	                            rightLabel="External Attendees"
+	                            rightOption="{!externalAttendees}"
+	                            size="14"
+	                            width="400px"/>
+	                    </apex:outputPanel>
+                    </apex:actionRegion>                                            
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,26 @@
+<apex:page controller="UserSendEmail" sidebar="{!headerBoolTrueVar}" showHeader="{!headerBoolTrueVar}">
+
+<div style="background-color:#545254;">  
+    <apex:outputPanel rendered="{!controllerBoolTrueVar}">
+        <apex:image value="{!$Resource.logo_imoto}" rendered="{!controllerBoolTrueVar}"/>
+    </apex:outputPanel> 
+</div>
+      <div style="background-color:white;margin-right:140px;margin-left:300px;">
+       <apex:pageBlock title="Send an Email">
+               <p>Fill out the fields below.</p>
+               <apex:form >
+               <br /><br />
+                      <b> <apex:outputLabel value="Your Name" for="Your Name"/>: </b> <br />     
+                       <apex:inputText value="{!yourname}" id="yourname" maxlength="80" required="true"/>                                           
+                       <br /><br />
+                      <b> <apex:outputLabel value="Your Email Address" for="email"/>: </b> <br />     
+                       <apex:inputText value="{!emailaddr}" id="email" maxlength="80" required="true"/>
+                       <br /><br />
+                      <b> <apex:outputLabel value="Comments" for="Body"/>: </b> <br />     
+                       <apex:inputTextarea value="{!body}" id="Body"  rows="10" cols="80"/>           
+                       <br /><br /><br />
+                      <apex:commandButton value="Send Email" action="{!send}" /> 
+               </apex:form>
+       </apex:pageBlock>
+       </div>
+</apex:page>

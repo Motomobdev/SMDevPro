@@ -1,0 +1,2224 @@
+<apex:page controller="deviceApplicationApprovals" sidebar="{!showSidebar}" showHeader="{!showHeader}" tabStyle="DeviceApplicationAssoc__c">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<apex:outputPanel id="ListScript">
+<script type="text/javascript">
+            var LRBlastChecked = null;
+            var SDSlastChecked = null;
+            var BudgetlastChecked = null;
+            var AppMgrlastChecked = null;
+            var PartnerlastChecked = null;
+            var ThirdPartylastChecked = null;
+            var delegatedLRBlastChecked = null;
+            var delegatedSDSlastChecked = null;
+            var delegatedBudgetlastChecked = null;
+            var delegatedAppMgrlastChecked = null;
+            var delegatedPartnerlastChecked = null;
+            var delegatedThirdPartylastChecked = null;
+            $(function() {
+                /**
+                    The following will execute only when shift key is pressed and hold.
+                    1.  If there is no other checkboxes are checked, select only the current checkbox.
+                    2.  If there is another checkbox detected after current one, select all in between.
+                    3.  If there is another checkbox detected before current one, select all in between.
+                */
+                var $LRBchkboxes = $('.LRBselection');
+                $LRBchkboxes.click(function(event){
+                    if(!LRBlastChecked) {
+                        LRBlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $LRBchkboxes.index(this);
+                        var end = $LRBchkboxes.index(LRBlastChecked);
+        
+                        $LRBchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', LRBlastChecked.checked);
+        
+                    }
+                    LRBlastChecked = this;
+                });
+                var $SDSchkboxes = $('.SDSselection');
+                $SDSchkboxes.click(function(event){
+                    if(!SDSlastChecked) {
+                        SDSlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $SDSchkboxes.index(this);
+                        var end = $SDSchkboxes.index(SDSlastChecked);
+        
+                        $SDSchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', SDSlastChecked.checked);
+        
+                    }
+                    SDSlastChecked = this;
+                });
+                var $Budgetchkboxes = $('.Budgetselection');
+                $Budgetchkboxes.click(function(event){
+                    if(!BudgetlastChecked) {
+                        BudgetlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $Budgetchkboxes.index(this);
+                        var end = $Budgetchkboxes.index(BudgetlastChecked);
+        
+                        $Budgetchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', BudgetlastChecked.checked);
+        
+                    }
+                    BudgetlastChecked = this;
+                });
+                var $AppMgrchkboxes = $('.AppMgrselection');
+                $AppMgrchkboxes.click(function(event){
+                    if(!AppMgrlastChecked) {
+                        AppMgrlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $AppMgrchkboxes.index(this);
+                        var end = $AppMgrchkboxes.index(AppMgrlastChecked);
+        
+                        $AppMgrchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', AppMgrlastChecked.checked);
+        
+                    }
+                    AppMgrlastChecked = this;
+                });
+                var $Partnerchkboxes = $('.Partnerselection');
+                $Partnerchkboxes.click(function(event){
+                    if(!PartnerlastChecked) {
+                        PartnerlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $Partnerchkboxes.index(this);
+                        var end = $Partnerchkboxes.index(PartnerlastChecked);
+        
+                        $Partnerchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', PartnerlastChecked.checked);
+        
+                    }
+                    PartnerlastChecked = this;
+                });
+                var $ThirdPartychkboxes = $('.ThirdPartyselection');
+                $ThirdPartychkboxes.click(function(event){
+                    if(!ThirdPartylastChecked) {
+                        ThirdPartylastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $ThirdPartychkboxes.index(this);
+                        var end = $ThirdPartychkboxes.index(ThirdPartylastChecked);
+        
+                        $ThirdPartychkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', ThirdPartylastChecked.checked);
+        
+                    }
+                    ThirdPartylastChecked = this;
+                });
+                var $delegetedLRBchkboxes = $('.delegatedLRBselection');
+                $delegatedLRBchkboxes.click(function(event){
+                    if(!delegatedLRBlastChecked) {
+                        delegatedLRBlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedLRBchkboxes.index(this);
+                        var end = $delegatedLRBchkboxes.index(delegatedLRBlastChecked);
+        
+                        $delegatedLRBchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedLRBlastChecked.checked);
+        
+                    }
+                    delegatedLRBlastChecked = this;
+                });
+                var $delegatedSDSchkboxes = $('.delegatedSDSselection');
+                $delegatedSDSchkboxes.click(function(event){
+                    if(!delegatedSDSlastChecked) {
+                        delegatedSDSlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedSDSchkboxes.index(this);
+                        var end = $delegatedSDSchkboxes.index(delegatedSDSlastChecked);
+        
+                        $delegatedSDSchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedSDSlastChecked.checked);
+        
+                    }
+                    delegatedSDSlastChecked = this;
+                });
+                var $delegatedBudgetchkboxes = $('.delegatedBudgetselection');
+                $delegatedBudgetchkboxes.click(function(event){
+                    if(!delegatedBudgetlastChecked) {
+                        delegatedBudgetlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedBudgetchkboxes.index(this);
+                        var end = $delegatedBudgetchkboxes.index(delegatedBudgetlastChecked);
+        
+                        $delegatedBudgetchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedBudgetlastChecked.checked);
+        
+                    }
+                    delegatedBudgetlastChecked = this;
+                });
+                var $delegatedAppMgrchkboxes = $('.delegatedAppMgrselection');
+                $delegatedAppMgrchkboxes.click(function(event){
+                    if(!delegatedAppMgrlastChecked) {
+                        delegatedAppMgrlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedAppMgrchkboxes.index(this);
+                        var end = $delegatedAppMgrchkboxes.index(delegatedAppMgrlastChecked);
+        
+                        $delegatedAppMgrchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedAppMgrlastChecked.checked);
+        
+                    }
+                    delegatedAppMgrlastChecked = this;
+                });
+                var $delegatedPartnerchkboxes = $('.delegatedPartnerselection');
+                $delegatedPartnerchkboxes.click(function(event){
+                    if(!delegatedPartnerlastChecked) {
+                        delegatedPartnerlastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedPartnerchkboxes.index(this);
+                        var end = $delegatedPartnerchkboxes.index(delegatedPartnerlastChecked);
+        
+                        $delegatedPartnerchkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedPartnerlastChecked.checked);
+        
+                    }
+                    delegatedPartnerlastChecked = this;
+                });
+                var $delegatedThirdPartychkboxes = $('.delegatedThirdPartyselection');
+                $delegatedThirdPartychkboxes.click(function(event){
+                    if(!delegatedThirdPartylastChecked) {
+                        delegatedThirdPartylastChecked = this;
+                        return;
+                    }
+                    if(event.shiftKey) {
+                        var start = $delegatedThirdPartychkboxes.index(this);
+                        var end = $delegatedThirdPartychkboxes.index(delegatedThirdPartylastChecked);
+        
+                        $delegatedThirdPartychkboxes.slice(Math.min(start,end), Math.max(start,end)+ 1).attr('checked', delegatedThirdPartylastChecked.checked);
+        
+                    }
+                    delegatedThirdPartylastChecked = this;
+                });
+            });
+        </script><style type="text/css">
+        .LRBselection{}
+        .SDSselection{}
+        </style>
+</apex:outputPanel>
+    <apex:form id="page" >
+        <apex:pageMessage rendered="{!showError}" strength="1" summary="Your submission has failed. If you tried to submit a group try submitted them seperately. For help checking the required fields are filled out please email Daniel Quicker (QUICKER1@motorola.com) regarding this with information on which DevApp(s) you were trying to approve." severity="error" />
+        <div style="text-align: right;">
+            <apex:commandLink title="Show this page in full screen view." target="_parent" action="{!fullScreen}" value="Full Screen" rendered="{!showFullScreenLink}"/>
+        </div>
+        <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock>
+        <apex:pageBlock title="My Items to Approve" rendered="{!showApprovals}" id="approvals">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Approve Selected" action="{!processSelected}" rerender="hiddenBlock">
+                    <apex:param name="action" value="Approve" assignTo="{!action}"/>
+                </apex:commandButton>                
+                <apex:commandButton value="Reject Selected" action="{!processSelected}" rerender="hiddenBlock">
+                    <apex:param name="action" value="Reject" assignTo="{!action}"/>
+                </apex:commandButton>
+                <apex:commandButton value="Reassign Selected" action="{!reassignSelected}" rerender="page"/>
+            </apex:pageBlockButtons><!-- In our table we are displaying the cApproval records -->
+            <apex:outputLabel for="LRBList" rendered="{!showLRB}"><BR/><h3>LRB Approvals</h3></apex:outputLabel>
+            <apex:pageBlockTable value="{!LRBList}" var="a" id="LRBList" rendered="{!showLRB}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="LRBList,ListScript">
+                            <apex:param name="stepSelection" value="LRB" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:inputCheckbox styleClass="LRBselection" value="{!a.selected}"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.SA_Date__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name">
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Application__c.Fields.Name.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="LRB Initial Deal Decision" >
+                     <apex:outputText value="{!a.contractPreReviewMeeting}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="LRB Initial Deal Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.LRB_Initial_Deal_Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="LRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="LRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />     
+            </apex:pageBlockTable>
+            <apex:outputLabel for="SDSList" rendered="{!showSDS}"><BR/><h3>SDS Approvals</h3></apex:outputLabel>
+            <apex:pageBlockTable title="SDS Approval" value="{!SDSList}" var="a" id="SDSList" rendered="{!showSDS}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="SDSList,ListScript">
+                            <apex:param name="stepSelection" value="SDS" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                        
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="SDSselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!SDSsortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!SDSsortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >             
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!SDSsortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!SDSsortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="SDS Support" value="{!a.SDSSupport}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SDS Support">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="DTS_Support__c" assignTo="{!SDSsortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="SDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="SDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+            
+            <apex:outputLabel for="AppMgrList" rendered="{!showAppMgr}"><BR/><h3>Application Manager Selection Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!AppMgrList}" var="a" id="AppMgrList" rendered="{!showAppMgr}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="AppMgrList">
+                            <apex:param name="stepSelection" value="AppMgr" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                        
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="AppMgrselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >              
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Manager" value="{!a.ApplicationManager}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Manager">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application_Manager__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="AppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="AppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+            
+            
+            <apex:outputLabel for="BudgetList" rendered="{!showBudget}"><BR/><h3>Budget Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!BudgetList}" var="a" id="BudgetList" rendered="{!showBudget}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="BudgetList">
+                            <apex:param name="stepSelection" value="Budget" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="Budgetselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Royalty Low" value="{!a.royaltyLow}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Royalty Low">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Royalty_Low__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Royalty High" value="{!a.royaltyHigh}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Royalty High">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Royalty_High__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="BudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="BudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+
+            
+            <apex:outputLabel for="PartnerList" rendered="{!showPartner}"><BR/><h3>Partner Checklist Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!PartnerList}" var="a" id="PartnerList" rendered="{!showPartner}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="PartnerList">
+                            <apex:param name="stepSelection" value="Partner" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="Partnerselection"/>
+                </apex:column>   
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >               
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="PartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="PartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>           
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+                <apex:column headerValue="Available For Use" >
+                    <apex:inputCheckbox disabled="true" value="{!a.availableForUse}" />
+                </apex:column>
+            </apex:pageBlockTable>
+                                
+            <apex:outputLabel for="thirdPartyList" rendered="{!showthirdParty}"><BR/><h3>3rd Party Partner Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!thirdPartyList}" var="a" id="ThirdPartyList" rendered="{!showThirdParty}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="ThirdPartyList">
+                            <apex:param name="stepSelection" value="ThirdParty" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="ThirdPartyselection"/>
+                </apex:column>   
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="ThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="ThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />                
+            </apex:pageBlockTable>                                                                                 
+            
+            <apex:outputLabel for="delegatedLRBList" rendered="{!showdelegatedLRB}"><BR/><h3>Delegated LRB Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!delegatedLRBList}" var="a" id="delegatedLRBList" rendered="{!showdelegatedLRB}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="delegatedLRBList">
+                            <apex:param name="stepSelection" value="delegatedLRB" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="delegatedLRBselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedLRBList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedLRBList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />     
+            </apex:pageBlockTable>
+            
+            <apex:outputLabel for="delegatedSDSList" rendered="{!showDelegatedSDS}"><BR/><h3>Delegated SDS Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable title="SDS Approval" value="{!delegatedSDSList}" var="a" id="delegatedSDSList" rendered="{!showdelegatedSDS}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="delegatedSDSList">
+                            <apex:param name="stepSelection" value="delegatedSDS" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                        
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="delegatedSDSselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="SDS Support" value="{!a.SDSSupport}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SDS Support">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="DTS_Support__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedSDSList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedSDSList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+            
+            <apex:outputLabel for="delegatedAppMgrList" rendered="{!showdelegatedAppMgr}"><BR/><h3>Delegated Application Manager Selection Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!delegatedAppMgrList}" var="a" id="delegatedAppMgrList" rendered="{!showdelegatedAppMgr}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="delegatedAppMgrList">
+                            <apex:param name="stepSelection" value="delegatedAppMgr" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                        
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="AppMgrselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_name_plus_id__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.sa_date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Manager" value="{!a.ApplicationManager}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Manager">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application_Manager__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractStatusonCA__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.auto_renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedAppMgrList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedAppMgrList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+            
+            
+            <apex:outputLabel for="delegatedBudgetList" rendered="{!showdelegatedBudget}"><BR/><h3>Delegated Budget Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!delegatedBudgetList}" var="a" id="delegatedBudgetList" rendered="{!showdelegatedBudget}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="BudgetList">
+                            <apex:param name="stepSelection" value="delegatedBudget" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="delegatedBudgetselection"/>
+                </apex:column>
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_Plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Royalty Low" value="{!a.royaltyLow}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Royalty Low">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Royalty_Low__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Royalty High" value="{!a.royaltyHigh}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Royalty High">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Royalty_High__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="ContractstatusOnca__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedBudgetList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedBudgetList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />
+            </apex:pageBlockTable>
+
+            
+            <apex:outputLabel for="delegatedPartnerList" rendered="{!showdelegatedPartner}"><BR/><h3>Delegated Partner Checklist Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!delegatedPartnerList}" var="a" id="delegatedPartnerList" rendered="{!showdelegatedPartner}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="PartnerList">
+                            <apex:param name="stepSelection" value="delegatedPartner" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="delegatedPartnerselection"/>
+                </apex:column>   
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_Plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contractstatusonca__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedPartnerList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedPartnerList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>           
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />                
+            </apex:pageBlockTable>
+                                
+            <apex:outputLabel for="delegatedthirdPartyList" rendered="{!showdelegatedthirdParty}"><BR/><h3>Delegated 3rd Party Partner Approvals</h3></apex:outputLabel>
+            
+            <apex:pageBlockTable value="{!delegatedthirdPartyList}" var="a" id="delegatedThirdPartyList" rendered="{!showdelegatedThirdParty}">
+                <apex:column width="85px">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="ThirdPartyList">
+                            <apex:param name="stepSelection" value="delegatedThirdParty" assignTo="{!selectionChoice}"/>
+                        </apex:commandLink>                         
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!a.selected}" styleClass="delegatedThirdPartyselection"/>
+                </apex:column>   
+                <apex:column width="105px" headerValue="Dev-App #" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, a.daId)}">{!a.devAppName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Dev-App #">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Device Name & Id" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, a.deviceId)}">{!a.deviceName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Device Name & Id">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Device_Name_plus_ID__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="70px" headerValue="SA Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.devSADate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="SA Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.SA_Date__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Platform Release" value="{!a.platformRelease}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Android_Release__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Android_Release__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Stable Line" value="{!a.stableLine}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="{!$ObjectType.Device__c.Fields.Stable_Line__c.label}">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Device__r.Stable_Line__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Application Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.appName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Name" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, a.appId)}">{!a.accountName}</apex:outputLink>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Account Name">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Application__r.Account__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Status" value="{!a.contractStatus}">
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Status">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contractstatusonca__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column width="105px" headerValue="Contract End Date">
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!a.endDate}" /> 
+                    </apex:outputText>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract End Date">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.EndDate" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>                
+                <apex:column width="135px" headerValue="Contract Auto Renewal" >
+                     <apex:inputCheckbox disabled="true"  value="{!a.autoRenewal}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Auto Renewal">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Auto_Renewal__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Contract Decision" >
+                     <apex:outputText value="{!a.contractDecision}"/>
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Contract Decision">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="delegatedThirdPartyList,ListScript">
+                                <apex:param name="sortFieldParam" value="Contract__r.Decision__c" assignTo="{!sortField}"/>
+                                <apex:param name="sortFieldParam1" value="delegatedThirdPartyList" assignTo="{!sortTable}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Approval Step" value="{!a.approvalStep}" />                
+            </apex:pageBlockTable>                                                  
+                                                 
+        </apex:pageBlock>
+         
+        <apex:pageBlock title="Reassign Approvals" id="reassign" rendered="{!showNewApprover}">
+             <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveReassignment}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+            <apex:outputLabel value="Approver:  " for="newApprover"/>
+            <apex:inputField value="{!fakeAppMgnMatrix.Application_Manager__c}" id="newApprover"/>
+        </apex:pageBlock>        
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Create_New_Contract</links>
+    <links>My_Pending_Contracts</links>
+    <links>Apttus__StoreExecutedAgreement</links>
+    <links>Apttus_Support</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

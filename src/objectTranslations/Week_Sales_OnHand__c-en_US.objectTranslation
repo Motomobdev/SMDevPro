@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Week Sales OnHand</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Weeks Sales OnHand</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Weeks Sales OnHand --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Group --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Lenovo</masterLabel>
+            <translation><!-- Lenovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola</masterLabel>
+            <translation><!-- Motorola --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Device Type --></label>
+        <name>Device_Type__c</name>
+        <picklistValues>
+            <masterLabel>Companion Products</masterLabel>
+            <translation><!-- Companion Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smart Phone</masterLabel>
+            <translation><!-- Smart Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearable</masterLabel>
+            <translation><!-- Wearable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Unique field for WSOH Portfolio Segment. --></help>
+        <label><!-- WSOH already exists for this Segment --></label>
+        <name>WSOH_already_exists_for_this_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Sales OnHand Segment --></label>
+        <name>Week_Sales_OnHand_Segment__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Ideal number of weeks of units in channel by product segment needed for steady sell-out (avoid stock out or excess channel inventory). Known as WSOH. --></help>
+        <label><!-- Week Sales OnHand Target --></label>
+        <name>Week_Sales_OnHand_Target__c</name>
+    </fields>
+    <layouts>
+        <layout>Week Sales OnHand Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

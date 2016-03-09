@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Blocked Action</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Blocked Actions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Was the action that could not be completed a record insert or a record delete. --></help>
+        <label><!-- Action Attempted --></label>
+        <name>Action_Attempted__c</name>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert</masterLabel>
+            <translation><!-- Insert --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Origination point for this application. For example if Source is a Core, origination point might actually be a Program that was added to a Stable that is now on the Core that is the source. --></help>
+        <label><!-- Application Source Id --></label>
+        <name>Application_Source_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- If blocked action is for a Device Application what is the Application? --></help>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Blocked Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If action was to delete a Device Application record this is the record that could not be deleted. --></help>
+        <label><!-- Device Application (if delete) --></label>
+        <name>Device_Application_if_delete__c</name>
+        <relationshipLabel><!-- Blocked Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If blocked action is for a Device Application what is the Device? --></help>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Blocked Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- SFDC Id of the source of this Application. Meaning if this Application is on a Device, the source might be a Core that the Device is using, or maybe a Program that was added directly to the Device. --></help>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the record that is the Source Id. --></help>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the Source of this record. For example if Device Application record source might be a Core that is used on Device or a Program that was added directly to the Device. --></help>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <layouts>
+        <layout>Blocked Action Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

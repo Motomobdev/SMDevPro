@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PR_Email</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PR_Email</value>
+    </caseValues>
+    <fields>
+        <label><!-- Email Body --></label>
+        <name>Email_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Subject --></label>
+        <name>Email_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item URL --></label>
+        <name>Item_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- The email body to be sent to the managers will be included in this field. --></help>
+        <label><!-- Manager Email Body --></label>
+        <name>Manager_Email_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShowAll Url --></label>
+        <name>ShowAll_Url__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Revenue Invoice</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Revenue Invoice</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acct Calendar --></label>
+        <name>Acct_Calendar__c</name>
+        <relationshipLabel><!-- Revenue Invoice --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Batch Id --></label>
+        <name>Batch_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export Date --></label>
+        <name>Export_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export ID --></label>
+        <name>Export_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>Invoice_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Load Date --></label>
+        <name>Load_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Date --></label>
+        <name>Processing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

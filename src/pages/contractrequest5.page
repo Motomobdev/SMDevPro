@@ -1,0 +1,19 @@
+<apex:page controller="contractExt" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">
+<apex:image value="{!$Resource.logo_imoto}"/>
+</div>
+<META HTTP-EQUIV="refresh" CONTENT="5;URL=http://motorolamobility.lrb.cs3.force.com/contractrequest">
+</meta>
+<apex:form >
+<apex:pageBlock title="CONTRACT REQUEST" mode="edit">
+   <div style="margin-right:140px;margin-left:600px;">
+       <h1>Thank You. </h1>
+       Your contract request has been submitted for approval.
+       <br></br>
+       <br></br>
+       <apex:commandButton value="Finish" action="{!home}" style="margin-right:140px;margin-left:160px;"> </apex:commandButton>
+     </div>
+   </apex:pageBlock>
+   </apex:form>
+   
+</apex:page>

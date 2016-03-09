@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object to combine SW Experiences &amp; PMD Programs</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Exclude_on_Chart_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>Program_PMD__r.Exclude_from_POR_Experiences_Chart__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Exclude on Chart (Program)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Experience_Product_Area__c</fullName>
+        <externalId>false</externalId>
+        <formula>( SW_Experiences__r.Product_Area1__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Experience Product Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Include_on_Release_Chart__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include on Release Chart?</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MR_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If EOL, please enter &quot;1/1/2099&quot;</inlineHelpText>
+        <label>MR Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MR_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>MR_Exp</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MR0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MR_Label__c</fullName>
+        <description>For Release</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Release</inlineHelpText>
+        <label>MR Label</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MR0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>POR_Grouping_Exp__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Experiences__r.POR_Grouping__c</formula>
+        <label>POR Grouping Exp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_PMD__c</fullName>
+        <externalId>false</externalId>
+        <label>Program  (PMD)</label>
+        <referenceTo>PMD_Program__c</referenceTo>
+        <relationshipLabel>SW Experiences</relationshipLabel>
+        <relationshipName>Program_SW_Experience</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Program_Release_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Release Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Discovery Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concept Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>POR Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>End of Life</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Program_PMD__r.Program_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Experiences__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Experiences and Releases</label>
+        <referenceTo>SW_Experiences_and_Releases__c</referenceTo>
+        <relationshipLabel>PMD Programs</relationshipLabel>
+        <relationshipName>Program_SW_Experience</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>SW_Project_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>( SW_Experiences__r.Type__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW Project Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Support_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Experience Support Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fully Supported at NPI Launch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fully Supported (PlayStore/MR update)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partially Supported</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Supported</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Program SW Experience</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ProgSWExp-{00000000}</displayFormat>
+        <label>Program SW Experience Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Programs SW Experiences</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

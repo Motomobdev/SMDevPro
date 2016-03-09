@@ -1,0 +1,151 @@
+<apex:page controller="CreateProjectSpendController" sidebar="false" showHeader="false" title="New Project Spend">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    
+        var fieldSet = {!FieldJSON};
+    
+        function getTDElementsFromFeildsetArray(fieldSetArray){ 
+            var internalHTML = '';
+            $('#saveButton').show();
+            if(fieldSetArray.length > 0){
+                for( var arrayItr = 0; arrayItr < fieldSetArray.length; arrayItr++){
+                    console.log("Field Type",fieldSetArray[arrayItr].typeApex);
+                    if( fieldSetArray[arrayItr].typeApex == "TEXTAREA" ) internalHTML += '<td class="dataCell  " colspan="1" ><input type="textarea" id="'+fieldSetArray[arrayItr].fieldPath+'"></td>';
+                    else if(fieldSetArray[arrayItr].typeApex == "BOOLEAN") internalHTML += '<td class="dataCell  " colspan="1" ><input type="checkbox" id="'+fieldSetArray[arrayItr].fieldPath+'" value="false"></td>';
+                    else if( fieldSetArray[arrayItr].typeApex == "DATE" ) internalHTML += '<td class="dataCell  " colspan="1" ><input type="text" id="'+fieldSetArray[arrayItr].fieldPath+'" fieldtype="'+fieldSetArray[arrayItr].typeApex+'" onfocus="DatePicker.pickDate(true, \''+fieldSetArray[arrayItr].fieldPath+'\', false);"></td>';
+                    else internalHTML += '<td class="dataCell  " colspan="1" ><input type="text" id="'+fieldSetArray[arrayItr].fieldPath+'"></td>';
+                }
+            }
+            
+            return internalHTML;
+        }
+        
+        function addEditableProperty(){
+            $('table[id$="Available_Milestones_Table"]').find('tbody').append('<tr id="newTable">'+getTDElementsFromFeildsetArray(fieldSet)+'</tr>')
+            $('input[type=button]').hide();
+            $('input[type=submit]').hide();
+            $('#saveButton').show();
+            $('#cancelButton').show();
+        }
+        
+        function createAccountListJSON(){
+            var accountArray = [];
+            $('table[id$="Available_Milestones_Table"] tbody').children('tr[id$="newTable"]').each(function(){
+                //console.log($(this).html());
+                var newAccount = {};
+                $(this).children('td').each(function(){
+                    //console.log($(this),$(this).html());
+                    var varID = $(this).children('input').attr('id');
+                    console.log("var ID",varID,$(this).children('input').val(),$(this).children('input').attr('fieldtype'));
+                    if( varID != undefined && $(this).children('input').val() != "" && $(this).children('input').val() != undefined ){
+                        if($(this).children('input').attr('fieldtype') != "DATE") newAccount[varID] = $(this).children('input').val();
+                        else newAccount[varID] = convertDate($(this).children('input').val());
+                    }
+                });
+                accountArray.push(newAccount);
+            });
+            console.log(accountArray);
+            
+            return accountArray;
+        }
+    
+        function addMilestone(){
+            $('input[id$="addedMilestone"]').val(JSON.stringify(createAccountListJSON()));
+            $('input[id$="doneButton"]').click();
+        }
+        
+        function convertDate(dateString){
+            var theDate = new Date(dateString);
+            var returnString = theDate.getFullYear() + '-' + doubleDigit(theDate.getMonth() + 1) + '-' + doubleDigit(theDate.getDate())
+            return returnString;
+        }
+        
+        function doubleDigit(int){
+            if( int < 9 ) return "0" + int;
+            else return "" + int; 
+        }
+        
+        function cancel(){
+            $('input[type=button]').show();
+            $('input[type=submit]').show();
+            $('#saveButton').hide();
+            $('#cancelButton').hide();
+            $('input[id$="doneButton"]').hide();
+            $('#newTable').remove();
+        }
+        
+        function cancelbutton(){
+            if('{!MMID}' != '' && '{!TypeName}' != '') window.location='/ProjectSpend/CreateProjectSpend?MMID={!MMID}&Type={!TypeName}';
+            else if('{!MMID}' != '') window.location='/ProjectSpend/CreateProjectSpend?MMID={!MMID}';
+            else  window.location='/ProjectSpend/CreateProjectSpend';
+        }
+    
+        function openListwindow(){
+            window.open('/ProjectSpend/SWProjectList','_blank',"height=800px,width=600px");    
+        }
+        
+    </script>
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+    <apex:form >
+        <apex:pageBlock title="Verify" rendered="{!(!verified)}">
+            <apex:pageBlockSection >
+                <apex:outputText value="MMID" />
+                <apex:inputText value="{!MMID}"/>
+                <apex:outputText />
+                <apex:commandButton value="Validate" action="{!validateMMIDInput}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+        <apex:inputText value="{!addedMilestone}" id="addedMilestone" styleClass="hidden"/>
+        <apex:pageBlock title="New Project Spend" rendered="{!verified}">
+            <apex:messages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!createRecord}" />
+                <input type="button" value="Cancel" onclick="cancelbutton()" class="btn"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Fill out form">
+                <apex:inputField value="{!primaryRecord.Name__c}"/>
+                <apex:pageBlockSectionItem rendered="{!NOT(nonSoftware)}">
+                    <apex:outputLabel ></apex:outputLabel>
+                    <input type="button" value="SW Project Spend List" onclick="openListwindow()" class="btn"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputText rendered="{!nonSoftware}"/>
+                <apex:outputField value="{!primaryRecord.Requester__r.MMID__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.SW_Project__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Estimated_Spend__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.Team__c}" required="true" rendered="{!nonSoftware}"/>
+                <apex:inputField value="{!primaryRecord.Actual_Spend__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.Preferred_Vendor__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Vendor__c}" rendered="false" required="true"/>
+                <apex:inputField value="{!primaryRecord.Start_Date__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.End_Date__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.New_or_Existing_Engagement__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Engagement_Type__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Location__c}" required="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Comments__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.SSR_Status__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.PR__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.PO__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.SOW__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.Competitively_Bid__c}" rendered="false"/>
+                <apex:inputField value="{!primaryRecord.NDA__c}" rendered="false"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Milestones" rendered="{!verified}">
+            <apex:pageBlockButtons location="top">
+                <input type="button" value="Add Milestone" onclick="addEditableProperty()" class="btn"/>
+                <input type="button" value="Save" onclick="addMilestone()" class="btn hidden" id="saveButton"/>
+                <input type="button" value="Cancel" onclick="cancel()" class="btn hidden" id="cancelButton"/>
+                <apex:commandButton value="Done" action="{!updateMilstoneList}" id="doneButton" styleClass="hidden"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!milestones}" var="milestone" id="Available_Milestones_Table">
+                <apex:repeat value="{!FieldSet}" var="f">
+                    <apex:column value="{!milestone[f.fieldPath]}" headerValue="{!f.label}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

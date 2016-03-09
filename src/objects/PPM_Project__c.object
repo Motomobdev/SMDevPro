@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Projects are a core object in this application.  Projects can be related work requests that describe the initial project approval.  Additional work requests can be used for change management.  Projects include team members, benefit definition, budget and cost line items, risks, status reports, and time.  Often, organizations will use activities or create a child object to track milestones/gates.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Benefits__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Benefits</label>
+        <summarizedField>Benefit__c.Actual_Benefit_Amount__c</summarizedField>
+        <summaryForeignKey>Benefit__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Cost_Timesheets__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Cost</label>
+        <summarizedField>Time_Record__c.Actual_Cost__c</summarizedField>
+        <summaryForeignKey>Time_Record__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Costs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual costs is a roll up summary of the cost items actual amount field that meet the following cost item status - Posted, Paid, On Hold, Received, Planned.</inlineHelpText>
+        <label>Actual Costs</label>
+        <summarizedField>Cost_Items__c.Actual_Costs__c</summarizedField>
+        <summaryFilterItems>
+            <field>Cost_Items__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Posted, Paid, On Hold, Received, Planned</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Cost_Items__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Hours__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual hours is filtered on the time that has been submitted or approved.  Draft time records as well as rejected time records are not included in the roll up summary.</inlineHelpText>
+        <label>Actual Hours</label>
+        <summarizedField>Time_Record__c.Hours__c</summarizedField>
+        <summaryFilterItems>
+            <field>Time_Record__c.Time_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved, Submitted</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Time_Record__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Alternatives_to_Project__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the cost of doing nothing?</inlineHelpText>
+        <label>Alternatives to Project</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Budgeted_Costs__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Total budget for the project.</inlineHelpText>
+        <label>Budgeted Costs</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budgeted_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated hours for duration of the project.</inlineHelpText>
+        <label>Budgeted Hours</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Need_Definition__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please describe project in terms of the business unit requesting work.</inlineHelpText>
+        <label>Business Need Definition</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Unit_Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit Sponsor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Change_Management_Process__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please define the Change Management Process.</inlineHelpText>
+        <label>Change Management Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Reporting_Process__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please Describe the Communication &amp; Reporting Process.</inlineHelpText>
+        <label>Communication &amp; Reporting Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Center</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales Ops HV976</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Meter_Percent_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Budgeted_Costs__c = 0,0,(Actual_Costs__c / Budgeted_Costs__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost Meter Percent Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Meter__c</fullName>
+        <description>This is based off of a custom formula field not on the page layout.</description>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+&quot;http://chart.apis.google.com/chart&quot; &amp; 
+&quot;?chs=180x80&quot; &amp; 
+&quot;&amp;cht=gom&quot; &amp; 
+&quot;&amp;chd=t:&quot; &amp; TEXT(  Cost_Meter_Percent_Complete__c   ) &amp; 
+&quot;&amp;chf=bg,s,0000FF00&quot; &amp; 
+&quot;&amp;chl=&quot; &amp; TEXT(Cost_Meter_Percent_Complete__c) &amp; &quot;%&quot;, 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Cost meter is defined as Actual Costs / Budgeted Costs.  This cost meter is an example of google charts integrated to Salesforce.com via a custom formula field.</inlineHelpText>
+        <label>Cost Meter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivered_Business_Asset__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivered Business Asset</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations/Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Capital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Meter_Percent_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Budgeted_Hours__c = 0, 0, (Actual_Hours__c / Budgeted_Hours__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Meter Percent Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( 
+&quot;http://chart.apis.google.com/chart&quot; &amp; 
+&quot;?chs=180x80&quot; &amp; 
+&quot;&amp;cht=gom&quot; &amp; 
+&quot;&amp;chd=t:&quot; &amp; TEXT(  Hours_Meter_Percent_Complete__c ) &amp; 
+&quot;&amp;chf=bg,s,0000FF00&quot; &amp; 
+&quot;&amp;chl=&quot; &amp; TEXT(Hours_Meter_Percent_Complete__c  ) &amp; &quot;%&quot;, 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Cost meter is defined as Actual hours / Budgeted hours.  This cost meter is an example of google charts integrated to Salesforce.com via a custom formula field.</inlineHelpText>
+        <label>Hours Meter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this a &quot;do-it yourself&quot; project or do we need outside vendors/contractor assistance?  Are we forging new relationships and contracts?</inlineHelpText>
+        <label>Implementation Strategy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Infrastructure_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What are the high level infrastructure requirements involved?</inlineHelpText>
+        <label>Infrastructure Requirements</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Investment_Nature__c</fullName>
+        <externalId>false</externalId>
+        <label>Investment Nature</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Core</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Discretionary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discretionary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Growth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Key_Constraints_Assumptions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What are the assumptions in terms of budget, process and people?</inlineHelpText>
+        <label>Key Constraints / Assumptions</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Percent_Complete_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Budgeted_Costs__c = 0, 0, (Actual_Cost_Timesheets__c / Budgeted_Costs__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent Complete (Costs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Percent_Complete_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Budgeted_Hours__c = 0, 0, (Actual_Hours__c / Budgeted_Hours__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent Complete (Hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Benefits__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Benefits</label>
+        <summarizedField>Benefit__c.Planned_Benefit_Amount__c</summarizedField>
+        <summaryForeignKey>Benefit__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Costs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned costs is a roll up summary of the cost items planned amount field that meet the following cost item status - Posted, Paid, On Hold, Received, Planned.</inlineHelpText>
+        <label>Planned Cost</label>
+        <summarizedField>Cost_Items__c.Estimated_Costs__c</summarizedField>
+        <summaryFilterItems>
+            <field>Cost_Items__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Planned, Received, On Hold, Paid, Posted</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Cost_Items__c.Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Planned_End_Date__c -  Planned_Start_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Duration in weeks = (Planned End Date - Planned Start Date) / 7</inlineHelpText>
+        <label>Planned Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Portfolio__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Portfolio</label>
+        <referenceTo>Portfolio__c</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Project_End_Date__c - Project_Start_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Duration in weeks = (Project End Date - Project Start Date) / 7</inlineHelpText>
+        <label>Actual Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Project End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Goal</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grow Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Run Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transformation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Phase__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Note: Implementation Phase Includes user acceptance, training, and post production support.</inlineHelpText>
+        <label>Project Phase</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analyze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Build</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project_Scope__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please describe the scope of the project.</inlineHelpText>
+        <label>Project Scope</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Project_Sponsor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Sponsor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project_Success_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please define Project Success Criteria.</inlineHelpText>
+        <label>Project Success Criteria</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select the region(s) that this project supports.</inlineHelpText>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Remaing_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Budgeted_Costs__c - Actual_Cost_Timesheets__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Budget - Actual Costs</inlineHelpText>
+        <label>Remaining (Costs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>Budgeted_Hours__c - Actual_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining (Hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_budget__c</fullName>
+        <externalId>false</externalId>
+        <formula>Budgeted_Costs__c  - Actual_Costs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Overall Budget  - budget line item actual cost items.</inlineHelpText>
+        <label>Remaining Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Status_Icon__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Project_Phase__c, &apos;Draft&apos;),
+ IF( Percent_Complete_Hours__c &lt; 0.05,
+  IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOT&amp;oid=00D80000000ZNOz&apos;, &apos;Green&apos;),
+   IF( Percent_Complete_Hours__c &lt; 0.15,
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOd&amp;oid=00D80000000ZNOz&apos;, &apos;Yellow&apos;),
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOY&amp;oid=00D80000000ZNOz&apos;, &apos;Red&apos;)
+   )
+ ),
+
+IF( ISPICKVAL(Project_Phase__c, &apos;Analyze&apos;),
+ IF( Percent_Complete_Hours__c &lt; 0.25,
+  IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOT&amp;oid=00D80000000ZNOz&apos;, &apos;Green&apos;),
+   IF( Percent_Complete_Hours__c &lt; 0.35,
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOd&amp;oid=00D80000000ZNOz&apos;, &apos;Yellow&apos;),
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOY&amp;oid=00D80000000ZNOz&apos;, &apos;Red&apos;)
+   )
+ ),
+IF( ISPICKVAL(Project_Phase__c, &apos;Design&apos;),
+ IF( Percent_Complete_Hours__c &lt; 0.5,
+  IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOT&amp;oid=00D80000000ZNOz&apos;, &apos;Green&apos;),   
+   IF( Percent_Complete_Hours__c &lt; 0.60,
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOd&amp;oid=00D80000000ZNOz&apos;, &apos;Yellow&apos;),
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOY&amp;oid=00D80000000ZNOz&apos;, &apos;Red&apos;)
+   )
+ ),
+IF( ISPICKVAL(Project_Phase__c, &apos;Build&apos;),
+ IF( Percent_Complete_Hours__c &lt; 0.75,
+  IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOT&amp;oid=00D80000000ZNOz&apos;, &apos;Green&apos;),   
+   IF( Percent_Complete_Hours__c &lt; 0.85,
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOd&amp;oid=00D80000000ZNOz&apos;, &apos;Yellow&apos;),
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOY&amp;oid=00D80000000ZNOz&apos;, &apos;Red&apos;)
+   )
+ ),
+IF( ISPICKVAL(Project_Phase__c, &apos;Implementation&apos;),
+ IF( Percent_Complete_Hours__c &lt; 1,
+  IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOT&amp;oid=00D80000000ZNOz&apos;, &apos;Green&apos;),   
+   IF( Percent_Complete_Hours__c &lt; 1.1,
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOd&amp;oid=00D80000000ZNOz&apos;, &apos;Yellow&apos;),
+    IMAGE(&apos;https://na6.salesforce.com/servlet/servlet.ImageServer?id=01580000000eXOY&amp;oid=00D80000000ZNOz&apos;, &apos;Red&apos;)
+   )
+ ),
+&apos;&apos;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is an example of a conditional, custom formula field that evaluates the Project Phase and the Percent Complete (hours).  Default Value for &quot;Draft - Phase Zero&quot; (Green 0 - .05%, Yellow .06 - .15, Red .16 and above).  For more definition, go into setup</inlineHelpText>
+        <label>Status Icon</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variance_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Planned_Duration__c - Project_Duration__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Planned - Actual (Duration)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Request</label>
+        <referenceTo>Work_Request__c</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Project</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Portfolio__c</columns>
+        <columns>Product_Manager__c</columns>
+        <columns>Project_Start_Date__c</columns>
+        <columns>Project_End_Date__c</columns>
+        <columns>Project_Status__c</columns>
+        <columns>Project_Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Project  Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Projects</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Goal__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Remaing_Costs__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Remaining_Hours__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Manager__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Planned_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Sponsor__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Portfolio__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Portfolio__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Planned_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

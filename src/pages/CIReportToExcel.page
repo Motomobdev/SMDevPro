@@ -1,0 +1,5 @@
+<apex:page id="page" controller="CI_ReportCtr" showHeader="false" showChat="false" sidebar="false" cache="false" contenttype="application/vnd.ms-excel#CIReport.xls">
+
+<apex:outputText id="reportTable" value="{!rptTable}" escape="false" />
+
+</apex:page>

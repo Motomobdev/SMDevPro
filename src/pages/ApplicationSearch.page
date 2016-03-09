@@ -1,0 +1,36 @@
+<apex:page controller="AppStandardController" showHeader="false" sidebar="false">
+    <apex:messages />
+    <apex:form >
+        <apex:pageBlock title="Verify" rendered="{!(!verified)}">
+			<apex:pageBlockSection >
+				<apex:outputText value="MMID" />
+				<apex:inputText value="{!MMID}"/>
+				<apex:outputText />
+				<apex:commandButton value="Validate" action="{!validateMMIDInput}" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+        <apex:pageBlock title="Application ID Search" rendered="{!verified}">
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!restartSearch}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Application Name: " for="SearchInput"/>
+                    <apex:inputText value="{!inputName}" id="SearchInput"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!Apps}" var="a">
+                <apex:column value="{!a.Name}" headerValue="Application Name"/>
+                <apex:column value="{!a.Market_Name__c}" headerValue="Market Name"/>
+                <apex:column headerValue="ID">{!a.Application_ID__c}</apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockSection >
+                <apex:commandLink value="Previous" action="{!previous}" rendered="{!hasPrevious}"/>
+                <apex:outputText value="Previous" rendered="{!(!hasPrevious)}"/>
+                <apex:commandLink value="Next" action="{!next}" rendered="{!hasNext}"/>
+                <apex:outputText value="Next" rendered="{!(!hasNext)}"/>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

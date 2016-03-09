@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR Engineer to Build Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW CR Engineer to Build Request</value>
+    </caseValues>
+    <fields>
+        <help><!-- Used to share the FBR number with the HW CR Assessments by Engineer Object --></help>
+        <label><!-- Eng Requirement Record --></label>
+        <name>Eng_Requirement_Record__c</name>
+        <relationshipLabel><!-- HW CR Engineer to Build Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Eng Review Status --></label>
+        <name>Eng_Review_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Central Eng Contact --></label>
+        <name>FBR_Central_Eng_Contact__c</name>
+        <relationshipLabel><!-- HW CR Engineer to Build Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The product engineering (PE) record from HW CR Assessments by Engineer object. --></help>
+        <label><!-- FBR Record --></label>
+        <name>FBR_Record__c</name>
+        <relationshipLabel><!-- HW CR Engineer to Build Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Final Eng Approval Sts --></label>
+        <name>Final_Eng_Approval_Sts__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW Change Request Base --></label>
+        <name>HW_Change_Request_Base__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Product --></label>
+        <name>Join_Product__c</name>
+        <relationshipLabel><!-- HW CR Engineer to Build Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Family Name --></label>
+        <name>Product_Family_Name__c</name>
+        <relationshipLabel><!-- HW CR Engineer to Build Request --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>HW CR Engineer to Build Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

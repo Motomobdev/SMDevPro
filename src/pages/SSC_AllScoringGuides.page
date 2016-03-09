@@ -1,0 +1,87 @@
+<apex:page controller="SSC_displayscoringguide" >
+    <head>
+        <style>
+            .tblhead
+            {
+            line-height:25px;
+            color:white;
+            font-weight:bold;
+            background-color:#25A6E1 ;
+            }
+            .tblbody
+            {
+            line-height:25px;
+            font-weight:bold;
+            }
+        </style>
+    </head>
+    <apex:form id="frm" >
+    <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock id="pblk">
+            <br/>
+            <br/>
+            <table cellpadding="0" cellspacing="0" width="60%" style="margin:2px auto;" border="1">
+                <tr>
+                    <td align="center" class="tblhead" colspan="2"> Scoring Guide </td>
+                </tr>
+                <apex:repeat value="{!ScoringGuideList}" var="sg">
+                    <tr>
+                        <td class="tblbody" align="center" width="40%">
+                            <apex:outputField value="{!sg.Min__c}"/>
+                            - 
+                            <apex:outputField value="{!sg.Max__c}"/>
+                        </td>
+                        <td class="tblbody" align="center" width="40%" style="background-color:{!sg.ColorGrade__c}">{!sg.Caption__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <br/>
+            <br/>
+            <table cellpadding="0" cellspacing="0" width="60%" style="margin:2px auto;" border="1">
+                <tr>
+                    <td align="center" class="tblhead" colspan="2">Quality Business Escallation Scoring Guide </td>
+                </tr>
+                <tr>
+                    <td  align="center" class="tblhead" width="25%">Level</td>
+                    <td  align="center" class="tblhead" width="25%">Color</td>
+                </tr>
+                <apex:repeat value="{!QBEScoringGuideList}" var="sg">
+                    <tr>
+                        <td class="tblbody" align="center" >{!Floor(sg.Min__c)} </td>
+                        <td class="tblbody" align="center" style="background-color:{!sg.ColorGrade__c}">{!sg.Caption__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <br/>
+            <br/>
+            <table cellpadding="0" cellspacing="0" width="60%" style="margin:2px auto;" border="1">
+                <tr>
+                    <td align="center" class="tblhead" colspan="2">Controlled Shipping Escalation Scoring Guide </td>
+                </tr>
+                <tr>
+                    <td  align="center" class="tblhead" width="25%">Level</td>
+                    <td  align="center" class="tblhead" width="25%">Color</td>
+                </tr>
+                <apex:repeat value="{!CtrlScoringGuideList}" var="sg">
+                    <tr>
+                        <td class="tblbody" align="center" >{!Floor(sg.Min__c)}</td>
+                        <td class="tblbody" align="center" style="background-color:{!sg.ColorGrade__c}">{!sg.Caption__c}  </td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <br/>
+            <br/>
+            <table cellpadding="0" cellspacing="0" width="60%" style="margin:2px auto;" border="1">
+                <tr>
+                    <td align="center" class="tblhead" colspan="2">Scoring Guide vs. Other MML Suppliers </td>
+                </tr>
+                <apex:repeat value="{!VSScoringGuideList}" var="z">
+                    <tr>
+                        <td  align="center" class="background:#25A6E1;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:8px 13px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:10px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:13px ;border:1px solid #1A87B9 ; background-position: 0 0;" width="25%"  style="background-color:white">{!floor(z.Min__c)}</td>
+                        <td  align="center" class="tblhead" width="25%" style="background-color:{!z.ColorGrade__c}">{!z.Caption__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

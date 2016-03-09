@@ -1,0 +1,46 @@
+<apex:page standardController="Project_Spend__c" extensions="CreateProjectSpendController" showHeader="false" sidebar="false" title="Project Spend Summary">
+    <script>
+        function openListWindow(){
+            window.open('/ProjectSpend/SWProjectList','_blank',"height=800px,width=400px",
+        }
+    </script>
+    <apex:form >        
+        <apex:pageBlock title="Project: {!Project_Spend__c.Name}" >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="See My Requests" action="/ProjectSpend/ProjectSpendList?MMID={!MMID}&Type={!TypeName}" />
+                <apex:commandButton value="Edit" action="/ProjectSpend/ProjectSpendEdit?id={!Project_Spend__c.id}&Type={!TypeName}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="{!Project_Spend__c.Name__c}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="RequesterName">Requester</apex:outputLabel>
+                    <apex:outputText value="{!Project_Spend__c.Requester__r.Name}" id="RequesterName"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputText value="{!Project_Spend__c.SW_Project__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputField value="{!Project_Spend__c.Team__c}" rendered="{!nonSoftware}"/>
+                <apex:outputField value="{!Project_Spend__c.Preferred_Vendor__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputField value="{!Project_Spend__c.Vendor__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputField value="{!Project_Spend__c.Estimated_Spend__c}"/>
+                <apex:outputField value="{!Project_Spend__c.Actual_Spend__c}" />
+                <apex:outputField value="{!Project_Spend__c.New_or_Existing_Engagement__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Start_Date__c}"/>
+                <apex:outputField value="{!Project_Spend__c.PR__c}"/>
+                <apex:outputField value="{!Project_Spend__c.End_Date__c}"/>
+                <apex:outputField value="{!Project_Spend__c.PO__c}"/>
+                <apex:outputField value="{!Project_Spend__c.SSR_Status__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputField value="{!Project_Spend__c.Engagement_Type__c}" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputText value="" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputField value="{!Project_Spend__c.Comments__c}"/>
+                <apex:outputField value="{!Project_Spend__c.SOW__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Competitively_Bid__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.NDA__c}" rendered="false"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Milestones">
+            <apex:pageBlockTable value="{!ExistingMilestones}" var="milestone" id="Available_Milestones_Table">
+                <apex:repeat value="{!FieldSet}" var="f">
+                    <apex:column value="{!milestone[f.fieldPath]}" headerValue="{!f.label}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

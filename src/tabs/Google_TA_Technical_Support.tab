@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>800</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Google TA Technical Support</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom86: Red Cross</motif>
+    <url>http://vhd.mot-mobility.com/element.php?tp=form&amp;rt=SDMR00000001128&amp;id=SDMSD0000107927</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

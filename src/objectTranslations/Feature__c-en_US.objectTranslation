@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Feature</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Features</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Release Date --></label>
+        <name>Actual_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affected Field(s) --></label>
+        <name>Affected_Field_s__c</name>
+        <picklistValues>
+            <masterLabel>Field 1</masterLabel>
+            <translation><!-- Field 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 2</masterLabel>
+            <translation><!-- Field 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 3</masterLabel>
+            <translation><!-- Field 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 4</masterLabel>
+            <translation><!-- Field 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field 5</masterLabel>
+            <translation><!-- Field 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the objects that your feature affects. If you don&apos;t know them all, please select the one or more you do know. --></help>
+        <label><!-- Affected Object(s) --></label>
+        <name>Affected_Object__c</name>
+        <picklistValues>
+            <masterLabel>AIF</masterLabel>
+            <translation><!-- AIF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIF Approval Matrix</masterLabel>
+            <translation><!-- AIF Approval Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIF Device</masterLabel>
+            <translation><!-- AIF Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIF Matrix Statuses</masterLabel>
+            <translation><!-- AIF Matrix Statuses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIF_Device_App</masterLabel>
+            <translation><!-- AIF_Device_App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accounts</masterLabel>
+            <translation><!-- Accounts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acct Plan</masterLabel>
+            <translation><!-- Acct Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activities</masterLabel>
+            <translation><!-- Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ad Group</masterLabel>
+            <translation><!-- Ad Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affected Group</masterLabel>
+            <translation><!-- Affected Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application</masterLabel>
+            <translation><!-- Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Manager Selection Matrix</masterLabel>
+            <translation><!-- Application Manager Selection Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Region</masterLabel>
+            <translation><!-- Application Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Device</masterLabel>
+            <translation><!-- Asset Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset Request</masterLabel>
+            <translation><!-- Asset Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attendees</masterLabel>
+            <translation><!-- Attendees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Available Application Country</masterLabel>
+            <translation><!-- Available Application Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget</masterLabel>
+            <translation><!-- Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Entry</masterLabel>
+            <translation><!-- Budget Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign Account</masterLabel>
+            <translation><!-- Campaign Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign App</masterLabel>
+            <translation><!-- Campaign App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns</masterLabel>
+            <translation><!-- Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carousel</masterLabel>
+            <translation><!-- Carousel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier Country</masterLabel>
+            <translation><!-- Carrier Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Models</masterLabel>
+            <translation><!-- China Models --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitive Source</masterLabel>
+            <translation><!-- Competitive Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitive Source Apps</masterLabel>
+            <translation><!-- Competitive Source Apps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor to Account</masterLabel>
+            <translation><!-- Competitor to Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor to Contact</masterLabel>
+            <translation><!-- Competitor to Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contacts</masterLabel>
+            <translation><!-- Contacts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Application</masterLabel>
+            <translation><!-- Contract Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Carrier</masterLabel>
+            <translation><!-- Contract Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Cost</masterLabel>
+            <translation><!-- Contract Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Country</masterLabel>
+            <translation><!-- Contract Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Device</masterLabel>
+            <translation><!-- Contract Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Payment</masterLabel>
+            <translation><!-- Contract Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ContractAppDEVICE</masterLabel>
+            <translation><!-- ContractAppDEVICE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ContractAppSWBUNDLE</masterLabel>
+            <translation><!-- ContractAppSWBUNDLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ContractCountryTask</masterLabel>
+            <translation><!-- ContractCountryTask --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost</masterLabel>
+            <translation><!-- Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Country</masterLabel>
+            <translation><!-- Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Address Source</masterLabel>
+            <translation><!-- Custom Address Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Biography</masterLabel>
+            <translation><!-- Customer Biography --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Profile</masterLabel>
+            <translation><!-- Customer Profile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DevApp_Contacts</masterLabel>
+            <translation><!-- DevApp_Contacts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DevApp_Deleted_Records</masterLabel>
+            <translation><!-- DevApp_Deleted_Records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device</masterLabel>
+            <translation><!-- Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Application</masterLabel>
+            <translation><!-- Device Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Carrier</masterLabel>
+            <translation><!-- Device Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Country</masterLabel>
+            <translation><!-- Device Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Shipment</masterLabel>
+            <translation><!-- Device Shipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeviceAppSWBundle</masterLabel>
+            <translation><!-- DeviceAppSWBundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device_ChinaModel_Junction</masterLabel>
+            <translation><!-- Device_ChinaModel_Junction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamFactory Shared View</masterLabel>
+            <translation><!-- DreamFactory Shared View --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Action Item</masterLabel>
+            <translation><!-- DreamTeam Action Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Discussion</masterLabel>
+            <translation><!-- DreamTeam Discussion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Expense</masterLabel>
+            <translation><!-- DreamTeam Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Highlight</masterLabel>
+            <translation><!-- DreamTeam Highlight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Issue</masterLabel>
+            <translation><!-- DreamTeam Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Linker</masterLabel>
+            <translation><!-- DreamTeam Linker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Project</masterLabel>
+            <translation><!-- DreamTeam Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Resource</masterLabel>
+            <translation><!-- DreamTeam Resource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Task</masterLabel>
+            <translation><!-- DreamTeam Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DreamTeam Time</masterLabel>
+            <translation><!-- DreamTeam Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment Application</masterLabel>
+            <translation><!-- Employment Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience</masterLabel>
+            <translation><!-- Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience Application</masterLabel>
+            <translation><!-- Experience Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience Device</masterLabel>
+            <translation><!-- Experience Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience SW Bundle</masterLabel>
+            <translation><!-- Experience SW Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature</masterLabel>
+            <translation><!-- Feature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature Group</masterLabel>
+            <translation><!-- Feature Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FedEx Shipment</masterLabel>
+            <translation><!-- FedEx Shipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form</masterLabel>
+            <translation><!-- Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Claim</masterLabel>
+            <translation><!-- Fund Claim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fund Request</masterLabel>
+            <translation><!-- Fund Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Campaign</masterLabel>
+            <translation><!-- Google Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Commodity</masterLabel>
+            <translation><!-- International Commodity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keyword</masterLabel>
+            <translation><!-- Keyword --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Language</masterLabel>
+            <translation><!-- Language --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Language Application</masterLabel>
+            <translation><!-- Language Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Language Device</masterLabel>
+            <translation><!-- Language Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leads</masterLabel>
+            <translation><!-- Leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Application Country</masterLabel>
+            <translation><!-- Legal Application Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MotoDev Snapshot</masterLabel>
+            <translation><!-- MotoDev Snapshot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MotoReady_Recent_Add_Delete</masterLabel>
+            <translation><!-- MotoReady_Recent_Add_Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPI Device Mapping</masterLabel>
+            <translation><!-- NPI Device Mapping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunities</masterLabel>
+            <translation><!-- Opportunities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Package</masterLabel>
+            <translation><!-- Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Page</masterLabel>
+            <translation><!-- Page --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment</masterLabel>
+            <translation><!-- Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payments_Accounts_Rpt</masterLabel>
+            <translation><!-- Payments_Accounts_Rpt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan2User</masterLabel>
+            <translation><!-- Plan2User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Room</masterLabel>
+            <translation><!-- Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFGA Version</masterLabel>
+            <translation><!-- SFGA Version --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Bundle</masterLabel>
+            <translation><!-- SW Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Bundle Application</masterLabel>
+            <translation><!-- SW Bundle Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Bundle Device</masterLabel>
+            <translation><!-- SW Bundle Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Kit</masterLabel>
+            <translation><!-- SW Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Release</masterLabel>
+            <translation><!-- SW Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Survey</masterLabel>
+            <translation><!-- Sample Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Search Phrase</masterLabel>
+            <translation><!-- Search Phrase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Session</masterLabel>
+            <translation><!-- Session --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipmate Preference</masterLabel>
+            <translation><!-- Shipmate Preference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment Package</masterLabel>
+            <translation><!-- Shipment Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment Special Services</masterLabel>
+            <translation><!-- Shipment Special Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipments_SF</masterLabel>
+            <translation><!-- Shipments_SF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slide</masterLabel>
+            <translation><!-- Slide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speaker</masterLabel>
+            <translation><!-- Speaker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy</masterLabel>
+            <translation><!-- Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy2Oppty</masterLabel>
+            <translation><!-- Strategy2Oppty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TableTop Document</masterLabel>
+            <translation><!-- TableTop Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TableTop Entity Info</masterLabel>
+            <translation><!-- TableTop Entity Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TableTop Folder</masterLabel>
+            <translation><!-- TableTop Folder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Ad</masterLabel>
+            <translation><!-- Text Ad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Track</masterLabel>
+            <translation><!-- Track --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Users</masterLabel>
+            <translation><!-- Users --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- this checkbox is checked via the approval process on approval. --></help>
+        <label><!-- Approved --></label>
+        <name>Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To Person Email - Format --></label>
+        <name>Assigned_To_Person_Email_Format__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the individual (user) who is working to implement this feature --></help>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Features (Assigned To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Can be completed by External Resources --></label>
+        <name>Can_be_completed_by_External_Resources__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to leave comments or update the status of this feature --></help>
+        <label><!-- Comments/Status --></label>
+        <name>Comments_Updates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirmed Solution --></label>
+        <name>Confirmed_Solution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Database(s) Affected --></label>
+        <name>Database_Affected__c</name>
+        <picklistValues>
+            <masterLabel>AP (Account Payable)</masterLabel>
+            <translation><!-- AP (Account Payable) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appaloosa</masterLabel>
+            <translation><!-- Appaloosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ariba Contracts</masterLabel>
+            <translation><!-- Ariba Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRIS (Cost Reduction Information System)</masterLabel>
+            <translation><!-- CRIS (Cost Reduction Information System) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractrequest.com</masterLabel>
+            <translation><!-- Contractrequest.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDW (Data Warehouse)</masterLabel>
+            <translation><!-- EDW (Data Warehouse) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FMDB (Feature Management Database)</masterLabel>
+            <translation><!-- FMDB (Feature Management Database) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPPD (Global Product Portfolio Database)</masterLabel>
+            <translation><!-- GPPD (Global Product Portfolio Database) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IMARC</masterLabel>
+            <translation><!-- IMARC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lithium (MOTODEV Community Database)</masterLabel>
+            <translation><!-- Lithium (MOTODEV Community Database) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCIS (Oracle)</masterLabel>
+            <translation><!-- MCIS (Oracle) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOTODEV Studio Updates DB</masterLabel>
+            <translation><!-- MOTODEV Studio Updates DB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microgen</masterLabel>
+            <translation><!-- Microgen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MotoDev Site (Central Database)</masterLabel>
+            <translation><!-- MotoDev Site (Central Database) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MotoPDM</masterLabel>
+            <translation><!-- MotoPDM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPI (New Product Introduction)</masterLabel>
+            <translation><!-- NPI (New Product Introduction) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RightNOW CRM</masterLabel>
+            <translation><!-- RightNOW CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tigers Payments</masterLabel>
+            <translation><!-- Tigers Payments --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter a description of the feature so we can better understand the exact need and can help resolve it. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Testing Status --></label>
+        <name>End_User_Testing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Tested - Approved</masterLabel>
+            <translation><!-- Tested - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tested - Rejected</masterLabel>
+            <translation><!-- Tested - Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Completion Date --></label>
+        <name>Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated work days it will require to complete the requested feature --></help>
+        <label><!-- Estimated Workload (work days) --></label>
+        <name>Estimated_Workload__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature # --></label>
+        <name>Feature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Queue --></label>
+        <name>Group_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Implementation Status --></label>
+        <name>Implementation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Changes Required</masterLabel>
+            <translation><!-- Changes Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployed to Production</masterLabel>
+            <translation><!-- Deployed to Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End User Approved</masterLabel>
+            <translation><!-- End User Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fix In Progress</masterLabel>
+            <translation><!-- Fix In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New - Unassigned</masterLabel>
+            <translation><!-- New - Unassigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open - Assigned</masterLabel>
+            <translation><!-- Open - Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Internal Testing</masterLabel>
+            <translation><!-- Ready for Internal Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for User Testing</masterLabel>
+            <translation><!-- Ready for User Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Require More Information/Discussion</masterLabel>
+            <translation><!-- Require More Information/Discussion --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Phase value prior to the current Phase. --></help>
+        <label><!-- Old Phase --></label>
+        <name>Old_Phase__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the running queue of the order of features. Several items can be worked on simutaneously if the status of each shows In Progress. --></help>
+        <label><!-- Overall Queue --></label>
+        <name>Overall_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Hidden --></label>
+        <name>Owner_Hidden__c</name>
+        <relationshipLabel><!-- Features (Owner Hidden) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Percent Completed --></label>
+        <name>Percent_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 1 Duration --></label>
+        <name>Phase_1_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date Phase 1 was COMPLETED --></help>
+        <label><!-- Phase 1 - Requested Date --></label>
+        <name>Phase_1_Requested_Date_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date Phase 2 was COMPLETED --></help>
+        <label><!-- Phase 2 - Approved Date --></label>
+        <name>Phase_2_Approved_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is an automatically generated field. This subtracts the Phase 2 Date Completed from the Phase 1 Date Completed to calculate how long this feature was in Phase 2. --></help>
+        <label><!-- Phase 2 Duration --></label>
+        <name>Phase_2_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 3 Duration --></label>
+        <name>Phase_3_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- This date is pulled automatically from the Review Board Date below. This is automatically generated. If this feature does not go through the Board, this will be left blank. --></help>
+        <label><!-- Phase 3 - Review Board Date --></label>
+        <name>Phase_3_Review_Board_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 4 Duration --></label>
+        <name>Phase_4_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date Phase 4 was COMPLETED --></help>
+        <label><!-- Phase 4 - Solution/Decision --></label>
+        <name>Phase_4_Solution_Decision_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date Phase 5 was COMPLETED --></help>
+        <label><!-- Phase 5 - Completion Date --></label>
+        <name>Phase_5_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 5 Duration --></label>
+        <name>Phase_5_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase --></label>
+        <name>Phase__c</name>
+        <picklistValues>
+            <masterLabel>Closed - Rejected</masterLabel>
+            <translation><!-- Closed - Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployed</masterLabel>
+            <translation><!-- Deployed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implementation</masterLabel>
+            <translation><!-- Implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Deployment</masterLabel>
+            <translation><!-- Ready for Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Approved</masterLabel>
+            <translation><!-- Request Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Review Board</masterLabel>
+            <translation><!-- Submitted to Review Board --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 1) High - This is a critical feature/ Severe impact on daily business operations 
+2) Medium - This is an important feature/ Moderate impact on daily business operations 
+3) Low - This feature would be helpful/ Slight impact on daily business operations --></help>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Projected Release Date --></label>
+        <name>Projected_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Status --></label>
+        <name>Release_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>Release__c</name>
+        <relationshipLabel><!-- Features Included in Release --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requested Completion Date --></label>
+        <name>Requested_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Group Owner Email - Format --></label>
+        <name>Requested_Group_Owner_Email_Format__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Group Owner Email --></label>
+        <name>Requested_Group_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Group Owner --></label>
+        <name>Requested_Group_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Group --></label>
+        <name>Requested_Group__c</name>
+        <relationshipLabel><!-- Requested Features --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What type of resolution method will be needed to complete this feature request? Will new objects, fields, etc need to be created? Will a brand new Process need to be established or does an existing one need to be streamlined? --></help>
+        <label><!-- Resolution Method --></label>
+        <name>Resolution_Method__c</name>
+        <picklistValues>
+            <masterLabel>New Field(s) Needed</masterLabel>
+            <translation><!-- New Field(s) Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Object(s) Needed</masterLabel>
+            <translation><!-- New Object(s) Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Process</masterLabel>
+            <translation><!-- New Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revaluate Existing Process</masterLabel>
+            <translation><!-- Revaluate Existing Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resolution Sub Type --></label>
+        <name>Resolution_Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>API Code Integration</masterLabel>
+            <translation><!-- API Code Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informatica On Demand (IOD)</masterLabel>
+            <translation><!-- Informatica On Demand (IOD) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How can this feature be resolved? Can we do it with Out of the Box capability within Salesforce or will custom APEX code be needed to achieve a resolution? --></help>
+        <label><!-- Resolution Type --></label>
+        <name>Resolution_Type__c</name>
+        <picklistValues>
+            <masterLabel>APEX Code</masterLabel>
+            <translation><!-- APEX Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>API Code</masterLabel>
+            <translation><!-- API Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>App Exchange Partner</masterLabel>
+            <translation><!-- App Exchange Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB Integration</masterLabel>
+            <translation><!-- DB Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DB Replacement</masterLabel>
+            <translation><!-- DB Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF Out of Box</masterLabel>
+            <translation><!-- SF Out of Box --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Review Board Date --></label>
+        <name>Review_Board_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Board Status --></label>
+        <name>Review_Board_Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Needed</masterLabel>
+            <translation><!-- Not Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation><!-- Passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step to Reproduce --></label>
+        <name>Step_to_Reproduce__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter details if you have rejected a feature --></help>
+        <label><!-- Testing Rejection Notes --></label>
+        <name>Testing_Rejection_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please select the type of feature this is. If a current functionality is not working as intented, please specific a Bug. If any feature if being requested that currently does not exist and would add functionality in any way, please mark &quot;Enhancement&quot; --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Bug</masterLabel>
+            <translation><!-- Bug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation</masterLabel>
+            <translation><!-- Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance</masterLabel>
+            <translation><!-- Maintenance --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Feature Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Feature Details --></label>
+            <section>Feature Details</section>
+        </sections>
+        <sections>
+            <label><!-- Feature Status --></label>
+            <section>Feature Status</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Wide Section --></label>
+            <section>Hidden Wide Section</section>
+        </sections>
+        <sections>
+            <label><!-- Release Information --></label>
+            <section>Release Information</section>
+        </sections>
+        <sections>
+            <label><!-- Requester Details --></label>
+            <section>Requester Details</section>
+        </sections>
+        <sections>
+            <label><!-- Review Board Details --></label>
+            <section>Review Board Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Record Information --></label>
+            <section>System Record Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change the Implementation status to this value. Please submit the Feature for Approval to Trigger this status change. --></errorMessage>
+        <name>Developer_Implementation_Status_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide Testing Rejection Notes --></errorMessage>
+        <name>End_User_Testing_Rejection_Note_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide Estimated Completion Date --></errorMessage>
+        <name>Estimated_Completed_Date_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must deploy to production by packaging this feature into a feature release first.  Implementation status will be updated by feature release. --></errorMessage>
+        <name>Must_Have_Release_Before_Deployment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A person must be assigned when Phase is changed to &quot;Implementation&quot; or when past this status. --></errorMessage>
+        <name>Phase_Requires_Assigned_To_User</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide steps to reproduce the error. --></errorMessage>
+        <name>Steps_to_Reproduce_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Assign_Feature_Release --></label>
+        <name>Assign_Feature_Release</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Rank_Feature_Queues --></label>
+        <name>Rank_Feature_Queues</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Auto_Created_Feature_Task</name>
+        <subject><!-- Auto Created Feature Task --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

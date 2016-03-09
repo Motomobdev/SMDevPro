@@ -1,0 +1,40 @@
+<apex:component access="global" controller="APTPS_ApprovalHistoryController">
+ 
+     <apex:attribute name="ProposalId" description="This field is used to display list of Proposal products" type="string" assignTo="{!ProposalId}" />
+ 
+       <div><b><u> <apex:outputText value="Current {!$Label.Apttus_Approval__Approvals }" /></u></b></div><br/><br/>
+       
+      
+       <!-- <div><b><u> <apex:outputText value="Discount Approvals" /></u></b></div><br/>  -->     
+                <table style="border-style:1px groove black;">
+                    <tr style="border-style:1px groove black;">
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__Step_Name__c.Label}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__Approval_Status__c.Label}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__Date__c.Label}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$Label.Apttus_Approval__AssignedTo}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__DependsOn__c.Label}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__Actual_Approver__c.Label}" /></th>
+                        <th style="border-style:1px groove black;"><apex:outputText value="{!$ObjectType.Apttus_Approval__Approval_Request__c.Fields.Apttus_Approval__Approver_Comments__c.Label}" /></th>
+        
+                    </tr>
+                    <apex:repeat value="{!ApprovalHistory}" var="history">
+                        <tr style="border-style:1px groove black;">
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Step_Name__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Approval_Status__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Date__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Assigned_To_Name__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__DependsOn__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Actual_Approver__c}" /></td>
+                            <td style="border-style:1px groove black;"><apex:outputField value="{!history.Apttus_Approval__Approver_Comments__c}" /></td>
+        
+                        </tr>
+                    </apex:repeat>
+                </table>
+
+    
+     
+     <br/><br/>
+     
+    
+     <br/>
+</apex:component>

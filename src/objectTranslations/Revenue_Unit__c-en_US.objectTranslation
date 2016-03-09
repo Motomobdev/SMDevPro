@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Revenue Unit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Revenue Units</value>
+    </caseValues>
+    <fields>
+        <label><!-- APC Description --></label>
+        <name>APC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- AP ExportID --></label>
+        <name>AP_ExportID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AQ ExportID --></label>
+        <name>AQ_ExportID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Period --></label>
+        <name>Account_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Quarter --></label>
+        <name>Account_Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acct Calendar --></label>
+        <name>Acct_Calendar__c</name>
+        <relationshipLabel><!-- Revenue Units --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BackDate --></label>
+        <name>BackDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Id --></label>
+        <name>Batch_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer FTT --></label>
+        <name>Customer_FTT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Source --></label>
+        <name>Data_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Revenue Units --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Month --></label>
+        <name>Fiscal_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future 1 --></label>
+        <name>Future_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future 2 --></label>
+        <name>Future_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL APC --></label>
+        <name>GL_APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL Account --></label>
+        <name>GL_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL Business Group --></label>
+        <name>GL_Business_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL CC --></label>
+        <name>GL_CC__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL Legal Entity --></label>
+        <name>GL_Legal_Entity__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL TOS --></label>
+        <name>GL_TOS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Intercompany --></label>
+        <name>Intercompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Name --></label>
+        <name>Internal_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>Invoice_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Market Name --></label>
+        <name>Item_Market_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Type Description --></label>
+        <name>Item_Type_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDW_DW_Insert_DT --></label>
+        <name>MDW_DW_Insert_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDW ROW ID --></label>
+        <name>MDW_ROW_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- NSAD --></label>
+        <name>NSAD__c</name>
+    </fields>
+    <fields>
+        <label><!-- ON Invoice Units --></label>
+        <name>ON_Invoice_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Line Number --></label>
+        <name>Order_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pack Date --></label>
+        <name>Pack_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packing List Number --></label>
+        <name>Packing_List_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProcessedDate --></label>
+        <name>ProcessedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Number --></label>
+        <name>Product_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Invoice --></label>
+        <name>Revenue_Invoice__c</name>
+        <relationshipLabel><!-- Revenue Units --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revenue Source --></label>
+        <name>Revenue_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Units --></label>
+        <name>Revenue_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Kit --></label>
+        <name>SWKit__c</name>
+        <relationshipLabel><!-- Revenue Units --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Model --></label>
+        <name>Sales_Model__c</name>
+        <relationshipLabel><!-- Revenue Units --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Number --></label>
+        <name>Sales_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship Date --></label>
+        <name>Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Stage 0</masterLabel>
+            <translation><!-- Stage 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stage 1</masterLabel>
+            <translation><!-- Stage 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stage 2</masterLabel>
+            <translation><!-- Stage 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stage 3</masterLabel>
+            <translation><!-- Stage 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid</masterLabel>
+            <translation><!-- Invalid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprocess</masterLabel>
+            <translation><!-- Reprocess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Transaction_Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Revenue Unit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

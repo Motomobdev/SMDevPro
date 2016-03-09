@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>PMD_Program_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>PMD_Program_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Program_Code_Name__c</fields>
+        <fields>Program_Category__c</fields>
+        <fields>Program_Status__c</fields>
+        <label>PMD Program Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>PMD Program-level object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Motorola</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lenovo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_from_POR_Experiences_Chart__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to determine whether a Program should no longer be shown on the POR Chart</inlineHelpText>
+        <label>Exclude from POR Experiences Chart</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LaunchCal_Device_Calendar_URL__c</fullName>
+        <description>This field contains the URL of the Ariane Device Launch Calendar created for the program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the URL of the Ariane Device Launch Calendar created for the program, ex: https://ariane.motorola.com/area61001/calendar72001/</inlineHelpText>
+        <label>LaunchCal Device Calendar URL</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MR__c</fullName>
+        <description>For D. Schuster&apos;s POR Charts</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For D. Schuster&apos;s POR Charts</inlineHelpText>
+        <label>MR</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMD_External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>PMD External ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>POR_Grouping__c</fullName>
+        <description>Used for POR chart grouping, for Dave S.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for POR chart grouping, for Dave S.</inlineHelpText>
+        <label>POR Grouping</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Activation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Activation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Program_Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Premium&quot;, &quot;Value&quot;, etc</inlineHelpText>
+        <label>Program Category</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Code_Name__c</fullName>
+        <description>Code name when communicating related information with vendors and suppliers outside Motorola</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Code name when communicating related information with vendors and suppliers outside Motorola</inlineHelpText>
+        <label>External Code Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_ID__c</fullName>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Program ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Program_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>End of Life</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Longer Shipping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requested_In_Market_Date__c</fullName>
+        <description>removed from layout;  field no longer used 12/11/14, per Dan  (moved to PRODUCT)</description>
+        <externalId>false</externalId>
+        <label>Requested In Market Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>of_Active_Projects__c</fullName>
+        <externalId>false</externalId>
+        <label># of Active Projects</label>
+        <summaryFilterItems>
+            <field>PMD_Project__c.Project_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PMD_Project__c.Program_ID__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>of_Total_Projects__c</fullName>
+        <externalId>false</externalId>
+        <label># of Total Projects</label>
+        <summaryForeignKey>PMD_Project__c.Program_ID__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Program  (PMD)</label>
+    <listViews>
+        <fullName>Active_Programs2</fullName>
+        <columns>NAME</columns>
+        <columns>Program_Code_Name__c</columns>
+        <columns>Program_Status__c</columns>
+        <columns>Brand__c</columns>
+        <columns>of_Active_Projects__c</columns>
+        <columns>of_Total_Projects__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Program_Status__c</field>
+            <operation>equals</operation>
+            <value>Active,Shipping,End of Life</value>
+        </filters>
+        <label>Active Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Programs_Lenovo</fullName>
+        <columns>NAME</columns>
+        <columns>Program_Code_Name__c</columns>
+        <columns>Program_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Brand__c</field>
+            <operation>equals</operation>
+            <value>Lenovo</value>
+        </filters>
+        <label>All Programs - Lenovo</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Programs_Motorola</fullName>
+        <columns>NAME</columns>
+        <columns>Program_Code_Name__c</columns>
+        <columns>Program_Status__c</columns>
+        <columns>of_Active_Projects__c</columns>
+        <columns>of_Total_Projects__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Brand__c</field>
+            <operation>equals</operation>
+            <value>Motorola</value>
+        </filters>
+        <label>All Programs - Motorola</label>
+    </listViews>
+    <listViews>
+        <fullName>Code_names</fullName>
+        <columns>NAME</columns>
+        <columns>Program_Code_Name__c</columns>
+        <columns>Program_ID__c</columns>
+        <columns>Program_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Program_Status__c</field>
+            <operation>equals</operation>
+            <value>Active,On Hold,Shipping,End of Life</value>
+        </filters>
+        <label>Code names</label>
+    </listViews>
+    <listViews>
+        <fullName>Program_POR_Grouping_for_Dave</fullName>
+        <columns>POR_Grouping__c</columns>
+        <columns>NAME</columns>
+        <columns>Program_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Program_Status__c</field>
+            <operation>equals</operation>
+            <value>Active,Shipping</value>
+        </filters>
+        <label>Program POR Grouping for Dave</label>
+    </listViews>
+    <nameField>
+        <label>Program Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Programs  (PMD)</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Program_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Program_Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Program_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Program_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Program_ID__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Program_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Program_ID__c</searchFilterFields>
+        <searchFilterFields>Program_Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>Program_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Program_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Add_Experiences1</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add New SW Experiences</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var child = window.open(&apos;/apex/SWExperienceProgram?id={!PMD_Program__c.Id}&apos;,&apos;_blank&apos;,&apos;scrollbars =0,width=600,height=800&apos;);
+var timer = setInterval(checkChild, 500);
+
+function checkChild() {
+    if (child.closed) {
+        //refresh
+        location.reload();
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Experiences_old</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Experiences (old proj)</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var child = window.open(&apos;/apex/SWProjectProgram?id={!PMD_Program__c.Id}&apos;,&apos;_blank&apos;,&apos;scrollbars =0,width=600,height=800&apos;);
+var timer = setInterval(checkChild, 500);
+
+function checkChild() {
+    if (child.closed) {
+        //refresh
+        location.reload();
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Experiences</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>1000</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Edit Related SW Experiences</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/gblite__Grid?gname=SW Experiences and Programs&amp;fpf=Program_PMD__c&amp;fpv={!PMD_Program__c.Id}</url>
+        <width>1000</width>
+    </webLinks>
+</CustomObject>

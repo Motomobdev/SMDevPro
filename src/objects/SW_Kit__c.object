@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BLUR_Version_String__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Brought in from related Device record</inlineHelpText>
+        <label>BLUR Version String</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Build_Fingerprint__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Brought in from related Device record</inlineHelpText>
+        <label>Build Fingerprint</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL( Manually_Entered_Effective_Date__c ) , System_Calculated_Effective_Date__c , Manually_Entered_Effective_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Kit_ExternalID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Visible only to Admin profile</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Visible only to Admin profile</inlineHelpText>
+        <label>Kit_ExternalID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Manually_Entered_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If SW Kit Effective Date should be earlier than the date calculated by the system in Effective Date put Date here.</inlineHelpText>
+        <label>Manually Entered Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SWKIT_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Currently Description is being pulled from MOTOPDM. The data is being pulled every 5 minutes.</inlineHelpText>
+        <label>SW Kit Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SW_Kit_Item_State__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Currently State is being pulled from MOTOPDM. The data is being pulled every 5 minutes.</inlineHelpText>
+        <label>SW Kit Item State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Calculated_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated by SFDC by taking earliest SA Date of all related Devices.</inlineHelpText>
+        <label>System Calculated Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>SW Kit</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>SW_Kit_Item_State__c</columns>
+        <columns>SWKIT_Description__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>SW Kit Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>SW Kits</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>SW_Kit_Item_State__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SWKIT_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Effective_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Manually_Entered_Effective_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>System_Calculated_Effective_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Kit_ExternalID__c</searchFilterFields>
+        <searchResultsAdditionalFields>SWKIT_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Kit_ExternalID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SW_Kit_Item_State__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Matching_APPS_on_Devices</fullName>
+        <availability>online</availability>
+        <description>Report of all matching apps on devices on this SW KIT</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>1024</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Matching APPS on Devices</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://na2.salesforce.com/00O40000002m7nJ?pv0={!SW_Kit__c.Name}</url>
+        <width>1400</width>
+    </webLinks>
+</CustomObject>

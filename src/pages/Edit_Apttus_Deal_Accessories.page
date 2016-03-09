@@ -1,0 +1,45 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" tabStyle="Apttus__APTS_Agreement__c"
+  extensions="Edit_Apttus_Deal_Accessories">
+
+    <apex:sectionHeader title="Edit Agreement Accessories"
+        subtitle="{!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}"/>
+    <apex:pageMessages id="msgs"/>
+
+    <apex:form >
+
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!mySave}" value="Save"/>
+                <!-- <apex:commandButton action="{!myRefreshAndSave}" value="Refresh"/> -->
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="2" title="Accessories - Motorola" collapsible="false"/>
+
+            <apex:pageBlockTable value="{!aaMotoRecords}" var="moto" title="Accessories" rowClasses="even,odd">
+                <apex:column value="{!moto.Product__c}"/>
+                <!-- <apex:column value="{!moto.Product_Type__c}"/> -->
+                <apex:column headerValue="{!$ObjectType.Agreement_Accessory__c.fields.Interested__c.label}">
+                    <apex:inputField value="{!moto.Interested__c}"/>
+                </apex:column>
+
+                <apex:column headerValue="{!$ObjectType.Agreement_Accessory__c.fields.Invoice_Price__c.label}">
+                    <apex:inputField value="{!moto.Invoice_Price__c}"/>
+                </apex:column>
+
+            </apex:pageBlockTable>
+
+            <apex:pageBlockSection columns="2" title="Accessories - M4DE" collapsible="false"/>
+
+            <apex:pageBlockTable value="{!aaM4DeRecords}" var="m4de" title="Accessories" rowClasses="even,odd">
+                <apex:column value="{!m4de.Product__c}"/>
+                <!-- <apex:column value="{!m4de.Product_Type__c}"/> -->
+
+                <apex:column headerValue="{!$ObjectType.Agreement_Accessory__c.fields.Interested__c.label}">
+                    <apex:inputField value="{!m4de.Interested__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

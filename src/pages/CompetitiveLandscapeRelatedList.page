@@ -1,0 +1,238 @@
+<apex:page id="thePage" standardController="Account" extensions="CompetitiveLandscapeRelatedListCtr" sidebar="{!showTitle}" showChat="false" showHeader="{!showTitle}" tabStyle="Competitive_Landscape__c">
+
+<style type="text/css">
+    .underline
+    {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .no-underline
+    {
+        text-decoration: none;
+    }
+    .link
+    {
+        cursor: pointer;
+    }
+    .status
+    {
+        float: right;
+        position: relative;
+        top: 30px;
+        right: 10px;
+        margin-top: -16px;
+        z-index: 2000;
+        width: 16px;
+        height: 16px;
+        background: url('{!$Resource.LoadingImage3}') no-repeat left center; 
+    }
+    .error-message
+    {
+        position: fixed;
+        top: 0px;
+        left: 20%;
+        width: 60%;
+    }
+    .no-data
+    {
+        width: 100%;
+        color: silver;
+    }
+    .motoItem
+    {
+        font-size: 11pt;
+        height: 22px;
+    }
+    .side-by-side
+    {
+        float: right;
+        height: 22px;
+        padding: 0px 0px 0px 16px;
+        margin-top: 0px;
+        font-size: 8pt;
+        background: url('{!$Resource.OpenInNewWindowIcon}') no-repeat left top;
+    }
+    .cancelEditModeButton
+    {
+        /*float: right;*/
+        position: relative; 
+        left: 4px; 
+        top: 0px; 
+        text-decoration: none;
+    }
+    .cancelEditModeButton:hover
+    {
+        /*float: right;*/
+        position: relative; 
+        left: 4px; 
+        top: 0px; 
+        text-decoration: none;
+    }
+    .backButtonIcon
+    {
+        position: relative;
+        top: 3px;
+    }
+    .backButtonText
+    {
+        font-size: 10pt;
+        margin-left: 4px;
+    }
+    .h1 { text-align: center; }
+    .h4 { text-align: center; }
+    
+    .c1 { width: 15%; }
+    .c2 { width: 15%; }
+    .c3 { width: 10%; text-align: center; }
+    .c4 { width: 10%; text-align: center; }
+    .c5 { width: 25%; }
+    .c6 { width: 25%; }
+    
+    .c7 { width: 15%; }
+    .c8 { width: 15%; }
+    .c9 { width: 40%; }
+    .c10 { width: 15%; }
+    .c11 { width: 15%; }
+</style>
+
+<script type="text/javascript">
+
+    var accId = '{!accountId}';
+    var accName = '{!accountName}';
+    
+    //// Fetch data ////
+    if("{!isViewMode}" == "true")
+    {
+        window.setTimeout("loadCL()", 500);
+        if("{!showTitle}" == "true")
+            window.setTimeout("loadMI()", 500);
+    }
+    
+    function popup(Id)
+    {
+        if(Id != null)
+            window.open('/' + Id);
+    }
+    function openCompIntel()
+    {
+        var url = '/apex/CompetitiveLandscapeRelatedList?showtitle=true&Id=';
+        
+        window.open(url + accId);
+    }
+    function newCL()
+    {
+        var url = '/a10/e?retURL=%2Fa6S%2Fo&CF00N40000002X4d0=' + encodeURIComponent(accName) + '&CF00N40000002X4d0_lkid=' + accId;
+        window.open(url);
+    }
+
+</script>
+
+<apex:form id="theForm">
+
+    <apex:actionFunction name="loadCL" action="{!fetchClData}" reRender="pnlTable1,status1,pnlErrMsg" status="status1"/>
+    <apex:actionFunction name="loadMI" action="{!fetchMiData}" reRender="pnlTable2,status2,pnlErrMsg" status="status2"/>
+    <apex:actionFunction name="toggleViewMode" action="{!toggleViewMode}" />
+    
+    <apex:outputPanel id="pnlErrMsg">
+        <apex:outputPanel styleClass="error-message">
+            <apex:pageMessages id="msg" />
+        </apex:outputPanel>
+    </apex:outputPanel>
+    
+    <apex:actionStatus id="status1" startStyleClass="status" rendered="{!isViewMode}" />
+    
+    <apex:pageBlock id="pbCL" title="Competitive Landscape" rendered="{!isViewMode}" >
+        
+        <apex:pageBlockButtons location="top" >
+            <apex:commandButton id="btnNew1" value="New" onclick="newCL(); return false;" />
+            <apex:commandButton id="btnEditAll" value="Mass New/Edit"  onclick="toggleViewMode(); return false;" />
+            <apex:commandButton id="btnRefreshCL" value="Refresh" onclick="loadCL(); return false;" />
+            <apex:commandButton id="btnCompIntel" value="Competitive Intelligence" onclick="openCompIntel(); return false;" rendered="{!NOT(showTitle)}" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel id="pnlTable1">
+            
+            <apex:repeat value="{!clMap}" var="key" rendered="{!NOT(isClEmpty)}">
+                
+                <div class="motoItem">
+                    <span onclick="{!csMap[key]}"><apex:outputText value="{!motMap[key]}" styleClass="{!IF(csMap[key] == ' ', 'no-underline', 'underline')}"/></span>
+                    <div class="side-by-side">
+                        <apex:outputLink value="/apex/CIReport?CompSetData={!ciMap[key]}" target="_blank" style="text-decoration: none;">Side by side comparison</apex:outputLink>
+                    </div>
+                </div>
+                
+                <apex:pageBlockTable value="{!clMap[key]}" var="cl" columnClasses="c1,c2,c3,c4,c5,c6" >
+                    
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.Competitor_Brand__c.Label}" value="{!cl.Competitor_Brand__c}" onclick="popup('{!cl.Id}');" styleClass="link" />
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.Competitor_Product__c.Label}" >
+                        <apex:outputLink value="/{!cl.Competitor_Product__c}" target="_blank">{!cl.Competitor_Product__r.Product__c}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.ASP_Range__c.Label}" value="{!cl.ASP_Range__c}" onclick="popup('{!cl.Id}');" styleClass="link" headerClass="h1" />
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.Device_Rank__c.Label}" value="{!cl.Device_Rank__c}" onclick="popup('{!cl.Id}');" styleClass="link" headerClass="h4" />
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.Why_Winning__c.Label}" value="{!cl.Why_Winning__c}" onclick="popup('{!cl.Id}');" styleClass="link" />
+                    <apex:column headerValue="{!$ObjectType.Competitive_Landscape__c.Fields.Latest_Updates__c.Label}" value="{!cl.Latest_Updates__c}" onclick="popup('{!cl.Id}');" styleClass="link" />
+                    
+                </apex:pageBlockTable>
+                
+                <br />
+                
+            </apex:repeat>
+            
+            <apex:outputPanel styleClass="no-data" rendered="{!isClEmpty}">
+                Competitive Landscape data is not available!
+            </apex:outputPanel>
+            
+        </apex:outputPanel>
+        
+    </apex:pageBlock>
+    
+    <apex:outputPanel rendered="{!isViewMode}">
+        <br />
+    </apex:outputPanel>
+    
+    <apex:actionStatus id="status2" startStyleClass="status" rendered="{!isViewMode}" />
+    
+    <apex:pageBlock id="pbMI" title="Market Intelligence" rendered="{!AND(isViewMode, showTitle)}">
+    
+        <apex:pageBlockButtons location="top" >
+            <apex:commandButton id="btnRefreshMI" value="Refresh" onclick="loadMI(); return false;" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel id="pnlTable2">
+            
+            <apex:pageBlockTable value="{!miList}" var="mi" columnClasses="c7,c8,c9,c10,c11" rendered="{!NOT(isMiEmpty)}">
+                
+                <apex:column headerValue="Product Specific/Generic" value="{!mi.Category__c}" onclick="popup('{!mi.Id}');" styleClass="link" />
+                <apex:column headerValue="Categories" value="{!mi.Sub_Category__c}" onclick="popup('{!mi.Id}');" styleClass="link" />
+                <apex:column headerValue="Latest Competitive Updates" value="{!mi.Summary__c}" onclick="popup('{!mi.Id}');" styleClass="link" />
+                <apex:column headerValue="Created By" value="{!mi.CreatedBy.Name}" onclick="popup('{!mi.Id}');" styleClass="link" />
+                <apex:column headerValue="Created Date" onclick="popup('{!mi.Id}');" styleClass="link" >
+                    <apex:outputText value="{0,date,MM/dd/yyyy hh:mm a}" >
+                        <apex:param value="{!mi.CreatedDate}" />
+                    </apex:outputText>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+            
+            <apex:outputPanel styleClass="no-data" rendered="{!isMiEmpty}">
+                Market intelligence data is not available!
+            </apex:outputPanel>
+            
+        </apex:outputPanel>
+        
+    </apex:pageBlock>
+    
+    <apex:outputPanel id="pnlEditMode" rendered="{!NOT(isViewMode)}">
+        <apex:commandLink id="lnkCancelEditMode" onclick="toggleViewMode(); return false;" styleClass="cancelEditModeButton"  >
+            <apex:image url="/img/func_icons/util/ileUndo16.gif" alt="" styleClass="backButtonIcon" /><span class="backButtonText">Back to View Mode</span>
+        </apex:commandLink>
+        <apex:iframe id="gridbuddy" frameborder="false" scrolling="true" width="100%" src="/apex/gblite__Grid?gname=Account+Competitive+Landscape&ssb=0&sh=0&id={!accountId}" />
+    </apex:outputPanel>
+    
+    <apex:inputHidden id="hdnRegion" value="{!Account.Region__c}" />
+    <apex:inputHidden id="hdnSubRegion" value="{!Account.Sub_Region__c}" />
+    <apex:inputHidden id="hdnAccountName" value="{!Account.Name}" />
+
+</apex:form>
+
+</apex:page>

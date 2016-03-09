@@ -1,0 +1,12 @@
+<apex:page controller="validateSubmitForApproval" sidebar="true" action="{!checkApprovalProcessType}"
+           showHeader="true">
+ 
+ <apex:form >         
+ <apex:pageblock >
+ <apex:pagemessages ></apex:pagemessages> 
+ <apex:pageBlockButtons >
+        <apex:commandButton action="{!goBack}" value="Return"/>
+ </apex:pageBlockButtons>       
+ </apex:pageblock> 
+ </apex:form> 
+</apex:page>

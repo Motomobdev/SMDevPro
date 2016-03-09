@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Status Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Status Reports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accomplishments --></label>
+        <name>Accomplishments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Report Due Date --></label>
+        <name>Engagement_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Items --></label>
+        <name>Open_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Deliverables --></label>
+        <name>Planned_Deliverables__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if there are any potential risks that came up during this assignment.  Please describe the risks using the &quot;risks&quot; tab. --></help>
+        <label><!-- Potential Risks --></label>
+        <name>Potential_Risks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Status Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team Member Assignment --></label>
+        <name>Team_Member__c</name>
+        <relationshipLabel><!-- Status Reports --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Status Report Layout</layout>
+        <sections>
+            <label><!-- Detail --></label>
+            <section>Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

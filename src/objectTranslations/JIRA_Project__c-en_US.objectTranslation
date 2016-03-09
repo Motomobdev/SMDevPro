@@ -1,0 +1,1908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Head Count --></label>
+        <name>Actual_Head_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Spend --></label>
+        <name>Actual_Spend__c</name>
+    </fields>
+    <fields>
+        <help><!-- For use on D. Schuster&apos;s POR Experience reports; visible to Dave and team only --></help>
+        <label><!-- Android OS --></label>
+        <name>Android_OS_POR__c</name>
+        <picklistValues>
+            <masterLabel>5.0.2</masterLabel>
+            <translation><!-- 5.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.1</masterLabel>
+            <translation><!-- 5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.1.1</masterLabel>
+            <translation><!-- 5.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M-Rel</masterLabel>
+            <translation><!-- M-Rel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Behind Reason --></label>
+        <name>Behind_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Android Change</masterLabel>
+            <translation><!-- Android Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier Change</masterLabel>
+            <translation><!-- Carrier Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Bugs</masterLabel>
+            <translation><!-- Critical Bugs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HC Resources</masterLabel>
+            <translation><!-- HC Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HW Availability</masterLabel>
+            <translation><!-- HW Availability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOW Resources</masterLabel>
+            <translation><!-- SOW Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SoC Vendor</masterLabel>
+            <translation><!-- SoC Vendor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CXD Lead --></label>
+        <name>CXD_Lead__c</name>
+        <relationshipLabel><!-- SW Projects (CXD Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- For D. Schuster&apos;s POR charts --></help>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AT&amp;T</masterLabel>
+            <translation><!-- AT&amp;T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RW</masterLabel>
+            <translation><!-- RW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint</masterLabel>
+            <translation><!-- Sprint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMO</masterLabel>
+            <translation><!-- TMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USC</masterLabel>
+            <translation><!-- USC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Experience/Feature Notice1 --></label>
+        <name>Experience_Feature_Notice1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Name1 --></label>
+        <name>Feature_Name1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Name2 --></label>
+        <name>Feature_Name2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Name3 --></label>
+        <name>Feature_Name3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Name4 --></label>
+        <name>Feature_Name4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Name5 --></label>
+        <name>Feature_Name5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Revision Comments1 --></label>
+        <name>Feature_Revision_Comments1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Revision Comments2 --></label>
+        <name>Feature_Revision_Comments2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Revision Comments3 --></label>
+        <name>Feature_Revision_Comments3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Revision Comments4 --></label>
+        <name>Feature_Revision_Comments4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Revision Comments5 --></label>
+        <name>Feature_Revision_Comments5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google+ Community --></label>
+        <name>Google_Community__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the related Google Group --></help>
+        <label><!-- Google Group --></label>
+        <name>Google_Group__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specific field for use by D. Schuster, in POR chart --></help>
+        <label><!-- Hardware Enablers --></label>
+        <name>Hardware_Enablers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Head Count Delta --></label>
+        <name>Head_Count_Delta__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please USE THIS ID when entering the Salesforce Project in JIRA --></help>
+        <label><!-- SFDC Feature ID --></label>
+        <name>JIRA_Project_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- For D. Schuster&apos;s POR charts --></help>
+        <label><!-- JIRA --></label>
+        <name>JIRA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL1 --></label>
+        <name>Jira_URL1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL2 --></label>
+        <name>Jira_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL3 --></label>
+        <name>Jira_URL3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL4 --></label>
+        <name>Jira_URL4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jira URL5 --></label>
+        <name>Jira_URL5__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date Range --></label>
+        <name>LE_Date_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest LE Date --></label>
+        <name>LE_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- used for data migration exercise Jun 2015; admin-view only --></help>
+        <label><!-- Marked for Deletion --></label>
+        <name>Marked_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <help><!-- For D. Schuster&apos;s POR charts --></help>
+        <label><!-- Modem Dependency --></label>
+        <name>Modem_Dependency__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Features --></label>
+        <name>Number_of_Features__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Post Loads --></label>
+        <name>Number_of_Post_Loads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Preloads --></label>
+        <name>Number_of_Preloads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oldest LE Date --></label>
+        <name>Oldest_LE_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oldest SA Date --></label>
+        <name>Oldest_SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oldest TA Date --></label>
+        <name>Oldest_TA_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will be auto-filled by system, based on Status --></help>
+        <label><!-- PDD Completed Date1 --></label>
+        <name>PDD_Completed_Date1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Completed Date2 --></label>
+        <name>PDD_Completed_Date2__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Completed Date3 --></label>
+        <name>PDD_Completed_Date3__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Completed Date4 --></label>
+        <name>PDD_Completed_Date4__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Completed Date5 --></label>
+        <name>PDD_Completed_Date5__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Facilitator1 --></label>
+        <name>PDD_Facilitator1__c</name>
+        <relationshipLabel><!-- SW Projects (PDD Facilitator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PDD Requested Date1 --></label>
+        <name>PDD_Requested_Date1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Status1 --></label>
+        <name>PDD_Status1__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PDD Status2 --></label>
+        <name>PDD_Status2__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PDD Status3 --></label>
+        <name>PDD_Status3__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PDD Status4 --></label>
+        <name>PDD_Status4__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PDD Status5 --></label>
+        <name>PDD_Status5__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PDD URL1 --></label>
+        <name>PDD_URL1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD URL2 --></label>
+        <name>PDD_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD URL3 --></label>
+        <name>PDD_URL3__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD URL4 --></label>
+        <name>PDD_URL4__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD URL5 --></label>
+        <name>PDD_URL5__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDD Update Comments1 --></label>
+        <name>PDD_Update_Comments1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Leader --></label>
+        <name>PM_Leader__c</name>
+        <relationshipLabel><!-- SW Projects (PM Leader) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used for Dave Schuster&apos;s POR Experiences chart; will be filled in by Dave --></help>
+        <label><!-- POR Grouping --></label>
+        <name>POR_Grouping__c</name>
+    </fields>
+    <fields>
+        <help><!-- In, Out, Discovery, Beta, or Exclude From Chart --></help>
+        <label><!-- POR Status --></label>
+        <name>POR_Status__c</name>
+        <picklistValues>
+            <masterLabel>Beta</masterLabel>
+            <translation><!-- Beta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exclude from POR Chart</masterLabel>
+            <translation><!-- Exclude from POR Chart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OUT</masterLabel>
+            <translation><!-- OUT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- used for data migration exercise Jun 2015; admin-view only --></help>
+        <label><!-- Parent? --></label>
+        <name>Parent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Date1 --></label>
+        <name>Privacy_Eng_Review_Date1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Status1 --></label>
+        <name>Privacy_Eng_Review_Status1__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Status2 --></label>
+        <name>Privacy_Eng_Review_Status2__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Status3 --></label>
+        <name>Privacy_Eng_Review_Status3__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Status4 --></label>
+        <name>Privacy_Eng_Review_Status4__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Eng Review Status5 --></label>
+        <name>Privacy_Eng_Review_Status5__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Engineer1 --></label>
+        <name>Privacy_Engineer1__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Engineer2 --></label>
+        <name>Privacy_Engineer2__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Engineer2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Engineer3 --></label>
+        <name>Privacy_Engineer3__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Engineer3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Engineer4 --></label>
+        <name>Privacy_Engineer4__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Engineer4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Engineer5 --></label>
+        <name>Privacy_Engineer5__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Engineer5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Counsel1 --></label>
+        <name>Privacy_Legal_Counsel1__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Counsel) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Counsel2 --></label>
+        <name>Privacy_Legal_Counsel2__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Legal Counsel2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Counsel3 --></label>
+        <name>Privacy_Legal_Counsel3__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Legal Counsel3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Counsel4 --></label>
+        <name>Privacy_Legal_Counsel4__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Legal Counsel4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Counsel5 --></label>
+        <name>Privacy_Legal_Counsel5__c</name>
+        <relationshipLabel><!-- SW Projects (Privacy Legal Counsel5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Comments1 --></label>
+        <name>Privacy_Legal_Review_Comments1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Comments2 --></label>
+        <name>Privacy_Legal_Review_Comments2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Comments3 --></label>
+        <name>Privacy_Legal_Review_Comments3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Comments4 --></label>
+        <name>Privacy_Legal_Review_Comments4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Comments5 --></label>
+        <name>Privacy_Legal_Review_Comments5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Status1 --></label>
+        <name>Privacy_Legal_Review_Status1__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Status2 --></label>
+        <name>Privacy_Legal_Review_Status2__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Status3 --></label>
+        <name>Privacy_Legal_Review_Status3__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Status4 --></label>
+        <name>Privacy_Legal_Review_Status4__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review Status5 --></label>
+        <name>Privacy_Legal_Review_Status5__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review URL1 --></label>
+        <name>Privacy_Legal_Review_URL1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review URL2 --></label>
+        <name>Privacy_Legal_Review_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review URL3 --></label>
+        <name>Privacy_Legal_Review_URL3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review URL4 --></label>
+        <name>Privacy_Legal_Review_URL4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Legal Review URL5 --></label>
+        <name>Privacy_Legal_Review_URL5__c</name>
+    </fields>
+    <fields>
+        <help><!-- L0 = Highly Critical
+L1 = Critical
+L2 = High
+L3 = Medium
+L4 = Low
+L5 = Legal and Compliance Trivial --></help>
+        <label><!-- Privacy Legal Risk Level1 --></label>
+        <name>Privacy_Legal_Risk_Level1__c</name>
+        <picklistValues>
+            <masterLabel>L0</masterLabel>
+            <translation><!-- L0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L1</masterLabel>
+            <translation><!-- L1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2</masterLabel>
+            <translation><!-- L2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L3</masterLabel>
+            <translation><!-- L3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L4</masterLabel>
+            <translation><!-- L4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L5</masterLabel>
+            <translation><!-- L5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments1 --></label>
+        <name>Privacy_Review_Comments1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments2 --></label>
+        <name>Privacy_Review_Comments2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments3 --></label>
+        <name>Privacy_Review_Comments3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments4 --></label>
+        <name>Privacy_Review_Comments4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments5 --></label>
+        <name>Privacy_Review_Comments5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Report URL1 --></label>
+        <name>Privacy_Review_Report_URL1__c</name>
+    </fields>
+    <fields>
+        <help><!-- P0 = Critical/Code Review
+P1 = Critical
+P2 = High
+P3 = Medium
+P4 = Low
+P5 = Privacy Trivial --></help>
+        <label><!-- Privacy Risk Level1 --></label>
+        <name>Privacy_Risk_Level1__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial --></help>
+        <label><!-- Privacy Risk Level2 --></label>
+        <name>Privacy_Risk_Level2__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial --></help>
+        <label><!-- Privacy Risk Level3 --></label>
+        <name>Privacy_Risk_Level3__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial --></help>
+        <label><!-- Privacy Risk Level4 --></label>
+        <name>Privacy_Risk_Level4__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial --></help>
+        <label><!-- Privacy Risk Level5 --></label>
+        <name>Privacy_Risk_Level5__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Area --></label>
+        <name>Product_Area__c</name>
+        <picklistValues>
+            <masterLabel>Accessories</masterLabel>
+            <translation><!-- Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistive</masterLabel>
+            <translation><!-- Assistive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Retail</masterLabel>
+            <translation><!-- China Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud</masterLabel>
+            <translation><!-- Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core + Cloud</masterLabel>
+            <translation><!-- Core + Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging</masterLabel>
+            <translation><!-- Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Issues</masterLabel>
+            <translation><!-- Local Issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mind Reader</masterLabel>
+            <translation><!-- Mind Reader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto</masterLabel>
+            <translation><!-- Moto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Devices</masterLabel>
+            <translation><!-- Next Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal</masterLabel>
+            <translation><!-- Personal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCO</masterLabel>
+            <translation><!-- TCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearables</masterLabel>
+            <translation><!-- Wearables --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Manager --></label>
+        <name>Product_Manager__c</name>
+        <relationshipLabel><!-- SW Projects (Product Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SW Program Manager --></label>
+        <name>Program_Manager__c</name>
+        <relationshipLabel><!-- SW Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Projected Head Count --></label>
+        <name>Projected_Head_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Projected Spend --></label>
+        <name>Projected_Spend__c</name>
+    </fields>
+    <fields>
+        <help><!-- If TYPE is &quot;Release&quot;; used for release line/porfolio mapping
+(ProdMgmt will populate this field) --></help>
+        <label><!-- Release Android Version --></label>
+        <name>Release_Android_Version__c</name>
+        <picklistValues>
+            <masterLabel>4.4</masterLabel>
+            <translation><!-- 4.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.2</masterLabel>
+            <translation><!-- 4.4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.3</masterLabel>
+            <translation><!-- 4.4.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.4.4</masterLabel>
+            <translation><!-- 4.4.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.0.1</masterLabel>
+            <translation><!-- 5.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.0.2</masterLabel>
+            <translation><!-- 5.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.1</masterLabel>
+            <translation><!-- 5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.1.1</masterLabel>
+            <translation><!-- 5.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If TYPE is &quot;Release&quot;; used for release line/porfolio mapping --></help>
+        <label><!-- Release Category --></label>
+        <name>Release_Category__c</name>
+        <picklistValues>
+            <masterLabel>DROID</masterLabel>
+            <translation><!-- DROID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPe</masterLabel>
+            <translation><!-- GPe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SA Date Range --></label>
+        <name>SA_Date_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest SA Date --></label>
+        <name>SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Leader --></label>
+        <name>SW_Leader__c</name>
+        <relationshipLabel><!-- SW Projects (SW Leader) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SW Product Manager --></label>
+        <name>SW_Product_Manager__c</name>
+        <relationshipLabel><!-- SW Projects (SW Product Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SW Team Lead --></label>
+        <name>SW_Team_Tech_Lead__c</name>
+        <relationshipLabel><!-- SW Projects (SW Team Tech Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Engineer1 --></label>
+        <name>Security_Engineer1__c</name>
+        <relationshipLabel><!-- SW Projects (Security Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Engineer2 --></label>
+        <name>Security_Engineer2__c</name>
+        <relationshipLabel><!-- SW Projects (Security Engineer2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Engineer3 --></label>
+        <name>Security_Engineer3__c</name>
+        <relationshipLabel><!-- SW Projects (Security Engineer3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Engineer4 --></label>
+        <name>Security_Engineer4__c</name>
+        <relationshipLabel><!-- SW Projects (Security Engineer4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Engineer5 --></label>
+        <name>Security_Engineer5__c</name>
+        <relationshipLabel><!-- SW Projects (Security Engineer5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Review Comments1 --></label>
+        <name>Security_Review_Comments1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Comments2 --></label>
+        <name>Security_Review_Comments2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Comments3 --></label>
+        <name>Security_Review_Comments3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Comments4 --></label>
+        <name>Security_Review_Comments4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Comments5 --></label>
+        <name>Security_Review_Comments5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status1 --></label>
+        <name>Security_Review_Status1__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status2 --></label>
+        <name>Security_Review_Status2__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status3 --></label>
+        <name>Security_Review_Status3__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status4 --></label>
+        <name>Security_Review_Status4__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status5 --></label>
+        <name>Security_Review_Status5__c</name>
+        <picklistValues>
+            <masterLabel>0 %</masterLabel>
+            <translation><!-- 0 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100 %</masterLabel>
+            <translation><!-- 100 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 %</masterLabel>
+            <translation><!-- 25 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 %</masterLabel>
+            <translation><!-- 50 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75 %</masterLabel>
+            <translation><!-- 75 % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Review URL1 --></label>
+        <name>Security_Review_URL1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review URL2 --></label>
+        <name>Security_Review_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review URL3 --></label>
+        <name>Security_Review_URL3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review URL4 --></label>
+        <name>Security_Review_URL4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review URL5 --></label>
+        <name>Security_Review_URL5__c</name>
+    </fields>
+    <fields>
+        <help><!-- S0 = Critical/Code Review
+S1 = Critical
+S2 = High
+S3 = Medium
+S4 = Low
+S5 = Security Trivial --></help>
+        <label><!-- Security Risk Level1 --></label>
+        <name>Security_Risk_Level1__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial --></help>
+        <label><!-- Security Risk Level2 --></label>
+        <name>Security_Risk_Level2__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial --></help>
+        <label><!-- Security Risk Level3 --></label>
+        <name>Security_Risk_Level3__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial --></help>
+        <label><!-- Security Risk Level4 --></label>
+        <name>Security_Risk_Level4__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial --></help>
+        <label><!-- Security Risk Level5 --></label>
+        <name>Security_Risk_Level5__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter any additional PRD links (if any) --></help>
+        <label><!-- Overview/Summary Deck --></label>
+        <name>Software_PRD_Link_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter any additional PRD links (if any) --></help>
+        <label><!-- Competitive Deck --></label>
+        <name>Software_PRD_Link_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specific field for use by D. Schuster, in POR chart --></help>
+        <label><!-- Product Backlog --></label>
+        <name>Software_PRD_Link_4__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the URL to the Software PRD Google Doc --></help>
+        <label><!-- Product Description --></label>
+        <name>Software_PRD_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend Delta --></label>
+        <name>Spend_Delta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Indicator --></label>
+        <name>Status_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>At Risk</masterLabel>
+            <translation><!-- At Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behind Plan</masterLabel>
+            <translation><!-- Behind Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery</masterLabel>
+            <translation><!-- Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluate</masterLabel>
+            <translation><!-- Evaluate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Plan</masterLabel>
+            <translation><!-- On Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-Plan</masterLabel>
+            <translation><!-- Re-Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TA Date Range --></label>
+        <name>TA_Date_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest TA Date --></label>
+        <name>TA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tech Team Lead --></label>
+        <name>Tech_Team_Lead__c</name>
+        <relationshipLabel><!-- SW Projects (Tech Team Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Top App Issues --></label>
+        <name>Top_App_Issues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Big Data &amp; Analytics</masterLabel>
+            <translation><!-- Big Data &amp; Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bus Ops</masterLabel>
+            <translation><!-- Bus Ops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Customization</masterLabel>
+            <translation><!-- Channel Customization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experiences</masterLabel>
+            <translation><!-- Experiences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Work Arounds</masterLabel>
+            <translation><!-- Legal Work Arounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Localization</masterLabel>
+            <translation><!-- Localization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Privacy &amp; Security (non-POR)</masterLabel>
+            <translation><!-- Privacy &amp; Security (non-POR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Release</masterLabel>
+            <translation><!-- Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stables</masterLabel>
+            <translation><!-- Stables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrades</masterLabel>
+            <translation><!-- Upgrades --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 1-pager --></label>
+        <name>X1_pager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Product Manager text --></label>
+        <name>sw_product_manager_text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tech Team Lead text --></label>
+        <name>tech_team_lead_text__c</name>
+    </fields>
+    <layouts>
+        <layout>JIRA Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Feature 1: Privacy and Security Review --></label>
+            <section>Feature 1: Privacy and Security Review</section>
+        </sections>
+        <sections>
+            <label><!-- Feature 2: Privacy and Security Review --></label>
+            <section>Feature 2: Privacy and Security Review</section>
+        </sections>
+        <sections>
+            <label><!-- Feature 3: Privacy and Security Review --></label>
+            <section>Feature 3: Privacy and Security Review</section>
+        </sections>
+        <sections>
+            <label><!-- Feature 4: Privacy and Security Review --></label>
+            <section>Feature 4: Privacy and Security Review</section>
+        </sections>
+        <sections>
+            <label><!-- Feature 5: Privacy and Security Review --></label>
+            <section>Feature 5: Privacy and Security Review</section>
+        </sections>
+        <sections>
+            <label><!-- Google Properties --></label>
+            <section>Google Properties</section>
+        </sections>
+        <sections>
+            <label><!-- Ownership --></label>
+            <section>Ownership</section>
+        </sections>
+        <sections>
+            <label><!-- Program Adoption --></label>
+            <section>Program Adoption</section>
+        </sections>
+        <sections>
+            <label><!-- Program Cost --></label>
+            <section>Program Cost</section>
+        </sections>
+        <sections>
+            <label><!-- Program Dates --></label>
+            <section>Program Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Snapshots --></label>
+            <section>Snapshots</section>
+        </sections>
+        <sections>
+            <label><!-- Status --></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please fill out comments to elaborate on the behind reason --></errorMessage>
+        <name>Comment_for_behind_reason_as_other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a reason this project is behind --></errorMessage>
+        <name>Must_Select_Behind_reason_when_behing</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Programs --></label>
+        <name>Add_Programs</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Programs --></label>
+        <name>Edit_Programs</name>
+    </webLinks>
+</CustomObjectTranslation>

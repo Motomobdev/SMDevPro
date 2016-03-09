@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Developer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Developers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Baseline --></label>
+        <name>Baseline__c</name>
+        <relationshipLabel><!-- Lead Developers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Motorola Core Directory --></label>
+        <name>Motorola_Core_Directory__c</name>
+        <relationshipLabel><!-- Lead Developers --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

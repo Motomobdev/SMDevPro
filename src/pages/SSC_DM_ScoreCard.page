@@ -1,0 +1,225 @@
+<apex:page controller="SSC_DirectMaterialScoreCard"  tabStyle="Account" sidebar="false" >
+   
+   <style type="text/css">
+      .glowing-border {
+      border: 2px solid #dadada;
+      border-radius: 7px;
+      width: 200px;
+      height: 25px;
+      font-size:15px;
+      text-align:center;
+      }
+      .glowing-border:focus { 
+      outline: none;
+      border-color: #9ecaed;
+      box-shadow: 0 0 10px #9ecaed;
+      }
+      .glowing-border1 {
+      border: 2px solid #dadada;
+      border-radius: 7px;
+      width: 50px;
+      height: 15px;
+      font-size:14px;
+      text-align: center;
+      }
+      .glowing-border:focus1 { 
+      outline: none;
+      border-color: #9ecaed;
+      box-shadow: 0 0 10px #9ecaed;
+      }
+      .tblhead
+      {
+      line-height:25px;
+      color:#99D3F2;
+      font-weight:bold;
+      background-color:#99D3F2;
+      }
+      .tblbody
+      {
+      line-height:25px;
+      font-weight:bold;
+      }
+      .myClass { width: 500px;
+      height: 25px;
+      font-size:15px;
+      text-align:center;
+      }
+      .myClass1 { width: 50px;
+      height: 15px;
+      font-size:14px;
+      text-align: center;
+      }
+      .controls
+      {
+      background-color:LightSkyBlue ;
+      color:#ffffff;
+      }
+   </style>
+   <apex:form >
+      <apex:pageBlock id="ScoreCardPage" title="DM Scorecard"  >
+   <apex:pageMessage summary="Vs competitor field wrong." severity="Error" strength="3"  rendered="{!ErroMessageVS}"/>
+      <apex:pageMessage summary="Controlled shipping wrong." severity="Error" strength="3"  rendered="{!ErroMessageCS}"/>
+         <apex:pageMessage summary="Business escalation  wrong." severity="Error" strength="3"   rendered="{!ErroMessageBE}" />
+        <apex:pageMessage summary="No value in Vs competitor field ." severity="info" strength="3"  rendered="{!InfoMessageVS}" />
+      <apex:pageMessage summary="No value in Controlled shipping " severity="info" strength="3"  rendered="{!InfoMessageCS}"  />
+         <apex:pageMessage summary=" No value in Business escalation  " severity="info" strength="3"   rendered="{!InfoMessageBE}" />    
+               <apex:pageMessage summary="Vs competitor Saved Succesfully." severity="Confirm" strength="3"  rendered="{!SuccessMessageVS}" />
+      <apex:pageMessage summary="Controlled shipping Saved Succesfully" severity="Confirm" strength="3"  rendered="{!SuccessMessageCS}"  />
+         <apex:pageMessage summary="  Business escalation Saved Succesfully " severity="Confirm" strength="3"   rendered="{!SuccessMessageBE}" />  
+         <apex:pageMessages ></apex:pageMessages>
+         <apex:pageBlockButtons location="top">
+            <apex:commandButton title="Raw Data" image="{!$Resource.SSC_Gdrive}"   action="{!showPopup}" rerender="popup" />
+            <apex:commandButton title="Download PDF" image="{!$Resource.SSC_PDF}"  action="{!RedirectPDF}" />
+            
+           
+            <apex:commandButton title="Pull Schedule" image="{!$Resource.SSC_Calendar}"  action="{!Calendar}" />
+            <apex:commandButton title="Save Comments" image="{!$Resource.SSC_Save}"  action="{!getsave}"   />
+            <apex:commandButton onclick="MyjavaFunction" title="Send Mail"   image="{!$Resource.SSC_Email}"  action="{!showPopup1}" />
+            <apex:commandButton title="Scoring Guides" image="{!$Resource.SSC_ScoringGuides}"  action="{!RedirectScoringGuides}" />
+            <apex:commandButton title=" Edit ScoringGuides" image="{!$Resource.SSC_EditScoringGuides}"  action="{!EditScoringGuide}" />
+            <apex:outputPanel id="popup">
+               <apex:outputPanel styleClass="popupBg" layout="block" rendered="{!DisplayPopup }"/>
+               <apex:outputPanel styleClass="popup" layout="block" rendered="{!DisplayPopup }">
+                 <br/><br/> 
+                  <apex:commandLink style="font-weight:bold;font-size:15px;" value="CSR"  action="{!Rawdata2}" rerender="popup"/>
+                  &nbsp; &nbsp;&nbsp;
+                  <apex:commandLink style="font-weight:bold;font-size:15px;"  value="Cost & Innovation"  action="{!Rawdata}" rerender="popup"/>
+                    &nbsp;&nbsp;&nbsp; 
+                  <apex:commandLink style="font-weight:bold;font-size:15px;"  value="Quality and Delivery"  action="{!Rawdata3}" rerender="popup"/>
+   
+               </apex:outputPanel>
+               
+            </apex:outputPanel>
+         </apex:pageBlockButtons>
+         <apex:outputPanel layout="block" rendered="{!DisplayFlag}" id="popup1">
+            <br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;         &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;     &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;     
+            <apex:outputText styleClass="error"  value="{!Error}"></apex:outputText>
+         </apex:outputPanel>
+         
+         <table border="0"  styleclass="glowing-border" cellpadding="4" cellspacing="0" style="margin:0px auto;" width="100%">
+            <tr>
+               <td  width ="70%">
+                  
+                  <br/><br/>
+                  <TABLE border="1"  styleclass="glowing-border" cellpadding="4" cellspacing="0" style="margin:0px auto;" width="90%" >
+                     <thead styleClass="controls" height="100%" cellpadding="4" cellspacing="0" width="90%" >
+                        <tr>
+                           <td height="20"  class="tblhead"   width ="15%" align="center" >Metric</td>
+                           <td  class="tblhead"  height="20"  width ="15%"  align="center" >Target Score</td>
+                           <td class="tblhead"  colspan="2" height="20"  width ="15%" align="center">Prior Qtr Scorecard <br/>{!PreviousMonth}-{!PreviousYear1}</td>
+                           <td   class="tblhead"  colspan="2"   height="20"  width ="15%" align="center" >Current Qtr Scorecard<br/>{!CurrentMonth}-{!CurrentYear1}</td>
+                        </tr>
+                     </thead>
+                     <tbody  >
+                        <apex:repeat value="{!TempWrapObject }" var="contact">
+                           <apex:repeat value="{!contact.MetricsList}" var="s">
+                              <tr>
+                                 <td height="20"  width ="20%" align="center" >
+                                    <apex:commandlink value="{!s['Name']}" action="{!RedirectLevel2}" rerender="none"/>
+                                 </td>
+                                 <td height="20"  width ="20%" align="center" >
+                                    <apex:outputField value=" {!s['Target_Score__c']}"/>
+                                 </td>
+                                 <td height="20"   width ="20%" align="center" >
+                                 <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(contact.MetricScoreMap[s['Name']],2)}" /></apex:outputText>%
+                                
+                                    
+                                 </td>
+                                 <td style="background-color:{!contact.ColorList[s['Name']]}" > </td>
+                                 <td height="20"  width ="20%" align="center" >
+                                 <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(contact.mapToScore[s['Name']],2)}" /></apex:outputText>%
+                                   
+                                 </td>
+                                 <td style="background-color:{!contact.color[s['Name']]}"></td>
+                              </tr>
+                              </apex:repeat>
+                        </apex:repeat>
+                           
+                        <tr>
+                                    <td height="20" style="font-weight:bold"  width ="20%" align="center" >Overall Score</td>
+                                    <td height="20"  style="font-weight:bold"  width ="20%" align="center" >
+                                    <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(PriorQtrSum,2)}" /></apex:outputText>%
+                                    </td>
+                                    <td height="20"  style="font-weight:bold"  width ="20%" align="center" > 
+                                    <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(MetricScoreMap['Overall'],2)}" /></apex:outputText>%
+                                     </td>
+                                    <td  style="background-color:{!Colorforoverall1['Overall']}" ></td>
+                                    <td height="20"  style="font-weight:bold"  width ="20%" align="center" > 
+                                     <apex:outputText value="{0, number,###,###,##0.00}"><apex:param value="{!ROUND(mapToScore['Overall'],2)}" /></apex:outputText>%
+                                    </td>
+                                    <td  style="background-color:{!Colorforoverall['Overall']}"> </td>
+                                </tr>
+                                
+                     </tbody>
+                  </table>
+                  <br/>    <br/>  <br/>  
+                  <TABLE border="1"  cellpadding="4" cellspacing="0" style="margin:0px auto;text-align:left;" width="50%" >
+                     <tr>
+                        <td   height="20"      width ="20%" align="center" >Vs Competitors</td>
+                        <td   height="20"      width ="20%" align="center" >
+                           <apex:inputText size="20" maxlength="4" value="{!Vscompetitor}" styleClass="glowing-border1">
+                           </apex:inputText>
+                          
+                        </td>
+                     </tr>
+                     <tr>
+                        <td   height="20"      width ="20%" align="center" >Business Escalation</td>
+                        <td   height="20"      width ="20%" align="center" >
+                           <apex:inputText size="20" maxlength="3"  value="{!BusinessEscalation}" styleClass="glowing-border1"/>
+                          
+                        </td>
+                     </tr>
+                     <tr>
+                        <td   height="20"      width ="20%" align="center" >Controlled Shipping</td>
+                        <td   height="20"      width ="20%" align="center" >
+                           <apex:inputText size="20" maxlength="3"  value="{!ControlledShipping}" styleClass="glowing-border1"/>
+                           
+                        </td>
+                     </tr>
+                  </TABLE>
+                  <br/>    <br/>   <br/><br/>  
+               </td>
+               <td>
+                   <br/>
+                  <TABLE border="1"    style="margin:0px auto;align:left" cellpadding="4" cellspacing="0" width="100%" >
+                     <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                        <tr>
+                           <td   height="20"   class="tblhead"    colspan="2" width ="100%" align="center" >Overall Scoring Guide</td>
+                        </tr>
+                     </thead>
+                     <apex:repeat value="{!CurrentScoringGuide }" var="contact">
+                        <tbody  >
+                           <tr>
+                              <td  height="20"  width ="20%" align="center" > {!contact.Min__c} % -- {!contact.Max__c} %</td>
+                              <td  height="20"  width ="20%"  align="center"   style="background-color:{!contact.ColorGrade__c};">
+                                 {!contact.Caption__c}
+                              </td>
+                           </tr>
+                        </tbody>
+                     </apex:repeat>
+                  </table>
+                  <br/>     <br/> <br/>    
+                  <TABLE border="1"    style="margin:0px auto;align:left" cellpadding="4" cellspacing="0" width="100%" >
+                     <thead styleClass="controls" bgcolor="#99D3F2" cellpadding="4" cellspacing="0" width="100%">
+                        <tr>
+                           <td   height="20"   class="tblhead"    colspan="2" width ="50%" align="center" >Overall Scoring Guide vs. Other MML Suppliers</td>
+                        </tr>
+                     </thead>
+                     <apex:repeat value="{!PreviousScoringGuide}" var="contact">
+                        <tbody  >
+                           <tr>
+                              <td  height="20"  width ="20%" align="center" > {!FLOOR(contact.Min__c)}</td>
+                              <td  height="20"  width ="20%"  align="center"   style="background-color:{!contact.ColorGrade__c};"> {!contact.Caption__c}</td>
+                           </tr>
+                        </tbody>
+                     </apex:repeat>
+                  </table>
+               </td>
+            </tr>
+         </table>
+         
+      
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

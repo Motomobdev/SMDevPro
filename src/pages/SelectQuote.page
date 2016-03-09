@@ -1,0 +1,24 @@
+<apex:page controller="SelectQuoteController" tabStyle="Opportunity">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <apex:sectionHeader title="Step 1" subtitle="Select a Deal" />
+    <apex:pageBlock >
+        <apex:pageMessages />
+    	<apex:pageBlockTable rendered="{!quoteCount > 0}" value="{!quotes}" var="q">
+            <apex:column headerValue="Deal Name">
+                <a href="/apex/DealView?qId={!q.Id}&vfpViewAllMode=true">{!q.Name}</a>
+            </apex:column>
+            <apex:column headerValue="Created Date">
+                <a href="/apex/DealView?qId={!q.Id}">{!q.CreatedDate}</a>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <script>
+        	//cmunoz@levementum.com
+        	//Added query expiration to reset checkbox selection on Deal View. Otherwise, checkboxes would remain active 
+        	$(document).ready(function()
+        	{
+        		document.cookie = 'JS_PERSISTENCE_COOKIE=' +
+		                      ';expires=Fri, 31 Dec 1999 23:59:59 GMT;';
+        	});
+        </script>
+</apex:page>

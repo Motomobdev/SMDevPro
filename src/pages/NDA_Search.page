@@ -1,0 +1,228 @@
+<apex:page showHeader="true" sidebar="true" standardStylesheets="true"
+    controller="NDA_SearchCtr" tabstyle="NDA__c">
+
+    <apex:sectionHeader title="Search/Create NDA" subtitle="I need an NDA" />
+
+    <apex:form >
+        <apex:pageBlock id="pb">
+            <style>
+.ndaButton {
+    background: #236FBD !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-style: inherit !important;
+}
+</style>
+
+            <apex:messages style="font-weight:bold;color:red" id="msg" />
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Next"
+                    action="{!fnSearch}" title="Next" styleClass="ndaButton" />
+                <apex:commandButton value="New NDA"
+                    rendered="{!IF((ndaRecords != null || boolShowNewNDA == true), true, false)}"
+                    action="{!fnCreateNDA}" title="New NDA" styleClass="ndaButton" />
+
+                <!--   <apex:commandButton value="Add New Outside Party" immediate="true" action="{!fnCreateNDACompany}" 
+                    title="Add new outside party" rendered="{!IF((ndaRecords == null || objNDA.Company__c == null || (boolShowMultiCompany == true && objNDA.Multiparty_Company__c == null)), true, false)}"/>  -->
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1"
+                title="Step 1 - Identify the NDA’s parties and subject matter, then click “Next.”"
+                collapsible="false" id="compsec">
+                <apex:pageBlockSectionItem >
+                     Enter the name of the outside party
+                    <apex:inputText id="companyone" required="true"
+                        value="{!companyone}" label="Enter the name of the outside party">
+                        <c:AutoComplete objectname="NDA_Company__c"
+                            autocomplete_textbox="{!$Component.companyone}" />
+                    </apex:inputText>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem helpText="Is this Multiparty NDA?">    
+                            Click here to add another outside party to the NDA                       
+                                <apex:inputCheckbox value="{!boolShowMultiCompany}" id="multiCheckID">
+                        <apex:actionSupport event="onchange"
+                            action="{!fnShowMultiCompany}" reRender="multiCompID" />
+                    </apex:inputCheckbox>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSection columns="1" id="multiCompID">
+                    <apex:pageBlockSectionItem rendered="{!boolShowMultiCompany}">    
+                               Enter the name of the other outside party                           
+                               <apex:inputText id="companytwo"
+                            value="{!companytwo}" required="true"
+                            label="Enter the name of the other outside party">
+                            <c:AutoComplete objectname="NDA_Company__c"
+                                autocomplete_textbox="{!$Component.companytwo}" />
+                        </apex:inputText>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSectionItem helpText="Is this NDA for sharing Product details">    
+                        Click here if we will disclose information about unreleased Motorola products, services, or software, including prototypes 
+                        <apex:inputCheckbox value="{!boolShowProduct}"
+                        id="spdtID" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <!--                      -- Results Section : Starts --         -->
+            <apex:pageBlockSection columns="1" title="Search Results"
+                collapsible="false">
+                <apex:pageBlockSectionItem rendered="{!IF(((ndaRecords != null && ResultSize == 0) || boolShowNewNDA == true), true, false)}">
+                    <apex:outputPanel rendered="{!IF(((ndaRecords != null && ResultSize == 0) || boolShowNewNDA == true), true, false)}">
+                        <apex:outputLabel value="Looks like we don’t have an NDA on file. Check your spelling and 
+                        search again by selecting “Next” or select “New NDA” to create a new one."
+                            style="font-weight:bold;color:red" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!IF(ResultSize >0, true, false)}">
+                    <apex:outputPanel rendered="{!IF(ResultSize >0, true, false)}">
+                        <apex:outputLabel id="searchLabel"
+                            style="font-weight:bold;color:red" rendered="{!!boolShowProduct}"
+                            value="We may have a NDA 
+                        on file that meets your needs. If one of these works for you, then you’re done. If not, select “New NDA” 
+                        to create a new one. If you’re not sure, review the NDA’s by selecting their  “NDA File ID.” To start over, 
+                        re-enter the information and select “Next.” If the NDA you want to use is about to expire, select the ''NDA File ID,'' 
+                        then select ''Request NDA Renewal.''">
+                        </apex:outputLabel>
+
+                        <apex:outputLabel id="productsearchlbl"
+                            rendered="{!boolShowProduct}" style="font-weight:bold;color:red"
+                            value="We may have a NDA 
+                        on file that meets your needs. If one of these works for you, select “Request Disclosure” to go to 
+                        the next step. If not, select “New NDA” to create a new one. If you’re not sure, review the NDA’s by 
+                        selecting their  “NDA File ID.” To start over, re-enter the information and select “Next.” If the NDA 
+                        you want to use is about to expire, select the ''NDA File ID,'' then select ''Request NDA Renewal.''">
+                        </apex:outputLabel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!IF(ResultSize >0, true, false)}">
+                    <apex:outputPanel rendered="{!IF(ResultSize >0, true, false)}">
+                        <apex:pageBlockTable value="{!NdaRecordlist}" var="ndaVar">
+                            <apex:column headerValue="NDA File ID" style="bgcolor:yellow">
+                                <apex:outputLink style="color:blue;" value="/{!ndaVar.id}">{!ndaVar.NDAFileID__c}</apex:outputLink>
+                            </apex:column>
+
+                            <apex:column headerValue="Company">
+                        {!ndaVar.Company__r.name}               
+                    </apex:column>
+                            <apex:column headerValue="Disclosure Purpose">
+                        {!ndaVar.Disclosure_Purpose__c}                 
+                    </apex:column>
+                            <apex:column headerValue="Modification Text">
+                        {!ndaVar.Modification_Text__c}                  
+                    </apex:column>
+                            <apex:column headerValue="NDA Status">
+                        {!ndaVar.NDAStatus__c}                  
+                    </apex:column>
+                            <apex:column headerValue="Expires On">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!ndaVar.Expires_On__c}" />
+                                </apex:outputText>
+                            </apex:column>
+                            <apex:column headerValue="" rendered="{!boolShowProduct}">
+                                <apex:outputLink style="color:blue;"
+                                    value="/apex/NDA_Disclosure_Request?pv02={!ndaVar.id}">Request Disclosure</apex:outputLink>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:panelGrid columns="6">
+                            <apex:commandButton status="fetchStatus" reRender="pb" value="|<"
+                                action="{!ndaRecords.first}"
+                                disabled="{!!ndaRecords.hasPrevious}" title="First Page" />
+                            <apex:commandButton status="fetchStatus" reRender="pb" value="<"
+                                action="{!ndaRecords.previous}"
+                                disabled="{!!ndaRecords.hasPrevious}" title="Previous Page" />
+                            <apex:commandButton status="fetchStatus" reRender="pb" value=">"
+                                action="{!ndaRecords.next}" disabled="{!!ndaRecords.hasNext}"
+                                title="Next Page" />
+                            <apex:commandButton status="fetchStatus" reRender="pb" value=">|"
+                                action="{!ndaRecords.last}" disabled="{!!ndaRecords.hasNext}"
+                                title="Last Page" />
+                            <apex:outputText >{!(ndaRecords.pageNumber * intSize)+1-intSize}-{!IF((ndaRecords.pageNumber * intSize)>intNoOfRecords, intNoOfRecords,(ndaRecords.pageNumber * intSize))} of {!intNoOfRecords}</apex:outputText>
+                        </apex:panelGrid>
+                        <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="fetchStatus" startText="Processing..."
+                                stopText="" />
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <!--                      -- Results Section : Ends --         -->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <!--                      -- NDA Agreement Page Text Here --         -->
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Agreement Terms" collapsible="false"
+                columns="1">
+                <html>
+<body>
+
+    <ul>
+        <p style="font-family: arial; font-size: 12px;">Welcome to the
+            Motorola NDA system. This system will help you find and create NDA’s
+            and obtain approvals needed to share confidential information with
+            third parties. Here are some important things to remember:</p>
+
+        <li><p style="font-family: arial; font-size: 12px;">This
+                system contains Motorola’s proprietary information that you agreed
+                to keep confidential when you joined the company.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">Only
+                share confidential information with third parties that have a need
+                to know and have signed an NDA.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">Before
+                sharing confidential information with third parties, remember to
+                mark it confidential. If disclosing verbally, then identify the
+                information as confidential before you talk about it.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">Don’t
+                share information about unreleased Motorola products without
+                permission from Global Product Management, even if you have a signed
+                NDA.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">Violation
+                of any of these terms can lead to disciplinary action, including
+                termination of employment.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">If you
+                need help from an NDA specialist like making changes to documents,
+                you need to request modifications or amendments using the tools
+                provided.</p></li>
+
+        <li><p style="font-family: arial; font-size: 12px;">If an
+                outside party wants to use their own NDA form, you need to contact
+                the NDA specialist team by requesting a modification to an NDA that
+                you have requested through the NDA system and uploading the
+                nonstandard NDA, along with an explanation of the refusal to sign a
+                standard Motorola NDA.</p></li>
+    </ul>
+
+</body>
+                </html>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Support" collapsible="false"
+                columns="1">
+                <html>
+<body>
+    <p style="font-family: arial; font-size: 12px;">
+        Provide feedback and report testing issues at <a target="_blank"
+            href="https://docs.google.com/forms/d/1PmpDa9VjzA2DgRMmPYArp05We7nO44dZEBgzNMsE6NU/viewform"
+            style="color: blue; font-weight: bold">goto/ndafeedback</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        <a target="_blank"
+            href="http://vhd.mot-mobility.com/sds_form.php?id=1103"
+            style="color: blue; font-weight: bold">Submit NDA Help desk
+            ticket</a>
+    </p>
+    <p style="font-family: arial; font-size: 12px;">
+        Contact NDA Specialist <a target="_blank"
+            href="mailto:nda@motorola.com" style="color: blue; font-weight: bold">nda@motorola.com</a>
+    </p>
+</body>
+                </html>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

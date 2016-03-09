@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR Assessment by Engineer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW CR Assessments by Engineer</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select location for ALT.  
+Enter the owner core-id or name responsible for submitting ALT in HW distribution comments.
+If &apos;other&apos; location, relay detail in the HW distribution comments. --></help>
+        <label><!-- ALT Lab --></label>
+        <name>ALT_Lab__c</name>
+        <picklistValues>
+            <masterLabel>Foxconn</masterLabel>
+            <translation><!-- Foxconn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Libertyville</masterLabel>
+            <translation><!-- Libertyville --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tianjin</masterLabel>
+            <translation><!-- Tianjin --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Quantity to ship to ALT lab.  This can include more than standard 16 units if additional lab testing required. --></help>
+        <label><!-- ALT Qty --></label>
+        <name>ALT_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approve by Data= SDE/SME review and approval only
+Approve by Similarity = approval via testing completed on other product
+Factory FLT = shippable control build for use in monitoring test performance/stability
+Engineer Pilot = qty needed by engineer --></help>
+        <label><!-- Approval Path --></label>
+        <name>Approval_Path__c</name>
+        <picklistValues>
+            <masterLabel>Approve by Data</masterLabel>
+            <translation><!-- Approve by Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approve by Factory ALT</masterLabel>
+            <translation><!-- Approve by Factory ALT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approve by Factory FLT</masterLabel>
+            <translation><!-- Approve by Factory FLT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approve by Similarity</masterLabel>
+            <translation><!-- Approve by Similarity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Pursue-update final status to reject</masterLabel>
+            <translation><!-- Do Not Pursue-update final status to reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineer Pilot + Factory FLT</masterLabel>
+            <translation><!-- Engineer Pilot + Factory FLT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Factory ALT + Factory FLT</masterLabel>
+            <translation><!-- Factory ALT + Factory FLT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPI Process</masterLabel>
+            <translation><!-- NPI Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Part Required-update final status to reject</masterLabel>
+            <translation><!-- New Part Required-update final status to reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Base Change Record Id --></label>
+        <name>Base_Change_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineer Type --></label>
+        <name>Engineer_Type__c</name>
+        <picklistValues>
+            <masterLabel>PE Type 1</masterLabel>
+            <translation><!-- PE Type 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE Type 2</masterLabel>
+            <translation><!-- PE Type 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE Type 3</masterLabel>
+            <translation><!-- PE Type 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Selection of either value will result in closure of the PE record and possibly closure of the top HCR record.  Messages are generated to the change administration group upon value selection.  Remember to select &apos;Save&apos; after selection. --></help>
+        <label><!-- Final Engineering Status --></label>
+        <name>Final_Engineering_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HCR Short Description --></label>
+        <name>HCR_Short_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW Change Request  Base --></label>
+        <name>HW_Change_Request_Base__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter all special requirements for pilot HW distribution. --></help>
+        <label><!-- HW Distribution Notes --></label>
+        <name>HW_Distribution_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW Recipient 1 --></label>
+        <name>HW_Recipient_1__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer (HW Recipient 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If other recipient is noted, please ensure to insert address into distribution comment section. --></help>
+        <label><!-- HW Recipient 2 --></label>
+        <name>HW_Recipient_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PATH --></label>
+        <name>PATH__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE REVIEW PRIORITY --></label>
+        <name>PE_REVIEW_PRIORITY__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter comment if this is a combined PE assignment.  Example, list all impacted products supported by singular MOL/PSE team so that we may simplify approval routing of low-risk items. --></help>
+        <label><!-- PE Record Change Admin Comment --></label>
+        <name>PE_Record_Change_Admin_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity to ship to specific PS&amp;C location.  Highlight address or direction in the HW distribution comments. --></help>
+        <label><!-- PS&amp;C Qty --></label>
+        <name>PS_C_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- If there is CCL impact, add the PS&amp;C representative who requires HW review. --></help>
+        <label><!-- PS&amp;C Recipient --></label>
+        <name>PS_C_Recipient__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer (PS&amp;C Recipient) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use following examples for entry format:
+Part Number (ref designator)  -or- Part Number (mechanical sub assembly)
+List all parts necessary for evaluation; Part Number (ref designator), Part Number2 (ref designator) --></help>
+        <label><!-- Part Numbers + Designators --></label>
+        <name>Part_Numbers_Designators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pilot Quantity --></label>
+        <name>Pilot_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the primary change component for testing consideration.  If multiple parts are required, list the balance within comment section. --></help>
+        <label><!-- Primary Component --></label>
+        <name>Primary_Component__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Engineers --></label>
+        <name>ProductEngineers__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer (Product Engineers) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product 1 --></label>
+        <name>Product_1__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- A product family affected by the proposed HW Change --></help>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <relationshipLabel><!-- HW CR Assessments by Engineer --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Name PE --></label>
+        <name>Product_Name_PE__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity to ship to recipient 1 --></help>
+        <label><!-- Recipient1 Qty --></label>
+        <name>Recipient1_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity to ship to specific location.  Highlight location and address in HW Distribution comments. --></help>
+        <label><!-- Recipient2 Qty --></label>
+        <name>Recipient2_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Either the PCB Ref Des of the electrical component -OR- the purchased sub-assembly kit number (01, SH, SN Level) utilizing the mechanical part within the change request. --></help>
+        <label><!-- Reference Designator --></label>
+        <name>Reference_Designator__c</name>
+    </fields>
+    <fields>
+        <help><!-- If HW testing required, share any special testing instructions.  This will ensure the factory has proper personnel available for assistance. --></help>
+        <label><!-- Special Test Instruction --></label>
+        <name>Special_Test_Instruction__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST --></label>
+        <name>TEST__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comments from testing results or findings --></help>
+        <label><!-- Test Comments --></label>
+        <name>Test_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mandatory input:  
+&apos;Yes&apos; = build required (ramping or post-SA product).
+&apos;No&apos; = team rejection or approval by  similarity to other product testing.
+ &apos;NPI Owned&apos; = NPI core team will manage approval.
+
+Owner to maintain status comment and final approval --></help>
+        <label><!-- Test Required? --></label>
+        <name>Test_Required__c</name>
+        <picklistValues>
+            <masterLabel>NPI Owned</masterLabel>
+            <translation><!-- NPI Owned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Top engineering status for report generation and status tracking. Product team can set object view by Product Family and Eng Approval Status. Status values: Approved, In Process, or Rejected. --></help>
+        <label><!-- Top Eng Approval Status --></label>
+        <name>Top_Eng_Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Eng Review Status --></label>
+        <name>Top_Eng_Review_Status__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Engineers Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Engineering Requirements (Step 1) --></label>
+            <section>Engineering Requirements (Step 1)</section>
+        </sections>
+        <sections>
+            <label><!-- Final Engineering Section (Step 2: Post review or build completion) --></label>
+            <section>Final Engineering Section (Step 2: Post review or build completion)</section>
+        </sections>
+        <sections>
+            <label><!-- HW Distribution (Step 1a: necessary information for pilot build) --></label>
+            <section>HW Distribution (Step 1a: necessary information for pilot build)</section>
+        </sections>
+        <sections>
+            <label><!-- Product Section --></label>
+            <section>Product Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <workflowTasks>
+        <description><!-- Task for creating an activity for tracking change records requiring individual product assessment.  Task assigned to HW CR Build Admin. --></description>
+        <name>Completed_PE_Record_Requiring_Build</name>
+        <subject><!-- Completed PE Record Needing FBR --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Either contact the assigned engineer for the PE record, or reject the record along with all other open engineering review records.  Ultimately reject the top HCR record for delay citing the engineering owner as primary contact. --></description>
+        <name>Reject_Change_Record_Resulting_from_Engineering_Delay</name>
+        <subject><!-- Reject_Change_Record_Resulting_from_Engineering_Delay --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

@@ -1,0 +1,123 @@
+<apex:page standardController="Report" tabStyle="GTM_Top_Reports__tab">
+
+
+<!-- Set-Up Table Column Widths -->
+
+<style>
+    .container{
+        width:100%;
+        height:90px;
+    }
+    .body{
+        width:100%;  
+    }
+    .Col1 { 
+        width: 1%;
+        padding-bottom: 10px;
+    }
+    .Col2 { 
+        width: 29%; 
+        padding-bottom: 10px;
+    }
+    .Col3 { 
+        width: 50%;    
+        padding-bottom: 10px;
+    }
+    .Col4 { 
+        width: 20%;
+        padding-bottom: 10px;
+    }  
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/soap/ajax/20.0/connection.js" type="text/javascript"></script>
+
+<script>
+   
+    var getTokenURL = 'https://devtab.blurdev.com/rss-portal/app/reports/getToken';
+    //var mapURL = 'https://devtab.blurdev.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=';
+    var mapURL = 'https://devtab.blurdev.com/rss-portal/app/reports/securedViewRedirect?viewname=';
+    var token = '';
+
+    var j$ = jQuery.noConflict();
+
+    // Get the MAP token when the page loads
+    j$(function(){
+
+        // Replace the core ID dynamically with the logged in user's core ID
+        var core_or_mm_id;         
+        try{    
+           sforce.connection.sessionId = "{!$Api.Session_ID}"; //Used for Session out        
+           var qr = sforce.connection.query("Select Id,FederationIdentifier from User Where Username ='" + '{!$User.Username}' + "'");                    
+           records = qr.getArray("records");
+           if(records[0]) {
+                core_or_mm_id = records[0].FederationIdentifier;
+            }
+
+        var dataString = 'userid=' + core_or_mm_id + 
+                        '&appid=salesforce&privatekey=5674234567';
+                        
+        token = getTokenURL + '?userid=' + core_or_mm_id + '&appid=salesforce&privatekey=5674234567';
+
+        j$.ajax({
+            type: "POST",
+            url: getTokenURL,
+            dataType: "jsonp",
+            data: dataString,
+            crossDomain: true,
+            timeout: 10000,
+
+            success: function(data) {
+                token = data.value;
+                console.log('Token: ' + token);
+            },
+
+            error: function(xhr, ajaxOptions, error) {
+                console.log('You are NOT authorized view this Tableau report. Error: ' 
+                      + error + ', Error Status: ' + xhr.status);
+            }
+        });
+         } catch(e){ 
+            alert('An Error has Occured. Error:' +e); 
+        }
+    });
+
+    function mapAuthentication(reportURL) {
+       if (token == '') {
+            alert('You are NOT authorized to view this report.');
+        } else {
+            var srcVal = "/apex/iframe?sfdc.tabName=01r40000000Hgce&url=" +
+                        encodeURIComponent(mapURL + reportURL + "&token=" + token);
+            window.open(srcVal);
+        }
+    }
+
+</script>
+
+<apex:form >
+
+    <!--  Column Headers -->
+    <apex:pageblock title="Motorola Top Reports (Requires Moto VPN)">
+        <apex:panelGrid columns="3" columnClasses="Col1, Col2, Col3" width="100%">            
+            <apex:outputText >&nbsp;</apex:outputText>
+            <apex:outputText ><strong><u>Report Name</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Description</u></strong></apex:outputText>
+        </apex:panelGrid>
+    <!--</apex:pageblock>-->
+    <br />
+    <!-- Rows -->
+    <apex:outputPanel layout="block" styleclass="body">
+        <!--<apex:pageBlock mode="view">-->
+            <apex:pageBlockSection title="Opportunity Reports / Dashboards" columns="1" collapsible="true" showHeader="true">
+                <apex:panelGrid columns="3" id="theGrid1" columnClasses="Col1, Col2, Col3" width="100%">
+                    <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site4/views/Global_Operations_Summary_BQ/GlobalOperationsSummary&tableauSite=Site4&userName=lit&:refresh=yes&container=iframe">Global Operations Summary</apex:outputLink>
+                    <apex:outputText >Shipment, Open Order, Supply Request vs Sales Fcst vs Finance Fcst vs Targets </apex:outputText>            
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            
+    </apex:outputpanel>
+</apex:pageblock>
+</apex:form> 
+</apex:page>

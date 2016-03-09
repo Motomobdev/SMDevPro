@@ -1,0 +1,19 @@
+<apex:page standardController="Contract" 
+extensions="APTPS_Contract_Integration">
+    <apex:sectionHeader title="New Agreement" subtitle="Direct Supply Chain Record Type"/>
+    
+    <apex:pageMessages />
+    <apex:form >
+       <apex:commandLink action="/{!con.Id}" value="Return to previous screen."/>
+       <br/>
+    </apex:form>
+    
+    <apex:form rendered="{!NOT(hasErrors)}">
+        <apex:pageBlock title="Direct Supply Chain Record Type">
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton action="{!myCreate}" value="Continue"></apex:commandButton>
+                <apex:commandButton action="{!cancel}" value="Cancel"></apex:commandButton>
+            </apex:pageBlockButtons>            
+        </apex:pageBlock>      
+    </apex:form> 
+</apex:page>

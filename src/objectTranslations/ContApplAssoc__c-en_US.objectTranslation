@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Governing End Date --></label>
+        <name>Actual_Governing_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Available Countries Condense --></label>
+        <name>Application_Available_Countries_Condense__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Legal Countries Condensed --></label>
+        <name>Application_Legal_Countries_Condensed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BLUR_Type --></label>
+        <name>BLUR_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;pass-thru&quot; field.. only Admins can see this field --></help>
+        <label><!-- BLUR_contract --></label>
+        <name>BLUR_contract__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;pass-thru&quot; field, from Contracts to Application --></help>
+        <label><!-- BLUR_release --></label>
+        <name>BLUR_release__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNameOnCA --></label>
+        <name>ContractNameOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractNumberOnCA --></label>
+        <name>ContractNumberOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractOwnerOnCA --></label>
+        <name>ContractOwnerOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractPhaseonCA --></label>
+        <name>ContractPhaseonCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractStatusonCA --></label>
+        <name>ContractStatusonCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Application External Unique ID --></label>
+        <name>Contract_Application_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Rate Based Royalty Table --></label>
+        <name>Contract_Rate_Based_Royalty_Table__c</name>
+        <relationshipLabel><!-- Contract Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DecisionOnCA --></label>
+        <name>DecisionOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governing End Date --></label>
+        <name>Governing_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRBApprovedDeviceOnCA --></label>
+        <name>LRBApprovedDeviceOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRBApprovedRegionOnCA --></label>
+        <name>LRBApprovedRegionOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRBPipelineIDOnCA --></label>
+        <name>LRBPipelineIDOnCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legally Shippable --></label>
+        <name>Legally_Shippable__c</name>
+    </fields>
+    <fields>
+        <help><!-- From the applications object --></help>
+        <label><!-- Number of Devices App is on --></label>
+        <name>Number_of_Devices_App_is_on__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp --></label>
+        <name>Temp__c</name>
+    </fields>
+    <layouts>
+        <layout>Contract Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contract Application Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Edit_Applications --></label>
+        <name>Edit_Applications</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<apex:page standardController="Legal_Case__c" extensions="Calendar_Events_Ext" action="{!doAction}" >
+	<apex:form >
+		<apex:pageBlock title="Calendar Events">
+			<apex:pageBlockButtons location="top" >
+				<apex:commandButton value="Edit Calendar Events" onclick="window.top.location='{!URLFOR($Action.Calendar_Event__c.New, null, [legal_case_Id=legal_case_Id])}'; return false;" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockTable value="{!events}" var="event">
+				<apex:column headerValue="Actions">
+					<apex:outputLink target="_top" value="{!URLFOR($Action.Calendar_Event__c.Edit, event.Id)}">Edit</apex:outputLink>
+					|
+					<apex:commandLink action="{!deleteAction}" value="Del"> 
+						<apex:param name="p1" value="{!event.Id}" assignTo="{!ParamID}"/>
+					</apex:commandLink>
+				</apex:column>
+				<apex:column headerValue="Event Name">
+					<apex:outputLink target="_new" value="/{!event.Id}">
+						{!event.Event_Name__c}
+					</apex:outputLink>
+				</apex:column>
+				<apex:repeat value="{!calendarEventFields}" var="f">
+					<apex:column value="{!event[f.fieldPath]}" />
+				</apex:repeat>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

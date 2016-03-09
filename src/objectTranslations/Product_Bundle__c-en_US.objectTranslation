@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Bundle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Bundles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active? --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Lines --></label>
+        <name>Number_of_Lines__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Bundle Number --></label>
+        <name>Product_Bundle_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Product Bundles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Bluetooth</masterLabel>
+            <translation><!-- Bluetooth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music</masterLabel>
+            <translation><!-- Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personalization</masterLabel>
+            <translation><!-- Personalization --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Product Bundle Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Edit_Product_Bundles2 --></label>
+        <name>Edit_Product_Bundles2</name>
+    </webLinks>
+</CustomObjectTranslation>

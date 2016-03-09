@@ -1,0 +1,31 @@
+<!--
+@Page Name      : PMD_ListProgramsWithAttachments
+@Author         : Indumathi_v    
+@Date           : July-2014
+@Description    : Displays the list of Program(PMD)records with their respective Attachments and GoogleDocs
+-->
+
+
+<apex:page id="thePage" title="Product Sell-In Documents" controller="PMD_ListProgramsWithAttachments" sidebar="false" showChat="false" >
+<apex:pagemessages />
+<head>
+    <title>Product Sell-In Documents</title>
+    <style>
+        body
+        {
+            color: rgb(32, 32, 32);
+        }
+        a
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <apex:form id="theForm">
+       <apex:outputText value="Product Sell-In Documents" style="position: absolute; top: 12px; left:10%; font-size: 15pt; color: rgb(64,64,64); font-weight: bold;" />
+         <br /><br /><br />
+        <apex:outputText escape="false" value="{!htmlBody}"></apex:outputText>
+    </apex:form>
+</body>
+</apex:page>

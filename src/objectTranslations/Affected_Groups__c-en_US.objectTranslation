@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Affected Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Affected Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- Feature Group --></label>
+        <name>Feature_Group__c</name>
+        <relationshipLabel><!-- Affected Features --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Feature --></label>
+        <name>Feature__c</name>
+        <relationshipLabel><!-- Affected Groups --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

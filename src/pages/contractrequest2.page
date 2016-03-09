@@ -1,0 +1,51 @@
+<apex:page controller="contractExt" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">
+<apex:image value="{!$Resource.logo_imoto}"/>
+</div>
+
+<apex:form >
+<apex:pageBlock title="CONTRACT REQUEST" mode="edit">
+
+<apex:pageBlockButtons >
+    <apex:commandButton action="{!prePage1}" value="Previous" style="width:60px;text-align:center;"> </apex:commandButton>
+    <apex:commandButton action="{!page3}" value="Next" style="width:60px;text-align:center;"> </apex:commandButton>    
+</apex:pageBlockButtons>
+
+<div style="background-color:#C5D5F6;font-size:7px;height:40px;font-weight:900;color:#FFFFFF !important;line-height:50%;border-radius:10px;">
+<apex:sectionHeader title="STEP 2 of 4"/>
+</div>
+
+<div style="background-color:white;">
+<apex:pageBlockSection >
+<apex:panelGrid columns="2">
+
+<apex:outputLabel value="Core Id" for="coreid" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+  <apex:outputPanel styleClass="requiredInput" layout="block">  
+      <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+<apex:inputText value="{!coreid}" id="coreid" style="text-align:left;"/>
+  </apex:outputPanel>  
+    
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessage)>0}"/>
+<apex:outputText value="{!errorMessage}" style="color:red;" rendered="{!LEN(errorMessage)>0}"/>
+ 
+<apex:outputLabel value="Business Unit" for="bu" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.BusinessUnit__c}" id="bu" style="text-align:left;"/>
+
+<apex:outputLabel value="Partner Manager" for="prt" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputText value="{!partner}"  id="prt" style="text-align:left;"/>
+
+<apex:outputLabel value="Supply Chain Legal Help" for="legalhelp" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Legal_Owner__c}"  id="legalhelp" style="text-align:left;"/>
+
+<!-- <apex:outputLabel value="Business Unit VP Sponsoring the Project" for="vpname" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.VP_Project__c}" id="vpname" style="text-align:left;"/>
+ -->
+<apex:outputLabel value="Finance Owner" for="finowner" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Finance_Owner__c}" id="finowner" style="text-align:left;"/>
+
+</apex:panelGrid>
+</apex:pageBlockSection>
+</div>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,103 @@
+<apex:page showheader="false" sidebar="false" standardcontroller="Account" extensions="BDSite_Controller">
+
+<style>
+.white
+{
+    color:white;
+    font-size:"14";
+
+}
+.block
+{ 
+margin-left:30%;
+}
+</style>
+
+
+
+<!--Set-Up Banner & Tool Bar -->
+     <apex:image style="margin-top:20px;" url="{!URLFOR($Resource.Motorola_Mobility_Logo)}" width="500px" height="100px" />
+    <apex:form >
+    <apex:toolbar style="margin-top:50px;margin-left:35%;" contentstyle="background-color: #82CAFF;" width="200" >
+    <apex:outputLink styleclass="white" value="{!$Page.Business_Development_Home}">Home</apex:outputlink><br/>
+<!--<apex:outputLink styleclass="white" value="{!$Page.Business_Development_CategoryDirectory}">Category Directory</apex:outputlink><br/>
+   <apex:outputLink styleclass="white" value="{!$Page.Business_Development_NominatePartner}">Nominate a New Partner!</apex:outputlink><br/>-->
+   <apex:outputLink styleclass="white" value="http://developer.motorola.com/"> MOTODEV Website</apex:outputlink>
+   <apex:outputLink styleclass="white" value="http://compass.mot-mobility.com/go/247085140/">MotoReady Compass Website </apex:outputlink>
+   <apex:outputLink styleclass="white" value="{!$Page.Business_Development_AdditionalContent}"> Additional Content</apex:outputlink>
+</apex:toolbar>
+
+
+
+<!--Search Keyword Section--> 
+        <apex:pageBlock title="Search for an Account By Keyword:" mode="edit" id="block">
+        <apex:pageBlockButtons location="both">
+       </apex:pageBlockButtons>        
+     
+        <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel for="searchText">Account Name</apex:outputLabel>
+        <apex:panelGroup >
+        <apex:inputText id="searchText" value="{!searchTextAcct}"/>
+       </apex:panelGroup>
+       </apex:pageBlockSectionItem>   
+       </apex:pageBlockSection> <br/>    
+
+        <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel for="searchText">Partner Manager</apex:outputLabel>
+        <apex:panelGroup >
+        <apex:inputText id="searchText" value="{!searchTextPN}"/>
+       </apex:panelGroup>
+       </apex:pageBlockSectionItem>       
+       </apex:pageBlockSection><br/>
+  
+     
+        <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel for="searchText">Category</apex:outputLabel>
+        <apex:selectList value="{!category}" multiselect="false" size="1">
+        <apex:selectOptions value="{!Categories}" />
+       </apex:selectList>
+       </apex:pageblocksectionitem>   
+       </apex:pageblocksection><br/>   
+
+<!-- Search Button-->
+       <apex:pageblocksection >       
+       <apex:commandButton style="margin-left:370px;" value="Search" action="{!search}" rerender="block" status="status"/> 
+      </apex:pageblocksection><br/>      
+
+ <!-- Hint Text --> 
+    <br/><apex:outputtext >Search Hint: <br/> If you would like to narrow down results try using multiple fields at one time.<br/>Example: Account Name = "Test" and Partner Manager = "Austin."</apex:outputtext><br/><br/>
+     
+<!-- Search Results Block -->          
+     <center>  <apex:actionStatus id="status" startText="Searching Account Records..."/> </center>
+       <apex:pageBlockSection title="Search Results" id="resultsBlock" columns="1">
+       <br/>
+       <apex:pageBlockTable value="{!searchResults}" var="item" rendered="{!NOT(ISNULL(searchResults))}"> 
+       <apex:column value="{!item.Name}" headerValue="Account Name" width="100"/>
+       <apex:column headerValue="Account Owner" width="100">
+       <apex:inputField value="{!item.Owner.Name}"/>
+       </apex:column> 
+       <apex:column headerValue="Category" width="100">
+       <apex:outputText value="{!item.Top_Level_Category__c}"/>
+       </apex:column>     
+       <apex:column headerValue="Additional Detail" width="100">
+       <apex:outputLink value="{!$Page.Business_Development_AddDetail}?id={!item.Id}">Account Detail</apex:outputlink>
+       </apex:column>
+        
+    </apex:pageBlockTable>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+    
+
+
+<!-- Footer Content-->
+    <apex:outputText > Want to visit the legacy database?  Please click <apex:outputLink target="_blank" value="http://swlicense.am.mot.com/"> Here.</apex:outputLink></apex:outputText><br/><br/>
+  <center>  <apex:outputText > Need to report a problem?  Please click <apex:outputLink target="_blank"  value="https://mail.google.com/a/motorola.com/?view=cm&fs=1&tf=1&to=jessea%40motorola.com&su=BD.MOT%20Issue%20Report"> Here.</apex:outputLink> </apex:outputText></center>
+    
+
+</apex:form>
+
+</apex:page>

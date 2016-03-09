@@ -1,0 +1,25 @@
+<apex:page controller="ProjectSpendListController" sidebar="false" showHeader="false">
+	<apex:messages />
+	<apex:form >
+		<apex:pageBlock title="Verify" rendered="{!(!verified)}">
+			<apex:pageBlockSection >
+				<apex:outputText value="MMID" />
+				<apex:inputText value="{!MMID}"/>
+				<apex:outputText />
+				<apex:commandButton value="Validate" action="{!validateMMIDInput}" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+		<apex:pageBlock title="Project Spends" rendered="{!verified}">
+			<apex:pageBlockButtons location="top">
+				<apex:commandButton value="New" action="/ProjectSpend/CreateProjectSpend?MMID={!MMID}&Type={!TypeName}"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockTable value="{!projects}" var="ssr">
+				<apex:column headerValue="Name">
+					<apex:outputLink value="/ProjectSpend/ProjectSpendSummary?id={!ssr.id}&Type={!TypeName}" >{!ssr.Name__c}</apex:outputLink>
+				</apex:column>
+				<apex:column value="{!ssr.Name}"/>
+				<apex:column value="{!ssr.SSR_Status__c}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

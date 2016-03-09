@@ -1,0 +1,83 @@
+<apex:page tabStyle="Opportunity" controller="BundleDealsController">
+    <head>
+   <apex:stylesheet value="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css"/>
+    <apex:includeScript value="https://code.jquery.com/jquery-2.1.1.min.js"/>
+    <apex:includeScript value="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"/>
+<script type="text/javascript">
+    $(function() {
+    var dateToday = new Date(); 
+    $('[id$=datepicker]').datepicker(
+        {
+         minDate: 0,
+         beforeShowDay:function(date){
+         return [(date.getDay() != 2 && date.getDay() != 4 && date.getDay() != 6 && date.getDay() != 0), ''];
+      }});
+});
+
+</script>
+</head>
+   
+    <apex:sectionHeader subtitle="Create New Bundle Deal"/>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2" title="Information">
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Deal Name" />
+                        <apex:inputField value="{!oppt.Name}" />                    
+                </apex:pageBlockSectionItem>
+                  <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Is ASP < Floor?"/>
+                        <apex:inputField required="true" value="{!qt.IsASPFloor__c}"/>                      
+                </apex:pageBlockSectionItem>
+                    <apex:outputText value="{!acct.Name}"/>                       
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is NSBD > $25M?"/> 
+                     <apex:outputField value="{!qt.IsNSBD25M__c}"/>                       
+                </apex:pageBlockSectionItem>
+                    <apex:inputField required="true" value="{!oppt.Year__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Has MDF/SDF Discount?"/>
+                    <apex:outputField value="{!qt.HasMDFSDFDiscount__c}"/>                   
+                </apex:pageBlockSectionItem>
+                    <apex:inputField required="true" value="{!oppt.Quarter__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is MDF/SDF Discount > $500k?"/>
+                    <apex:outputField value="{!qt.IsMDFSDFDiscount500k__c}"/>                
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Deal Review Date" />
+                    <apex:inputtext required="true" id="datepicker" value="{!qt.Deal_Review_Date__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Is Total Discount > $100K?"/>
+                    <apex:outputField value="{!qt.IsTotalDiscount100k__c}"/>             
+                </apex:pageBlockSectionItem>
+                 <apex:inputField value="{!qt.Is_this_Incremental_to_the_outlook__c}" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Description">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Executive Summary"/>
+                    <apex:outputPanel >
+                        
+                            <apex:inputTextarea value="{!execNote.Body}"  rows="10" cols="80" label="Executive Summary"/>
+                      
+                   </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+               
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Portfolio Segment">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Portfolio Segment"/>
+                    <apex:inputField required="true" value="{!qt.Portfolio_Segment__c}"/>         
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Cancel" action="{!cancelCreate}" immediate="true"/>
+                <apex:commandButton value="Create Deal" action="{!createDeal}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!pageIsValid}">
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page showHeader="false" sidebar="false" standardController="Android_Submission__c" extensions="SubmissionSummaryController">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log('{!SummaryJSON}');
+            submissionArray = JSON.parse('{!SummaryJSON}');
+            console.log(submissionArray);
+            
+            var appendString = '';
+            console.log(submissionArray.length);
+            for(var itr = 0; itr < submissionArray.length; itr++){
+                appendString += '<tr>';
+                appendString += '<td>' + submissionArray[itr]["Name"] + "</td>";
+                appendString += '<td>' + (parseInt(submissionArray[itr]["Total_Tests__c"]) - parseInt(submissionArray[itr]["Number_of_Errors__c"])) + "</td>";
+                appendString += '<td>' + submissionArray[itr]["Number_of_Errors__c"] + "</td>";
+                appendString += '</tr>';
+                console.log(itr,appendString);
+            }
+           
+            $('#SubmissionTable').append("<th>File Name</th><th>Tests Passed</th><th>Test Problems</th>"); 
+             $('#SubmissionTable').append(appendString); 
+            
+        });
+    </script>
+    <style>
+    	th{
+        	padding: .2em;
+        	font-size: 1.5em;
+        	width: 20%;
+        }
+        
+        td{
+        	padding: .1em auto;
+        	font-size: 1.2em;
+        }
+        
+    </style>
+    <div>
+        <table id="SubmissionTable">
+        </table>
+    </div>    
+</apex:page>

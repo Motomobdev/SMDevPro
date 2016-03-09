@@ -1,0 +1,17 @@
+<apex:page controller="emailSuccess" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">
+<apex:image value="{!$Resource.logo_imoto}"/>
+</div>
+
+   <apex:form >
+    <apex:pageBlock >
+    <div style="margin-right:140px;margin-left:300px;">
+       <h1>Thank You. </h1>
+       An Email has been sent to the concerned manager.
+       <br></br>
+       <br></br>
+       <apex:commandButton value="Finish" action="{!home}" style="margin-right:140px;margin-left:160px;"> </apex:commandButton>
+     </div>
+   </apex:pageBlock>
+   </apex:form>
+</apex:page>

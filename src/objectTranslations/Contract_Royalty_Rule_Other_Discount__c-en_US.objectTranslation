@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Royalty Rule Other Discount</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Royalty Rule Other Discounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Royalty Rule Other Discounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- i.e. On Device Ship --></help>
+        <label><!-- Discount 1 Trigger --></label>
+        <name>Discount_1_Trigger__c</name>
+        <picklistValues>
+            <masterLabel>Number of devices</masterLabel>
+            <translation><!-- Number of devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount Criteria Type --></label>
+        <name>Discount_Criteria_Type__c</name>
+        <picklistValues>
+            <masterLabel>#</masterLabel>
+            <translation><!-- # --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$</masterLabel>
+            <translation><!-- $ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>%</masterLabel>
+            <translation><!-- % --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount Level --></label>
+        <name>Discount_Level__c</name>
+        <picklistValues>
+            <masterLabel>App</masterLabel>
+            <translation><!-- App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specify Application if applicable --></label>
+        <name>Specify_Application_if_applicable__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Discount Trigger is Other use this field to explain. --></help>
+        <label><!-- Trigger Details --></label>
+        <name>Trigger_Details__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

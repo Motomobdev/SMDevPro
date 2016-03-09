@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>LNV-GTM-EMEA-EAST-Ukraine</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>LNV-GTM-EMEA-EAST-Ukraine</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>LNV_GTM_EMEA_EAST</parentRole>
+</Role>

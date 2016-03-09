@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Costs</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Committed__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(text(Status_Commitment__c) = &quot;Stretch&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlHw&quot;, &quot;Red&quot;),
+IF(text(Status_Commitment__c) = &quot;Possible&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI1&quot;, &quot;Yellow&quot;),
+IF(text(Status_Commitment__c) = &quot;Confirmed&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI6&quot;, &quot;Green&quot;),
+&quot;&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Committed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <externalId>false</externalId>
+        <label>Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Math_Basis_Calculation__c</fullName>
+        <externalId>false</externalId>
+        <label>Math / Basis / Calculation</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned/Effective Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the projected Impact of this Savings?</inlineHelpText>
+        <label>Projected Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Savings_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Savings Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <color>#F3D904</color>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dropped</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Savings_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Savings Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Avoidance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-kind Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Savings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Commitment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How committed is this savings status?</inlineHelpText>
+        <label>Status Commitment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stretch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Actual_Impact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Year_1_Actual_Impact__c + Year_2_Actual_Impact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Actual Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Projected_Impact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Year_1_Projected_Impact__c + Year_2_Projected_Impact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Projected Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_1_Actual_Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the actual Impact of Savings for Year 1?</inlineHelpText>
+        <label>Year 1 Actual Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_1_Projected_Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the projected Impact of Savings for Year 1?</inlineHelpText>
+        <label>Year 1 Projected Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_2_Actual_Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the actual Impact of Savings for Year 2?</inlineHelpText>
+        <label>Year 2 Actual Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_2_Projected_Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the projected Impact of Savings for Year 2?</inlineHelpText>
+        <label>Year 2 Projected Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>of_Contracts__c</fullName>
+        <externalId>false</externalId>
+        <label># of Contracts</label>
+        <summaryForeignKey>Contract_Savings__c.Savings__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Savings</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Account__c</columns>
+        <columns>Savings_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Math_Basis_Calculation__c</columns>
+        <columns>Impact__c</columns>
+        <columns>Savings_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>In_Progress_Savings</fullName>
+        <columns>Account__c</columns>
+        <columns>Savings_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Math_Basis_Calculation__c</columns>
+        <columns>Savings_Status__c</columns>
+        <columns>Status_Commitment__c</columns>
+        <columns>Year_1_Projected_Impact__c</columns>
+        <columns>Year_2_Projected_Impact__c</columns>
+        <columns>Total_Projected_Impact__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Savings_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <label>In Progress Savings</label>
+    </listViews>
+    <nameField>
+        <label>Savings Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Savings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Actual_Impact_1_cost_status_is_complete</fullName>
+        <active>true</active>
+        <description>The Actual Impact fields are required if the cost status is complete.</description>
+        <errorConditionFormula>And (
+ISPICKVAL(Savings_Status__c, &quot;Complete&quot;),
+ISNULL( Year_1_Actual_Impact__c ))</errorConditionFormula>
+        <errorDisplayField>Year_1_Actual_Impact__c</errorDisplayField>
+        <errorMessage>If cost status is Complete, values in the Year 1 Actual Impact field must be filled out</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Actual_Impact_2_cost_status_is_complete</fullName>
+        <active>true</active>
+        <description>The Actual Impact fields are required if the cost status is complete.</description>
+        <errorConditionFormula>And (
+ISPICKVAL(Savings_Status__c, &quot;Complete&quot;),
+ISNULL( Year_2_Actual_Impact__c ))</errorConditionFormula>
+        <errorDisplayField>Year_2_Actual_Impact__c</errorDisplayField>
+        <errorMessage>If cost status is Complete, values in the Year 2 Actual Impact field must be filled out</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Complete_Cost_Contract_Required</fullName>
+        <active>false</active>
+        <description>If the Savings is Complete, A Contract is required</description>
+        <errorConditionFormula>And (
+ISPICKVAL(Savings_Status__c, &quot;Complete&quot;),
+ of_Contracts__c &gt;0)</errorConditionFormula>
+        <errorMessage>A contract is required if this record is Complete. Please add a contract first then change the Savings Status to Complete</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Plan_Eff_req_if_cost_status_is_comp</fullName>
+        <active>true</active>
+        <description>the planned effective date is required if the cost status is complete.</description>
+        <errorConditionFormula>And ( 
+ISPICKVAL(Savings_Status__c, &quot;Complete&quot;), 
+ISNULL(Planned_Effective_Date__c))</errorConditionFormula>
+        <errorMessage>If cost status is Complete, the Planned/Effective Date field must be filled out</errorMessage>
+    </validationRules>
+</CustomObject>

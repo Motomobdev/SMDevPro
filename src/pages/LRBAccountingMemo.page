@@ -1,0 +1,463 @@
+<apex:page standardcontroller="Contract" extensions="LRBInitialDealController" sidebar="false">
+
+<style>
+    .headerStyle{background-color:#787878 !important;color:#787878;}
+</style>
+    
+<body>
+<!-- <table width="1280" align="center" border=".5" cellspacing="0" cellpadding="0"> -->
+<table width="100%" align="center" border=".5" cellspacing="0" cellpadding="0">
+<tr>
+<!-- <td width="1280"> -->
+<td>
+<apex:form >
+    <apex:pageBlock mode="edit">
+    
+    <h1>
+        <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+            <span style="font-size:20px;color:#FFFFFF;align:center;"><strong>LRB INITIAL DEAL REQUEST FORM (Page 5/5)</strong></span>
+        </div>
+    </h1>
+
+      
+    <br />
+    <span style="font-size:12px;font-style:italic;"> Note: After adding/saving a Finance Rule, double-click on the field of the saved record to edit the value, and hit ENTER key (or Click outside) to save the new value</span>
+    <br />   
+    <br />
+
+    <h2>
+        <span style="font-size:20px;color:#000000;align:center;"><strong>Add Finance Rules:</strong></span>
+    </h2>
+    <br />
+    <br />   
+
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:275%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Bundling Discount Royalty Rule</strong></span>
+    </div>
+    <apex:pageBlock id="bundlingDiscountBlock">
+    <apex:pageBlockTable value="{!bundlingDiscount}" var="varbundlingDiscount" >
+        
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!saveBundlingDiscount}" value="Save" reRender="bundlingDiscountBlock, bundlingDiscountListBlock"/>            
+        </apex:column>   
+               
+        <apex:column headerValue="No of Applications">
+            <apex:inputField value="{!bundlingDiscount.No_of_Apps__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount %">
+            <apex:inputField value="{!bundlingDiscount.Discount__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Details">
+            <apex:inputField value="{!bundlingDiscount.Details__c}"/>          
+        </apex:column>         
+    </apex:pageBlockTable>    
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="bundlingDiscountListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!bundlingDiscount}" var="varbundlingDiscount">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapBundlingDiscountList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapBundlingDiscountList}" var="varwrapBundlingDiscountList" rendered="{!(wrapBundlingDiscountList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delBundlingDiscount}" value="Delete" reRender="bundlingDiscountBlock, bundlingDiscountListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapBundlingDiscountList.bundlingDiscountId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>   
+        <apex:column headerValue="No of Applications">
+            <apex:outputField value="{!varwrapBundlingDiscountList.bundlingDiscountList.No_of_Apps__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="Discount %">
+            <apex:outputField value="{!varwrapBundlingDiscountList.bundlingDiscountList.Discount__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="Details">
+            <apex:outputField value="{!varwrapBundlingDiscountList.bundlingDiscountList.Details__c}"/>          
+        </apex:column>              
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:275%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Other Discount Royalty Rule</strong></span>
+    </div>
+    <apex:pageBlock id="otherDiscountBlock">        
+    <apex:pageBlockTable value="{!otherDiscount}" var="varotherDiscount" >
+        
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!saveOtherDiscount}" value="Save" reRender="otherDiscountBlock, otherDiscountListBlock"/>            
+        </apex:column>   
+       
+        <apex:column headerValue="Discount Level">
+            <apex:inputField value="{!varotherDiscount.Discount_Level__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Specify Application If Applicable">
+            <apex:inputField value="{!varotherDiscount.Specify_Application_if_applicable__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount 1 Trigger" title="i.e. On Device Ship">
+            <apex:inputField value="{!varotherDiscount.Discount_1_Trigger__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount Trigger Details" title="i.e. On Device Ship">
+            <apex:inputField value="{!varotherDiscount.Trigger_Details__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount Criteria Type">
+            <apex:inputField value="{!varotherDiscount.Discount_Criteria_Type__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount">
+            <apex:inputField value="{!varotherDiscount.Discount__c}"/>          
+        </apex:column>        
+        <apex:column headerValue="Effective Date">
+            <apex:inputField value="{!varotherDiscount.Effective_Date__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Expiration Date">
+            <apex:inputField value="{!varotherDiscount.Expiration_Date__c}"/>          
+        </apex:column>        
+    </apex:pageBlockTable>    
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="otherDiscountListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!otherDiscount}" var="varotherDiscount">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapOtherDiscountList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapOtherDiscountList}" var="varwrapOtherDiscountList" rendered="{!(wrapOtherDiscountList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delOtherDiscount}" value="Delete" reRender="otherDiscountBlock, otherDiscountListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapOtherDiscountList.otherDiscountId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>   
+        
+        <apex:column headerValue="Discount Level">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Discount_Level__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Specify Application if applicable">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Specify_Application_if_applicable__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount 1 Trigger" title="i.e. On Device Ship">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Discount_1_Trigger__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount Trigger Details" title="If trigger is Other explain it here.">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Trigger_Details__c}"/>          
+        </apex:column>  
+        <apex:column headerValue="Discount Criteria Type">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Discount_Criteria_Type__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Discount">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Discount__c}"/>          
+        </apex:column>             
+        <apex:column headerValue="Effective Date">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Effective_Date__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Expiration Date">
+            <apex:outputField value="{!varwrapOtherDiscountList.otherDiscountList.Expiration_Date__c}"/>          
+        </apex:column>  
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <br /><br />
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:275%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Non Royalty Cost Rule</strong></span>
+    </div>
+    <!-- <apex:outputPanel style="border:1px;">  -->
+   <!-- <div style="background-color:#EEEEEE;border:1px;">  -->
+    <apex:pageBlock id="nonRoyaltyCostRuleBlock" >
+    <apex:pageBlockTable value="{!nonRoyaltyCostRule}" var="varnonRoyaltyCostRule" >
+        
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!saveNonRoyaltyRules}" value="Save" reRender="nonRoyaltyCostRuleBlock, nonRoyaltyCostRuleListBlock"/>            
+        </apex:column>   
+        <apex:column headerValue="Type">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Type__c}" >
+            <apex:actionSupport event="onchange" reRender="nonRoyaltyCostRuleBlock"/>
+            </apex:inputField>
+        </apex:column>
+        <apex:column headerValue="Amount" rendered="{!nonRoyaltyCostRule.Type__c!=null}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Amount__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Charge Department" rendered="{!nonRoyaltyCostRule.Type__c!=null}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Charge_Department__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="Cost Name" rendered="{!nonRoyaltyCostRule.Type__c!=null}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Cost_Name__c}"/>          
+        </apex:column>                
+        <apex:column headerValue="Forecasted Completion Date" rendered="{!nonRoyaltyCostRule.Type__c=='NRE'}" >
+            <apex:inputField value="{!varnonRoyaltyCostRule.Forecasted_Completion_Date__c}" />
+        </apex:column>
+        <apex:column headerValue="Actual Completion Date" rendered="{!nonRoyaltyCostRule.Type__c=='NRE'}" >
+            <apex:inputField value="{!varnonRoyaltyCostRule.Actual_Completion_Date__c}" />
+        </apex:column>
+        <apex:column headerValue="Maintenance Period Start Date" rendered="{!nonRoyaltyCostRule.Type__c=='Maintenance'}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Maintenance_Period_Start__c}" />
+        </apex:column>
+        <apex:column headerValue="Maintenance Period End Date" rendered="{!nonRoyaltyCostRule.Type__c=='Maintenance'}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Maintenance_Period_End__c}" />
+        </apex:column>
+        <apex:column headerValue="Service Period Start Date" rendered="{!nonRoyaltyCostRule.Type__c=='Service'}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Service_Period_Start__c}" />
+        </apex:column>
+        <apex:column headerValue="Service Period End Date" rendered="{!nonRoyaltyCostRule.Type__c=='Service'}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Service_Period_End__c}" />
+        </apex:column>
+        <apex:column headerValue="Payment Due" rendered="{!nonRoyaltyCostRule.Type__c!=null}">
+            <apex:inputField value="{!varnonRoyaltyCostRule.Payment_Due__c}"/>          
+        </apex:column>
+    </apex:pageBlockTable>    
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="nonRoyaltyCostRuleListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!nonRoyaltyCostRule}" var="varnonRoyaltyCostRule">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapNonRoyaltyCostRuleList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapNonRoyaltyCostRuleList}" var="varwrapNonRoyaltyCostRuleList" rendered="{!(wrapNonRoyaltyCostRuleList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delNonRoyaltyCostRule}" value="Delete" reRender="nonRoyaltyCostRuleBlock, nonRoyaltyCostRuleListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapNonRoyaltyCostRuleList.royaltyCostRuleId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>
+
+        <apex:column headerValue="Type">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Type__c}" />
+        </apex:column>
+        <apex:column headerValue="Amount">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Amount__c}"/>          
+        </apex:column>       
+        <apex:column headerValue="Charge Department">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Charge_Department__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="Cost Name">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Cost_Name__c}"/>          
+        </apex:column>                
+        <apex:column headerValue="Forecasted Completion Date">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Forecasted_Completion_Date__c}" />
+        </apex:column>
+        <apex:column headerValue="Actual Completion Date">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Actual_Completion_Date__c}" />
+        </apex:column>
+        <apex:column headerValue="Maintenance Period Start Date">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Maintenance_Period_Start__c}" />
+        </apex:column>
+        <apex:column headerValue="Maintenance Period End Date">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Maintenance_Period_End__c}" />
+        </apex:column>
+        <apex:column headerValue="Payment Due">
+            <apex:outputField value="{!varwrapNonRoyaltyCostRuleList.nonRoyaltyCostRuleList.Payment_Due__c}"/>                      
+        </apex:column>
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:275%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Non Rate Based Prepay/One Time Fee</strong></span>
+    </div>
+    <apex:pageBlock id="licenseFeeBlock">    
+    <apex:pageBlockTable value="{!licenseFee}" var="varlicenseFee" >
+        
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!saveLicenseFee}" value="Save" reRender="licenseFeeBlock, licenseFeeListBlock"/>            
+        </apex:column>   
+        <apex:column headerValue="Payment Trigger">
+            <apex:inputField value="{!varlicenseFee.Payment_Trigger__c}"/>          
+        </apex:column>
+        <apex:column headerValue="License Fee or Prepay Amount">
+            <apex:inputField value="{!varlicenseFee.License_Fee_or_Prepay_Amount__c}"/>          
+        </apex:column>                 
+        <apex:column headerValue="Payment Due">
+            <apex:inputField value="{!varlicenseFee.Payment_Due__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Units">
+            <apex:inputField value="{!varlicenseFee.Units__c}"/>          
+        </apex:column>               
+        <apex:column headerValue="Beginning Period">
+            <apex:inputField value="{!varlicenseFee.Beginning_Period__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Ending Period">
+            <apex:inputField value="{!varlicenseFee.Ending_Period__c}"/>          
+        </apex:column>    
+        <apex:column headerValue="Due After SA?">
+            <apex:inputField value="{!varlicenseFee.Due_After_SA__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Recoverable if Units are not met?">
+            <apex:inputField value="{!varlicenseFee.Recoverable__c}"/>          
+        </apex:column>
+        <apex:column headerValue="P&L Treatment">
+            <apex:inputField value="{!varlicenseFee.P_L_Treatment__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Other/Explination">
+            <apex:inputField value="{!varlicenseFee.Other_Explination__c}"/>          
+        </apex:column>  
+    </apex:pageBlockTable>    
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="licenseFeeListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!licenseFee}" var="varlicenseFee">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapLicenseFeeList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapLicenseFeeList}" var="varwrapLicenseFeeList" rendered="{!(wrapLicenseFeeList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delLicenseFee}" value="Delete" reRender="licenseFeeBlock, licenseFeeListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapLicenseFeeList.licenseFeeId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>   
+        <apex:column headerValue="Payment Trigger">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Payment_Trigger__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="License Fee or Prepay Amount">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.License_Fee_or_Prepay_Amount__c}"/>          
+        </apex:column>                    
+        <apex:column headerValue="Payment Due">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Payment_Due__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Units">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Units__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Beginning Period">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Beginning_Period__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Ending Period">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Ending_Period__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Due After SA?">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Due_After_SA__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Recoverable if Units are not met?">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Recoverable__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="P&L Treatment">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.P_L_Treatment__c}"/>          
+        </apex:column>
+        <apex:column headerValue="Other/Explination">
+            <apex:outputField value="{!varwrapLicenseFeeList.licenseFeeList.Other_Explination__c}"/>          
+        </apex:column>
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <br /><br />  
+    
+    <div style="background-color:#337744;height:30px;border-radius:0px;line-height:275%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:14px;color:#FFFFFF;align:center;"><strong>Non Rate Based Minimum Guarantee</strong></span>
+    </div>
+    <apex:pageBlock id="minGuaranteeBlock">    
+    <apex:pageBlockTable value="{!minGuarantee}" var="varminGuarantee" >
+        
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!saveMinGuarantee}" value="Save" reRender="minGuaranteeBlock, minGuaranteeListBlock"/>            
+        </apex:column>   
+        
+        <apex:column headerValue="Basis(Units or $)">
+            <apex:inputField value="{!varminGuarantee.Basis__c}"/>          
+        </apex:column>     
+        <apex:column headerValue="Amount of Guarantee">
+            <apex:inputField value="{!varminGuarantee.Amount_of_Guarantee__c}"/>          
+        </apex:column>  
+        <apex:column headerValue="From When">
+            <apex:inputField value="{!varminGuarantee.From_When__c}"/>          
+        </apex:column>
+        <apex:column headerValue="To When">
+            <apex:inputField value="{!varminGuarantee.To_When__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="Meeting SA?" title="Will lead Device meet SA Date?">
+            <apex:inputField value="{!varminGuarantee.Meeting_SA__c}"/>          
+        </apex:column>
+        <apex:column headerValue="P&L Treatment">
+            <apex:inputField value="{!varminGuarantee.P_L_Treatment__c}"/>          
+        </apex:column>                                          
+        <apex:column headerValue="Why is a Minimum Guarantee requested?">
+            <apex:inputField value="{!varminGuarantee.Minimum_Guarantee_requested__c}"/>          
+        </apex:column>     
+    </apex:pageBlockTable>    
+    </apex:pageBlock>    
+    
+    <apex:pageBlock id="minGuaranteeListBlock" mode="inlineEdit">
+    <br />
+    <apex:dataTable value="{!minGuarantee}" var="varminGuarantee">
+        <apex:column >
+            <apex:outputText value="No records to display" style="font-style:italic" rendered="{!(wrapMinGuaranteeList.size<=0)}"/>                       
+        </apex:column>   
+    </apex:dataTable>
+    <apex:pageBlockTable value="{!wrapMinGuaranteeList}" var="varwrapMinGuaranteeList" rendered="{!(wrapMinGuaranteeList.size>0)}" >
+        <apex:column style="width:50px">
+            <apex:commandButton action="{!delMinGuarantee}" value="Delete" reRender="minGuaranteeBlock, minGuaranteeListBlock"> 
+                <apex:param name="toDelIdent" value="{!varwrapMinGuaranteeList.minGuaranteeId}" assignTo="{!toDelIdent}"/> 
+            </apex:commandButton>          
+        </apex:column>   
+        
+        <apex:column headerValue="Basis(Units or $)">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.Basis__c}"/>          
+        </apex:column>   
+        <apex:column headerValue="Amount of Guarantee">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.Amount_of_Guarantee__c}"/>          
+        </apex:column>    
+        <apex:column headerValue="From When">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.From_When__c}"/>          
+        </apex:column>
+        <apex:column headerValue="To When">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.To_When__c}"/>          
+        </apex:column>  
+        <apex:column headerValue="Meeting SA?">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.Meeting_SA__c}"/>          
+        </apex:column> 
+        <apex:column headerValue="P&L Treatment">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.P_L_Treatment__c}"/>          
+        </apex:column>                                       
+        <apex:column headerValue="Why is a Minimum Guarantee requested?">
+            <apex:outputField value="{!varwrapMinGuaranteeList.minGuaranteeList.Minimum_Guarantee_requested__c}"/>          
+        </apex:column>
+        <apex:inlineEditSupport event="ondblClick" />
+
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    
+   <!-- </div> -->
+    <!-- </apex:outputPanel> -->
+    
+    <br />
+    <br />
+       
+    <div align="center">
+    <apex:panelGrid columns="4" id="theGrid">
+    	<apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        <apex:commandButton action="{!previousCreateRateTableForSelectedApps1}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />        
+        <apex:commandButton action="{!submit}" value="Save" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+    </apex:panelGrid>
+    <!-- <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:45%;">
+        <apex:column >
+            <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        </apex:column>       
+        <apex:column >
+            <apex:commandButton action="{!previousCreateRateTableForSelectedApps1}" value="Previous" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>
+        <apex:column >
+            <apex:commandButton action="{!submit}" value="Save" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>       
+    </apex:dataTable>
+     -->
+    </div>
+    <br /> 
+    </apex:pageBlock>                    
+</apex:form>
+
+</td>
+</tr>
+</table>
+</body>
+</apex:page>

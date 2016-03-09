@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Prepay Financial Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Prepay Financial Datas</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application1 --></label>
+        <name>Application1__c</name>
+        <relationshipLabel><!-- Contract Prepay Financial Datas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application2 --></label>
+        <name>Application2__c</name>
+        <relationshipLabel><!-- Contract Prepay Financial Datas (Application2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application3 --></label>
+        <name>Application3__c</name>
+        <relationshipLabel><!-- Contract Prepay Financial Datas (Application3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Prepay Financial Datas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of TrueUp Lines --></label>
+        <name>Number_of_TrueUp_Lines__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Amount --></label>
+        <name>PO_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Number --></label>
+        <name>PO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PP Effective From --></label>
+        <name>PP_Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- PP Effective To --></label>
+        <name>PP_Effective_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepay Amount --></label>
+        <name>Prepay_Amount__c</name>
+    </fields>
+    <layouts>
+        <layout>Contract Prepay Financial Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

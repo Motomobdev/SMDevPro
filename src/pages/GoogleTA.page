@@ -1,0 +1,160 @@
+<apex:page sidebar="false" title="Google TA Submission" doctype="html-5.0">
+<!--
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<apex:includescript value="{!URLFOR($Resource.JSZip,'/JSZip/jszip.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.JSZip, '/JSZip/jszip-load.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JSZip, '/JSZip/jszip-deflate.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JSZip, '/JSZip/jszip-inflate.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.GoogleTAJS)}"/>
+<script>
+    
+    var sessionId='{!$Api.Session_ID}';
+    var pageErrors = [];
+    var finished = {!finished};
+    var buildsFinished = {!buildsFinished};
+    
+    var fileCounter = 0;
+    var clickedSearchBox = false;
+    var enteredDevice = {!enteredDevice};
+    var enteredCTSZip = {!enteredCTSZip};
+    var enteredCTSVZip = {!enteredCTSVZip};
+    var enteredGTSZip = {!enteredGTSZip};
+    var GoogleTAID = "{!newGoogleTA.id}";
+    var submissionID = "{!newSubmission.id}";
+    
+    var nonZipFiles = [];
+    var filesLeftToBeUnZipped = [];
+    var xmlfiles = [];
+    var GoogleTACounter = 0;
+    var positionIndex = 0;
+    var attachmentlist = [];
+    var CTSFile = {};
+    var attachmentIds = [];
+    
+    var doneWithFile = false;
+    
+    $(document).ready(function (){
+        
+        if(!enteredDevice) $('input[id$="EnterDevice"]').show();
+        
+        if(buildsFinished && enteredGTSZip && !finished){
+            $('input[type=button]').hide();
+            loadWaitingScreen();
+            $('input[id$="checkWaivedErrors"]').click();
+        }
+        
+        updateFileName("{!filename}");
+        
+        if(!finished){
+            
+            if(enteredDevice && !enteredCTSZip) $('#CTSFile').show();
+            if(enteredCTSZip && !enteredCTSVZip) $('#CTSVFile').show();
+            if(enteredCTSVZip && !enteredGTSZip) $('#GTSFile').show();
+            
+            $('a[id$="DeviceInput_lkwgt"]').click(function(){
+                clickedSearchBox = true;
+            });
+            
+            $('input[id$="DeviceInput"]').change(function(){
+                if(clickedSearchBox){
+                    $('input[id$="EnteredDeviceCheckBox"]').attr('checked',true);
+                    EnterDevice();
+                }
+            });
+            
+            $('input[name="files"]').change(handleFileSelect);
+        }
+        else{
+            $('input[type=button]').hide();
+            $('input[id$="NewSubmission"]').show();
+        }
+    });
+    
+    
+ 
+</script>
+<style>
+    .hidden{
+        display: none;
+    }
+    
+    .loading{
+        background-color: rgba(74, 121, 181, 0.4);
+        border: 1px solid #CCC;
+        border-radius: 15px;
+        position: absolute;
+    }
+    
+    .loading span{
+        color: white;
+        font-size: 2em;
+        padding: 10px;
+        padding-top: 10%;
+    }
+    
+    .loading p{
+        color: white;
+        font-size: 1.4em;
+        padding: 10px;
+    }
+    
+    .loading img{
+        margin-top: 20px;
+    }
+    
+    #PageErrorMessages{
+        display: none;
+        border: 1px solid #999;
+        border-radius: 5px;
+        padding: .5em;
+    }
+    
+    #PageErrorMessages table{
+        border: 0;
+        color: red;
+    }
+    
+    #PageErrorMessages table td{
+        color: red;
+    }
+    
+    
+</style>
+    <div id="loading" class="hidden"><span>Loading ...</span><br/><br/><br/><p id="LoadingStatus"></p><br/><progress id="loadingProgress" class="hidden"></progress><span id="fileNameLoading" class="hidden"></span><br/><br/><img src="{!URLFOR($Resource.Large_White_Spinner)}" width="200" height="200"/></div>
+    <div></div>
+    <apex:messages />
+    <apex:form >
+        <apex:inputText value="{!filename}" id="inputFilename" styleClass="hidden"/>
+        <apex:inputText value="{!errorMessage}" id="PageErrorMessages" styleClass="hidden"/>
+        <apex:pageBlock title="New Submission">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Refresh" action="{!addErrors}" id="addErrors" styleClass="hidden"/>
+                <apex:commandButton value="Refresh" action="{!checkBuildsAreEqual}" id="PageRefresh" styleClass="hidden"/>
+                <apex:commandButton value="Check Waived Errors" action="{!checkWaivedErrors}" id="checkWaivedErrors" styleClass="hidden"/>
+                <apex:commandButton value="EnterDevice" action="{!EnterDevice}" id="EnterDevice" styleClass="hidden"/>
+                <apex:commandButton value="New Submission" action="{!newSubmission}" styleClass="hidden" id="NewSubmission"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Pick a Device">
+                <apex:inputField value="{!newGoogleTA.Device__c}" rendered="{!(!enteredDevice)}" id="DeviceInput"/>
+                <apex:outputField value="{!newGoogleTA.Device__c}" rendered="{!enteredDevice}"/>
+                <apex:inputCheckbox value="{!enteredDevice}" styleClass="hidden" id="EnteredDeviceCheckBox"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Upload CTS file" rendered="{!enteredDevice}">
+                <input type="file" id="CTSFile" name="files" class="hidden btn"/>
+                <apex:outputText value="CTS.Zip" rendered="{!enteredCTSZip}" id="CTSFileName"/>
+                <apex:inputCheckbox value="{!enteredCTSZip}" styleClass="hidden" id="EnteredCTSZipCheckBox"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Upload CTS Verify file"  rendered="{!enteredCTSZip}">
+                <input type="file" id="CTSVFile" name="files" class="hidden btn"/>
+                <apex:outputText value="CTS.Zip" rendered="{!enteredCTSVZip}" id="CTSVFileName"/>
+                <apex:inputCheckbox value="{!enteredCTSVZip}" styleClass="hidden" id="EnteredCTSVZipCheckBox"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Upload GTS file"  rendered="{!enteredCTSVZip}">
+                <input type="file" id="GTSFile" name="files" class="hidden btn"/>
+                <apex:outputText value="CTS.Zip" rendered="{!enteredGTSZip}" id="GTSFileName"/>
+                <apex:inputCheckbox value="{!enteredGTSZip}" styleClass="hidden" id="EnteredGTSZipCheckBox"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+-->
+</apex:page>

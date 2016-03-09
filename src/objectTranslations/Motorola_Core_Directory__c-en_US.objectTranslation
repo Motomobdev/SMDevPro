@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Motorola Core Directory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Motorola Core Directory</value>
+    </caseValues>
+    <fields>
+        <label><!-- Commerce ID --></label>
+        <name>Commerce_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractor Company --></label>
+        <name>ContractorCompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractor ID --></label>
+        <name>ContractorID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core ID --></label>
+        <name>CoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <help><!-- A = Active: Actively employed employee or contractor
+D = Deleted: No longer an active employee or contractor --></help>
+        <label><!-- Directory Status --></label>
+        <name>DirectoryStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- E = Employee
+N = Contractor --></help>
+        <label><!-- Directory Type --></label>
+        <name>DirectoryType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display First Name --></label>
+        <name>DisplayFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Last Name --></label>
+        <name>DisplayLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Type --></label>
+        <name>EmployeeType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Brazil Spend --></label>
+        <name>Expected_Brazil_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friendly Email Address --></label>
+        <name>FriendlyEmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Given Name --></label>
+        <name>GivenName__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Status --></label>
+        <name>HRStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Management --></label>
+        <name>IsMgmt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Senior Management --></label>
+        <name>IsSeniorMgmt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_First - CoreID --></label>
+        <name>Last_First_CoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Google Apps ID --></help>
+        <label><!-- MMID --></label>
+        <name>MMID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mail --></label>
+        <name>Mail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Core ID --></label>
+        <name>Manager_Core_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Phone --></label>
+        <name>MobilePhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nick Name --></label>
+        <name>NickName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 1 Mgr CoreID --></label>
+        <name>OrgLevel1MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 1 Mgr Full Name --></label>
+        <name>OrgLevel1MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 1 --></label>
+        <name>OrgLevel1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 2 Mgr CoreID --></label>
+        <name>OrgLevel2MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 2 Mgr Full Name --></label>
+        <name>OrgLevel2MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 2 --></label>
+        <name>OrgLevel2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 3 Mgr CoreID --></label>
+        <name>OrgLevel3MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 3 Mgr Full Name --></label>
+        <name>OrgLevel3MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 3 --></label>
+        <name>OrgLevel3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 4 Mgr CoreID --></label>
+        <name>OrgLevel4MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 4 Mgr Full Name --></label>
+        <name>OrgLevel4MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 4 --></label>
+        <name>OrgLevel4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 5 Mgr CoreID --></label>
+        <name>OrgLevel5MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 5 Mgr Full Name --></label>
+        <name>OrgLevel5MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 5 --></label>
+        <name>OrgLevel5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 6 Mgr CoreID --></label>
+        <name>OrgLevel6MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 6 Mgr Full Name --></label>
+        <name>OrgLevel6MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 7 Mgr CoreID --></label>
+        <name>OrgLevel7MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 7 Mgr Full Name --></label>
+        <name>OrgLevel7MgrFullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 8 Mgr CoreID --></label>
+        <name>OrgLevel8MgrCoreID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Level 8 Mgr Full Name --></label>
+        <name>OrgLevel8MgrFullName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Depth within the company reporting structure, Org Level 1 = CEO --></help>
+        <label><!-- Org Level --></label>
+        <name>OrgLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLT +1 --></label>
+        <name>SLT_1__c</name>
+        <relationshipLabel><!-- Motorola Core Directory --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Commerce ID --></label>
+        <name>SupervisorCommerceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Surname --></label>
+        <name>SurName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone --></label>
+        <name>WorkPhone__c</name>
+    </fields>
+    <fields>
+        <help><!-- A member of org level 1, 2 or 3, Org Level 1= CEO. --></help>
+        <label><!-- isSLTPlus1 --></label>
+        <name>isSLTPlus1__c</name>
+    </fields>
+    <fields>
+        <help><!-- A member of org level 1 or 2, Org Level 1= CEO. --></help>
+        <label><!-- isSLT --></label>
+        <name>isSLT__c</name>
+    </fields>
+    <layouts>
+        <layout>Motorola Core Directory Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

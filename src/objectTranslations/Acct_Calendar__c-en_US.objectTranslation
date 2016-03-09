@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Acct Calendar</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Acct Calendars</value>
+    </caseValues>
+    <fields>
+        <label><!-- ClosedFlag --></label>
+        <name>ClosedFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateClosed --></label>
+        <name>DateClosed__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndDate --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PeriodName --></label>
+        <name>PeriodName__c</name>
+    </fields>
+    <fields>
+        <label><!-- PeriodNumber --></label>
+        <name>PeriodNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PeriodYear --></label>
+        <name>PeriodYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuarterEndDate --></label>
+        <name>QuarterEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuarterName --></label>
+        <name>QuarterName__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuarterStartDate --></label>
+        <name>QuarterStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartDate --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- YearStartDate --></label>
+        <name>YearStartDate__c</name>
+    </fields>
+    <layouts>
+        <layout>Acct Calendar Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

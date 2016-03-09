@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD GMT ProductDetails</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD GMT ProductDetails</value>
+    </caseValues>
+    <fields>
+        <label><!-- APC Code --></label>
+        <name>APC_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- APC description --></label>
+        <name>APC_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distinct Sales Model --></label>
+        <name>Distinct_Sales_Model__c</name>
+        <relationshipLabel><!-- CD GMT ProductDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GTM Assumptions --></label>
+        <name>GTM_Assumptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Date --></label>
+        <name>Launch_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCPU Calulation Based on --></label>
+        <name>MCPU_Calulation_Based_on__c</name>
+        <picklistValues>
+            <masterLabel>BOM</masterLabel>
+            <translation><!-- BOM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OVERRIDE</masterLabel>
+            <translation><!-- OVERRIDE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Organization Code --></label>
+        <name>Organization_Code__c</name>
+        <relationshipLabel><!-- CD GMT ProductDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SalesModel_IOD_Out --></label>
+        <name>SalesModel_IOD_Out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Model --></label>
+        <name>Sales_Model__c</name>
+        <relationshipLabel><!-- CD GMT ProductDetails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unique Identifier --></label>
+        <name>Unique_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Product Name --></label>
+        <name>Unique_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- XCVR --></label>
+        <name>XCVR__c</name>
+    </fields>
+    <layouts>
+        <layout>CD GMT ProductDetails Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Product already exists with the given Name.Please choose another Name. --></errorMessage>
+        <name>Unique_Name_Field</name>
+    </validationRules>
+</CustomObjectTranslation>

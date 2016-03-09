@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;div&gt;&lt;i style=&quot;color: rgb(0, 0, 153); font-family: Arial, sans-serif; font-size: medium;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;font-family: Arial, sans-serif; font-size: medium;&quot;&gt;&lt;font color=&quot;#000099&quot;&gt;This web resource 
+contains Motorola Mobility Confidential Restricted Information. It is highly 
+sensitive and extremely confidential. As a Motorola Mobility employee with 
+access rights to this resource, I agree, at all times not to divulge any of the 
+information contained herein and to comply in every respect with Motorola 
+Mobility policies regarding the handling of this information (Stoplight Policy) 
+and all Motorola Mobility confidential information policies (including 
+iProtect). Any divulgation of the material contained in this web resource will 
+be deemed to be a serious breach of Motorola Mobility iProtect policies and 
+other applicable procedures, and shall be deemed to be an act of gross 
+misconduct and may lead to a termination of my employment with Motorola 
+Mobility, in addition to any other remedies that Motorola Mobility may be 
+entitled to enforce by Law.&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;font size=&quot;3&quot; face=&quot;Arial, sans-serif&quot;&gt;&lt;i&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; color=&quot;#ff0000&quot; face=&quot;Arial, sans-serif&quot;&gt;&lt;i&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;By logging in, I accept this obligation.&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

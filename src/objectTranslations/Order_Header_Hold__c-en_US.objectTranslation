@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Header Hold</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Header Holds</value>
+    </caseValues>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>Activity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Comment --></label>
+        <name>Hold_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Created By Details --></label>
+        <name>Hold_Created_By_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Created By --></label>
+        <name>Hold_Created_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Creation Date --></label>
+        <name>Hold_Creation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Description --></label>
+        <name>Hold_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Header --></label>
+        <name>Order_Header__c</name>
+        <relationshipLabel><!-- Order Header Holds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release Comment --></label>
+        <name>Release_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Reason Code --></label>
+        <name>Release_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Released By Details --></label>
+        <name>Released_By_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Released By --></label>
+        <name>Released_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Released Date --></label>
+        <name>Released_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Released? --></label>
+        <name>Released_Flag__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Header Hold Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Release Section --></label>
+            <section>Release Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

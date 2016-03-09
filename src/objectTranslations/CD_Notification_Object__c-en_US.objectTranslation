@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD_Notification_Object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD_Notifications_Object</value>
+    </caseValues>
+    <fields>
+        <label><!-- CD Item Cost Details --></label>
+        <name>CD_Item_Cost_Details__c</name>
+        <relationshipLabel><!-- CD_Notifications_Object --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Items --></label>
+        <name>CD_Items__c</name>
+        <relationshipLabel><!-- CD_Notifications_Object --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Escalation_Receiver --></label>
+        <name>Escalation_Receiver__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Escalation Date --></label>
+        <name>First_Escalation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Escalation Status --></label>
+        <name>First_Escalation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Remainder Date --></label>
+        <name>First_Remainder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Remainder Status --></label>
+        <name>First_Remainder_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Remainder_Receiver --></label>
+        <name>Remainder_Receiver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Escalation Date --></label>
+        <name>Second_Escalation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Escalation Status --></label>
+        <name>Second_Escalation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Second Remainder Date --></label>
+        <name>Second_Remainder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Remainder Status --></label>
+        <name>Second_Remainder_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Master --></label>
+        <name>Master</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

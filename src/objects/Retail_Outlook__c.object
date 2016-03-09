@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Business_Ops_View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/apex/gblite__Grid?gname=Retail Business Ops Lines&amp;fpf=Retail_Outlook__c&amp;fpv=&quot; &amp; Id&amp; &quot;&amp;sh=1&amp;ssb=0&amp;sbb=0&quot;, &quot;Business Ops&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Business Ops View</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outlook_Locked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Outlook Locked?</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Forecast__c</fullName>
+        <externalId>false</externalId>
+        <label>Retail Forecast</label>
+        <referenceTo>Retail_Forecast__c</referenceTo>
+        <relationshipLabel>Retail Outlooks</relationshipLabel>
+        <relationshipName>Retail_Outlooks</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Week_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Week Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Week_Start_Date__c</fullName>
+        <description>Used for identifying week number from the the beginning of the year</description>
+        <externalId>false</externalId>
+        <label>Week Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Mobility Outlook</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Business_Ops_View__c</columns>
+        <columns>Week_Number__c</columns>
+        <columns>Retail_Forecast__c</columns>
+        <columns>Week_Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Retail Outlook Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Mobility Outlooks</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Business_Ops_View__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Week_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retail_Forecast__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Create_Next_Week_Outlook</fullName>
+        <availability>online</availability>
+        <description>a hidden parameter named today with mm/dd/yyyy can be used to create outlook for the past or future weeks.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Next Week Outlook</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/Retail_Outlook?forecastId={!Retail_Forecast__c.Id}&amp;forecastName={!HTMLENCODE( Retail_Forecast__c.Name )}&amp;forecastYear={!Retail_Forecast__c.Forecast_Year__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Next_Week_Outlook_R_and_O_and_Units_Cloned</fullName>
+        <availability>online</availability>
+        <description>Copies current week&apos;s Risk and Opportunity (R&amp;O) as well as Units data into the next weeks&apos;s outlook</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Next Week Outlook R&amp;O and Units Cloned</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/Retail_Outlook?forecastId={!Retail_Forecast__c.Id}&amp;forecastName={!HTMLENCODE(Retail_Forecast__c.Name)}&amp;forecastYear={!Retail_Forecast__c.Forecast_Year__c}&amp;copyRNO=true&amp;copyUnits=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Next_Week_Outlook_R_and_O_cloned</fullName>
+        <availability>online</availability>
+        <description>Copies current week&apos;s Risk and Opportunity (R&amp;O) data in to the next weeks&apos;s outlook</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Next Week Outlook R and O cloned</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/Retail_Outlook?forecastId={!Retail_Forecast__c.Id}&amp;forecastName={!HTMLENCODE( Retail_Forecast__c.Name )}&amp;forecastYear={!Retail_Forecast__c.Forecast_Year__c}&amp;copyRNO=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Retail_Biz_Ops_View</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Retail Biz Ops View</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/gblite__Grid?gname=Retail Business Ops Lines&amp;fpf=Retail_Outlook__c&amp;fpv={!Retail_Outlook__c.Id}&amp;sh=1&amp;ssb=0&amp;sbb=0</url>
+    </webLinks>
+</CustomObject>

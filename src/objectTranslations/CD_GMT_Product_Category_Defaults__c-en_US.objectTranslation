@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD GMT Product Category Defaults</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD GMT Product Category Defaults</value>
+    </caseValues>
+    <fields>
+        <label><!-- CD GMT Category --></label>
+        <name>CD_GMT_Category__c</name>
+        <relationshipLabel><!-- CD GMT Product Category Defaults --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD GM SubCategory1 --></label>
+        <name>CD_GM_SubCategory1__c</name>
+        <relationshipLabel><!-- CD GMT Product Category Defaults --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD_GM SubCategory2 --></label>
+        <name>CD_GM_SubCategory2__c</name>
+        <relationshipLabel><!-- CD GMT Product Category Defaults --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD_GM SubCategory3 --></label>
+        <name>CD_GM_SubCategory3__c</name>
+        <relationshipLabel><!-- CD GMT Product Category Defaults --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>CD GMT Product Category Defaults Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

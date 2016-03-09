@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Spend Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Spend Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Spend --></label>
+        <name>Actual_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Vendor --></label>
+        <name>Alternate_Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Notes --></label>
+        <name>BT_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Being Approved --></label>
+        <name>Being_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brazil Category --></label>
+        <name>Brazil_Category__c</name>
+        <picklistValues>
+            <masterLabel>Cloud Development</masterLabel>
+            <translation><!-- Cloud Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device Development</masterLabel>
+            <translation><!-- Device Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA &amp; Tools</masterLabel>
+            <translation><!-- QA &amp; Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Researching</masterLabel>
+            <translation><!-- Researching --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitively Bid? --></label>
+        <name>Competitively_Bid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract # --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Type --></label>
+        <name>Engagement_Type__c</name>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test</masterLabel>
+            <translation><!-- Test --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Spend (ANNUAL) --></label>
+        <name>Estimated_Spend_ANNUAL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Spend --></label>
+        <name>Estimated_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- FTE Adjustment Reason --></label>
+        <name>FTE_Adjustment_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any adjusted Savings, please update here. --></help>
+        <label><!-- FTE Adjustment --></label>
+        <name>FTE_Adjustment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this SSR and the Contractor(s) associated with it a candidate to become an FTE? --></help>
+        <label><!-- FTE Candidate? --></label>
+        <name>FTE_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- FTE Conversation Cost Savings (ANNUAL) --></label>
+        <name>FTE_Conversation_Cost_Savings__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Annual blended cost of an FTE based on Location and Type. --></help>
+        <label><!-- FTE Cost (Fully Loaded - ANNUAL) --></label>
+        <name>FTE_Cost_Fully_Loaded__c</name>
+    </fields>
+    <fields>
+        <label><!-- FTE Justification --></label>
+        <name>FTE_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- FTE Location --></label>
+        <name>FTE_Location__c</name>
+        <picklistValues>
+            <masterLabel>Brazil - CESAR</masterLabel>
+            <translation><!-- Brazil - CESAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - CIN</masterLabel>
+            <translation><!-- Brazil - CIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - El Dorado</masterLabel>
+            <translation><!-- Brazil - El Dorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - Venturus</masterLabel>
+            <translation><!-- Brazil - Venturus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China - Beijing</masterLabel>
+            <translation><!-- China - Beijing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China - Nanjing</masterLabel>
+            <translation><!-- China - Nanjing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US - Mart</masterLabel>
+            <translation><!-- US - Mart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US - SV</masterLabel>
+            <translation><!-- US - SV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FTE Type --></label>
+        <name>FTE_Type__c</name>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test</masterLabel>
+            <translation><!-- Test --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FY2015 FTE Cost (TOTAL) --></label>
+        <name>FY2015_FTE_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>C.E.S.A.R.</masterLabel>
+            <translation><!-- C.E.S.A.R. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA-101</masterLabel>
+            <translation><!-- CA-101 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIn - UFPE</masterLabel>
+            <translation><!-- CIn - UFPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Dorado</masterLabel>
+            <translation><!-- El Dorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL-312</masterLabel>
+            <translation><!-- IL-312 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL-93</masterLabel>
+            <translation><!-- IL-93 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Jag,</masterLabel>
+            <translation><!-- Motorola Jag, --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ONT-88</masterLabel>
+            <translation><!-- ONT-88 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZBR-01</masterLabel>
+            <translation><!-- ZBR-01 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZBR-05</masterLabel>
+            <translation><!-- ZBR-05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZCH68</masterLabel>
+            <translation><!-- ZCH68 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZIN-63</masterLabel>
+            <translation><!-- ZIN-63 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZUK-40</masterLabel>
+            <translation><!-- ZUK-40 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MMID Email --></label>
+        <name>MMID_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDA --></label>
+        <name>NDA__c</name>
+        <relationshipLabel><!-- SW Spend Requests (NDA) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Needs Information Details --></label>
+        <name>Needs_Information_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- New or Existing Engagement? --></label>
+        <name>New_or_Existing_Engagement__c</name>
+        <picklistValues>
+            <masterLabel>Existing</masterLabel>
+            <translation><!-- Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PO # --></label>
+        <name>PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR # --></label>
+        <name>PR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent SSR End Date --></label>
+        <name>Parent_SSR_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent SSR Start Date --></label>
+        <name>Parent_SSR_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent SW Spend Request --></label>
+        <name>Parent_SW_Spend_Request__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>Payment_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many FTEs will be converted from this SSR? --></help>
+        <label><!-- Planned FTE Conversions --></label>
+        <name>Planned_FTE_Conversions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned FTE Start Date --></label>
+        <name>Planned_FTE_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Vendor --></label>
+        <name>Preferred_Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>Requester__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SLT +1 --></label>
+        <name>SLT_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLT +2 --></label>
+        <name>SLT_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOW Document Attached --></label>
+        <name>SOW_Document_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOW Status --></label>
+        <name>SOW_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOW --></label>
+        <name>SOW__c</name>
+        <relationshipLabel><!-- SW Spend Requests (SOW) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SOW # --></label>
+        <name>SOW_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSR_No --></label>
+        <name>SSR_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSR Status --></label>
+        <name>SSR_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Queue</masterLabel>
+            <translation><!-- Approval Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Early Termination</masterLabel>
+            <translation><!-- Early Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Approved</masterLabel>
+            <translation><!-- Fully Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Information</masterLabel>
+            <translation><!-- Needs Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO In Process</masterLabel>
+            <translation><!-- PO In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW SLT Approved</masterLabel>
+            <translation><!-- SW SLT Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signature Queue</masterLabel>
+            <translation><!-- Signature Queue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Exp/Rel Type --></label>
+        <name>SW_Exp_Rel_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the SSR is related to a SW Experience/Release, please select --></help>
+        <label><!-- SW Experiences and Releases --></label>
+        <name>SW_Experiences_and_Releases__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SW Program Manager --></label>
+        <name>SW_Program_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project Lead Email --></label>
+        <name>SW_Project_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project Lead Phone --></label>
+        <name>SW_Project_Lead_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project Type --></label>
+        <name>SW_Project_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the SSR is related to a SW Project, please select --></help>
+        <label><!-- SW Project --></label>
+        <name>SW_Project__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Spend Breakdown --></label>
+        <name>Spend_Breakdown__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend Location --></label>
+        <name>Spend_Location__c</name>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK</masterLabel>
+            <translation><!-- UK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US</masterLabel>
+            <translation><!-- US --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Spend Type --></label>
+        <name>Spend_Type__c</name>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget</masterLabel>
+            <translation><!-- Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW</masterLabel>
+            <translation><!-- SW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination Candidate</masterLabel>
+            <translation><!-- Termination Candidate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Annual blended FTE Costs by Location and Type multiplied by the total # of FTEs. --></help>
+        <label><!-- TOTAL FTE Cost (Fully Loaded - ANNUAL) --></label>
+        <name>TOTAL_FTE_Cost_Fully_Loaded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+        <picklistValues>
+            <masterLabel>CXD</masterLabel>
+            <translation><!-- CXD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Test</masterLabel>
+            <translation><!-- Global Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging</masterLabel>
+            <translation><!-- Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Integration</masterLabel>
+            <translation><!-- Product Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW Service</masterLabel>
+            <translation><!-- SW Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain &amp; Service Solutions</masterLabel>
+            <translation><!-- Supply Chain &amp; Service Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tools</masterLabel>
+            <translation><!-- Tools --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- SW Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current Quarter Status --></label>
+        <name>current_quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Contractors --></label>
+        <name>of_Contractors__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of FTE --></label>
+        <name>of_FTE__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Resources (Total) --></label>
+        <name>of_Resources_Total__c</name>
+    </fields>
+    <layouts>
+        <layout>Brazil SSR View</layout>
+        <sections>
+            <label><!-- Brazil Information --></label>
+            <section>Brazil Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Costs --></label>
+            <section>Budget Costs</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Date and Amount Data --></label>
+            <section>Date and Amount Data</section>
+        </sections>
+        <sections>
+            <label><!-- FTE Conversion --></label>
+            <section>FTE Conversion</section>
+        </sections>
+        <sections>
+            <label><!-- FTE Conversion Data --></label>
+            <section>FTE Conversion Data</section>
+        </sections>
+        <sections>
+            <label><!-- Parent SSR Info --></label>
+            <section>Parent SSR Info</section>
+        </sections>
+        <sections>
+            <label><!-- Payment and Contract Information --></label>
+            <section>Payment and Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- SOW Template Data --></label>
+            <section>SOW Template Data</section>
+        </sections>
+        <sections>
+            <label><!-- SW Project Data --></label>
+            <section>SW Project Data</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Erica&apos;s view</layout>
+        <sections>
+            <label><!-- Budget Data --></label>
+            <section>Budget Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Date and Amount Data --></label>
+            <section>Date and Amount Data</section>
+        </sections>
+        <sections>
+            <label><!-- FTE Conversion Data --></label>
+            <section>FTE Conversion Data</section>
+        </sections>
+        <sections>
+            <label><!-- FTE Just --></label>
+            <section>FTE Just</section>
+        </sections>
+        <sections>
+            <label><!-- Parent SSR Info --></label>
+            <section>Parent SSR Info</section>
+        </sections>
+        <sections>
+            <label><!-- Payment and Contract Information --></label>
+            <section>Payment and Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- SOW Template Data --></label>
+            <section>SOW Template Data</section>
+        </sections>
+        <sections>
+            <label><!-- SW Project/Experience Data --></label>
+            <section>SW Project/Experience Data</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Spend Layout</layout>
+        <sections>
+            <label><!-- Contact Leads --></label>
+            <section>Contact Leads</section>
+        </sections>
+        <sections>
+            <label><!-- Contracts &amp; Exec Details --></label>
+            <section>Contracts &amp; Exec Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Date &amp; Amount Details --></label>
+            <section>Date &amp; Amount Details</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Information --></label>
+            <section>Payment Information</section>
+        </sections>
+        <sections>
+            <label><!-- SSR Location Details --></label>
+            <section>SSR Location Details</section>
+        </sections>
+        <sections>
+            <label><!-- SW Project Details --></label>
+            <section>SW Project Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- SW --></label>
+        <name>SW</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter the details of what information is needed for this Spend Request --></errorMessage>
+        <name>PROJECT_SPEND_NEEDS_INFORMATION</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- FTE_Costs_Table --></label>
+        <name>FTE_Costs_Table</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- FTE_Costs_Table1 --></label>
+        <name>FTE_Costs_Table1</name>
+    </webLinks>
+</CustomObjectTranslation>

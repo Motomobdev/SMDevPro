@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD Item Categories</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD Item Categories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Commodity Code IOD IN --></label>
+        <name>Commodity_Code_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commodity Code --></label>
+        <name>Commodity_Code__c</name>
+        <relationshipLabel><!-- CD Item Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Item Category ID --></label>
+        <name>Item_Category_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number IOC --></label>
+        <name>Item_Number_IOC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number IOD IN --></label>
+        <name>Item_Number_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number__c</name>
+        <relationshipLabel><!-- CD Item Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Item Status --></label>
+        <name>Item_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Type --></label>
+        <name>Item_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Make Buy Flag --></label>
+        <name>Make_Buy_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Code IOD IN --></label>
+        <name>Organization_Code_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Code --></label>
+        <name>Organization_Code__c</name>
+        <relationshipLabel><!-- CD Item Categories --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

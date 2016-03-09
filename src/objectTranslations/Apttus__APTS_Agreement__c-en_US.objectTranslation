@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Deal</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Status --></label>
+            <section>Agreement Status</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Supply Chain with Executive Summary - 05292012</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Level 1 Approvers --></label>
+            <section>Level 1 Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Level 2 &amp; Above Approvers --></label>
+            <section>Level 2 &amp; Above Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Supply Chain with Executive Summary - 05292012 - OLD</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Countries --></label>
+            <section>Agreement Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Exclusivity --></label>
+            <section>Exclusivity</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Level 1 Approvers --></label>
+            <section>Level 1 Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Level 2 &amp; Above Approvers --></label>
+            <section>Level 2 &amp; Above Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Progress --></label>
+            <section>Progress</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Direct Supply Chain with Executive Summary - ADMIN</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Level 1 Approvers --></label>
+            <section>Level 1 Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Level 2 &amp; Above Approvers --></label>
+            <section>Level 2 &amp; Above Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GTM 20121203</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary - Summary of Other Key Terms --></label>
+            <section>Executive Summary - Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+        <sections>
+            <label><!-- Specific Contract Terms --></label>
+            <section>Specific Contract Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GTM 20121203 ADMIN</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary - Summary of Other Key Terms --></label>
+            <section>Executive Summary - Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+        <sections>
+            <label><!-- Specific Contract Terms --></label>
+            <section>Specific Contract Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GTM 20121203 OLD</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Countries --></label>
+            <section>Agreement Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Exclusivity --></label>
+            <section>Exclusivity</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary - Summary of Other Key Terms --></label>
+            <section>Executive Summary - Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+        <sections>
+            <label><!-- Specific Contract Terms --></label>
+            <section>Specific Contract Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Global with Approvals - 05222012</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Countries --></label>
+            <section>Agreement Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Specific Approvers --></label>
+            <section>Deal Specific Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Exclusivity --></label>
+            <section>Exclusivity</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Contract Terms --></label>
+            <section>Summary of Contract Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Supply Chain with Executive Summary - 05292012</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Approvers --></label>
+            <section>Deal Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Other Key Terms --></label>
+            <section>Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Supply Chain with Executive Summary - 05292012 - OLD</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Countries --></label>
+            <section>Agreement Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Approvers --></label>
+            <section>Deal Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Exclusivity --></label>
+            <section>Exclusivity</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Other Key Terms --></label>
+            <section>Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Indirect Supply Chain with Executive Summary - 05292012 ADMIN</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Approvers --></label>
+            <section>Deal Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Software Terms --></label>
+            <section>Software Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Other Key Terms --></label>
+            <section>Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Tax and Legal Holds --></label>
+            <section>Tax and Legal Holds</section>
+        </sections>
+        <sections>
+            <label><!-- Term &amp; Renewals --></label>
+            <section>Term &amp; Renewals</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Marketing</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Automatically Filled In --></label>
+            <section>Automatically Filled In</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Dates --></label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Other Key Terms --></label>
+            <section>Summary of Other Key Terms</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Marketing - OLD</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Countries --></label>
+            <section>Agreement Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Automatically Filled In --></label>
+            <section>Automatically Filled In</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>REWS 05312013</layout>
+        <sections>
+            <label><!-- Action --></label>
+            <section>Action</section>
+        </sections>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Risks --></label>
+            <section>Contract Risks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deal Info --></label>
+            <section>Deal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary --></label>
+            <section>Executive Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Executive Summary - Summary of Other Key Terms --></label>
+            <section>Executive Summary - Summary of Other Key Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Related Docs and System Status --></label>
+            <section>Related Docs and System Status</section>
+        </sections>
+        <sections>
+            <label><!-- Special Approval Info - Ad Hoc --></label>
+            <section>Special Approval Info - Ad Hoc</section>
+        </sections>
+        <sections>
+            <label><!-- Termination and Record Retention --></label>
+            <section>Termination and Record Retention</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

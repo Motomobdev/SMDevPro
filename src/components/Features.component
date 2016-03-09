@@ -1,0 +1,9 @@
+<apex:component controller="FeatureInProgressEmail" access="global">
+	<apex:attribute name="featureRelease" description="Feature Release."  type="ID" required="required" assignTo="{!featureReleaseId}"/>
+	<apex:repeat value="{!features}" var="feature">
+		Feature: <apex:outputLink value="/{!feature.id}">{!feature.name}</apex:outputLink><br/>
+		Assigned To: <apex:outputField value="{!feature.Assigned_To__c}"/><br/>
+		Implementation Status: <apex:outputField value="{!feature.Implementation_Status__c}"/><br/>
+		<br/><br/>
+	</apex:repeat>
+</apex:component>

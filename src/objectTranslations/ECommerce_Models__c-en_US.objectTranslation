@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ECommerce Models</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ECommerce Models</value>
+    </caseValues>
+    <fields>
+        <label><!-- Warehouse Code --></label>
+        <name>ATTRIBUTE10__c</name>
+        <picklistValues>
+            <masterLabel>CN3</masterLabel>
+            <translation><!-- CN3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE3</masterLabel>
+            <translation><!-- IE3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US2</masterLabel>
+            <translation><!-- US2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Category 3 --></label>
+        <name>ATTRIBUTE11__c</name>
+        <picklistValues>
+            <masterLabel>AC Charger</masterLabel>
+            <translation><!-- AC Charger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antiglare</masterLabel>
+            <translation><!-- Antiglare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authentication</masterLabel>
+            <translation><!-- Authentication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation><!-- Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Band</masterLabel>
+            <translation><!-- Band --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bumper</masterLabel>
+            <translation><!-- Bumper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cable</masterLabel>
+            <translation><!-- Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canvas</masterLabel>
+            <translation><!-- Canvas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clear</masterLabel>
+            <translation><!-- Clear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cut and Sew</masterLabel>
+            <translation><!-- Cut and Sew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Folio</masterLabel>
+            <translation><!-- Folio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grip</masterLabel>
+            <translation><!-- Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Headphones</masterLabel>
+            <translation><!-- Headphones --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leather</masterLabel>
+            <translation><!-- Leather --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Memory</masterLabel>
+            <translation><!-- Memory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metal</masterLabel>
+            <translation><!-- Metal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mono</masterLabel>
+            <translation><!-- Mono --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic</masterLabel>
+            <translation><!-- Plastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic TPU</masterLabel>
+            <translation><!-- Plastic TPU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portable</masterLabel>
+            <translation><!-- Portable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Pack</masterLabel>
+            <translation><!-- Power Pack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protective</masterLabel>
+            <translation><!-- Protective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rubber</masterLabel>
+            <translation><!-- Rubber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shell</masterLabel>
+            <translation><!-- Shell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shock</masterLabel>
+            <translation><!-- Shock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speakers</masterLabel>
+            <translation><!-- Speakers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPU</masterLabel>
+            <translation><!-- TPU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turbo</masterLabel>
+            <translation><!-- Turbo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waterproof</masterLabel>
+            <translation><!-- Waterproof --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used for service assurance dashboard --></help>
+        <label><!-- Phone Carrier Code 2 --></label>
+        <name>ATTRIBUTE1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Type --></label>
+        <name>ATTRIBUTE2__c</name>
+        <picklistValues>
+            <masterLabel>ACCY</masterLabel>
+            <translation><!-- ACCY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATO</masterLabel>
+            <translation><!-- ATO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEV</masterLabel>
+            <translation><!-- DEV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESP</masterLabel>
+            <translation><!-- ESP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPTION</masterLabel>
+            <translation><!-- OPTION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STD</masterLabel>
+            <translation><!-- STD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Friendly Name --></label>
+        <name>ATTRIBUTE3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Version --></label>
+        <name>ATTRIBUTE4__c</name>
+        <picklistValues>
+            <masterLabel>Global GSM</masterLabel>
+            <translation><!-- Global GSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US GSM</masterLabel>
+            <translation><!-- US GSM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Accessory Handset Compatibility --></label>
+        <name>ATTRIBUTE5__c</name>
+        <picklistValues>
+            <masterLabel>Droid</masterLabel>
+            <translation><!-- Droid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Maxx</masterLabel>
+            <translation><!-- Droid Maxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Mini</masterLabel>
+            <translation><!-- Droid Mini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Turbo</masterLabel>
+            <translation><!-- Droid Turbo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Ultra</masterLabel>
+            <translation><!-- Droid Ultra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Ultra and Droid Maxx2</masterLabel>
+            <translation><!-- Droid Ultra and Droid Maxx2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto 360</masterLabel>
+            <translation><!-- Moto 360 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E</masterLabel>
+            <translation><!-- Moto E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E (2nd Gen)</masterLabel>
+            <translation><!-- Moto E (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E (3rd Gen)</masterLabel>
+            <translation><!-- Moto E (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E 4G LTE</masterLabel>
+            <translation><!-- Moto E 4G LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G</masterLabel>
+            <translation><!-- Moto G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (2nd Gen)</masterLabel>
+            <translation><!-- Moto G (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (2nd Gen) with LTE</masterLabel>
+            <translation><!-- Moto G (2nd Gen) with LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (3rd Gen)</masterLabel>
+            <translation><!-- Moto G (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G LTE</masterLabel>
+            <translation><!-- Moto G LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X</masterLabel>
+            <translation><!-- Moto X --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X (2nd Gen)</masterLabel>
+            <translation><!-- Moto X (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X (3rd Gen)</masterLabel>
+            <translation><!-- Moto X (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X Play</masterLabel>
+            <translation><!-- Moto X Play --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X Style</masterLabel>
+            <translation><!-- Moto X Style --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexus 6</masterLabel>
+            <translation><!-- Nexus 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAZR HD</masterLabel>
+            <translation><!-- RAZR HD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAZR Maxx</masterLabel>
+            <translation><!-- RAZR Maxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universal</masterLabel>
+            <translation><!-- Universal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valocia</masterLabel>
+            <translation><!-- Valocia --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Category 1 --></label>
+        <name>ATTRIBUTE6__c</name>
+        <picklistValues>
+            <masterLabel>Accessories</masterLabel>
+            <translation><!-- Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto 360</masterLabel>
+            <translation><!-- Moto 360 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E</masterLabel>
+            <translation><!-- Moto E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E (2nd Gen)</masterLabel>
+            <translation><!-- Moto E (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E (3rd Gen)</masterLabel>
+            <translation><!-- Moto E (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E 4G LTE</masterLabel>
+            <translation><!-- Moto E 4G LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G</masterLabel>
+            <translation><!-- Moto G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (2nd Gen)</masterLabel>
+            <translation><!-- Moto G (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (2nd Gen) with LTE</masterLabel>
+            <translation><!-- Moto G (2nd Gen) with LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G (3rd Gen)</masterLabel>
+            <translation><!-- Moto G (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G 4G LTE</masterLabel>
+            <translation><!-- Moto G 4G LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto Hint</masterLabel>
+            <translation><!-- Moto Hint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto Maxx</masterLabel>
+            <translation><!-- Moto Maxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X</masterLabel>
+            <translation><!-- Moto X --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X (2nd Gen)</masterLabel>
+            <translation><!-- Moto X (2nd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X (3rd Gen)</masterLabel>
+            <translation><!-- Moto X (3rd Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X - Developer (Verizon and GSM)</masterLabel>
+            <translation><!-- Moto X - Developer (Verizon and GSM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X Play</masterLabel>
+            <translation><!-- Moto X Play --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X Pro (China Nexus Version)</masterLabel>
+            <translation><!-- Moto X Pro (China Nexus Version) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X Style</masterLabel>
+            <translation><!-- Moto X Style --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nexus 6</masterLabel>
+            <translation><!-- Nexus 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Devices</masterLabel>
+            <translation><!-- Other Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Pack Micro</masterLabel>
+            <translation><!-- Power Pack Micro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turbo Charger</masterLabel>
+            <translation><!-- Turbo Charger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty</masterLabel>
+            <translation><!-- Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Phone Memory Size --></label>
+        <name>ATTRIBUTE7__c</name>
+        <picklistValues>
+            <masterLabel>128GB</masterLabel>
+            <translation><!-- 128GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16GB</masterLabel>
+            <translation><!-- 16GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32GB</masterLabel>
+            <translation><!-- 32GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4GB</masterLabel>
+            <translation><!-- 4GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>64GB</masterLabel>
+            <translation><!-- 64GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8GB</masterLabel>
+            <translation><!-- 8GB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Category 2 --></label>
+        <name>ATTRIBUTE8__c</name>
+        <picklistValues>
+            <masterLabel>Accent</masterLabel>
+            <translation><!-- Accent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation><!-- Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Battery</masterLabel>
+            <translation><!-- Battery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cable</masterLabel>
+            <translation><!-- Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation><!-- Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ChromeCast</masterLabel>
+            <translation><!-- ChromeCast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>College Case by Uncommon</masterLabel>
+            <translation><!-- College Case by Uncommon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Color Door</masterLabel>
+            <translation><!-- Color Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Printing</masterLabel>
+            <translation><!-- Digital Printing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Docks</masterLabel>
+            <translation><!-- Docks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Films</masterLabel>
+            <translation><!-- Films --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flip Cover</masterLabel>
+            <translation><!-- Flip Cover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grip Cover</masterLabel>
+            <translation><!-- Grip Cover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handset</masterLabel>
+            <translation><!-- Handset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handset Option</masterLabel>
+            <translation><!-- Handset Option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jax</masterLabel>
+            <translation><!-- Jax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE Case</masterLabel>
+            <translation><!-- M4DE Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE Dock</masterLabel>
+            <translation><!-- M4DE Dock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE House</masterLabel>
+            <translation><!-- M4DE House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE Memory</masterLabel>
+            <translation><!-- M4DE Memory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE Music</masterLabel>
+            <translation><!-- M4DE Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M4DE Power</masterLabel>
+            <translation><!-- M4DE Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mono BT</masterLabel>
+            <translation><!-- Mono BT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mot Dock</masterLabel>
+            <translation><!-- Mot Dock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto 360 Accy</masterLabel>
+            <translation><!-- Moto 360 Accy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto E</masterLabel>
+            <translation><!-- Moto E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G</masterLabel>
+            <translation><!-- Moto G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto G LTE</masterLabel>
+            <translation><!-- Moto G LTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X</masterLabel>
+            <translation><!-- Moto X --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto X+1</masterLabel>
+            <translation><!-- Moto X+1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music</masterLabel>
+            <translation><!-- Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Option</masterLabel>
+            <translation><!-- Option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Devices</masterLabel>
+            <translation><!-- Other Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4000</masterLabel>
+            <translation><!-- P4000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power</masterLabel>
+            <translation><!-- Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Pack</masterLabel>
+            <translation><!-- Power Pack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Supply</masterLabel>
+            <translation><!-- Power Supply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Printing</masterLabel>
+            <translation><!-- Printing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Razr</masterLabel>
+            <translation><!-- Razr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Razr M</masterLabel>
+            <translation><!-- Razr M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Razr Maxx</masterLabel>
+            <translation><!-- Razr Maxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rear Housing</masterLabel>
+            <translation><!-- Rear Housing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference</masterLabel>
+            <translation><!-- Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKIP</masterLabel>
+            <translation><!-- SKIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talk</masterLabel>
+            <translation><!-- Talk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracks</masterLabel>
+            <translation><!-- Tracks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra Maxx</masterLabel>
+            <translation><!-- Ultra Maxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra Mini</masterLabel>
+            <translation><!-- Ultra Mini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utlra</masterLabel>
+            <translation><!-- Utlra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VPA</masterLabel>
+            <translation><!-- VPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wallpaper</masterLabel>
+            <translation><!-- Wallpaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Watchbands</masterLabel>
+            <translation><!-- Watchbands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearable</masterLabel>
+            <translation><!-- Wearable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Color --></label>
+        <name>ATTRIBUTE9__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Carrier Code --></label>
+        <name>CARRIER_CODE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Carrier Name --></label>
+        <name>CARRIER_NAME__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Key Account --></label>
+        <name>KEY_ACCOUNT_SF_ID__c</name>
+        <relationshipLabel><!-- ECommerce Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Carrier Key Account Code --></label>
+        <name>KEY_ACCOUNT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Description --></label>
+        <name>MODEL_DESC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Number --></label>
+        <name>MODEL_NUMBER_SF_ID__c</name>
+        <relationshipLabel><!-- ECommerce Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Model Number Code --></label>
+        <name>MODEL_NUMBER__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Model Number --></label>
+        <name>UNIQUE_MODEL_NUMBER__c</name>
+    </fields>
+    <layouts>
+        <layout>ECommerce Model Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Model Number is required --></errorMessage>
+        <name>Model_Number_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

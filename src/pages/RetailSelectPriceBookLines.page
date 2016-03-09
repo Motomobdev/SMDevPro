@@ -1,0 +1,126 @@
+<apex:page controller="RetailSelectPriceBookLines" action="{!init}">
+    <apex:pageMessages />
+
+    <script>
+        function checkAll(cb)
+        {
+            var inputElem = document.getElementsByTagName("input");
+
+            for (var i=0; i<inputElem.length; i++)
+            {
+                if (inputElem[i].id.indexOf("selectLine") != -1)
+                    inputElem[i].checked = cb.checked;
+            }
+        }
+    </script>
+    
+    <apex:sectionHeader title="Select" subtitle="Price Book Lines"/>
+            
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add to forecast" action="{!save}"/>
+                <apex:commandButton value="Return to forecast" action="{!goBack}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                <apex:outputText >Filter by business</apex:outputText>
+                <apex:selectList multiselect="false" size="1" value="{!selectedBusiness}" >
+                    <apex:selectOptions value="{!business}"/>
+                    <apex:actionSupport event="onchange" action="{!init}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            
+            <!-- A price book line can exist only once on a forecast -->
+            <!-- Show all price book lines that are not already on the forecast -->
+            <apex:pageBlockTable value="{!data}" var="d" id="table">
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox title="Select" id="selectAll" >
+                            <apex:actionSupport event="onclick" onsubmit="checkAll(this)" rerender="table"/>
+                        </apex:inputCheckbox>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!d.selected}" id="selectLine"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Account" action="{!doSort}">
+                            <apex:param name="sortField" value="Account__r.name" assignTo="{!sortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText value="{!d.rpbl.Account__r.name}"/>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Carrier" action="{!doSort}">
+                            <apex:param name="sortField" value="Carrier__c" assignTo="{!sortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText value="{!d.rpbl.Carrier__c}"/>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Business" action="{!doSort}">
+                            <apex:param name="sortField" value="Business__c" assignTo="{!sortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText value="{!d.rpbl.Business__c}"/>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Product" action="{!doSort}">
+                            <apex:param name="sortField" value="Product__r.name" assignTo="{!sortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText value="{!d.rpbl.Product__r.name}"/>
+                </apex:column>
+
+                <apex:column style="{!if(d.quarter == 'Q1', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q1 ASP</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q1_ASP__c}"/>
+                </apex:column>            
+
+                <apex:column style="{!if(d.quarter == 'Q1', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q1 MCPU</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q1_MCPU__c}"/>
+                </apex:column>
+
+                <apex:column style="{!if(d.quarter == 'Q2', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q2 ASP</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q2_ASP__c}"/>
+                </apex:column>
+                
+                <apex:column style="{!if(d.quarter == 'Q2', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q2 MCPU</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q2_MCPU__c}"/>
+                </apex:column>
+
+                <apex:column style="{!if(d.quarter == 'Q3', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q3 ASP</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q3_ASP__c}"/>
+                </apex:column>
+                
+                <apex:column style="{!if(d.quarter == 'Q3', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q3 MCPU</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q3_MCPU__c}"/>
+                </apex:column>
+            
+                <apex:column style="{!if(d.quarter == 'Q4', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q4 ASP</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q4_ASP__c}"/>
+                </apex:column>
+                
+                <apex:column style="{!if(d.quarter == 'Q4', 'color:blue;font-weight: bold', 'color:black')}">
+                    <apex:facet name="header">Q4 MCPU</apex:facet>
+                    <apex:outputText value="{!d.rpbl.Q4_MCPU__c}"/>
+                </apex:column>
+
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

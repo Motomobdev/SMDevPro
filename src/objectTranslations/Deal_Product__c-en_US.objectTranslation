@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Products</value>
+    </caseValues>
+    <fields>
+        <help><!-- Average Selling Price --></help>
+        <label><!-- ASP --></label>
+        <name>ASP__c</name>
+    </fields>
+    <fields>
+        <help><!-- Advertisement and Promotion --></help>
+        <label><!-- A&amp;P Amount --></label>
+        <name>A_P_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- GM - A&amp;P --></help>
+        <label><!-- CM Amount --></label>
+        <name>CM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual IPP Amount --></label>
+        <name>Contractual_IPP_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual IPP Total --></label>
+        <name>Contractual_IPP_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual MDF Amount --></label>
+        <name>Contractual_MDF_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual MDF Total --></label>
+        <name>Contractual_MDF_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual SDF Amount --></label>
+        <name>Contractual_SDF_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractual SDF Total --></label>
+        <name>Contractual_SDF_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal --></label>
+        <name>Deal__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ASP - MCPU --></help>
+        <label><!-- GM Amount Per Unit --></label>
+        <name>GM_Amount_Per_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- GM Amount --></label>
+        <name>GM_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Price --></label>
+        <name>Invoice_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Motorola Cost Per Unit --></help>
+        <label><!-- MCPU --></label>
+        <name>MCPU__c</name>
+    </fields>
+    <fields>
+        <help><!-- Net sales after discount --></help>
+        <label><!-- NSA --></label>
+        <name>NSA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Net sales before discount --></help>
+        <label><!-- NSBD --></label>
+        <name>NSBD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Contractual IPP Amount --></label>
+        <name>Non_Contractual_IPP_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Contractual IPP Total --></label>
+        <name>Non_Contractual_IPP_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Accural Amount --></label>
+        <name>Special_Accural_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Accural Text --></label>
+        <name>Special_Accural_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Accural Total --></label>
+        <name>Special_Accural_Total__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Product Layout</layout>
+        <sections>
+            <label><!-- Contractual --></label>
+            <section>Contractual</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Non Contractual --></label>
+            <section>Non Contractual</section>
+        </sections>
+        <sections>
+            <label><!-- Totals --></label>
+            <section>Totals</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

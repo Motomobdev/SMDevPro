@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD GMT Operational View</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD GMT Operational View</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Owner --></label>
+        <name>Action_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Team --></label>
+        <name>Business_Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- CWS Savings($) --></label>
+        <name>CWS_Savings_Dollarsign__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT_OPR_PLAN_ID --></label>
+        <name>GMT_OPR_PLAN_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT Product Name --></label>
+        <name>GMT_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT SubCategory 1 IOD OUT --></label>
+        <name>GMT_SubCategory_1_IOD_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT SubCategory 2 IOD OUT --></label>
+        <name>GMT_SubCategory_2_IOD_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMT SubCategory 3 IOD OUT --></label>
+        <name>GMT_SubCategory_3_IOD_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- GM Improvement(%) --></label>
+        <name>GM_Improvement_percntge__c</name>
+    </fields>
+    <fields>
+        <label><!-- GM SubCategory 1 --></label>
+        <name>GM_SubCategory_1__c</name>
+        <relationshipLabel><!-- CD GMT Operational View --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GM SubCategory 2 --></label>
+        <name>GM_SubCategory_2__c</name>
+        <relationshipLabel><!-- CD GMT Operational View (GM SubCategory 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GM SubCategory 3 --></label>
+        <name>GM_SubCategory_3__c</name>
+        <relationshipLabel><!-- CD GMT Operational View (GM SubCategory 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Probability --></label>
+        <name>Probability__c</name>
+        <picklistValues>
+            <masterLabel>Best Estimate</masterLabel>
+            <translation><!-- Best Estimate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stretch Estimate</masterLabel>
+            <translation><!-- Stretch Estimate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+        <relationshipLabel><!-- CD GMT Operational View --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Date --></label>
+        <name>Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Date --></label>
+        <name>Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

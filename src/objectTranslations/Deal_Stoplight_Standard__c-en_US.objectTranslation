@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Stoplight Standard</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Stoplight Standards</value>
+    </caseValues>
+    <fields>
+        <label><!-- CP Attach Approver --></label>
+        <name>CP_Attach_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Standard --></label>
+        <name>CP_Attach_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach VM --></label>
+        <name>CP_Attach_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Approver --></label>
+        <name>Carrier_Branding_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Standard --></label>
+        <name>Carrier_Branding_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding VM --></label>
+        <name>Carrier_Branding_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Approver --></label>
+        <name>Channel_Fill_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Standard --></label>
+        <name>Channel_Fill_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill VM --></label>
+        <name>Channel_Fill_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories Approver --></label>
+        <name>Charger_Accessories_Approver__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value Products Only --></help>
+        <label><!-- Charger / Accessories Standard --></label>
+        <name>Charger_Accessories_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories VM --></label>
+        <name>Charger_Accessories_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications App --></label>
+        <name>Core_Device_Specifications_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications Std --></label>
+        <name>Core_Device_Specifications_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications VM --></label>
+        <name>Core_Device_Specifications_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Approver --></label>
+        <name>ELX_Prepaid_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Standard --></label>
+        <name>ELX_Prepaid_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid VM --></label>
+        <name>ELX_Prepaid_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Approver --></label>
+        <name>Forecasting_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Standard --></label>
+        <name>Forecasting_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting VM --></label>
+        <name>Forecasting_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Approver --></label>
+        <name>IPP_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Standard --></label>
+        <name>IPP_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP VM --></label>
+        <name>IPP_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Approver --></label>
+        <name>Incoterms_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Standard --></label>
+        <name>Incoterms_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms VM --></label>
+        <name>Incoterms_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Approver --></label>
+        <name>Late_Delivery_Penalty_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Standard --></label>
+        <name>Late_Delivery_Penalty_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty VM --></label>
+        <name>Late_Delivery_Penalty_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Approver --></label>
+        <name>MDF_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Standard --></label>
+        <name>MDF_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF VM --></label>
+        <name>MDF_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Approver --></label>
+        <name>MFN_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Standard --></label>
+        <name>MFN_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN VM --></label>
+        <name>MFN_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Approver --></label>
+        <name>Not_to_Exceed_Retail_Price_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Standard --></label>
+        <name>Not_to_Exceed_Retail_Price_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price VM --></label>
+        <name>Not_to_Exceed_Retail_Price_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Approver --></label>
+        <name>Payment_Terms_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Standard --></label>
+        <name>Payment_Terms_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms VM --></label>
+        <name>Payment_Terms_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Approver --></label>
+        <name>Product_Exclusivity_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Standard --></label>
+        <name>Product_Exclusivity_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity VM --></label>
+        <name>Product_Exclusivity_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provision Type --></label>
+        <name>Provision_Type__c</name>
+        <picklistValues>
+            <masterLabel>AT&amp;T</masterLabel>
+            <translation><!-- AT&amp;T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Approver --></label>
+        <name>SW_Updates_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Standard --></label>
+        <name>SW_Updates_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates VM --></label>
+        <name>SW_Updates_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Approver --></label>
+        <name>Seeding_Demo_Units_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Std --></label>
+        <name>Seeding_Demo_Units_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units VM --></label>
+        <name>Seeding_Demo_Units_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Approver --></label>
+        <name>Sell_Through_Plan_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Standard --></label>
+        <name>Sell_Through_Plan_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan VM --></label>
+        <name>Sell_Through_Plan_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Approver --></label>
+        <name>Shipping_and_Handling_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Standard --></label>
+        <name>Shipping_and_Handling_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling VM --></label>
+        <name>Shipping_and_Handling_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Approver --></label>
+        <name>Software_PreLoads_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Std --></label>
+        <name>Software_PreLoads_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads VM --></label>
+        <name>Software_PreLoads_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Approver --></label>
+        <name>Volume_Commitment_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Standard --></label>
+        <name>Volume_Commitment_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment VM --></label>
+        <name>Volume_Commitment_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Approver --></label>
+        <name>Warranty_Service_Repair_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Std --></label>
+        <name>Warranty_Service_Repair_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair VM --></label>
+        <name>Warranty_Service_Repair_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Approver --></label>
+        <name>Warranty_Term_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Standard --></label>
+        <name>Warranty_Term_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term VM --></label>
+        <name>Warranty_Term_VM__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Spotlight Standard Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker Model --></label>
+            <section>Value Maker Model</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

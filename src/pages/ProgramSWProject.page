@@ -1,0 +1,53 @@
+<apex:page standardController="JIRA_Project__c" extensions="Program_SW_ProjectController" showHeader="false"
+    sidebar="false">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <script>
+        
+        $(document).ready(function (){
+            $('th[id$="SelectALLheader"]').click(function(){
+                // get all inputs
+                var count = 1;
+                $('input[type=checkbox]:not(:checked)').each(function(){
+                    console.log(count);
+                    $(this).click();
+                    count++;
+                });
+            });
+        });
+        
+    </script>
+    <style>
+
+        .clickable{
+            color:blue;
+        }
+        
+        .clickable:hover{
+            cursor:pointer;
+        }
+        
+    </style>
+
+    <apex:sectionHeader title="Attach Programs to SW Project:" subtitle="{!JIRA_Project__c.Name}"/>
+
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add Programs" action="{!insertNewSWProjectProgramRecords}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockTable value="{!newProgramSWProjects}" var="prg">
+                <apex:column headerValue="Select All" headerClass="clickable" id="SelectALL">
+                    <apex:inputCheckbox value="{!prg.include}" />
+                </apex:column>
+    
+                <apex:column value="{!prg.Name}" headerValue="SW Project"/>
+                
+                <apex:column headerValue="Support Status">
+                    <apex:inputField value="{!prg.newProgramSWProject.Support_Status__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

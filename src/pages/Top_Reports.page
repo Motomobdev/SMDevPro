@@ -1,0 +1,188 @@
+<apex:page >
+
+
+    <!-- Set-Up Table Column Widths -->
+
+    <style>
+        .container{
+            width:100%;
+            height:90px;
+        }
+        .body{
+            width:100%   
+        }
+        .Col1 { 
+            width: 20%;
+        }
+        .Col2 { 
+            width: 30%; 
+        }
+        .Col3 { 
+            width: 30%;    
+        }
+        .Col4 { 
+            width: 10%;
+        }  
+    </style>
+
+
+
+<!--  Header and Column Headers -->
+<apex:pageblock title="Top Reports Page">
+<apex:panelGrid columns="4" columnClasses="Col1, Col2, Col3, Col4" width="100%" >            
+<apex:outputText >Report Name</apex:outputText>                 
+<apex:outputText >Description</apex:outputText>                
+<apex:outputText >Required Action (If Any)</apex:outputText>                 
+<apex:outputText >Action Owner</apex:outputText>
+</apex:panelGrid>
+</apex:pageblock>
+
+
+
+
+
+<!-- Page Body and Form -->
+ <apex:form >
+    <apex:outputPanel layout="block" styleclass="body">
+        <apex:pageBlock mode="view">
+        
+        
+        
+        
+<!-- Contract Report Section -->        
+                       <apex:pageBlockSection title="Contract Reports " columns="1" collapsible="TRUE" showHeader="true">
+                            <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002H5Qc">OPEN CONTRACTS ON SA DEVICES</apex:outputLink>
+                                <apex:outputText >All open contracts on devices with SA dates in the next 90 days. SA dates are fed directly from NPI hourly.  The contract needs to be completed one month before SA Date.</apex:outputText>
+                                <apex:outputText >Please ensure any contracts you own on this list are completed by the SA Date listed at the very latest.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>
+                                
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002md9z">30-Day EXPIRING APPS ON DEVICES</apex:outputLink>
+                                <apex:outputText >Lists all apps on upcoming devices where the contract is near expiration</apex:outputText>
+                                <apex:outputText >Please ensure any contracts you own on this list are renewed in the system or the app will need to be removed from the related device</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>     
+                                
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002FGWK">OPEN CONTRACTS</apex:outputLink>                  
+                                <apex:outputText >All open contracts currently being worked on by Partnership Management. This report does not take into consideration any device dependencies.  The contracts on this list should be reviewed monthly and any contracts that we are no longer pursuing should show as 'DROPPED'.</apex:outputText>
+                                <apex:outputText >Please ensure any contracts you included on this list are completed by the due date.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>
+                                
+                                
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002lpmI">EXPIRED CONTRACTS ON DEVICES</apex:outputLink>
+                                <apex:outputText >All contracts that have an End Date that has already past.  The contract must also have an application attached to a device to be included.</apex:outputText>
+                                <apex:outputText >Report should be reviewed weekly to ensure you do not have any contracts on this list.  Contracts should either have the 'Let It Expire' button checked or correct expiration dates in order for a contract to not be on this list.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>
+                                
+
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002lpgn">CONTRACTS EXPIRING WITHIN 90 DAYS</apex:outputLink>
+                                <apex:outputText >All contracts that have an End Date that will have expired within the next 90 day period.</apex:outputText>
+                                <apex:outputText >Review monthly to ensure that you do not own any contracts that are due to expire without specifying whether the contract will be renewed or allowed to expire.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>
+                                 
+                                                        
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002m4RQ">EXPIRING CONTRACTS (NON-NDA)</apex:outputLink>
+                                <apex:outputText >Report lists all expired and currently expiring contracts (non-NDA) by the Account Owner.</apex:outputText>
+                                <apex:outputText >Review this report periodically to ensure legal coverage of all applications on devices.  If a contract is due to expire please take necessary action.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>                           
+                           
+                           </apex:panelgrid>
+                       </apex:pageBlockSection>
+
+                       
+                       
+                       
+                       
+<!-- Application Report Section -->                           
+                       <apex:pageBlockSection title="Application Reports " columns="1" collapsible="TRUE"  >
+                            <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002ljTQ">OPEN HSS7 CONTRACT APPLICATIONS</apex:outputLink>
+                                <apex:outputText >All HSS7 contracts that also have an attached application.</apex:outputText>
+                                <apex:outputText >Review weekly to ensure that progress is being made on any significant baseline software contracts.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText>                           
+         
+                                <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002n5nN">OPEN CORE8 CONTRACT APPLICATIONS</apex:outputLink>
+                                <apex:outputText >All CORE8 contracts that also have an attached application.</apex:outputText>
+                                <apex:outputText >Review weekly to ensure that progress is being made on any significant baseline software contracts.</apex:outputText>
+                                <apex:outputText >Partner Manager</apex:outputText> 
+                           
+                            </apex:panelgrid>
+                        </apex:pageBlockSection>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+<!-- Competitive Apps Report Section -->                            
+                        <apex:pageBlockSection title="Competitive Applications Reports " columns="1" collapsible="TRUE"  >
+                                 <apex:panelGrid columns="4" id="theGrid2" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+                                    <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002GPfF">TOP COMPETITIVE APPLICATIONS</apex:outputLink>                            
+                                    <apex:outputText >All newely created top competitive applications that do not have an Android Status already assigned to it.</apex:outputText>               
+                                    <apex:outputText >Please review this report every week (distributed automatically every Monday) and follow up with any new partners. The follow up instructions are located <apex:outputLink value="/06940000000DfFt"> HERE</apex:outputLink>.</apex:outputText>                  
+                                    <apex:outputText >Partner Manager</apex:outputText>                                                                                                
+                                 </apex:panelGrid>
+                              </apex:pageBlockSection>                          
+              
+              
+              
+              
+              
+              
+              
+  
+                            
+                            
+                            
+                            
+<!-- Payment Report Section -->       
+                     <apex:pageBlockSection title="Payment Reports " columns="1" collapsible="TRUE"  >
+                              <apex:panelGrid columns="4" id="theGrid3" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+                                    <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002mlmI">Q112 Royalty Payment Status </apex:outputLink>                                  
+                                    <apex:outputText >The status of all approvals for each Q112 royalty payment. </apex:outputText>                
+                                    <apex:outputText >Please review your payment reports and ensure the approval status is correct. Business Operations will help push for closure. </apex:outputText>               
+                                    <apex:outputText >Partner Manager / Business Operations</apex:outputText>
+                     
+                                    <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000001uOqy">OPEN PAYMENTS</apex:outputLink>                                  
+                                    <apex:outputText >All open payments that have not been fully paid. </apex:outputText>                
+                                    <apex:outputText >Please review periodically. Inform Business Operations if a payment must be escalated. </apex:outputText>                 
+                                    <apex:outputText >Partner Manager / Business Operations</apex:outputText>
+                      
+                                    <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002lS49">REVENUE SHARE</apex:outputLink>                                
+                                    <apex:outputText >All revenue share payments sorted by quarter as well as their projected and actual amounts.  Projections must be completed a year before execution.</apex:outputText>            
+                                    <apex:outputText >Please ensure all revenue share projections are accurate and kept up-to-date. Instructions for entering Revenue share payments are located <apex:outputLink value="/06940000000DfaD"> HERE</apex:outputLink>. Reminder:  Inform Business Operations of any revenue share payments are sent directly to you. </apex:outputText>                
+                                    <apex:outputText >Partner Manager</apex:outputText>
+                                  </apex:panelGrid>
+                                </apex:PageBlockSection>  
+                                
+                                
+                                
+                                
+                                                                                              
+<!-- Cost Savings Report Section -->                              
+                          <apex:pageBlockSection title="Cost Savings Reports" columns="1" collapsible="TRUE"  >
+                             <apex:panelGrid columns="4" id="theGrid4" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+                                 <apex:outputLink style="font-weight:bold" target="_blank" value="/00O40000002Gtqi">COST SAVINGS</apex:outputLink>  
+                                 <apex:outputText >All Cost Savings records sorted by Year and then by Type.</apex:outputText>
+                                 <apex:outputText >Please ensure your cost savings records are kept up-to-date.</apex:outputText>                 
+                                 <apex:outputText >Partner Manager</apex:outputText>                                                                                           
+                               </apex:panelGrid>
+                               </apex:pageBlockSection>                                
+        
+    
+<!-- Partner Report Section -->                            
+                <!--            <apex:pageBlockSection title="Partner Reports" columns="1" collapsible="TRUE"  >
+                                 <apex:outputText ><center>Please select the link directly below to request additional content.</center></apex:outputText>                   
+                            </apex:pageBlockSection>   -->
+                              
+    
+        </apex:pageblock>
+    </apex:outputpanel>
+
+
+<!-- Footer Content -->
+    <apex:outputText > Would you like to request a new report be added to this page?  Please click <apex:outputLink target="_blank"  value="https://mail.google.com/a/motorola.com/?view=cm&fs=1&tf=1&to=Jason.Dobbs%40motorola.com&su=New%20Top%20Report%20Request">&nbsp;Here.</apex:outputLink> </apex:outputText>
+    </apex:form> 
+    </apex:page>

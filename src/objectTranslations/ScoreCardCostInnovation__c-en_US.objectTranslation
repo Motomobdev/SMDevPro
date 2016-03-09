@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ScoreCardCostInnovation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ScoreCardCostInnovations</value>
+    </caseValues>
+    <fields>
+        <help><!-- Name of the Supplier --></help>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- ScoreCardCostInnovations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business Continuity Score --></label>
+        <name>Business_Continuity_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSA Status Score --></label>
+        <name>CSA_Status_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Competiveness Score --></label>
+        <name>Cost_Competiveness_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Control Score --></label>
+        <name>Cost_Control_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Innovative Concepts Score --></label>
+        <name>Innovative_Concepts_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- L3 SubMetric Name --></label>
+        <name>L3_SubMetric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardCostInnovations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Metric Name --></label>
+        <name>Metric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardCostInnovations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORacle Customer Number --></label>
+        <name>ORacle_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- OracleCustNum --></label>
+        <name>OracleCustNum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Score --></label>
+        <name>Payment_Terms_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reduction Performance Score --></label>
+        <name>Reduction_Performance_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOI Score --></label>
+        <name>SOI_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Current</masterLabel>
+            <translation><!-- Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous</masterLabel>
+            <translation><!-- Previous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Metric Name --></label>
+        <name>Sub_Metric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardCostInnovations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supplier Score --></label>
+        <name>Supplier_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technology Roadmap Score --></label>
+        <name>Technology_Roadmap_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transparency Score --></label>
+        <name>Transparency_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

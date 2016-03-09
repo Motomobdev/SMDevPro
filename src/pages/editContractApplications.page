@@ -1,0 +1,90 @@
+<apex:page standardController="Contract" extensions="editContractApplications" showHeader="false" sidebar="false">
+
+<div class="pageTitle">Edit Contract Applications</div>
+<br />
+<apex:form >
+    <apex:actionRegion renderRegionOnly="false" immediate="true">
+      <table cellpadding="3">
+        <tr>
+          <td class="bold">Account Name :&nbsp;</td>
+          <td style="width: 310px;"><apex:outputField value="{!Contract.Account.Name}"/></td>
+        </tr>
+      </table>
+    </apex:actionRegion>
+    
+  <br/>
+
+  <div class="title">Select Applications to Add to Contract</div>
+  <br />  
+  <apex:pageBlock >            
+    <apex:outputPanel id="searchResults">
+      <apex:pageBlockTable value="{!applications}" var="a" rendered="{!(applications.size != 0)}">
+        <apex:column >
+          <apex:facet name="header">
+              <apex:inputCheckbox >
+                <apex:actionSupport event="onclick" onsubmit="checkAll(this)" reRender=""/>
+              </apex:inputCheckbox>
+          </apex:facet>
+          <apex:inputCheckbox value="{!a.isSelected}" id="checked" />
+        </apex:column>
+        <apex:column headerValue="{!$ObjectType.Application__c.Fields.Name.Label}" value="{!a.Application.Name}"/>
+        <apex:column headerValue="{!$ObjectType.Application__c.Fields.Account__c.Label}" value="{!a.Application.Account__r.Name}"/>
+      </apex:pageBlockTable>
+      <apex:outputText rendered="{!(applications.size == 0)}">There is no Application available for this Contact.</apex:outputText>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!(applications.size != 0)}">
+        <apex:commandButton action="{!save}" value="Save"/>
+        <apex:commandButton action="{!cancel}" value="Cancel"/>
+    </apex:outputPanel>   
+  </apex:pageBlock>
+</apex:form>
+
+<script>
+function checkAll(cb){
+    var inputElem = document.getElementsByTagName("input");
+    for(var i=0; i<inputElem.length; i++){
+        if(inputElem[i].id.indexOf("checked")!=-1)
+        inputElem[i].checked = cb.checked;
+    }
+}    
+</script>
+
+<style type='text/css'>
+  body
+  {
+    padding: 10px 10px 0px 10px;
+  }
+  td
+  {
+    vertical-align: top;
+  }
+  .pageTitle
+  {
+    background-image: url("/img/sprites/master.png");
+    background-position: 0 -1202px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 320px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #333435;
+    padding: 2px 0px 0px 40px;
+  }
+  .title
+  {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #333435;
+    height: 15px;
+  }
+    .bold
+  {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #333435;
+    height: 15px;
+  }
+
+</style>
+
+</apex:page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Instance Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instance Setting</value>
+    </caseValues>
+    <fields>
+        <help><!-- Base Friendly URL for the instance. --></help>
+        <label><!-- Friendly URL --></label>
+        <name>Friendly_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Operations &amp; Administration --></label>
+        <name>Salesforce_Operations_Administration__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

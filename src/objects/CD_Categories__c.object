@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CD_Category_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_Category__r.Name</formula>
+        <label>CD Category IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_Category_Manager_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_Category_Managers__r.Name</formula>
+        <label>CD Category Manager IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_Category_Managers__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Category Managers</label>
+        <referenceTo>CD_Category_Managers__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Category</label>
+        <referenceTo>CD_Category__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_Cost_Category_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_Cost_Category__r.Name</formula>
+        <label>CD Cost Category IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_Cost_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Cost Category</label>
+        <referenceTo>CD_Cost_Category__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_GCL_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_GCL__r.Name</formula>
+        <label>CD GCL IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_GCL__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD GCL</label>
+        <referenceTo>CD_GCL__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Category_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_GMT_Category__r.Name</formula>
+        <label>CD GMT Category IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD GMT Category</label>
+        <referenceTo>CD_GMT_Category__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_1_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_GMT_Subcategory_1__r.Name</formula>
+        <label>CD GMT Subcategory 1 IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD GMT Subcategory 1</label>
+        <referenceTo>CD_GMT_Subcategory_1__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_2_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_GMT_Subcategory_2__r.Name</formula>
+        <label>CD GMT Subcategory 2 IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD GMT Subcategory 2</label>
+        <referenceTo>CD_GMT_Subcategory_2__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_3_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_GMT_Subcategory_3__r.Name</formula>
+        <label>CD GMT Subcategory 3 IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_GMT_Subcategory_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD GMT Subcategory 3</label>
+        <referenceTo>CD_GMT_Subcategory_3__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_Subcategory1_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_Subcategory1__r.Name</formula>
+        <label>CD Subcategory1 IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_Subcategory1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Subcategory1</label>
+        <referenceTo>CD_Subcategory1__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_Subcategory2_IOD_OUT__c</fullName>
+        <externalId>false</externalId>
+        <formula>CD_Subcategory2__r.Name</formula>
+        <label>CD Subcategory2 IOD OUT</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CD_Subcategory2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Subcategory2</label>
+        <referenceTo>CD_Subcategory2__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CD_Subcategory3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CD Subcategory3</label>
+        <referenceTo>CD_Subcategory3__c</referenceTo>
+        <relationshipLabel>CD Categories</relationshipLabel>
+        <relationshipName>CD_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Commodity_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Commodity Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CD Categories</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CD_Category__c</columns>
+        <columns>CD_Category_Managers__c</columns>
+        <columns>CD_GCL__c</columns>
+        <columns>CD_Subcategory1__c</columns>
+        <columns>CD_Subcategory2__c</columns>
+        <columns>CD_Subcategory3__c</columns>
+        <columns>CD_Cost_Category__c</columns>
+        <columns>CD_GMT_Category__c</columns>
+        <columns>CD_GMT_Subcategory_1__c</columns>
+        <columns>CD_GMT_Subcategory_2__c</columns>
+        <columns>CD_GMT_Subcategory_3__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Commodity Code</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CD Categories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

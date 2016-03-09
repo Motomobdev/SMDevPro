@@ -1,0 +1,75 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" showHeader="false">
+    <script type="text/javascript" src="/soap/ajax/15.0/connection.js"></script>
+     <script type="text/javascript">
+    
+    /**
+     * Initializes the call
+     */
+    function initCall() {
+    
+        try {
+            sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+        } catch(e) {
+            erroralert(cERROR_UNKNOWN,e);
+        }
+    
+    }
+    /**
+ * Navigates to the given url
+ * @param url the url to navigate to 
+ */
+function navigateTo(url) {
+    top.location.replace(url);
+}
+
+    /**
+     * Callback invoked after an agreement clone is saved
+     */
+    function restartAuthoring() {
+        
+        
+        try {
+            initCall();
+            //showMsgProgress("Please wait.....);
+            agreementId = "{!Apttus__APTS_Agreement__c.Id}";
+            //alert(agreementId);
+            var qryStr = "select Id, Apttus__Status_Category__c, Apttus__Status__c from Apttus__APTS_Agreement__c where Id='" + agreementId + "'";
+            var result = sforce.connection.query(qryStr);
+            //alert("Query Result:"+result);
+            if (result.size > 0) {
+                var records = result.getArray("records");
+                var agreement = records[0];           
+                agreement.Apttus__Status__c = "Fully Signed"; 
+                agreement.Apttus__Status_Category__c = "In Signatures";
+                agreement.APTPS_Offline_Document_Imported__c = true;
+                // save agreement
+                var saveResult = sforce.connection.update([agreement]);
+               // alert("Save Result:"+saveResult);
+                if (!saveResult[0].getBoolean("success")) {
+                    alert("ERROR: Unable to change status", saveResult[0]);
+                }
+            }
+        } catch(ex) {
+            alert(ex);
+            erroralert("Status Update failed", ex);
+        } finally {
+            // go to the detail page
+            navigateTo("/{!Apttus__APTS_Agreement__c.Id}");
+        }
+    }
+    
+    // register to invoke the function after the page load
+    window.onload = function() { 
+        // post save
+        restartAuthoring();
+    }
+    
+    </script>
+    <apex:form >
+        <apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Status__c}" rendered="false"/>
+        <apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Status_Category__c}" rendered="false"/>
+        <div id="divMain" >
+            <h1>Please wait, Updating Status To Fully Signed...</h1>
+        </div>
+    </apex:form>
+</apex:page>

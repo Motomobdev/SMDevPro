@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>ContractRequestForm</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>For VHD ticket #256129. Requested by Andrew Morales.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agreement_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Agreement Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluation Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Termination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments / Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>User would select an existing Account in SFDC. If no Account available they could elect &apos;Not Found&quot; and it would assign to a &quot;dummy&quot; account we set up</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Company Name not found then please enter Other.</inlineHelpText>
+        <label>Company Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Contract Requests</relationshipLabel>
+        <relationshipName>Contract_Requests</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Owner_Email__c</fullName>
+        <description>Used internally. Value will be set automatically.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value will be set automatically on selecting Contract Owner</inlineHelpText>
+        <label>Contract Owner&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Owner_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Contract_Owner__c == null, &apos;&apos;, Contract_Owner__r.FirstName + &apos; &apos; + Contract_Owner__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Owner&apos;s Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Select Contract Owner based on above key contact information.</inlineHelpText>
+        <label>Contract Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contract_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to Contract record created from this request.</inlineHelpText>
+        <label>Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Contract Requests</relationshipLabel>
+        <relationshipName>Contract_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Required</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Submitted__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>Auto Populate submission date</description>
+        <externalId>false</externalId>
+        <label>Date Submitted</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>High_Urgency_Reason__c</fullName>
+        <description>If Urgency is high then user must provide reason</description>
+        <externalId>false</externalId>
+        <label>High Urgency Reason</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Contact_Name__c</fullName>
+        <description>First and Last name</description>
+        <externalId>false</externalId>
+        <label>Partner Contact Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Contact  Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Rejection__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason for rejecting the new contract request.</inlineHelpText>
+        <label>Reason for Rejection</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Finance (royalty, payments, etc.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BOM clean up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software Internal Projects</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requester_Email__c</fullName>
+        <description>Used by Email Alert. No need to display on page layout.</description>
+        <externalId>false</externalId>
+        <label>Requester&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requester__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requester</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>Contract Requests</relationshipLabel>
+        <relationshipName>Contract_Requests</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ATAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Companion Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Urgency__c</fullName>
+        <externalId>false</externalId>
+        <label>Urgency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>What_Software_Requested__c</fullName>
+        <description>User will enter no more than a few sentences, but would need to enter (something)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter no more than a few sentences.</inlineHelpText>
+        <label>Software/Work Requested</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Which_Device__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter no more than a few sentences.</inlineHelpText>
+        <label>Which Device(s)</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Contract Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Date_Submitted__c</columns>
+        <columns>Company_Name__c</columns>
+        <columns>Partner_Contact_Name__c</columns>
+        <columns>What_Software_Requested__c</columns>
+        <columns>Agreement_Type__c</columns>
+        <columns>Date_Required__c</columns>
+        <columns>Urgency__c</columns>
+        <columns>Which_Device__c</columns>
+        <columns>Team__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Processed</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Date_Submitted__c</columns>
+        <columns>Contract__c</columns>
+        <columns>Company_Name__c</columns>
+        <columns>Partner_Contact_Name__c</columns>
+        <columns>What_Software_Requested__c</columns>
+        <columns>Agreement_Type__c</columns>
+        <columns>Date_Required__c</columns>
+        <columns>Urgency__c</columns>
+        <columns>Which_Device__c</columns>
+        <columns>Team__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Processed</value>
+        </filters>
+        <label>Processed</label>
+    </listViews>
+    <listViews>
+        <fullName>Rejected</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Date_Submitted__c</columns>
+        <columns>Company_Name__c</columns>
+        <columns>Partner_Contact_Name__c</columns>
+        <columns>What_Software_Requested__c</columns>
+        <columns>Agreement_Type__c</columns>
+        <columns>Date_Required__c</columns>
+        <columns>Urgency__c</columns>
+        <columns>Which_Device__c</columns>
+        <columns>Team__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <label>Rejected</label>
+    </listViews>
+    <listViews>
+        <fullName>Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Date_Submitted__c</columns>
+        <columns>Contract__c</columns>
+        <columns>Company_Name__c</columns>
+        <columns>Partner_Contact_Name__c</columns>
+        <columns>What_Software_Requested__c</columns>
+        <columns>Agreement_Type__c</columns>
+        <columns>Date_Required__c</columns>
+        <columns>Urgency__c</columns>
+        <columns>Which_Device__c</columns>
+        <columns>Team__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Submitted</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Req{000000}</displayFormat>
+        <label>Contract Request Id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Contract Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Date_Submitted__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Company_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>What_Software_Requested__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agreement_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Required__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Urgency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Which_Device__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Requester__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <searchResultsAdditionalFields>Requester__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Submitted__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Create_Contract</fullName>
+        <availability>online</availability>
+        <description>If request is good then create new Contract.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create/Assign Contract</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!requireScript(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var isAdmin = &quot;false&quot;;
+
+try
+{
+    isAdmin = sforce.apex.execute(&quot;UtilUserInfo&quot;, &quot;isContextUserPartOfPublicGroup&quot;, {publicGroupName: &quot;Contract Submission Tool Admin&quot;});
+}
+catch(err)
+{
+    alert(&quot;Error checking for Admin access: &quot; + err);
+}
+
+if(isAdmin == &quot;false&quot;)
+{
+    alert(&quot;You do not have required access to create/assign contract.&quot;);
+}
+else
+{
+    //store button text
+    var origBtnText = this.value;
+
+    var currentStatus = &quot;{!Contract_Request__c.Request_Status__c}&quot;;
+
+    if(currentStatus == &quot;Processed&quot;)
+    {
+        alert(&quot;Nothing to do!\nContract already created for this request.&quot;);
+    }
+    else if(currentStatus == &quot;Rejected&quot;)
+    {
+        alert(&quot;Contract already created for this request.\nYou cannot reject the request now.&quot;);
+    }
+    else
+    {
+        //Check if all required fields are populated
+        var account = &quot;{!Contract_Request__c.Company_Name__c}&quot;;
+        var ownerId = &apos;{!Contract_Request__c.Contract_OwnerId__c}&apos;;
+
+        if(account == &quot;No eGVM Needed&quot;)
+        {
+            alert(&quot;Please select valid Company Name (Account).&quot;);
+        }
+        else if(ownerId.length == 0)
+        {
+            alert(&quot;Please select Contract Owner to whom new contract will be assigned.&quot;);
+        }
+        else
+        {
+            this.value = &quot;Creating contract...&quot;;
+
+            var contract = new sforce.SObject(&quot;Contract&quot;);
+
+            contract.AccountId = &apos;{!Contract_Request__c.Company_NameId__c}&apos;;
+            contract.Name = &quot;{!Contract_Request__c.Name}&quot;;
+            contract.Description = &apos;Requested using Contract Request Form&apos;;
+            contract.Status = &apos;Draft&apos;;
+            contract.OwnerId = ownerId;
+            contract.Contract_Type__c = &apos;{!Contract_Request__c.Agreement_Type__c}&apos;;
+            contract.Copy_Software_Work_Requested__c = &quot;{!JSENCODE(Contract_Request__c.What_Software_Requested__c)}&quot;;
+            contract.Copy_Request_Type__c = &apos;{!Contract_Request__c.Request_Type__c}&apos;;
+            contract.Copy_Date_Required__c = new Date({!YEAR(Contract_Request__c.Date_Required__c)}, {!MONTH(Contract_Request__c.Date_Required__c)}, {!DAY(Contract_Request__c.Date_Required__c)}, 0, 0, 0, 0);
+            contract.Copy_Urgency__c = &apos;{!Contract_Request__c.Urgency__c}&apos;;
+            contract.Copy_High_Urgency_Reason__c = &quot;{!Contract_Request__c.High_Urgency_Reason__c}&quot;;
+            contract.Copy_Team__c = &apos;{!Contract_Request__c.Team__c}&apos;;
+            contract.Copy_Which_Device_s__c = &quot;{!JSENCODE(Contract_Request__c.Which_Device__c)}&quot;;
+            contract.Copy_Comments_Notes__c = &quot;{!JSENCODE(Contract_Request__c.Comments__c)}&quot;;
+
+            var result = sforce.connection.create([contract]);
+
+            if(result[0].getBoolean(&quot;success&quot;))
+            {
+                alert(&quot;Contract created successfully.&quot;);
+
+                this.value = &quot;Updating status...&quot;;
+
+                var cr = new sforce.SObject(&quot;Contract_Request__c&quot;);
+
+                cr.Id = &apos;{!Contract_Request__c.Id}&apos;;
+                cr.Request_Status__c = &apos;Processed&apos;;
+                cr.Contract__c = result[0].id;
+
+                sforce.connection.update([cr]);
+
+                this.value = &quot;Refreshing page...&quot;;
+
+                location.reload(true);
+            }
+            else
+            {
+                this.value = origBtnText;
+
+                alert(&quot;Error! Could not create Contract.&quot;);
+            }
+        }
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject_Request</fullName>
+        <availability>online</availability>
+        <description>Rejects the current request. Provide reason for rejection.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+var currentStatus = &quot;{!Contract_Request__c.Request_Status__c}&quot;;
+
+if(currentStatus == &quot;Processed&quot;)
+{
+    alert(&quot;Contract has already created for this request.\nYou cannot reject the request at this point.&quot;);
+}
+else if(currentStatus == &quot;Rejected&quot;)
+{
+    alert(&quot;Nothing to do!\nRequest is already rejected.&quot;);
+}
+else
+{
+    var rejectReason = prompt(&quot;Please enter Reject Reason&quot;,&quot;&quot;);
+    
+    if(rejectReason == null || rejectReason.replace(&quot; &quot;,&quot;&quot;).length == 0)
+    {
+        alert(&quot;You did not enter any reason for rejection.\nPlease try again.&quot;);
+    }
+    else
+    {
+        this.value = &quot;Updating status...&quot;;
+        
+        var cr = new sforce.SObject(&quot;Contract_Request__c&quot;);
+        
+        cr.Id = &apos;{!Contract_Request__c.Id}&apos;;
+        cr.Reason_for_Rejection__c = rejectReason;
+        cr.Request_Status__c = &apos;Rejected&apos;;
+        
+        sforce.connection.update([cr]);
+        
+        this.value = &quot;Refreshing page...&quot;;
+        
+        location.reload(true);
+    }
+}</url>
+    </webLinks>
+</CustomObject>

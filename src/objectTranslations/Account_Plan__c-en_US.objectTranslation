@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Plans</value>
+    </caseValues>
+    <fields>
+        <help><!-- Customer&apos;s / Account&apos;s strategic priorities for the Year / Quarter --></help>
+        <label><!-- Account&apos;s Priorities/Strategies --></label>
+        <name>Account_Priorities_Strategies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- These are the factors / events which influence strategy --></help>
+        <label><!-- Key Driving Forces --></label>
+        <name>Key_Driving_Forces__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quarterly Plan need to be derived from Annual Strategy
+It should cover ; Executive Summary ; Portfolio / Ranging Starategy; Account Achievements and Highlights --></help>
+        <label><!-- MMI Strategy For The Current Quarter --></label>
+        <name>MMI_Strategy_For_The_Current_Quarter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual Strategy can cover following:-
+1. Summary
+2. Portfolio Strategy
+3. Product Strategy
+4. Marketing Strategy
+5. Channel Strategy
+This should be aligned to Customer priorities  and MMI OKR&apos;s --></help>
+        <label><!-- MMI Strategy - Linked to Annual OKR --></label>
+        <name>MMI_Strategy_Linked_to_Annual_OKR__c</name>
+    </fields>
+    <fields>
+        <help><!-- The quarter of the year to which this account plan is mapped / link --></help>
+        <label><!-- Plan Quarter --></label>
+        <name>Plan_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plan Year --></label>
+        <name>Plan_Year__c</name>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Account Plan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Download_Account_Plan --></label>
+        <name>Download_Account_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Download_Account_Plan_ListView --></label>
+        <name>Download_Account_Plan_ListView</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Testing --></label>
+        <name>Testing</name>
+    </webLinks>
+</CustomObjectTranslation>

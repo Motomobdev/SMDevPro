@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device_ChinaModel_Junction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Device_ChinaModel_Junctions</value>
+    </caseValues>
+    <fields>
+        <label><!-- China Models --></label>
+        <name>China_Models__c</name>
+        <relationshipLabel><!-- Device_ChinaModel_Junctions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Device_ChinaModel_Junctions --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

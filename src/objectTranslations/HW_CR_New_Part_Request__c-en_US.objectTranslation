@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR New Part Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW CR New Part Requests</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the current part number extension (for series) or the exact part number to be replaced by new qualification. --></help>
+        <label><!-- Current Part-Series Number --></label>
+        <name>Current_Part_Series_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW CR Initial Review --></label>
+        <name>HW_CR_Initial_Review__c</name>
+        <relationshipLabel><!-- HW CR New Part Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- MCMS MRT record id for the submission of w18 data. --></help>
+        <label><!-- MRT Number --></label>
+        <name>MRT_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- MotoPDM ECR record number for the request of new part number. --></help>
+        <label><!-- MotoPDM ECR --></label>
+        <name>MotoPDM_ECR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the description for the new part number as it appears in ICCS or MotoPDM. --></help>
+        <label><!-- New Part-Series Description --></label>
+        <name>New_Part_Series_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the new part extension (for series qualification) or the exact part number of the soon to be qualified component. --></help>
+        <label><!-- New Part-Series Number --></label>
+        <name>New_Part_Series_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Supplier Id associated to the new part creation.  Must synchronize with the supplier name. --></help>
+        <label><!-- New Supplier Code --></label>
+        <name>New_Supplier_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the supplier name as it appears within eGVM or CRIS. --></help>
+        <label><!-- New Supplier Name --></label>
+        <name>New_Supplier_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The cross reference between MMI part number and the supplier internal part number.  These must synchronize for proper w18 compliance. --></help>
+        <label><!-- New Supplier Part Number --></label>
+        <name>New_Supplier_Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Responsible SDE for gathering ePAF signature, MRT/w18 submission, and additional supplier qualification pack data. --></help>
+        <label><!-- SDE Owner --></label>
+        <name>SDE_Owner__c</name>
+        <relationshipLabel><!-- HW CR New Part Requests (SDE Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The spec owner should confirm release of documentation by checking the confirmation box and uploading the document to this record. --></help>
+        <label><!-- Spec Released --></label>
+        <name>Spec_Released__c</name>
+    </fields>
+    <fields>
+        <help><!-- Person responsible for creation of new 51R specification and generation of new part or series number. --></help>
+        <label><!-- Specification Owner --></label>
+        <name>Specification_Owner__c</name>
+        <relationshipLabel><!-- HW CR New Part Requests (Specification Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Confirmation w18 compliance has been achieved and record exists in EMARS. --></help>
+        <label><!-- W18 Compliance --></label>
+        <name>W18_Compliance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Confirmation the supplier has signed and is in compliance with the MCMS ePAF request. --></help>
+        <label><!-- ePAF Complete --></label>
+        <name>ePAF_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The MCMS ePAF record number --></help>
+        <label><!-- ePAF Number --></label>
+        <name>ePAF_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>HW CR New Part Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- SDE Section --></label>
+            <section>SDE Section</section>
+        </sections>
+        <sections>
+            <label><!-- Specification Owner Section --></label>
+            <section>Specification Owner Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <workflowTasks>
+        <description><!-- Review request to ensure engineer and SDE assignment. --></description>
+        <name>Verify_New_Part_Request</name>
+        <subject><!-- Verify New Part Request --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

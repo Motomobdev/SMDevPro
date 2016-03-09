@@ -1,0 +1,5 @@
+<apex:page id="page" showHeader="true" sidebar="false" showChat="false" standardController="Report" tabStyle="GTM_Top_Reports__tab">
+
+    <apex:iframe id="if1" frameborder="0" width="100%" height="800px" scrolling="true" html-seamless="seamless" src="{!$CurrentPage.parameters.url}" />
+
+</apex:page>

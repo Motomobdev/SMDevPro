@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>View and Modify my NDAs</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom25: Alarm clock</motif>
+    <page>NDA_DashboradSearch</page>
+</CustomTab>

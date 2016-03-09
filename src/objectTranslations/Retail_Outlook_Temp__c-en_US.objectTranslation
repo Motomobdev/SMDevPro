@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Retail Outlook Temp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Retail Outlook Temp</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date1 --></label>
+        <name>Date1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date2 --></label>
+        <name>Date2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date3 --></label>
+        <name>Date3__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

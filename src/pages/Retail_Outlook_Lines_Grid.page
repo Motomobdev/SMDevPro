@@ -1,0 +1,36 @@
+<apex:page standardController="Retail_Outlook__c" sidebar="false" showHeader="false">
+    <apex:tabPanel switchType="client" selectedTab="tabdetails"
+                      id="RetailForecastTabPanel" tabClass="activeTab"
+                      inactiveTabClass="inactiveTab">
+        <apex:tab label="Companion Products(CP)">
+            <iframe id="gridFrame" scrolling="auto" height="450" width="100%" frameborder="0"
+                src="/apex/gblite__Grid?gname=Retail Outlook Lines CP&fpf=Retail_Outlook__c&fpv={!Retail_Outlook__c.Id}&sh=0&ssb=0&sbb=1">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Handset">
+            <iframe id="gridFrame" scrolling="auto" height="450" width="100%" frameborder="0"
+                src="/apex/gblite__Grid?gname=Retail Outlook Lines Handset&fpf=Retail_Outlook__c&fpv={!Retail_Outlook__c.Id}&sh=0&ssb=0&sbb=1">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Home">
+            <iframe id="gridFrame" scrolling="auto" height="450" width="100%" frameborder="0"
+                src="/apex/gblite__Grid?gname=Retail Outlook Lines Home&fpf=Retail_Outlook__c&fpv={!Retail_Outlook__c.Id}&sh=0&ssb=0&sbb=1">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Tablet">
+            <iframe id="gridFrame" scrolling="auto" height="450" width="100%" frameborder="0"
+                src="/apex/gblite__Grid?gname=Retail Outlook Lines Tablet&fpf=Retail_Outlook__c&fpv={!Retail_Outlook__c.Id}&sh=0&ssb=0&sbb=1">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Other">
+          <iframe id="gridFrame" scrolling="auto" height="450" width="100%" frameborder="0"
+              src="/apex/gblite__Grid?gname=Retail Outlook Lines Other&fpf=Retail_Outlook__c&fpv={!Retail_Outlook__c.Id}&sh=0&ssb=0&sbb=1">
+          </iframe>
+        </apex:tab>
+
+    </apex:tabPanel>
+</apex:page>

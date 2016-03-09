@@ -1,0 +1,60 @@
+<apex:page controller="WeeklyReportController" cache="true" contenttype="application/vnd.ms-word#WeeklyReportByCreator.doc" 
+           showHeader="false" sidebar="false" standardStylesheets="false">
+    <style type="text/css">
+        .category {color:blue;font-weight:bold;font-size:19pt;font-family:Arial;}
+        .filter {font-size:15px;font-family:Arial;color:black;}
+        .headline {font-weight:bold;font-size:24pt;font-family:Arial;margin-left:2em;}
+        .pg {border: 2pt solid white;}
+        .weeklyList {font-size: 12pt;font-family: Arial;border:2pt solid white;line-height:1.5;}
+        .weeklyItem {font-weight:bold;}
+    </style>
+    <apex:outputPanel >
+        <apex:outputText styleClass="headline" value="{!function} Weekly Report"/> <br />
+        <!--<apex:outputText styleClass="filter" value="Function: {!function} ; " rendered="{!NOT(ISBLANK(function))}" />--> 
+        <apex:outputText styleClass="filter" value="Week Ending: {!weekEnding}" rendered="{!NOT(ISBLANK(weekEnding))}"/>
+        <br />
+    </apex:outputPanel>
+
+    <apex:panelGrid styleClass="pg" columns="1" rendered="{!weeklyItems.size>0}">
+        
+        <apex:outputPanel styleClass="weeklyList" rendered="{!highlightsByCreator.size>0}">
+            <apex:outputText styleClass="category" value="Highlights"/><br />
+            <apex:dataList value="{!highlightsByCreator}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Function__c} : {!wi.CreatedBy.Name} -  " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!marketIntelligenceByCreator.size>0}">
+            <apex:outputText styleClass="category" value="Market Intelligence"/><br />
+            <apex:dataList value="{!marketIntelligenceByCreator}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Function__c} : {!wi.CreatedBy.Name} -  " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!nextWeeksPrioritiesByCreator.size>0}">
+            <apex:outputText styleClass="category" value="Next Week's Priorities"/><br />
+            <apex:dataList value="{!nextWeeksPrioritiesByCreator}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Function__c} : {!wi.CreatedBy.Name} -  " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!keyHighlightsByCreator.size>0}">
+            <apex:outputText styleClass="category" value="Key Highlights"/><br />
+            <apex:dataList value="{!keyHighlightsByCreator}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Function__c} : {!wi.CreatedBy.Name} -  " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!upcomingMeetingsByCreator.size>0}">
+            <apex:outputText styleClass="category" value="Upcoming Meetings"/><br />
+            <apex:dataList value="{!upcomingMeetingsByCreator}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Function__c} : {!wi.CreatedBy.Name} -  " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList>
+        </apex:outputPanel>
+    </apex:panelGrid>
+</apex:page>

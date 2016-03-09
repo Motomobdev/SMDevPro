@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Retail Outlook RO</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Retail Outlook ROs</value>
+    </caseValues>
+    <fields>
+        <label><!-- RO Comments --></label>
+        <name>RO_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO Price --></label>
+        <name>RO_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO Probability --></label>
+        <name>RO_Probability__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RO Type --></label>
+        <name>RO_Type__c</name>
+        <picklistValues>
+            <masterLabel>Demand</masterLabel>
+            <translation><!-- Demand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply</masterLabel>
+            <translation><!-- Supply --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RO Units --></label>
+        <name>RO_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO --></label>
+        <name>RO__c</name>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk</masterLabel>
+            <translation><!-- Risk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Retail Outlook Line --></label>
+        <name>Retail_Outlook_Line__c</name>
+        <relationshipLabel><!-- Retail Outlook ROs --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Retail Outlook RO Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot change RO Price if Outlook is locked. --></errorMessage>
+        <name>Deny_Upd_Outlook_RO_Prc_if_Outook_Lockd</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change RO Units if Outlook is locked. --></errorMessage>
+        <name>Deny_Upd_Outlook_RO_Units_ifOutook_Lockd</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the RO Probability field for locked outlooks. --></errorMessage>
+        <name>Deny_Upd_RO_Probability_if_Outlook_Lockd</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- must select value for Probability --></errorMessage>
+        <name>RO_Probability_Validate_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you select a type of Price, you must provide a valid price value. --></errorMessage>
+        <name>RO_Type_Validation_Price</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you select a type of Demand, Supply or Other, you must provide a valid units value. --></errorMessage>
+        <name>RO_Type_Validation_Units</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select a value for RO --></errorMessage>
+        <name>RO_Validate_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select value for Probability --></errorMessage>
+        <name>Ro_Type_Validate_Null</name>
+    </validationRules>
+</CustomObjectTranslation>

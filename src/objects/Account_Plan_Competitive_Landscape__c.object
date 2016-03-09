@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <description>1.Competitive Landscape for an account is the latest competitive snapshot on the account
+2. The landscape should be refreshed at least Once a quarter
+3.Starts with a Price tier and tracks the 
+4. Top devices from the vendor in price tier
+5.Device market share rank on the account
+6.Devices market share % in the price tier for the account
+
+Also captures Vendor strategy
+1. Product portfolio
+2. Product Strategy
+3. Marketing Strategy
+4. Channel Strategy
+5. Price tier strategy
+6. Recent Promotions / Market Moves : 
+7. Next Anticipated Replacement product launch date</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Plan__c</fullName>
+        <description>Account Plan  covers following sections for Phase I
+1. Customer Business Strategy
+2. Competitive Landscape - Price tier wise / vendor wise
+3. MMI Account Strategy - Annual / Quarterly
+
+Annual Strategy can cover following:-
+1. Summary
+2. Portfolio Strategy
+3. Product Strategy
+4. Marketing Strategy
+5. Channel Strategy
+
+Quarterly Plan need to be derived from Annual Strategy and driving the quarterly priorities to align with Annual strategic plan for the account
+
+
+
+
+is the MMI strategy for the Account. There are two stages to the Account plan - Annual and Quarterly
+It should cover
+1. Executive Summary 
+2. Portfolio / Ranging Starategy
+3. Account Achievements and Highlights</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Plan  covers following - Customer Business Strategy; Competitive Landscape - Price tier wise / vendor wise;  MMI Account Strategy - Annual / Quarterly; 
+MMI Annual Strategy - Executive Summary; Portfolio Strategy Summary; Marketing, Channel</inlineHelpText>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan__c</referenceTo>
+        <relationshipLabel>Account Plan Competitive Landscapes</relationshipLabel>
+        <relationshipName>Account_Plan_Competitive_Landscapes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Average_Sell_Through_Per_Week__c</fullName>
+        <description>Latest available Average Sell- Through number for the device. Number / Week</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Latest available Average Sell- Through number for the device. Number / Week</inlineHelpText>
+        <label>Average Sell Through Per Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Rank__c</fullName>
+        <description>Market Share rank on the account in the price tier for latest period (Week / Month)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Market Share rank on the account in the price tier for latest period (Week / Month)</inlineHelpText>
+        <label>Device Rank</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Tier_Market_Share__c</fullName>
+        <description>Device Market Share on the account in the specific price tier for latest available period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Device Market Share on the account in the specific price tier for latest available period</inlineHelpText>
+        <label>Price Tier - Market Share %</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Price_Tier__c</fullName>
+        <description>ASP Price Tier</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ASP Price Tier</inlineHelpText>
+        <label>ASP ($)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-149</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>150-199</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>200-299</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>300-399</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;400</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Name of the competitor&apos;s product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the competitor&apos;s product</inlineHelpText>
+        <label>Product</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recommended_Retail_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>RRP</inlineHelpText>
+        <label>Recommended Retail Price ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Strategy__c</fullName>
+        <description>1.Competitive Landscape for an account is the latest competitive snapshot on the account
+2. The landscape should be refreshed at least Once a quarter
+3.Starts with a Price tier and tracks the 
+4. Top devices from the vendor in price tier
+5.Device market share rank on the account
+6.Devices market share % in the price tier for the account
+
+Also captures Vendor strategy
+1. Product portfolio
+2. Product Strategy
+3. Marketing Strategy
+4. Channel Strategy
+5. Price tier strategy
+6. Recent Promotions / Market Moves : 
+7. Next Anticipated Replacement product launch date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Also captures Vendor strategy
+1. Product portfolio
+2. Product Strategy
+3. Marketing Strategy
+4. Channel Strategy
+5. Price tier strategy
+6. Recent Promotions / Market Moves : 
+7. Next Anticipated Replacement product launch date</inlineHelpText>
+        <label>Strategy</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Vendor_Name__c</fullName>
+        <description>Device Vendor Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Device Vendor Name</inlineHelpText>
+        <label>Vendor Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Apple</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackberry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chinese Vendors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HTC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Vendors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nokia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Samsung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sony</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Account Plan Competitive Landscape</label>
+    <nameField>
+        <displayFormat>CL-{0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Plan Competitive Landscapes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,20 @@
+<apex:page showHeader="false" cache="false" doctype="html-5.0">
+
+<style>
+#gtm-list { width:100%; font-family:Georgia, Times, serif; font-size:15px; }
+#gtm-list ul { list-style: none; }
+#gtm-list ul li { }
+#gtm-list ul li a { display:block; text-decoration:none; color:#000000; background-color:#FFFFFF; line-height:30px;
+  border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:#CCCCCC; padding-left:10px; cursor:pointer; }
+#gtm-list ul li a:hover { color:#dddddd; }
+#gtm-list ul li a:visited { color:#000000; }
+#gtm-list ul li a strong { margin-right:10px; }
+</style>
+
+<div id="gtm-list">
+<ul>
+<li><a href="https://insights.svcmot.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site6/views/Testv1/MarketSummary&tableauSite=Site6&userName=bizops&container=iframe&:toolbar=yes">Activation Summary Dashboard</a></li>
+<li>-- More Coming Soon --</li>
+</ul>
+</div>
+</apex:page>

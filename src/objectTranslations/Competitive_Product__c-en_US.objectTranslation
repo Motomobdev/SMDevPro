@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competitive Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitive Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- ASP Range --></label>
+        <name>ASP_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- ASP ($) --></label>
+        <name>ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accelerometer --></label>
+        <name>Accelerometer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Analog TV --></label>
+        <name>Analog_TV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Audio Player --></label>
+        <name>Audio_Player__c</name>
+    </fields>
+    <fields>
+        <label><!-- Barometer --></label>
+        <name>Barometer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Capacity (mAh) --></label>
+        <name>Battery_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bluetooth --></label>
+        <name>Bluetooth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+        <picklistValues>
+            <masterLabel>ACER</masterLabel>
+            <translation><!-- ACER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALCATEL</masterLabel>
+            <translation><!-- ALCATEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALLVIEW</masterLabel>
+            <translation><!-- ALLVIEW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMAZON</masterLabel>
+            <translation><!-- AMAZON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMOI</masterLabel>
+            <translation><!-- AMOI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMTEK</masterLabel>
+            <translation><!-- AMTEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APPLE</masterLabel>
+            <translation><!-- APPLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ARCHOS</masterLabel>
+            <translation><!-- ARCHOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASUS</masterLabel>
+            <translation><!-- ASUS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BEIDOU</masterLabel>
+            <translation><!-- BEIDOU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLACKBERRY</masterLabel>
+            <translation><!-- BLACKBERRY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLU</masterLabel>
+            <translation><!-- BLU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CELKON</masterLabel>
+            <translation><!-- CELKON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COOLPAD</masterLabel>
+            <translation><!-- COOLPAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELL</masterLabel>
+            <translation><!-- DELL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLY</masterLabel>
+            <translation><!-- FLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FUJITSU</masterLabel>
+            <translation><!-- FUJITSU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G&apos;FIVE</masterLabel>
+            <translation><!-- G&apos;FIVE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIGABYTE</masterLabel>
+            <translation><!-- GIGABYTE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIONEE</masterLabel>
+            <translation><!-- GIONEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HAIER</masterLabel>
+            <translation><!-- HAIER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HASEE</masterLabel>
+            <translation><!-- HASEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HISENSE</masterLabel>
+            <translation><!-- HISENSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTC</masterLabel>
+            <translation><!-- HTC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUAWEI</masterLabel>
+            <translation><!-- HUAWEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICEMOBILE</masterLabel>
+            <translation><!-- ICEMOBILE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIAYU</masterLabel>
+            <translation><!-- JIAYU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>K-TOUCH</masterLabel>
+            <translation><!-- K-TOUCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KARBONN</masterLabel>
+            <translation><!-- KARBONN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KYOCERA</masterLabel>
+            <translation><!-- KYOCERA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAVA</masterLabel>
+            <translation><!-- LAVA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LENOVO</masterLabel>
+            <translation><!-- LENOVO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG</masterLabel>
+            <translation><!-- LG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAXX</masterLabel>
+            <translation><!-- MAXX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MEIZU</masterLabel>
+            <translation><!-- MEIZU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MICROMAX</masterLabel>
+            <translation><!-- MICROMAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOTOROLA</masterLabel>
+            <translation><!-- MOTOROLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEC</masterLabel>
+            <translation><!-- NEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEC CASIO</masterLabel>
+            <translation><!-- NEC CASIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEO</masterLabel>
+            <translation><!-- NEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEXIAN</masterLabel>
+            <translation><!-- NEXIAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOKIA</masterLabel>
+            <translation><!-- NOKIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPO</masterLabel>
+            <translation><!-- OPPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORANGE</masterLabel>
+            <translation><!-- ORANGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Plus</masterLabel>
+            <translation><!-- One Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PANASONIC</masterLabel>
+            <translation><!-- PANASONIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PANTECH</masterLabel>
+            <translation><!-- PANTECH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHILIPS</masterLabel>
+            <translation><!-- PHILIPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAMSUNG</masterLabel>
+            <translation><!-- SAMSUNG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHARP</masterLabel>
+            <translation><!-- SHARP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMARTFREN</masterLabel>
+            <translation><!-- SMARTFREN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SONY</masterLabel>
+            <translation><!-- SONY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SONY ERICSSON</masterLabel>
+            <translation><!-- SONY ERICSSON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPICE</masterLabel>
+            <translation><!-- SPICE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T-MOBILE</masterLabel>
+            <translation><!-- T-MOBILE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCL</masterLabel>
+            <translation><!-- TCL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOSHIBA</masterLabel>
+            <translation><!-- TOSHIBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UMI</masterLabel>
+            <translation><!-- UMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VERYKOOL</masterLabel>
+            <translation><!-- VERYKOOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIDEOCON</masterLabel>
+            <translation><!-- VIDEOCON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIVO</masterLabel>
+            <translation><!-- VIVO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VODAFONE</masterLabel>
+            <translation><!-- VODAFONE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WIKO</masterLabel>
+            <translation><!-- WIKO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XIAOMI</masterLabel>
+            <translation><!-- XIAOMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XOLO</masterLabel>
+            <translation><!-- XOLO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZEN</masterLabel>
+            <translation><!-- ZEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZTE</masterLabel>
+            <translation><!-- ZTE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Browser --></label>
+        <name>Browser__c</name>
+    </fields>
+    <fields>
+        <label><!-- CPU --></label>
+        <name>CPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Camera Burst Mode --></label>
+        <name>Camera_Burst_Mode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Camera (MP) --></label>
+        <name>Camera__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chipset --></label>
+        <name>Chipset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clockspeed (MHz) --></label>
+        <name>Clockspeed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Status --></label>
+        <name>Current_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- DLNA --></label>
+        <name>DLNA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Picture --></label>
+        <name>Device_Picture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dimensions --></label>
+        <name>Dimensions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Resolution --></label>
+        <name>Display_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Size --></label>
+        <name>Display_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Technology --></label>
+        <name>Display_Technology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display --></label>
+        <name>Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Domain --></label>
+        <name>Domain__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Phone</masterLabel>
+            <translation><!-- Mobile Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smartphone</masterLabel>
+            <translation><!-- Smartphone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dual SIM --></label>
+        <name>Dual_SIM__c</name>
+    </fields>
+    <fields>
+        <label><!-- EDGE --></label>
+        <name>EDGE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Date --></label>
+        <name>Entry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Period Diff --></label>
+        <name>Entry_Period_Diff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Period Reversed --></label>
+        <name>Entry_Period_Reversed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Period --></label>
+        <name>Entry_Period__c</name>
+        <picklistValues>
+            <masterLabel>Q1 2010</masterLabel>
+            <translation><!-- Q1 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 2011</masterLabel>
+            <translation><!-- Q1 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 2012</masterLabel>
+            <translation><!-- Q1 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 2013</masterLabel>
+            <translation><!-- Q1 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 2014</masterLabel>
+            <translation><!-- Q1 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q1 2015</masterLabel>
+            <translation><!-- Q1 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2010</masterLabel>
+            <translation><!-- Q2 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2011</masterLabel>
+            <translation><!-- Q2 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2012</masterLabel>
+            <translation><!-- Q2 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2013</masterLabel>
+            <translation><!-- Q2 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2014</masterLabel>
+            <translation><!-- Q2 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2 2015</masterLabel>
+            <translation><!-- Q2 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2010</masterLabel>
+            <translation><!-- Q3 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2011</masterLabel>
+            <translation><!-- Q3 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2012</masterLabel>
+            <translation><!-- Q3 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2013</masterLabel>
+            <translation><!-- Q3 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2014</masterLabel>
+            <translation><!-- Q3 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3 2015</masterLabel>
+            <translation><!-- Q3 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2010</masterLabel>
+            <translation><!-- Q4 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2011</masterLabel>
+            <translation><!-- Q4 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2012</masterLabel>
+            <translation><!-- Q4 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2013</masterLabel>
+            <translation><!-- Q4 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2014</masterLabel>
+            <translation><!-- Q4 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4 2015</masterLabel>
+            <translation><!-- Q4 2015 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Experiences --></label>
+        <name>Experiences__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Memory Inbox --></label>
+        <name>External_Memory_Inbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flash --></label>
+        <name>Flash__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus --></label>
+        <name>Focus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Factor --></label>
+        <name>Form_Factor__c</name>
+        <picklistValues>
+            <masterLabel>BAR</masterLabel>
+            <translation><!-- BAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLAMSHELL</masterLabel>
+            <translation><!-- CLAMSHELL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLIP</masterLabel>
+            <translation><!-- FLIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QWERTY</masterLabel>
+            <translation><!-- QWERTY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QWERTY TOUCH</masterLabel>
+            <translation><!-- QWERTY TOUCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QWERTY TOUCH SLIDER</masterLabel>
+            <translation><!-- QWERTY TOUCH SLIDER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLATE</masterLabel>
+            <translation><!-- SLATE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLIDER</masterLabel>
+            <translation><!-- SLIDER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOUCH</masterLabel>
+            <translation><!-- TOUCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOUCH SLIDER</masterLabel>
+            <translation><!-- TOUCH SLIDER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UNCONFIRMED</masterLabel>
+            <translation><!-- UNCONFIRMED --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GPRS --></label>
+        <name>GPRS__c</name>
+    </fields>
+    <fields>
+        <label><!-- GPS --></label>
+        <name>GPS__c</name>
+    </fields>
+    <fields>
+        <label><!-- GPU --></label>
+        <name>GPU__c</name>
+    </fields>
+    <fields>
+        <label><!-- HD Video Call --></label>
+        <name>HD_Video_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- HSDPA --></label>
+        <name>HSDPA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Secondary Camera? --></label>
+        <name>Has_Secondary_Camera__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hotspot --></label>
+        <name>Hotspot__c</name>
+    </fields>
+    <fields>
+        <label><!-- IM --></label>
+        <name>IM__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPXX --></label>
+        <name>IPXX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instant Camera --></label>
+        <name>Instant_Camera__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrated Phone Experience --></label>
+        <name>Integrated_Phone_Experience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Java --></label>
+        <name>Java__c</name>
+    </fields>
+    <fields>
+        <label><!-- Life Proof --></label>
+        <name>Life_Proof__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multi Touch --></label>
+        <name>Multi_Touch__c</name>
+    </fields>
+    <fields>
+        <label><!-- NFC --></label>
+        <name>NFC__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Colors --></label>
+        <name>No_of_Colors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upgrade OS --></label>
+        <name>OS_Upgrade__c</name>
+        <picklistValues>
+            <masterLabel>Android OS</masterLabel>
+            <translation><!-- Android OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.1 (Éclair)</masterLabel>
+            <translation><!-- Android OS, v2.1 (Éclair) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.2 (Froyo)</masterLabel>
+            <translation><!-- Android OS, v2.2 (Froyo) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.2.1 (Froyo)</masterLabel>
+            <translation><!-- Android OS, v2.2.1 (Froyo) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.3 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.3 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.4 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.4 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.5 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.5 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.6 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.6 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v3.0 (Honeycomb)</masterLabel>
+            <translation><!-- Android OS, v3.0 (Honeycomb) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.0 (Ice Cream Sandwich)</masterLabel>
+            <translation><!-- Android OS, v4.0 (Ice Cream Sandwich) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.1 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.1 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.2 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.2 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.3 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.3 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.4 (KitKat)</masterLabel>
+            <translation><!-- Android OS, v4.4 (KitKat) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.4.x</masterLabel>
+            <translation><!-- Android OS, v4.4.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREW 3.1</masterLabel>
+            <translation><!-- BREW 3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREW OS</masterLabel>
+            <translation><!-- BREW OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bada OS</masterLabel>
+            <translation><!-- Bada OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bada v2.0</masterLabel>
+            <translation><!-- Bada v2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlackBerry OS 10.2</masterLabel>
+            <translation><!-- BlackBerry OS 10.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlackBerry OS 6</masterLabel>
+            <translation><!-- BlackBerry OS 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 10</masterLabel>
+            <translation><!-- Blackberry OS 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 7</masterLabel>
+            <translation><!-- Blackberry OS 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 7.1</masterLabel>
+            <translation><!-- Blackberry OS 7.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry Tablet OS</masterLabel>
+            <translation><!-- Blackberry Tablet OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firefox OS</masterLabel>
+            <translation><!-- Firefox OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMP OS</masterLabel>
+            <translation><!-- MMP OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MeeGo</masterLabel>
+            <translation><!-- MeeGo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MeeGo 1.2 Harmattan</masterLabel>
+            <translation><!-- MeeGo 1.2 Harmattan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia Asha OS 1.0</masterLabel>
+            <translation><!-- Nokia Asha OS 1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS 2.5</masterLabel>
+            <translation><!-- OMS 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proprietary</masterLabel>
+            <translation><!-- Proprietary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S40 Asha</masterLabel>
+            <translation><!-- S40 Asha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S60 V9.4</masterLabel>
+            <translation><!-- S60 V9.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbian Anna OS</masterLabel>
+            <translation><!-- Symbian Anna OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbian Belle OS</masterLabel>
+            <translation><!-- Symbian Belle OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ThreadX OS</masterLabel>
+            <translation><!-- ThreadX OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7 Mango</masterLabel>
+            <translation><!-- Windows Phone 7 Mango --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7.5 Mango</masterLabel>
+            <translation><!-- Windows Phone 7.5 Mango --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7.8</masterLabel>
+            <translation><!-- Windows Phone 7.8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8</masterLabel>
+            <translation><!-- Windows Phone 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8 Black</masterLabel>
+            <translation><!-- Windows Phone 8 Black --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8.1</masterLabel>
+            <translation><!-- Windows Phone 8.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 4</masterLabel>
+            <translation><!-- iOS 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 5</masterLabel>
+            <translation><!-- iOS 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 6</masterLabel>
+            <translation><!-- iOS 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 7</masterLabel>
+            <translation><!-- iOS 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 8</masterLabel>
+            <translation><!-- iOS 8 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Android Version Number --></label>
+        <name>OS_Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch OS --></label>
+        <name>OS__c</name>
+        <picklistValues>
+            <masterLabel>Android OS</masterLabel>
+            <translation><!-- Android OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.1 (Éclair)</masterLabel>
+            <translation><!-- Android OS, v2.1 (Éclair) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.2 (Froyo)</masterLabel>
+            <translation><!-- Android OS, v2.2 (Froyo) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.2.1 (Froyo)</masterLabel>
+            <translation><!-- Android OS, v2.2.1 (Froyo) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.3 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.3 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.4 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.4 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.5 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.5 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v2.3.6 (Gingerbread)</masterLabel>
+            <translation><!-- Android OS, v2.3.6 (Gingerbread) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v3.0 (Honeycomb)</masterLabel>
+            <translation><!-- Android OS, v3.0 (Honeycomb) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.0 (Ice Cream Sandwich)</masterLabel>
+            <translation><!-- Android OS, v4.0 (Ice Cream Sandwich) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.1 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.1 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.2 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.2 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.3 (Jelly Bean)</masterLabel>
+            <translation><!-- Android OS, v4.3 (Jelly Bean) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.4 (KitKat)</masterLabel>
+            <translation><!-- Android OS, v4.4 (KitKat) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v4.4.x</masterLabel>
+            <translation><!-- Android OS, v4.4.x --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v5.0 (Lollipop)</masterLabel>
+            <translation><!-- Android OS, v5.0 (Lollipop) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v5.0.1</masterLabel>
+            <translation><!-- Android OS, v5.0.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v5.0.2</masterLabel>
+            <translation><!-- Android OS, v5.0.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v5.1</masterLabel>
+            <translation><!-- Android OS, v5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android OS, v5.1.1</masterLabel>
+            <translation><!-- Android OS, v5.1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREW 3.1</masterLabel>
+            <translation><!-- BREW 3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREW OS</masterLabel>
+            <translation><!-- BREW OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bada OS</masterLabel>
+            <translation><!-- Bada OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bada v2.0</masterLabel>
+            <translation><!-- Bada v2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlackBerry OS 10.2</masterLabel>
+            <translation><!-- BlackBerry OS 10.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlackBerry OS 6</masterLabel>
+            <translation><!-- BlackBerry OS 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 10</masterLabel>
+            <translation><!-- Blackberry OS 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 7</masterLabel>
+            <translation><!-- Blackberry OS 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry OS 7.1</masterLabel>
+            <translation><!-- Blackberry OS 7.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackberry Tablet OS</masterLabel>
+            <translation><!-- Blackberry Tablet OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firefox OS</masterLabel>
+            <translation><!-- Firefox OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMP OS</masterLabel>
+            <translation><!-- MMP OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MeeGo</masterLabel>
+            <translation><!-- MeeGo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MeeGo 1.2 Harmattan</masterLabel>
+            <translation><!-- MeeGo 1.2 Harmattan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia Asha OS 1.0</masterLabel>
+            <translation><!-- Nokia Asha OS 1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nokia Asha OS 1.1</masterLabel>
+            <translation><!-- Nokia Asha OS 1.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS 2.5</masterLabel>
+            <translation><!-- OMS 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proprietary</masterLabel>
+            <translation><!-- Proprietary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S40 Asha</masterLabel>
+            <translation><!-- S40 Asha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S60 V9.4</masterLabel>
+            <translation><!-- S60 V9.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbian Anna OS</masterLabel>
+            <translation><!-- Symbian Anna OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbian Belle OS</masterLabel>
+            <translation><!-- Symbian Belle OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ThreadX OS</masterLabel>
+            <translation><!-- ThreadX OS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tizen OS v2.2.1</masterLabel>
+            <translation><!-- Tizen OS v2.2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7 Mango</masterLabel>
+            <translation><!-- Windows Phone 7 Mango --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7.5 Mango</masterLabel>
+            <translation><!-- Windows Phone 7.5 Mango --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 7.8</masterLabel>
+            <translation><!-- Windows Phone 7.8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8</masterLabel>
+            <translation><!-- Windows Phone 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8 Black</masterLabel>
+            <translation><!-- Windows Phone 8 Black --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Phone 8.1</masterLabel>
+            <translation><!-- Windows Phone 8.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 4</masterLabel>
+            <translation><!-- iOS 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 5</masterLabel>
+            <translation><!-- iOS 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 6</masterLabel>
+            <translation><!-- iOS 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 7</masterLabel>
+            <translation><!-- iOS 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS 8</masterLabel>
+            <translation><!-- iOS 8 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AT&amp;T --></label>
+        <name>Operator_ATT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sprint --></label>
+        <name>Operator_Sprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- T-Mobile --></label>
+        <name>Operator_T_Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- US Cellular --></label>
+        <name>Operator_US_Cellular__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verizon --></label>
+        <name>Operator_Verizon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operators --></label>
+        <name>Operators__c</name>
+    </fields>
+    <fields>
+        <label><!-- POP / IMAP Email --></label>
+        <name>POP_IMAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Video Frame Rate --></label>
+        <name>Primary_Video_Frame_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processor Cores --></label>
+        <name>Processor_Cores__c</name>
+        <picklistValues>
+            <masterLabel>Dual Core</masterLabel>
+            <translation><!-- Dual Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Core Multithreading</masterLabel>
+            <translation><!-- Dual Core Multithreading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hexa Core</masterLabel>
+            <translation><!-- Hexa Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hexa Core Multithreading</masterLabel>
+            <translation><!-- Hexa Core Multithreading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Octa Core</masterLabel>
+            <translation><!-- Octa Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Octa Core Multithreading</masterLabel>
+            <translation><!-- Octa Core Multithreading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proprietary</masterLabel>
+            <translation><!-- Proprietary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quad Core</masterLabel>
+            <translation><!-- Quad Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quad Core Multithreading</masterLabel>
+            <translation><!-- Quad Core Multithreading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Core</masterLabel>
+            <translation><!-- Single Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Core Multithreading</masterLabel>
+            <translation><!-- Single Core Multithreading --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Processor --></label>
+        <name>Processor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proximity Sensor --></label>
+        <name>Proximity_Sensor__c</name>
+    </fields>
+    <fields>
+        <label><!-- RAM (MB) --></label>
+        <name>RAM_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROM (GB) --></label>
+        <name>ROM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Radio --></label>
+        <name>Radio__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asia --></label>
+        <name>Region_Asia__c</name>
+    </fields>
+    <fields>
+        <label><!-- China --></label>
+        <name>Region_China__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global --></label>
+        <name>Region_Global__c</name>
+    </fields>
+    <fields>
+        <label><!-- India --></label>
+        <name>Region_India__c</name>
+    </fields>
+    <fields>
+        <label><!-- LATAM --></label>
+        <name>Region_LATAM__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAM --></label>
+        <name>Region_NAM__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI --></label>
+        <name>Region_NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- WE --></label>
+        <name>Region_WE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regions --></label>
+        <name>Regions__c</name>
+    </fields>
+    <fields>
+        <label><!-- SD Card Support --></label>
+        <name>SD_Card_Support__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scratch Resistant --></label>
+        <name>Scratch_Resistant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Camera --></label>
+        <name>Secondary_Camera__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Display --></label>
+        <name>Secondary_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Social Networking --></label>
+        <name>Social_Networking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standby (Hrs) --></label>
+        <name>Standby__c</name>
+    </fields>
+    <fields>
+        <label><!-- TV-OUT --></label>
+        <name>TV_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Talktime (Mins) --></label>
+        <name>Talktime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total GHz --></label>
+        <name>Total_GHz__c</name>
+    </fields>
+    <fields>
+        <label><!-- Touch Screen --></label>
+        <name>Touch_Screen__c</name>
+    </fields>
+    <fields>
+        <label><!-- USB --></label>
+        <name>USB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Video Calling --></label>
+        <name>Video_Calling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Video Player --></label>
+        <name>Video_Player__c</name>
+    </fields>
+    <fields>
+        <label><!-- Video Recording --></label>
+        <name>Video_Recording__c</name>
+    </fields>
+    <fields>
+        <label><!-- Water Repellent --></label>
+        <name>Water_Repellent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight (g) --></label>
+        <name>Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wi-Fi Direct --></label>
+        <name>Wi_Fi_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wi-Fi --></label>
+        <name>Wi_Fi__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3.5 mm Jack --></label>
+        <name>X35_mm_Jack__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3D Display --></label>
+        <name>X3D_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3G --></label>
+        <name>X3G__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4G --></label>
+        <name>X4G__c</name>
+    </fields>
+    <fields>
+        <label><!-- X (mm) --></label>
+        <name>X__c</name>
+    </fields>
+    <fields>
+        <label><!-- Y (mm) --></label>
+        <name>Y__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z (mm) --></label>
+        <name>Z__c</name>
+    </fields>
+    <fields>
+        <label><!-- isMotorola --></label>
+        <name>isMotorola__c</name>
+    </fields>
+    <layouts>
+        <layout>Competitive Product Layout</layout>
+        <sections>
+            <label><!-- Battery --></label>
+            <section>Battery</section>
+        </sections>
+        <sections>
+            <label><!-- Body --></label>
+            <section>Body</section>
+        </sections>
+        <sections>
+            <label><!-- Camera --></label>
+            <section>Camera</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data --></label>
+            <section>Data</section>
+        </sections>
+        <sections>
+            <label><!-- Display --></label>
+            <section>Display</section>
+        </sections>
+        <sections>
+            <label><!-- Features --></label>
+            <section>Features</section>
+        </sections>
+        <sections>
+            <label><!-- Memory --></label>
+            <section>Memory</section>
+        </sections>
+        <sections>
+            <label><!-- Misc --></label>
+            <section>Misc</section>
+        </sections>
+        <sections>
+            <label><!-- Region --></label>
+            <section>Region</section>
+        </sections>
+        <sections>
+            <label><!-- Sound --></label>
+            <section>Sound</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Competitor Product --></label>
+        <name>Competitor_Product</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Motorola Product --></label>
+        <name>Motorola_Product</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

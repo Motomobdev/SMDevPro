@@ -1,0 +1,24 @@
+<apex:page standardController="Device__c" extensions="createNewCoreDevicePackageFromDevice" tabStyle="Core_Device_Package__c" >
+    <apex:outputText value="{!Device__c.Stable__c}{!Device__c.Name}" rendered="false"/>
+    <apex:form >
+        <apex:pageBlock title="Enter New Core Device Package Name" rendered="{!!IsCoreInserted}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!createCoreAndBuildLists}" value="Create New Core Device Package"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>                
+            </apex:pageBlockButtons>
+            
+            <apex:inputField value="{!newCore.Name}" style="width:300px"/>
+        </apex:pageBlock>
+        
+        <apex:pageBlock mode="edit" rendered="{!IsCoreInserted}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!continueToNewCore}" value="Continue to new Core Device Package"/>
+            </apex:pageBlockButtons>
+            
+            <apex:outputText style="font-size:medium;" value="Your new Core Device Package, {!newCore.Name}, has been created."></apex:outputText>
+            <BR/><BR/>
+            <apex:outputText style="font-style:italic;font-weight:bold;font-size:medium;color:red" value="When you click the continue button the new Core will be opened but it may not be finished being built by the system. If there are components missing please wait and refresh the screen."></apex:outputText>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,84 @@
+<apex:page controller="contractExt" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">
+<apex:image value="{!$Resource.logo_imoto}"/>
+</div>
+
+<apex:form >
+<apex:pageBlock title="CONTRACT REQUEST" mode="edit">
+
+<apex:pageBlockButtons >
+    <apex:commandButton action="{!prePage2}" value="Previous" style="width:60px;text-align:center;"> </apex:commandButton>
+    <apex:commandButton action="{!page4}" value="Next" style="width:60px;text-align:center;"> </apex:commandButton>
+</apex:pageBlockButtons>
+
+<div style="background-color:#C5D5F6;font-size:7px;height:40px;font-weight:900;color:#FFFFFF !important;line-height:50%;border-radius:10px;">
+<apex:sectionHeader title="STEP 3 of 4"/>
+</div>
+
+<div style="background-color:white;">
+<apex:pageBlockSection >
+
+<apex:panelGrid columns="2">
+
+<apex:outputLabel value="Description of Business Need" for="businessneed" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Business_Need__c}"  id="businessneed"  style="text-align:left;"/>
+   
+<apex:outputLabel value="Confidential Information?" for="cinfo" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:selectRadio value="{!confidential}" id="cinfo">
+  <apex:selectOptions value="{!items}"/>
+</apex:selectRadio>           
+
+<apex:outputLabel value="Requested Completion Date" for="legalhelp" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputPanel styleClass="requiredInput" layout="block">  
+    <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!contract.Requested_Completion_Date__c}" id="reqdate" style="text-align:left;"/>
+</apex:outputPanel> 
+
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageDate)>0}"/>
+<apex:outputText value="{!errorMessageDate}" style="color:red;" rendered="{!LEN(errorMessageDate)>0}"/>
+
+<apex:outputLabel value="Alternative Suppliers for this software" for="altsrc" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Alternative_Source__c}" id="altsrc" style="text-align:left;"/>
+
+<apex:outputLabel value="Targeted Lead Device to be first to use this software" for="look" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputPanel styleClass="requiredInput" layout="block">  
+    <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!devicelookup.Device__c}" id="look" required="false" style="text-align:left;"/>
+</apex:outputPanel> 
+
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageDevice)>0}"/>
+<apex:outputText value="{!errorMessageDevice}" style="color:red;" rendered="{!LEN(errorMessageDevice)>0}"/>
+
+</apex:panelGrid>
+</apex:pageBlockSection>
+</div>
+
+<div style="background-color:white;">
+<apex:pageBlockSection title="Planned Usage">
+
+<apex:panelGrid columns="2">
+
+<apex:outputLabel value="Projected number of different products to use this software" for="expvol" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:80px;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputPanel styleClass="requiredInput" layout="block">  
+    <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!contract.Expected_Volume__c}"  id="expvol" style="text-align:left;"/>
+</apex:outputPanel> 
+
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageVolume)>0}"/>
+<apex:outputText value="{!errorMessageVolume}" style="color:red;" rendered="{!LEN(errorMessageVolume)>0}"/>
+
+<apex:outputLabel value="Estimated Lifetime shipping volumes of this software" for="lifetime" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:80px;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputPanel styleClass="requiredInput" layout="block">  
+    <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!contract.Lifetime_Contract_Value__c}" id="lifetime" style="text-align:left;"/>
+</apex:outputPanel> 
+
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageLifetime)>0}"/>
+<apex:outputText value="{!errorMessageLifetime}" style="color:red;" rendered="{!LEN(errorMessageLifetime)>0}"/>
+
+</apex:panelGrid>
+</apex:pageBlockSection>
+</div>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,128 @@
+<apex:component controller="Z_ExistingCharges" allowDML="true">  
+
+        <script>
+        // Confirmation message on Delete action
+        function showConfirmationMessage( productName, ratePlanName ) {
+                var productName = productName.toString();
+                var ratePlanName  = ratePlanName.toString();
+                if ( null != productName && null != ratePlanName ) {
+                        var answer = confirm ("Are you sure you want to delete " + productName + "-" + ratePlanName + "?");
+                        return answer;
+                }
+        }
+         //Disabling all input fields
+           function disableAllFields(){
+        
+                var inputF = document.getElementsByTagName('input'); 
+                for(var i=0;i<inputF.length;i++){
+                        if(inputF[i].getAttribute('type')=='text'){
+                                inputF[i].setAttribute('disabled',true);
+                        }
+                }
+        }
+        </script>
+
+        <apex:attribute name="quoteID"
+                                        description="Quote ID from Product Selector Page"
+                                        type="String"
+                                        required="required"
+                                        assignTo="{!quoteIDname}"/>
+                                        
+        <apex:attribute name="from"
+                                        description="Identifying from where this component is invoked"
+                                        type="String"
+                                        required="required"
+                                        assignTo="{!fromName}"/>
+
+        <apex:form id="quoteForm" rendered="{!chargeGroupList.size > 0}">
+                <apex:pageBlock rendered="{!!editMode}">
+                        <apex:dataTable value="{!chargeGroupList}" var="chargeGroup" columns="1" width="100%">
+                                <apex:column width="100%">
+                                        <apex:outputPanel rendered="{!fromName = 'AddProductPage'}">
+                                                <table width="100%">
+                                                        <tr>
+                                                                <td align="left"><font size="2"><b>{!chargeGroup.productName} &nbsp;&nbsp; : &nbsp;&nbsp;{!chargeGroup.ratePlanName}</b></font></td>
+                                                                <td align="right">
+                                                                        <apex:outputPanel >
+<!--                                                                                 <apex:commandLink value="Edit" styleClass="btn" action="{!editProduct}"> -->
+<!--                                                                                         <apex:param name="toEditGroupID" assignTo="{!toEditGroupID}" value="{!chargeGroup.groupID}" /> -->
+<!--                                                                                 </apex:commandLink> -->
+<!--                                                                                 &nbsp;&nbsp; -->
+<!--                                                                                 <apex:commandLink value="Delete" styleClass="btn" action="{!deleteProduct}" -->
+<!--                                                                                                 onClick=" var v = showConfirmationMessage ( '{!JSENCODE(chargeGroup.productName)}', '{!JSENCODE(chargeGroup.ratePlanName)}' ); return v;" target="_top" > -->
+<!--                                                                                         <apex:param name="toDeleteGroupID" assignTo="{!toDeleteGroupID}" value="{!chargeGroup.groupID}" /> -->
+<!--                                                                                 </apex:commandLink> -->
+                                                                        </apex:outputPanel>
+                                                                </td>
+                                                        </tr>
+                                                </table>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!fromName = 'QuoteDetailPage'}">
+                                                <table width="100%">
+                                                        <tr>
+                                                                <td align="left"><font size="2"><b>{!chargeGroup.productName} &nbsp;&nbsp; : &nbsp;&nbsp;{!chargeGroup.ratePlanName}</b></font></td>
+                                                        </tr>
+                                                </table>
+                                        </apex:outputPanel>
+                                        <apex:pageBlockTable value="{!chargeGroup.zCharges}" var="charge">
+                                                <apex:column headerValue="Charge Name" value="{!charge.NAME}" />
+                                        
+		                                        <apex:column headerValue="Application Name"  width="12%" >
+		                                        	<apex:outputText value="{!charge.chargeObject['ApplicationName__c']}" />
+		                                        </apex:column>
+		                                       
+		                                        <apex:column headerValue="Cumulative From" width="5%" >
+		                                         	<apex:outputField value="{!charge.chargeObject['CumulativeFrom__c']}" />
+		                                        </apex:column>   
+		                                        
+		                                        <apex:column headerValue="Cumulative To" width="5%" >
+		                                         	<apex:outputField value="{!charge.chargeObject['CumulativeTo__c']}" />
+		                                        </apex:column>  
+		                                                                                
+		                                        <apex:column headerValue="Prepaid" width="2%" >   
+		                                         	<apex:outputField value="{!charge.chargeObject['Prepaid__c']}" />
+		                                        </apex:column>     
+                                                
+                                                <apex:column headerValue="Type" value="{!charge.CHARGE_TYPE}" />
+                                                <apex:column headerValue="Model" value="{!charge.MODEL}" />
+
+												<apex:column headerValue="Effective Price" width="7%" >   
+		                                         	<apex:outputField value="{!charge.chargeObject['EffectivePrice_Display__c']}" />
+		                                        </apex:column>  
+                                                
+                                                <apex:column headerValue="UOM" value="{!charge.UNIT_OF_MEASURE}" />
+                                                <apex:column headerValue="Period" value="{!charge.PERIOD}" />
+                                        </apex:pageBlockTable>
+                                        <table width="100%" >
+                                                <tr><td><hr size="1" width="100%" color="#610B0B"/></td></tr>
+                                        </table>
+                                </apex:column>
+                        </apex:dataTable>
+                </apex:pageBlock>
+				<apex:outputPanel id="pEditBlock">
+                        <apex:pageBlock rendered="{!editMode}">
+                                <table width="100%" >
+                                        <tr><td align="left"><font size="2"><b>{!currentChargeGroup.productName} &nbsp;&nbsp; : &nbsp;&nbsp;{!currentChargeGroup.ratePlanName}</b></font></td></tr>
+                                </table>
+                                
+					                         <c:z_SampleChargeSection id="cChargeSec"  chargeGroup="{!currentChargeGroup}" quoteIdVal="{!quoteID}" editableVal="true" editButton="false" />
+					                         
+                                <font color="#610B0B" size="1px">* To see the changes reflected, click outside the text area after entering input.</font>
+                                <br />
+                                <div align="center">
+                                        <apex:actionStatus id="changeStatus" onstart="disableAllFields();" >
+                                                <apex:facet name="start">
+                                                        <apex:commandButton value="Applying..." disabled="true" />
+                                                </apex:facet>
+                                                <apex:facet name="stop">
+                                                        <apex:commandLink value="Update" action="{!saveProduct}" target="_top" styleClass="btn"/>
+                                                </apex:facet>
+                                        </apex:actionStatus>
+                                        &nbsp;&nbsp;
+                                        <apex:commandLink value="Cancel" action="{!cancelEditing}" styleClass="btn" immediate="true" reRender="quoteForm" />
+                                </div>
+                        </apex:pageBlock>
+                </apex:outputPanel>
+        </apex:form>
+
+</apex:component>

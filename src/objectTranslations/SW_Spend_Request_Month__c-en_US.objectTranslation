@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Spend Request Month</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Spend Request Months</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual__c --></label>
+        <name>Actual_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated --></label>
+        <name>Estimated__c</name>
+    </fields>
+    <fields>
+        <help><!-- The expected Spend in Brazil --></help>
+        <label><!-- Brazil Expected --></label>
+        <name>Expected_Brazil_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- GAP (Brazil Expected) --></label>
+        <name>GAP_Brazil_Expected__c</name>
+    </fields>
+    <fields>
+        <label><!-- GAP (Non-Brazil Expected) --></label>
+        <name>GAP_Non_Brazil_Expected__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non Brazil expected Spend --></help>
+        <label><!-- Non-Brazil Expected --></label>
+        <name>Non_Brazil_Expected__c</name>
+    </fields>
+    <fields>
+        <label><!-- OVERALL GAP --></label>
+        <name>OVERALL_GAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR --></label>
+        <name>PR__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLT+1 --></label>
+        <name>SLT_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSR_Status --></label>
+        <name>SSR_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSR Title --></label>
+        <name>SSR_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Spend Request --></label>
+        <name>SW_Spend_Request__c</name>
+        <relationshipLabel><!-- SW Spend Request Months --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Spend Breakdown --></label>
+        <name>Spend_Breakdown__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend Location --></label>
+        <name>Spend_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

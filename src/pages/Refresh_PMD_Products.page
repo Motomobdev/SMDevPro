@@ -1,0 +1,5 @@
+<apex:page controller="IOD_Integration" action="{!init}">
+
+    <apex:pageMessages />
+    
+</apex:page>

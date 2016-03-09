@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Channel Profile</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Channel Profiles</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account Name --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Channel Profiles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Lenovo</masterLabel>
+            <translation><!-- Lenovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola</masterLabel>
+            <translation><!-- Motorola --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Channel Description --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- % of  units for the Account attributable to this specific distribution channel --></help>
+        <label><!-- % Mix --></label>
+        <name>Mix_Pct__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of retail stores; This field applies to the retail / COR channel --></help>
+        <label><!-- Number Of Stores --></label>
+        <name>Number_Of_Stores__c</name>
+    </fields>
+    <fields>
+        <label><!-- Porfolio Segment --></label>
+        <name>Portfolio_Segment__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CP</masterLabel>
+            <translation><!-- CP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablets</masterLabel>
+            <translation><!-- Tablets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearables</masterLabel>
+            <translation><!-- Wearables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iDEN</masterLabel>
+            <translation><!-- iDEN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- % Postpaid --></label>
+        <name>Postpaid_pct__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Prepaid --></label>
+        <name>Prepaid_pct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Tier --></label>
+        <name>Price_Tier__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High - &gt;$400</masterLabel>
+            <translation><!-- High - &gt;$400 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low - &lt;$200</masterLabel>
+            <translation><!-- Low - &lt;$200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid - $200-$399</masterLabel>
+            <translation><!-- Mid - $200-$399 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field to capture the combination of Type and Portfolio Segment to verify the combination had not already been added to the account. --></help>
+        <label><!-- Need unique Type and Portfolio Segment --></label>
+        <name>Type_Segment_Combo_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Channel Type --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>COR</masterLabel>
+            <translation><!-- COR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dealer</masterLabel>
+            <translation><!-- Dealer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Commerce</masterLabel>
+            <translation><!-- E-Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Distributor</masterLabel>
+            <translation><!-- Secondary Distributor --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Channel Profile Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Channel_Profile_Grid --></label>
+        <name>Channel_Profile_Grid</name>
+    </webLinks>
+</CustomObjectTranslation>

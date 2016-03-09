@@ -1,0 +1,100 @@
+<apex:page id="page" controller="MyDelegatedTasksCtr" sidebar="false" showHeader="false" showChat="false" tabStyle="Task">
+
+<style type="text/css">
+    .filter
+    {
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        margin-right: 20px;
+    }
+    .silver
+    {
+        color: silver;
+    }
+    a.no-underline
+    {
+        text-decoration: none;
+    }
+    .status
+    {
+        position: absolute;
+        top: 14px;
+        right: 8px;
+        z-index: 100;
+        width: 16px;
+        height: 16px;
+        background: url('{!$Resource.LoadingImage3}') no-repeat left center; 
+    }
+    .error-message
+    {
+        position: fixed;
+        top: 0px;
+        left: 20%;
+        width: 60%;
+        /*height: 30px;
+        color: rgb(161,66,68);
+        background-color: rgb(254,210,211);
+        border: 1px solid rgb(218,149,159);
+        border-radius: 7px;
+        text-align: center;*/
+    }
+</style>
+
+<script type="text/javascript">
+    window.setTimeout("delayedRefresh()", 1000);
+</script>
+
+<apex:form id="form">
+
+    <apex:actionFunction name="delayedRefresh" action="{!getMyDelegatedTasksAndApplyFilter}" reRender="pbtTasks,status1,pnlErrMsg" status="status1"/>
+        
+    <apex:outputPanel id="pnlFilter" styleClass="filter">
+        <apex:commandLink id="lnkRefresh" value="Refresh" action="{!getMyDelegatedTasksAndApplyFilter}" reRender="pbtTasks,status1,pnlErrMsg" status="status1" styleClass="no-underline"/>
+        <span class="silver">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+        <apex:selectList id="lstFilter" value="{!filter}" size="1">
+            <apex:selectOption itemLabel="All Open" itemValue="All Open" />
+            <apex:selectOption itemLabel="Overdue" itemValue="Overdue" />
+            <apex:selectOption itemLabel="Today" itemValue="Today" />
+            <apex:selectOption itemLabel="Today + Overdue" itemValue="Today + Overdue" />
+            <apex:selectOption itemLabel="Tomorrow" itemValue="Tomorrow" />
+            <apex:selectOption itemLabel="Next 7 Days" itemValue="Next 7 Days" />
+            <apex:selectOption itemLabel="Next 7 Days + Overdue" itemValue="Next 7 Days + Overdue" />
+            <apex:selectOption itemLabel="This Month" itemValue="This Month" />
+            <apex:actionSupport event="onchange" action="{!applyFilter}" reRender="pbtTasks,status1,pnlErrMsg" status="status1" />
+        </apex:selectList>
+    </apex:outputPanel>
+    
+    <apex:actionStatus id="status1" startStyleClass="status" />
+    
+    <apex:outputPanel id="pnlErrMsg">
+        <apex:outputPanel styleClass="error-message">
+            <apex:pageMessages id="msg" />
+        </apex:outputPanel>
+    </apex:outputPanel>
+    
+    <apex:pageBlock id="pbTasks" title="My Delegated Tasks">
+    
+        <apex:pageBlockTable id="pbtTasks" value="{!filteredTasks}" var="Task">
+            <apex:column headerValue="Delete" width="1">
+                <apex:commandLink id="lnkDeleteTask" action="{!deleteTask}" reRender="pbtTasks,status1,pnlErrMsg" status="status1" onclick="if(confirm('Are you sure you want to delete this task?') == false) return false;" styleClass="no-underline" >
+                    <apex:param assignTo="{!deleteTaskId}" value="{!Task.Id}" name="assignValue" />&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;
+                </apex:commandLink>
+            </apex:column>
+            <apex:column headerValue="Due Date" value="{!Task.ActivityDate}" style="color: {!if(Task.ActivityDate == null || Task.ActivityDate >= TODAY(), 'black', 'rgb(153, 0, 0)')};" />
+            <apex:column headerValue="Subject" >
+                <apex:outputLink value="/{!Task.Id}" target="_blank" >{!Task.Subject}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Assigned To" value="{!Task.Owner.Name}" />
+            <apex:column headerValue="Related Type" value="{!Task.What.Type}" />
+            <apex:column headerValue="Related To">
+                <apex:outputLink value="/{!Task.WhatId}" target="_blank" >{!Task.What.Name}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Status" value="{!Task.Status}" />
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

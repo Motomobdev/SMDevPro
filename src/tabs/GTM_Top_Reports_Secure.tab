@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Limited access - just for Moto GTM Top Reports that require extremely limited, secure view</description>
+    <label>Finance Reports (Moto-Secure)</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom50: Big top</motif>
+    <page>GTM_Top_Reports_Secure</page>
+</CustomTab>

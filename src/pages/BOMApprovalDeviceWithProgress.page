@@ -1,0 +1,163 @@
+<apex:page controller="BOMDeviceViewController" showHeader="true" sidebar="true">
+    <html lang="en">
+        <head>
+            <script src="{!$Resource.bom_jquery}"></script>
+            <script src="{!$Resource.bom_jquery_ui}"></script>
+            <script src="{!$Resource.bom_jquery_block_ui}"></script>
+            <link rel="stylesheet" type="text/css" href="{!$Resource.bom_jquery_block_ui_css}"></link>
+            <script>  
+                $j = jQuery.noConflict();
+            	
+                document.getElementById("progressStatusIcon").style.display = 'none';
+                document.getElementById("j_id0:deviceApproval:approveBtnPageBlock:approveBtn").style.display = 'none';
+                function showProgress(show){ 
+                    if (show){
+                        document.getElementById("progressStatusIcon").style.display = 'block';
+                        document.getElementById("progressStatus").style.display = 'block';
+                        document.getElementById("j_id0:deviceApproval:approveBtnPageBlock:approveBtn").style.display = 'none'; 
+                    }else{
+                        document.getElementById("progressStatusIcon").style.display = 'none';       
+                        document.getElementById("progressStatus").style.display = 'none';
+                        document.getElementById("j_id0:deviceApproval:approveBtnPageBlock:approveBtn").style.display = 'block';                     
+                    }
+                }
+            
+                //function to block the whole page
+                function blockPage(){
+                    $j.blockUI({ message: '<img src="/img/loading32.gif" /><h1 id="progressStatus"> Creating Dev Apps: 0%</h1>',
+                                css: {
+                                    border: 'none',
+                                    padding: '15px',
+                                    '-webkit-border-radius': '10px',
+                                    '-moz-border-radius': '10px',
+                                    opacity: .9
+                                }
+                    });
+                    return false;
+                }
+                //function to unblock the page
+                function unblockPage(){
+                    $j.unblockUI();  
+                }
+            </script>  
+            <style>
+                .underline{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                .no-underline{
+                	text-decoration: none;
+                }
+                .link{
+                	cursor: pointer;
+                }
+                .center {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 20%;
+                }
+            </style>
+        </head>
+        <body>
+                <apex:form id="deviceApproval">
+                    <apex:sectionHeader title="Third Step" subtitle="Mass Create BOMs - Approve Devices"/>
+                    <apex:inputHidden id="devAppsPercentage" value="{!devAppCurrentPercentage}" />
+                    <img src="/img/loading32.gif" id="progressStatusIcon"/><h1 id="progressStatus"> Creating DevApps for {!updatedDevices.size} devices: 0% </h1>
+                    <apex:pageBlock title="Devices Status" mode="edit" id="approvedDevices">
+                            <apex:pageBlockTable value="{!updatedDevices}" var="wrapper" id="finalApproval">
+                                <apex:column width="20">
+                                    <apex:facet name="header">
+                                        <apex:inputCheckbox id="checkAllSelectedDevices" onclick="checkAll(this,'.chkSelectedDevices')" title="Check / Uncheck All Selected Devices"/>
+                                    </apex:facet>
+                                    <apex:inputCheckbox styleClass="{!IF(wrapper.disableCheck==FALSE,'chkSelectedDevices','')}" value="{!wrapper.selected}" disabled="{!wrapper.disableCheck}" />
+                                </apex:column>
+                                <apex:column value="{!wrapper.device.Device_ID__c}"                     	headerValue="Device ID" />
+                                <apex:column value="{!wrapper.device.Name}"                             	headerValue="Name" onclick="popup('{!wrapper.device.ID}');" styleClass="underline"/>
+                                <apex:column headerValue="SA Date"         									headerClass="underline"   width="5%">
+                                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                        <apex:param value="{!wrapper.device.SA_Date__c}" /> 
+                                    </apex:outputText>
+                                </apex:column>
+                                <apex:column value="{!wrapper.device.SA_Status__c}"                     	headerValue="Status"/>
+                                <apex:column value="{!wrapper.device.Core_Device_Package__c}"           	headerValue="Core Package"/>
+                                <apex:column value="{!wrapper.device.Stable__c}"                        	headerValue="Stable"/>
+                                <apex:column value="{!wrapper.device.Sales_Model_List_Concatenated__c}" 	headerValue="Sales Models"/>
+                                <apex:column value="{!wrapper.device.SW_Kit__c}" 							headerValue="SW Kit"/>
+                                <apex:column value="{!wrapper.device.Number_of_Apps_on_BOM__c}" 			headerValue="Apps on BOM"/> 
+                                <apex:column value="{!wrapper.device.Product_PMD__c}" 						headerValue="PMD Product"/>
+                                <apex:column value="{!wrapper.device.SWBOM_Reviewed_and_Approved__c}" 		headerValue="Rev. and Approved"/>
+                                <apex:column value="{!wrapper.device.SW_BOM_List_Approver__c}"          	headerValue="BOM approver"/>
+                                <apex:column value="{!wrapper.device.of_Apps_Approved_on_BOM__c}"       	headerValue="% Approved on BOM"/>
+                        	</apex:pageBlockTable>
+							<apex:actionPoller action="{!refreshDevices}" reRender="finalApproval,devAppsPercentage" enabled="{!isDevAppActionPollerEnabled}" interval="5" timeout="360000"/><!-- 6 minutes -->
+                    </apex:pageBlock>
+                    <apex:pageBlock id="approveBtnPageBlock">
+                        <apex:commandButton id="approveBtn" value="Approve Selected Devices" action="{!approveSelectedDevices}" onclick="alert('You are approving selected Devices, after that you'll see a final summary.')"/>
+                    </apex:pageBlock>
+                    <apex:pageMessages />
+                    <script src="{!$Resource.bom_jquery}"></script>
+                    <script>
+                        
+                        try{
+                        
+                            alert('Please allow a few minutes for your DevApps to be created...');
+                            
+                            //This function blocks the page and show a animation with a progress
+                            //blockPage();
+                            
+                            showProgress(true);
+                            var totalProgress = 0;
+                            var checkProgress = function(){
+                                
+                                try{
+                                     if(totalProgress < 100) {
+                                         
+                                         var progressValue  = parseInt($("#j_id0\\:deviceApproval\\:devAppsPercentage").val());
+                                         var progressStatus = document.getElementById("progressStatus");
+                                         if(progressValue >0){
+                                             totalProgress = progressValue;
+                                             progressStatus.innerHTML = "Creating DevApps for " + {!updatedDevices.size} + " devices:" +totalProgress+"%";
+                                         }
+                                     } else {
+                                         clearInterval(checkProgress);
+                                         
+                                         //This line was commented because the modal panel
+                                         //is not being used.
+                                         //unblockPage();
+                                         
+                                         showProgress(false);
+                                     }
+                                }catch(e){
+                                    console.log(e);
+                                    showProgress(false);
+                                }
+                            };
+                
+                            setInterval(checkProgress,2000);
+                            
+                            var checkAll = function(chkbox,field) {
+                                if(chkbox.checked){
+                                    $(field).each(function(){
+                                        this.checked = true;
+                                    });
+                                }else{
+                                    $(field).each(function(){
+                                        this.checked = false;
+                                    });
+                                }
+                            };
+                    
+                            function popup(Id){
+                                if(Id != null){
+                                    window.open('/' + Id);
+                                }
+                            }
+                            
+                        }catch(e){
+                            console.log(e);
+                        }
+                    </script>
+                </apex:form>
+        </body>
+    </html>
+</apex:page>

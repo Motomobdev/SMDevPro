@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <narrowComponents>Logo (Lenovo)</narrowComponents>
+    <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
+    <narrowComponents>Lenovo Links</narrowComponents>
+    <wideComponents>Top Reports - Lenovo</wideComponents>
+</HomePageLayout>

@@ -1,0 +1,2939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Head_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Head Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Android_OS__c</fullName>
+        <description>For use on D. Schuster&apos;s POR Experience reports; visible to Dave and team only</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For use on D. Schuster&apos;s POR Experience reports; visible to Dave and team only</inlineHelpText>
+        <label>Android OS</label>
+        <picklist>
+            <picklistValues>
+                <fullName>5.0.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.1.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M-Rel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CXD_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CXD Lead</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Carrier__c</fullName>
+        <description>For D. Schuster&apos;s POR charts; visble only to him and his team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For D. Schuster&apos;s POR charts</inlineHelpText>
+        <label>Carrier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AT&amp;T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sprint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Experience_Feature_Notice1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Experience/Feature Notice1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Name1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Feature Name1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Name2__c</fullName>
+        <description>Field for Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Name2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Name3__c</fullName>
+        <description>Field for Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Name3</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Name4__c</fullName>
+        <description>Field for Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Name4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Name5__c</fullName>
+        <externalId>false</externalId>
+        <label>Feature Name5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Revision_Comments1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Feature Revision Comments1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Feature_Revision_Comments2__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Revision Comments2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Revision_Comments3__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Revision Comments3</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Revision_Comments4__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Revision Comments4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature_Revision_Comments5__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Feature Revision Comments5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hardware_Enablers__c</fullName>
+        <description>Specific field for use by D. Schuster, in POR chart</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specific field for use by D. Schuster, in POR chart</inlineHelpText>
+        <label>Hardware Enablers</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Head_Count_Delta__c</fullName>
+        <externalId>false</externalId>
+        <formula>Projected_Head_Count__c - Actual_Head_Count__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Head Count Delta</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JIRA_Project_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(Id,15)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SFDC Feature ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JIRA__c</fullName>
+        <description>For D. Schuster&apos;s POR charts; visble only to him and his team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For D. Schuster&apos;s POR charts</inlineHelpText>
+        <label>JIRA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Jira_URL1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Jira URL1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Jira_URL2__c</fullName>
+        <externalId>false</externalId>
+        <label>Jira URL2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Jira_URL3__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Jira URL3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Jira_URL4__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Jira URL4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Jira_URL5__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Jira URL5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LE_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest LE Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Modem_Dependency__c</fullName>
+        <description>For D. Schuster&apos;s POR charts; visble only to him and his team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For D. Schuster&apos;s POR charts</inlineHelpText>
+        <label>Modem Dependency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Post_Loads__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Post Loads</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Preloads__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Preloads</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Old_Parent_Internal_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Old_Parent_Internal_ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oldest_LE_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Oldest LE Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Oldest_SA_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Oldest SA Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Oldest_TA_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Oldest TA Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Completed_Date1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Will be auto-filled by system, based on Status</inlineHelpText>
+        <label>PDD Completed Date1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Completed_Date2__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Completed Date2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Completed_Date3__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Completed Date3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Completed_Date4__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Completed Date4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Completed_Date5__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Completed Date5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Facilitator1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD Facilitator1</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (PDD Facilitator1)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Requested_Date1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD Requested Date1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Status1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD Status1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Status2__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Status2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Status3__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Status3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Status4__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Status4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Status5__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>PDD Status5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PDD_URL1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD URL1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PDD_URL2__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD URL2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PDD_URL3__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD URL3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PDD_URL4__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD URL4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PDD_URL5__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD URL5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PDD_Update_Comments1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>PDD Update Comments1</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PM_Leader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PM Leader</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (PM Leader)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>POR_Grouping__c</fullName>
+        <description>Used for Dave Schuster&apos;s POR Experiences chart; will be filled in by Dave</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for Dave Schuster&apos;s POR Experiences chart; will be filled in by Dave</inlineHelpText>
+        <label>POR Grouping</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POR_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In, Out, Discovery, Beta, or Exclude From Chart</inlineHelpText>
+        <label>POR Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OUT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exclude from POR Chart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Date1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Date1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Status1__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Status1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Status2__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Status2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Status3__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Status3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Status4__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Status4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Eng_Review_Status5__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Eng Review Status5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Engineer1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Engineer1</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Engineer1)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Engineer2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team field</description>
+        <externalId>false</externalId>
+        <label>Privacy Engineer2</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Engineer2)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Engineer3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Engineer3</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Engineer3)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases5</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Engineer4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Engineer4</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Engineer4)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases6</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Engineer5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Engineer5</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Engineer5)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases7</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Counsel1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Counsel1</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Legal Counsel1)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases8</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Counsel2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Counsel2</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Legal Counsel2)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases9</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Counsel3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Counsel3</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Legal Counsel3)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0SqX</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Counsel4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Counsel4</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Legal Counsel4)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0Sqh</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Counsel5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Counsel5</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Privacy Legal Counsel5)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0Sqr</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Comments1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Comments1</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Comments2__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Comments2</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Comments3__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Comments3</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Comments4__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Comments4</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Comments5__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Comments5</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Status1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Status1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Status2__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Status2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Status3__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Status3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Status4__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Status4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_Status5__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review Status5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_URL1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review URL1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_URL2__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review URL2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_URL3__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review URL3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_URL4__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review URL4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Review_URL5__c</fullName>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Legal Review URL5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Legal_Risk_Level1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>L0 = Highly Critical 
+L1 = Critical 
+L2 = High 
+L3 = Medium 
+L4 = Low 
+L5 = Legal and Compliance Trivial</inlineHelpText>
+        <label>Privacy Legal Risk Level1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>L0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments1</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments2__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments2</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments3__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments3</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments4__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments4</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Comments5__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Comments5</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Privacy_Review_Report_URL1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Privacy Review Report URL1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Risk_Level1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial</inlineHelpText>
+        <label>Privacy Risk Level1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Risk_Level2__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial</inlineHelpText>
+        <label>Privacy Risk Level2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Risk_Level3__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial</inlineHelpText>
+        <label>Privacy Risk Level3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Risk_Level4__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial</inlineHelpText>
+        <label>Privacy Risk Level4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Privacy_Risk_Level5__c</fullName>
+        <description>For Privacy Team</description>
+        <externalId>false</externalId>
+        <inlineHelpText>P0 = Critical/Code Review 
+P1 = Critical 
+P2 = High 
+P3 = Medium 
+P4 = Low 
+P5 = Privacy Trivial</inlineHelpText>
+        <label>Privacy Risk Level5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Area1__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(SW_Project__r.Product_Area__c)</formula>
+        <inlineHelpText>from Parent record</inlineHelpText>
+        <label>Product Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Projected_Head_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Head Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Projected_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Release_Android_Version__c</fullName>
+        <description>Used for release line/porfolio mapping</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If TYPE is &quot;Release&quot;; used for release line/porfolio mapping 
+(ProdMgmt will populate this field)</inlineHelpText>
+        <label>Release Android Version</label>
+        <picklist>
+            <picklistValues>
+                <fullName>4.4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.4.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.4.3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.4.4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.0.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.0.2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.1.1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Release_Category__c</fullName>
+        <description>Used for release line/porfolio mapping</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If TYPE is &quot;Release&quot;; used for release line/porfolio mapping</inlineHelpText>
+        <label>Release Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Premium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DROID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SA_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest SA Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SW_Product_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SW Product Manager</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (SW Product Manager)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YVX</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SW_Product_Manager_text__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Product_Manager__r.DisplayLastName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW_Product_Manager_text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Program_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SW Program Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SW_Experiences_and_Releases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SW_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the Parent SW Project (if any), for the specified Experience/Release</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Parent SW Project (if any), for the specified Experience/Release</inlineHelpText>
+        <label>SW Project (Parent)</label>
+        <referenceTo>JIRA_Project__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SW_Team_Tech_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SW Team Lead</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (SW Team Lead)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YVm</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Engineer1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Security Engineer1</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Security Engineer1)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_ReleasesLxdY</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Engineer2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Security Engineer2</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Security Engineer2)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YUU</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Engineer3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Security Engineer3</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Security Engineer3)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YUe</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Engineer4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Security Engineer4</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Security Engineer4)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YUo</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Engineer5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Privacy Team</description>
+        <externalId>false</externalId>
+        <label>Security Engineer5</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>SW Experiences and Releases (Security Engineer5)</relationshipLabel>
+        <relationshipName>SW_Experiences_and_Releases0YUy</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Comments1__c</fullName>
+        <description>Requested by Privacy team</description>
+        <externalId>false</externalId>
+        <label>Security Review Comments1</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Comments2__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Comments2</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Comments3__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Comments3</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Comments4__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Comments4</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Comments5__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Comments5</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status1__c</fullName>
+        <description>Additional field for the Privacy team</description>
+        <externalId>false</externalId>
+        <label>Security Review Status1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status2__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Status2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status3__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Status3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status4__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Status4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_Status5__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review Status5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_URL1__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review URL1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_URL2__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review URL2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_URL3__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review URL3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_URL4__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review URL4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Security_Review_URL5__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Review URL5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial</inlineHelpText>
+        <label>Security Risk Level1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial</inlineHelpText>
+        <label>Security Risk Level2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial</inlineHelpText>
+        <label>Security Risk Level3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level4__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial</inlineHelpText>
+        <label>Security Risk Level4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Security_Risk_Level5__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>S0 = Critical/Code Review 
+S1 = Critical 
+S2 = High 
+S3 = Medium 
+S4 = Low 
+S5 = Security Trivial</inlineHelpText>
+        <label>Security Risk Level5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>S0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Software_PRD_Link_2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter any additional PRD links (if any)</inlineHelpText>
+        <label>Overview/Summary Deck</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Software_PRD_Link_3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter any additional PRD links (if any)</inlineHelpText>
+        <label>Competitive Deck</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Software_PRD_Link_4__c</fullName>
+        <description>Specific field for use by D. Schuster, in POR chart</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specific field for use by D. Schuster, in POR chart</inlineHelpText>
+        <label>Product Backlog</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Software_PRD_Link__c</fullName>
+        <description>Software PRD Link</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the URL to the Software PRD Google Doc</inlineHelpText>
+        <label>Product Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Spend_Delta__c</fullName>
+        <externalId>false</externalId>
+        <formula>Projected_Spend__c - Actual_Spend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Spend Delta</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Status_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(text(Status__c) = &quot;Canceled&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlHw&quot;, &quot;Red&quot;), 
+IF( OR( text(Status__c) = &quot;Behind Plan&quot;, text(Status__c) = &quot;Pending&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI1&quot;, &quot;Yellow&quot;), 
+IF( OR( text(Status__c) = &quot;On Plan&quot;, text(Status__c) = &quot;Commit&quot;, text(Status__c) = &quot;Approved&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlI6&quot;, &quot;Green&quot;), 
+IF(OR( text(Status__c) = &quot;Limited SA&quot;, text(Status__c) = &quot;Not Committed&quot;, text(Status__c) = &quot;New&quot;, text(Status__c) = &quot;Evaluate&quot;, text(Status__c) = &quot;Pursue&quot;, text(Status__c) == &quot;Dropped&quot; ) , IMAGE(&quot;/servlet/servlet.FileDownload?file=01540000000VlO9&quot;, &quot;Clear&quot;), 
+&quot;&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Behind Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TA_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest TA Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(SW_Project__r.Type__c)</formula>
+        <inlineHelpText>From Parent record</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_pager__c</fullName>
+        <externalId>false</externalId>
+        <label>1-pager</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>SW Experiences and Releases</label>
+    <listViews>
+        <fullName>Experiences_POR_Grouping_for_Dave</fullName>
+        <columns>Product_Area1__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>NAME</columns>
+        <columns>POR_Status__c</columns>
+        <columns>Year__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Experiences</value>
+        </filters>
+        <filters>
+            <field>POR_Status__c</field>
+            <operation>notEqual</operation>
+            <value>,OUT,Exclude from POR Chart</value>
+        </filters>
+        <label>Experiences Grouping (for Dave)</label>
+    </listViews>
+    <nameField>
+        <label>SW Experiences and Releases Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>SW Experiences and Releases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>SW_Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>POR_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Release_Android_Version__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Android_OS__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Carrier__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>SW_Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>POR_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Release_Android_Version__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Android_OS__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Carrier__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SW_Project__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Release_Android_Version__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Android_OS__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Carrier__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>SW_Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Release_Android_Version__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Carrier__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_Programs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add New PMD Programs</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var child = window.open(&apos;/apex/ProgramSWExperience?id={!SW_Experiences_and_Releases__c.Id}&apos;,&apos;_blank&apos;,&apos;scrollbars =0,width=800,height=800&apos;);
+var timer = setInterval(checkChild, 500);
+
+function checkChild() {
+    if (child.closed) {
+        //refresh
+        location.reload();
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Related_Programs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>800</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Edit Related PMD Programs</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/gblite__Grid?gname=Program Exp_Rel&amp;fpf=SW_Experiences__c&amp;fpv={!SW_Experiences_and_Releases__c.Id}</url>
+        <width>1000</width>
+    </webLinks>
+</CustomObject>

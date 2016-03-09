@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ASP_Range__c</fullName>
+        <externalId>false</externalId>
+        <formula>Competitor_Product__r.ASP_Range__c</formula>
+        <label>ASP($) Range</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>No matching GTM account found.</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>MD</value>
+            </filterItems>
+            <infoMessage>Search GTM account</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Competitive Landscapes</relationshipLabel>
+        <relationshipName>Competitive_Landscapes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Competitor_Brand__c</fullName>
+        <description>Competitor product&apos;s vendor</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Competitor_Product__r.Brand__c)</formula>
+        <label>Competitor Vendor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competitor_Product__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Competitor&apos;s product</description>
+        <externalId>false</externalId>
+        <label>Competitor Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>No matching competitor product found</errorMessage>
+            <filterItems>
+                <field>Competitive_Product__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Competitor Product</value>
+            </filterItems>
+            <filterItems>
+                <field>Competitive_Product__c.Entry_Period_Diff__c</field>
+                <operation>lessOrEqual</operation>
+                <value>365</value>
+            </filterItems>
+            <infoMessage>Search competitor product</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Competitive_Product__c</referenceTo>
+        <relationshipLabel>Competitive Landscapes</relationshipLabel>
+        <relationshipName>Competitive_Landscapes</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Device_Rank__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Market Share rank on the account in the price tier for latest period (Week / Month)</inlineHelpText>
+        <label>Device Rank</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>History__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>History of Latest Updates</inlineHelpText>
+        <label>History</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Latest_Updates__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Updates</label>
+        <length>500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Motorola_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Motorola Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Product2.Business_Unit__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Competitive Landscapes</relationshipLabel>
+        <relationshipName>Competitive_Landscapes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Why_Winning__c</fullName>
+        <externalId>false</externalId>
+        <label>Why It Is Winning</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Competitive Landscape</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CL-{00000000}</displayFormat>
+        <label>Competitive Landscape Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Competitive Landscapes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Motorola_Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Competitor_Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Device_Rank__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Why_Winning__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Latest_Updates__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Motorola_Product__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Competitor_Product__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Device_Rank__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Motorola_Product__c</searchFilterFields>
+        <searchFilterFields>Competitor_Brand__c</searchFilterFields>
+        <searchFilterFields>Competitor_Product__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Motorola_Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Competitor_Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Device_Rank__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Updates_to_Weekly</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Updates to Weekly</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+var weeklyItem = new sforce.SObject(&apos;Weekly_Report_Item__c&apos;);
+
+weeklyItem.Competitive_Landscape__c = &apos;{!Competitive_Landscape__c.Id}&apos;;
+weeklyItem.Summary__c = &apos;{!JSENCODE(Competitive_Landscape__c.Latest_Updates__c)}&apos;;
+weeklyItem.Category__c =&apos;Market Intelligence&apos;;
+weeklyItem.Function__c = &apos;GTM&apos;;
+weeklyItem.Current_Week__c = &apos;true&apos;;
+weeklyItem.Include_In_Report__c = &apos;true&apos;;
+weeklyItem.Source_ID__c = &apos;{!Competitive_Landscape__c.Id}&apos;;
+weeklyItem.Source_Link__c = &apos;https://&apos;+ window.location.hostname + &apos;/&apos; + &apos;{!Competitive_Landscape__c.Id}&apos;;
+weeklyItem.Source_Type__c = &apos;Competitive Landscape&apos;;
+weeklyItem.Account__c = &apos;{!Competitive_Landscape__c.AccountId__c}&apos;;
+
+result = sforce.connection.create([weeklyItem]);
+if(result[0].success == &apos;true&apos;)
+{
+    alert(&apos;Weekly Report Item created from Latest Updates Successfully.&apos;);
+    window.location.reload();
+}</url>
+    </webLinks>
+</CustomObject>

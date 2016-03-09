@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payments_Accounts_Rpt</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payments_Accounts_Rpts</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountNumber --></label>
+        <name>AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account_Owner --></label>
+        <name>Account_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Payments_Accounts_Rpts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check_number --></label>
+        <name>Check_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- CostCenter --></label>
+        <name>CostCenter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date created in TIGERS --></label>
+        <name>Date_created_in_TIGERS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date paid --></label>
+        <name>Date_paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Done by BusOps? --></label>
+        <name>Done_by_BusOps__c</name>
+    </fields>
+    <fields>
+        <label><!-- InvoiceDate --></label>
+        <name>InvoiceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice --></label>
+        <name>Invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO --></label>
+        <name>PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR --></label>
+        <name>PR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment_Phase --></label>
+        <name>Payment_Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment_Status --></label>
+        <name>Payment_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment_Type --></label>
+        <name>Payment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PaymentName --></label>
+        <name>Payment__c</name>
+        <relationshipLabel><!-- Payments_Accounts_Rpts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- # of Related Contracts --></label>
+        <name>of_Related_Contracts__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

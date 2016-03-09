@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>External Spend Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External Spend Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- External Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Apttus Agreement --></help>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- External Spend Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ariba Commodity Code --></label>
+        <name>Ariba_Commodity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Owner --></label>
+        <name>Budget_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- What Business Function is the owner of this request? --></help>
+        <label><!-- Business Function --></label>
+        <name>Business_Function__c</name>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Devices</masterLabel>
+            <translation><!-- Mobile Devices --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What do you want to buy? --></help>
+        <label><!-- Commodity Type --></label>
+        <name>Commodity_Type__c</name>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computers</masterLabel>
+            <translation><!-- Computers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumables</masterLabel>
+            <translation><!-- Consumables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Computers</masterLabel>
+            <translation><!-- Engineering Computers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Equipment</masterLabel>
+            <translation><!-- Engineering Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facilities</masterLabel>
+            <translation><!-- Facilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Supplies</masterLabel>
+            <translation><!-- Industrial Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Supplies</masterLabel>
+            <translation><!-- Office Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services</masterLabel>
+            <translation><!-- Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecom</masterLabel>
+            <translation><!-- Telecom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tooling</masterLabel>
+            <translation><!-- Tooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VAT</masterLabel>
+            <translation><!-- VAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Comments --></label>
+        <name>Contract_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Status --></label>
+        <name>Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Pending Final Signature</masterLabel>
+            <translation><!-- Contract Pending Final Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Summary Approvals In Progress</masterLabel>
+            <translation><!-- Executive Summary Approvals In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO Complete</masterLabel>
+            <translation><!-- PO Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Business Pre-Approval</masterLabel>
+            <translation><!-- Pending Business Pre-Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Approved: Negotiation in Progress</masterLabel>
+            <translation><!-- Pre-Approved: Negotiation in Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFX</masterLabel>
+            <translation><!-- RFX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for PR Creation</masterLabel>
+            <translation><!-- Submitted for PR Creation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do you want to convert this external spend request into a master Apttus agreement? If you check this, don&apos;t select a master agreement. --></help>
+        <label><!-- Convert this to a master agreement? --></label>
+        <name>Convert_this_to_master_agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are you charging a cost center outside of your country? --></help>
+        <label><!-- Cross Border? --></label>
+        <name>Cross_Border__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Cancelled --></label>
+        <name>Date_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Contract Pending Final Signature --></label>
+        <name>Date_Contract_Pending_Final_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Executive Summary --></label>
+        <name>Date_Executive_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date On Hold --></label>
+        <name>Date_On_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Pre Approved --></label>
+        <name>Date_Pre_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted for PR Creation --></label>
+        <name>Date_Submitted_for_PR_Creation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Description --></label>
+        <name>Deal_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the impact if this request is not approved? --></help>
+        <label><!-- Deal Justification --></label>
+        <name>Deal_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link for ESR report --></help>
+        <label><!-- ESR Link --></label>
+        <name>ESR_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Purchase Order Number --></label>
+        <name>Existing_Purchase_Order_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this an extension or change order to an existing contract? --></help>
+        <label><!-- Extension or change order to a contract? --></label>
+        <name>Extension_or_change_order_to_a_contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate ESR Email --></label>
+        <name>Generate_ESR_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will this purchase be managed by IT or impact IT systems/integrations? --></help>
+        <label><!-- IT Managed? --></label>
+        <name>IT_Managed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is this related to a Project? --></label>
+        <name>Is_this_related_to_a_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Agreement --></label>
+        <name>Master_Agreement__c</name>
+        <relationshipLabel><!-- External Spend Requests (Master Agreement) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master Supplier Name --></label>
+        <name>Master_Supplier_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Commitment --></label>
+        <name>Minimum_Commitment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the supplier require a handwritten ink or electronic signature on the document? --></help>
+        <label><!-- Mot Signature? --></label>
+        <name>Mot_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Cost Records From Portal --></label>
+        <name>Number_Of_Cost_Records_From_Portal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Cost Records From SFDC --></label>
+        <name>Number_Of_Cost_Records_From_SFDC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of offsite resources --></help>
+        <label><!-- Offsite Service Resource Count --></label>
+        <name>Offsite_Service_Resource_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of onsite resources --></help>
+        <label><!-- Onsite Service Resource Count --></label>
+        <name>Onsite_Service_Resource_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Approval Comments --></label>
+        <name>Pre_Approval_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the Related Project ID? --></help>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Type --></label>
+        <name>Purchase_Type__c</name>
+        <picklistValues>
+            <masterLabel>Change Order</masterLabel>
+            <translation><!-- Change Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RFX Business Owner --></label>
+        <name>RFX_Business_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Date --></label>
+        <name>RFX_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Description --></label>
+        <name>RFX_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Estimated Annual Cost --></label>
+        <name>RFX_Estimated_Annual_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Procurement Owner --></label>
+        <name>RFX_Procurement_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Status --></label>
+        <name>RFX_Status__c</name>
+        <picklistValues>
+            <masterLabel>RFX Cancelled</masterLabel>
+            <translation><!-- RFX Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFX On-Hold</masterLabel>
+            <translation><!-- RFX On-Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFX Prep</masterLabel>
+            <translation><!-- RFX Prep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for Information (RFI) in Progress</masterLabel>
+            <translation><!-- Request for Information (RFI) in Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for Proposal (RFP) In Progess</masterLabel>
+            <translation><!-- Request for Proposal (RFP) In Progess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for Quote (RFQ) in Progress</masterLabel>
+            <translation><!-- Request for Quote (RFQ) in Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RFX Suppliers --></label>
+        <name>RFX_Suppliers__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFX Target Completion Date --></label>
+        <name>RFX_Target_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Commerce ID of the requester. --></help>
+        <label><!-- Requester Commerce ID --></label>
+        <name>Requester_Commerce_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester&apos;s Name --></label>
+        <name>Requester_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor&apos;s Email --></label>
+        <name>Requestors_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract Type --></label>
+        <name>Service_Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Fixed Price</masterLabel>
+            <translation><!-- Fixed Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Time &amp; Material</masterLabel>
+            <translation><!-- Time &amp; Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- In which country will this resource be located? --></help>
+        <label><!-- Service Labor Contract Country --></label>
+        <name>Service_Labor_Contract_Country__c</name>
+        <picklistValues>
+            <masterLabel>Ask Geoff</masterLabel>
+            <translation><!-- Ask Geoff --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How will these software goods and services be delivered? --></help>
+        <label><!-- Software Delivery Type --></label>
+        <name>Software_Delivery_Type__c</name>
+        <picklistValues>
+            <masterLabel>Electronic</masterLabel>
+            <translation><!-- Electronic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Media</masterLabel>
+            <translation><!-- Physical Media --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Where will these goods be shipped? --></help>
+        <label><!-- Software Ship Location --></label>
+        <name>Software_Ship_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Commodity Type --></label>
+        <name>Sub_Commodity_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The person submitting ESR from the Google App Engine. --></help>
+        <label><!-- Submitter&apos;s Name --></label>
+        <name>Submitter_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitter&apos;s Email --></label>
+        <name>Submitters_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- What supplier would you like to use? --></help>
+        <label><!-- Suggested Supplier --></label>
+        <name>Suggested_Supplier__c</name>
+    </fields>
+    <fields>
+        <help><!-- Why are the suppliers listed unable to meet your needs? --></help>
+        <label><!-- Supplier Justification --></label>
+        <name>Supplier_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Plan Spend --></label>
+        <name>Supplier_Plan_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Relationship Status --></label>
+        <name>Supplier_Relationship_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Request Title --></help>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of Capital Costs --></help>
+        <label><!-- Total Capital Amount --></label>
+        <name>Total_Capital_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of Depreciation Expense&apos;s from the ESR Cost Allocations --></help>
+        <label><!-- Total Depreciation Expense Amount --></label>
+        <name>Total_Depreciation_Expense_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Expense Amount --></label>
+        <name>Total_Expense_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Non Labor Expense Amount --></label>
+        <name>Total_Non_Labor_Expense_Amount__c</name>
+    </fields>
+    <layouts>
+        <layout>External Spend Request Layout</layout>
+        <sections>
+            <label><!-- Contract Labor Commodity Specific --></label>
+            <section>Contract Labor Commodity Specific</section>
+        </sections>
+        <sections>
+            <label><!-- Cost Summary --></label>
+            <section>Cost Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- External Spend Request Description --></label>
+            <section>External Spend Request Description</section>
+        </sections>
+        <sections>
+            <label><!-- History --></label>
+            <section>History</section>
+        </sections>
+        <sections>
+            <label><!-- Master Agreement --></label>
+            <section>Master Agreement</section>
+        </sections>
+        <sections>
+            <label><!-- RFX --></label>
+            <section>RFX</section>
+        </sections>
+        <sections>
+            <label><!-- Services Commodity Specific --></label>
+            <section>Services Commodity Specific</section>
+        </sections>
+        <sections>
+            <label><!-- Software Commodity Specific --></label>
+            <section>Software Commodity Specific</section>
+        </sections>
+        <sections>
+            <label><!-- Status --></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- An agreement has been generated from this ESR and you are NOT allowed to make changes to the ESR. --></errorMessage>
+        <name>Cannot_Edit_ESR_After_Conversion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account must be specified other than &quot;	
+No eGVM Needed&quot; --></errorMessage>
+        <name>No_eGVM</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Convert_to_an_agreement --></label>
+        <name>Convert_to_an_agreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Regenerate_ESR_Email --></label>
+        <name>Regenerate_ESR_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

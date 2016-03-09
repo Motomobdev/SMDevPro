@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD BPA Launch</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD BPA Launch</value>
+    </caseValues>
+    <fields>
+        <label><!-- Award --></label>
+        <name>Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA_RFQ Creation date --></label>
+        <name>BPA_RFQ_Creation_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA_RFQ created by --></label>
+        <name>BPA_RFQ_created_by__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA_RFQ number --></label>
+        <name>BPA_RFQ_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- BatchCount --></label>
+        <name>BatchCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Number --></label>
+        <name>Batch_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Submission date --></label>
+        <name>Batch_Submission_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch submitted by --></label>
+        <name>Batch_submitted_by__c</name>
+        <relationshipLabel><!-- CD BPA Launch --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Category Managers --></label>
+        <name>CD_Category_Managers__c</name>
+        <relationshipLabel><!-- CD BPA Launch --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Type --></label>
+        <name>Cost_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Download Status --></label>
+        <name>Download_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective end date --></label>
+        <name>Effective_end_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective start date --></label>
+        <name>Effective_start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing BPA_RFQ_No --></label>
+        <name>Existing_BPA_RFQ_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item_number --></label>
+        <name>Item_number__c</name>
+        <relationshipLabel><!-- CD BPA Launch --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source cost type --></label>
+        <name>Source_cost_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier --></label>
+        <name>Supplier__c</name>
+        <relationshipLabel><!-- CD BPA Launch --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

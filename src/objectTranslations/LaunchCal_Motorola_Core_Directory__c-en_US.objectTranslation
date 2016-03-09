@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LaunchCal_Motorola_Core_Directory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LaunchCal_Motorola_Core_Directories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval_Status --></label>
+        <name>Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flipped_By --></label>
+        <name>Flipped_By__c</name>
+        <relationshipLabel><!-- LaunchCal_Motorola_Core_Directories (Flipped_By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Flipped_On --></label>
+        <name>Flipped_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- LaunchCal --></label>
+        <name>LaunchCal__c</name>
+        <relationshipLabel><!-- LaunchCal_Motorola_Core_Directories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique_ID --></label>
+        <name>Unique_ID__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Approver --></label>
+        <name>Approver</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Subscriber --></label>
+        <name>Subscriber</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

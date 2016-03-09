@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stable</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stables</value>
+    </caseValues>
+    <fields>
+        <label><!-- Number of Apps on Stable --></label>
+        <name>AppCountTTL_NEW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost Current --></label>
+        <name>Application_Cost_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost High --></label>
+        <name>Application_Cost_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Cost Low --></label>
+        <name>Application_Cost_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Royalty Cost of Embedded Apps --></label>
+        <name>Current_Royalty_Cost_of_Embedded_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Royalty Cost of IP Apps --></label>
+        <name>Current_Royalty_Cost_of_IP_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Royalty Cost of Preload Apps --></label>
+        <name>Current_Royalty_Cost_of_Preload_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Royalty Cost of Services Apps --></label>
+        <name>Current_Royalty_Cost_of_Services_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOT Id --></label>
+        <name>MOT_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Approved Programs on Stable --></label>
+        <name>Number_of_Approved_Programs_on_Stable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Apps on Stable_old --></label>
+        <name>Number_of_Apps_on_Stable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Baseline Programs --></label>
+        <name>Number_of_Baseline_Programs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Delta Programs --></label>
+        <name>Number_of_Delta_Programs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Embedded Apps --></label>
+        <name>Number_of_Embedded_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of IP Apps --></label>
+        <name>Number_of_IP_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Other Apps --></label>
+        <name>Number_of_Other_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Preload Apps --></label>
+        <name>Number_of_Preload_Apps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Programs on Stable --></label>
+        <name>Number_of_Programs_on_Stable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Services Apps --></label>
+        <name>Number_of_Services_Apps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Management in conjunction with Partnership Management --></help>
+        <label><!-- Reviewed &amp; Approved --></label>
+        <name>Reviewed_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Stable Layout</layout>
+        <sections>
+            <label><!-- Application Royalty Totals --></label>
+            <section>Application Royalty Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Application Totals --></label>
+            <section>Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Program Totals --></label>
+            <section>Program Totals</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

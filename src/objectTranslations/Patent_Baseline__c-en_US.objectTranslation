@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patent Baseline</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patent Baselines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Implementation Baseline Name --></label>
+        <name>Baseline_Implementation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Baseline Status --></label>
+        <name>Baseline_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Baseline --></label>
+        <name>Baseline__c</name>
+        <relationshipLabel><!-- Patent Baselines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Implementation Actual Date --></label>
+        <name>Implementation_Actual_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Implementation CWV Date --></label>
+        <name>Implementation_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Case --></label>
+        <name>Legal_Case__c</name>
+        <relationshipLabel><!-- Patent Baselines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original Baseline Name --></label>
+        <name>Original_Baseline_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent --></label>
+        <name>Patent__c</name>
+        <relationshipLabel><!-- Patent Baselines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Workaround --></label>
+        <lookupFilter>
+            <errorMessage><!-- Only patent device records with record type Workaround are allowed --></errorMessage>
+        </lookupFilter>
+        <name>Workaround__c</name>
+        <relationshipLabel><!-- Patent Baselines --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Patent Baseline Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

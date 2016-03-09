@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>An object created to track the SOW and spend of a given project</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Alternate_Vendor__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternate Vendor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BT_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>BT Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Being_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Being Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Brazil_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Brazil Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>QA &amp; Tools</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Researching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Competitively_Bid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Competitively Bid?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract #</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>SW Spend Requests</relationshipLabel>
+        <relationshipName>SW_Spend_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Engagement_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Engagement Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Spend_ANNUAL__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_Spend__c / ( (End_Date__c -  Start_Date__c )/365)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated Spend (ANNUAL)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Adjustment_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>FTE Adjustment Reason</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTE_Adjustment__c</fullName>
+        <description>If Total Cost Savings needs to be adjusted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Any adjusted Savings, please update here.</inlineHelpText>
+        <label>FTE Adjustment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Candidate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this SSR and the Contractor(s) associated with it a candidate to become an FTE?</inlineHelpText>
+        <label>FTE Candidate?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Conversation_Cost_Savings__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TOTAL_FTE_Cost_Fully_Loaded__c -  Estimated_Spend_ANNUAL__c) +  FTE_Adjustment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FTE Conversation Cost Savings (ANNUAL)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Cost_Fully_Loaded__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( AND(ISPICKVAL(FTE_Location__c, &quot;US - Mart&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 160000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;US - Mart&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 75000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;US - SV&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 175000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;US - SV&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 80000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;India&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 28463,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;India&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 22770,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - El Dorado&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - El Dorado&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - CESAR&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - CESAR&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - Venturus&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - Venturus&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - CIN&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;Brazil - CIN&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 100000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;China - Beijing&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 65000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;China - Beijing&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 50000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;China - Nanjing&quot;), ISPICKVAL(FTE_Type__c, &quot;Developer&quot;)), 65000,
+if( AND(ISPICKVAL(FTE_Location__c, &quot;China - Nanjing&quot;), ISPICKVAL(FTE_Type__c, &quot;Test&quot;)), 50000,
+
+0))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Annual blended cost of an FTE based on Location and Type.</inlineHelpText>
+        <label>FTE Cost (Fully Loaded - ANNUAL)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>FTE Justification</label>
+        <length>20000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FTE_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>FTE Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>US - Mart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US - SV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - El Dorado</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - CESAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - Venturus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - CIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China - Beijing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China - Nanjing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FTE_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>FTE Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FY2015_FTE_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>(DATE(2016, 03, 31) -  Planned_FTE_Start_Date__c ) /365 * TOTAL_FTE_Cost_Fully_Loaded__c</formula>
+        <label>FY2015 FTE Cost (TOTAL)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CA-101</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL-93</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL-312</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZIN-63</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ONT-88</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZBR-01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZBR-05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZCH68</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZUK-40</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Jag,</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>El Dorado</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C.E.S.A.R.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CIn - UFPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MMID_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requester__r.MMID__c + &apos;@motorola.com&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MMID Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDA__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NDA</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipName>Project_Spends1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Needs_Information_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Needs Information Details</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>New_or_Existing_Engagement__c</fullName>
+        <externalId>false</externalId>
+        <label>New or Existing Engagement?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PO__c</fullName>
+        <externalId>false</externalId>
+        <label>PO #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PR__c</fullName>
+        <externalId>false</externalId>
+        <label>PR #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_SSR_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_SW_Spend_Request__r.End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent SSR End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Parent_SSR_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_SW_Spend_Request__r.Start_Date__c</formula>
+        <label>Parent SSR Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Parent_SW_Spend_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent SW Spend Request</label>
+        <referenceTo>Project_Spend__c</referenceTo>
+        <relationshipLabel>SW Spend Requests</relationshipLabel>
+        <relationshipName>SW_Spend_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( !ISBLANK(PR__c), IF( ISBLANK(PO__c),&quot;PR&quot;,&quot;PR &amp; PO&quot; ), IF( !ISBLANK(PO__c),&quot;PO&quot;,&quot;PR &amp; PO NOT PROCESSED&quot;) )</formula>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_FTE_Conversions__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>How many FTEs will be converted from this SSR?</inlineHelpText>
+        <label>Planned FTE Conversions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_FTE_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned FTE Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Vendor__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Vendor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requester</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipName>Project_Spends</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLT_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ISBLANK(Requester__r.OrgLevel4MgrFullName__c), Requester__r.Name , Requester__r.OrgLevel4MgrFullName__c)</formula>
+        <label>SLT +1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLT_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ISBLANK(Requester__r.OrgLevel5MgrFullName__c), Requester__r.Name , Requester__r.OrgLevel5MgrFullName__c)</formula>
+        <label>SLT +2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOW_Document_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>SOW Document Attached</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SOW_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(SOW__r.Apttus__Status_Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SOW Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOW__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SOW</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipName>Project_Spends</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SOW_number__c</fullName>
+        <externalId>false</externalId>
+        <formula>SOW__r.Apttus__FF_Agreement_Number__c</formula>
+        <label>SOW #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SSR_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SSR_No</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SSR_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>SSR Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW SLT Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signature Queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PO In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fully Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Early Termination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SW_Exp_Rel_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Experiences_and_Releases__r.Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW Exp/Rel Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Experiences_and_Releases__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If the SSR is related to a SW Experience/Release, please select</inlineHelpText>
+        <label>SW Experiences and Releases</label>
+        <referenceTo>SW_Experiences_and_Releases__c</referenceTo>
+        <relationshipLabel>SW Spend Requests</relationshipLabel>
+        <relationshipName>SW_Spend_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SW_Program_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Project__r.Program_Manager__r.FirstName + &apos; &apos; + SW_Project__r.Program_Manager__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW Program Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Project_Lead_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Project__r.SW_Leader__r.MMID__c + &apos;@motorola.com&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW Project Lead Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Project_Lead_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>SW_Project__r.SW_Leader__r.MobilePhone__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SW Project Lead Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Project_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>text (SW_Project__r.Type__c)</formula>
+        <label>SW Project Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If the SSR is related to a SW Project, please select</inlineHelpText>
+        <label>SW Project</label>
+        <referenceTo>JIRA_Project__c</referenceTo>
+        <relationshipLabel>SW Spend Requests</relationshipLabel>
+        <relationshipName>Project_Spends</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Spend_Breakdown__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( text(Spend_Location__c) = &quot;Brazil&quot;, &quot;BRAZIL&quot;, &quot;NON-BRAZIL&quot;)</formula>
+        <label>Spend Breakdown</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spend_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Spend Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>US</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Spend_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Spend Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Termination Candidate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TOTAL_FTE_Cost_Fully_Loaded__c</fullName>
+        <externalId>false</externalId>
+        <formula>Planned_FTE_Conversions__c *  FTE_Cost_Fully_Loaded__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Annual blended FTE Costs by Location and Type multiplied by the total # of FTEs.</inlineHelpText>
+        <label>TOTAL FTE Cost (Fully Loaded - ANNUAL)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Product Integration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Imaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CXD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply Chain &amp; Service Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vendor</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Project_Spends</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>current_quarter__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+
+YEAR(Start_Date__c) = YEAR(TODAY()) &amp;&amp;  YEAR(End_Date__c) = YEAR(TODAY()) &amp;&amp; 
+IF( MOD(MONTH( Start_Date__c ),3) = 0 , FLOOR( MONTH( Start_Date__c ) / 3 ) , FLOOR( MONTH(Start_Date__c) / 3 ) + 1) = 
+IF( MOD(MONTH(TODAY()),3) = 0 , FLOOR( MONTH(TODAY()) / 3 ) , FLOOR( MONTH(TODAY()) / 3 ) + 1) &amp;&amp;
+IF( MOD(MONTH(TODAY()),3) = 0 , FLOOR( MONTH(TODAY()) / 3 ) , FLOOR( MONTH(TODAY()) / 3 ) + 1) = 
+IF( MOD(MONTH(End_Date__c),3) = 0 , FLOOR( MONTH(End_Date__c) / 3 ) , FLOOR( MONTH(End_Date__c) / 3 ) + 1) , 
+
+&quot;S+E&quot;, 
+
+IF( 
+
+YEAR(Start_Date__c) = YEAR(TODAY()) &amp;&amp; 
+IF( MOD(MONTH( Start_Date__c ),3) = 0 , FLOOR( MONTH( Start_Date__c ) / 3 ) , FLOOR( MONTH(Start_Date__c) / 3 ) + 1) = 
+IF( MOD(MONTH(TODAY()),3) = 0 , FLOOR( MONTH(TODAY()) / 3 ) , FLOOR( MONTH(TODAY()) / 3 ) + 1), 
+
+&quot;S&quot;, 
+
+IF( 
+
+YEAR(End_Date__c) = YEAR(TODAY()) &amp;&amp; 
+IF( MOD(MONTH(TODAY()),3) = 0 , FLOOR( MONTH(TODAY()) / 3 ) , FLOOR( MONTH(TODAY()) / 3 ) + 1) = 
+IF( MOD(MONTH(End_Date__c),3) = 0 , FLOOR( MONTH(End_Date__c) / 3 ) , FLOOR( MONTH(End_Date__c) / 3 ) + 1) , 
+
+&quot;E&quot;,
+
+&quot;OTHER&quot; ) 
+
+)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Quarter Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Contractors__c</fullName>
+        <description>The total number of contractors expected for this SSR request</description>
+        <externalId>false</externalId>
+        <label># of Contractors</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_FTE__c</fullName>
+        <externalId>false</externalId>
+        <label># of FTE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Resources_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>of_Contractors__c +  of_FTE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label># of Resources (Total)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>SW Spend Request</label>
+    <listViews>
+        <fullName>ALL_SSR_Status_Overview</fullName>
+        <columns>NAME</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Name__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>PR__c</columns>
+        <columns>PO__c</columns>
+        <columns>Engagement_Type__c</columns>
+        <columns>New_or_Existing_Engagement__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <label>ALL SSR Status Overview</label>
+    </listViews>
+    <listViews>
+        <fullName>BALAJI_SOWs_2015_non_brazil</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SLT_1__c</field>
+            <operation>contains</operation>
+            <value>Balaji</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold</value>
+        </filters>
+        <label>BALAJI SOWs 2015 (Non-Brazil)</label>
+    </listViews>
+    <listViews>
+        <fullName>BRAZIL_SSR_Status_Overview</fullName>
+        <columns>NAME</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>SLT_1__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Name__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Location__c</columns>
+        <columns>SOW__c</columns>
+        <columns>PR__c</columns>
+        <columns>PO__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>01240000000DvGd</value>
+        </filters>
+        <label>BRAZIL_SSR Status Overview</label>
+    </listViews>
+    <listViews>
+        <fullName>Balaji_SOWs_FULLY_Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Requester__c</columns>
+        <columns>SSR_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SLT_1__c</field>
+            <operation>contains</operation>
+            <value>Balaji</value>
+        </filters>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>equals</operation>
+            <value>PO In Process,Fully Approved</value>
+        </filters>
+        <label>Balaji SOWs FULLY APPROVED</label>
+    </listViews>
+    <listViews>
+        <fullName>Balaji_SOWs_TO_REVIEW</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Requester__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>BT_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SLT_1__c</field>
+            <operation>contains</operation>
+            <value>Balaji</value>
+        </filters>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>equals</operation>
+            <value>SW SLT Approved</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <label>Balaji SOWs TO REVIEW</label>
+    </listViews>
+    <listViews>
+        <fullName>Brazil</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Brazil_Category__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>of_FTE__c</columns>
+        <columns>of_Contractors__c</columns>
+        <columns>Name__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Location__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>SOW_number__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Spend_Location__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Spend_Breakdown__c</field>
+            <operation>equals</operation>
+            <value>Brazil</value>
+        </filters>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>notContain</operation>
+            <value>Cancelled</value>
+        </filters>
+        <label>Brazil</label>
+    </listViews>
+    <listViews>
+        <fullName>Budget_Expected_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>SLT_1__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Spend_Type__c</field>
+            <operation>equals</operation>
+            <value>Budget</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <label>Budget &amp; Expected Items</label>
+    </listViews>
+    <listViews>
+        <fullName>China_Re_Entry_Spend</fullName>
+        <columns>NAME</columns>
+        <columns>Parent_SW_Spend_Request__c</columns>
+        <columns>Requester__c</columns>
+        <columns>of_Contractors__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Name__c</columns>
+        <columns>Spend_Location__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>SW_Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Name__c</field>
+            <operation>contains</operation>
+            <value>china</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <label>China Re-Entry Spend</label>
+    </listViews>
+    <listViews>
+        <fullName>FTE_CONVERSION_CANDIDATES</fullName>
+        <columns>NAME</columns>
+        <columns>SLT_1__c</columns>
+        <columns>FTE_Type__c</columns>
+        <columns>FTE_Location__c</columns>
+        <columns>FTE_Justification__c</columns>
+        <columns>of_Contractors__c</columns>
+        <columns>Planned_FTE_Conversions__c</columns>
+        <columns>Planned_FTE_Start_Date__c</columns>
+        <columns>FTE_Cost_Fully_Loaded__c</columns>
+        <columns>FY2015_FTE_Cost__c</columns>
+        <columns>FTE_Conversation_Cost_Savings__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <filters>
+            <field>FTE_Candidate__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>FTE CONVERSION CANDIDATES</label>
+    </listViews>
+    <listViews>
+        <fullName>JVP_Stability</fullName>
+        <columns>NAME</columns>
+        <columns>Comments__c</columns>
+        <columns>SLT_1__c</columns>
+        <columns>Name__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <filters>
+            <field>Name__c</field>
+            <operation>contains</operation>
+            <value>stab</value>
+        </filters>
+        <filters>
+            <field>SLT_1__c</field>
+            <operation>contains</operation>
+            <value>Jim</value>
+        </filters>
+        <label>JVP Stability</label>
+    </listViews>
+    <listViews>
+        <fullName>Rejected_SSR_Status</fullName>
+        <columns>NAME</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Name__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>equals</operation>
+            <value>SW SLT Not Approved</value>
+        </filters>
+        <label>Rejected SSR Status</label>
+    </listViews>
+    <listViews>
+        <fullName>Requested_Status_Overview</fullName>
+        <columns>NAME</columns>
+        <columns>SLT_1__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Name__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Parent_SW_Spend_Request__c</columns>
+        <columns>Engagement_Type__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>SSR_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>equals</operation>
+            <value>Requested</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>6/1/2015</value>
+        </filters>
+        <filters>
+            <field>SLT_1__c</field>
+            <operation>contains</operation>
+            <value>Jim Van Peursem</value>
+        </filters>
+        <label>&quot;Requested&quot; Status Overview</label>
+    </listViews>
+    <listViews>
+        <fullName>Requester_View</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Name__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>SOW_number__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Needs_Information_Details__c</columns>
+        <columns>PR__c</columns>
+        <columns>PO__c</columns>
+        <columns>SOW_Document_Attached__c</columns>
+        <columns>SLT_1__c</columns>
+        <columns>Parent_SW_Spend_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requester__c</field>
+            <operation>contains</operation>
+            <value>Srikrishna Ramachandra</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Project_Spend__c.SW</value>
+        </filters>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>8/1/2015</value>
+        </filters>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>notContain</operation>
+            <value>Cancelled,On Hold</value>
+        </filters>
+        <filters>
+            <field>Preferred_Vendor__c</field>
+            <operation>contains</operation>
+        </filters>
+        <label>Requester View</label>
+    </listViews>
+    <listViews>
+        <fullName>SOW_Overview</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>SW_Project__c</columns>
+        <columns>Name__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>New_or_Existing_Engagement__c</columns>
+        <columns>Engagement_Type__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>PR__c</columns>
+        <columns>PO__c</columns>
+        <columns>SOW_Document_Attached__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SSR_Status__c</field>
+            <operation>notContain</operation>
+            <value>Cancelled,Fully Approved,On Hold</value>
+        </filters>
+        <filters>
+            <field>PO__c</field>
+            <operation>lessOrEqual</operation>
+            <value>0</value>
+        </filters>
+        <label>SOW Overview</label>
+    </listViews>
+    <listViews>
+        <fullName>SOW_Type_by_Requested_Vendor</fullName>
+        <columns>NAME</columns>
+        <columns>Requester__c</columns>
+        <columns>Name__c</columns>
+        <columns>Preferred_Vendor__c</columns>
+        <columns>Estimated_Spend__c</columns>
+        <columns>New_or_Existing_Engagement__c</columns>
+        <columns>SOW_Document_Attached__c</columns>
+        <columns>SSR_Status__c</columns>
+        <columns>Engagement_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Name__c</field>
+            <operation>notContain</operation>
+            <value>CANCELED</value>
+        </filters>
+        <filters>
+            <field>PO__c</field>
+            <operation>lessOrEqual</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PR__c</field>
+            <operation>lessOrEqual</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Engagement_Type__c</field>
+            <operation>equals</operation>
+            <value>Development</value>
+        </filters>
+        <label>Development SOW Requests by Vendor</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SSR-{0000000}</displayFormat>
+        <label>Project Spend Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SW Spend Requests</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>SW</fullName>
+        <active>true</active>
+        <label>SW</label>
+        <picklistValues>
+            <picklist>Brazil_Category__c</picklist>
+            <values>
+                <fullName>Cloud Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Device Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researching</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Type__c</picklist>
+            <values>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTE_Location__c</picklist>
+            <values>
+                <fullName>Brazil - CESAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - CIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - El Dorado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - Venturus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - Beijing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - Nanjing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - Mart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - SV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FTE_Type__c</picklist>
+            <values>
+                <fullName>Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>CA-101</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL-312</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL-93</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ONT-88</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZBR-01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZBR-05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZCH68</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZIN-63</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZUK-40</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>New_or_Existing_Engagement__c</picklist>
+            <values>
+                <fullName>Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SSR_Status__c</picklist>
+            <values>
+                <fullName>Approval Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Termination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fully Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PO In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SW SLT Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signature Queue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spend_Location__c</picklist>
+            <values>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spend_Type__c</picklist>
+            <values>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Budget</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Termination Candidate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>CXD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Imaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Integration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SW Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain %26 Service Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <listViewButtons>FTE_Costs_Table1</listViewButtons>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PO__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PR__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>PROJECT_SPEND_NEEDS_INFORMATION</fullName>
+        <active>true</active>
+        <description>If the Status of a Project Spend is Needs Information, the Needs Information Details field is required</description>
+        <errorConditionFormula>AND( 
+  ISPICKVAL( SSR_Status__c, &quot;Needs Information&quot; ),
+  LEN( Needs_Information_Details__c ) = 0
+)</errorConditionFormula>
+        <errorDisplayField>Needs_Information_Details__c</errorDisplayField>
+        <errorMessage>Please enter the details of what information is needed for this Spend Request</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>FTE_Costs_Table</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>FTE Costs Table</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://docs.google.com/a/motorola.com/spreadsheets/d/1OPldfwqR8t5QaE_k3tVgzft5t003KDGlP16rzUAHuYw/edit?usp=sharing</url>
+    </webLinks>
+    <webLinks>
+        <fullName>FTE_Costs_Table1</fullName>
+        <availability>online</availability>
+        <description>List View of existing button</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>FTE Costs Table</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&apos;https://docs.google.com/a/motorola.com/spreadsheets/d/1OPldfwqR8t5QaE_k3tVgzft5t003KDGlP16rzUAHuYw/edit?usp=sharing&apos;)</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Kit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Kits</value>
+    </caseValues>
+    <fields>
+        <help><!-- Brought in from related Device record --></help>
+        <label><!-- BLUR Version String --></label>
+        <name>BLUR_Version_String__c</name>
+    </fields>
+    <fields>
+        <help><!-- Brought in from related Device record --></help>
+        <label><!-- Build Fingerprint --></label>
+        <name>Build_Fingerprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Visible only to Admin profile --></help>
+        <label><!-- Kit_ExternalID --></label>
+        <name>Kit_ExternalID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If SW Kit Effective Date should be earlier than the date calculated by the system in Effective Date put Date here. --></help>
+        <label><!-- Manually Entered Effective Date --></label>
+        <name>Manually_Entered_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Currently Description is being pulled from MOTOPDM. The data is being pulled every 5 minutes. --></help>
+        <label><!-- SW Kit Description --></label>
+        <name>SWKIT_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Currently State is being pulled from MOTOPDM. The data is being pulled every 5 minutes. --></help>
+        <label><!-- SW Kit Item State --></label>
+        <name>SW_Kit_Item_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated by SFDC by taking earliest SA Date of all related Devices. --></help>
+        <label><!-- System Calculated Effective Date --></label>
+        <name>System_Calculated_Effective_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>SW Kit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SW Kit Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Matching_APPS_on_Devices --></label>
+        <name>Matching_APPS_on_Devices</name>
+    </webLinks>
+</CustomObjectTranslation>

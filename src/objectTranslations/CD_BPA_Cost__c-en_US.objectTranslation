@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD BPA Cost</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD BPA Costs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Award --></label>
+        <name>Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA Cost Id --></label>
+        <name>BPA_Cost_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA Created By --></label>
+        <name>BPA_Created_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA Creation Date --></label>
+        <name>BPA_Creation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA RFQ No --></label>
+        <name>BPA_RFQ_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA Updated By --></label>
+        <name>BPA_Updated_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPA Updated Date --></label>
+        <name>BPA_Updated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Type --></label>
+        <name>Cost_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective End Date --></label>
+        <name>Effective_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Start Date --></label>
+        <name>Effective_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number IOD IN --></label>
+        <name>Item_Number_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number__c</name>
+        <relationshipLabel><!-- CD BPA Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Number IOD IN --></label>
+        <name>Supplier_Number_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Number --></label>
+        <name>Supplier_Number__c</name>
+        <relationshipLabel><!-- CD BPA Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <layouts>
+        <layout>CD BPA Cost Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

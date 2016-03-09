@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;div&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px;&quot;&gt;&amp;lt;img align=&amp;quot;left&amp;quot; src=&amp;quot;&lt;/span&gt;&lt;span style=&quot;font-size: 13.3333330154419px;&quot;&gt;https://mobility.my.salesforce.com&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px;&quot;&gt;/servlet/servlet.FileDownload?file=&lt;/span&gt;&lt;span style=&quot;font-size: 13.3333330154419px;&quot;&gt;01540000001Dp3r&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 12px;&quot;&gt;&amp;quot; border=&amp;quot;0&amp;quot; alt=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/img&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;</body>
+    <pageComponentType>imageOrNote</pageComponentType>
+</HomePageComponent>

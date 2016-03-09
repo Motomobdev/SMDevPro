@@ -1,0 +1,81 @@
+<apex:page id="thePage" title="CES {Apexpages.currentpage.getparamters().get('year')} Meetings" controller="CES" sidebar="false" showHeader="false" showChat="false" >
+<head>
+ <script type="text/javascript">
+    function setSortIndex(index){
+        //alert("sortColumn"+index);
+        //alert(document.getElementById("{!$Component.theForm.block1.sortIndex}"));
+        //alert(document.getElementById("{!$Component.pageBody.theForm.block1.sortIndex}"));
+        document.getElementById("{!$Component.theForm.block1.sortIndex}").value = index;
+        //alert("set hidden element"+document.getElementById("{!$Component.theForm.block1.sortIndex}").value);
+        reOrderTable();
+    }
+    
+     function setSortIndex1(index){
+        //alert("sortColumn"+index);
+        //alert(document.getElementById("{!$Component.theForm.block1.sortIndex}"));
+        //alert(document.getElementById("{!$Component.pageBody.theForm.block1.sortIndex1}"));
+        document.getElementById("{!$Component.theForm.block1.sortIndex1}").value = index;
+        //alert("set hidden element"+document.getElementById("{!$Component.theForm.block1.sortIndex1}").value);
+        reOrderTable1();
+    }
+      </script> 
+    <title>CES {!year} Meetings</title>
+    <style>
+        body
+        {
+            color: rgb(32, 32, 32);
+        }
+        a
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body id="pageBody">
+
+    <apex:form id="theForm">
+         <apex:pageBlock id="block1" >
+    
+        <Left><b>Filter </b> 
+            <apex:selectList value="{!userType}" size="1" >
+            
+                <apex:selectoption itemlabel="{!year}" itemValue="Current Year Meetings" ></apex:selectoption>
+                                       
+                <apex:selectoption itemlabel="{!year1}" itemValue="Last Year Meetings">
+                
+                </apex:selectoption> 
+                 </apex:selectList> &nbsp;
+             <apex:outputLabel value="PublicCalender"></apex:outputLabel>
+            
+                  <apex:selectList value="{!publiccalender}" size="1" id="calender">
+                           <apex:selectOptions value="{!calender}"/>
+                  </apex:selectList>
+          
+           <apex:commandButton value="Search" action="{!search}" reRender="theForm"  status="waitStatus"  />
+           
+           <apex:actionFunction name="reOrderTable" action="{!sort}" reRender="theForm,block1,accounttable"/>
+         <apex:inputHidden id="sortIndex" value="{!sortColumn}" />
+          <apex:actionFunction name="reOrderTable1" action="{!sort1}" reRender="theForm,block1,accounttable"/>
+         <apex:inputHidden id="sortIndex1" value="{!sortColumn1}" />
+           <apex:actionStatus id="waitStatus" onstart="disable();" onstop="enable();" >
+                    <apex:facet name="start">
+                        <span style="font-weight:bold; color: red;">
+                        Please Wait...<img src="/img/loading.gif" />
+                        </span>
+                    </apex:facet>
+                </apex:actionStatus>
+            
+          </Left>
+          
+           </apex:pageBlock>
+        <apex:outputText value="{!userType}" style="position: absolute; top: 12px; left: 45%; font-size: 15pt; color: rgb(64,64,64); font-weight: bold;" id="CESMeetings" />
+        <apex:commandLink id="cmdlnkSendEmail" value="Click here to email this page" oncomplete="alert('The page has been emailed to you.');" action="{!sendEmail}" immediate="true" style="position: absolute; top: 5px; right: 5px; float: right;"/>
+        <br /><br /><br />
+        
+   <apex:outputText escape="false" value="{!htmlBody}" id="accounttable"></apex:outputText>
+  
+    </apex:form>
+   
+</body>
+
+</apex:page>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BOMSettings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BOMSettings</value>
+    </caseValues>
+    <fields>
+        <label><!-- JIRA PROCESSING DATE --></label>
+        <name>JIRA_PROCESSING_DATE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Log Enabled --></label>
+        <name>Log_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process By Date --></label>
+        <name>Process_By_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

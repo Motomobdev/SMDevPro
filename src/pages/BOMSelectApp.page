@@ -1,0 +1,341 @@
+<apex:page controller="BOMDeviceViewController" showHeader="true" sidebar="true">
+    <html lang="en">
+        <head>
+           <style>
+                 .underline{
+                  	text-decoration: underline;
+                  	cursor: pointer;
+                  }
+                  .no-underline{
+                  	text-decoration: none;
+                  }
+                  .link{
+                  	cursor: pointer;
+                  }
+               	  .center {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 20%;
+                  }		
+          </style>
+        </head>
+        <body>
+            <apex:form id="searchApps">
+                    <apex:sectionHeader title="Second Step" subtitle="Mass Create BOMs - Search Apps"/>
+                    <apex:pageBlock title="You have selected {!selectedDevices.size} devices" rendered="{!hasSelectedDevices}" mode="edit" id="selectedDevices">
+                        <apex:pageBlockTable value="{!selectedDevices}" var="wrapper" id="tableSelectedDevs">
+                            <apex:column value="{!wrapper.device.Device_ID__c}" 						headerValue="Device ID"    					headerClass="underline"   width="3%" />
+                            <apex:column value="{!wrapper.device.Name}" 								headerValue="Name"         					headerClass="underline"   width="35%" onclick="popup('{!wrapper.device.ID}');" styleClass="underline" />
+                            <apex:column headerValue="SA Date"         				headerClass="underline"   width="5%">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!wrapper.device.SA_Date__c}" /> 
+                                </apex:outputText>
+                            </apex:column>
+                            <apex:column value="{!wrapper.device.SA_Status__c}" 					    headerValue="Status"         				headerClass="underline"   width="5%"/>
+                            <apex:column value="{!wrapper.device.Core_Device_Package__c}" 				headerValue="Core Package"  				headerClass="underline"   width="10%"/> 
+                            <apex:column value="{!wrapper.device.Stable__c}" 							headerValue="Stable"  						headerClass="underline"   width="7%"/>
+                            <apex:column value="{!wrapper.device.Sales_Model_List_Concatenated__c}" 	headerValue="Sales Models" 					headerClass="underline"   width="7%"/>
+                            <apex:column value="{!wrapper.device.SW_Kit__c}" 							headerValue="SW Kit"       					headerClass="underline"   width="8%"/>
+                            <apex:column value="{!wrapper.device.Number_of_Apps_on_BOM__c}" 			headerValue="Apps on BOM"   				headerClass="underline"   width="5%"/> 
+                            <apex:column value="{!wrapper.device.Product_PMD__c}" 						headerValue="PMD Product"  					headerClass="underline"   width="10%"/>
+                            <apex:column value="{!wrapper.device.SWBOM_Reviewed_and_Approved__c}" 		headerValue="Rev. and Approved" 			headerClass="underline"   width="5%"/>
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                    
+                    <apex:pageBlock title="App Filters" id="appFilters">
+                        <table border="0" align="bottom">
+                            <tr>
+                                <td><apex:outputLabel for="appName"    escape="false" value="<b>Name</b>"/></td>
+                                <td><apex:outputLabel for="coreDevice" escape="false" value="<b>Core Device</b>"/></td>
+                                <td><apex:outputLabel for="stableLine" escape="false" value="<b>Stable Line</b>"/></td>
+                                <td><apex:outputLabel for="program"    escape="false" value="<b>Program</b>"/></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:inputText id="appName" 	 value="{!appFilter.appName}" />
+                                </td>
+                                <td>
+                                    <apex:inputField id="coreDevice" value="{!appFilter.device.Core_Device_Package__c}"/>
+                                </td>
+                                <td>
+                                    <apex:inputField id="stableLine" value="{!appFilter.device.Stable__c}" />
+                                </td>
+                                <td>
+                                    <apex:inputField id="program" value="{!appFilter.programApp.Program__c}" required="false" />
+                                </td>
+                                <td>
+                                    <apex:commandButton styleClass="cmdButton" value="Search Apps" id="searchBtn" action="{!searchApps}"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <apex:pageMessages />
+                    </apex:pageBlock>
+                    
+                    <!-- App's List -->
+                    <apex:pageBlock title="Select the Applications" rendered="{!hasApps}" id="selectApp">
+                        <apex:pageBlockTable value="{!Apps}" var="wrapper" id="tableAppSelection">
+                            <apex:column width="20">
+                                <apex:facet name="header">
+                                    <apex:inputCheckbox id="checkAllApps" onclick="checkAll(this,'.chkApps')" title="Check / Uncheck All Apps"/>
+                                </apex:facet>
+                                <apex:inputCheckbox styleClass="{!IF(wrapper.disableCheck,'','chkApps')}" value="{!wrapper.selected}" disabled="{!wrapper.disableCheck}" />
+                            </apex:column>
+                            <apex:column value="{!wrapper.app.Application_ID__c}"  			 	headerClass="underline"	headerValue="Application ID"/>
+                            <apex:column value="{!wrapper.app.Name}" 						    headerClass="underline"	headerValue="Name" onclick="popup('{!wrapper.app.ID}');" styleClass="underline"/>
+                            <apex:column value="{!wrapper.app.Available_For_Use__c}"  			headerClass="underline" headerValue="Available for Use"/>
+                            <apex:column value="{!wrapper.app.Application_Contract_Status__c}"  headerClass="underline" headerValue="Contract Status"/>
+                            <apex:column headerValue="Include In BOM" styleClass="center">
+                                <apex:inputCheckbox styleClass="chkStables" value="{!wrapper.includeInBOM}" disabled="{!wrapper.disableCheck}" />    
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlock >
+                            <apex:commandButton styleClass="cmdButton" value="Choose selected Applications" action="{!processSelectedApps}"/>    
+                        </apex:pageBlock>
+                    </apex:pageBlock>
+                    <apex:pageBlock title="You have selected {!SelectedApps.size}  applications" rendered="{!hasSelectedApps}" id="selectedApps">
+                        <apex:pageBlockTable value="{!SelectedApps}" var="wrapper" id="tableSelectedApps">
+                            <apex:column width="20">
+                                <apex:facet name="header">
+                                    <apex:inputCheckbox id="checkAllSelectedApps" onclick="checkAll(this,'.chkSelectedApps')" title="Check / Uncheck All Selected Apps"/>
+                                </apex:facet>
+                                <apex:inputCheckbox styleClass="chkSelectedApps" value="{!wrapper.selected}"/>
+                            </apex:column>
+                            <apex:column value="{!wrapper.app.Application_ID__c}"  			 	headerClass="underline"	headerValue="Application ID"/>
+                            <apex:column value="{!wrapper.app.Name}" 						    headerClass="underline"	headerValue="Name" onclick="popup('{!wrapper.app.ID}');" styleClass="underline"/>
+                            <apex:column value="{!wrapper.app.Available_For_Use__c}"  			headerClass="underline" headerValue="Available for Use"/>
+                            <apex:column value="{!wrapper.app.Application_Contract_Status__c}"  headerClass="underline" headerValue="Contract Status"/>
+                            <apex:column headerValue="Include In BOM" styleClass="center">
+                                <apex:inputCheckbox styleClass="chkStables" value="{!wrapper.includeInBOM}" />    
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlock >
+                            <apex:commandButton styleClass="cmdButton" value="Remove Selected Applications" action="{!removeSelectedApps}"/>
+                        </apex:pageBlock>
+                    </apex:pageBlock>
+                    
+                    <!-- Stable Applications -->
+                    <apex:pageBlock title="The Stable Line selected have {!stableAppsSize} applications" rendered="{!hasStableLines}">
+                    	<apex:pageBlockTable value="{!StableLines}" var="wrapper">
+                        	<apex:column value="{!wrapper.stable.Name}" 						headerValue="Name" onclick="popup('{!wrapper.stable.ID}');" styleClass="underline"/>
+                            <apex:column headerValue="Apps">
+                                <!-- Nested App on Stable -->
+                                 <apex:pageBlockTable value="{!StableLines[wrapper]}" var="appWrapper">
+                                    <apex:column value="{!appWrapper.app.Name}" 						   headerValue="App Name" onclick="popup('{!appWrapper.app.ID}');" styleClass="underline"/>
+                                    <apex:column value="{!appWrapper.app.Application_Contract_Status__c}"  headerValue="Contract Status" style="center"/>
+                                    <apex:column value="{!appWrapper.status}"  							   headerValue="App Status" style="center"/> 
+                                    <apex:column headerValue="Include In BOM" styleClass="center" width="24px">
+                                        <apex:inputCheckbox value="{!appWrapper.includeInBOM}" disabled="{!appWrapper.disableCheck}" />
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlock >
+                            <apex:commandButton styleClass="cmdButton" value="Remove Stable" action="{!removeSelectedStables}"/>
+                        </apex:pageBlock>
+                    </apex:pageBlock>
+                    
+                    <!-- Core Device Packages -->
+                    <apex:pageBlock title="The Core Device Package (CDP) selected have {!coreDeviceAppsSize} applications" rendered="{!hasCorePacks}">
+                    	<apex:pageBlockTable value="{!CorePacks}" var="wrapper">
+                        	<apex:column value="{!wrapper.cdp.Name}" 						headerValue="Name" onclick="popup('{!wrapper.cdp.ID}');" styleClass="underline"/>
+                            <apex:column headerValue="Apps">
+                                <apex:pageBlockTable value="{!CorePacks[wrapper]}" var="appWrapper">
+                                    <apex:column value="{!appWrapper.app.Name}" 						   headerValue="App Name" onclick="popup('{!appWrapper.app.ID}');" styleClass="underline"/>
+                                    <apex:column value="{!appWrapper.app.Application_Contract_Status__c}"  headerValue="Contract State" styleClass="center"/>
+                                    <apex:column headerValue="Include In BOM" styleClass="center" width="24px">
+                                        <apex:inputCheckbox value="{!appWrapper.includeInBOM}" />
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlock >
+                            <apex:commandButton styleClass="cmdButton" value="Remove CDP" action="{!removeSelectedCDPs}"/>
+                        </apex:pageBlock>
+                    </apex:pageBlock>
+                    
+                    <!-- Program Applications -->
+                    <apex:pageBlock title="The Programs selected have {!programAppsSize} applications" rendered="{!hasProgramApps}" id="tablePrograms">
+                    	<apex:pageBlockTable value="{!programApps}" var="wrapper">
+                            <apex:column width="20">
+                                <apex:facet name="header">
+                                    <apex:inputCheckbox id="checkAllPrograms" onclick="checkAll(this,'.chkPrograms')" title="Check / Uncheck All Programs"/>
+                                </apex:facet>
+                                <apex:inputCheckbox styleClass="chkPrograms" value="{!wrapper.selected}"/>
+                            </apex:column>
+                        	<apex:column value="{!wrapper.program.Name}" 								   headerValue="Name" onclick="popup('{!wrapper.program.ID}');" styleClass="underline"/>
+                            <apex:column headerValue="Apps">
+                                <apex:pageBlockTable value="{!programApps[wrapper]}" var="appWrapper">
+                                    <apex:column value="{!appWrapper.app.Name}" 						   headerValue="App Name" onclick="popup('{!appWrapper.app.ID}');" styleClass="underline"/>
+                                    <apex:column value="{!appWrapper.status}"  							   headerValue="Status" styleClass="center"/>
+                                    <apex:column value="{!appWrapper.app.Application_Contract_Status__c}"  headerValue="Contract State" styleClass="center"/>
+                                    <apex:column headerValue="Include In BOM" styleClass="center" width="24px">
+                                        <apex:inputCheckbox value="{!appWrapper.includeInBOM}" />
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlock >
+                            <apex:commandButton styleClass="cmdButton" value="Remove Program" action="{!removeSelectedPrograms}"/>
+                        </apex:pageBlock>
+                    </apex:pageBlock>
+
+                    <apex:pageBlock id="buttonPanel">
+                         <apex:commandButton styleClass="cmdButton" value="Previous" action="{!sendRedirectToSearchDevice}"/>
+                         <apex:commandButton styleClass="cmdButton" value="Submit DevApps" id="submitDevApps"   action="{!sendRedirectToApprovalDevice}"	onclick="return disableOrEnableButtons(this)" rendered="{!canSubmitApps}" /> 
+                    </apex:pageBlock>
+                    
+                    <script src="{!$Resource.bom_jquery}"></script>
+                    <script src="{!$Resource.jquery_checkboxes}"></script>
+                    <script src="{!$Resource.jquery_tablesorter}"></script>
+                    
+                    <script>
+                        
+                        try{
+                            
+                            //table sorter
+                            var tableSelectedDevices = $("#j_id0\\:searchApps\\:selectedDevices\\:tableSelectedDevs");
+                            var tableAppSelection    = $("#j_id0\\:searchApps\\:selectApp\\:tableAppSelection");
+                            var tableSelectedApps    = $("#j_id0\\:searchApps\\:selectedApps\\:tableSelectedApps");
+
+                            
+                            //checkboxes shift selection
+                            var checkApps    		 = $("#j_id0\\:searchApps\\:selectApp\\:tableAppSelection .chkApps");
+                            var checkSelectedApps    = $("#j_id0\\:searchApps\\:selectApp\\:tableAppSelection .chkSelectedApps");
+                            var chkPrograms    		 = $("#j_id0\\:searchApps\\:selectApp\\:tablePrograms .chkPrograms");
+                            
+                            //Input Filters
+							var appName    		  	 = $('#j_id0\\:searchApps\\:appFilters\\:appName');
+                            var coreLine          	 = $('#j_id0\\:searchApps\\:appFilters\\:coreDevice');
+                            var stableLine 		  	 = $('#j_id0\\:searchApps\\:appFilters\\:stableLine');
+                            var program 		  	 = $('#j_id0\\:searchApps\\:appFilters\\:program');
+                            var searchBtn  		  	 = $('#j_id0\\:searchApps\\:appFilters\\:searchBtn');
+                            var submitDevApps	  	 = $('#j_id0\\:searchApps\\:buttonPanel\\:submitDevApps');
+                            
+							
+                            //initializing table sorter
+                            if(tableSelectedDevices.length){
+								tableSelectedDevices.tablesorter({ widgets: ['zebra'], headers:{0:{sorter:false}} });
+                            }
+                            
+                            //initializing table sorter
+							if(tableAppSelection.length){
+                                tableAppSelection.tablesorter({ widgets: ['zebra'], headers:{0:{sorter:false}} });
+                            }
+
+                            //initializing table sorter
+							if(tableSelectedApps.length){
+                                tableSelectedApps.tablesorter({ widgets: ['zebra'], headers:{0:{sorter:false}} });
+                            }
+                            
+                            //initializing shift checkbox
+                            if(checkApps.length){
+                            	checkApps.shiftcheckbox();
+                            }
+
+                            //initializing shift checkbox
+                            if(checkSelectedApps.length){
+                            	checkSelectedApps.shiftcheckbox();
+                            }
+                            
+                            //initializing shift checkbox
+                            if(chkPrograms.length){
+                            	chkPrograms.shiftcheckbox();
+                            }
+                            
+                            function popup(Id){
+                                if(Id != null){
+                                    window.open('/' + Id);
+                                }
+                            }
+                            
+                            var checkAll = function(chkbox,field) {
+                                if(chkbox.checked){
+                                    $(field).each(function(){
+                                        this.checked = true;
+                                    });
+                                }else{
+                                    $(field).each(function(){
+                                        this.checked = false;
+                                    });
+                                }
+                            };
+                            
+                            if(appName.length){
+                                appName.on('click focus drop',function(){
+                                    coreLine.val('');
+                                    stableLine.val('');
+                                    program.val('');
+                                    searchBtn.val('Search Apps');
+                                });
+                            }
+                                
+                            if(coreLine.length){
+                                coreLine.on('click focus drop',function(){
+                                    appName.val('');
+                                    stableLine.val('');
+                                    program.val('');
+                                    searchBtn.val('Add CDP');
+                                });
+                            }
+							
+                            if(stableLine.length){
+                                stableLine.on('click focus drop',function(){
+                                    coreLine.val('');
+                                    appName.val('');
+                                    program.val('');
+                                    searchBtn.val('Add Stable');
+                                });
+                            }
+                            
+                            
+                            if(program.length){
+                                program.on('click focus drop',function(){
+                                    coreLine.val('');
+                                    appName.val('');
+                                    stableLine.val('');
+                                    searchBtn.val('Add Program');
+                                });
+                            }
+                            
+                            function init() {                
+                               if(submitDevApps.length){
+                                	$("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                            		submitDevApps.focus();
+                            	}
+                            }
+                            
+                            var previousOnload = window.onload;        
+                            window.onload = function() { 
+                                if (previousOnload) { 
+                                    previousOnload();
+                                }
+                            
+                                init();
+                            }
+
+                            var isButtonDisabled = false;
+                            function disableOrEnableButtons(obj){
+
+                                if(isButtonDisabled){
+                                    return false;
+                                }else{
+
+                                    var result = confirm('You are about to add the selected apps to all of the selected devices. Continue?');
+                                    if(result){
+                                        isButtonDisabled = result;
+                                        obj.className = 'btnDisabled';
+                                        $('.cmdButton').prop('disabled', result);
+                                    }
+                                    return result;
+                                }
+                            }
+                            
+                        }catch(e){
+                            console.log(e);
+                        }
+                    </script>
+                </apex:form>
+        </body>
+    </html>
+</apex:page>

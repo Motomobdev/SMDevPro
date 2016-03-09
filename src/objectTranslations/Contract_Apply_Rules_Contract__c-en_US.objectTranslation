@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Apply Rules Contract</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Apply Rules Contracts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract Master --></label>
+        <name>Contract_Master__c</name>
+        <relationshipLabel><!-- Contract Apply Rules Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Related --></label>
+        <name>Contract_Related__c</name>
+        <relationshipLabel><!-- Contract Apply Rules Contracts (Contract Related) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

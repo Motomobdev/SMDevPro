@@ -1,0 +1,133 @@
+<apex:page id="page" standardController="Customer_Meeting__c" showHeader="false" sidebar="false" cache="false" >
+
+<img alt="Customer Meeting" title="Customer Meeting" src="/img/icon/custom51_100/measuringTape32.png" style="position: absolute; top: 18px; left: 5px;" />
+
+<apex:sectionHeader title="Customer Meeting" subtitle="{!Customer_Meeting__c.Name}"/>
+
+<apex:pageBlock id="pb1" title="Customer Meeting Detail">
+
+    <apex:pageBlockSection id="pbs1" columns="2" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Name.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Name}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Account__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Account__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Meeting_Start_Date__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Meeting_Start_Date__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Meeting_End_Date__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Meeting_End_Date__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Playbook__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Playbook__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Priority_Scope__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Priority_Scope__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Business__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Business__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Location__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Location__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="" />
+            <apex:outputText value="" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Record Type" />
+            <apex:outputText value="{!Customer_Meeting__c.RecordType}" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock id="pb2" title="Attendees">
+
+    <apex:pageBlockSection id="pbs2" columns="2" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.External_Attendees__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.External_Attendees__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Internal_Attendees__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Internal_Attendees__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Created By" />
+            <apex:outputText value="{!Customer_Meeting__c.CreatedBy}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Last Modified By" />
+            <apex:outputText value="{!Customer_Meeting__c.LastModifiedBy}" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock id="pb3" title="Objectives">
+
+    <apex:pageBlockSection id="pbs3" columns="1" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Objective__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Objective__c}" escape="false" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock id="pb4" title="Agenda">
+
+    <apex:pageBlockSection id="pbs4" columns="1" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Agenda__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Agenda__c}" escape="false" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock id="pb5" title="Post Meeting Comments">
+
+    <apex:pageBlockSection id="pbs5" columns="2" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Post_Meeting_Notes__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Post_Meeting_Notes__c}" escape="false" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock id="pb6" title="Executive Summary">
+
+    <apex:pageBlockSection id="pbs6" columns="2" collapsible="false">
+    
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Executive_Summary__c.label}" />
+            <apex:outputText value="{!Customer_Meeting__c.Executive_Summary__c}" escape="false" />
+        </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:page>

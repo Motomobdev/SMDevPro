@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Renders the timeline for campaigns using start and end dates for  promotion record type</description>
+    <label>Campaign Timeline</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom42: Treasure chest</motif>
+    <page>Campaign_Timeline</page>
+</CustomTab>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Feature Release</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Feature Releases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Release Date --></label>
+        <name>Actual_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emailed Developers --></label>
+        <name>Emailed_Developers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Release Type --></label>
+        <name>Feature_Release_Type__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation><!-- Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Projected Release Date --></label>
+        <name>Projected_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary of all features included in release --></help>
+        <label><!-- Release Notes --></label>
+        <name>Release_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Status --></label>
+        <name>Release_Status__c</name>
+        <picklistValues>
+            <masterLabel>Deployed</masterLabel>
+            <translation><!-- Deployed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Feature Release Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Release Dates --></label>
+            <section>Release Dates</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please input an actual release Date when Release Status is set to &quot;Deployed&quot; --></errorMessage>
+        <name>Actual_Release_Date_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Notify_Developers --></label>
+        <name>Notify_Developers</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device Country</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Device Countries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- Device Countries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device_ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_SA_Status --></label>
+        <name>Device_SA_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Device Countries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NPI_Country --></label>
+        <name>NPI_Country__c</name>
+    </fields>
+    <layouts>
+        <layout>Device Country Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

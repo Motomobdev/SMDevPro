@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Core Device Package Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Core Device Package Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Source Id --></label>
+        <name>Application_Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Core Device Package Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Core Device Package --></label>
+        <name>Core_Device_Package__c</name>
+        <relationshipLabel><!-- Core Device Package Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Include in BOM --></label>
+        <name>Include_in_BOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_App --></label>
+        <name>SFID_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <layouts>
+        <layout>Core Device Package Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+</CustomObjectTranslation>

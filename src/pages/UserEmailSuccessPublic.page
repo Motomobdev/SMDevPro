@@ -1,0 +1,24 @@
+<apex:page controller="UserSendEmail" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">  
+    <apex:outputPanel rendered="{!controllerBoolTrueVar}">
+        <apex:image value="{!$Resource.logo_imoto}" rendered="{!controllerBoolTrueVar}"/>
+    </apex:outputPanel> 
+</div>
+<html>
+<head>
+<META HTTP-EQUIV="refresh" CONTENT="3;URL=http://motorolamobility.force.com/featurerequest">
+</meta>
+</head>
+</html>
+   <apex:form >
+    <apex:pageBlock >
+    <div style="margin-right:140px;margin-left:500px;">
+       <h1>Thank You. </h1>
+       An Email has been sent to the concerned manager.
+       <br></br>
+       <br></br>
+       <apex:commandButton value="Finish" action="{!home}" style="margin-right:140px;margin-left:160px;"> </apex:commandButton>
+     </div>
+   </apex:pageBlock>
+   </apex:form>
+</apex:page>

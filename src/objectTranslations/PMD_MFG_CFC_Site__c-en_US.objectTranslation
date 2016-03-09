@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MFG CFC Site (PMD)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MFG CFC Sites (PMD)</value>
+    </caseValues>
+    <fields>
+        <label><!-- CFC Site --></label>
+        <name>CFC_Site__c</name>
+        <picklistValues>
+            <masterLabel>AMK_CFC</masterLabel>
+            <translation><!-- AMK_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ARIMA_WUJIANG_CFC</masterLabel>
+            <translation><!-- ARIMA_WUJIANG_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BYD_SHZN_CFC</masterLabel>
+            <translation><!-- BYD_SHZN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CELLON_CFC</masterLabel>
+            <translation><!-- CELLON_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHENG_UEI_CFC</masterLabel>
+            <translation><!-- CHENG_UEI_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_LNG_CFC</masterLabel>
+            <translation><!-- CHI_MEI_LNG_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_TWN_CFC</masterLabel>
+            <translation><!-- CHI_MEI_TWN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_TY_CFC</masterLabel>
+            <translation><!-- CHI_MEI_TY_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNA_CFC</masterLabel>
+            <translation><!-- CNA_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPAL_COMM_NJ_CFC</masterLabel>
+            <translation><!-- COMPAL_COMM_NJ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPAL_COMM_TWN_CFC</masterLabel>
+            <translation><!-- COMPAL_COMM_TWN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_BR_CFC</masterLabel>
+            <translation><!-- FLEX_BR_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_CHN_CFC</masterLabel>
+            <translation><!-- FLEX_CHN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_CHN_DMN_CFC</masterLabel>
+            <translation><!-- FLEX_CHN_DMN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_FTW_CFC</masterLabel>
+            <translation><!-- FLEX_FTW_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_IND_CFC</masterLabel>
+            <translation><!-- FLEX_IND_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_JPN_CFC</masterLabel>
+            <translation><!-- FLEX_JPN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_MAL_CFC</masterLabel>
+            <translation><!-- FLEX_MAL_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_TJ_CFC</masterLabel>
+            <translation><!-- FLEX_TJ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL_CFC</masterLabel>
+            <translation><!-- FL_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FORT_WORTH_TX_CFC</masterLabel>
+            <translation><!-- FORT_WORTH_TX_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_GL_CFC</masterLabel>
+            <translation><!-- FOXCONN_GL_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_IND_CFC</masterLabel>
+            <translation><!-- FOXCONN_IND_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_LH_CFC</masterLabel>
+            <translation><!-- FOXCONN_LH_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_MX_CFC</masterLabel>
+            <translation><!-- FOXCONN_MX_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_SHZN_CFC</masterLabel>
+            <translation><!-- FOXCONN_SHZN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_TJ_CFC</masterLabel>
+            <translation><!-- FOXCONN_TJ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_TY_CFC</masterLabel>
+            <translation><!-- FOXCONN_TY_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXLINK_CFC</masterLabel>
+            <translation><!-- FOXLINK_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HIP_TJ_CFC</masterLabel>
+            <translation><!-- HIP_TJ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUAWEI_TECH_CFC</masterLabel>
+            <translation><!-- HUAWEI_TECH_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HZ_JV_CFC</masterLabel>
+            <translation><!-- HZ_JV_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEC_SHANGHAI_CFC</masterLabel>
+            <translation><!-- IEC_SHANGHAI_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JAGUARIUNA_BR_CFC</masterLabel>
+            <translation><!-- JAGUARIUNA_BR_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KOREA_OPS_CFC</masterLabel>
+            <translation><!-- KOREA_OPS_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LENOVO_WH_CFC</masterLabel>
+            <translation><!-- LENOVO_WH_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MODUSLINK_SZ_CFC</masterLabel>
+            <translation><!-- MODUSLINK_SZ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEW_ARG_CFC</masterLabel>
+            <translation><!-- NEW_ARG_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PENANG_CFC</masterLabel>
+            <translation><!-- PENANG_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLANTATION_FL_CFC</masterLabel>
+            <translation><!-- PLANTATION_FL_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QISDA_CHN_CFC</masterLabel>
+            <translation><!-- QISDA_CHN_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCL_HZO_CFC</masterLabel>
+            <translation><!-- TCL_HZO_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDF_ARG_CFC</masterLabel>
+            <translation><!-- TDF_ARG_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJ_CFC</masterLabel>
+            <translation><!-- TJ_CFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UTSTARCOM_CFC</masterLabel>
+            <translation><!-- UTSTARCOM_CFC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MFG Site --></label>
+        <name>MFG_Site__c</name>
+        <picklistValues>
+            <masterLabel>AMK_MFG</masterLabel>
+            <translation><!-- AMK_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ARIMA_WUJIANG_MFG</masterLabel>
+            <translation><!-- ARIMA_WUJIANG_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BYD_HZO_MFG</masterLabel>
+            <translation><!-- BYD_HZO_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEI_MFG</masterLabel>
+            <translation><!-- CEI_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CELLON_MFG</masterLabel>
+            <translation><!-- CELLON_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHENG_UEI_MFG</masterLabel>
+            <translation><!-- CHENG_UEI_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_LNG_MFG</masterLabel>
+            <translation><!-- CHI_MEI_LNG_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_TWN_MFG</masterLabel>
+            <translation><!-- CHI_MEI_TWN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHI_MEI_TY_MFG</masterLabel>
+            <translation><!-- CHI_MEI_TY_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNA_MFG</masterLabel>
+            <translation><!-- CNA_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPAL_COMM_NJ_MFG</masterLabel>
+            <translation><!-- COMPAL_COMM_NJ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPAL_COMM_TWN_MFG</masterLabel>
+            <translation><!-- COMPAL_COMM_TWN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMPAL_ELEC_TWN_MFG</masterLabel>
+            <translation><!-- COMPAL_ELEC_TWN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_BR_MFG</masterLabel>
+            <translation><!-- FLEX_BR_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_CHN_DMN_MFG</masterLabel>
+            <translation><!-- FLEX_CHN_DMN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_CHN_MFG</masterLabel>
+            <translation><!-- FLEX_CHN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_FTW_MFG</masterLabel>
+            <translation><!-- FLEX_FTW_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_JPN_MFG</masterLabel>
+            <translation><!-- FLEX_JPN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_MAL_MFG</masterLabel>
+            <translation><!-- FLEX_MAL_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLEX_TJ_MFG</masterLabel>
+            <translation><!-- FLEX_TJ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL_MFG</masterLabel>
+            <translation><!-- FL_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_GL_MFG</masterLabel>
+            <translation><!-- FOXCONN_GL_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_IND_MFG</masterLabel>
+            <translation><!-- FOXCONN_IND_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_LANGFANG_MFG</masterLabel>
+            <translation><!-- FOXCONN_LANGFANG_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_LH_MFG</masterLabel>
+            <translation><!-- FOXCONN_LH_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_MX_MFG</masterLabel>
+            <translation><!-- FOXCONN_MX_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_SHZN_MFG</masterLabel>
+            <translation><!-- FOXCONN_SHZN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_TJ_MFG</masterLabel>
+            <translation><!-- FOXCONN_TJ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXCONN_TY_MFG</masterLabel>
+            <translation><!-- FOXCONN_TY_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOXLINK_MFG</masterLabel>
+            <translation><!-- FOXLINK_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIANT_MFG</masterLabel>
+            <translation><!-- GIANT_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HIP_TJ_MFG</masterLabel>
+            <translation><!-- HIP_TJ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTC_TWN_MFG</masterLabel>
+            <translation><!-- HTC_TWN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUAWEI_TECH_MFG</masterLabel>
+            <translation><!-- HUAWEI_TECH_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HZ_JV_MFG</masterLabel>
+            <translation><!-- HZ_JV_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEC_SHANGHAI_MFG</masterLabel>
+            <translation><!-- IEC_SHANGHAI_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JAGUARIUNA_BR_MFG</masterLabel>
+            <translation><!-- JAGUARIUNA_BR_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KOREA_OPS_MFG</masterLabel>
+            <translation><!-- KOREA_OPS_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LENOVO_WH_MFG</masterLabel>
+            <translation><!-- LENOVO_WH_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MODUSLINK_SZ_MFG</masterLabel>
+            <translation><!-- MODUSLINK_SZ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PANTECH_KR_MFG</masterLabel>
+            <translation><!-- PANTECH_KR_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PENANG_MFG</masterLabel>
+            <translation><!-- PENANG_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QISDA_CHN_MFG</masterLabel>
+            <translation><!-- QISDA_CHN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QUANTA_TWN_MFG</masterLabel>
+            <translation><!-- QUANTA_TWN_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCL_HZO_MFG</masterLabel>
+            <translation><!-- TCL_HZO_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TELIAN_CHI_MFG</masterLabel>
+            <translation><!-- TELIAN_CHI_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJ_MFG</masterLabel>
+            <translation><!-- TJ_MFG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UTSTARCOM_MFG</masterLabel>
+            <translation><!-- UTSTARCOM_MFG --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Matrix ID --></label>
+        <name>Matrix_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD External ID --></label>
+        <name>PMD_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_ID__c</name>
+        <relationshipLabel><!-- MFG CFC Sites (PMD) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product_PDM_ID --></label>
+        <name>Product_PDM_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Region - Zone --></label>
+        <name>Region_Zone__c</name>
+        <picklistValues>
+            <masterLabel>Asia - Australia &amp; NZ</masterLabel>
+            <translation><!-- Asia - Australia &amp; NZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia - India</masterLabel>
+            <translation><!-- Asia - India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia - Japan</masterLabel>
+            <translation><!-- Asia - Japan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia - Korea</masterLabel>
+            <translation><!-- Asia - Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia - Other SWA</masterLabel>
+            <translation><!-- Asia - Other SWA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia - South East Asia</masterLabel>
+            <translation><!-- Asia - South East Asia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - C Europe</masterLabel>
+            <translation><!-- EMEA - C Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - E Europe</masterLabel>
+            <translation><!-- EMEA - E Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - Israel</masterLabel>
+            <translation><!-- EMEA - Israel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - MEA</masterLabel>
+            <translation><!-- EMEA - MEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - N Europe</masterLabel>
+            <translation><!-- EMEA - N Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - Pakistan</masterLabel>
+            <translation><!-- EMEA - Pakistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - Russia</masterLabel>
+            <translation><!-- EMEA - Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - S Europe</masterLabel>
+            <translation><!-- EMEA - S Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA - Turkey</masterLabel>
+            <translation><!-- EMEA - Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater China - China</masterLabel>
+            <translation><!-- Greater China - China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater China - Hong Kong</masterLabel>
+            <translation><!-- Greater China - Hong Kong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater China - Taiwan</masterLabel>
+            <translation><!-- Greater China - Taiwan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - Brazil</masterLabel>
+            <translation><!-- Latin America - Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - LA1</masterLabel>
+            <translation><!-- Latin America - LA1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - LA2</masterLabel>
+            <translation><!-- Latin America - LA2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America - Mexico</masterLabel>
+            <translation><!-- Latin America - Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America - Canada</masterLabel>
+            <translation><!-- North America - Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America - USA</masterLabel>
+            <translation><!-- North America - USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Code --></label>
+        <name>Zone_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Friendly Name --></label>
+        <name>Zone_Friendly_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone --></label>
+        <name>Zone_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>PMD CFC Site Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

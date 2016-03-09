@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mobility Forecast</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mobility Forecasts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Retail Forecasts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Forecast Quarter --></label>
+        <name>Forecast_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Forecast Year --></label>
+        <name>Forecast_Year__c</name>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Locked? --></label>
+        <name>Locked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Outlooks --></label>
+        <name>Number_of_Outlooks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price book --></label>
+        <name>Price_book__c</name>
+        <relationshipLabel><!-- Retail Forecasts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quarter First Day --></label>
+        <name>Quarter_First_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique ID --></label>
+        <name>Unique_ID__c</name>
+    </fields>
+    <layouts>
+        <layout>Retail Forecast Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Forecast Lines (Tabbed) --></label>
+            <section>Forecast Lines (Tabbed)</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Mobility Forecast Name</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Forecast_Line --></label>
+        <name>New_Forecast_Line</name>
+    </webLinks>
+</CustomObjectTranslation>

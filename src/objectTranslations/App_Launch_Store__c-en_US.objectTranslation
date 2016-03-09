@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>App Launch Store</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>App Launch Stores</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- App Launch Stores --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Publicly Available --></label>
+        <name>Public__c</name>
+    </fields>
+    <fields>
+        <label><!-- Store Name --></label>
+        <name>Store_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Store URL --></label>
+        <name>Store_URL__c</name>
+    </fields>
+    <layouts>
+        <layout>App Launch Store Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

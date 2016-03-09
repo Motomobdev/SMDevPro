@@ -1,0 +1,416 @@
+<apex:page controller="RankFeatureQueueController">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".groupFeatureList").sortable({ items: '.groupSortable_bm' });
+        $(".groupFeatureList").disableSelection();
+        $(".overallFeatureList").sortable({ items: '.overallSortable_bm' });
+        $(".overallFeatureList").disableSelection();
+    });
+    function makeGroupFeaturesSortable() {
+        $(".groupFeatureList").sortable({ items: '.groupSortable_bm' });
+        $(".groupFeatureList").disableSelection();
+    }
+    function makeOverallFeaturesSortable() {
+        $(".overallFeatureList").sortable({ items: '.overallSortable_bm' });
+        $(".overallFeatureList").disableSelection();
+    }
+    function groupStatusStarted(statusText) {
+        $('#groupStatus').text(statusText).fadeIn(1000);
+    }
+    function groupStatusComplete(statusText) {
+        if ($('#groupMessage').length == 0) {
+            $('#groupStatus').text(statusText).delay(2000).fadeOut(1000);
+        } else {
+            $('#groupStatus').text('Error').delay(2000).fadeOut(1000);
+        }
+    }
+    function overallStatusStarted(statusText) {
+        $('#overallStatus').text(statusText).fadeIn(1000);
+    }
+    function overallStatusComplete(statusText) {
+        if ($('#overallMessage').length == 0) {
+            $('#overallStatus').text(statusText).delay(2000).fadeOut(1000);
+        } else {
+            $('#overallStatus').text('Error').delay(2000).fadeOut(1000);
+        }
+    }
+    function showFeaturePopup() {
+        $('#featurePopup').fadeIn();
+
+        //Define margin for center alignment (vertical   horizontal) - we add 80px to the height/width to accomodate for the padding  and border width defined in the css
+        var popMargTop = ($('#featurePopup').height() + 80) / 2;
+        var popMargLeft = ($('#featurePopup').width() + 80) / 2;
+
+        //Apply Margin to Popup
+        $('#featurePopup').css({
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+
+        //Fade in Background
+        $('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+        $('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
+
+        return false;
+    }
+    function updateGroupSequence(inFeatureSeqId) {
+        var mElems = $('.groupFeature');
+        var mIds = '';
+        for(var i=0; i<mElems.length; i++){
+            mIds += mElems[i].id + ',';
+        }
+        document.getElementById(inFeatureSeqId).value = mIds;
+        return true;
+    }
+    function updateOverallSequence(inFeatureSeqId) {
+        var mElems = $('.overallFeature');
+        var mIds = '';
+        for(var i=0; i<mElems.length; i++){
+            mIds += mElems[i].id + ',';
+        }
+        document.getElementById(inFeatureSeqId).value = mIds;
+        return true;
+    }
+    $(document).ready(function() {
+        //Close Popups and Fade Layer
+        $('a.close, #fade, [id$=popupSave]').live('click', function() { //When clicking on the close or fade layer...
+            $('#fade , .popup_block').fadeOut(function() {
+                $('#fade').remove();  //fade them both out
+            });
+            return false;
+        });
+    });
+    </script>
+    <style type="text/css">
+    .groupFeature {
+        padding:20px 10px 10px 75px;
+        background:transparent;
+        position: relative;
+    }
+    .overallFeature {
+        padding:20px 10px 10px 75px;
+        background:transparent;
+        position: relative;
+    }
+    .groupFeature_menu{
+        background:#f9f9f9;
+        border: 1px solid #ccc;
+        border-right: 0;
+        left: 0px;
+        padding:10px;
+        position:absolute;
+        width:54px;
+        
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-shadow: 0px 1px 4px #ccc;
+        
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -moz-box-shadow: 0px 1px 4px #ccc;
+
+        -webkit-box-shadow: 0px 1px 4px #ccc;
+    }
+    .overallFeature_menu{
+        background:#f9f9f9;
+        border: 1px solid #ccc;
+        border-right: 0;
+        left: 0px;
+        padding:10px;
+        position:absolute;
+        width:54px;
+        
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-shadow: 0px 1px 4px #ccc;
+        
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -moz-box-shadow: 0px 1px 4px #ccc;
+
+        -webkit-box-shadow: 0px 1px 4px #ccc;
+    }
+    .group_question_num{   
+        /* positioning */
+        position: absolute;
+        right: 24px;
+        top: 3px;
+        /* styling */
+        font-size: 24px;
+        font-weight: bold;
+        color: #ccc;
+    }
+    .overall_question_num{   
+        /* positioning */
+        position: absolute;
+        right: 24px;
+        top: 3px;
+        /* styling */
+        font-size: 24px;
+        font-weight: bold;
+        color: #ccc;
+    }
+    .reachedText {
+        font-size: 0.6em;
+        font-weight: normal;
+    }
+    .groupFeature .groupFeatureInfo{
+        border:1px solid #CCCCCC;
+        margin:0;
+        padding:10px;
+        
+        box-shadow: 0px 1px 4px #ccc;
+        border-radius: 5px;
+        
+        -moz-box-shadow: 0px 1px 4px #ccc;
+        -moz-border-radius: 5px;
+        
+        -webkit-box-shadow: 0px 1px 4px #ccc;
+    }
+    .overallFeature .overallFeatureInfo{
+        border:1px solid #CCCCCC;
+        margin:0;
+        padding:10px;
+        
+        box-shadow: 0px 1px 4px #ccc;
+        border-radius: 5px;
+        
+        -moz-box-shadow: 0px 1px 4px #ccc;
+        -moz-border-radius: 5px;
+        
+        -webkit-box-shadow: 0px 1px 4px #ccc;
+    }
+    .groupSortable_bm {
+        cursor: pointer;
+    }
+    .overallSortable_bm {
+        cursor: pointer;
+    }
+    .groupSortable_bm .groupFeatureInfo{
+        background: white;
+    }
+    .overallSortable_bm .overallFeatureInfo{
+        background: white;
+    }
+    .group_not_sortable_bm .groupFeatureInfo {
+        background: #f9f9f9;
+    }
+    .overall_not_sortable_bm .overallFeatureInfo {
+        background: #f9f9f9;
+    }
+    .groupFeatureList h1{
+        color: #333;
+        clear: both;
+        display: block;
+        font-size: 20px;
+    }
+    .overallFeatureList h1{
+        color: #333;
+        clear: both;
+        display: block;
+        font-size: 20px;
+    }
+    .cOutputField {
+        height:22px;
+        line-height:22px;
+    }
+    .cOutputField .label {
+        float:left;
+        width:120px;
+        font-weight:bold;
+        padding-right:10px;
+        text-align:right;
+    }
+    .groupStatus {
+        display:none;
+        background-color:#e5c12f;
+        color:#fff;
+        position:absolute;
+        left:50%;
+        width:100px;
+        margin-left:-50px;
+        text-align:center;
+        padding:5px;
+        font-weight:bold;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+    .overallStatus {
+        display:none;
+        background-color:#e5c12f;
+        color:#fff;
+        position:absolute;
+        left:50%;
+        width:100px;
+        margin-left:-50px;
+        text-align:center;
+        padding:5px;
+        font-weight:bold;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+    /*----Popup----*/
+    #fade { /*--Transparent background layer--*/
+        display: none; /*--hidden by default--*/
+        background: #000;
+        position: fixed; left: 0; top: 0;
+        width: 100%; height: 100%;
+        opacity: .80;
+        z-index: 99;
+    }
+    .popup_block{
+        display: none;
+        background: #fff;
+        padding: 20px;
+        font-size: 1.2em;
+        position: absolute;
+        top: 50%; left: 50%;
+        z-index: 100; /* Salesforce datePicker has z-index:100; */
+        width: 300px;
+        /*--CSS3 Box Shadows--*/
+        -webkit-box-shadow: 0px 0px 40px #000;
+        -moz-box-shadow: 0px 0px 40px #000;
+        box-shadow: 0px 0px 40px #000;
+        /*--CSS3 Rounded Corners--*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    img.btn_close {
+        float: right;
+        margin: -35px -35px 0 0;
+    }
+    </style>
+    <apex:sectionHeader title="Features"/>
+    <table>
+    <tr>
+    <td width="50%">
+    <apex:pageBlock title="Group Queue">
+    <apex:form >
+    <apex:outputPanel layout="block" style="position:relative;">
+        <apex:actionregion >
+        <apex:inputhidden id="inputGroupFeatureSeq" value="{!groupSequence}" />
+        <apex:commandbutton value="Save Group Queue" onclick="updateGroupSequence('{!$Component.inputGroupFeatureSeq}');groupStatusStarted('Saving...');" action="{!saveGroupSequence}" reRender="groupFeatureList,overallFeatureList" oncomplete="makeGroupFeaturesSortable();groupStatusComplete('Saved');"/>
+        <span id="groupStatus" class="groupStatus"></span>
+        </apex:actionregion>
+    </apex:outputPanel>
+    <apex:outputPanel id="groupFeatureList" styleClass="groupFeatureList">
+    	<apex:SelectList value="{!selectedGroupRequestedGroup}" label="Requested Group" multiselect="false" size="1">
+            <apex:actionSupport event="onchange" action="{!updateGroupByFeatureGroup}"/>
+            <apex:SelectOptions value="{!groupRequestedGroups}"/>
+        </apex:selectList>
+    	<apex:pageMessages id="groupMessage"/>
+        <apex:repeat value="{!groupQueue}" var="f" rendered="{!selectedGroupRequestedGroup!=null&&selectedGroupRequestedGroup!=''}">
+            <div id="{!f.Id}" layout="block" class="groupFeature groupSortable_bm" title="Drag and Drop to Reorder">
+                <div class="groupFeatureInfo">
+                    <div class="groupFeature_menu">
+                        <div class="group_question_num">
+                            <apex:outputText value="{0,number,integer}">
+                                <apex:param value="{!f.Group_Queue__c}"/>
+                            </apex:outputtext>
+                        </div>
+                        <apex:image value="{!URLFOR($Resource.main, 'img/up_down_arrow.png')}" style="float:right"/>
+                    </div>
+                    <h1>
+                        <apex:outputLink value="/{!f.id}" target="_blank">{!f.Name}</apex:outputLink>
+                    </h1>
+                    <table class="cOutputField">
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Group_Queue__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Group_Queue__c}"/></td>
+                    	</tr>
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Phase__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Phase__c}"/></td>
+                    	</tr>
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Type__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Type__c}"/></td>
+                    	</tr>
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Resolution_Type__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Resolution_Type__c}"/></td>
+                    	</tr>
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Requested_Group__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Requested_Group__c}"/></td>
+                    	</tr>
+                    	<tr>
+                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Description__c.label}"/></td>
+                    		<td><apex:outputfield value="{!f.Description__c}"/></td>
+                    	</tr>
+                    </table>
+                </div>
+            </div>
+        </apex:repeat>
+    </apex:outputPanel>
+    </apex:form>
+    </apex:pageBlock>
+    </td>
+    <td width="50%">
+    	<apex:pageBlock title="Overall Queue">
+	    <apex:form >
+	    <apex:outputPanel layout="block" style="position:relative;">
+	        <apex:actionregion >
+	        <apex:inputhidden id="inputOverallFeatureSeq" value="{!overallSequence}" />
+	        <apex:commandbutton rendered="{!isAdministrator}" value="Save Overall Queue" onclick="updateOverallSequence('{!$Component.inputOverallFeatureSeq}');overallStatusStarted('Saving...');" action="{!saveOverallSequence}" reRender="overallFeatureList" oncomplete="makeOverallFeaturesSortable();overallStatusComplete('Saved');"/>
+	        <span id="overallStatus" class="overallStatus"></span>
+	        </apex:actionregion>
+	    </apex:outputPanel>
+	    <apex:outputPanel id="overallFeatureList" styleClass="overallFeatureList">
+	    	<apex:pageMessages id="overallMessage" />
+	        <apex:repeat value="{!overallQueue}" var="f">
+	            <div id="{!f.Id}" layout="block" class="overallFeature {!IF(isAdministrator,'overallSortable_bm','overall_not_sortable_bm')}" title="Drag and Drop to Reorder">
+	                <div class="overallFeatureInfo">
+	                    <div class="overallFeature_menu">
+	                        <div class="overall_question_num">
+	                            <apex:outputText value="{0,number,integer}">
+	                                <apex:param value="{!f.Overall_Queue__c}"/>
+	                            </apex:outputtext>
+	                        </div>
+	                        <apex:image value="{!URLFOR($Resource.main, 'img/up_down_arrow.png')}" style="float:right"/>
+	                    </div>
+	                    <h1>
+	                        <apex:outputLink value="/{!f.id}" target="_blank">{!f.Name}</apex:outputLink>
+	                    </h1>
+	                    <table class="cOutputField">
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Overall_Queue__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Overall_Queue__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Group_Queue__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Group_Queue__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Phase__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Phase__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Type__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Type__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Resolution_Type__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Resolution_Type__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Requested_Group__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Requested_Group__c}"/></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><apex:outputLabel styleclass="label" value="{!$ObjectType.Feature__c.Fields.Description__c.label}"/></td>
+	                    		<td><apex:outputfield value="{!f.Description__c}"/></td>
+	                    	</tr>
+	                    </table>
+	                </div>
+	            </div>
+	        </apex:repeat>
+	    </apex:outputPanel>
+	    </apex:form>
+	    </apex:pageBlock>
+    </td>
+    </tr></table>
+</apex:page>

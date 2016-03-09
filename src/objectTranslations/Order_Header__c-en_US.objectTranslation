@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Header</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Header</value>
+    </caseValues>
+    <fields>
+        <help><!-- The account/customer this order belongs to. --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Where the shipment is being invoiced. --></help>
+        <label><!-- Bill To Address --></label>
+        <name>Bill_To_Address__c</name>
+        <relationshipLabel><!-- Bill to address --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Customer --></label>
+        <name>End_Customer__c</name>
+        <relationshipLabel><!-- Orders (End Customer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Any order on hold due to OM (Order Management) Hold, Price Hold AR hold etc. --></help>
+        <label><!-- Has Order Holds? --></label>
+        <name>Has_Order_Holds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Header ID --></label>
+        <name>Oracle_Header_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number assigned by the system for the order entered under a customer PO. --></help>
+        <label><!-- Oracle Order Number --></label>
+        <name>Oracle_Order_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of the ENTIRE order.  See lines for individual LINE status. --></help>
+        <label><!-- Oracle Order Status --></label>
+        <name>Oracle_Order_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Amount --></label>
+        <name>Order_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Seems to be the day before the date on which the order was created or entered in Oracle. This date could be different from the date the customer placed the order.  See Flex field for PO ent dt. Could be used to show actual receipt of order-Not used today. --></help>
+        <label><!-- Order Created Date --></label>
+        <name>Order_Created_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The DATE ORDERED field in Oracle.  The date the customer&apos;s order is entered into Oracle. --></help>
+        <label><!-- Order Entered Date --></label>
+        <name>Order_Entered_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The category type of how this order is entered into the system. --></help>
+        <label><!-- Order Type --></label>
+        <name>Order_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Code --></label>
+        <name>Organization_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Date --></label>
+        <name>PO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Purchase order from the customer with details of the order. --></help>
+        <label><!-- Customer PO --></label>
+        <name>PO_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the amount owed by the customer is due. --></help>
+        <label><!-- Payment Terms --></label>
+        <name>Payment_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- Where you would find the pricing for this customer. --></help>
+        <label><!-- Price List Name --></label>
+        <name>Price_List_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesperson currently responsible to sell to the customer. --></help>
+        <label><!-- Sales Rep --></label>
+        <name>Sales_Rep__c</name>
+        <relationshipLabel><!-- Order Header --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Where the shipment is being delivered. --></help>
+        <label><!-- Ship To Address --></label>
+        <name>Ship_To_Address__c</name>
+        <relationshipLabel><!-- Order Header --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- How the order is being paid. This is the Freight Terms from Oracle.  Collect: Customer must provide account # for payment.  Prepaid: Motorola Pays for.  Customer Pick-up: Customer coming to pick up.  etc. --></help>
+        <label><!-- Shipment Terms --></label>
+        <name>Shipment_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- The confirmed address of where the warehouse shipped to.  In most cases this is the same as the ship-to address. --></help>
+        <label><!-- Ultimate Ship To Address --></label>
+        <name>Ultimate_Ship_To_Address__c</name>
+        <relationshipLabel><!-- Ultimate ship to address --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Order Header Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

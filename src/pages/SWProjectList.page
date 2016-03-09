@@ -1,0 +1,9 @@
+<apex:page controller="CreateProjectSpendController" sidebar="false" showHeader="false" title="SW Projects">
+    <apex:form >
+		<apex:pageBlock >
+    		<apex:pageBlockTable value="{!SWProjects}" var="project" id="SW_Projects">
+                <apex:column value="{!project.Name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

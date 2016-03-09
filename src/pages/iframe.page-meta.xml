@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>29.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Created for GTM Top Reports page. Links from top reports page will point to this page to show external contents with sfdc header.</description>
+    <label>iframe-moto</label>
+</ApexPage>

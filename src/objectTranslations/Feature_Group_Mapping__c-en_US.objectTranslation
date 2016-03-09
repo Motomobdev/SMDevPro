@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Feature Group Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Feature Group Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Feature Group --></label>
+        <name>Feature_Group__c</name>
+        <relationshipLabel><!-- Feature Group Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Profile Name --></label>
+        <name>Profile_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Feature Group Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

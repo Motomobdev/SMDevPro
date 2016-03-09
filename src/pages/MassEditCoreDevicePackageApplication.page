@@ -1,0 +1,89 @@
+<apex:page standardController="Core_Device_Package_Application__c" recordSetVar="unused" sidebar="false" extensions="MassEditCoreDevicePackageApplication">
+	<!-- <apex:includeScript value="{!$Resource.UtilJS}" /> -->
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlock >
+				Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+			</apex:pageBlock>
+			
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" action="{!saveChanges}"/>
+				<apex:commandButton value="Return" action="{!cancel}"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockTable value="{!coreApps}" var="a" id="coreAppsTable">			
+				<apex:column headerValue="Core Device Package"> 
+			  		<apex:outputField value="{!a.Core_Device_Package__c}"/> 
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Core Device Package">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Core_Device_Package__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			  	<apex:column headerValue="Application"> 
+			  		<apex:outputField value="{!a.Application__c}"/> 
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Application__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			  	<apex:column headerValue="Application Type"> 
+			  		<apex:outputField value="{!a.Application__r.Application_Type__c}"/> 
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Type">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Application__r.Application_Type__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			  	<apex:column headerValue="Application Royalty Current"> 
+			  		<apex:outputField value="{!a.Application__r.Royalty_Current__c}"/>  
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Royalty Current">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Application__r.Royalty_Current__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			  	<apex:column headerValue="Application Source"> 
+			  		<apex:outputLink value="{!a.Source__c}" id="theLink">{!a.Source_Name__c}</apex:outputLink>   
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Application Source">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Source_Name__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			  	<apex:column headerValue="Include in BOM"> 
+			  		<apex:inputField value="{!a.Include_in_BOM__c}"/> 
+                    <apex:facet name="header">
+                        <apex:actionregion >
+                        <apex:outputLabel style="cursor:pointer;" value="Include in BOM">
+                            <apex:actionSupport event="onclick" action="{!doSort}" rerender="coreAppsTable">
+                                <apex:param name="sortFieldParam" value="Include_in_BOM__c" assignTo="{!sortField}"/>
+                            </apex:actionSupport>
+                        </apex:outputLabel>
+                        </apex:actionregion>
+                    </apex:facet>
+			  	</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

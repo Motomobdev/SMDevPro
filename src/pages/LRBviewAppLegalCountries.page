@@ -1,0 +1,76 @@
+<apex:page standardController="Application__c" extensions="LRBviewAppLegalCountries" showHeader="false">
+    <style type="text/css"> 
+        .topL{ 
+        text-align:left; 
+        vertical-align: top; 
+        }
+        
+        .errorText{
+        color:red;
+        font-style:italic;
+        font-size:16px;
+        }
+        
+        .messageText{
+        //color:blue;
+        font-style:italic;
+        font-weight:bold;
+        font-size:16px;
+        }
+        
+        .titleText{
+        font-style:bold;
+        }            
+        
+    </style>
+    <script language="javascript">
+        function newWindow(file,window)
+        {
+          msgWindow= window.open(file,window,'scrollbars=yes,resizable=yes,width=960,height=600');
+          if (msgWindow.opener=null)
+          msgWindow.opener = self;
+          msgWindow.focus();
+        }        
+
+        function popUp(URL,windowName) {
+            window.open(URL, windowName, 'toolbar=0,scrollbars=1,location=0,statusbar=1,menubar=0,resizable=1,width=960,height=600,left = 480,top = 300');
+        }
+        
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+
+    </script>    
+
+    <apex:form id="theForm">   
+        <apex:actionFunction name="refreshPage" action="{!refreshP}" rerender="formPanel"/> 
+        <center>
+            <apex:commandButton onclick="popUp('/apex/LRBeditAppCountries?id={!targetId}&type=Legal', 'edit');"  value="Edit Countries" />
+        </center>        
+        <apex:outputPanel id="formPanel">            
+        <table >
+            <tbody>
+                <tr>
+                    <td width="50%" class="topL">                   
+                        <h3><apex:outputText value="Included Countries" rendered="{!!allCountriesSelected}" /></h3>
+                        <BR/><BR/>
+                        <apex:outputText value="There are no Countries selected." rendered="{!noCountriesSelected}" styleClass="errorText" />
+                        <apex:outputText value="Global" rendered="{!allCountriesSelected}" styleClass="messageText" />
+                        
+                        <apex:repeat value="{!includedCountries}" var="c" rendered="{!!allCountriesSelected}">
+                            <apex:outputText value="{!c.Name} - "/> 
+                        </apex:repeat>                  
+                    </td>
+                    <td class="topL">
+                        <h3><apex:outputText value="Excluded Countries" rendered="{!!allCountriesSelected}" /></h3>
+                        <BR/><BR/>
+                        <apex:repeat value="{!excludedCountries}" var="c">
+                            <apex:outputText value="{!c.Name} - "/> 
+                        </apex:repeat>          
+                    </td>       
+                </tr>
+            </tbody>
+        </table>
+        </apex:outputPanel>            
+    </apex:form>
+</apex:page>

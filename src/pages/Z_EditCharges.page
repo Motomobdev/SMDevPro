@@ -1,0 +1,595 @@
+<apex:page standardController="zqu__Quote__c"
+                        extensions="Z_EditCharges,Z_ProductSelector"
+                        sidebar="false"
+                        title="Amendment"
+                        action="{!onLoad}">
+
+        <!-- Add the jQuery library -->
+        <apex:includeScript value="{!$Resource.zqu__JQuery142}" />
+
+        <!-- Disable all input field right after editing one -->
+        <script>
+        var j$ = jQuery.noConflict();
+        
+        // Disable all text input (when editing a charge)
+        function disableAllInput() {
+                j$("input[type=text]").attr('disabled', 'disabled');
+        }
+        
+        // Re-enable all intpus
+        function enableAllInput() {
+                j$("input[type=text]").removeAttr('disabled');
+        }
+        </script>
+
+        <apex:pageMessages id="msg" />
+
+        <apex:sectionHeader title="Amendment" subtitle="Edit Amendment" />
+
+        <apex:form id="mainForm" rendered="{!initSuccess}">
+
+                <apex:pageBlock title="Edit Amendment">
+
+                        <apex:pageBlockSection title="Subscription Products and Charges" columns="1" id="panSubscriptionProducts">
+
+                                <apex:repeat value="{!chargeGroupList}" var="group">
+
+                                        <apex:outputPanel layout="block" style="border: 1px solid black; padding: .5em;">
+
+                                                <!-- TYPE_AMENDMENT_ORIGINAL -->
+                                                <apex:outputPanel rendered="{!group.groupType == 3}"
+                                                                                        layout="block"
+                                                                                        style="background-color:#666600;color:white;font-weight:bold;padding: .3em;">
+
+                                                        {!group.productName} : {!group.ratePlanName}
+
+                                                </apex:outputPanel>
+
+                                                <!-- TYPE_AMENDMENT_NEWPRODUCT -->
+                                                <apex:outputPanel rendered="{!group.groupType == 4}"
+                                                                                        layout="block"
+                                                                                        style="background-color:#66CC33;color:white;font-weight:bold;;padding: .3em;">
+
+                                                        {!group.productName} : {!group.ratePlanName}
+
+                                                </apex:outputPanel>
+
+                                                <!-- TYPE_AMENDMENT_UPDATEDPRODUCT -->
+                                                <apex:outputPanel rendered="{!group.groupType == 5}"
+                                                                                        layout="block"
+                                                                                        style="background-color:#CCCC66;color:white;font-weight:bold;padding: .3em;">
+
+                                                        {!group.productName} : {!group.ratePlanName}
+
+                                                </apex:outputPanel>
+
+                                                <!-- TYPE_AMENDMENT_REMOVEPRODUCT -->
+                                                <apex:outputPanel rendered="{!group.groupType == 6}"
+                                                                                        layout="block"
+                                                                                        style="background-color:#666666;color:white;font-weight:bold;;padding: .3em;text-decoration:line-through;">
+
+                                                        {!group.productName} : {!group.ratePlanName}
+
+                                                </apex:outputPanel>
+                                                
+                                                <!-- Display the charges under the rate plans -->
+							                        <!-- Sample Component is referenced. This will be essentially your component -->
+							                    <apex:outputPanel id="chargeDisplay">
+							                         <c:z_SampleChargeSection id="cChargeSec"  chargeGroup="{!group}" quoteIdVal="{!zqu__Quote__c.Id}" editableVal="{!groupEditMap[group.groupId] != 'NO_EDIT'}" editButton="false"/> 
+							                   </apex:outputPanel>
+                                                
+
+                                                <!-- Different button according to the group charge type -->
+                                                <apex:outputPanel layout="block">
+
+                                                        <apex:actionStatus id="stsEditGroup">
+
+                                                                <apex:facet name="stop">
+
+                                                                        <apex:outputPanel >
+
+                                                                                <apex:commandButton value="Save"
+                                                                                                                        action="{!saveGroup}"
+                                                                                                                        status="stsEditGroup"
+                                                                                                                        reRender="mainForm, msg, hiddenBlock"
+                                                                                                                        rendered="{!groupEditMap[group.groupId] != 'NO_EDIT'}" />
+
+                                                                                <apex:commandButton value="Edit"
+                                                                                                                        action="{!editGroup}"
+                                                                                                                        status="stsEditGroup"
+                                                                                                                        reRender="mainForm, msg, hiddenBlock, chargeDisplay"
+                                                                                                                        rendered="{!AND(group.showVisualForceEdit, groupEditMap[group.groupId] == 'NO_EDIT')}"  >
+
+                                                                                        <apex:param name="groupId"
+                                                                                                                value="{!group.groupId}"
+                                                                                                                assignTo="{!selectedChargeGroup}" />
+
+                                                                                </apex:commandButton>
+
+                                                                                <apex:commandButton value="Cancel"
+                                                                                                                        action="{!cancelEditGroup}"
+                                                                                                                        status="stsEditGroup"
+                                                                                                                        rendered="{!groupEditMap[group.groupId] != 'NO_EDIT'}" />
+
+                                                                                
+                                                                                <apex:commandButton action="{!deleteGroup}"
+                                                                                                                        value="Delete"
+                                                                                                                        status="stsEditGroup"
+                                                                                                                        reRender="mainForm, msg, hiddenBlock"
+                                                                                                                        rendered="{!AND(group.showVisualForceDelete, groupEditMap[group.groupId] == 'NO_EDIT')}">
+
+                                                                                        <apex:param name="groupId"
+                                                                                                                value="{!group.groupId}"
+                                                                                                                assignTo="{!selectedChargeGroup}" />
+
+                                                                                </apex:commandButton>
+
+                                                                                <apex:commandButton action="{!unDeleteGroup}"
+                                                                                                                        value="Undelete"
+                                                                                                                        status="stsEditGroup"
+                                                                                                                        reRender="mainForm, msg, hiddenBlock"
+                                                                                                                        rendered="{!group.showVisualForceUndelete}">
+
+                                                                                        <apex:param name="groupId"
+                                                                                                                value="{!group.groupId}"
+                                                                                                                assignTo="{!selectedChargeGroup}" />
+
+                                                                                </apex:commandButton>
+
+                                                                        </apex:outputPanel>
+
+                                                                </apex:facet>
+
+                                                                <apex:facet name="start">
+
+                                                                        <apex:commandButton value="Processing..." disabled="true" status="stsEditGroup" />
+
+                                                                </apex:facet>
+
+                                                        </apex:actionStatus>
+
+                                                </apex:outputPanel>
+
+                                        </apex:outputPanel>
+
+                                </apex:repeat>
+                                
+                                <apex:pageBlockSectionItem >
+
+                                        <apex:actionStatus id="stsDisplayCatalog">
+
+                                                <apex:facet name="start">
+
+                                                        <apex:outputPanel >
+
+                                                                <apex:commandButton value="Querying product catalog..."
+                                                                                                        disabled="true"
+                                                                                                        status="stsDisplayCatalog"
+                                                                                                        rendered="{!!displayProductCatalog}" />
+
+                                                                <apex:commandButton value="Removing product catalog..."
+                                                                                                        disabled="true"
+                                                                                                        status="stsDisplayCatalog"
+                                                                                                        rendered="{!displayProductCatalog}" />
+
+                                                        </apex:outputPanel>
+
+                                                </apex:facet>
+
+                                                <apex:facet name="stop">
+
+                                                        <apex:outputPanel >
+
+                                                                <apex:commandButton action="{!doDisplayProductCatalog}"
+                                                                                                        value="Add More Products"
+                                                                                                        status="stsDisplayCatalog"
+                                                                                                        rendered="{!!displayProductCatalog}"
+                                                                                                        reRender="mainForm" />
+
+                                                                <apex:commandButton action="{!cancelDisplayProductCatalog}"
+                                                                                                        value="Cancel adding product"
+                                                                                                        status="stsDisplayCatalog"
+                                                                                                        rendered="{!displayProductCatalog}"
+                                                                                                        reRender="mainForm" />
+
+                                                        </apex:outputPanel>
+
+                                                </apex:facet>
+
+                                        </apex:actionStatus>
+
+                                </apex:pageBlockSectionItem>
+
+                        </apex:pageBlockSection>
+
+                        <!-- BEGIN insert product catalog -->
+                        <apex:outputPanel id="panProductSelector" rendered="{!displayProductCatalog}">
+                        
+                                <apex:pageBlock title="Product Summary (Filtered By {!quote.zqu__Currency__c})">
+                                
+                                
+				                        <apex:outputlabel value="Application" />
+				                		<apex:selectList id="applications" value="{!chosenApplication}" size="1" title="Applications"  >
+											<apex:actionSupport event="onchange" action="{!setApplicationValues}"/>
+											<apex:selectOptions value="{!applications}" /> 
+										</apex:selectList>
+                                
+                                        <apex:pageBlockButtons style="text-align:right" location="top">
+                                        
+                                                <apex:actionRegion >
+                                                
+                                                        <apex:inputText id="itProductSearch" value="{!productSearchString}" />
+                                                        
+                                                </apex:actionRegion>
+                                                
+                                                <apex:actionStatus id="stsProductSearch">
+                                                
+                                                        <apex:facet name="start">
+                                                        
+                                                                <apex:commandButton value="Searching..."
+                                                                                                        disabled="true"
+                                                                                                        status="stsProductSearch" />
+                                                        
+                                                        </apex:facet>
+                                                        
+                                                        <apex:facet name="stop">
+                                                        
+                                                                <apex:commandButton id="btnSearchProducts"
+                                                                                                        value="Search"
+                                                                                                        status="stsProductSearch"
+                                                                                                        action="{!refreshProducts}"
+                                                                                                        rerender="panProductSelector, panRatePlanSelector, panChargeGroup" />
+                                                        
+                                                        </apex:facet>
+                                                
+                                                </apex:actionStatus>
+                                        
+                                        </apex:pageBlockButtons>
+                                        
+                                        <apex:pageBlockTable value="{!productList}" var="product" id="tblProduct" title="products"
+                                                                                        columns="4" cellpadding="3%" cellspacing="3%" styleClass="list">
+                                        
+                                                <apex:column headerValue="" width="3%">
+                                                
+                                                        <apex:actionStatus id="stsGetRatePlan">
+                                                        
+                                                                <apex:facet name="stop">
+                                                                
+                                                                        <apex:outputPanel id="panProductSelectComplete">
+                                                                        
+                                                                                <apex:image id="imgRadioBtnChk"
+                                                                                                        rendered="{!product.Id == selProductId}"
+                                                                                                        url="{!$Resource.zqu__radioBtnChk}" width="18" height="18" />
+                                                                                
+                                                                                <apex:image id="imgRadioBtnUnchk"
+                                                                                                        rendered="{!product.Id != selProductId}"
+                                                                                                        url="{!$Resource.zqu__radioBtnUnChk}" width="18" height="18" />
+                                                                        
+                                                                                <apex:actionSupport status="stsGetRatePlan"
+                                                                                                                        event="onclick"
+                                                                                                                        reRender="panProductSelector, panRatePlanSelector, panChargeGroup"
+                                                                                                                        action="{!refreshRatePlans}">
+                                                                                
+                                                                                        <apex:param assignTo="{!selProductId}" name="selProduct" value="{!product.Id}" />
+                                                                                
+                                                                                </apex:actionSupport>
+                                                                        
+                                                                        </apex:outputPanel>
+                                                                        
+                                                                </apex:facet>
+                                                                
+                                                                <apex:facet name="start">
+                                                                
+                                                                        <apex:image url="{!$Resource.zqu__ajaxLoading}" width="18" height="18" />
+                                                                        
+                                                                </apex:facet>
+                                                        
+                                                        </apex:actionStatus>
+                                                
+                                                </apex:column>
+                                        
+                                                <apex:column headerValue="Name" value="{!product.Name}" width="30%" />
+                                                
+                                                <apex:column headerValue="SKU" value="{!product.zqu__SKU__c}" width="15%" />
+                                                
+                                                <apex:column headerValue="Description" width="52%" value="{!product.zqu__Description__c}" />
+                                        
+                                        </apex:pageBlockTable>
+                                        
+                                        <!-- The section info and previous/next button -->
+                                        <table style="width: 100%; padding: 1em;">
+                                                <tr>
+                                                        <td style="text-align: left;">
+                                                                {!productSectionInfo}
+                                                        </td>
+                                                        
+                                                        <td style="text-align: right;">
+                                                                
+                                                                <!-- Previous action -->
+                                                                <apex:commandLink rendered="{!productHasPrevious}"
+                                                                                                        action="{!previousProductPage}"
+                                                                                                        reRender="panProductSelector, panRatePlanSelector, panChargeGroup">
+                                                                        <apex:image value="{!$Resource.zqu__back_enabled}" />
+                                                                </apex:commandLink>
+                                                                
+                                                                <apex:image value="{!$Resource.zqu__back_disabled}" rendered="{!!productHasPrevious}"/>
+                                                                
+                                                                <!-- Next action -->
+                                                                <apex:commandLink rendered="{!productHasNext}"
+                                                                                                        action="{!nextProductPage}"
+                                                                                                        reRender="panProductSelector, panRatePlanSelector, panChargeGroup">
+                                                                
+                                                                        <apex:image value="{!$Resource.zqu__forward_enabled}" />
+                                                                </apex:commandLink>
+                                                                
+                                                                <apex:image value="{!$Resource.zqu__forward_disabled}" rendered="{!!productHasNext}"/>
+                                                                
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                
+                                </apex:pageBlock>
+                        
+                        </apex:outputPanel>
+
+                        <apex:outputPanel id="panRatePlanSelector" rendered="{!displayProductCatalog}">
+        
+                                <apex:pageBlock title="Rate Plan Summary" rendered="{!showRatePlan}">
+                                
+                                        <apex:pageBlockButtons style="text-align:right" location="top">
+                                        
+                                                <apex:actionRegion >
+                                                
+                                                        <apex:inputText id="itRatePlanSearch" value="{!ratePlanSearchString}" />
+                                                        
+                                                </apex:actionRegion>
+                                                
+                                                <apex:actionStatus id="stsRatePlanSearch">
+                                                
+                                                        <apex:facet name="start">
+                                                        
+                                                                <apex:commandButton value="Searching..."
+                                                                                                        disabled="true"
+                                                                                                        status="stsRatePlanSearch" />
+                                                        
+                                                        </apex:facet>
+                                                        
+                                                        <apex:facet name="stop">
+                                                        
+                                                                <apex:commandButton id="btnSearchRatePlans"
+                                                                                                        value="Search"
+                                                                                                        status="stsRatePlanSearch"
+                                                                                                        action="{!refreshRatePlans}"
+                                                                                                        rerender="panRatePlanSelector, panChargeGroup" />
+                                                        
+                                                        </apex:facet>
+                                                
+                                                </apex:actionStatus>
+                                        
+                                        </apex:pageBlockButtons>
+                                
+                                        <apex:pageBlockTable value="{!ratePlanList}" var="ratePlan" id="tlbRatePlan" title="ratePlans"
+                                                                                        columns="3" cellpadding="3%" cellspacing="3%" styleClass="list">
+                                        
+                                                <apex:column width="3%" headerValue="">
+                                                
+                                                        <apex:actionStatus id="stsGetQuoteCharge">
+                                                        
+                                                                <apex:facet name="start">
+                                                                
+                                                                        <apex:image url="{!$Resource.zqu__ajaxLoading}" width="18" height="18" />
+                                                                
+                                                                </apex:facet>
+                                                                
+                                                                <apex:facet name="stop">
+                                                                
+                                                                        <apex:outputPanel id="ratePlanSelectComplete">
+                                                                        
+                                                                                <apex:image id="imgRadioBtnChk" rendered="{!ratePlan.Id == selRatePlanId}"
+                                                                                                        url="{!$Resource.zqu__radioBtnChk}" width="18" height="18" />
+                                                                                                        
+                                                                                <apex:image id="imgRadioBtnUnChk" rendered="{!ratePlan.Id != selRatePlanId}"
+                                                                                                        url="{!$Resource.zqu__radioBtnUnChk}" width="18" height="18" />
+                                                                                                        
+                                                                                <apex:actionSupport status="stsGetQuoteCharge"
+                                                                                                                        event="onclick"
+                                                                                                                        reRender="panRatePlanSelector, panChargeGroup, panChargeGroup"
+                                                                                                                        action="{!refreshChargeGroup}">
+                                                                                                                        
+                                                                                        <apex:param assignTo="{!selRatePlanId}" name="selRatePlan" value="{!ratePlan.Id}" />
+                                                                                        
+                                                                                </apex:actionSupport>
+                                                                        
+                                                                        </apex:outputPanel>
+                                                                
+                                                                </apex:facet>
+                                                        
+                                                        </apex:actionStatus>
+                                                
+                                                </apex:column>
+                                        
+                                                <apex:column headerValue="Name" value="{!ratePlan.Name}" width="30%" />
+                                                
+                                                <apex:column headerValue="Description" value="{!ratePlan.zqu__Description__c}" width="67%" />
+                                        
+                                        </apex:pageBlockTable>
+                                        
+                                        <!-- The section info and previous/next button -->
+                                        <table style="width: 100%; padding: 1em;">
+                                                <tr>
+                                                        <td style="text-align: left;">
+                                                                {!ratePlanSectionInfo}
+                                                        </td>
+                                                        
+                                                        <td style="text-align: right;">
+                                                                
+                                                                <!-- Previous action -->
+                                                                <apex:commandLink rendered="{!ratePlanHasPrevious}"
+                                                                                                        action="{!previousRatePlanPage}"
+                                                                                                        reRender="panRatePlanSelector, panChargeGroup">
+                                                                        <apex:image value="{!$Resource.zqu__back_enabled}" />
+                                                                </apex:commandLink>
+                                                                
+                                                                <apex:image value="{!$Resource.zqu__back_disabled}" rendered="{!!ratePlanHasPrevious}"/>
+                                                                
+                                                                <!-- Next action -->
+                                                                <apex:commandLink rendered="{!ratePlanHasNext}"
+                                                                                                        action="{!nextRatePlanPage}"
+                                                                                                        reRender="panRatePlanSelector, panChargeGroup">
+                                                                
+                                                                        <apex:image value="{!$Resource.zqu__forward_enabled}" />
+                                                                </apex:commandLink>
+                                                                
+                                                                <apex:image value="{!$Resource.zqu__forward_disabled}" rendered="{!!ratePlanHasNext}"/>
+                                                                
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                
+                                </apex:pageBlock>
+                        
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel id="panChargeGroup" rendered="{!displayProductCatalog}">
+                        
+                                <apex:pageBlock title="Charge(s) Summary" rendered="{!showChargeGroup}">
+                                
+                                        <!-- Display the charges under the rate plans -->
+                                        <apex:outputPanel id="charges_panel">
+					                        <!-- Sample Component is referenced. This will be essentially your component -->
+					                         <c:z_SampleChargeSection id="cChargeSec"  chargeGroup="{!chargeGroup}" quoteIdVal="{!zqu__Quote__c.Id}" editableVal="true" appId="{!chosenApplication}" editButton="false" />
+					                    </apex:outputPanel>
+				                       
+				                        
+                                
+                                        <apex:pageBlockButtons location="bottom">
+                                        
+                                                <apex:actionStatus id="addingChargesStatus" onStart="disableAllInput();" onStop="enableAllInput();">
+                                                
+                                                        <apex:facet name="stop">
+
+                                                                <apex:outputPanel >
+                                                                
+                                                                        <apex:commandButton value="Add"
+                                                                                                                action="{!addGroup}"
+                                                                                                                status="addingChargesStatus"
+                                                                                                                reRender="panChargeGroup, msg, hiddenBlock" />
+                                                                        
+                                                                        <apex:commandButton value="Cancel"
+                                                                                                                action="{!cancelDisplayProductCatalog}"
+                                                                                                                status="addingChargesStatus"
+                                                                                                                reRender="mainForm" />
+                                                        
+                                                                </apex:outputPanel>
+                                                        
+                                                        </apex:facet>
+                                                        
+                                                        <apex:facet name="start">
+                                                        
+                                                                <apex:outputPanel >
+                                                                
+                                                                        <apex:image value="/img/loading32.gif" style="height: 12px" />
+                                                                        
+                                                                        <apex:commandButton value="Processing..."
+                                                                                                                status="addingChargesStatus"
+                                                                                                                disabled="true" />
+                                                                
+                                                                </apex:outputPanel>
+                                                        
+                                                        </apex:facet>
+                                                
+                                                </apex:actionStatus>
+                                        
+                                        </apex:pageBlockButtons>
+                                
+                                </apex:pageBlock>
+                        
+                        </apex:outputPanel>
+                        <!-- END insert product catalog -->
+
+
+
+                        <apex:pageBlockSection title="Changes vs. Original" columns="1" id="panChangesVsOriginal">
+                                
+                                <apex:outputText value="No change yet." rendered="{!quoteAmendmentList.size == 0}" />
+
+                                <apex:pageBlockTable value="{!quoteAmendmentList}" var="amendment" rendered="{!quoteAmendmentList.size > 0}">
+                                        
+                                        <apex:column value="{!amendment.zqu__Description__c}" />
+
+<!--                                         <apex:column headerValue="Total Change" width="10%"> -->
+
+<!--                                                 <apex:outputText value="+{!amendment.zqu__TotalAmount__c}" -->
+<!--                                                                                         rendered="{!amendment.zqu__TotalAmount__c >= 0}" -->
+<!--                                                                                         style="font-weight:bold;color:green;" /> -->
+
+<!--                                                 <apex:outputText value="{!amendment.zqu__TotalAmount__c}" -->
+<!--                                                                                         rendered="{!amendment.zqu__TotalAmount__c < 0}" -->
+<!--                                                                                         style="font-weight:bold;color:red;" /> -->
+
+<!--                                         </apex:column> -->
+
+                                        <apex:column headerValue="Actions" width="10%">
+
+                                                <apex:commandButton action="{!undoAmendment}"
+                                                                                        value="Undo"
+                                                                                        reRender="hiddenBlock, mainForm, msg"
+                                                                                        status="stsProcessAmendment">
+
+                                                        <apex:param name="amendmentId"
+                                                                                value="{!amendment.Id}"
+                                                                                assignTo="{!quoteAmendmentToUndo}" />
+
+                                                </apex:commandButton>
+
+                                        </apex:column>
+
+                                </apex:pageBlockTable>
+
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockButtons location="bottom">
+                                
+                                <apex:actionStatus id="stsProcessAmendment" onStart="disableAllInput();" onStop="enableAllInput();">
+
+                                        <apex:facet name="start">
+
+                                                <apex:outputPanel >
+
+                                                        <apex:image value="/img/loading32.gif" style="height:15px;" />
+
+                                                        <apex:commandButton value="Processing..."
+                                                                                                disabled="true"
+                                                                                                reRender="mainForm, msg"
+                                                                                                status="stsProcessAmendment" />
+
+                                                </apex:outputPanel>
+
+                                        </apex:facet>
+
+                                        <apex:facet name="stop">
+
+                                                <apex:outputPanel >
+
+                                                        <apex:commandButton action="{!cancel}"
+                                                                                                status="stsProcessAmendment"
+                                                                                                reRender="mainForm, msg"
+                                                                                                value="Back to the quote" />
+                                                        
+                                                </apex:outputPanel>
+
+                                        </apex:facet>
+
+                                </apex:actionStatus>
+
+                        </apex:pageBlockButtons>
+
+                </apex:pageBlock>
+
+                <!-- This is just a fix to pass an attribute with a command button as explained here:
+                http://blog.jeffdouglas.com/2010/03/04/passing-parameters-with-a-commandbutton/ -->
+                <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock>
+
+        </apex:form>
+
+</apex:page>

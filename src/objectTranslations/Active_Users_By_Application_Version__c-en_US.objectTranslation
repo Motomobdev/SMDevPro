@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Active Users By Application Version</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Active Users By Application Versions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Download Stats --></label>
+        <name>Application_Download_Stats__c</name>
+        <relationshipLabel><!-- Active Users By Application Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number of downloads --></label>
+        <name>Number_of_downloads__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqueID --></label>
+        <name>UniqueID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

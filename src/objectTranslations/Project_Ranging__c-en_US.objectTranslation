@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ranging</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ranging</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Project Combo --></label>
+        <name>Account_Project_Combo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Ranging --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CR Jira Link --></label>
+        <name>CR_Jira_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Has the customer received an appearance sample of the product? --></help>
+        <label><!-- Has Appearance Sample --></label>
+        <name>Has_Appearance_Sample__c</name>
+    </fields>
+    <fields>
+        <help><!-- Has the customer received a working/demo sample of the product? --></help>
+        <label><!-- Has Working/Demo Sample --></label>
+        <name>Has_Working_Demo_Sample__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Account --></label>
+        <name>Key_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Milestone Date --></label>
+        <name>Next_Milestone_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Step --></label>
+        <name>Next_Step__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please use this field only if you want to overwrite the default Predecessor_Project. Select from the list and save. --></help>
+        <label><!-- Overwrite predecessor project with --></label>
+        <name>Overwrite_predecessor_project_with__c</name>
+        <relationshipLabel><!-- Ranging (Overwrite predecessor project with) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The person responsible for maintaining this ranging record status --></help>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Ranging --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- POR Status --></label>
+        <name>POR_Status__c</name>
+        <picklistValues>
+            <masterLabel>CR Approved</masterLabel>
+            <translation><!-- CR Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR Submitted</masterLabel>
+            <translation><!-- CR Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POR</masterLabel>
+            <translation><!-- POR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- POR FCSQ Volume --></label>
+        <name>POR_Volume__c</name>
+    </fields>
+    <fields>
+        <help><!-- For documenting feedback from the customer around a product&apos;s pricing. --></help>
+        <label><!-- Pricing Comments --></label>
+        <name>Pricing_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Refers to Portfolio Management Database&apos;s (PMD) projects (a level above the products in the hierarchy) --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Ranging --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The customer requested quote date --></help>
+        <label><!-- RFQ Date --></label>
+        <name>RFQ_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date in which the status changed to &quot;Ranged&quot; --></help>
+        <label><!-- Ranged Date --></label>
+        <name>Ranged_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ranging Predecessor Project --></label>
+        <name>Ranging_Predecessor_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required for Not Pursued / Not Ranged status --></help>
+        <label><!-- Reason for Status --></label>
+        <name>Reason_for_Status__c</name>
+        <picklistValues>
+            <masterLabel>Distribution</masterLabel>
+            <translation><!-- Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promotion</masterLabel>
+            <translation><!-- Promotion --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- For documenting feedback from the customer around a product&apos;s specifications. --></help>
+        <label><!-- Specs Comments --></label>
+        <name>Specs_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Flag --></label>
+        <name>Status_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>High Probability</masterLabel>
+            <translation><!-- High Probability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Probability</masterLabel>
+            <translation><!-- Low Probability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Probability</masterLabel>
+            <translation><!-- Mid Probability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Input</masterLabel>
+            <translation><!-- Needs Input --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not presented</masterLabel>
+            <translation><!-- Not presented --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not pursued</masterLabel>
+            <translation><!-- Not pursued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranged</masterLabel>
+            <translation><!-- Ranged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Region --></label>
+        <name>Sub_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- For documenting feedback from the customer around a product&apos;s timing. --></help>
+        <label><!-- Timing Comments --></label>
+        <name>Timing_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated/committed volume from the customer --></help>
+        <label><!-- Volume --></label>
+        <name>Volume_Commit__c</name>
+    </fields>
+    <layouts>
+        <layout>Ranging Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Comments --></label>
+            <section>Customer Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Next Steps --></label>
+            <section>Next Steps</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Next milestone date is required for these statuses:
+Not presented, Very low probability, Ranging in Progress --></errorMessage>
+        <name>Next_Milestone_Date_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Next step is required for these statuses:
+Not presented,  Very low probability, Ranging in Progress --></errorMessage>
+        <name>Next_Step_Is_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit_All_My_Accounts_Ranging_Records --></label>
+        <name>Edit_All_My_Accounts_Ranging_Records</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Range_Records --></label>
+        <name>Edit_Range_Records</name>
+    </webLinks>
+</CustomObjectTranslation>

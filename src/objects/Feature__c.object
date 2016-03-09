@@ -1,0 +1,2053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Release__r.Actual_Release_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Release Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Affected_Field_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Affected Field(s)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Field 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Affected_Object__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the objects that your feature affects. If you don&apos;t know them all, please select the one or more you do know.</inlineHelpText>
+        <label>Affected Object(s)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acct Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Activities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ad Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affected Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIF Approval Matrix</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIF Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIF Matrix Statuses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIF_Device_App</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Manager Selection Matrix</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Region</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asset Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asset Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attendees</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Available Application Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Entry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign App</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaigns</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carousel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Models</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitive Source</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitive Source Apps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor to Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor to Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contacts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Cost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ContractAppDEVICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ContractAppSWBUNDLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ContractCountryTask</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Address Source</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Biography</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Profile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DevApp_Contacts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DevApp_Deleted_Records</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device Shipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device_ChinaModel_Junction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DeviceAppSWBundle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamFactory Shared View</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Action Item</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Discussion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Expense</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Highlight</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Issue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Linker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Project</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Task</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DreamTeam Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employment Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experience Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experience Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experience SW Bundle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feature Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FedEx Shipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Form</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fund Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fund Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Google Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Commodity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keyword</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Language</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Language Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Language Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Application Country</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MotoDev Snapshot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MotoReady_Recent_Add_Delete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NPI Device Mapping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payments_Accounts_Rpt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plan2User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Room</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sample Survey</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Search Phrase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Session</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SFGA Version</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipmate Preference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipment Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipment Special Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipments_SF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slide</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speaker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategy2Oppty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Bundle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Bundle Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Bundle Device</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Kit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SW Release</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TableTop Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TableTop Entity Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TableTop Folder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Ad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Users</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>this checkbox is checked via the approval process on approval.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>this checkbox is checked via the approval process on approval.</inlineHelpText>
+        <label>Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_To_Person_Email_Format__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned To Person Email - Format</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the individual (user) who is working to implement this feature</inlineHelpText>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Features1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Can_be_completed_by_External_Resources__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Can be completed by External Resources</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comments_Updates__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to leave comments or update the status of this feature</inlineHelpText>
+        <label>Comments/Status</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Solution__c</fullName>
+        <externalId>false</externalId>
+        <label>Confirmed Solution</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Database_Affected__c</fullName>
+        <externalId>false</externalId>
+        <label>Database(s) Affected</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AP (Account Payable)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appaloosa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ariba Contracts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contractrequest.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRIS (Cost Reduction Information System)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EDW (Data Warehouse)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FMDB (Feature Management Database)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPPD (Global Product Portfolio Database)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IMARC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lithium (MOTODEV Community Database)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCIS (Oracle)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Microgen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MotoDev Site (Central Database)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOTODEV Studio Updates DB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MotoPDM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NPI (New Product Introduction)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RightNOW CRM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tigers Payments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a description of the feature so we can better understand the exact need and can help resolve it.</inlineHelpText>
+        <label>Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_User_Testing_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>End User Testing Status</label>
+        <picklist>
+            <controllingField>Implementation_Status__c</controllingField>
+            <picklistValues>
+                <fullName>Tested - Approved</fullName>
+                <controllingFieldValues>End User Approved</controllingFieldValues>
+                <controllingFieldValues>Ready for Internal Testing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tested - Rejected</fullName>
+                <controllingFieldValues>End User Approved</controllingFieldValues>
+                <controllingFieldValues>Ready for Internal Testing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Workload__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Estimated work days it will require to complete the requested feature</inlineHelpText>
+        <label>Estimated Workload (work days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feature__c</fullName>
+        <displayFormat>FR{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Feature #</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Group_Queue__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Queue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New - Unassigned</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open - Assigned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Require More Information/Discussion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fix In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Internal Testing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for User Testing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Changes Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>End User Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed to Production</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Old_Phase__c</fullName>
+        <description>The Phase value prior to the current Phase.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Phase value prior to the current Phase.</inlineHelpText>
+        <label>Old Phase</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Queue__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the running queue of the order of features. Several items can be worked on simutaneously if the status of each shows In Progress.</inlineHelpText>
+        <label>Overall Queue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Hidden__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner Hidden</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Features</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Percent_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Percent Completed</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Phase_1_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_1_Requested_Date_del__c  ) , null,  Phase_1_Requested_Date_del__c  - DATEVALUE(CreatedDate) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 1 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_1_Requested_Date_del__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the date Phase 1 was COMPLETED</inlineHelpText>
+        <label>Phase 1 - Requested Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_2_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the date Phase 2 was COMPLETED</inlineHelpText>
+        <label>Phase 2 - Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_2_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_2_Approved_Date__c ) , null,  Phase_2_Approved_Date__c -   Phase_1_Requested_Date_del__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is an automatically generated field. This subtracts the Phase 2 Date Completed from the Phase 1 Date Completed to calculate how long this feature was in Phase 2.</inlineHelpText>
+        <label>Phase 2 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_3_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(  Phase_3_Review_Board_Date__c  ) , null,  Phase_3_Review_Board_Date__c  -  Phase_2_Approved_Date__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 3 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_3_Review_Board_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Review_Board_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This date is pulled automatically from the Review Board Date below. This is automatically generated. If this feature does not go through the Board, this will be left blank.</inlineHelpText>
+        <label>Phase 3 - Review Board Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_4_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(   Phase_4_Solution_Decision_Date__c   ) , null,   Phase_4_Solution_Decision_Date__c   -   Phase_3_Review_Board_Date__c   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 4 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase_4_Solution_Decision_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the date Phase 4 was COMPLETED</inlineHelpText>
+        <label>Phase 4 - Solution/Decision</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_5_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the date Phase 5 was COMPLETED</inlineHelpText>
+        <label>Phase 5 - Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Phase_5_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(   Phase_5_Completion_Date__c   ) , null,   Phase_5_Completion_Date__c   -   Phase_4_Solution_Decision_Date__c   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phase 5 Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Phase</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted to Review Board</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Deployment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>1) High - This is a critical feature/ Severe impact on daily business operations 
+2) Medium - This is an important feature/ Moderate impact on daily business operations 
+3) Low - This feature would be helpful/ Slight impact on daily business operations</inlineHelpText>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Release__r.Projected_Release_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Release Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Release_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Release__r.Release_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Release Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Release__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Release</label>
+        <referenceTo>Feature_Release__c</referenceTo>
+        <relationshipLabel>Features Included in Release</relationshipLabel>
+        <relationshipName>Features_Included_in_Release</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Group_Owner_Email_Format__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Group Owner Email - Format</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Group_Owner_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Group__r.Feature_Group_Owner__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Group Owner Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Group_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Group__r.Feature_Group_Owner__r.FirstName &amp; &quot; &quot; &amp;  Requested_Group__r.Feature_Group_Owner__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Group Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requested Group</label>
+        <referenceTo>Feature_Group__c</referenceTo>
+        <relationshipLabel>Requested Features</relationshipLabel>
+        <relationshipName>Features</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Method__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What type of resolution method will be needed to complete this feature request? Will new objects, fields, etc need to be created? Will a brand new Process need to be established or does an existing one need to be streamlined?</inlineHelpText>
+        <label>Resolution Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Object(s) Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Field(s) Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revaluate Existing Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resolution_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Resolution Sub Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Informatica On Demand (IOD)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API Code Integration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How can this feature be resolved? Can we do it with Out of the Box capability within Salesforce or will custom APEX code be needed to achieve a resolution?</inlineHelpText>
+        <label>Resolution Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SF Out of Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APEX Code</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>App Exchange Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API Code</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DB Integration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DB Replacement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Review_Board_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Board Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Review_Board_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Board Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Step_to_Reproduce__c</fullName>
+        <externalId>false</externalId>
+        <label>Step to Reproduce</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Testing_Rejection_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter details if you have rejected a feature</inlineHelpText>
+        <label>Testing Rejection Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select the type of feature this is. If a current functionality is not working as intented, please specific a Bug. If any feature if being requested that currently does not exist and would add functionality in any way, please mark &quot;Enhancement&quot;</inlineHelpText>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enhancement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Documentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Feature</label>
+    <listViews>
+        <fullName>All_Open_Features</fullName>
+        <columns>Requested_Group__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Can_be_completed_by_External_Resources__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Assigned_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Deployed,Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Hanson</value>
+        </filters>
+        <label>All Open Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BCC</fullName>
+        <columns>Overall_Queue__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Type__c</columns>
+        <columns>Resolution_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>contains</operation>
+            <value>rose</value>
+        </filters>
+        <label>BCC</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>MotoDevAdmin</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevBusOpsAdmin</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevDirector</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevExecutiveCLevel</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevExecutiveSVP</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevExecutiveVP</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevManager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevSrDirector</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>MotoDevSrManager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Bugs</fullName>
+        <columns>Feature__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Requested_Group__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Implementation_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Bug</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <label>Bugs</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+            <group>MotoDev_BigKite</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Business_Operations</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Requested_Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>Business Operations</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Closed - Verified,Closed - Rejected,Deployed</value>
+        </filters>
+        <label>Business Operations</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>China</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>China</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>China</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Compliance</fullName>
+        <columns>Feature__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>Compliance</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <label>Compliance</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevLegalCarrierIndemnities</group>
+            <group>MotoDevPARTNERMGMT</group>
+            <group>MotoDev_BigKite</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Developer_Features</fullName>
+        <columns>Feature__c</columns>
+        <columns>Requested_Group__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Implementation_Status__c</columns>
+        <columns>Comments_Updates__c</columns>
+        <columns>Percent_Completed__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>contains</operation>
+            <value>Tom,Rajesh,bigkite,Bineet Mishra</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Deployed,Closed - Rejected</value>
+        </filters>
+        <label>Developer Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevLegalCarrierIndemnities</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ecosystem_Marketing</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>Ecosystem/Marketing</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>Ecosystem/Marketing</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Features_to_Deploy</fullName>
+        <columns>Requested_Group__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Can_be_completed_by_External_Resources__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Release__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Implementation_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved - Ready for Deployment</value>
+        </filters>
+        <label>Features to Deploy</label>
+        <sharedTo>
+            <group>MotoDev_BigKite</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Finance</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>Finance</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>Finance</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MICROGEN</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>MICROGEN</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>MICROGEN</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MOTODEV</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>MOTODEV</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>MOTODEV</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MOTOREADY</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>MOTOREADY</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <label>MOTOREADY</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Newly_Requested_Features</fullName>
+        <columns>Phase__c</columns>
+        <columns>Feature__c</columns>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Requested_Group__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Assigned_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Phase__c</field>
+            <operation>contains</operation>
+            <value>Requested,Request Approved,Submitted to Review Board</value>
+        </filters>
+        <label>Newly Requested Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Next_Review_Board_Features</fullName>
+        <columns>Feature__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Requested_Group__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Phase__c</field>
+            <operation>equals</operation>
+            <value>Submitted to Review Board</value>
+        </filters>
+        <label>Next Review Board Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevLegalCarrierIndemnities</group>
+            <group>MotoDevPARTNERMGMT</group>
+            <group>MotoDev_BigKite</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Partnership_Management</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>Partnership Management</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Closed - Rejected,Deployed</value>
+        </filters>
+        <label>Partnership Management</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ready_For_Deployment_Features</fullName>
+        <columns>Requested_Group__c</columns>
+        <columns>NAME</columns>
+        <columns>Release__c</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Can_be_completed_by_External_Resources__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Assigned_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Phase__c</field>
+            <operation>equals</operation>
+            <value>Ready for Deployment</value>
+        </filters>
+        <label>Ready For Deployment Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SDS</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>SDS</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notEqual</operation>
+            <value>5) Completed,DROPPED</value>
+        </filters>
+        <label>SDS</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SW_BOM</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Estimated_Workload__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requested_Group__c</field>
+            <operation>equals</operation>
+            <value>SW BOM</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Deployed,Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <label>SW BOM</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Top_20_Features</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Feature__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Group_Queue__c</columns>
+        <columns>Overall_Queue__c</columns>
+        <columns>Can_be_completed_by_External_Resources__c</columns>
+        <columns>Phase__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Overall_Queue__c</field>
+            <operation>lessThan</operation>
+            <value>21</value>
+        </filters>
+        <filters>
+            <field>Phase__c</field>
+            <operation>notContain</operation>
+            <value>Deployed,Closed - Verified,Closed - Rejected</value>
+        </filters>
+        <filters>
+            <field>Overall_Queue__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Top 20 Features</label>
+        <sharedTo>
+            <group>MotoDevAdmins</group>
+            <group>MotoDevECOSYSPARTNERMGMT</group>
+            <group>MotoDevECOSYSTEM</group>
+            <group>MotoDevPARTNERMGMT</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Feature Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Features</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Phase__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assigned_To__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Implementation_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Requested_Group__c</customTabListAdditionalFields>
+        <listViewButtons>Rank_Feature_Queues</listViewButtons>
+        <listViewButtons>Assign_Feature_Release</listViewButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Developer_Implementation_Status_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>(Assigned_To__r.FirstName &amp; &quot; &quot; &amp;  Assigned_To__r.LastName) =  ($User.FirstName &amp; &quot; &quot; &amp;  $User.LastName)  &amp;&amp; OR (ISPICKVAL (Implementation_Status__c,&quot;Ready for Internal Testing&quot;), ISPICKVAL (Implementation_Status__c,&quot;Ready for User Testing&quot;), ISPICKVAL (Implementation_Status__c,&quot;End User Approved&quot;)) &amp;&amp;  Approved__c == False</errorConditionFormula>
+        <errorMessage>You are not allowed to change the Implementation status to this value. Please submit the Feature for Approval to Trigger this status change.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_User_Testing_Rejection_Note_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(End_User_Testing_Status__c,&apos;Rejected&apos;), ISNULL( Testing_Rejection_Notes__c))</errorConditionFormula>
+        <errorDisplayField>Testing_Rejection_Notes__c</errorDisplayField>
+        <errorMessage>Please provide Testing Rejection Notes</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Estimated_Completed_Date_is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Implementation_Status__c, &apos;Fix in Progress&apos;), ISNULL( Estimated_Completion_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Estimated_Completion_Date__c</errorDisplayField>
+        <errorMessage>Please provide Estimated Completion Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_Have_Release_Before_Deployment</fullName>
+        <active>true</active>
+        <description>This ensures users cannot change the implementation status to Ready for Deployment.</description>
+        <errorConditionFormula>AND(ISNULL(Release__c), ISPICKVAL( Phase__c ,&apos;Ready for Deployment&apos;))</errorConditionFormula>
+        <errorDisplayField>Implementation_Status__c</errorDisplayField>
+        <errorMessage>Must deploy to production by packaging this feature into a feature release first.  Implementation status will be updated by feature release.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phase_Requires_Assigned_To_User</fullName>
+        <active>true</active>
+        <errorConditionFormula>( ISPICKVAL(Phase__c, &quot;Implementation&quot;) || 
+ ISPICKVAL(Phase__c, &quot;Ready for Deployment&quot;) ||  ISPICKVAL(Phase__c, &quot;Deployed&quot;) ) &amp;&amp;  ISBLANK( Assigned_To__c )</errorConditionFormula>
+        <errorDisplayField>Assigned_To__c</errorDisplayField>
+        <errorMessage>A person must be assigned when Phase is changed to &quot;Implementation&quot; or when past this status.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Steps_to_Reproduce_Required</fullName>
+        <active>true</active>
+        <description>Need to provide steps to reproduce if the type is &quot;Bug&quot;</description>
+        <errorConditionFormula>ISPICKVAL(Type__c , &quot;Bug&quot;)   &amp;&amp;
+ISBLANK( Step_to_Reproduce__c )</errorConditionFormula>
+        <errorDisplayField>Step_to_Reproduce__c</errorDisplayField>
+        <errorMessage>Please provide steps to reproduce the error.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Assign_Feature_Release</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Assign Feature Release</masterLabel>
+        <openType>replace</openType>
+        <page>AssignFeatureRelease</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Rank_Feature_Queues</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Rank Feature Queues</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/RankFeatureQueue</url>
+    </webLinks>
+</CustomObject>

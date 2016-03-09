@@ -1,0 +1,808 @@
+<apex:page id="stoplightpage" standardController="Deal_Stoplight_Deviation__c" extensions="DealStopLightController" action="{!fnAction}" sidebar="false" showHeader="false" tabStyle="Deal_Stoplight_Deviation__c" >
+ <apex:sectionHeader id="dealstoplight" title="Deal Stoplight Standards & Deviations"/>
+    <apex:pageMessages id="msgs"/>
+     <apex:outputPanel style="width:100%">
+         <apex:form id="stoplightform">
+             <style type="text/css">
+                 .dateFormat{
+                    visibility:hidden;
+                    display: none !important;
+                  }
+             </style>            
+             <apex:pageBlock id="CreateStopLightBlock">  
+                 <apex:pageBlockButtons location="both"> 
+                     <apex:commandButton value="Save Stoplight " action="{!fnCreate}"/> 
+                     <apex:commandButton value="Cancel" action="{!cancel}"/>
+                 </apex:pageBlockButtons>
+                 <apex:pageBlockSection columns="2">
+                     <apex:outputField value="{!objDealDeviation.name}" label="Deviation Number"/>                                         
+                     <apex:outputField value="{!objDealDeviation.CreatedById}" label="Created By"/>
+                     <apex:inputField value="{!objDealDeviation.Deal__c}" label="Quote"/>                                         
+                     <apex:outputField value="{!objDealDeviation.CreatedDate}" label="Created Date"/>                                       
+                 </apex:pageBlockSection>
+                      <table cellspacing="0" cellpadding="0" border="0" class="list">   
+                          <thead>
+                          <tr class="headerRow">
+                            <th class="headerRow">
+                                <apex:outputText value="General Contract Terms"/>
+                                <br/>
+                                <apex:outputText value="(All Devices & Customers)"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Standard"/>
+                            </th>
+                            <th class="headerRow">                                 
+                                 <apex:outputText value="Status"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Proposed Deviation"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Approver"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Approve Date"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Mitigation/Explanation"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Value Maker Impact"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="ASP Increase"/>
+                            </th>
+                            <th class="headerRow">
+                                <apex:outputText value="Value Maker Model"/>
+                            </th>
+                         </tr>
+                         </thead>                         
+                         <tbody>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Product Exclusivity; Time-to-Market Advantage (or similar limited arrangement)" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Product_Exclusivity_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Product_Exclusivity_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Product_Exclusivity_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Product_Exclusivity_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Product_Exclusivity_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Product_Exclusivity_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Product_Exclusivity_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Product_Exclusivity_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Payment Terms" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Payment_Terms_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Payment_Terms_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Payment_Terms_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Payment_Terms_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Payment_Terms_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Payment_Terms_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Payment_Terms_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Payment_Terms_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AhpLC5pBEXKSdDlQY2pSZ2dsMkduUXNqZ1RVMFF2SWc&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Volume Commitment" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Volume_Commitment_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Volume_Commitment_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Volume_Commitment_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Volume_Commitment_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Volume_Commitment_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Volume_Commitment_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Volume_Commitment_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Volume_Commitment_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Not to Exceed Retail Price" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Not_to_Exceed_Retail_Price_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Not_to_Exceed_Retail_Price_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Not_to_Exceed_Retail_Price_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Not_to_Exceed_Retail_Price_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Not_to_Exceed_Retail_Price_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Not_to_Exceed_Retail_Price_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Not_to_Exceed_Retail_Price_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Not_to_Exceed_Retail_Price_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Warranty - Term" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Warranty_Term_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Term_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Term_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Warranty_Term_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Warranty_Term_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Warranty_Term_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Term_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Term_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AoSXqSQkELg5dHA5WUlFSWFCQVE1NHpKNDhIZnRyakE&usp=drive_web#gid=8" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Warranty - Service/Repair" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Warranty_Service_Repair_Std__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Service_Repair_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Service_Repair_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Warranty_Service_Repair_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Warranty_Service_Repair_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Warranty_Service_Repair_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Service_Repair_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Warranty_Service_Repair_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                                 <!-- <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AhpLC5pBEXKSdGxwOFB1T1N1aHpET2RJVDM0QmRsOUE&usp=drive_web#gid=7" value="VM Model" target="_blank"/> -->
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Software Pre-Loads" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Software_PreLoads_Std__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Software_PreLoads_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Software_PreLoads_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Software_PreLoads_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Software_PreLoads_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Software_PreLoads_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Software_PreLoads_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Software_PreLoads_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AmGCiEv1-x77dDk5S3Z0ZTJ6d3IxVE9jcGpxblo0cVE&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Carrier Branding (on device, digitally or on packaging)" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Carrier_Branding_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Carrier_Branding_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Carrier_Branding_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Carrier_Branding_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Carrier_Branding_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Carrier_Branding_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Carrier_Branding_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Carrier_Branding_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AhpLC5pBEXKSdFFVNXlnQkNDX2ZQcUtLdHZiQi1oY0E&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Core Device Specifications" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Core_Device_Specifications_Std__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Core_Device_Specifications_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Core_Device_Specifications_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Core_Device_Specifications_App__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Core_Device_Specifications_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Core_Device_Specifications_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Core_Device_Specifications_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Core_Device_Specifications_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Forecasting" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Forecasting_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Forecasting_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Forecasting_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Forecasting_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Forecasting_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Forecasting_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Forecasting_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Forecasting_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AhpLC5pBEXKSdGhtSXhHNXZVR3d1XzVjZ3JYZ0NURXc&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="IPP" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.IPP_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.IPP_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.IPP_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.IPP_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.IPP_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.IPP_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.IPP_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.IPP_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheets/d/1erMdXuu2rDtBVUHqrBNAnqGDF-MITrqW0piYRYmc13g/edit#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Shipping & Handling" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Shipping_and_Handling_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Shipping_and_Handling_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Shipping_and_Handling_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Shipping_and_Handling_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Shipping_and_Handling_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Shipping_and_Handling_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Shipping_and_Handling_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Shipping_and_Handling_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="See Incoterms"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Late Delivery Penalty" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Late_Delivery_Penalty_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Late_Delivery_Penalty_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Late_Delivery_Penalty_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Late_Delivery_Penalty_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Late_Delivery_Penalty_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Late_Delivery_Penalty_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Late_Delivery_Penalty_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Late_Delivery_Penalty_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheets/d/1X3rixQbKuHDEk6kFQ9ceOnFOzIDg7y0cLSJscCmR4Y8/edit#gid=0" value="Model only for N/A Carriers. For other carriers take an avg." target="_blank"/>
+                             </td> 
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Incoterms" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Incoterms_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Incoterms_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Incoterms_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Incoterms_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Incoterms_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Incoterms_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Incoterms_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Incoterms_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheets/d/1aiRrUfeV9HfjqHUswC7w1k_QuW8YdbTsj2Y77PTttLw/edit#gid=2120485391" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="MFN" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.MFN_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.MFN_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MFN_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.MFN_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.MFN_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.MFN_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MFN_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MFN_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="MDF" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.MDF_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.MDF_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MDF_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.MDF_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.MDF_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.MDF_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MDF_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.MDF_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AoSXqSQkELg5dEJGQWJvSkxSdmZuQTZYREpaM1BWcGc#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Seeding/Demo Units" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Seeding_Demo_Units_Std__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Seeding_Demo_Units_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Seeding_Demo_Units_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Seeding_Demo_Units_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Seeding_Demo_Units_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Seeding_Demo_Units_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Seeding_Demo_Units_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Seeding_Demo_Units_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AiHXb7OMMvIFdEQ5RGhpcFJiM3JIeG9IYjRRc0NYV1E&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="SW Updates" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.SW_Updates_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.SW_Updates_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.SW_Updates_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.SW_Updates_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.SW_Updates_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.SW_Updates_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.SW_Updates_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.SW_Updates_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="Reflected in SW preloads model"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Sell-Through Plan" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Sell_Through_Plan_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Sell_Through_Plan_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Sell_Through_Plan_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Sell_Through_Plan_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Sell_Through_Plan_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Sell_Through_Plan_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Sell_Through_Plan_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Sell_Through_Plan_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr> 
+                         <tr>
+                             <th>
+                                 <apex:outputLabel value="Value Products Only" />
+                             </th>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Charger / Accessories" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Charger_Accessories_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Charger_Accessories_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Charger_Accessories_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Charger_Accessories_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Charger_Accessories_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Charger_Accessories_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Charger_Accessories_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Charger_Accessories_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AoSXqSQkELg5dFNyWXA1Nlo5SHVkZkw1MGFHa20zRGc&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="Channel Fill" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Channel_Fill_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.Channel_Fill_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Channel_Fill_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.Channel_Fill_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.Channel_Fill_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.Channel_Fill_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Channel_Fill_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.Channel_Fill_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="CP Attach" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.CP_Attach_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.CP_Attach_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.CP_Attach_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.CP_Attach_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.CP_Attach_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.CP_Attach_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.CP_Attach_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.CP_Attach_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:commandLink action="https://docs.google.com/a/motorola.com/spreadsheet/ccc?key=0AoSXqSQkELg5dEdtUGkxWWtzS3hGNmlJUGJ0MmJBR2c&usp=drive_web#gid=0" value="VM Model" target="_blank"/>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <apex:outputLabel value="ELX = Prepaid" />                    
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.ELX_Prepaid_Standard__c}" label="" />
+                             </td>
+                             <td>                                 
+                                 <apex:inputField value="{!objDealDeviation.ELX_Prepaid_Status__c}" label="" />
+                            </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.ELX_Prepaid_Dev__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:outputText value="{!objDealStandard.ELX_Prepaid_Approver__c}" label=""/>
+                             </td>
+                             <td>
+                                  <apex:inputField value="{!objDealDeviation.ELX_Prepaid_AppDate__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputTextarea value="{!objDealDeviation.ELX_Prepaid_Exp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.ELX_Prepaid_VMImp__c}" label=""/>
+                             </td>
+                             <td>
+                                 <apex:inputField value="{!objDealDeviation.ELX_Prepaid_ASP__c}" label=""/> 
+                             </td>
+                             <td>
+                                 <apex:outputLabel value="No Model Presently"/>
+                             </td>
+                         </tr>
+                         </tbody>                           
+                      </table> 
+             </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>       
+</apex:page>

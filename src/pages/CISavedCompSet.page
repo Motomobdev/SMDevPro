@@ -1,0 +1,45 @@
+<apex:page id="page" controller="CI_FavouriteCompSetCtr" >
+
+<apex:sectionHeader title="Competitive Intelligence" subtitle="All Saved Comp Sets" />
+
+<style>
+    .status
+    {
+        padding-left: 30px;
+        background: url('{!$Resource.LoadingNew}') no-repeat left center; 
+    }
+</style>
+
+<apex:form id="form" >
+
+<apex:pageMessages id="msg" />
+
+<apex:pageBlock id="pb" >
+
+        <apex:pageBlockTable id="pbt" value="{!compSets}" var="cs" rendered="{!NOT(isEmpty)}" >
+            
+            <apex:column headerValue="Comp Set Name" width="20%" >
+                <apex:outputLink value="/apex/CIReport?CompSetId={!cs.Id}&core.apexpages.devmode.url=1" target="_blank">{!cs.Name}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Motorola Product" value="{!cs.Motorola_Product__c}" width="20%" />
+            <apex:column headerValue="Competitor Products" value="{!cs.Competitor_Products__c}" width="40%" />
+            <apex:column headerValue="Created On" value="{!cs.CreatedOn__c}" width="10%" />
+            <apex:column width="10%">
+                <apex:commandButton id="btnRemove" action="{!remove}" value="Remove" reRender="form" status="status1" >
+                    <apex:param name="p" value="{!cs.Id}" assignTo="{!idToDelete}" />
+                </apex:commandButton>
+                &nbsp;
+                <apex:actionStatus id="status1" startStyleClass="status" />
+            </apex:column>
+        
+        </apex:pageBlockTable>
+
+        <apex:outputPanel rendered="{!isEmpty}">
+            <apex:outputText value="You have no saved comp sets." />
+        </apex:outputPanel>
+    
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

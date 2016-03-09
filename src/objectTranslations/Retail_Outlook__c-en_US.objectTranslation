@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mobility Outlook</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mobility Outlooks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Ops View --></label>
+        <name>Business_Ops_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outlook Locked? --></label>
+        <name>Outlook_Locked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Forecast --></label>
+        <name>Retail_Forecast__c</name>
+        <relationshipLabel><!-- Retail Outlooks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Week Number --></label>
+        <name>Week_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Start Date --></label>
+        <name>Week_Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Retail Outlook Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Lines --></label>
+            <section>Lines</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Mobility Outlook Name</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Next_Week_Outlook --></label>
+        <name>Create_Next_Week_Outlook</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Next_Week_Outlook_R_and_O_and_Units_Cloned --></label>
+        <name>Create_Next_Week_Outlook_R_and_O_and_Units_Cloned</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Next_Week_Outlook_R_and_O_cloned --></label>
+        <name>Create_Next_Week_Outlook_R_and_O_cloned</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Retail_Biz_Ops_View --></label>
+        <name>Retail_Biz_Ops_View</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,134 @@
+<apex:page id="page" standardController="Opportunity" extensions="OpportunityEditCtr" >
+
+<script type="text/javascript">
+
+    var redirectURL = '';
+
+    if ('{!showProductForecastCategoryAlert}' == 'true') {
+        alert('Forecast Category for Opportunity has been updated. Please review forecast category for individual product line items that were manually overridden.');
+        redirectURL = '/{!Opportunity.Id}';
+    }
+
+    if ('{!showQuarterYearChangeAlert}' == 'true') {
+        alert('The Opportunity Quarter has been changed to {!Opportunity.Quarter__c}-{!Opportunity.Year__c}. You need to update the Date on the Opportunity Products to be within the same quarter and year.');
+        redirectURL = '/oppitm/multilineitem.jsp?oppId={!Opportunity.Id}&retURL=%2F{!Opportunity.Id}';
+    }
+
+    if ('{!showPipelineBestCaseLineItemAlert}' == 'true') {
+        alert('Forecast Category for one or more Opportunity Products have been set to Pipeline/Best Case. You need to update "Reason for Pipeline/Best Case" for these products.');
+        redirectURL = '/oppitm/multilineitem.jsp?oppId={!Opportunity.Id}&retURL=%2F{!Opportunity.Id}';
+    }
+
+    if ('{!showBundleChangedAlert}' == 'true') {
+        alert('Opportunity lines from the old product bundle have been replaced with the new product bundle lines.');
+        redirectURL = '/{!Opportunity.Id}';
+    }
+
+    if (redirectURL != '') {
+        window.location.href = redirectURL;
+    }
+
+    function showTypeChangeAlert() {
+        alert('Caution: Original opportunity lines will be deleted when you change opportunity type and save.');
+    }
+
+</script>
+
+<apex:sectionHeader title="Opportunity Edit" subtitle="{!IF(isNew, 'New Opportunity', Opportunity.Name)}" />
+
+<apex:form id="form" >
+
+    <apex:pageMessages id="msg" />
+
+    <apex:actionFunction name="stageChange" action="{!stageChange}" reRender="form" immediate="true" >
+        <apex:param name="newStage" assignTo="{!newStage}" value="" />
+    </apex:actionFunction>
+
+    <apex:pageBlock id="pb" mode="Edit" title="Opportunity Edit">
+
+        <apex:pageBlockButtons >
+
+            <apex:commandButton id="btnNewSave" value="Save & Add Product" action="{!saveAndAddProduct}" rendered="{!AND(isNew,NOT(isClone))}" disabled="{!NOT(isValid)}" />
+            <apex:commandButton id="btnEditSave" value="Save" action="{!save}" rendered="{!AND(NOT(isNew),NOT(isClone))}" disabled="{!NOT(isValid)}" />
+            <apex:commandButton id="btnCloneSave" value="Clone" action="{!cloneSave}" rendered="{!AND(isNew,isClone)}" disabled="{!NOT(isValid)}" />
+            <apex:commandButton id="btnCancel" value="Cancel" action="{!cancel}" />
+
+        </apex:pageBlockButtons>
+
+        <apex:pageBlockSection id="pbs1" title="Opportunity Information" columns="2" >
+
+            <apex:inputField value="{!Opportunity.Name}" style="width: 200px;" taborderhint="1" />
+            <apex:outputField value="{!Opportunity.OwnerId}"/>
+            <apex:inputField value="{!Opportunity.AccountId}" required="true" taborderhint="2" />
+            <apex:inputField value="{!Opportunity.StageName}" onchange="stageChange(this.value)" taborderhint="7" />
+            <apex:inputField value="{!Opportunity.CloseDate}" taborderhint="3" />
+            <apex:inputField value="{!Opportunity.ForecastCategoryName}" style="width: 90px;" taborderhint="9" />
+      <apex:inputField value="{!Opportunity.Quarter__c}" required="true" taborderhint="4" /> 
+            
+      <apex:inputField value="{!Opportunity.Year__c}" required="true" taborderhint="5" /> 
+            <apex:inputField value="{!Opportunity.Type}" taborderhint="6" required="true" />
+            <apex:inputField value="{!Opportunity.Deal__c}" style="width: 200px;" taborderhint="10" />
+            <apex:inputField value="{!Opportunity.Product_Bundle__c}" taborderhint="12"/>
+            <apex:inputField value="{!Opportunity.CurrencyIsoCode}" taborderhint="11" />
+            <!-- onchange="showTypeChangeAlert();return false;"  -->
+            <apex:inputField value="{!Opportunity.Product_Bundle_Quantity__c}" taborderhint="13" />
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="" />
+                <apex:outputText value="" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!IF(newStageNo == 8,$ObjectType.Opportunity.Fields.Reason_For_Opportunity_Lost__c.inlineHelpText,'')}" >
+                <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.Reason_For_Opportunity_Lost__c.Label}" rendered="{!newStageNo == 8}" />
+                <apex:inputField value="{!Opportunity.Reason_For_Opportunity_Lost__c}" required="true" rendered="{!newStageNo == 8}" taborderhint="10" />
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+
+
+        <apex:pageBlockSection id="pbs2" title="Closed Won Requirements" columns="2" rendered="{!NOT(isNew)}" >
+            <apex:inputField value="{!Opportunity.haveBothPartiesSignedContract__c}" taborderhint="11" />
+            <apex:inputField value="{!Opportunity.hasLegalFinanceApproved__c}" taborderhint="14" />
+        </apex:pageBlockSection>
+
+        <!-- Rajesh: 4-Feb-2014: Allowed edits to next step and milestone details even in the final stage
+             by removing this attribute:  rendered="{!NOT(isFinalStage)}".
+             Made the milestone date optional when the oppty is in the final stage
+        -->
+        <apex:pageBlockSection id="pbs3" title="Milestone Details" columns="1" >
+
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Opportunity.Fields.NextStep.inlineHelpText}" >
+                <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.NextStep.Label}" />
+                <apex:inputField value="{!Opportunity.NextStep}" required="true" style="width: 400px;" taborderhint="15" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Opportunity.Fields.Next_Milestone_Date__c.inlineHelpText}" >
+                <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.Next_Milestone_Date__c.Label}" />
+                <!--
+                <apex:inputField value="{!Opportunity.Next_Milestone_Date__c}" required="true" taborderhint="15" />
+                -->
+                <apex:inputField value="{!Opportunity.Next_Milestone_Date__c}" required="{!NOT(isFinalStage)}" taborderhint="16" />
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection id="pbs4" title="Description Information" columns="1" >
+
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Opportunity.Fields.Description.inlineHelpText}" >
+                <apex:outputLabel value="{!$ObjectType.Opportunity.Fields.Description.Label}" />
+                <apex:inputField value="{!Opportunity.Description}" required="true" style="width: 400px; height: 70px;" taborderhint="17" />
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection id="pbs5" title="Current Status (Should be updated weekly)" columns="1" >
+            <apex:inputField value="{!Opportunity.Current_Status__c}" style="width: 400px; height: 70px;" taborderhint="17"/>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection id="pbs6" title="Next Steps Log" columns="1" rendered="{!NOT(isNew)}"  >
+            <apex:outputField value="{!Opportunity.Next_Steps_Log__c}" style="width: 400px;"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:inputHidden id="hdnUnits" value="{!Opportunity.Mobile_Device_Units__c}" />
+
+</apex:form>
+
+</apex:page>

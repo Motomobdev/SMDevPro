@@ -1,0 +1,34 @@
+<apex:page sidebar="false">
+    <script>
+        function adjustIframe(){
+            var container = document.getElementById('container1');
+            console.log(container);
+            console.log(container.children.length);
+            if(container.children.length > 0){
+                container1.children[2].style.display = 'block';   
+            }
+
+            //The canvasID variable shall be changed according to target version. 
+            //Production: Google_TA_Tool
+            //Sandbox: Google_TA_Tool_GAE
+            var canvasID = "Google_TA_Tool"; 
+		   	frame = document.getElementById('canvas-frame-_:'+ canvasID + ':j_id0:j_id2:canvasapp');
+            frame.contentWindow.postMessage(window.location.protocol + "//"+ window.location.host, '*');
+        }
+    
+    </script>
+    <style>
+        iframe{
+            display: block;
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+    <div id="container1" class="div_center" ></div>
+    
+    <!-- The canvasID variable shall be changed according to target version -->
+    <!-- Production: Google_TA_Tool -->
+    <!-- Sandbox: Google_TA_Tool_GAE -->    
+    <apex:canvasApp applicationName="Google_TA_Tool" containerId="container1" width="960" onCanvasAppLoad="window.setTimeout(adjustIframe,2500)" scrolling="Yes"/>
+    
+</apex:page>

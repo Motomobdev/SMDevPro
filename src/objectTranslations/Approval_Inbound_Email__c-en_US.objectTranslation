@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Inbound Email</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Inbound Emails</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Comment --></label>
+        <name>Approval_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Request --></label>
+        <name>Approval_Request__c</name>
+        <relationshipLabel><!-- Approval Inbound Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apttus Actual Approver --></label>
+        <name>Apttus_Actual_Approver__c</name>
+        <relationshipLabel><!-- Approval Inbound Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Apttus Approver Comments --></label>
+        <name>Apttus_Approver_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Id --></label>
+        <name>Email_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Received Date Time --></label>
+        <name>Email_Received_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Received Date --></label>
+        <name>Email_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Address --></label>
+        <name>From_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Name --></label>
+        <name>From_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Email Body --></label>
+        <name>Full_Email_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processed --></label>
+        <name>Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Id --></label>
+        <name>User_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>Approval Inbound Email Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

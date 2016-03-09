@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Line Items</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Line Currency</value>
+        </caseValues>
+        <name>quotelineitem_currency</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Line Division</value>
+        </caseValues>
+        <name>quotelineitem_division</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Line Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Deal Line Fields</value>
+        </caseValues>
+        <name>quotelineitem_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Line Item ID</value>
+        </caseValues>
+        <name>quotelineitem_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Deal Line Item Information</value>
+        </caseValues>
+        <name>quotelineitem_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunities with Deal and Deal Line Items Report</value>
+        </caseValues>
+        <name>quotelineitem_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Deal Product - Admin Layout</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Per Unit --></label>
+            <section>Per Unit</section>
+        </sections>
+        <sections>
+            <label><!-- Totals --></label>
+            <section>Totals</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deal Product Layout</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Per Unit --></label>
+            <section>Per Unit</section>
+        </sections>
+        <sections>
+            <label><!-- Totals --></label>
+            <section>Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker --></label>
+            <section>Value Maker</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deal Product Layout - Admin View</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Discounts --></label>
+            <section>Discounts</section>
+        </sections>
+        <sections>
+            <label><!-- Per Unit --></label>
+            <section>Per Unit</section>
+        </sections>
+        <sections>
+            <label><!-- Totals --></label>
+            <section>Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker --></label>
+            <section>Value Maker</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

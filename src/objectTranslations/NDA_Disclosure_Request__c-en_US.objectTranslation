@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NDA Disclosure Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NDA Disclosure Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Companion MCR --></label>
+        <name>Companion_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Companion Products --></label>
+        <name>Companion_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Companion Prototype --></label>
+        <name>Companion_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>DPL_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Approval Purpose --></label>
+        <name>Disclosure_Approval_Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDAFileID --></label>
+        <name>NDAFileID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDA --></label>
+        <name>NDA__c</name>
+        <relationshipLabel><!-- NDA Disclosure Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Premium MCR --></label>
+        <name>Premium_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Products --></label>
+        <name>Premium_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Prototype --></label>
+        <name>Premium_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software MCR --></label>
+        <name>Software_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software Prototype --></label>
+        <name>Software_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software --></label>
+        <name>Software__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value MCR --></label>
+        <name>Value_MCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Products --></label>
+        <name>Value_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Prototype --></label>
+        <name>Value_Prototype__c</name>
+    </fields>
+    <layouts>
+        <layout>NDA Disclosure Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

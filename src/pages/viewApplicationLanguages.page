@@ -1,0 +1,60 @@
+<apex:page standardController="Application__c" extensions="viewApplicationLanguages" showHeader="false">
+    <style type="text/css"> 
+        .topL{ 
+        text-align:left; 
+        vertical-align: top; 
+        }
+        
+        .errorText{
+        color:red;
+        font-style:italic;
+        font-size:16px;
+        }
+        
+        .messageText{
+        //color:blue;
+        font-style:italic;
+        font-weight:bold;
+        font-size:16px;
+        }
+        
+        .titleText{
+        font-style:bold;
+        }            
+        
+    </style>
+    <script language="javascript">
+		function popUp(URL,windowName) {
+			window.open(URL, windowName, 'toolbar=0,scrollbars=0,location=0,statusbar=1,menubar=0,resizable=0,width=200,height=525,left = 480,top = 300');
+		}
+    </script>    
+
+    <apex:form id="theForm">   
+        <center>
+    		<apex:commandButton onclick="popUp('/apex/editDeviceOrApplicationLanguages?id={!targetId}', 'edit');"  value="Edit Languages" />
+        </center>           
+        <table >
+            <tbody>
+                <tr>
+                    <td width="50%" class="topL">                   
+                        <h3><apex:outputText value="Included Languages" rendered="{!showDetails}"/></h3>
+                        <BR/><BR/>
+                        <apex:outputText value="There are no Languages selected." rendered="{!noLanguagesSelected}" styleClass="errorText" />
+                        <apex:outputText value="ERROR: Not Applicable and a language has been selected. If an Application does not have a language requirment please select Not Applicable only." rendered="{!noLanguageRequiredError}" styleClass="errorText" />
+                        <apex:outputText value="Not Applicable" rendered="{!noLanguageRequired}" styleClass="messageText" />                                            
+                        <apex:repeat value="{!includedLanguages}" var="c" rendered="{!showDetails}">
+                            <apex:outputText value="{!c.Name} - "/> 
+                        </apex:repeat>                  
+                    </td>
+                    <td class="topL">
+                        <h3><apex:outputText value="Excluded Languages" rendered="{!showDetails}"/></h3>
+                        <BR/><BR/>
+                        <apex:repeat value="{!excludedLanguages}" var="c" rendered="{!showDetails}">
+                            <apex:outputText value="{!c.Name} - "/> 
+                        </apex:repeat>          
+                    </td>       
+                </tr>
+            </tbody>
+        </table>            
+    </apex:form>
+</apex:page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Shipments_SF</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shipments_SFs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Delivery Date --></label>
+        <name>Actual_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivered --></label>
+        <name>Delivered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Date --></label>
+        <name>Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Shipments_SFs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Recipient --></label>
+        <name>Recipient__c</name>
+        <relationshipLabel><!-- Shipments_SFs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ship Date --></label>
+        <name>Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipment Name --></label>
+        <name>Shipment_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Shipment_Notes__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

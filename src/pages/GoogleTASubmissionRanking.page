@@ -1,0 +1,314 @@
+<apex:page id="page" controller="GoogleTASubmissionRankingController" cache="false">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var isExpanded = true;
+        var isAnonymous = ('{!isAnonymous}' == 'true');
+        
+        $(document).ready(function(){
+            if(!isAnonymous) {
+                $(".TASubmissionList").sortable({ items: '.sortable_bm' });
+                $(".TASubmissionList").disableSelection();
+            }
+            updateLastRefreshTime();
+        });
+        function makeTASubmissionSortable() {
+            $(".TASubmissionList").sortable({ items: '.sortable_bm' });
+            $(".TASubmissionList").disableSelection();
+            
+            if(isExpanded)
+                $(".table").show();
+            else
+                $(".table").hide();
+        }
+        function statusStarted(statusText) {
+            $('#statusTop').text(statusText).fadeIn(1000);
+            $('#statusBottom').text(statusText).fadeIn(1000);
+        }
+        function updateSequence(inSequence) {
+            var mElems = $('.TASubmission');
+            var mIds = '';
+            for(var i=0; i<mElems.length; i++){
+                mIds += mElems[i].id + ',';
+            }
+            document.getElementById(inSequence).value = mIds;
+            return true;
+        }
+        function toggleExpanded() {
+            isExpanded  = !isExpanded;
+
+            if(isExpanded)
+                $(".table").fadeIn("slow","linear");
+            else
+                $(".table").fadeOut("slow","linear");
+        }
+        function updateLastRefreshTime()
+        {
+            var currentDate = new Date()
+            var hours = currentDate.getHours()
+            var minutes = currentDate.getMinutes()
+            var seconds = currentDate.getSeconds()
+            var dayNight="PM"
+            
+            if (hours < 12)
+            {
+                dayNight = "AM";
+                
+                if (hours == 0) 
+                    hours = 12;
+            }
+            else if (hours > 12)
+                hours = hours - 12;
+            
+            var currentTime = hours + ":" + ("0"+minutes).slice(-2) + ":" + ("0"+seconds).slice(-2) + " " + dayNight;
+            
+            $("#spLastRefreshTime").text(currentTime);
+        }
+    </script>
+    
+    <style type="text/css">
+        .refresh
+        {
+            float: right;
+            padding-top: 5px;
+            margin-right: 4px;
+            margin-bottom: -20px;
+            color: gray;
+            font-size: 8pt;
+        }
+        a.ref:link {text-decoration: none;}
+        a.ref:visited {text-decoration: none;}
+        a.ref:hover {text-decoration: none;}
+        a.ref:active {text-decoration: none;}
+        a.ref:link {color: gray;}
+        a.ref:visited {color: gray;}
+        a.ref:hover {color: #1E90FF;}
+        a.ref:active {color: #1E90FF;}
+        .TASubmission {
+            padding: 10px 10px 0px 75px;
+            background:transparent;
+            position: relative;
+        }
+        .TASubmission_menu{
+            background:#fcfcfc;
+            border: 1px solid #ccc;
+            border-right: 0;
+            left: 0px;
+            padding:10px;
+            position:absolute;
+            width:54px;
+            height: 17px;
+            
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0px 1px 4px #ccc;
+            
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            -moz-box-shadow: 0px 1px 4px #ccc;
+    
+            -webkit-box-shadow: 0px 1px 4px #ccc;
+        }
+        .TASubmission_num{   
+            /* positioning */
+            position: absolute;
+            right: 24px;
+            top: 3px;
+            /* styling */
+            font-size: 24px;
+            font-weight: bold;
+            color: #ccc;
+        }
+        .TASubmission .info{
+            border:1px solid #CCCCCC;
+            margin:0;
+            padding:10px;
+            
+            box-shadow: 0px 1px 4px #ccc;
+            border-radius: 5px;
+            
+            -moz-box-shadow: 0px 1px 4px #ccc;
+            -moz-border-radius: 5px;
+            
+            -webkit-box-shadow: 0px 1px 4px #ccc;
+        }
+        .sortable_bm {
+            cursor: hand;
+        }
+        .sortable_bm .info{
+            background: #fcfcfc;
+        }
+        .not_sortable_bm .info {
+            background: #fcfcfc;
+        }
+        .TASubmission h1{
+            color: #27282E;
+            clear: both;
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .TASubmission a{
+            text-decoration: none;
+        }
+        .table {
+            /*height:22px;*/
+            /*line-height:22px;*/
+            width: 100%;
+        }
+        .table .label1 {
+            padding: 4px 10px 4px 0px;
+            font-weight:bold;
+            text-align:right;
+            width: 20%;
+            color: #4A4A56;
+            border-top: 1px solid #ECECEC;
+        }
+        .table .value1 {
+            padding: 4px 0px 4px 0px;
+            text-align: left;
+            width: 15%;
+            color: #4A4A56;
+            border-top: 1px solid #ECECEC;
+        }
+        .table .label2 {
+            padding: 4px 10px 4px 0px;
+            font-weight:bold;
+            text-align:right;
+            width: 20%;
+            color: #4A4A56;
+            border-top: 1px solid #ECECEC;
+        }
+        .table .value2 {
+            padding: 4px 0px 4px 0px;
+            text-align: left;
+            width: 45%;
+            color: #4A4A56;
+            border-top: 1px solid #ECECEC;
+        }
+        .status {
+            display:none;
+            background-color:#e5c12f;
+            color:#fff;
+            position:absolute;
+            left:45%;
+            width:100px;
+            /*margin-left:-50px;*/
+            margin-top:-5px;
+            text-align:center;
+            padding:5px;
+            font-weight:bold;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        #fade { /*--Transparent background layer--*/
+            display: none; /*--hidden by default--*/
+            background: #000;
+            position: fixed; left: 0; top: 0;
+            width: 100%; height: 100%;
+            opacity: .80;
+            z-index: 99;
+        }
+    </style>
+
+    <apex:sectionHeader title="Google TA Submission Ranking"/>
+    
+    <apex:form id="form" >
+        
+    <div style="width: 100%;">
+    
+    <apex:outputPanel id="refresh" styleClass="refresh">
+        <apex:outputText value="Last refreshed on: " /><span id="spLastRefreshTime">--:--:-- AM</span>
+        &nbsp;|&nbsp;&nbsp;
+        <apex:commandLink id="lnkRefresh" value="Refresh" action="{!getGoogleTASubmissions}" onclick="statusStarted('Please wait...');" oncomplete="updateLastRefreshTime(); makeTASubmissionSortable();" reRender="top,TASubmissionList,bottom,refresh" styleClass="ref"  />
+    </apex:outputPanel>
+    
+    <apex:pageBlock id="pb" title="Google TA Submission(s)" >
+        
+        <apex:pageBlockButtons rendered="{!isAdministrator}" >
+            <apex:commandButton value="Save" onclick="updateSequence('{!$Component.inputSequence}');statusStarted('Saving...');" action="{!saveSequence}" reRender="top,TASubmissionList,bottom,refresh" oncomplete="updateLastRefreshTime(); makeTASubmissionSortable();" />
+            <apex:commandButton value="Cancel" action="{!getGoogleTASubmissions}" onclick="statusStarted('Please wait...');" oncomplete="updateLastRefreshTime(); makeTASubmissionSortable();" reRender="top,TASubmissionList,bottom,refresh" />
+            <apex:commandButton value="Expand/Collapse" onclick="toggleExpanded(); return false;" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel id="top">
+            <apex:inputHidden id="inputSequence" value="{!sequence}" />
+            <apex:pageMessage severity="warning" summary="You do not have admin privileges. Reordering of the items is not allowed." rendered="{!AND(NOT(isAdministrator),NOT(isAnonymous))}" strength="1" />
+            <apex:pageMessages id="messageTop" />
+            <span id="statusTop" class="status"></span>
+        </apex:outputPanel>
+        <br />
+        <apex:outputPanel id="TASubmissionList" styleClass="TASubmissionList">
+            <apex:repeat value="{!TASubmissionList}" var="a">
+            
+                <div id="{!a.Id}" class="TASubmission {!IF(isAdministrator,'sortable_bm','not_sortable_bm')}" title="{!if(isAnonymous,'','Drag and Drop to Reorder')}">
+                    <div class="info">
+                        <div class="TASubmission_menu">
+                            <div class="TASubmission_num">
+                                <apex:outputText value="{0,number,integer}" >
+                                    <apex:param value="{!a.Priority__c}" />
+                                </apex:outputtext>
+                            </div>
+                            <apex:image value="{!URLFOR($Resource.main, 'img/up_down_arrow.png')}" style="float:right" rendered="{!NOT(isAnonymous)}"/>
+                        </div>
+                        <h1>
+                            <apex:outputLink value="/{!a.id}" target="_blank" title="{!if(isAnonymous,'','Click to view device detail')}" disabled="{!isAnonymous}">{!a.Name}</apex:outputLink>
+                        </h1>
+                        <br />
+                        <table class="table">
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Priority__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.Priority__c}"/></td>
+                                <td class="label2"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Hardware_Provided__c.label}"/></td>
+                                <td class="value2"><apex:outputfield value="{!a.Hardware_Provided__c}"/></td>
+                            </tr>
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Requested_Date_for_Google_TA__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.Requested_Date_for_Google_TA__c}"/></td>
+                                <td class="label2"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.GMS_Last_SW_Submitted__c.label}"/></td>
+                                <td class="value2"><apex:outputfield value="{!a.GMS_Last_SW_Submitted__c}"/></td>
+                            </tr>
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.SA_Release_Type__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.SA_Release_Type__c}"/></td>
+                                <td class="label2"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Launch_Addendum_ID__c.label}"/></td>
+                                <td class="value2"><apex:outputfield value="{!a.Launch_Addendum_ID__c}"/></td>
+                            </tr>
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Date_GMS_SW_Checklist_Sent_to_Google__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.Date_GMS_SW_Checklist_Sent_to_Google__c}"/></td>
+                                <td class="label2"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Device_ID__c.label}"/></td>
+                                <td class="value2"><apex:outputfield value="{!a.Device_ID__c}"/></td>
+                            </tr>
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Number_of_days_allotted_for_approval__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.Number_of_days_allotted_for_approval__c}"/></td>
+                                <td class="label2"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.LE_CTS_Software_Checklist__c.label}" rendered="{!NOT(isAnonymous)}" /></td>
+                                <td class="value2"><apex:outputLink target="_blank" value="{!a.LE_CTS_Software_Checklist__c}" title="{!a.LE_CTS_Software_Checklist__c}" rendered="{!AND(a.LE_CTS_Software_Checklist__c!=null,NOT(isAnonymous))}" ><u>View</u></apex:outputLink></td>
+                            </tr>
+                            <tr>
+                                <td class="label1"><apex:outputLabel value="{!$ObjectType.Device__c.Fields.Number_of_days_since_complete_submission__c.label}"/></td>
+                                <td class="value1"><apex:outputfield value="{!a.Number_of_days_since_complete_submission__c}"/></td>
+                                <td class="label2">&nbsp;</td>
+                                <td class="value2">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </apex:repeat>
+            
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="bottom">
+            <apex:pageMessages id="messageBottom" />
+            <span id="statusBottom" class="status"></span>
+        </apex:outputPanel>
+
+    </apex:pageBlock>
+
+    </div>
+
+    </apex:form>
+
+</apex:page>

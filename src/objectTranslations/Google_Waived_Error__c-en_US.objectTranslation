@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Google Waived Error</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Google Waived Errors</value>
+    </caseValues>
+    <fields>
+        <help><!-- Comments section to provide context for the Waived Error --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reasons for Failure --></label>
+        <name>Reasons_for_Failure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test_Name --></label>
+        <name>Test_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Suite --></label>
+        <name>Test_Suite__c</name>
+    </fields>
+    <fields>
+        <label><!-- Versions available --></label>
+        <name>Versions_available__c</name>
+        <picklistValues>
+            <masterLabel>Android 1.5</masterLabel>
+            <translation><!-- Android 1.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 1.6</masterLabel>
+            <translation><!-- Android 1.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 2.1</masterLabel>
+            <translation><!-- Android 2.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 2.2</masterLabel>
+            <translation><!-- Android 2.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 2.3</masterLabel>
+            <translation><!-- Android 2.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 3.0</masterLabel>
+            <translation><!-- Android 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 3.1</masterLabel>
+            <translation><!-- Android 3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 3.2</masterLabel>
+            <translation><!-- Android 3.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 4.0</masterLabel>
+            <translation><!-- Android 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 4.1</masterLabel>
+            <translation><!-- Android 4.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 4.2</masterLabel>
+            <translation><!-- Android 4.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 4.3</masterLabel>
+            <translation><!-- Android 4.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 4.4</masterLabel>
+            <translation><!-- Android 4.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 5.0</masterLabel>
+            <translation><!-- Android 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 5.1</masterLabel>
+            <translation><!-- Android 5.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android 6.0</masterLabel>
+            <translation><!-- Android 6.0 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Waived? --></label>
+        <name>Waived__c</name>
+    </fields>
+    <layouts>
+        <layout>Google Waived Error Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competitive Source Apps</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitive_Source_Appss</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Top 10 App On --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Competitive Sources --></label>
+        <name>Competitive_Sources__c</name>
+        <relationshipLabel><!-- Competitive Source Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the date this data was pulled. On this date, this App was a top app for this specific source. --></help>
+        <label><!-- Date Sourced --></label>
+        <name>Date_Sourced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rank (If applicable) --></label>
+        <name>Rank_If_applicable__c</name>
+    </fields>
+    <layouts>
+        <layout>Competitive Source Apps Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

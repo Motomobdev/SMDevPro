@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Bundle Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Bundle Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Anticipated Contract Closure Date --></label>
+        <name>Anticipated_Contract_Closure_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- When will this Software be delivered? --></help>
+        <label><!-- Anticipated SW Delivery Date --></label>
+        <name>Anticipated_SW_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- SW Bundle Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Auto calculated field, based on MMI and Partner approval.  Once both sides approve, this field will be automatically set to &quot;Yes&quot; --></help>
+        <label><!-- Final Approved for Inclusion in Bundle --></label>
+        <name>Approved_for_inclusion_in_Games_Showcase__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract - Let Expire --></label>
+        <name>Contract_Let_Expire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Phase --></label>
+        <name>Contract_Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Differentiation --></label>
+        <name>Differentiation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this app approved yet by MMI, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion) --></help>
+        <label><!-- MMI Approval for for Bundle? --></label>
+        <name>MMI_Approval_for_Games_Showcase__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this app approved yet by the Partner, to be included in the Bundle?
+(This field applies only for apps requiring approvals for Bundle inclusion) --></help>
+        <label><!-- Partner Approval for Bundle? --></label>
+        <name>Partner_Approval_for_Games_Showcase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Attribute --></label>
+        <name>Royalty_Attribute__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Current --></label>
+        <name>Royalty_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty High --></label>
+        <name>Royalty_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Low --></label>
+        <name>Royalty_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWBundle-App Item State --></label>
+        <name>SWBundle_App_Item_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Bundle --></label>
+        <name>Service_Type__c</name>
+        <relationshipLabel><!-- SW Bundle Applications --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Service Type Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Type Application Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

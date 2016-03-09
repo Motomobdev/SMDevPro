@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Savings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Savings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Savings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Committed --></label>
+        <name>Committed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact --></label>
+        <name>Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Math / Basis / Calculation --></label>
+        <name>Math_Basis_Calculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned/Effective Date --></label>
+        <name>Planned_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the projected Impact of this Savings? --></help>
+        <label><!-- Projected Impact --></label>
+        <name>Projected_Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Savings Status --></label>
+        <name>Savings_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Savings Type --></label>
+        <name>Savings_Type__c</name>
+        <picklistValues>
+            <masterLabel>Avoidance</masterLabel>
+            <translation><!-- Avoidance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-kind Marketing</masterLabel>
+            <translation><!-- In-kind Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Savings</masterLabel>
+            <translation><!-- Other Savings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Savings</masterLabel>
+            <translation><!-- Savings --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How committed is this savings status? --></help>
+        <label><!-- Status Commitment --></label>
+        <name>Status_Commitment__c</name>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possible</masterLabel>
+            <translation><!-- Possible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stretch</masterLabel>
+            <translation><!-- Stretch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Impact --></label>
+        <name>Total_Actual_Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Projected Impact --></label>
+        <name>Total_Projected_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the actual Impact of Savings for Year 1? --></help>
+        <label><!-- Year 1 Actual Impact --></label>
+        <name>Year_1_Actual_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the projected Impact of Savings for Year 1? --></help>
+        <label><!-- Year 1 Projected Impact --></label>
+        <name>Year_1_Projected_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the actual Impact of Savings for Year 2? --></help>
+        <label><!-- Year 2 Actual Impact --></label>
+        <name>Year_2_Actual_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the projected Impact of Savings for Year 2? --></help>
+        <label><!-- Year 2 Projected Impact --></label>
+        <name>Year_2_Projected_Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Contracts --></label>
+        <name>of_Contracts__c</name>
+    </fields>
+    <layouts>
+        <layout>Cost Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Savings Amount Details --></label>
+            <section>Savings Amount Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If cost status is Complete, values in the Year 1 Actual Impact field must be filled out --></errorMessage>
+        <name>Actual_Impact_1_cost_status_is_complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If cost status is Complete, values in the Year 2 Actual Impact field must be filled out --></errorMessage>
+        <name>Actual_Impact_2_cost_status_is_complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A contract is required if this record is Complete. Please add a contract first then change the Savings Status to Complete --></errorMessage>
+        <name>Complete_Cost_Contract_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If cost status is Complete, the Planned/Effective Date field must be filled out --></errorMessage>
+        <name>Plan_Eff_req_if_cost_status_is_comp</name>
+    </validationRules>
+</CustomObjectTranslation>

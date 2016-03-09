@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Playbook</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Playbooks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Playbooks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description will be added to playbook name. Example: If Description is &quot;James&quot; playbook name will be &quot;Account Name -2013 Q3 - James --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- OKR --></label>
+        <name>OKR__c</name>
+        <relationshipLabel><!-- Playbooks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Period Quarter --></label>
+        <name>Period_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Period Year --></label>
+        <name>Period_Year__c</name>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Explain the playbook in detail. Example: Detailed OKR reference to which this playbooks relates. --></help>
+        <label><!-- Playbook Details --></label>
+        <name>Playbook_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Playbook Name --></label>
+        <name>Playbook_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Reason Description --></label>
+        <name>Status_Reason_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reason associated with the status. --></help>
+        <label><!-- Status Reason --></label>
+        <name>Status_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Competition</masterLabel>
+            <translation><!-- Competition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal/Regulatory</masterLabel>
+            <translation><!-- Legal/Regulatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operator Support</masterLabel>
+            <translation><!-- Operator Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation><!-- Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranging</masterLabel>
+            <translation><!-- Ranging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail &amp; Distribution</masterLabel>
+            <translation><!-- Retail &amp; Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Delay</masterLabel>
+            <translation><!-- SA Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain</masterLabel>
+            <translation><!-- Supply Chain --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Ahead Of Plan</masterLabel>
+            <translation><!-- Ahead Of Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behind Plan</masterLabel>
+            <translation><!-- Behind Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Plan</masterLabel>
+            <translation><!-- On Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Region --></label>
+        <name>Sub_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>OKR</masterLabel>
+            <translation><!-- OKR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLT Engagement</masterLabel>
+            <translation><!-- SLT Engagement --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Playbook Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Long Description --></label>
+            <section>Long Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Activities_Report --></label>
+        <name>Activities_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_PPT --></label>
+        <name>Generate_PPT</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_OKR_Playbook --></label>
+        <name>New_OKR_Playbook</name>
+    </webLinks>
+</CustomObjectTranslation>

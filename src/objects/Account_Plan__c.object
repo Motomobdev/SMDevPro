@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Account Plan  covers following sections for Phase I
+1. Customer Business Strategy
+2. Competitive Landscape - Price tier wise / vendor wise
+3. MMI Account Strategy - Annual / Quarterly
+
+Annual Strategy can cover following:-
+1. Summary
+2. Portfolio Strategy
+3. Product Strategy
+4. Marketing Strategy
+5. Channel Strategy
+
+Quarterly Plan need to be derived from Annual Strategy and driving the quarterly priorities to align with Annual strategic plan for the account
+
+
+
+
+is the MMI strategy for the Account. There are two stages to the Account plan - Annual and Quarterly
+It should cover
+1. Executive Summary 
+2. Portfolio / Ranging Starategy
+3. Account Achievements and Highlights</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Priorities_Strategies__c</fullName>
+        <description>Customer&apos;s / Account&apos;s strategic priorities for the Year / Quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer&apos;s / Account&apos;s strategic priorities for the Year / Quarter</inlineHelpText>
+        <label>Account&apos;s Priorities/Strategies</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Plans</relationshipLabel>
+        <relationshipName>Account_Plan</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Key_Driving_Forces__c</fullName>
+        <description>These are the factors / events which influence strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>These are the factors / events which influence strategy</inlineHelpText>
+        <label>Key Driving Forces</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MMI_Strategy_For_The_Current_Quarter__c</fullName>
+        <description>Quarterly Plan need to be derived from Annual Strategy and driving the quarterly priorities to align with Annual strategic plan for the account is the MMI strategy for the Account. There are two stages to the Account plan - Annual and Quarterly
+It should cover ; Executive Summary ; Portfolio / Ranging Starategy; Account Achievements and Highlights</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quarterly Plan need to be derived from Annual Strategy
+It should cover ; Executive Summary ; Portfolio / Ranging Starategy; Account Achievements and Highlights</inlineHelpText>
+        <label>MMI Strategy For The Current Quarter</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MMI_Strategy_Linked_to_Annual_OKR__c</fullName>
+        <description>Annual Strategy can cover following:-
+1. Summary
+2. Portfolio Strategy
+3. Product Strategy
+4. Marketing Strategy
+5. Channel Strategy
+This should be aligned to Customer priorities  and MMI OKR&apos;s</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Annual Strategy can cover following:-
+1. Summary
+2. Portfolio Strategy
+3. Product Strategy
+4. Marketing Strategy
+5. Channel Strategy
+This should be aligned to Customer priorities  and MMI OKR&apos;s</inlineHelpText>
+        <label>MMI Strategy - Linked to Annual OKR</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Plan_Quarter__c</fullName>
+        <description>The quarter of the year to which this account plan is mapped / link</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The quarter of the year to which this account plan is mapped / link</inlineHelpText>
+        <label>Plan Quarter</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Account Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Plan_Year__c</columns>
+        <columns>Plan_Quarter__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Account Plan Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Plans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Download_Account_Plan</fullName>
+        <availability>online</availability>
+        <description>Downloads Account Plan in PDF format</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Download Account Plan</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Account_Plan__c.Id}&amp;accountId={!Account_Plan__c.AccountId__c}&amp;autorun=true&amp;ddpIds=a2340000000LEGU&amp;sessionid={!$Api.Session_ID}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Download_Account_Plan_ListView</fullName>
+        <availability>online</availability>
+        <description>ListView button</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Download Account Plan</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}
+
+var planIds = {!GETRECORDIDS($ObjectType.Account_Plan__c)};
+
+if(planIds.length &lt; 1)
+{
+    alert(&quot;You have not selected any Account Plan. Please select one Account Plan from below list.&quot;);
+}
+else if(planIds.length &gt; 1)
+{
+    alert(&quot;You have selected more than one Account Plan. Please select one Account Plan at a time.&quot;);
+}
+else
+{
+    var query = &quot;SELECT Id, Name, Account__c FROM Account_Plan__c WHERE Id = &apos;&quot; + planIds[0] + &quot;&apos;&quot;;
+    
+    var result = sforce.connection.query(query);
+    
+    var records = result.getArray(&quot;records&quot;);
+    
+    var url = &quot;/apex/loop__looplus&quot;;
+    url += &quot;?eid=&quot; + records[0].Id;
+    url += &quot;&amp;accountId=&quot; + records[0].Account__c;
+    url += &quot;&amp;sessionid=&quot; + sforce.connection.sessionId;
+    url += &quot;&amp;autorun=true&quot;;
+    url += &quot;&amp;ddpIds=a2340000000LEGU&quot;;
+    url += &quot;&amp;header=false&quot;;
+    url += &quot;&amp;sidebar=false&quot;;
+    
+    var winName = &quot;Download Account Plan - &quot; + records[0].Name;
+    
+    window.open(url, winName, &quot;location=no,menubar=no,toolbar=no,width=500,height=300&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Testing</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Testing</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Account_Plan__c.Id}&amp;AccountId={!Account_Plan__c.AccountId__c}&amp;sessionid={!$Api.Session_ID}&amp;autorun=true&amp;ddpIds=a2340000000LEMN</url>
+    </webLinks>
+</CustomObject>

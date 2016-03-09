@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Financial</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Financials</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select / search the account you wish to update the financial information for --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Financials --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash &amp; ST Investments % Change --></label>
+        <name>Cash_ST_Investments_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash &amp; ST Investments --></label>
+        <name>Cash_ST_Investments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days Payable Outstanding (DPO) --></help>
+        <label><!-- Days Payable Outstanding (DPO) --></label>
+        <name>Days_Payable_Outstanding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days Sales of Inventory (DSI) --></help>
+        <label><!-- Days Sales of Inventory (DSI) --></label>
+        <name>Days_Sales_Inventory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days Sales Outstanding (DSO) --></help>
+        <label><!-- Days Sales Outstanding (DSO) --></label>
+        <name>Days_Sales_Outstanding__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Overall Mobile Devices TAM (Feature Phonoe + Smartphone) for the calendar year --></help>
+        <label><!-- Estimated TAM Overall --></label>
+        <name>Estimated_TAM_Overall__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Smartphone TAM for the Account for calendar year in question --></help>
+        <label><!-- Estimated TAM Smartphone --></label>
+        <name>Estimated_TAM_Smartphone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Calendar --></label>
+        <name>Financial_Calendar__c</name>
+        <picklistValues>
+            <masterLabel>Calendar Year</masterLabel>
+            <translation><!-- Calendar Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiscal Year</masterLabel>
+            <translation><!-- Fiscal Year --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Financial Quarter --></label>
+        <name>Financial_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Financial Year for which you wish to update the financial information for --></help>
+        <label><!-- Financial Year --></label>
+        <name>Financial_Year__c</name>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Gross Margin % --></label>
+        <name>Gross_Margin_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of employees for the account --></help>
+        <label><!-- Number of Employees --></label>
+        <name>Number_of_Employees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percentage of Subscribers using Post paid plans --></help>
+        <label><!-- % Post-paid --></label>
+        <name>Post_paid__c</name>
+    </fields>
+    <fields>
+        <help><!-- % of Subscriber who are on Pre Paid plan --></help>
+        <label><!-- % Pre-paid --></label>
+        <name>Pre_paid__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is profit margin % for the financial Year --></help>
+        <label><!-- Profit Margin % --></label>
+        <name>Profit_Margin_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Absolute Profit for the financial year --></help>
+        <label><!-- Profit Margin $ --></label>
+        <name>Profit_Margin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Revenue Growth % Y-o-Y --></help>
+        <label><!-- Revenue Growth YOY % --></label>
+        <name>Revenue_Growth_YOY__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Full year Revenue for financial year --></help>
+        <label><!-- Revenue $ --></label>
+        <name>Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is subscriber growth rate for the year (Applies in case of a carrie / operator) --></help>
+        <label><!-- Subscriber YOY Growth % --></label>
+        <name>Subscriber_YOY_Growth_trend__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of mobile subscribers. Applies in case of carrier / operator --></help>
+        <label><!-- Total Subscribers --></label>
+        <name>Total_Subscribers__c</name>
+    </fields>
+    <layouts>
+        <layout>Account Financial Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Account Financial Layout - Procurement</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

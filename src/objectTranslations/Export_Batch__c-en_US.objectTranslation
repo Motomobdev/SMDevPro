@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Export Batch</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Export Batch</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accounting Extract Date --></label>
+        <name>Accounting_Extract_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export Date --></label>
+        <name>Export_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tag --></label>
+        <name>Tag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Account Period</masterLabel>
+            <translation><!-- Account Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Quarter</masterLabel>
+            <translation><!-- Account Quarter --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Export Batch Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>JIRA Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>JIRA Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- JIRAID --></label>
+        <name>JIRAID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>JIRA_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature --></label>
+        <name>JIRA_Feature__c</name>
+        <relationshipLabel><!-- JIRA Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Integrate Actual --></label>
+        <name>JIRA_Integrate_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrate Baseline --></label>
+        <name>JIRA_Integrate_Baseline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrate CWV --></label>
+        <name>JIRA_Integrate_CWV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>JIRA_Project__c</name>
+        <relationshipLabel><!-- JIRA Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>JIRA_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>JIRA_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary --></label>
+        <name>JIRA_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Stable Release --></label>
+        <name>JIRA_Target_Stable_Release__c</name>
+    </fields>
+    <layouts>
+        <layout>JIRA Plan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

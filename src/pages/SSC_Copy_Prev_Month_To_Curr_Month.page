@@ -1,0 +1,30 @@
+<apex:page controller="SSC_scoreCardCopyLastMonthtoCurrent" >
+<apex:form >
+<apex:PageBlock >
+<apex:outputText >
+
+The current month in the system is {!currentMonth} , {!currentYear}
+</apex:outputText>
+<br/>
+<br/>
+<br/>
+<apex:outputText >
+Please cick the below button to copy {!currentMonth} , {!currentYear} score to {!nextMonth} , {!nextYear} 
+</apex:outputText>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<apex:commandButton action="{!SSC_scoreCardCopyLastMonth}" value="Copy Last Month Scores to Current Month" style="background:#216BB5;color:white; width:20%;"/>
+
+<apex:outputPanel rendered="{!display}">
+Please check your mail in 20 minutes for status of score copy .
+</apex:outputPanel>
+
+
+</apex:PageBlock>
+</apex:form>
+</apex:page>

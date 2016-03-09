@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Current Ship Volume Date Range</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Current Ship Volume Date Ranges</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Ship Volume --></label>
+        <name>Application_Group__c</name>
+        <relationshipLabel><!-- Current Ship Volume Date Ranges --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Amount --></label>
+        <name>Cumulative_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Units --></label>
+        <name>Cumulative_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Group Date Range Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

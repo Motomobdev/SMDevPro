@@ -1,0 +1,30 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" extensions="motApttusAddAgreementDocumentController" showHeader="true" showChat="false" sidebar="true" >
+
+<apex:outputPanel id="pageMsg">
+    <apex:pageMessages />
+</apex:outputPanel>
+
+<apex:form >
+    <apex:pageBlock >
+        <apex:outputPanel id="attachments">
+            <apex:pageBlockTable value="{!availableAttachments}" var="att">
+                <apex:column style="width: 1%;" >
+                  <apex:commandButton value="Select" action="{!onSelectAttachment}" reRender="attachments,pageMsg" immediate="true" >
+                    <apex:param value="{!att.Id}" assignTo="{!selectedId}" name="selectedId"/>
+                  </apex:commandButton>
+                </apex:column>
+                <apex:column headerValue="Title" value="{!att.Name}"/>
+                <apex:column headerValue="Last Modified By" value="{!att.LastModifiedDate}"/>
+                <apex:column headerValue="Created By" value="{!att.CreatedBy.Name}"/>
+            </apex:pageBlockTable>
+            <!-- We put up a warning if result is empty (no rows) -->
+            <apex:outputPanel styleClass="msg" rendered="{!noResult}">
+                <br/>
+                <span style="color: #D74C3B;">There is no attachment. Please add attachment first.</span>
+                <br/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

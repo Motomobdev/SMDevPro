@@ -1,0 +1,51 @@
+<apex:page id="thePage" standardController="Device__c" extensions="editDeviceCoreAndStable" tabStyle="Device__c">
+
+    <script type="text/javascript">
+        function showDummyButtons()
+        {
+            var pnlRealButtons = document.getElementById("thePage:theForm:pb:pbb:pnlRealButtons");
+            var pnlDummyButtons = document.getElementById("thePage:theForm:pb:pbb:pnlDummyButtons");
+            
+            pnlRealButtons.style.display = 'none';
+            pnlDummyButtons.style.display = 'inline';
+        }
+    </script>
+    
+    <apex:form id="theForm">
+    
+        <apex:actionFunction name="mySave" action="{!mySave}" />
+        <apex:actionFunction name="returnUserBackToDevice" action="{!returnUserBackToDevice}" />
+    
+        <apex:sectionHeader title="Select a Core and/or a Stable for" subtitle="{!Device.Name}"/>
+        <apex:pageMessage rendered="{!showUpdateError}" strength="2" summary="System Error: {!updateError}" severity="error" />
+        <apex:pageMessage rendered="{!isDeviceSWApproved}" strength="2" summary="This Device SW BOM has already been marked as Reviewed and Approved. You cannot edit its core or stable values." severity="warning" />
+        
+        <apex:pageBlock id="pb">
+        
+            <apex:pageBlockSection columns="2" collapsible="false">       
+                <apex:inputField id="coreField" value="{!Device.Core_Device_Package__c}">
+                   <apex:actionSupport event="onchange" action="{!newCore}"/>
+                   <script>document.getElementById('{!$Component.coreField}').disabled = {!disableCore}; </script>
+                </apex:inputField>
+                <apex:inputField id="stableField" value="{!Device.Stable__c}" >   
+                    <apex:actionSupport event="onchange" action="{!newStable}"/> 
+                    <script>document.getElementById('{!$Component.stableField}').disabled = {!disableStable}; </script>
+                </apex:inputField>  
+            </apex:pageBlockSection>
+ 
+            <apex:pageBlockButtons id="pbb" location="bottom">
+                <apex:outputPanel id="pnlRealButtons">
+                    <apex:commandButton id="btnSave" value="Save" onclick="mySave(); showDummyButtons(); return false;" />
+                    <apex:commandButton id="btnCancel" value="Cancel" onclick="returnUserBackToDevice(); showDummyButtons(); return false;" />
+                </apex:outputPanel>
+                <apex:outputPanel id="pnlDummyButtons" style="display: none;">
+                    <apex:commandButton id="btnDummySave" value="Save" disabled="true" />&nbsp;
+                    <apex:commandButton id="btnDummyCancel" value="Cancel" disabled="true" />
+                </apex:outputPanel>
+            </apex:pageBlockButtons>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+
+</apex:page>

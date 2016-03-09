@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project  (PMD)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects  (PMD)</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- LaunchCal Device Calendar URL --></label>
+        <name>LaunchCal_Device_Calendar_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD External ID --></label>
+        <name>PMD_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program ID --></label>
+        <name>PMD_Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Predecessor Project --></label>
+        <name>Predecessor_Project__c</name>
+        <relationshipLabel><!-- Projects  (PMD) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Name --></label>
+        <name>Program_ID__c</name>
+        <relationshipLabel><!-- Projects  (PMD) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery</masterLabel>
+            <translation><!-- Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End of Life</masterLabel>
+            <translation><!-- End of Life --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Longer Shipping</masterLabel>
+            <translation><!-- No Longer Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # of Active Products --></label>
+        <name>of_Active_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Active and Shipping Products --></label>
+        <name>of_Active_and_Shipping_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Total Products --></label>
+        <name>of_Total_Products__c</name>
+    </fields>
+    <layouts>
+        <layout>PMD Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

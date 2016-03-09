@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds Oracle order header data</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account ID of Oracle order&apos;s customer number. The Oracle_Customer_Number__c field on the Account object holds Oracle customer number.
+ERP Ref: MOL_ORDER_HDR_V.CUST_ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account/customer this order belongs to.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Order_Account</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bill_To_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>MOL_ORDER_HDR_V. SITE_INV_USE_ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where the shipment is being invoiced.</inlineHelpText>
+        <label>Bill To Address</label>
+        <referenceTo>Bill_To_Ship_To__c</referenceTo>
+        <relationshipLabel>Bill to address</relationshipLabel>
+        <relationshipName>Bill_To_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>End Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders (End Customer)</relationshipLabel>
+        <relationshipName>End_Customer_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Has_Order_Holds__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Any order on hold due to OM (Order Management) Hold, Price Hold AR hold etc.</inlineHelpText>
+        <label>Has Order Holds?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Oracle_Header_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Oracle Header ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Oracle_Order_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>MOL_ORDER_HDR_V.ORDER_NUMBER</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The number assigned by the system for the order entered under a customer PO.</inlineHelpText>
+        <label>Oracle Order Number</label>
+        <length>40</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Oracle_Order_Status__c</fullName>
+        <description>Flow Code from order header table</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The status of the ENTIRE order.  See lines for individual LINE status.</inlineHelpText>
+        <label>Oracle Order Status</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Amount</label>
+        <summarizedField>Order_Line__c.Extended_Price__c</summarizedField>
+        <summaryForeignKey>Order_Line__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Order_Created_Date__c</fullName>
+        <description>The date on which the order was created in Oracle. This date could be different from the date the customer placed the order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Seems to be the day before the date on which the order was created or entered in Oracle. This date could be different from the date the customer placed the order.  See Flex field for PO ent dt. Could be used to show actual receipt of order-Not used today.</inlineHelpText>
+        <label>Order Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Order_Entered_Date__c</fullName>
+        <description>The date on which the order was entered in Oracle</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The DATE ORDERED field in Oracle.  The date the customer&apos;s order is entered into Oracle.</inlineHelpText>
+        <label>Order Entered Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Order_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The category type of how this order is entered into the system.</inlineHelpText>
+        <label>Order Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_Code__c</fullName>
+        <description>The organization with which the order was created in Oracle</description>
+        <externalId>false</externalId>
+        <label>Organization Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_Date__c</fullName>
+        <description>Purchase order date</description>
+        <externalId>false</externalId>
+        <label>PO Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PO_Number__c</fullName>
+        <description>Purchase Order Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Purchase order from the customer with details of the order.</inlineHelpText>
+        <label>Customer PO</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms__c</fullName>
+        <description>Payment terms text</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When the amount owed by the customer is due.</inlineHelpText>
+        <label>Payment Terms</label>
+        <length>240</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_List_Name__c</fullName>
+        <description>Price list name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where you would find the pricing for this customer.</inlineHelpText>
+        <label>Price List Name</label>
+        <length>240</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Rep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Sales representative</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Salesperson currently responsible to sell to the customer.</inlineHelpText>
+        <label>Sales Rep</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Order_Sales_Rep</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Where the shipment is being delivered.</inlineHelpText>
+        <label>Ship To Address</label>
+        <referenceTo>Bill_To_Ship_To__c</referenceTo>
+        <relationshipLabel>Order Header</relationshipLabel>
+        <relationshipName>Ship_To_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Shipment_Terms__c</fullName>
+        <description>Shipment terms</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How the order is being paid. This is the Freight Terms from Oracle.  Collect: Customer must provide account # for payment.  Prepaid: Motorola Pays for.  Customer Pick-up: Customer coming to pick up.  etc.</inlineHelpText>
+        <label>Shipment Terms</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ultimate_Ship_To_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The confirmed address of where the warehouse shipped to.  In most cases this is the same as the ship-to address.</inlineHelpText>
+        <label>Ultimate Ship To Address</label>
+        <referenceTo>Bill_To_Ship_To__c</referenceTo>
+        <relationshipLabel>Ultimate ship to address</relationshipLabel>
+        <relationshipName>Ultimate_Ship_To_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Order Header</label>
+    <listViews>
+        <fullName>All_Orders</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>PO_Number__c</columns>
+        <columns>PO_Date__c</columns>
+        <columns>Has_Order_Holds__c</columns>
+        <columns>Oracle_Order_Status__c</columns>
+        <columns>Order_Entered_Date__c</columns>
+        <columns>Order_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Orders</label>
+    </listViews>
+    <nameField>
+        <label>Order Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Order Header</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Oracle_Order_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PO_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PO_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Price_List_Name__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Oracle_Order_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PO_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PO_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CURRENCY_ISO_CODE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

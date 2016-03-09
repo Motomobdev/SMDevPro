@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>PM_Portal</links>
+    <links>PMD_Contact_Us</links>
+    <links>PMD_Training_Guide</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

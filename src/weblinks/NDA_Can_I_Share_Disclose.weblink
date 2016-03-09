@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>This link will be used in home page side bar components for navigating the user to NDA search/creation page.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>I need an NDA</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/NDA_Search</url>
+</CustomPageWebLink>

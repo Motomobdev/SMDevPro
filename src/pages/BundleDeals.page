@@ -1,0 +1,77 @@
+<apex:page controller="BundleDealsController" sidebar="true" action="{!initPage}">
+    <apex:form >
+        <!-- Error Messages -->
+        <apex:pageMessages id="messages"></apex:pageMessages>
+
+        <!-- Filter Section -->
+        <apex:pageBlock id="filterSection" title="Geography">
+            <apex:pageBlockSection columns="2">
+                <apex:selectList label="Region" value="{!selectedAccountRegion}" size="1">
+                    	<apex:selectOptions value="{!accountRegionValues}"/>
+                    	<apex:actionSupport event="onchange" reRender="subRegion,country" action="{!resetRegionValues}"/>
+                </apex:selectList>
+                <apex:selectList label="Type" value="{!selectedAccountType}" size="1">
+                    	<apex:selectOptions value="{!accountTypeValues}"/>
+                    	<apex:actionSupport event="onchange" reRender="subType" />
+                </apex:selectList>
+                <apex:selectList label="SubRegion" value="{!selectedSubRegion}" size="1" id="subRegion" disabled="{!hasNoValuesAccountSubRegion}">
+                    	<apex:selectOptions value="{!accountSubRegionValues}"/>
+                    	<apex:actionSupport event="onchange" reRender="country" />
+                </apex:selectList>
+                <apex:selectList label="Account Subtype" value="{!selectedAccountSubType}" size="1" id="subType" disabled="{!hasNoValuesAccountSubType}">
+                    	<apex:selectOptions value="{!accountSubTypeValues}"/>
+                </apex:selectList>
+                <apex:selectList label="Country" value="{!selectedAccountCountry}" size="1" id="country" disabled="{!hasNoValuesAccountCountry}">
+                    	<apex:selectOptions value="{!accountCountryValues}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Search Accounts" action="{!searchAccounts}" reRender="debugInfo, bundleAccountList" status="status">
+                    <c:levStatusComponent />
+                </apex:commandButton>
+            </apex:pageBlockButtons>
+        </apex:pageBlock> 
+
+        <!-- Results Area -->
+            <apex:pageBlock title="Accounts: {!mainAccounts.size}" id="bundleAccountList">
+            
+                <table class="list" border="0" cellspacing="0" cellpadding="0" style="width:100%">
+               <tbody>
+               <tr class="headerRow">
+                    <th scope="col" class="zen-deemphasize" style="width:20px;">S</th>
+                    <th scope="col" class="zen-deemphasize" style="width:20px;">P</th>
+                    <th scope="col" class="zen-deemphasize">Account Name</th>
+                    <th scope="col" class="zen-deemphasize">Type</th>
+                    <th scope="col" class="zen-deemphasize">Account Type</th>
+                   <th scope="col" class="zen-deemphasize">Region</th>
+                   <th scope="col" class="zen-deemphasize">Sub Region</th>
+                   <th scope="col" class="zen-deemphasize">Country</th>
+               </tr>
+               <apex:repeat value="{!mainAccounts}" var="acctW">
+                  <tr class="dataRow even first" onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}">
+                    <td><apex:inputCheckbox value="{!acctW.checked}"/></td>   
+                    <td><input type="button" value="●" onclick="setParentAccountId('{!acctW.acct.Id}')" style="color:{!IF(acctW.parent, 'red', 'black')}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Name}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Type}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Account_Subtype__c}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Region__c}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Sub_Region__c}"/></td>   
+                    <td><apex:outputField value="{!acctW.acct.Country__c}"/></td>   
+                  </tr>
+               </apex:repeat>
+             </tbody>
+            </table>
+            <apex:pageBlockButtons >
+                    <apex:commandButton value="Create Bundle" action="{!createBundle}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+       <!--  <apex:pageBlock id="debugInfo">
+            {!mainQuery}
+        </apex:pageBlock> -->
+
+        <!-- Action Functions -->
+        <apex:actionFunction status="status" action="{!setParentAccountId}" name="setParentAccountId" reRender="messages, bundleAccountList">
+          <apex:param name="accountId" value=""/>
+        </apex:actionFunction>
+    </apex:form>
+</apex:page>

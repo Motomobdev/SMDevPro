@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Risk</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Risks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Estimated Cost Impact --></label>
+        <name>Estimated_Cost_Impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Risks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Risk Description --></label>
+        <name>Risk_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Mitigation Plan --></label>
+        <name>Risk_Mitigation_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Probability (%) --></label>
+        <name>Risk_Probability__c</name>
+        <picklistValues>
+            <masterLabel>100</masterLabel>
+            <translation><!-- 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50</masterLabel>
+            <translation><!-- 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75</masterLabel>
+            <translation><!-- 75 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Resolution Date --></label>
+        <name>Risk_Resolution_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Score --></label>
+        <name>Risk_Score__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Type --></label>
+        <name>Risk_Type__c</name>
+        <picklistValues>
+            <masterLabel>Economic</masterLabel>
+            <translation><!-- Economic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution/implementation</masterLabel>
+            <translation><!-- Execution/implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organizational</masterLabel>
+            <translation><!-- Organizational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process/Operational</masterLabel>
+            <translation><!-- Process/Operational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Risk Status --></label>
+        <name>Rsik_Status__c</name>
+        <picklistValues>
+            <masterLabel>Anticipated</masterLabel>
+            <translation><!-- Anticipated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Mitigated</masterLabel>
+            <translation><!-- Closed - Mitigated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Scope Change</masterLabel>
+            <translation><!-- Closed - Scope Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter the impact of the risk on the project. --></help>
+        <label><!-- Severity --></label>
+        <name>Severity__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential Future Need</masterLabel>
+            <translation><!-- Potential Future Need --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routine</masterLabel>
+            <translation><!-- Routine --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Risk Layout</layout>
+        <sections>
+            <label><!-- Risk Description --></label>
+            <section>Risk Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

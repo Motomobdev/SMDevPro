@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Project Advance - External Spend Request</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>External Spend Requests</relationshipLabel>
+        <relationshipName>External_Spend_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Agreement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Apttus Agreement</inlineHelpText>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>External Spend Requests</relationshipLabel>
+        <relationshipName>External_Spend_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ariba_Commodity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Ariba Commodity Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Function__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What Business Function is the owner of this request?</inlineHelpText>
+        <label>Business Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>IT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Devices</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Commodity_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What do you want to buy?</inlineHelpText>
+        <label>Commodity Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consumables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering Computers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Start_Date__c</fullName>
+        <description>Contract Start Date</description>
+        <externalId>false</externalId>
+        <label>Contract Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending Business Pre-Approval</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Approved: Negotiation in Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive Summary Approvals In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Pending Final Signature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted for PR Creation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PO Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Convert_this_to_master_agreement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you want to convert this external spend request into a master Apttus agreement? If you check this, don&apos;t select a master agreement.</inlineHelpText>
+        <label>Convert this to a master agreement?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Border__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Are you charging a cost center outside of your country?</inlineHelpText>
+        <label>Cross Border?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Cancelled__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Cancelled</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Contract_Pending_Final_Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Contract Pending Final Signature</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Executive_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Executive Summary</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_On_Hold__c</fullName>
+        <externalId>false</externalId>
+        <label>Date On Hold</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Pre_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Pre Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Submitted_for_PR_Creation__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Submitted for PR Creation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deal_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Deal_Justification__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the impact if this request is not approved?</inlineHelpText>
+        <label>Deal Justification</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ESR_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;https://mobility.my.salesforce.com/&apos; &amp;  Id</formula>
+        <inlineHelpText>Link for ESR report</inlineHelpText>
+        <label>ESR Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Existing_Purchase_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Existing Purchase Order Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extension_or_change_order_to_a_contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this an extension or change order to an existing contract?</inlineHelpText>
+        <label>Extension or change order to a contract?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Generate_ESR_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Triggers a work flow &quot;Notification for Pre-Approved: Negotiation in Progress&quot; when value is set to True.</description>
+        <externalId>false</externalId>
+        <label>Generate ESR Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IT_Managed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Will this purchase be managed by IT or impact IT systems/integrations?</inlineHelpText>
+        <label>IT Managed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_this_related_to_a_Project__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is this related to a Project?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Master_Agreement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>External Spend Requests (Master Agreement)</relationshipLabel>
+        <relationshipName>External_Spend_Requests1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Master_Supplier_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Master Supplier Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minimum_Commitment__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Commitment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mot_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the supplier require a handwritten ink or electronic signature on the document?</inlineHelpText>
+        <label>Mot Signature?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Cost_Records_From_Portal__c</fullName>
+        <description>This field will be updated by the interface. This field will be used in a workflow rule to send out email notification.</description>
+        <externalId>false</externalId>
+        <label>Number Of Cost Records From Portal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Cost_Records_From_SFDC__c</fullName>
+        <description>Count of cost records</description>
+        <externalId>false</externalId>
+        <label>Number Of Cost Records From SFDC</label>
+        <summaryForeignKey>External_Spend_Request_Cost__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Offsite_Service_Resource_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of offsite resources</inlineHelpText>
+        <label>Offsite Service Resource Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Onsite_Service_Resource_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of onsite resources</inlineHelpText>
+        <label>Onsite Service Resource Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pre_Approval_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre-Approval Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_ID__c</fullName>
+        <description>Related Project #</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the Related Project ID?</inlineHelpText>
+        <label>Project ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchase_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RFX_Business_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Business Owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RFX_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RFX_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RFX_Estimated_Annual_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Estimated Annual Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RFX_Procurement_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Procurement Owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RFX_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>RFX Prep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request for Proposal (RFP) In Progess</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request for Quote (RFQ) in Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request for Information (RFI) in Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFX On-Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFX Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RFX_Suppliers__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Suppliers</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RFX_Target_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>RFX Target Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requester_Commerce_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Commerce ID of the requester.</inlineHelpText>
+        <label>Requester Commerce ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requester_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Requester&apos;s Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requestors_Email__c</fullName>
+        <description>Email address of the ESR requestor. This field is updated by a workflow rule</description>
+        <externalId>false</externalId>
+        <label>Requestor&apos;s Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Contract Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fixed Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Time &amp; Material</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_Labor_Contract_Country__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In which country will this resource be located?</inlineHelpText>
+        <label>Service Labor Contract Country</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ask Geoff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Software_Delivery_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How will these software goods and services be delivered?</inlineHelpText>
+        <label>Software Delivery Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Electronic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physical Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Software_Ship_Location__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Where will these goods be shipped?</inlineHelpText>
+        <label>Software Ship Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Commodity_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Commodity Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitter_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The person submitting ESR from the Google App Engine.</inlineHelpText>
+        <label>Submitter&apos;s Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitters_Email__c</fullName>
+        <description>Updated by a workflow rule</description>
+        <externalId>false</externalId>
+        <label>Submitter&apos;s Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggested_Supplier__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What supplier would you like to use?</inlineHelpText>
+        <label>Suggested Supplier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Justification__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Why are the suppliers listed unable to meet your needs?</inlineHelpText>
+        <label>Supplier Justification</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Plan_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Plan Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Relationship_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Relationship Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Request Title</inlineHelpText>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Capital_Amount__c</fullName>
+        <description>Sum of Capital Costs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of Capital Costs</inlineHelpText>
+        <label>Total Capital Amount</label>
+        <summarizedField>External_Spend_Request_Cost__c.Capital_Amount__c</summarizedField>
+        <summaryForeignKey>External_Spend_Request_Cost__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Cost</label>
+        <summarizedField>External_Spend_Request_Cost__c.Total_Cost__c</summarizedField>
+        <summaryForeignKey>External_Spend_Request_Cost__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Depreciation_Expense_Amount__c</fullName>
+        <description>Sum of Depreciation Expense&apos;s from the ESR Cost Allocation object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of Depreciation Expense&apos;s from the ESR Cost Allocations</inlineHelpText>
+        <label>Total Depreciation Expense Amount</label>
+        <summarizedField>External_Spend_Request_Cost_Allocation__c.Allocation_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>External_Spend_Request_Cost_Allocation__c.Allocation_Type__c</field>
+            <operation>equals</operation>
+            <value>Depreciation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>External_Spend_Request_Cost_Allocation__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Amount__c</fullName>
+        <description>Sum of Expense Costs</description>
+        <externalId>false</externalId>
+        <label>Total Expense Amount</label>
+        <summarizedField>External_Spend_Request_Cost__c.Expense_Amount__c</summarizedField>
+        <summaryForeignKey>External_Spend_Request_Cost__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Non_Labor_Expense_Amount__c</fullName>
+        <description>Sum of non-labor costs</description>
+        <externalId>false</externalId>
+        <label>Total Non Labor Expense Amount</label>
+        <summarizedField>External_Spend_Request_Cost__c.Non_Labor_Expense_Amount__c</summarizedField>
+        <summaryForeignKey>External_Spend_Request_Cost__c.External_Spend_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>External Spend Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Requester_Commerce_ID__c</columns>
+        <columns>Account__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Business_Function__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Engineering_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>Engineering</value>
+        </filters>
+        <label>Engineering ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_Engineering_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Finance_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>Finance</value>
+        </filters>
+        <label>Finance ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_Finance_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>HR_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>HR</value>
+        </filters>
+        <label>HR ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_HR_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Contract_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Agreement__c</columns>
+        <columns>Requestors_Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>IT</value>
+        </filters>
+        <label>IT ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_CIO</group>
+            <group>External_Spend_Request_IT_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Legal_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>Legal</value>
+        </filters>
+        <label>Legal ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_Legal_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Marketing_ESRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Business_Unit__c</columns>
+        <columns>Commodity_Type__c</columns>
+        <columns>Sub_Commodity_Type__c</columns>
+        <columns>Agreement__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Function__c</field>
+            <operation>equals</operation>
+            <value>Marketing</value>
+        </filters>
+        <label>Marketing ESRs</label>
+        <sharedTo>
+            <group>External_Spend_Request_Marketing_Group</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>ESR #</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>External Spend Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Submitter_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Business_Function__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Business_Unit__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CURRENCY_ISO_CODE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Cost__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agreement__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Submitter_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Business_Function__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Business_Unit__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CURRENCY_ISO_CODE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Cost__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Agreement__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Submitter_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Business_Function__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Business_Unit__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CURRENCY_ISO_CODE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Total_Cost__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Agreement__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>UPDATEDBY_USER</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Agreement__c</searchFilterFields>
+        <searchFilterFields>Business_Function__c</searchFilterFields>
+        <searchFilterFields>Business_Unit__c</searchFilterFields>
+        <searchResultsAdditionalFields>Submitter_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Business_Function__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Business_Unit__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Cost__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CURRENCY_ISO_CODE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Agreement__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Cannot_Edit_ESR_After_Conversion</fullName>
+        <active>false</active>
+        <description>ESRs cannot be edited after they have been converted to agreements. The contract status and the total cost can change.</description>
+        <errorConditionFormula>AND(
+  NOT( 
+    OR (ISCHANGED( Total_Cost__c ), 
+        ISCHANGED( Contract_Status__c ),
+        ISCHANGED(  Total_Depreciation_Expense_Amount__c),
+        ISCHANGED(   Total_Capital_Amount__c ),
+        ISCHANGED(   Total_Expense_Amount__c ),
+        ISCHANGED(   Total_Non_Labor_Expense_Amount__c )
+       )
+    ), 
+  NOT(
+    ISBLANK(PRIORVALUE(Agreement__c ))
+    )
+  )</errorConditionFormula>
+        <errorMessage>An agreement has been generated from this ESR and you are NOT allowed to make changes to the ESR.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_eGVM</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Account__r.Name = &apos;No eGVM Needed&apos;,  ISPICKVAL(Contract_Status__c, &apos;Pre-Approved: Negotiation in Progress&apos;))</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>Account must be specified other than &quot;	
+No eGVM Needed&quot;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Convert_to_an_agreement</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Convert to an agreement</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>account = &quot;{!External_Spend_Request__c.Account__c}&quot;;
+agreement = &quot;{!External_Spend_Request__c.Agreement__c}&quot;;
+contractStatus = &quot;{!External_Spend_Request__c.Contract_Status__c}&quot;;
+motSignature = &quot;{!External_Spend_Request__c.Mot_Signature__c}&quot;;
+
+if (account == &apos;&apos;) {
+  alert(&apos;Error: This External Spend Request must be associated with an account prior to covnersion.&apos;);
+} else if (agreement != &apos;&apos;) {
+  alert(&apos;Error: An agreement has already been generated for this External Spend Request.&apos;);
+} else if (contractStatus != &apos;Pre-Approved: Negotiation in Progress&apos;) {
+  alert(&apos;Error: Contract status must be &quot;Pre-Approved: Negotiation in Progress.&apos;);
+} else if (motSignature == 0) {
+  alert(&apos;Error: There is no need to create an agreement because this External Spend Request  does not require Motorola Signature.&apos;);
+} else {
+  window.parent.location.href = &quot;/apex/APTPS_ESR_Integration?id=&quot; + &quot;{!External_Spend_Request__c.Id}&quot;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Regenerate_ESR_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Regenerate ESR Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/27.0/connection.js&quot;)}
+
+var contractStatus = &apos;{!External_Spend_Request__c.Contract_Status__c}&apos;;
+
+if(contractStatus == &apos;Pre-Approved: Negotiation in Progress&apos;)
+{
+    var esr = new sforce.SObject(&quot;External_Spend_Request__c&quot;);
+    
+    esr.Id = &apos;{!External_Spend_Request__c.Id}&apos;;
+    esr.Generate_ESR_Email__c = true;
+    sforce.connection.update([esr]);
+
+    alert(&apos;ESR email sent successfully.&apos;);
+}
+else
+{
+    alert(&apos;ESR does not meet the required criteria.&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <description>Junction object to assist with report generation</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Eng_Requirement_Record__c</fullName>
+        <description>Used to share the FBR number with the HW CR Assessments by Engineer Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to share the FBR number with the HW CR Assessments by Engineer Object</inlineHelpText>
+        <label>Eng Requirement Record</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Product_1__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Product_Family_Name__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Test_Required__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </filterItems>
+            <filterItems>
+                <field>HW_Product_Engineer_Review__c.Final_Engineering_Status__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>HW_Product_Engineer_Review__c</referenceTo>
+        <relationshipLabel>HW CR Engineer to Build Request</relationshipLabel>
+        <relationshipName>Related_FBR</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Eng_Review_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Eng_Requirement_Record__r.Test_Required__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Eng Review Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FBR_Central_Eng_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Central engineering contact from FBR information</description>
+        <externalId>false</externalId>
+        <label>FBR Central Eng Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_Engineer_to_Build_Request</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FBR_Record__c</fullName>
+        <description>The product engineering (PE) record from HW CR Assessments by Engineer object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The product engineering (PE) record from HW CR Assessments by Engineer object.</inlineHelpText>
+        <label>FBR Record</label>
+        <referenceTo>HW_CR_Build_Planning__c</referenceTo>
+        <relationshipLabel>HW CR Engineer to Build Request</relationshipLabel>
+        <relationshipName>Product_Engineer_Requirements</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Final_Eng_Approval_Sts__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Eng_Requirement_Record__r.Final_Engineering_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Final Eng Approval Sts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Change_Request_Base__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Eng_Requirement_Record__r.HW_Change_Request_Base__c ,  Eng_Requirement_Record__r.HW_Change_Request_Base__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HW Change Request Base</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Join_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product to join PE record to FBR</description>
+        <externalId>false</externalId>
+        <label>Join Product</label>
+        <referenceTo>Device__c</referenceTo>
+        <relationshipLabel>HW CR Engineer to Build Request</relationshipLabel>
+        <relationshipName>HW_CR_Engineer_to_Build_Request</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Look up product Family</description>
+        <externalId>false</externalId>
+        <label>Product Family Name</label>
+        <referenceTo>Product_Family__c</referenceTo>
+        <relationshipLabel>HW CR Engineer to Build Request</relationshipLabel>
+        <relationshipName>HW_CR_Engineer_to_Build_Request</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>HW CR Engineer to Build Request</label>
+    <nameField>
+        <displayFormat>RPT-{000000}</displayFormat>
+        <label>HW CR Engineer to Build Request Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW CR Engineer to Build Request</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

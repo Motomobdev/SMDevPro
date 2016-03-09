@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>JIRA Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>JIRA Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- JIRA Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ACTUAL_HOURS_FOR_WORK --></label>
+        <name>actual_hours_for_work__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADDITIONAL_LABELS_FIXED --></label>
+        <name>additional_labels_fixed__c</name>
+    </fields>
+    <fields>
+        <label><!-- AFFECTED_VERSIONS --></label>
+        <name>affected_versions__c</name>
+    </fields>
+    <fields>
+        <label><!-- ANALYSIS_DATE --></label>
+        <name>analysis_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- APPROVED_FOR_AUTO_SME --></label>
+        <name>approved_for_auto_sme__c</name>
+    </fields>
+    <fields>
+        <label><!-- ASSIGNEE --></label>
+        <name>assignee__c</name>
+    </fields>
+    <fields>
+        <label><!-- ASSIGNEE_COREID --></label>
+        <name>assignee_coreid__c</name>
+    </fields>
+    <fields>
+        <label><!-- AUTO_SUBMIT_TARGET_BRANCH --></label>
+        <name>auto_submit_target_branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- BRANCH_NAME --></label>
+        <name>branch_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CARRIER --></label>
+        <name>carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- CHANGES_MERGED --></label>
+        <name>changes_merged__c</name>
+    </fields>
+    <fields>
+        <label><!-- CHANGES_PUSHED --></label>
+        <name>changes_pushed__c</name>
+    </fields>
+    <fields>
+        <label><!-- COMPONENT --></label>
+        <name>component__c</name>
+    </fields>
+    <fields>
+        <label><!-- COMPONENT_ID --></label>
+        <name>component_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- COMPONENT_NAME --></label>
+        <name>component_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CURRENT_SME_RISK --></label>
+        <name>current_sme_risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- DARK_PROJECT --></label>
+        <name>dark_project__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATA_OWNERS --></label>
+        <name>data_owners__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_CLOSED --></label>
+        <name>date_closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_CREATED --></label>
+        <name>date_created__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_HELD --></label>
+        <name>date_held__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_INTEGRATED --></label>
+        <name>date_integrated__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_PENDING_SME_APPROVAL --></label>
+        <name>date_pending_sme_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_POSTPONED --></label>
+        <name>date_postponed__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_READY --></label>
+        <name>date_ready__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_REOPENED --></label>
+        <name>date_reopened__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_RES1 --></label>
+        <name>date_res1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_RES2 --></label>
+        <name>date_res2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_RES3 --></label>
+        <name>date_res3__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_SME_APPROVED --></label>
+        <name>date_sme_approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_UPDATED --></label>
+        <name>date_updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_WAD_APPROVAL --></label>
+        <name>date_wad_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE_WORKING --></label>
+        <name>date_working__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBCREATE_TIME --></label>
+        <name>dbcreate_time__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBLAST_OPERATION --></label>
+        <name>dblast_operation__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBMOD_TIME --></label>
+        <name>dbmod_time__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBRES_N1 --></label>
+        <name>dbres_n1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBRES_S1 --></label>
+        <name>dbres_s1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBSTATUS_R --></label>
+        <name>dbstatus_r__c</name>
+    </fields>
+    <fields>
+        <label><!-- DBSTATUS_T --></label>
+        <name>dbstatus_t__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_ESCAPE_FROM --></label>
+        <name>defect_escape_from__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_IMPACT --></label>
+        <name>defect_impact__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_INJECTION_TRIGGER --></label>
+        <name>defect_injection_trigger__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_SOURCE --></label>
+        <name>defect_source__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_SOURCE_ID --></label>
+        <name>defect_source_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_SYMPTOM --></label>
+        <name>defect_symptom__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEFECT_TYPE --></label>
+        <name>defect_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEPENDENT_CRS --></label>
+        <name>dependent_crs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>description__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUE_DATE --></label>
+        <name>due_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUPLICATE_CR --></label>
+        <name>duplicate_cr__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUPLICATE_CR_CREATED --></label>
+        <name>duplicate_cr_created__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUPLICATE_CR_RESOLUTION --></label>
+        <name>duplicate_cr_resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- ECCN --></label>
+        <name>eccn__c</name>
+    </fields>
+    <fields>
+        <label><!-- EXPORT_CONTROL_REQUEST_ID --></label>
+        <name>export_control_request_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- EXPORT_CONTROL_TOOL_LINK --></label>
+        <name>export_control_tool_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- EXPORT_CONTROLLED --></label>
+        <name>export_controlled__c</name>
+    </fields>
+    <fields>
+        <label><!-- EXTERNAL_CR --></label>
+        <name>external_cr__c</name>
+    </fields>
+    <fields>
+        <label><!-- FAILURE_MODE --></label>
+        <name>failure_mode__c</name>
+    </fields>
+    <fields>
+        <label><!-- FEATURE_ID --></label>
+        <name>feature_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- FIX_ON_FIX --></label>
+        <name>fix_on_fix__c</name>
+    </fields>
+    <fields>
+        <label><!-- FIX_ON_FIX_CR --></label>
+        <name>fix_on_fix_cr__c</name>
+    </fields>
+    <fields>
+        <label><!-- FLEX_VERSION --></label>
+        <name>flex_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- FOREST_NAME --></label>
+        <name>forest_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- GERRIT_PROJECT_OWNER_CORE_ID --></label>
+        <name>gerrit_project_owner_core_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GERRIT_PROJECT_REQUEST_TYPE --></label>
+        <name>gerrit_project_request_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- GERRITCOMMITS --></label>
+        <name>gerritcommits__c</name>
+    </fields>
+    <fields>
+        <label><!-- GIT_SERVER_PUSHED_TO --></label>
+        <name>git_server_pushed_to__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID_TAG --></label>
+        <name>id_tag__c</name>
+    </fields>
+    <fields>
+        <label><!-- INSPECTION_RECORD --></label>
+        <name>inspection_record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrate Actual --></label>
+        <name>integrate_actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrate CWV --></label>
+        <name>integrate_cwv__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integr --></label>
+        <name>intg_bsln__c</name>
+    </fields>
+    <fields>
+        <label><!-- INVENTORY_RECORD_UPDATED --></label>
+        <name>inventory_record_updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- CR Link --></label>
+        <name>issue_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>issue_status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subtype --></label>
+        <name>issue_subtype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>issue_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA_FEATURE_ID --></label>
+        <name>jira_feature_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA_STA_REFRESH_TIME --></label>
+        <name>jira_sta_refresh_time__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRAID --></label>
+        <name>jiraid__c</name>
+    </fields>
+    <fields>
+        <label><!-- JUSTIFICATION --></label>
+        <name>justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- LAB_COURSE_COMPLETION --></label>
+        <name>lab_course_completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- LABEL --></label>
+        <name>label__c</name>
+    </fields>
+    <fields>
+        <label><!-- LAST_COMMENTS --></label>
+        <name>last_comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- LAST_RATED_AT --></label>
+        <name>last_rated_at__c</name>
+    </fields>
+    <fields>
+        <label><!-- MAJOR_SYSTEM --></label>
+        <name>major_system__c</name>
+    </fields>
+    <fields>
+        <label><!-- MIRROR_ACTION_REQUESTED --></label>
+        <name>mirror_action_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- MODIFIED_REPOS_COMMITID --></label>
+        <name>modified_repos_commitid__c</name>
+    </fields>
+    <fields>
+        <label><!-- NEW_CR_TO_TRACK_THIS_DEFECT --></label>
+        <name>new_cr_to_track_this_defect__c</name>
+    </fields>
+    <fields>
+        <label><!-- NEW_PROJECT_INFORMATION --></label>
+        <name>new_project_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- OPT_OUT --></label>
+        <name>opt_out__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDO_IT_SPONSORS_APPROVAL --></label>
+        <name>pdo_it_sponsors_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- PHONE_COMPONENT --></label>
+        <name>phone_component__c</name>
+    </fields>
+    <fields>
+        <label><!-- PKEY --></label>
+        <name>pkey__c</name>
+    </fields>
+    <fields>
+        <label><!-- PLATFORM --></label>
+        <name>platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- PREV_COMPONENT_CLASSIFICATION --></label>
+        <name>prev_component_classification__c</name>
+    </fields>
+    <fields>
+        <label><!-- PREVIOUS_ISSUE_IDS --></label>
+        <name>previous_issue_ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRIMARY_SYSTEM --></label>
+        <name>primary_system__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRIORITY --></label>
+        <name>priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRODUCT --></label>
+        <name>product__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRODUCT_DEV_SPONSOR_APPROVAL --></label>
+        <name>product_dev_sponsor_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROGRAM --></label>
+        <name>program__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJ_VERSION_LABEL_FIXED --></label>
+        <name>proj_version_label_fixed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJECT_CATEGORY --></label>
+        <name>project_category__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJECT_CATEGORY_ID --></label>
+        <name>project_category_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJECT_KEY --></label>
+        <name>project_key__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJECT_NAME --></label>
+        <name>project_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROJECT_VERSION --></label>
+        <name>project_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROPAGATION_HANDSHAKE --></label>
+        <name>propagation_handshake__c</name>
+    </fields>
+    <fields>
+        <label><!-- PROPAGATION_STATUS_GERRIT --></label>
+        <name>propagation_status_gerrit__c</name>
+    </fields>
+    <fields>
+        <label><!-- REGION --></label>
+        <name>region__c</name>
+    </fields>
+    <fields>
+        <label><!-- RELEASE_LABEL --></label>
+        <name>release_label__c</name>
+    </fields>
+    <fields>
+        <label><!-- REMOTE_SITE_LOCATION --></label>
+        <name>remote_site_location__c</name>
+    </fields>
+    <fields>
+        <label><!-- REOPEN_REASON --></label>
+        <name>reopen_reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- REPO_CLASSIFICATION --></label>
+        <name>repo_classification__c</name>
+    </fields>
+    <fields>
+        <label><!-- REPO_NAME --></label>
+        <name>repo_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- REPORTER --></label>
+        <name>reporter__c</name>
+    </fields>
+    <fields>
+        <label><!-- REPORTER_COREID --></label>
+        <name>reporter_coreid__c</name>
+    </fields>
+    <fields>
+        <label><!-- REQUESTED_DELIVERY_DATE --></label>
+        <name>requested_delivery_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- REQUESTED_PROJECT_GITS_NAMES --></label>
+        <name>requested_project_gits_names__c</name>
+    </fields>
+    <fields>
+        <label><!-- RES1 --></label>
+        <name>res1__c</name>
+    </fields>
+    <fields>
+        <label><!-- RES2 --></label>
+        <name>res2__c</name>
+    </fields>
+    <fields>
+        <label><!-- RES3 --></label>
+        <name>res3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROOT_CAUSE_ANALYSIS --></label>
+        <name>root_cause_analysis__c</name>
+    </fields>
+    <fields>
+        <label><!-- SA_RISK_ASSESSMENT --></label>
+        <name>sa_risk_assessment__c</name>
+    </fields>
+    <fields>
+        <label><!-- SECONDARY_SYSTEM --></label>
+        <name>secondary_system__c</name>
+    </fields>
+    <fields>
+        <label><!-- SELECT_TLRB_COMMITTEE_CHAIR --></label>
+        <name>select_tlrb_committee_chair__c</name>
+    </fields>
+    <fields>
+        <label><!-- SEVERITY --></label>
+        <name>severity__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Project --></label>
+        <name>sfdc_project_id__c</name>
+        <relationshipLabel><!-- JIRA Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SME --></label>
+        <name>sme__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME_APPROVER --></label>
+        <name>sme_approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME_APPROVER_COREID --></label>
+        <name>sme_approver_coreid__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME_MANAGER_CORE_ID --></label>
+        <name>sme_manager_core_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME_NAME --></label>
+        <name>sme_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOFTWARE_METRICS_OWNER --></label>
+        <name>software_metrics_owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOURCE_PATH_LOCATION --></label>
+        <name>source_path_location__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOURCE_SITE_LOCATION --></label>
+        <name>source_site_location__c</name>
+    </fields>
+    <fields>
+        <label><!-- STARTING_RISK --></label>
+        <name>starting_risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- SUB_COMPONENT --></label>
+        <name>sub_component__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary --></label>
+        <name>summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW_VERSION --></label>
+        <name>sw_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW_VERSION_INTEGRATED --></label>
+        <name>sw_version_integrated__c</name>
+    </fields>
+    <fields>
+        <label><!-- TARGET_DATE --></label>
+        <name>target_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Stable Release --></label>
+        <name>target_stable_release__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEAM_FOUND --></label>
+        <name>team_found__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST_ACT --></label>
+        <name>test_act__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST_BSLN --></label>
+        <name>test_bsln__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST_CASE_RESULT --></label>
+        <name>test_case_result__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEST_CWV --></label>
+        <name>test_cwv__c</name>
+    </fields>
+    <fields>
+        <label><!-- UNIQUE_ECCNS_IN_FOREST --></label>
+        <name>unique_eccns_in_forest__c</name>
+    </fields>
+    <fields>
+        <label><!-- UNITTEST_FAULT_COUNT --></label>
+        <name>unittest_fault_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- USER_RESPONSIBLE_FOR_DEFECT --></label>
+        <name>user_responsible_for_defect__c</name>
+    </fields>
+    <fields>
+        <label><!-- VERSION_FIXED_LABEL --></label>
+        <name>version_fixed_label__c</name>
+    </fields>
+    <layouts>
+        <layout>JIRA Issue Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Integration Dates --></label>
+            <section>Integration Dates</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bus Ops --></label>
+        <name>Bus_Ops</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Feature --></label>
+        <name>Feature</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- JIRA Issue --></label>
+        <name>JIRA_Issue</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Plan --></label>
+        <name>Plan</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

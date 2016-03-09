@@ -1,0 +1,101 @@
+<apex:page standardController="Device__c">
+    <apex:sectionHeader title="{!$ObjectType.Device__c.label} Edit" subtitle="{!Device__c.name}"/>
+    <apex:form >
+    <apex:pageBlock title="{!$ObjectType.Device__c.label} Edit" mode="edit">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!save}" value="Save"/>
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection showHeader="true" title="Device" columns="2">
+            <apex:inputField required="true" value="{!Device__c.Name}"/>
+            <apex:inputField value="{!Device__c.SA_Release_Type__c}"/>
+            <apex:inputField value="{!Device__c.BLUR_Version_String__c}"/>
+            <apex:inputField value="{!Device__c.Reason_Code__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Google TA Submission" columns="2">
+            <apex:inputField value="{!Device__c.Priority__c}"/>
+            <apex:inputField value="{!Device__c.Requested_Date_for_Google_TA__c}"/>
+            <apex:inputField value="{!Device__c.Hardware_Provided__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Device Contacts" columns="2">
+            <apex:pageBlockSectionItem />
+            <apex:inputField value="{!Device__c.GMS_Technical_Lead_Name__c}"/>
+            <apex:inputField value="{!Device__c.GMS_Technical_Lead_Email__c}"/>
+            <apex:inputField value="{!Device__c.CTS_Technical_Lead_Name__c}"/>
+            <apex:inputField value="{!Device__c.CTS_Technical_Lead_Email__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Launch Addendum Submission" columns="2">
+            <apex:inputField value="{!Device__c.Launch_Addendum_ID__c}"/>
+            <apex:inputField value="{!Device__c.Launch_Addendum_Status__c}"/>
+            <apex:pageBlockSectionItem />
+            <apex:inputField value="{!Device__c.Launch_Addendum_Template__c}"/>
+            <apex:inputField value="{!Device__c.Date_Launch_Addendum_Template_Provided__c}"/>
+            <apex:inputField value="{!Device__c.Launch_Addendum__c}"/>
+            <apex:inputField value="{!Device__c.Date_Launch_Addendum_Submitted_to_Google__c}"/>
+            <apex:inputField value="{!Device__c.Launch_Addendum_Executed_by_MOT__c}"/>
+            <apex:inputField value="{!Device__c.Date_Launch_Addendum_Executed_by_MOT__c}"/>
+            <apex:inputField value="{!Device__c.Launch_Addendum_Executed_by_Google__c}"/>
+            <apex:inputField value="{!Device__c.Date_Launch_Addendum_Executed_by_Google__c}"/>
+            <apex:inputField value="{!Device__c.Launch_Addendum_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="GMS Submissions - Lab Entry" columns="2">
+            <apex:pageBlockSectionItem />
+            <apex:inputField value="{!Device__c.LE_GMS_Submission_Status__c}"/>
+            <apex:inputField value="{!Device__c.LE_GMS_Software_Checklist__c}"/>
+            <apex:inputField value="{!Device__c.Date_LE_GMS_SW_Checklist_Provided__c}"/>
+            <apex:inputField value="{!Device__c.LE_GMS_Last_SW_Submitted__c}"/>
+            <apex:inputField value="{!Device__c.Date_LE_GMS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:inputField value="{!Device__c.LE_GMS_Comments__c}"/>
+            <apex:inputField value="{!Device__c.Date_LE_GMS_Conditional_Approval_by_Ggle__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="CTS Submissions - Lab Entry" columns="2">
+            <apex:pageBlockSectionItem />
+            <apex:inputField value="{!Device__c.LE_CTS_Submission_Status__c}"/>
+            <apex:inputField value="{!Device__c.LE_CTS_Software_Checklist__c}"/>
+            <apex:inputField value="{!Device__c.Date_LE_CTS_SW_Checklist_Provided__c}"/>
+            <apex:inputField value="{!Device__c.LE_CTS_Last_SW_Submitted__c}"/>
+            <apex:inputField value="{!Device__c.Date_LE_CTS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:inputField value="{!Device__c.LE_CTS_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="GMS Submissions - Final Software" columns="2">
+            <apex:inputField value="{!Device__c.GMS_Submission_Status__c}"/>
+            <apex:inputField value="{!Device__c.GMS_Software_Checklist__c}"/>
+            <apex:inputField value="{!Device__c.Date_GMS_SW_Checklist_Provided__c}"/>
+            <apex:inputField value="{!Device__c.GMS_Last_SW_Submitted__c}"/>
+            <apex:inputField value="{!Device__c.Date_GMS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:inputField value="{!Device__c.GMS_Comments__c}"/>
+            <apex:inputField value="{!Device__c.Date_GMS_Conditional_Approval_by_Google__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="CTS Submissions - Final Software" columns="2">
+            <apex:inputField value="{!Device__c.CTS_Submission_Status__c}"/>
+            <apex:inputField value="{!Device__c.CTS_Software_Checklist__c}"/>
+            <apex:inputField value="{!Device__c.Date_CTS_SW_Checklist_Provided__c}"/>
+            <apex:inputField value="{!Device__c.CTS_Last_SW_Submitted__c}"/>
+            <apex:inputField value="{!Device__c.Date_CTS_SW_Checklist_Sent_to_Google__c}"/>
+            <apex:inputField value="{!Device__c.CTS_Comments__c}"/>
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="Google Technical Acceptance Approval - Final Software" columns="2">
+            <apex:inputField value="{!Device__c.Approval_Document_from_Google__c}"/>
+            <apex:inputField value="{!Device__c.Google_TA_Approval_Status__c}"/>
+            <apex:inputField value="{!Device__c.White_Listed_Build_Fingerprint__c}"/>
+            <apex:inputField value="{!Device__c.Approval_Type__c}"/>
+            <apex:inputField value="{!Device__c.Google_TA_Comments__c}"/>
+            <apex:inputField value="{!Device__c.Respin__c}"/>
+            <apex:inputField required="true" value="{!Device__c.of_Respin__c}"/>
+            <apex:inputField value="{!Device__c.Date_of_Google_TA_Approval_by_Google__c}"/>
+            <apex:inputField required="true" value="{!Device__c.Reason_for_Last_Respin__c}"/>
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection showHeader="true" title="System Information" columns="2">
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

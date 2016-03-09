@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device Carrier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Device Carriers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device_Carrier External Unique ID --></label>
+        <name>Device_Carrier_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Carriers --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Device Carrier Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,71 @@
+<apex:page >
+
+
+<!-- Set-Up Table Column Widths -->
+
+<style>
+    .container{
+        width:100%;
+        height:90px;
+    }
+    .body{
+        width:100%   
+    }
+    .Col1 { 
+        width: 1%;
+        padding-bottom: 10px;
+    }
+    .Col2 { 
+        width: 29%; 
+        padding-bottom: 10px;
+    }
+    .Col3 { 
+        width: 50%;    
+        padding-bottom: 10px;
+    }
+    .Col4 { 
+        width: 20%;
+        padding-bottom: 10px;
+    }  
+</style>
+
+<apex:form >
+
+    <!--  Column Headers -->
+    <apex:pageblock title="Procurement Top Reports">
+        <apex:panelGrid columns="4" columnClasses="Col1, Col2, Col3, Col4" width="100%">            
+            <apex:outputText >&nbsp;</apex:outputText>
+            <apex:outputText ><strong><u>Report Name</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Description</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Remarks</u></strong></apex:outputText>
+        </apex:panelGrid>
+    <!--</apex:pageblock>-->
+    <br />
+    <!-- Rows -->
+    <apex:outputPanel layout="block" styleclass="body">
+        <!--<apex:pageBlock mode="view">-->
+            <apex:pageBlockSection title="Reports / Dashboard" columns="1" collapsible="true" showHeader="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+
+                    <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" 
+                    value="https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site4/views/ProcurementDashboardBQ/ANALYTICS&tableauSite=Site4&userName=lit&container=iframe">
+                    Procurement Dashboard - Analytics
+                    </apex:outputLink>
+                    <apex:outputText ></apex:outputText>
+                    <apex:outputText ></apex:outputText>
+
+                    <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" 
+                    value="https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site4/views/ProcurementDashboardBQ/GMTRACKER&tableauSite=Site4&userName=lit&container=iframe">
+                    Procurement Dashboard - GTM Tracker
+                    </apex:outputLink>
+                    <apex:outputText ></apex:outputText>
+                    <apex:outputText ></apex:outputText>
+                    
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+    </apex:outputpanel>
+</apex:pageblock>
+</apex:form> 
+</apex:page>

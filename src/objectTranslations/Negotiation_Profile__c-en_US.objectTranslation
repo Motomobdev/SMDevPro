@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Negotiation Profile</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Negotiation Profile</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please add full corporate name from agreement e.g. Samsung Electronics Company, Ltd. --></help>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+        <relationshipLabel><!-- Negotiation Profile --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Home Life Information 1 --></label>
+        <name>Home_Life_Information_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Life Information 2 --></label>
+        <name>Home_Life_Information_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Contact 1 --></label>
+        <name>Key_Contact_1__c</name>
+        <relationshipLabel><!-- Negotiation Profile --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Key Contact 2 --></label>
+        <name>Key_Contact_2__c</name>
+        <relationshipLabel><!-- Negotiation Profile (Key Contact 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- e.g. warranty length huge sticking point, and will trade for limitation of liability; have been burned by our outsourcing partners in past ;company takes extremely long time to turn documents, re-opens up issues when issues previously close --></help>
+        <label><!-- Key Pain Points or Leverage Points --></label>
+        <name>Key_Points__c</name>
+    </fields>
+    <fields>
+        <help><!-- e.g. for a distributor deal: MML told the distributor that MML does not pay or reimburse any copyright levies; MML term sheets exclude these. The distributor agreed to exclude them. Keep this message consistent in future negotiations! --></help>
+        <label><!-- Other facts and information --></label>
+        <name>Other_facts_and_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal Negotiation Style &amp; Behaviors 1 --></label>
+        <name>Personal_Negotiation_Style_Behaviors_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal Negotiation Style &amp; Behaviors 2 --></label>
+        <name>Personal_Negotiation_Style_Behaviors_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work/Career/Educational Information 1 --></label>
+        <name>Work_Career_Educational_Information_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work/Career/Educational Information 2 --></label>
+        <name>Work_Career_Educational_Information_2__c</name>
+    </fields>
+    <layouts>
+        <layout>Negotiation Profile Layout</layout>
+        <sections>
+            <label><!-- Additional Key Contact --></label>
+            <section>Additional Key Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key Contact Details --></label>
+            <section>Key Contact Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

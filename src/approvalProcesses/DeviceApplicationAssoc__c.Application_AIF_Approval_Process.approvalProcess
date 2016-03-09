@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>wsb030c@motorola.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Application__c</field>
+        <field>Device__c</field>
+        <field>Approval_Status__c</field>
+        <field>Name</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dkjq86@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Phase A: LRB Approval Process</label>
+        <name>Phase_A_LRB_Approval_Process</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvollbe1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Please make sure the &quot;Leveraging Motorola Proprietary API&apos;s&quot; field on the application form is correct.  Then please be sure the &quot;DTS General Support&quot; and &quot;DTS Support of API&apos;s&quot; are correctly completed before approving.</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Application__c.Leveraging_Motorola_Proprietary_APIs__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Phase B: DTS Support Process</label>
+        <name>Phase_B_DTS_Support_Process</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvollbe1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>DeviceApplicationAssoc__c.DTS_Support_of_Included_API_s__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Application__c.Leveraging_Motorola_Proprietary_APIs__c</field>
+                <operation>notEqual</operation>
+                <value>No</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Phase C: Tools Team Approval</label>
+        <name>Phase_C_Tools_Team_Approval</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dkjq86@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Phase D: PM Selection Approval Process</label>
+        <name>Phase_D_PM_Selection_Approval_Process</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvollbe1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Please make sure the &quot;FMD State&quot; field is correctly populated with an acceptable state to approve this application.</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>DeviceApplicationAssoc__c.FMD_State__c</field>
+                <operation>equals</operation>
+                <value>12 - RRB Submit,01 - Submit,00 - Drop,11 - Deleted,02 - Evaluate</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Phase E: FMD Status Check Approval Process</label>
+        <name>FMD_Status_Check_Approval_Process</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvollbe1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Check to make sure the finance or PLM has approved the budget.  The &quot;Confirmation of Budget for Royalties&quot; field must be filled out.</description>
+        <entryCriteria>
+            <formula>(LEN(    $User.Id  )  &lt; 1)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Phase F: Confirmation of Budget for Royalties</label>
+        <name>Phase_F_Confirmation_of_Budget_for_Royalties</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dkjq86@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Finance has approved this application going on this device.</description>
+        <label>Phase G: Finance Checklist Approval Process</label>
+        <name>Phase_G_Finance_Checklist_Approval_Process</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvollbe1@motorola.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Phase H:  Partner Manager Checklist Approval Process</label>
+        <name>Phase_H_PM_Checklist_Approval_Process</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>unfiled$public/AIF_Initial_Email</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>DeviceApplicationAssoc__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Application AIF Approval Process</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Partner Manager for Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partner Manager for Account</value>
+    </caseValues>
+    <fields>
+        <label><!-- Partner Account Category --></label>
+        <name>Partner_Account_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Manager Email --></label>
+        <name>Partner_Mgr_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Manager Name --></label>
+        <name>Partner_Mgr_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

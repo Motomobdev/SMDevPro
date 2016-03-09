@@ -1,0 +1,122 @@
+<apex:page showheader="false" sidebar="false" action="{!findAccountDetails}"  standardcontroller="Account" extensions="BDSite_Controller" >
+
+<style>
+.white
+{
+    color:white;
+    font-size:"14";
+
+}
+.block
+{ 
+margin-left:30%;
+}
+</style>
+<!--Set-Up Banner & Tool Bar -->
+     <apex:image style="margin-top:20px;" url="{!URLFOR($Resource.Motorola_Mobility_Logo)}" width="500px" height="100px" />
+  <apex:form >
+
+
+   <apex:toolbar style="margin-top:50px;margin-left:35%;" contentstyle="background-color: #82CAFF;" width="200" >
+
+
+ <apex:outputLink styleclass="white" value="{!$Page.Business_Development_Home}">Home</apex:outputlink><br/>
+<!-- <apex:outputLink styleclass="white" value="{!$Page.Business_Development_CategoryDirectory}">Category Directory</apex:outputlink><br/>
+   <apex:outputLink styleclass="white" value="{!$Page.Business_Development_NominatePartner}">Nominate a New Partner!</apex:outputlink><br/>-->
+   <apex:outputLink styleclass="white" value="http://developer.motorola.com/"> Motodev Website</apex:outputlink>
+   <apex:outputLink styleclass="white" value="http://compass.mot-mobility.com/go/247085140/">MotoReady Compass Website </apex:outputlink>
+   <apex:outputLink styleclass="white" value="{!$Page.Business_Development_AdditionalContent}"> Additional Content</apex:outputlink>
+
+
+</apex:toolbar>
+
+
+  <apex:pageBlock title="{!Account.name}" mode="view" id="block">
+  <apex:pageBlockSection title="Account Detail" collapsible="false">
+  
+  
+<!-- Account Owner Output -->       
+
+     <apex:pageBlock title="{!Account.Owner.Name}">
+     <apex:PageBlockSection columns="1">
+  
+
+   
+     <apex:PageBlockSectionItem >
+     <apex:outputtext >Phone Number:</apex:outputtext>
+     <apex:outputtext value="{!Account.owner.Phone}"/> 
+    </apex:pageBlockSectionItem>
+   
+     <apex:PageBlockSectionItem >
+     <apex:outputtext >E-Mail Address:</apex:outputtext>
+     <apex:outputLink target="_blank"  value="https://mail.google.com/a/motorola.com/?view=cm&fs=1&tf=1&to={!Account.owner.Email}&su=BD.MOT%20Issue%20Report">{!Account.owner.Email}</apex:outputLink>
+    </apex:pageBlockSectionItem>
+    
+  
+
+  </apex:pageBlockSection>
+ </apex:pageBlock>     
+  
+  
+<!-- Account Information Output Section -->  
+
+ 
+         <apex:pageBlockSectionItem >
+        <apex:outputText >Description:</apex:outputText>
+        <apex:outputtext value="{!Account.Description}"/>
+       </apex:pageBlockSectionItem>   
+
+    
+              <apex:PageBlockSectionItem >
+     <apex:outputtext >Tier:</apex:outputtext>
+     <apex:outputtext value="{!Account.Tier__c}"/> 
+    </apex:pageBlockSectionItem>    
+    
+
+       
+    
+  
+        <apex:pageBlockSectionItem >
+        <apex:outputText >Category:</apex:outputText>
+        <apex:outputField value="{!Account.Top_Level_Category__c}"/>
+       </apex:pageBlockSectionItem> 
+              
+              <apex:PageBlockSectionItem >
+     <apex:outputtext >Account ID:</apex:outputtext>
+     <apex:outputtext value="{!Account.Account_ID__c}"/> 
+    </apex:pageBlockSectionItem> 
+  
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+ 
+<!-- Contract Information Output -->
+
+        <apex:pageBlock title="Contracts">
+        <apex:pageBlockTable styleClass="Table" title="Contract Information" width="100%" value="{!NDAS}" var="item" rendered="true" columns="4">
+        <apex:column width="40%;" value="{!item.Name}" headerValue="Contract Name"/>
+        <apex:column width="20%;" value="{!item.Contract_Phase__c}" headerValue="Contract Phase" />
+        <apex:column width="10%;" value="{!item.Contract_Status__c}" headerValue="Contract Status" />
+        <apex:column width="30%;" value="{!item.EndDate}" headerValue="Contract End Date" />
+       </apex:pageBlockTable>
+      </apex:pageBlock>
+  
+<!-- Contract Information Output -->  
+    
+        <apex:PageBlock title="Applications" >
+        <apex:pageBlockTable title="ContractInfo" width="100%" value="{!Applications}" var="a" rendered="true" columns="5">
+        <apex:column width="30%;"  headerValue="Name" value="{!a.name}" />
+        <apex:column width="10%;" headerValue="Application ID" value="{!a.Application_ID__c}" />
+        <apex:column width="10%;" headerValue="Application Type" value="{!a.Application_Type__c}" />
+        <apex:column width="10%;" headerValue="Application Category" value="{!a.Application_Category__c}" />
+        <apex:column width="40%;" headerValue="Royalty Description" value="{!a.Royalty_Description__c}" />
+       </apex:pageBlockTable>
+       </apex:PageBlock>
+       
+
+  
+<!-- Footer Content -->
+   
+<center><apex:outputText > Need to report a problem?  Please click <apex:outputLink target="_blank"  value="https://mail.google.com/a/motorola.com/?view=cm&fs=1&tf=1&to=jessea%40motorola.com&su=BD.MOT%20Issue%20Report"> Here.</apex:outputLink> </apex:outputText></center>
+</apex:form><br/>
+
+</apex:page>

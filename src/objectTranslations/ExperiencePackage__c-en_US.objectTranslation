@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExperiencePackage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExperiencePackages</value>
+    </caseValues>
+    <fields>
+        <help><!-- Sum of Royalty Current of all related Applications listed below (in related list) --></help>
+        <label><!-- Cost of Related Applications --></label>
+        <name>Cost_of_Related_Applications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost of Related SW Components (CWV) --></label>
+        <name>Cost_of_Related_SW_Components_CWV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost of Related SW Components (Opp) --></label>
+        <name>Cost_of_Related_SW_Components_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExpPack POR Status --></label>
+        <name>ExpPack_POR_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cond IN - Conditionally Approved</masterLabel>
+            <translation><!-- Cond IN - Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Discovery</masterLabel>
+            <translation><!-- D - Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EOL - End-Of-Life, no longer supported</masterLabel>
+            <translation><!-- EOL - End-Of-Life, no longer supported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN - Fully approved</masterLabel>
+            <translation><!-- IN - Fully approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OUT - Rejected</masterLabel>
+            <translation><!-- OUT - Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Experience Description --></label>
+        <name>Experience_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Experience Description_text --></label>
+        <name>Experience_Description_text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Experience detail deck (URL) --></help>
+        <label><!-- Experience Details --></label>
+        <name>Experience_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Concatenation of Name + Year + Variant --></help>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Includes all HW Components listed below --></help>
+        <label><!-- HW Costs (CWV) --></label>
+        <name>HW_Costs_CWV__c</name>
+    </fields>
+    <fields>
+        <help><!-- Includes all HW Components listed below --></help>
+        <label><!-- HW Costs (Opp) --></label>
+        <name>HW_Costs_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Message --></label>
+        <name>Marketing_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Platform Assumptions --></label>
+        <name>Other_Platform_Assumptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Area --></label>
+        <name>Product_Area__c</name>
+        <picklistValues>
+            <masterLabel>Accessories</masterLabel>
+            <translation><!-- Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistive</masterLabel>
+            <translation><!-- Assistive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Retail</masterLabel>
+            <translation><!-- China Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud</masterLabel>
+            <translation><!-- Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core + Cloud</masterLabel>
+            <translation><!-- Core + Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging</masterLabel>
+            <translation><!-- Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Issues</masterLabel>
+            <translation><!-- Local Issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mind Reader</masterLabel>
+            <translation><!-- Mind Reader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moto</masterLabel>
+            <translation><!-- Moto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Devices</masterLabel>
+            <translation><!-- Next Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal</masterLabel>
+            <translation><!-- Personal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCO</masterLabel>
+            <translation><!-- TCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearables</masterLabel>
+            <translation><!-- Wearables --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Includes all SW Components listed below, plus all related Applications listed below --></help>
+        <label><!-- SW Costs (CWV) --></label>
+        <name>SW_Costs_CWV__c</name>
+    </fields>
+    <fields>
+        <help><!-- Includes all SW Components listed below, plus all related Applications listed below --></help>
+        <label><!-- SW Costs (Opp) --></label>
+        <name>SW_Costs_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Product Manager Text --></label>
+        <name>SW_Product_Manager_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Product Manager --></label>
+        <name>SW_Product_Manager__c</name>
+        <relationshipLabel><!-- ExperiencePackages --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sum of HW + SW costs (CWV) --></help>
+        <label><!-- Total Cost (CWV) --></label>
+        <name>Total_Cost_CWV__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of HW + SW costs (Opp) --></help>
+        <label><!-- Total Cost (Opp) --></label>
+        <name>Total_Cost_Opp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to distinguish variants of same ExperiencePackage (ie. China vs ROW) --></help>
+        <label><!-- Variant --></label>
+        <name>Variant__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E</masterLabel>
+            <translation><!-- E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G</masterLabel>
+            <translation><!-- G --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <layouts>
+        <layout>ExperiencePackage Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- HW/SW Component Costs --></label>
+            <section>HW/SW Component Costs</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

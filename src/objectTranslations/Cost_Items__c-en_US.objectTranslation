@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Budget &amp; Cost Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Budget &amp; Cost Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Costs --></label>
+        <name>Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternatives --></label>
+        <name>Alternatives__c</name>
+    </fields>
+    <fields>
+        <help><!-- Costs that are a part of investments in your business and are called capital expenses. Capital expenses are considered assets.  3 types of capital cost include; business start-up costs , business assets, and business improvements. --></help>
+        <label><!-- Capital Expense --></label>
+        <name>Capital_Expense__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Description --></label>
+        <name>Cost_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Expectation --></label>
+        <name>Cost_Type__c</name>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unplanned</masterLabel>
+            <translation><!-- Unplanned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the cost payment is in an &quot;on-hold&quot; status, please enter the reason for refusal of payment. --></help>
+        <label><!-- Dispute Reason --></label>
+        <name>Dispute_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimate Date --></label>
+        <name>Estimate_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Costs --></label>
+        <name>Estimated_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Budget &amp; Cost Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Posted</masterLabel>
+            <translation><!-- Posted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Type --></label>
+        <name>TheCost_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contractor Labor</masterLabel>
+            <translation><!-- Contractor Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Labor</masterLabel>
+            <translation><!-- Direct Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware Costs</masterLabel>
+            <translation><!-- Hardware Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance Costs</masterLabel>
+            <translation><!-- Maintenance Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Costs</masterLabel>
+            <translation><!-- Other Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Costs</masterLabel>
+            <translation><!-- Service Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Costs</masterLabel>
+            <translation><!-- Software Costs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Variance --></label>
+        <name>Variance__c</name>
+    </fields>
+    <layouts>
+        <layout>Cost Item Layout</layout>
+        <sections>
+            <label><!-- Cost Description --></label>
+            <section>Cost Description</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

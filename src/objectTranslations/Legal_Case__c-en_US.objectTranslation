@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Legal Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Legal Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Patent Count --></label>
+        <name>Active_Patent_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Enforcement date --></label>
+        <name>Actual_Enforcement_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CWV Enforcement date --></label>
+        <name>CWV_Enforcement_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Name --></label>
+        <name>Case_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customs Status --></label>
+        <name>Customs_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Defendent(s) --></label>
+        <name>Defendent_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filing Date --></label>
+        <name>Filing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- In House Counsel --></label>
+        <name>In_House_Counsel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jurisdiction --></label>
+        <name>Jurisdiction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Litigator names --></label>
+        <name>Litigator_names__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm Address --></label>
+        <name>Local_Counsel_Firm_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm Email Address --></label>
+        <name>Local_Counsel_Firm_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm FAX Number --></label>
+        <name>Local_Counsel_Firm_FAX_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel Firm Main Office Phone Num --></label>
+        <name>Local_Counsel_Firm_Main_Office_Phone_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Counsel --></label>
+        <name>Local_Counsel__c</name>
+        <relationshipLabel><!-- Legal Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Plaintiff --></label>
+        <name>Plaintiff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Motorola Business Contact --></label>
+        <name>Primary_Motorola_Business_Contact__c</name>
+        <relationshipLabel><!-- Legal Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary OC Contact --></label>
+        <name>Primary_Outside_Counsel_Names__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status of Case --></label>
+        <name>Status_of_Case__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Legal Case Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Events --></label>
+            <section>Events</section>
+        </sections>
+        <sections>
+            <label><!-- Local Counsel --></label>
+            <section>Local Counsel</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

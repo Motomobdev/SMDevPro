@@ -1,0 +1,40 @@
+<apex:page standardController="DeviceApplicationAssoc__c" recordSetVar="unused" sidebar="false" extensions="MassEditDeviceApplication">
+	<!-- <apex:includeScript value="{!$Resource.UtilJS}" /> -->
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockSection >				
+				<h3>Note: Records that are currently In Progress for AIF Approval are not shown since they are currently locked.</h3>
+				<BR/><BR/>
+				Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 				
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" action="{!saveChanges}"/>
+				<apex:commandButton value="Return" action="{!cancel}"/>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockTable value="{!devApps}" var="a" id="table">						
+			  	<apex:column headerValue="Application"> 
+			  		<apex:inputField value="{!a.Application__c}"/> 
+			  	</apex:column>
+			  	
+			  	<apex:column headerValue="AIF Approval Status"> 
+			  		<apex:outputField value="{!a.Approval_Status__c}"/> 
+			  	</apex:column>
+			  	
+			  	<apex:column headerValue="Application Source"> 
+			  		<apex:outputLink value="{!a.Source__c}" id="theLink">{!a.Source_Name__c}</apex:outputLink> 
+			  	</apex:column>
+			  				  
+			  	<apex:column headerValue="Include in BOM"> 
+			  		<apex:inputField value="{!a.Include_in_BOM__c}"/> 
+			  	</apex:column>
+			  	
+			  	<!-- <apex:column headerValue="Specific Requirements"> 
+			  		<apex:inputField style="width:400px" value="{!a.Specific_Requirements__c}"/> 
+			  	</apex:column>
+			  	 -->
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

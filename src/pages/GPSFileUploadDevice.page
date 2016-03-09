@@ -1,0 +1,22 @@
+<apex:page controller="GPSFileUpload" showHeader="false" sidebar="false">
+    <c:Logo />
+    <apex:messages />
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection columns="1" title="Device Files"> 
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="device_Installs"> Device_Installs.csv</apex:outputLabel>
+                    <apex:inputFile fileName="{!device_Installs_Name}" value="{!device_Installs}" id="device_Installs"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="device_ratings"> Device_ratings.csv</apex:outputLabel>
+                    <apex:inputFile fileName="{!device_ratings_Name}" value="{!device_ratings}" id="device_ratings"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="AddFinalStats"> </apex:outputLabel>
+                	<apex:commandButton value="Next" action="{!AddDevice}" id="AddDevice"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

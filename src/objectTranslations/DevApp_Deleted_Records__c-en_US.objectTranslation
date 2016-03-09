@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DevApp_Deleted_Records</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DevApp_Deleted_Recordss</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcctOwner --></label>
+        <name>AcctOwner__c</name>
+        <relationshipLabel><!-- DevApp_Deleted_Recordss --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ApplicationName --></label>
+        <name>ApplicationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_SFID --></label>
+        <name>Application_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeletedRecord --></label>
+        <name>DeletedRecord__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted_By --></label>
+        <name>Deleted_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted_Date --></label>
+        <name>Deleted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DevApp_ID --></label>
+        <name>DevApp_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeviceName --></label>
+        <name>DeviceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_SFID --></label>
+        <name>Device_SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SA_Date --></label>
+        <name>SA_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>DevApp_Deleted_Records Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

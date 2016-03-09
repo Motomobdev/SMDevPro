@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Devices</value>
+    </caseValues>
+    <fields>
+        <label><!-- Created On BOM --></label>
+        <name>Created_on_BOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Program Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Program Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <layouts>
+        <layout>Program Device Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,5 @@
+<apex:page showHeader="true"> 
+ <form>
+ <div allign="center"><BIG><b>The requested Packing Slip/Inovice is not available on the imaging server</b></BIG></div>
+ </form>
+</apex:page>

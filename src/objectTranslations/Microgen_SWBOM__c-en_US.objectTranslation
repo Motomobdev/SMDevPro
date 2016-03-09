@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Microgen_SWBOM</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Microgen_SWBOMs</value>
+    </caseValues>
+    <fields>
+        <label><!-- APC --></label>
+        <name>APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR_version_string --></label>
+        <name>BLUR_version_string__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Status --></label>
+        <name>Contract_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date_Device_Fully_Approved --></label>
+        <name>Date_Device_Fully_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- DevApp_Created_Date --></label>
+        <name>DevApp_Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Devapp_item_effective_date --></label>
+        <name>Devapp_item_effective_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_Fully_Approved --></label>
+        <name>Device_Fully_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_SWKIT_State --></label>
+        <name>Device_SWKIT_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include_in_BOM --></label>
+        <name>Include_in_BOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_APPLICATION --></label>
+        <name>Last_Modified_APPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_CONTRACTAPPLICATION --></label>
+        <name>Last_Modified_CONTRACTAPPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_CONTRACT --></label>
+        <name>Last_Modified_CONTRACT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_COUNTRY --></label>
+        <name>Last_Modified_COUNTRY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_DEVICEAPPLICATION --></label>
+        <name>Last_Modified_DEVICEAPPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_DEVICECOUNTRY --></label>
+        <name>Last_Modified_DEVICECOUNTRY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_SWKIT --></label>
+        <name>Last_Modified_SWKIT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Microgen_countries --></label>
+        <name>Microgen_countries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason_Code_Device --></label>
+        <name>Reason_Code_Device__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason_Code_Last_Modified --></label>
+        <name>Reason_Code_Last_Modified__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWBOM_Reviewed --></label>
+        <name>SWBOM_Reviewed__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKIT_Effective_Date_c --></label>
+        <name>SWKIT_Effective_Date_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKIT_Item_State --></label>
+        <name>SWKIT_Item_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKIT_Name --></label>
+        <name>SWKIT_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKIT_creation --></label>
+        <name>SWKIT_creation__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesModel_Device_Active --></label>
+        <name>SalesModel_Device_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesModel_Name --></label>
+        <name>SalesModel_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesModel_SegmentCode --></label>
+        <name>SalesModel_SegmentCode__c</name>
+    </fields>
+    <layouts>
+        <layout>Microgen_SWBOM Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

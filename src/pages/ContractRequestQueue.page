@@ -1,0 +1,36 @@
+<apex:page id="page" controller="ContractRequestQueueCtr" showHeader="false" sidebar="false" showChat="false" cache="false">
+
+<apex:messages id="msg" />
+
+<apex:form id="form">
+
+    <apex:outputPanel style="position:absolute; top:14px; left:230px;">
+        <apex:commandLink id="lnkRefresh" value="Refresh" action="{!refresh}" reRender="pbtRequests" status="status1" />
+        &nbsp;&nbsp;
+        <apex:actionStatus id="status1" startText="Refreshing..." startStyle="color:gray;" />
+    </apex:outputPanel>
+
+    <apex:pageBlock title="Pending Contract Requests">
+        
+        <apex:pageBlockTable id="pbtRequests" var="r" value="{!pendingRequests}" style="font-size: 8pt;" >
+            <apex:column headerValue="Req. ID">
+                <apex:outputLink value="{!'/'+r.Id}" target="_blank" >{!r.Name}</apex:outputLink>
+            </apex:column>
+            <apex:column value="{!r.Requester__r.Name}" headerValue="Requester" />
+            <apex:column value="{!r.Date_Submitted__c}" headerValue="Date Submitted" />
+            <apex:column value="{!r.Company_Name__r.Name}" headerValue="Company Name" />
+            <apex:column value="{!r.Partner_Contact_Name__c}" headerValue="Partner Contact Name" />
+            <apex:column value="{!r.What_Software_Requested__c}" headerValue="Software/Work Requested" />
+            <apex:column value="{!r.Agreement_Type__c}" headerValue="Agreement Type" />
+            <apex:column value="{!r.Request_Type__c}" headerValue="Request Type" />
+            <apex:column value="{!r.Date_Required__c}" headerValue="Date Required" />
+            <apex:column value="{!r.Urgency__c}" headerValue="Urgency" />
+            <apex:column value="{!r.Which_Device__c}" headerValue="Which Device(s)" />
+            <apex:column value="{!r.Team__c}" headerValue="Team" />
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+    
+</apex:form>
+
+</apex:page>

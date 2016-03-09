@@ -1,0 +1,26 @@
+<apex:page standardController="Patent__c" extensions="DeviceRelatedListCtr" action="{!doaction}" id="pgID">
+     <apex:form id="formID">
+     <apex:pageBlock title="Impacted Devices" id="pgblk">
+        <apex:pageBlockButtons location="top" >
+            <!-- <apex:commandButton value="New Patent Device" onclick="window.top.location='{!URLFOR($Action.Patent_Device__c.New, null, [retURL=URLFOR($Action.Patent__c.View, idPatent)])}'; return false;" /> -->
+            <apex:commandButton value="New Patent Device" onclick="window.top.location='/a2E/e?RecordType=01240000000DulJ&CF00N40000002Dim4={!HTMLENCODE(Patent__c.Name)}'; return false;" />
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!lstPatentDevices}" var="var" id="pgBlkTab">
+            <apex:column headerValue="Actions">
+                <apex:outputLink target="_top" value="{!URLFOR($Action.Patent_Device__c.Edit, var.Id)}">Edit </apex:outputLink> | 
+                <apex:commandLink action="{!deleteAction}" value="Del" > 
+                    <apex:param name="p1" value="{!var.id}" assignTo="{!ParamID}"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column headerValue="Device Name">
+                <apex:outputLink target="_top" value="/{!var.Id}">
+                    {!var.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:repeat value="{!patentDeviceFields}" var="f">
+                <apex:column value="{!var[f.fieldPath]}" />
+            </apex:repeat>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>KnowWho_User_Guide</links>
+    <links>KnowWho_Lobbying_Activity_Tracker_Guide</links>
+    <links>Groove_App_User_Guide</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

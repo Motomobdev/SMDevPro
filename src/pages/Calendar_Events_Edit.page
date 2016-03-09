@@ -1,0 +1,36 @@
+<apex:page standardController="Calendar_Event__c" extensions="Calendar_Events_Edit_Ext" action="{!doAction}" >
+	<apex:sectionHeader title="Calendar Events Edit" subtitle="Legal Case Calendar"/>
+	<apex:form >
+		<apex:pageBlock id="calendarEvents" title="Calendar Events Edit">
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" action="{!save}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+			</apex:pageBlockButtons>
+			<apex:variable var="i" value="{!0}" />
+			<apex:pageBlockTable value="{!events}" var="event" title="Information">
+				<apex:column headerValue="Action">
+					<apex:commandLink action="{!removeEvent}" value="Del" rerender="calendarEvents">
+						<apex:param value="{!i}" name="index" />
+					</apex:commandLink>
+					|&nbsp;
+					<apex:commandLink action="{!cloneEvent}" value="Clone" rerender="calendarEvents">
+						<apex:param value="{!i}" name="index" />
+					</apex:commandLink>
+					<apex:variable var="i" value="{!i+1}" />
+				</apex:column>
+				<apex:repeat value="{!calendarEventFields}" var="f">
+					<apex:column headerValue="{!f.Label}">
+						<apex:inputField value="{!event[f.fieldPath]}" />
+					</apex:column>
+				</apex:repeat>
+				<apex:column headerValue="Patent">
+					<apex:selectList value="{!event.Patent__c}" rendered="{!events.size > 0}" multiselect="false" size="1">
+						<apex:selectOptions value="{!patents}" />
+					</apex:selectList>
+				</apex:column>
+			</apex:pageBlockTable>
+			<apex:commandButton value="Add Event" action="{!addEvent}" rerender="calendarEvents" status="addStatus" />
+			<apex:actionStatus startText="Adding..." stopText="" id="addStatus"/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

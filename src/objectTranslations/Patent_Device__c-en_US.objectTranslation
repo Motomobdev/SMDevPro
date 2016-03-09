@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patent Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patent Devices</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled per comments</masterLabel>
+            <translation><!-- Canceled per comments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected per comments</masterLabel>
+            <translation><!-- Rejected per comments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Approval</masterLabel>
+            <translation><!-- Submitted for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Banding or Variant --></label>
+        <name>Banding_or_Variant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Launch Type --></label>
+        <name>Device_Launch_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Patent Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Internal Name --></label>
+        <name>Internal_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required in order to submit for approval --></help>
+        <label><!-- Link to SW --></label>
+        <name>Link_to_SW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent --></label>
+        <name>Patent__c</name>
+        <relationshipLabel><!-- Patent Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stable Line --></label>
+        <name>Stable_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround Direction --></label>
+        <name>Workaround_Direction__c</name>
+        <picklistValues>
+            <masterLabel>Hold per comments</masterLabel>
+            <translation><!-- Hold per comments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No workaround required</masterLabel>
+            <translation><!-- No workaround required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround and hold</masterLabel>
+            <translation><!-- Workaround and hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround and submit to carrier</masterLabel>
+            <translation><!-- Workaround and submit to carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround at baseline only</masterLabel>
+            <translation><!-- Workaround at baseline only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround, Approve and Hold</masterLabel>
+            <translation><!-- Workaround, Approve and Hold --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Workaround LE CWV Date --></label>
+        <name>Workaround_LE_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround LE Date --></label>
+        <name>Workaround_LE_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround SA CWV Date --></label>
+        <name>Workaround_SA_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround SA Date --></label>
+        <name>Workaround_SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround SA ID --></label>
+        <name>Workaround_SA_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround SW Version --></label>
+        <name>Workaround_SW_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround TA CWV Date --></label>
+        <name>Workaround_TA_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround TA Date --></label>
+        <name>Workaround_TA_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Patent Device Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Workaround Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Patent Device --></label>
+        <name>Patent_Device</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Workaround --></label>
+        <name>Workaround</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

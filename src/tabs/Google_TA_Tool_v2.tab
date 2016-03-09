@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Google TA Tool</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom58: Caduceus</motif>
+    <page>Google_TA_canvas_app</page>
+</CustomTab>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Team Member</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Team Members</value>
+    </caseValues>
+    <fields>
+        <help><!-- Estimated Hours / Number of Weeks --></help>
+        <label><!-- Approximate Hours/Week --></label>
+        <name>Approximate_Hours_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please include any notes on the description of the role requested.  Does this role call for travel?  What is the priority?  Who will this team member report to?  What is the frequency of engagement summary reports? --></help>
+        <label><!-- Assignment Description --></label>
+        <name>Assignment_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a lookup to the contact record to track vendors working on projects. --></help>
+        <label><!-- Contractor --></label>
+        <name>Contractor__c</name>
+        <relationshipLabel><!-- Team Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Duration (weeks) = (End Date - Start Date) / 7 days per week --></help>
+        <label><!-- Duration (weeks) --></label>
+        <name>Duration_weeks__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please estimate the hours required for this assignment. --></help>
+        <label><!-- Estimated Hours --></label>
+        <name>Estimated_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Deliverables --></label>
+        <name>Planed_Deliverables__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Team Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What is the approximate percent of time required?  Assume 40hrs/week. --></help>
+        <label><!-- Requested Allocation --></label>
+        <name>Requested_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Business Analyst</masterLabel>
+            <translation><!-- Business Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer</masterLabel>
+            <translation><!-- Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual Contributor</masterLabel>
+            <translation><!-- Individual Contributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Manager</masterLabel>
+            <translation><!-- Project Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Specialist</masterLabel>
+            <translation><!-- Support Specialist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reserved</masterLabel>
+            <translation><!-- Reserved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a lookup to the user and used to assign internal staff to a project team member. --></help>
+        <label><!-- Team Member --></label>
+        <name>Team_Member__c</name>
+        <relationshipLabel><!-- Team Members --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Team Member Layout</layout>
+        <sections>
+            <label><!-- Assignment Details --></label>
+            <section>Assignment Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

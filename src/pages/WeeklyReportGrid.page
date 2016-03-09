@@ -1,0 +1,28 @@
+<apex:page controller="WeeklyReportGridCtr">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="{!function} Weekly Grid: {!weekEnding}" rendered="{!OR(currentWeek, previousWeek)}">
+            <apex:pageBlockButtons location="top" >
+                <apex:commandButton value="{!toggleButtonText}" action="{!toggleWeeklyView}" rendered="{!OR(currentWeek, previousWeek)}" style="{!IF(currentWeek, 'color:black', 'color:black')}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection rendered="{!currentWeek}" columns="1" collapsible="false">
+                <iframe id="gridFrame2" scrolling="auto" height="560" width="100%" frameborder="0"
+                      src="/apex/gblite__Grid?gname=WR {!function}&fpf=Id&fpv={!accountIdsList}&sbb=1&sh=0&ssb=0&ea=1&ro=1">
+                </iframe>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!previousWeek}" columns="1" collapsible="false">
+                <iframe id="gridFrame2" scrolling="auto" height="560" width="100%" frameborder="0"
+                      src="/apex/gblite__Grid?gname=WR {!function} Prev&fpf=Id&fpv={!accountIdsList}&sbb=1&sh=0&ssb=0&ea=1&ro=1">
+                </iframe>   
+            </apex:pageBlockSection>    
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="{!function} Weekly Report: {!weekEnding}" rendered="{!NOT(OR(currentWeek, previousWeek))}">
+            <apex:outputPanel >
+                <iframe id="gridFrame2" scrolling="auto" height="560" width="100%" frameborder="0"
+                      src="/apex/gblite__Grid?gname=WR Archive {!function}&fpf=Id&fpv={!weeklyReport.Id}&sbb=1&sh=0&ssb=0&ea=1&ro=1">
+                </iframe>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

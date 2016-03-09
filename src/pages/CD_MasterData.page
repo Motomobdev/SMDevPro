@@ -1,0 +1,555 @@
+<apex:page controller="CD_Master"   sidebar="false"   showheader="true">
+<apex:pagemessages ></apex:pagemessages>
+<style>
+    /* This is for the full screen DIV */
+    .popupBackground {
+        /* Background color */
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+    
+        /* Dimensions */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 998;
+        position: absolute;
+        font-family: sans-serif;
+        /* Mouse */
+        cursor:wait;
+    }
+ 
+    /* This is for the message DIV */
+    .PopupPanel {
+        /* Background color */
+        border: solid 2px skyblue;
+        background-color: white;
+ font-family: sans-serif;
+        /* Dimensions */
+        left: 50%;
+        width: 100px;
+        margin-left: -100px;
+        top: 50%;
+        height: 100px;
+        margin-top: -25px;
+        z-index: 999;
+        position: fixed;
+        
+        /* Mouse */
+        cursor:pointer;
+    }
+</style>
+<apex:actionStatus id="statusSaveTrip" stopText="">
+    <apex:facet name="start">
+        <div>
+            <div class="popupBackground" />
+            <div class="PopupPanel">
+                <table border="0" width="100%" height="100%">
+                    <tr>
+                        <td align="center"><b>Please Wait</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><img src="{!$Resource.Statussign}"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </apex:facet>
+</apex:actionStatus>
+ <script>
+ function openpopup(id)
+{
+
+var id = id
+var r = confirm("Are you sure to delete ?");
+if (r == true) {
+hitMe(id);
+alert('Category will be deleted in 5 seconds');
+}
+
+
+}
+
+        function colorPageBlock(pageblock, color) {
+        if (pageblock != null) pageblock.firstChild.style.cssText = "background-color: " + color + ";";
+        
+        }
+    </script>
+ <apex:form id="formid" >
+  <br/> &nbsp;&nbsp;&nbsp;   <img src="{!$Resource.cd_Motorola}" />
+       <apex:outputlabel style="font-size:25px;" value="Master Data Maintenance"></apex:outputlabel>
+ <apex:pageblock id="Topsection" >
+
+
+   <apex:pageblockButtons location="bottom" >
+  
+  
+    </apex:pageblockButtons>
+    
+ <apex:pageblocksection collapsible="true" id="a"  title="SEARCH SECTION" columns="2"  >
+ 
+ 
+   <apex:outputpanel >
+   <apex:outputLabel style="margin-left:2cm;font-weight:bold;" value="Select Object" ></apex:outputLabel>&nbsp;&nbsp;
+ <apex:selectList value="{!typea}" size="1">
+ <apex:actionSupport event="onchange" action="{!typeSet}" status="statusSaveTrip" reRender="skyblueSection" />
+ 
+ <apex:selectOption itemValue="Select" itemLabel="Select"></apex:selectOption>
+ <apex:selectOption itemValue="category" itemLabel="Category"></apex:selectOption>
+ <apex:selectOption itemValue="Sub category1" itemLabel="Sub Category1"></apex:selectOption>
+ <apex:selectOption itemValue="Sub category2" itemLabel="Sub  Category2"></apex:selectOption>
+ <apex:selectOption itemValue="Sub category3" itemLabel="Sub Category3"></apex:selectOption>
+  <apex:selectOption itemValue="GCL" itemLabel="GCL"></apex:selectOption>
+   <apex:selectOption itemValue="Category Manager" itemLabel="Category Manager"></apex:selectOption>
+   <apex:selectOption itemValue="GMT category" itemLabel="GMT category"></apex:selectOption>
+   <apex:selectOption itemValue="GMT Subcategory1" itemLabel="GMT Subcategory1"></apex:selectOption>
+    <apex:selectOption itemValue="GMT Subcategory2" itemLabel="GMT Subcategory2"></apex:selectOption>
+     <apex:selectOption itemValue="GMT Subcategory3" itemLabel="GMT Subcategory3"></apex:selectOption>
+     <apex:selectOption itemValue="Cost Category" itemLabel="Cost Category"></apex:selectOption>
+     <apex:selectOption itemValue="Organization" itemLabel="Organization"></apex:selectOption>
+     <apex:selectOption itemValue="Market" itemLabel="Market"></apex:selectOption>
+     <apex:selectOption itemValue="Segment" itemLabel="Segment"></apex:selectOption>
+     
+ </apex:selectList>  
+ </apex:outputpanel>
+  
+    <!-- <apex:commandButton status="statusSaveTrip"  style=" font-family: sans-serif;background:#25A6E1;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    RESET    "  action="{!reset}" />
+     <apex:commandButton status="statusSaveTrip" style="margin-left:5cm; font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="SHOW DATA" action="{!data}"  reRender="skyblueSection"/>
+   </apex:outputpanel>  -->  <apex:outputpanel >  
+               <apex:outputlabel style="margin-left:2cm;font-weight:bold;" value="Add New Value"/>&nbsp;&nbsp;
+          <apex:inputtext value="{!newvalue}" /><BR/><BR/><BR/>
+  <!--   <apex:commandButton status="statusSaveTrip" style=" margin-left:8cm;font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    SUBMIT  "  action="{!save}" reRender="msg1,skyblueSection"/>
+&nbsp;&nbsp;&nbsp;&nbsp;      <apex:commandButton status="statusSaveTrip"  style=" font-family: sans-serif;background:#25A6E1;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    CANCEL   "   onclick="this.form.reset();return false;"  reRender="skyblueSection" />
+   -->  
+       
+                </apex:outputpanel>  
+   
+   <apex:outputpanel >  
+   <apex:commandButton status="statusSaveTrip"  style=" margin-left:1cm;font-family: sans-serif;background:#25A6E1;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    RESET    "  action="{!reset}" />
+   <apex:commandButton status="statusSaveTrip" style="margin-left:1cm; font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="SHOW DATA" action="{!data}"  reRender="skyblueSection"/>               
+   </apex:outputpanel> 
+    <apex:outputpanel >  
+   <apex:commandButton status="statusSaveTrip" style=" margin-left:5cm;font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    SUBMIT  "  action="{!save}" reRender="msg1,skyblueSection"/>
+    <apex:commandButton status="statusSaveTrip"  style=" font-family: sans-serif;background:#25A6E1;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  value="    CANCEL   "   onclick="this.form.reset();return false;"  reRender="skyblueSection" />
+     </apex:outputpanel>  
+
+   
+ <script>colorPageBlock(document.getElementById("{!$Component.a}"), "skyblue");</script>
+         </apex:pageblocksection>  
+
+ 
+
+  </APEX:PAGEBLOCK> 
+   
+  
+  
+  <APEX:PAGEBLOCK > 
+   <apex:actionFunction name="hitMe" action="{!deletes}" reRender="skyblueSection" >
+            <apex:param name="one" value="" assignto="{!id}" />
+          
+        </apex:actionFunction>
+       <!--  <apex:actionFunction name="Updates" action="{!saveMaster}" reRender="skyblueSection" >
+            <apex:param name="id" value="" assignto="{!ids}" />
+            <apex:param name="name" value="" assignto="{!name}" />
+          
+        </apex:actionFunction> -->
+        
+        
+    <apex:pageblockButtons location="bottom" >
+    
+
+    </apex:pageblockButtons>
+     <apex:outputPanel style="width:100%" rendered="{!ERRORMSG}" id="msg1"><br/>
+   <apex:pagemessage summary="PLEASE PRESS SAVE BUTTON TO SUBMIT CHANGES " severity="info" strength="3"  rendered="true" id="msg2" ></apex:pagemessage>
+ </apex:outputPanel><br/>
+ 
+        <apex:pageblocksection collapsible="true" id="skyblueSection"  title="DATA SECTION" >
+    
+    
+    <apex:actionStatus id="waitStatus" rendered="true">
+                            <apex:facet name="start">
+                                <span style=" color: red;">
+                                 <img src="{!$Resource.Statussign}" />>
+                                </span>
+                            </apex:facet>
+                </apex:actionStatus><br/>
+  <apex:outputPanel id="id1"  >
+
+  <apex:panelGrid id="grid" columns="4" style="width:50%;margin-left:5cm"  >
+<!--
+ <table>
+        <tr>
+            <th style="width:40px"> </th>
+            <th style="width:40px"> </th>
+            <th style="width:90px">Name</th>
+           
+        </tr>
+        <apex:repeat value="{!temporary}" var="e">
+        <tr style="height:20px">
+            <apex:outputPanel id="editRow" layout="none" rendered="{!e.Id == editcategory.Id}">
+                <td><apex:commandLink action="{!cancelEdit}" >Cancel</apex:commandLink></td>
+                <td><apex:commandLink action="{!saveEdit}"  >Save
+                   <apex:param name="editid1" value="{!e.Id}"/> </apex:commandLink></td>
+                <td><apex:inputField rendered="{!e.Id == editcategory.Id}" value="{!editcategory.name}"/></td>
+
+          
+            </apex:outputPanel>
+            <apex:outputPanel id="viewRow" layout="none" rendered="{!e.Id != editcategory.Id}">
+                <td>
+                    <apex:commandLink action="{!del}"  onclick="return confirm('Are you sure you want to delete this Employee?')">Del
+                        <apex:param name="delid" value="{!e.Id}"/>
+                    </apex:commandLink>
+                    
+                </td>
+                <td>
+                    <apex:commandLink action="{!editcon}" reRender="id1" >Edit <apex:param name="editid" value="{!e.id}"/>
+                    </apex:commandLink>
+                </td>
+                <td>{!e.Name}</td>
+               
+            </apex:outputPanel>
+        </tr>
+        </apex:repeat>
+    </table>
+    
+    -->
+    
+
+
+ <table cellpadding="0" cellspacing="0" width="50%"  style="margin:0px auto;" border="0">
+
+ 
+  <apex:repeat value="{!CMvalues}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+    
+    
+    
+ 
+ <apex:repeat value="{!GCLvalues}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+    
+    
+
+  <apex:repeat value="{!subcateogries}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+    
+    <apex:repeat value="{!subcateogries2}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+      
+
+
+ <apex:repeat value="{!subcateogries3}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+      
+      
+      
+      
+   <apex:repeat value="{!categories}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+      <!--  <apex:commandbutton image="{!$Resource.SSC_Save}" onclick="Updates(sg.id,sg.Name);return false;"  status="statusSaveTrip"    reRender="skyblueSection"/> -->
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+      
+      
+      
+        <apex:repeat value="{!gmtCateg}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%"> 
+      <!--  <apex:commandbutton image="{!$Resource.SSC_Save}" action="{!SAVESCORE}"   status="statusSaveTrip"    reRender="skyblueSection"/> -->
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+    
+        <apex:repeat value="{!gmtSubCat1}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+       <apex:repeat value="{!gmtSubCat2}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+      
+       <apex:repeat value="{!gmtSubCat3}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+     <apex:repeat value="{!costCat}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+     <apex:repeat value="{!organiz}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+    <apex:repeat value="{!market}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+     <apex:repeat value="{!segment}" var="sg">
+      <tr>
+      <td class="tblbody" align="center" width="20%">
+
+       <apex:commandButton image="{!$Resource.CD_Delete}" status="statusSaveTrip"  onclick="openpopup('{!sg.id}');return false;" reRender="skyblueSection"/>
+           
+      
+      
+      
+      
+      
+      
+      </td>
+      <td class="tblbody" align="center" width="20%">
+      
+      <apex:outputField value="{!sg.name}">
+                 <apex:inlineEditSupport showOnEdit="saveButton" 
+                            event="ondblclick" 
+                            changedStyleClass="myBoldClass" />  </apex:outputField>
+      </td>
+    </tr></apex:repeat>
+      </table> 
+
+
+          </apex:panelgrid><BR/>
+  <apex:commandButton action="{!SAVESCORE}"  status="statusSaveTrip" reRender="skyblueSection" style=" margin-left:8cm;font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"   value="SAVE"/>         
+ 
+   </apex:outputPanel>
+     <script>colorPageBlock(document.getElementById("{!$Component.skyblueSection}"), "skyblue");</script> 
+    </apex:pageblocksection>  
+    
+  
+ 
+    
+      
+      
+      
+      
+      </apex:pageblock></APEX:FORM>
+</apex:page>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Release Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Emailed_Developers__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Emailed Developers</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Feature_Release_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Feature Release Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Major</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Release Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Release_Notes__c</fullName>
+        <description>Summary of all features included in release</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Summary of all features included in release</inlineHelpText>
+        <label>Release Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Release_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Release Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scheduled</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Feature Release</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Release_Status__c</columns>
+        <columns>Feature_Release_Type__c</columns>
+        <columns>Projected_Release_Date__c</columns>
+        <columns>Actual_Release_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Deployed_Releases</fullName>
+        <columns>NAME</columns>
+        <columns>Release_Status__c</columns>
+        <columns>Feature_Release_Type__c</columns>
+        <columns>Projected_Release_Date__c</columns>
+        <columns>Actual_Release_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Release_Status__c</field>
+            <operation>equals</operation>
+            <value>Deployed</value>
+        </filters>
+        <label>Deployed Releases</label>
+    </listViews>
+    <listViews>
+        <fullName>Upcoming_Releases</fullName>
+        <columns>NAME</columns>
+        <columns>Release_Status__c</columns>
+        <columns>Feature_Release_Type__c</columns>
+        <columns>Projected_Release_Date__c</columns>
+        <columns>Actual_Release_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Release_Status__c</field>
+            <operation>equals</operation>
+            <value>Scheduled,In Progress</value>
+        </filters>
+        <label>Upcoming Releases</label>
+    </listViews>
+    <nameField>
+        <label>Feature Release Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Feature Releases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Feature_Release_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Release_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Projected_Release_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Actual_Release_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Release_Notes__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Feature_Release_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Projected_Release_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Release_Status__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Feature_Release_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Projected_Release_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Release_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Actual_Release_Date_Required</fullName>
+        <active>true</active>
+        <description>when release is set to Deployed enforce a the actual release date.</description>
+        <errorConditionFormula>ISPICKVAL(Release_Status__c, &quot;Deployed&quot;)  &amp;&amp;   ISBLANK(Actual_Release_Date__c)</errorConditionFormula>
+        <errorDisplayField>Actual_Release_Date__c</errorDisplayField>
+        <errorMessage>Please input an actual release Date when Release Status is set to &quot;Deployed&quot;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Notify_Developers</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Notify Developers</masterLabel>
+        <openType>replace</openType>
+        <page>FeatureInProgressNotifyDevelopers</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Defendant</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Defendants</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Defendants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legal Case --></label>
+        <name>Legal_Case__c</name>
+        <relationshipLabel><!-- Defendants --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

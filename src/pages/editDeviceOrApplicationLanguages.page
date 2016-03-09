@@ -1,0 +1,33 @@
+<apex:page controller="editDeviceOrApplicationLanguages" showHeader="false">
+    <script language="javascript">   
+        function reloadParentAndClose()
+        {           
+            //window.opener.timedRefresh(2000);
+            parent.window.opener.location.href = "/{!targetId}";
+            
+            window.close();         
+        }           
+        function refresh()
+        {
+            //window.parent.location.replace('/{!$CurrentPage.parameters.id}');
+            parent.window.opener.location.replace('/{!$CurrentPage.parameters.id}');
+            window.close();
+        }        
+    </script>     
+
+    <apex:form >
+        <center>
+        	<apex:commandButton action="{!save}" value="Save" oncomplete="refresh();"/>
+        	<apex:commandButton value="Cancel" onclick="window.close();"/>
+        </center>
+        <apex:pageBlock title="Languages"> 
+             <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="na" />                             
+            <apex:pageBlockTable value="{!languages}" var="c4" id="na">
+                <apex:column >
+                    <apex:inputCheckbox value="{!c4.selected}"/>
+                    {!c4.languageName}
+                </apex:column>
+            </apex:pageBlockTable>            
+        </apex:pageBlock>                                                                              
+    </apex:form> 
+</apex:page>

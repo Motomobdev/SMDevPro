@@ -1,0 +1,70 @@
+<apex:component controller="Tab_Con">
+    <apex:attribute name="importCSS" description="By default the value is set to true,set the value to false if you dont want to laod the default jQuery CSS" default="true" type="Boolean"/>
+    <apex:attribute name="theme" type="string" description="jqueryui theme name.The values can be black-tie, blitzer, cupertino, dark-hive, dot-luv, eggplant, excite-bike, flick, hot-sneaks, humanity, le-frog, mint-choc, overcast,pepper-grinder, redmond, smoothness, south-street, start, sunny, swanky-purse, trontastic, ui-darkness, ui-lightness, and vader" default="ui-lightness"/>
+    <apex:outputPanel styleClass="custJQTabs">
+        <div id="tabs-{!randomSuffix}">
+            <apex:componentBody />
+        </div>
+    </apex:outputPanel>
+    <apex:variable var="foo" value="foo" rendered="{!Not(isExcelRender)}">
+    <script>
+        
+        var callBack;
+        function scriptManager(callbackFn){
+            
+            if(callBack == null){
+                callBack = callbackFn;
+            }
+            if (typeof jQuery !== 'undefined'){ 
+               $j = jQuery.noConflict();
+               
+               if({!importCSS} == true && $j('link[href$="custom.min.css"]').length == 0){
+                    $j('<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/{!theme}/jquery-ui.min.css" >').appendTo("head");
+                }
+               
+               if(jQuery.ui){
+                    loadTabs();                   
+                }
+                else{
+                    loadScript('{!URLFOR($Resource.jQuery_UI_1_10_2, 'js/jquery-ui-1.10.2.custom.min.js')}',callBack);
+                }
+            }
+            else{
+                loadScript('{!URLFOR($Resource.jQuery_UI_1_10_2, 'js/jquery-1.9.1.min.js')}',scriptManager);
+            }
+        }
+        
+        function loadScript(url, callback){
+           console.log(url);
+            /*adding the script tag to the head as suggested before*/
+           var head = document.getElementsByTagName('head')[0];
+           var script = document.createElement('script');
+           script.type = 'text/javascript';
+           script.src = url;
+        
+           /*then bind the event to the callback function*/ 
+           /*there are several events for cross browser compatibility*/
+           script.onreadystatechange = callback;
+           script.onload = callback;
+        
+           /*fire the loading*/
+           head.appendChild(script);
+        }
+        
+        function loadTabs(){
+            var tab = $j('<ul></ul>');
+            $j.each($j("ul.easyTab9 > li"),function(){
+                tab.append(this);
+            });
+            $j('ul.easyTab9').remove();
+            $j( "#tabs-{!randomSuffix}" ).prepend(tab).tabs();
+        };
+        
+    </script>
+    <style>
+        .easyTab9{display : none}
+        .easyTabBody9{display :none}
+    </style>
+    <script>scriptManager(loadTabs);</script>
+    </apex:variable>
+</apex:component>

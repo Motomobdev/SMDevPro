@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Top Reports page for Motorola GTM reports &amp; dashboards.</description>
+    <label>Top Reports</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom64: Compass</motif>
+    <page>GTM_Top_Reports</page>
+</CustomTab>

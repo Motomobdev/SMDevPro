@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Country</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Countries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country External Unique ID --></label>
+        <name>Country_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Name (Chinese characters) --></label>
+        <name>Country_Name_Chinese_characters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Asia</masterLabel>
+            <translation><!-- Asia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia and Oceania</masterLabel>
+            <translation><!-- Australia and Oceania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central America and the Caribbean</masterLabel>
+            <translation><!-- Central America and the Caribbean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middle East and North Africa</masterLabel>
+            <translation><!-- Middle East and North Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America</masterLabel>
+            <translation><!-- North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South America</masterLabel>
+            <translation><!-- South America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub-Saharan Africa</masterLabel>
+            <translation><!-- Sub-Saharan Africa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total # of Apps that are available in this country. Please note, MMI may not have licensing agreement with all. Please check with the partner Manager if we do not. --></help>
+        <label><!-- Total # of Availible Apps --></label>
+        <name>Total_of_Availible_Apps__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total # of Apps that are shippable to this country. --></help>
+        <label><!-- # of Legally Shippable Apps --></label>
+        <name>of_Legally_Shippable_Apps__c</name>
+    </fields>
+    <layouts>
+        <layout>Country Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Country Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

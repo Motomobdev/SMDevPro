@@ -1,0 +1,127 @@
+<apex:page >
+
+<!--<apex:includeScript value="{!$Resource.jQuery}"/>
+<apex:includeScript value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/js/jquery.dataTables.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/jquery.dataTables.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/styles.for.salesforce.css')}"/>
+
+<apex:form >
+<script>
+       $(document).ready(function() {
+        $(".dealTable,.approverTable").dataTable({"iDisplayLength": 25   
+         });
+      });
+</script>
+    <apex:sectionHeader title="Deals Pending" subtitle="Deal Agenda/Approvers" />
+    <apex:pageBlock >
+        <center><b>Filter </b> 
+            <apex:selectList value="{!userType}" size="1">
+                <apex:selectoption itemlabel="Monday Agenda" itemValue="Monday Agenda" ></apex:selectoption>      
+                <apex:selectoption itemlabel="Tuesday Agenda" itemValue="Tuesday Agenda"></apex:selectoption> 
+                <apex:selectoption itemlabel="All Open Deals" itemValue="All Deals"></apex:selectoption> 
+                <apex:selectoption itemlabel="All Open Deals by Approver" itemValue="All Approvers"></apex:selectoption> 
+             </apex:selectList> &nbsp;
+             
+             <apex:commandButton action="{!search}" value="Search"/> 
+        </center>
+        <!-- Results section -->    
+        <!--<br></br>
+        
+        <apex:outputText rendered="{!!blnShowTable && showNoRecordsFound}"> No Results Found</apex:outputText>
+     
+        <apex:pageBlockTable value="{!listapprovalstepsPage}" 
+                             rendered="{!blnShowTable && userType != 'All Approvers'}"
+                             border="1" var="approvalstep" id="DATable"
+                             rowClasses="odd,even" styleClass="dealTable">
+               
+            <apex:column >
+                <apex:facet name="header">Deal Number</apex:facet>
+                <apex:outputLink value="/{!approvalstep.TargetObjectID}">
+                    <apex:outputtext value="{!mapDeal[approvalstep.TargetObjectID].Deal__c}"/>
+                </apex:outputLink>
+            </apex:column>
+    
+            <apex:column >
+                <apex:facet name="header">Deal Name</apex:facet>
+                <apex:outputField value="{!approvalstep.TargetObject.Name}" />
+            </apex:column>
+    
+            <apex:column >
+               <apex:facet name="header">Review Date</apex:facet>
+               <apex:outputtext value="{0,date,MM'/'dd'/'yyyy}">
+                   <apex:param value="{!mapDeal[approvalstep.TargetObjectID].Review_Date__c}"/> 
+               </apex:outputtext>
+            </apex:column>
+     
+            <apex:column >
+                <apex:facet name="header">Account</apex:facet>
+                <apex:outputField value="{!mapDeal[approvalstep.TargetObjectID].Account__r.Name}" />
+            </apex:column>
+    
+            <apex:column >
+                <apex:facet name="header">Country</apex:facet>
+                <apex:outputField value="{!mapDeal[approvalstep.TargetObjectID].Account_Country__c}" />
+            </apex:column>
+     
+            <apex:column >
+                <apex:facet name="header">Region</apex:facet>
+                <apex:outputField value="{!mapDeal[approvalstep.TargetObjectID].Account_Region__c}" />
+            </apex:column>
+                     
+            <apex:column rendered="{!If(userType ='All Deals',true,false)}" >
+                <apex:facet name="header">Approvers</apex:facet>
+                <apex:repeat value="{!approvalstep.Workitems}" var="approvalSubStep">
+                    <apex:outputField value="{!approvalSubStep.Actor.Name}"/>
+                     <br></br> 
+                </apex:repeat>
+            </apex:column>
+      </apex:pageBlockTable>
+    
+      <apex:pageblocktable value="{!mapApproverDeal}" 
+                           var="key" id="DataTable" 
+                           styleClass="approverTable" 
+                           rendered="{!blnShowTable && userType == 'All Approvers'}">
+      
+          <apex:column title="Approvar" value="{!key.Name}" style="vertical-align: top;}"/>
+      
+          <apex:column title="FedID" style="vertical-align: top;}">
+              <apex:facet name="header">Core ID</apex:facet>
+                  {!key.FederationIdentifier}
+          </apex:column>      
+       
+           <apex:column title="Deal Number"> 
+               <apex:facet name="header">Deal Number</apex:facet>
+               <apex:repeat value="{!mapApproverDeal[key]}" var="deal">
+                   <apex:outputLink value="/{!Deal.Id}">{!Deal.Deal__c}
+                   </apex:outputLink>
+                   <br></br>
+               </apex:repeat>   
+           </apex:column> 
+        
+           <apex:column title="Review Date"> 
+               <apex:facet name="header">Review Date</apex:facet>
+               <apex:repeat value="{!mapApproverDeal[key]}" var="deal">
+                   <apex:outputtext value="{0,date,MM'/'dd'/'yyyy}">
+                       <apex:param value="{!Deal.Review_Date__c}"/> 
+                   </apex:outputtext>
+              <br></br>
+             </apex:repeat>   
+        </apex:column> 
+        <apex:column title="Account">
+            <apex:facet name="header">Account</apex:facet> 
+            <apex:repeat value="{!mapApproverDeal[key]}" var="deal">
+                {!Deal.Account__r.Name}
+                <br></br>
+            </apex:repeat>   
+        </apex:column> 
+        <apex:column title="Country"> 
+            <apex:facet name="header">Country</apex:facet> 
+            <apex:repeat value="{!mapApproverDeal[key]}" var="deal">
+                {!Deal.Account_Country__c} 
+                <br></br>
+            </apex:repeat>   
+        </apex:column> 
+      </apex:pageblocktable>
+    </apex:pageBlock>
+  </apex:form>-->
+</apex:page>

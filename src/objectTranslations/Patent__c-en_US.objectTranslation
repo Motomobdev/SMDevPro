@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patent</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Enforcement Date --></label>
+        <name>Actual_Enforcement_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CWV Enforcement Date --></label>
+        <name>CWV_Enforcement_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customs Status --></label>
+        <name>Customs_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventor(s) --></label>
+        <name>Inventor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Case --></label>
+        <name>Legal_Case__c</name>
+        <relationshipLabel><!-- Patents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Link to Patent --></label>
+        <name>Link_to_Patent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola SME Core ID --></label>
+        <name>Motorola_SME_Core_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola SME Name --></label>
+        <name>Motorola_SME_Name__c</name>
+        <relationshipLabel><!-- Patents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Patent Abstract --></label>
+        <name>Patent_Abstract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent Expiration Date --></label>
+        <name>Patent_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent Grant Date --></label>
+        <name>Patent_Grant_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent Name --></label>
+        <name>Patent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patent Number --></label>
+        <name>Patent_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Patent Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Legal Case Detail --></label>
+            <section>Legal Case Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Patent Devices --></label>
+            <section>Patent Devices</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

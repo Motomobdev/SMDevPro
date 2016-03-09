@@ -1,0 +1,36 @@
+<apex:page standardController="Retail_Forecast__c" sidebar="false" showHeader="false">
+    <apex:tabPanel switchType="client" selectedTab="tabdetails"
+                      id="RetailForecastTabPanel" tabClass="activeTab"
+                      inactiveTabClass="inactiveTab">
+        <apex:tab label="Companion Products(CP)">
+            <iframe id="gridFrame1" scrolling="auto" height="420" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Retail Forecast Lines CP&fpf=Retail_Forecast__c&fpv={!Retail_Forecast__c.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Handset">
+            <iframe id="gridFrame1" scrolling="auto" height="420" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Retail Forecast Lines Handset&fpf=Retail_Forecast__c&fpv={!Retail_Forecast__c.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Home">
+            <iframe id="gridFrame1" scrolling="auto" height="420" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Retail Forecast Lines Home&fpf=Retail_Forecast__c&fpv={!Retail_Forecast__c.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Tablet">
+            <iframe id="gridFrame1" scrolling="auto" height="420" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Retail Forecast Lines Tablet&fpf=Retail_Forecast__c&fpv={!Retail_Forecast__c.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        
+        <apex:tab label="Other">
+            <iframe id="gridFrame1" scrolling="auto" height="420" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Retail Forecast Lines Other&fpf=Retail_Forecast__c&fpv={!Retail_Forecast__c.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+
+    </apex:tabPanel>
+</apex:page>

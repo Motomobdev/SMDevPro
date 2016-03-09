@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Legal Approver</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Legal Approvers</value>
+    </caseValues>
+    <fields>
+        <help><!-- The legal approver for this product family --></help>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- Deal Legal Approvers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Portfolio Segment --></label>
+        <name>Portfolio_Segment__c</name>
+        <picklistValues>
+            <masterLabel>CP</masterLabel>
+            <translation><!-- CP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iDEN</masterLabel>
+            <translation><!-- iDEN --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Deal Legal Approver Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

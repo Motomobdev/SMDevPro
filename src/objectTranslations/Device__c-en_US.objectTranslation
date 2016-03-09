@@ -1,0 +1,2062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Devices</value>
+    </caseValues>
+    <fields>
+        <help><!-- Mapped from the NPI field &quot;APC&quot; --></help>
+        <label><!-- APC_code --></label>
+        <name>APC_code__c</name>
+    </fields>
+    <fields>
+        <help><!-- APPS version, from NPI --></help>
+        <label><!-- APPS Version --></label>
+        <name>APP_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activities for Next Week --></label>
+        <name>Activities_for_Next_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Shipped Volume --></label>
+        <name>Actual_Shipped_Volume__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field, &quot;Adjunct_chipset&quot; --></help>
+        <label><!-- Application Chipset --></label>
+        <name>Adjunct_Chipset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device team integration alpha date --></help>
+        <label><!-- Alpha Date --></label>
+        <name>Alpha_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;SW Platform&quot; field --></help>
+        <label><!-- Platform Release --></label>
+        <name>Android_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications Copied From: --></label>
+        <name>Applications_Copied_From__c</name>
+        <relationshipLabel><!-- Devices (Applications Copied From:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applications Copied: --></label>
+        <name>Applications_Copied__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a link to the document, located on another server --></help>
+        <label><!-- Approval Document from Google --></label>
+        <name>Approval_Document_from_Google__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to determine if the Google TA approval was manual or auto approved --></help>
+        <label><!-- Approval Type --></label>
+        <name>Approval_Type__c</name>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation><!-- Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Apps Requiring 3rd Party Approval --></label>
+        <name>Apps_Requiring_3rd_Party_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Audio Encode Codecs&quot; --></help>
+        <label><!-- Audio Encode Codecs --></label>
+        <name>Audio_Encode_Codecs__c</name>
+    </fields>
+    <fields>
+        <help><!-- From GPPD/NPI field &quot;Audio Playback Codecs&quot; --></help>
+        <label><!-- Audio Playback Codecs --></label>
+        <name>Audio_Playback_Codecs__c</name>
+    </fields>
+    <fields>
+        <label><!-- BLUR_Version_String --></label>
+        <name>BLUR_Version_String__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;BLUR Version&quot; field --></help>
+        <label><!-- BLUR Version --></label>
+        <name>BLUR_Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Banding or Variant&quot; --></help>
+        <label><!-- Banding or Variant --></label>
+        <name>Banding_or_Variant__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field, &quot;Baseband Chipset&quot; --></help>
+        <label><!-- Baseband Chipset --></label>
+        <name>Baseband_Chipset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device team integration beta date --></help>
+        <label><!-- Beta Date --></label>
+        <name>Beta_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- From GPPD/NPI field &quot;Browser Type&quot; --></help>
+        <label><!-- Browser Type --></label>
+        <name>Browser_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Build_Number&quot; --></help>
+        <label><!-- Build Number --></label>
+        <name>Build_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Operations Analyst Email --></label>
+        <name>Business_Operations_Analyst_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Operations Analyst --></label>
+        <name>Business_Operations_Analyst__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;Business Unit&quot; --></help>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- CTS Comments --></label>
+        <name>CTS_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOT/Google Tech Account Analyst Email --></label>
+        <name>CTS_Coordinator_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOT/Google Technical Account Analyst --></label>
+        <name>CTS_Coordinator_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CTS Last SW Submitted --></label>
+        <name>CTS_Last_SW_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a link to the document, located on another server --></help>
+        <label><!-- CTS Software Checklist --></label>
+        <name>CTS_Software_Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- CTS Submission Status --></label>
+        <name>CTS_Submission_Status__c</name>
+        <picklistValues>
+            <masterLabel>Checklist Provided</masterLabel>
+            <translation><!-- Checklist Provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Google</masterLabel>
+            <translation><!-- Sent to Google --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CTS Technical Lead Email --></label>
+        <name>CTS_Technical_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- CTS Technical Lead --></label>
+        <name>CTS_Technical_Lead_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Main Camera Resolution MP&quot; field --></help>
+        <label><!-- Camera resolution   (main) --></label>
+        <name>Camera_resolution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;P2P Camera Resolution MP&quot; field --></help>
+        <label><!-- Camera resolution (secondary) --></label>
+        <name>Camera_resolution_secondary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device (Sales Model) is Cancelled or Deleted, based on NPI --></help>
+        <label><!-- Device Cancelled or Deleted from NPI? --></label>
+        <name>Cancelled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Family cancelled, based on NPI --></help>
+        <label><!-- Product Family Cancelled? --></label>
+        <name>Cancelled_product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Account --></label>
+        <name>Carrier_Account__c</name>
+        <relationshipLabel><!-- Carrier Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 1 AIF Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(AifLevel1)SentForSADat --></label>
+        <name>ComplianceEmail_AifLevel1_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 2 AIF Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(AifLevel2)SentForSADate --></label>
+        <name>ComplianceEmail_AifLevel2_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 1 BOM Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(BomLevel1)SentForSADate --></label>
+        <name>ComplianceEmail_BomLevel1_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 2 BOM Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(BomLevel2)SentForSADate --></label>
+        <name>ComplianceEmail_BomLevel2_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 1 Contract Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(ContLevel1)SentForSADate --></label>
+        <name>ComplianceEmail_ContLevel1_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the SA Date that the Level 2 Contract Compliance email was using when it was sent. --></help>
+        <label><!-- ComplianceEmail(ContLevel2)SentForSADate --></label>
+        <name>ComplianceEmail_ContLevel2_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ComplianceEmail(ContLevel3)SentForSADate --></label>
+        <name>ComplianceEmail_ContLevel3_SentForSADate__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Connectivity Features&quot; --></help>
+        <label><!-- Connectivity Features --></label>
+        <name>Connectivity_Features__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Package --></label>
+        <name>Core_Device_Package_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Core Device Package selected for this Device. To change use the Edit Core &amp; Stable button. --></help>
+        <label><!-- Core Device Package --></label>
+        <name>Core_Device_Package__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Country Code, from NPI --></help>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;DP Segment Code&quot; --></help>
+        <label><!-- DP Segment Code --></label>
+        <name>DP_Segment_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- DTV --></label>
+        <name>DTV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date CTS SW Checklist Provided --></label>
+        <name>Date_CTS_SW_Checklist_Provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date CTS SW Checklist Sent to Google --></label>
+        <name>Date_CTS_SW_Checklist_Sent_to_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date GMS Conditional Approval by Google --></label>
+        <name>Date_GMS_Conditional_Approval_by_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date GTA SW Checklist Provided --></label>
+        <name>Date_GMS_SW_Checklist_Provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date GMS SW Checklist Sent to Google --></label>
+        <name>Date_GMS_SW_Checklist_Sent_to_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date CTS SW Checklist Provided --></label>
+        <name>Date_LE_CTS_SW_Checklist_Provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date CTS SW Checklist Sent to Google --></label>
+        <name>Date_LE_CTS_SW_Checklist_Sent_to_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date GMS Conditional Approval by Ggle --></label>
+        <name>Date_LE_GMS_Conditional_Approval_by_Ggle__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date GMS SW Checklist Provided --></label>
+        <name>Date_LE_GMS_SW_Checklist_Provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE Date GMS SW Checklist Sent to Google --></label>
+        <name>Date_LE_GMS_SW_Checklist_Sent_to_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Launch Addendum Executed by Google --></label>
+        <name>Date_Launch_Addendum_Executed_by_Google__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Launch Addendum Executed by Motorola --></help>
+        <label><!-- Date Launch Addendum Executed by MOT --></label>
+        <name>Date_Launch_Addendum_Executed_by_MOT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Launch Addendum Submitted to Google --></label>
+        <name>Date_Launch_Addendum_Submitted_to_Google__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Launch Addendum Template Provided --></label>
+        <name>Date_Launch_Addendum_Template_Provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Google TA Approval by Google --></label>
+        <name>Date_of_Google_TA_Approval_by_Google__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Key Features&quot; field --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Destination Device --></label>
+        <name>Destination_Device__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device External Unique ID --></label>
+        <name>Device_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This device is locked down.  Anything that changes after this is unexpected and will cause a change to the BOM. --></help>
+        <label><!-- Device Fully Approved --></label>
+        <name>Device_Fully_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Unique ID field for each Device in SalesForce, based on matching record in NPI --></help>
+        <label><!-- Device ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Link to NPI --></label>
+        <name>Device_Link_to_NPI__c</name>
+    </fields>
+    <fields>
+        <help><!-- Concatenation of Device Name plus Device ID --></help>
+        <label><!-- Device Name plus ID --></label>
+        <name>Device_Name_plus_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of previous device name (if any), changed in GPPD/NPI --></help>
+        <label><!-- Device Previous Name    (if any) --></label>
+        <name>Device_Previous_Name_if_any__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Project/Program Lead Email --></label>
+        <name>Device_Project_Program_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI --></help>
+        <label><!-- Device Project/Program Lead --></label>
+        <name>Device_Project_Program_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Risk Flag Condition --></label>
+        <name>Device_Risk_Flag_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Risk Flag --></label>
+        <name>Device_Risk_Flag__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SFDC Device SW KIT State --></label>
+        <name>Device_SW_KIT_State__c</name>
+        <picklistValues>
+            <masterLabel>12 - Prelim</masterLabel>
+            <translation><!-- 12 - Prelim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32 - Controlled</masterLabel>
+            <translation><!-- 32 - Controlled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35 - Full Release</masterLabel>
+            <translation><!-- 35 - Full Release --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Device Type&quot; --></help>
+        <label><!-- Device Type --></label>
+        <name>Device_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Display Pixels&quot; field --></help>
+        <label><!-- Display Pixels --></label>
+        <name>Display_Pixels__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Display Size&quot; field --></help>
+        <label><!-- Display Size --></label>
+        <name>Display_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Display Type&quot; field --></help>
+        <label><!-- Display Type --></label>
+        <name>Display_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dual SIM --></label>
+        <name>Dual_SIM__c</name>
+    </fields>
+    <fields>
+        <label><!-- EOL --></label>
+        <name>EOL__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Email&quot; --></help>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Current Royalty Cost --></label>
+        <name>Estimated_Current_Royalty_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated High Royalty Cost --></label>
+        <name>Estimated_High_Royalty_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated High Royalty Cost w/o Qualcomm --></label>
+        <name>Estimated_High_Royalty_Cost_w_o_Qualcomm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Low Royalty Cost --></label>
+        <name>Estimated_Low_Royalty_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;Experience Category&quot; --></help>
+        <label><!-- Experience Category --></label>
+        <name>Experience_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;External Name&quot; field --></help>
+        <label><!-- External Name --></label>
+        <name>External_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Carrier/region Field Test 1 integration date --></help>
+        <label><!-- FT1 --></label>
+        <name>FT1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Carrier/region Field Test 2 integration date --></help>
+        <label><!-- FT2 --></label>
+        <name>FT2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Carrier/region Field Test Final integration date --></help>
+        <label><!-- FTV --></label>
+        <name>FTV__c</name>
+    </fields>
+    <fields>
+        <help><!-- Capture any data pertaining to Final device approvals --></help>
+        <label><!-- Final Approvals Comments --></label>
+        <name>Final_Approvals_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Form Factor&quot; field --></help>
+        <label><!-- Form Factor --></label>
+        <name>Form_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMS Comments --></label>
+        <name>GMS_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Build Fingerprint Being Submitted --></label>
+        <name>GMS_Last_SW_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the SW Build Folder --></help>
+        <label><!-- GTA Software Folder Link --></label>
+        <name>GMS_Software_Checklist__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of this device&apos;s GTA submission in the Google Technical Acceptance process --></help>
+        <label><!-- GTA Submission Status --></label>
+        <name>GMS_Submission_Status__c</name>
+        <picklistValues>
+            <masterLabel>Checklist Provided</masterLabel>
+            <translation><!-- Checklist Provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Google</masterLabel>
+            <translation><!-- Sent to Google --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GMS Technical Lead Email --></label>
+        <name>GMS_Technical_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMS Technical Lead --></label>
+        <name>GMS_Technical_Lead_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- GM date minus two weeks --></help>
+        <label><!-- GM Release Candidate --></label>
+        <name>GM_Release_Candidate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device team integration GM date --></help>
+        <label><!-- GM --></label>
+        <name>GM__c</name>
+    </fields>
+    <fields>
+        <help><!-- From GPPD --></help>
+        <label><!-- GPPD Product Key --></label>
+        <name>GPPD_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the email address you would like to have the approval email sent to --></help>
+        <label><!-- GTA Submitter Email --></label>
+        <name>GTA_Submitter_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Relationship Manager Email --></label>
+        <name>Google_Relationship_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Relationship Manager --></label>
+        <name>Google_Relationship_Manager_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google TA Approval Status --></label>
+        <name>Google_TA_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Google TA Comments --></label>
+        <name>Google_TA_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field, HAC_RF_Interface --></help>
+        <label><!-- HAC RF Interface --></label>
+        <name>HAC_RF_Interface__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field, HAC_TCoil --></help>
+        <label><!-- HAC TCoil --></label>
+        <name>HAC_TCoil__c</name>
+    </fields>
+    <fields>
+        <label><!-- HDMI applications --></label>
+        <name>HDMI_applications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hardware Provided? --></label>
+        <name>Hardware_Provided__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IP_Applications_Cap --></label>
+        <name>IP_Applications_Cap__c</name>
+    </fields>
+    <fields>
+        <help><!-- These are the IP applications that you should add to your device --></help>
+        <label><!-- IP Applications --></label>
+        <name>IP_Applications__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this device has these capabilities, select as appropriate. --></help>
+        <label><!-- IP Capabilities --></label>
+        <name>IP_Cap__c</name>
+        <picklistValues>
+            <masterLabel>AAC</masterLabel>
+            <translation><!-- AAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Browser (WAP only not Full or HTML)</masterLabel>
+            <translation><!-- Browser (WAP only not Full or HTML) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Camera</masterLabel>
+            <translation><!-- Camera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Freescale Recovery (Tessera $.45)</masterLabel>
+            <translation><!-- Freescale Recovery (Tessera $.45) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS</masterLabel>
+            <translation><!-- GPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HSDPA</masterLabel>
+            <translation><!-- HSDPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Multi-Band Antenna</masterLabel>
+            <translation><!-- Internal Multi-Band Antenna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Java</masterLabel>
+            <translation><!-- Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMS</masterLabel>
+            <translation><!-- MMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP3</masterLabel>
+            <translation><!-- MP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MPEG4 Decode</masterLabel>
+            <translation><!-- MPEG4 Decode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MPEG4 Encode</masterLabel>
+            <translation><!-- MPEG4 Encode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS WMA</masterLabel>
+            <translation><!-- MS WMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS WMV</masterLabel>
+            <translation><!-- MS WMV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft WMDRM</masterLabel>
+            <translation><!-- Microsoft WMDRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Svr-assist GPS loc tech(AGPS)(no3g/cdma)</masterLabel>
+            <translation><!-- Svr-assist GPS loc tech(AGPS)(no3g/cdma) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tessera .10/unit</masterLabel>
+            <translation><!-- Tessera .10/unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tessera .15/unit</masterLabel>
+            <translation><!-- Tessera .15/unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tessera .25/unit</masterLabel>
+            <translation><!-- Tessera .25/unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tessera .35/unit</masterLabel>
+            <translation><!-- Tessera .35/unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tessera .45/unit</masterLabel>
+            <translation><!-- Tessera .45/unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Touch Screen</masterLabel>
+            <translation><!-- Touch Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WAPI Client in WIFI Chips</masterLabel>
+            <translation><!-- WAPI Client in WIFI Chips --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the device only has the connector, pick HDMI connector.  If the device also has pkg&apos;ing branding, pick HDMI branding.  If the device has the connetor, branded, and encryption, chose HDMI HDCP Encryption --></help>
+        <label><!-- IP HDMI Capabilities --></label>
+        <name>IP_HDMI_Capabilities__c</name>
+        <picklistValues>
+            <masterLabel>HDMI w/ Trademark use w/ HDCP</masterLabel>
+            <translation><!-- HDMI w/ Trademark use w/ HDCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDMI w/ Trademark use w/out HDCP</masterLabel>
+            <translation><!-- HDMI w/ Trademark use w/out HDCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDMI w/out Trademark use w/ HDCP</masterLabel>
+            <translation><!-- HDMI w/out Trademark use w/ HDCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDMI w/out Trademark use w/out HDCP</masterLabel>
+            <translation><!-- HDMI w/out Trademark use w/out HDCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pick the best match for this device. If it&apos;s 3g, but also handles gsm, please pick 3g. --></help>
+        <label><!-- IP Technology &amp; Region --></label>
+        <name>IP_Technology_Region__c</name>
+        <picklistValues>
+            <masterLabel>ROW - WCDMA (i.e. UMTS)</masterLabel>
+            <translation><!-- ROW - WCDMA (i.e. UMTS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROW CDMA</masterLabel>
+            <translation><!-- ROW CDMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROW GSM</masterLabel>
+            <translation><!-- ROW GSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROW IDEN</masterLabel>
+            <translation><!-- ROW IDEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US - WCDMA (i.e. UMTS)</masterLabel>
+            <translation><!-- US - WCDMA (i.e. UMTS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US CDMA</masterLabel>
+            <translation><!-- US CDMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US GSM</masterLabel>
+            <translation><!-- US GSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US IDEN</masterLabel>
+            <translation><!-- US IDEN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Icon/URL/Name Usage Approval Requirement --></label>
+        <name>Icon_URL_Name_Usage_Approval_Requirement__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Initial_LE_Actual_Date&quot; --></help>
+        <label><!-- Initial LE Actual Date --></label>
+        <name>Initial_LE_Actual_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Initial_LE_CWV_Date&quot; --></help>
+        <label><!-- Initial LE CWV Date --></label>
+        <name>Initial_LE_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issues/Risks/Mitigation Plan --></label>
+        <name>Issues_Risks_Mitigation_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE CTS Comments --></label>
+        <name>LE_CTS_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE CTS Last SW Submitted --></label>
+        <name>LE_CTS_Last_SW_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a link to the document, located on another server --></help>
+        <label><!-- LE CTS Software Checklist --></label>
+        <name>LE_CTS_Software_Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE CTS Submission Status --></label>
+        <name>LE_CTS_Submission_Status__c</name>
+        <picklistValues>
+            <masterLabel>Checklist Provided</masterLabel>
+            <translation><!-- Checklist Provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LE Received</masterLabel>
+            <translation><!-- LE Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Google</masterLabel>
+            <translation><!-- Sent to Google --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LE GMS Comments --></label>
+        <name>LE_GMS_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- LE GMS Last SW Submitted --></label>
+        <name>LE_GMS_Last_SW_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a link to the document, located on another server --></help>
+        <label><!-- LE GMS Software Checklist --></label>
+        <name>LE_GMS_Software_Checklist__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of this device&apos;s GMS submission in the Google Technical Acceptance process --></help>
+        <label><!-- LE GMS Submission Status --></label>
+        <name>LE_GMS_Submission_Status__c</name>
+        <picklistValues>
+            <masterLabel>Checklist Provided</masterLabel>
+            <translation><!-- Checklist Provided --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Google</masterLabel>
+            <translation><!-- Sent to Google --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;LE CWV Date&quot; --></help>
+        <label><!-- LE Date --></label>
+        <name>LE__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;Last PC Review&quot; --></help>
+        <label><!-- Last PC Review --></label>
+        <name>Last_PC_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last person to revise the NPI record; mapped to NPI field &quot;Last_Revised_by&quot; --></help>
+        <label><!-- Last Revised by (NPI record) --></label>
+        <name>Last_Revised_by_NPI_record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Addendum Comments --></label>
+        <name>Launch_Addendum_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Addendum Executed by Google --></label>
+        <name>Launch_Addendum_Executed_by_Google__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the link to the location of the Launch Addendum Executed by Motorola document. --></help>
+        <label><!-- Launch Addendum Executed by MOT --></label>
+        <name>Launch_Addendum_Executed_by_MOT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Addendum ID --></label>
+        <name>Launch_Addendum_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of the launch addendum --></help>
+        <label><!-- Launch Addendum Status --></label>
+        <name>Launch_Addendum_Status__c</name>
+        <picklistValues>
+            <masterLabel>Email Authorization</masterLabel>
+            <translation><!-- Email Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Executed</masterLabel>
+            <translation><!-- Google Executed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Executed</masterLabel>
+            <translation><!-- Motorola Executed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Google</masterLabel>
+            <translation><!-- Sent to Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Template Provided</masterLabel>
+            <translation><!-- Template Provided --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a link to the document, located on another server --></help>
+        <label><!-- Launch Addendum Template --></label>
+        <name>Launch_Addendum_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Addendum --></label>
+        <name>Launch_Addendum__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Launch_CFC_Sites&quot; --></help>
+        <label><!-- Launch CFC Site --></label>
+        <name>Launch_CFC_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Launch_Mfg_Sites&quot; --></help>
+        <label><!-- Launch MFG Site --></label>
+        <name>Launch_MFG_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lead Device for MOTOREADY --></help>
+        <label><!-- Lead Device for MOTOREADY --></label>
+        <name>Lead_Device_for_MOTOREADY__c</name>
+    </fields>
+    <fields>
+        <help><!-- MAPS version, from NPI --></help>
+        <label><!-- MAPS Version --></label>
+        <name>MAPS_Versions__c</name>
+    </fields>
+    <fields>
+        <help><!-- MGate, based on NPI --></help>
+        <label><!-- MGate --></label>
+        <name>MGate__c</name>
+    </fields>
+    <fields>
+        <help><!-- MOL Manager, from NPI --></help>
+        <label><!-- MOL Manager --></label>
+        <name>MOL_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOTOREADY Preload Program Manager --></label>
+        <name>MOTOREADY_Preload_Program_Manager__c</name>
+        <relationshipLabel><!-- Devices (MOTOREADY Preload Program Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Motorola / Google Technical Account Manager Email --></help>
+        <label><!-- MOT/Google Technical Account Mgr Email --></label>
+        <name>MOT_GTAM_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Motorola / Google Technical Account Manager --></help>
+        <label><!-- MOT/Google Technical Account Mgr --></label>
+        <name>MOT_GTAM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Region --></label>
+        <name>Market_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Messaging Types&quot; --></help>
+        <label><!-- Messaging Types --></label>
+        <name>Messaging_Types__c</name>
+    </fields>
+    <fields>
+        <label><!-- Microgen Countries --></label>
+        <name>Microgen_Countries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accomplishments --></label>
+        <name>MotoReady_Accomplishments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pertaining to Device Risk Flag --></help>
+        <label><!-- MotoReady Device Status --></label>
+        <name>MotoReady_Device_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- This device went through our legacy CRIS Royalty Accounting Process. No SW BOM was created. --></help>
+        <label><!-- NO SW BOM: Used CRIS process --></label>
+        <name>NO_SW_BOM_Used_CRIS_process__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Product Family Key ID as referenced in NPI --></help>
+        <label><!-- NPI Product Family ID --></label>
+        <name>NPI_Family_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Full Product/Region/Country/Customer direct from NPI... VISIBLE TO ADMIN LAYOUT ONLY --></help>
+        <label><!-- NPI Full Name --></label>
+        <name>NPI_Full_Sales_Model_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI, &quot;Navigation Control&quot; field --></help>
+        <label><!-- Navigation Control --></label>
+        <name>Navigation_Control__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many DevApps are there in Item State 12 - Prelim. --></help>
+        <label><!-- Number of 12 - Prelim DevApps --></label>
+        <name>Number_of_12_Prelim_DevApps__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many DevApps are there in Item State 32 - Controlled. --></help>
+        <label><!-- Number of 32 - Controlled DevApps --></label>
+        <name>Number_of_32_Controlled_DevApps__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many DevApps are there in Item State 35 - Full Release. --></help>
+        <label><!-- Number of 35 - Full Release DevApps --></label>
+        <name>Number_of_35_Full_Release_DevApps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Apps AIF-Approved on BOM --></help>
+        <label><!-- Approved Apps on BOM --></label>
+        <name>Number_of_Apps_Approved_on_BOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of Apps added to this BOM  
+(Include on BOM = TRUE) --></help>
+        <label><!-- Total Number of Apps on BOM --></label>
+        <name>Number_of_Apps_on_BOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many Sales Models does this Device use. Used for Item State and Fully Approved automation. --></help>
+        <label><!-- Number of Sales Models --></label>
+        <name>Number_of_Sales_Models__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days allotted for approval --></label>
+        <name>Number_of_days_allotted_for_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of days since complete submission --></label>
+        <name>Number_of_days_since_complete_submission__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI, checked if this is an ODM device --></help>
+        <label><!-- ODM Device --></label>
+        <name>ODM_Device__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;Design Center&quot; --></help>
+        <label><!-- ODM Name --></label>
+        <name>ODM_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;OTA_Soak_Start_Actual_Date&quot; --></help>
+        <label><!-- OTA Soak Start Actual Date --></label>
+        <name>OTA_Soak_Start_Actual_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;OTA_Soak_Start_CWV_Date&quot; --></help>
+        <label><!-- OTA Soak Start CWV Date --></label>
+        <name>OTA_Soak_Start_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating System --></label>
+        <name>Operating_System__c</name>
+        <picklistValues>
+            <masterLabel>Ajar</masterLabel>
+            <translation><!-- Ajar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Android</masterLabel>
+            <translation><!-- Android --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danger</masterLabel>
+            <translation><!-- Danger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P08.1.2</masterLabel>
+            <translation><!-- P08.1.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM 5.0</masterLabel>
+            <translation><!-- WM 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM 6.0</masterLabel>
+            <translation><!-- WM 6.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM 6.1</masterLabel>
+            <translation><!-- WM 6.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM 6.5</masterLabel>
+            <translation><!-- WM 6.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM 7.0</masterLabel>
+            <translation><!-- WM 7.0 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this product in the Tigers Catalog? If it does not exist in the catalog, please mark it as No and order it via a &quot;Non-Catalog&quot; Order in Tigers? --></help>
+        <label><!-- Orderable in Tigers? --></label>
+        <name>Orderable_in_Tigers__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field shows the very first date entered in the field: CTS_SW_Checklist_Sent_to_Google so we can reference it when trying to determine total approval time --></help>
+        <label><!-- Original Google TA Submission Date --></label>
+        <name>Original_Google_TA_Submission_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;Overall Product Class&quot; --></help>
+        <label><!-- Overall Product Class --></label>
+        <name>Overall_Product_Class__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is an &quot;duplicate&quot; field, auto-populated by the Formula field &quot;% of apps&quot;... this allows us to track history, since we cannot track history on the original formula field... visible to ADMINS only --></help>
+        <label><!-- PctAppsApproved_2 --></label>
+        <name>PctAppsApproved_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Apps on BOM/SD w Executed Contracts --></label>
+        <name>Percent_BOM_SD_Apps_w_Executed_Contract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Operating System&quot; field --></help>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>Android</masterLabel>
+            <translation><!-- Android --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREWery</masterLabel>
+            <translation><!-- BREWery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danger</masterLabel>
+            <translation><!-- Danger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EZX</masterLabel>
+            <translation><!-- EZX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LJ</masterLabel>
+            <translation><!-- LJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ODM</masterLabel>
+            <translation><!-- ODM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2K</masterLabel>
+            <translation><!-- P2K --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symbian</masterLabel>
+            <translation><!-- Symbian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM Pocket PC</masterLabel>
+            <translation><!-- WM Pocket PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WM Smartphone</masterLabel>
+            <translation><!-- WM Smartphone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Price Tier&quot; field --></help>
+        <label><!-- Price Tier --></label>
+        <name>Price_Tier__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Priority&quot; --></help>
+        <label><!-- Priority --></label>
+        <name>Priority_NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority # --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- (Hidden field) - this is the device product family, from NPI.. this field is used for formulas, criteria checks, and API calls --></help>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Family Model Number&quot; --></help>
+        <label><!-- Product Model Number --></label>
+        <name>Product_Model_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for creating relation between SWBOM device record and its inherited PMD Product record --></help>
+        <label><!-- Product (PMD) --></label>
+        <name>Product_PMD__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Mapped to NPI field Disclosure Status, from GPPD --></help>
+        <label><!-- Product Security Disclosure Class --></label>
+        <name>Product_Security_Classification__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI, &quot;Product Segment&quot; field --></help>
+        <label><!-- Product Segment --></label>
+        <name>Product_Segment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device status, based on data feed from NPI --></help>
+        <label><!-- Product Status --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Manager Email --></label>
+        <name>Program_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Program Manager, from NPI --></help>
+        <label><!-- Program Manager --></label>
+        <name>Program_Manager_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related PROGRAM in PMD --></help>
+        <label><!-- Program (PMD) --></label>
+        <name>Program_PMD__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related PROJECT in PMD --></help>
+        <label><!-- Project (PMD) --></label>
+        <name>Project_PMD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Projected Shipped Volume --></label>
+        <name>Projected_Shipped_Volume__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this device have a QC modem? --></help>
+        <label><!-- QC Modem? --></label>
+        <name>QC_Modem__c</name>
+    </fields>
+    <fields>
+        <label><!-- QC modem type --></label>
+        <name>QC_modem_type__c</name>
+        <picklistValues>
+            <masterLabel>MDM6x00+AP20</masterLabel>
+            <translation><!-- MDM6x00+AP20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDM6x00+OMAP</masterLabel>
+            <translation><!-- MDM6x00+OMAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSM6xxx (no OMAP nor AP20)</masterLabel>
+            <translation><!-- MSM6xxx (no OMAP nor AP20) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSM7xxx</masterLabel>
+            <translation><!-- MSM7xxx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSC60x5</masterLabel>
+            <translation><!-- QSC60x5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSC6xxx (no OMAP nor AP20)</masterLabel>
+            <translation><!-- QSC6xxx (no OMAP nor AP20) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QC sw royalties --></label>
+        <name>QC_sw_royalties__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code Date --></label>
+        <name>Reason_Code_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BV</masterLabel>
+            <translation><!-- BV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FA</masterLabel>
+            <translation><!-- FA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SK</masterLabel>
+            <translation><!-- SK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM</masterLabel>
+            <translation><!-- SM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Who is driving this re spin? --></help>
+        <label><!-- Reason for Last Respin --></label>
+        <name>Reason_for_Last_Respin__c</name>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Security</masterLabel>
+            <translation><!-- Google Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMI</masterLabel>
+            <translation><!-- MMI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Regional PM Email, from NPI --></help>
+        <label><!-- Regional PM Email --></label>
+        <name>Regional_PM_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Regional PM, from NPI --></help>
+        <label><!-- Regional PM --></label>
+        <name>Regional_PM__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Regression_Actual_Date&quot; --></help>
+        <label><!-- Regression Actual Date --></label>
+        <name>Regression_Actual_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Regression_CWV_Date&quot; --></help>
+        <label><!-- Regression CWV Date --></label>
+        <name>Regression_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Date for Google TA --></label>
+        <name>Requested_Date_for_Google_TA__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is a respin please choose Yes if not please choose No --></help>
+        <label><!-- Respin? --></label>
+        <name>Respin__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Current Plan of Record SA Date&quot; field --></help>
+        <label><!-- SA Date --></label>
+        <name>SA_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI field &quot;SA Release Type&quot; - -  identifies whether a device is an initial launch, or is an MOL --></help>
+        <label><!-- Launch Type --></label>
+        <name>SA_Release_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device SA Status, based on NPI --></help>
+        <label><!-- Device SA Status --></label>
+        <name>SA_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- SWBOM Owner email, from NPI --></help>
+        <label><!-- SWBOM Owner Email --></label>
+        <name>SWBOM_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- SWBOM Owner, from NPI --></help>
+        <label><!-- SWBOM Owner --></label>
+        <name>SWBOM_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- The SW BOM list of apps has been reviewed (scrubbed) and approved --></help>
+        <label><!-- SW BOM Reviewed and Approved --></label>
+        <name>SWBOM_Reviewed_and_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Software &amp; Applications Lead&quot; --></help>
+        <label><!-- Software &amp; Applications Lead (General) --></label>
+        <name>SW_Apps_Lead__c</name>
+    </fields>
+    <fields>
+        <help><!-- The person who reviewed and approved the SW BOM.
+If the name shows &quot;Automated DataFeed&quot;, that means this device is a legacy approval, prior to implementation of this SWBOM approval field. --></help>
+        <label><!-- SW BOM List Approver --></label>
+        <name>SW_BOM_List_Approver__c</name>
+        <relationshipLabel><!-- Devices (SW BOM List Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used by Device Automated Emails --></help>
+        <label><!-- SW BOM Owner Manager --></label>
+        <name>SW_BOM_Owner_Manager__c</name>
+        <relationshipLabel><!-- Devices (SW BOM Owner Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- From NPI --></help>
+        <label><!-- Software Engineering Lead --></label>
+        <name>SW_Eng_Lead__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Integration Lead email, from NPI --></help>
+        <label><!-- Product Integration Lead Email --></label>
+        <name>SW_Integration_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- SW Integration Lead, from NPI --></help>
+        <label><!-- Product Integration Lead --></label>
+        <name>SW_Integration_Lead__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date this SW KIT was created in MOTOPDM. --></help>
+        <label><!-- SW KIT Creation Date --></label>
+        <name>SW_KIT_Creation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Kit Effective Date --></label>
+        <name>SW_Kit_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- SW KIT State is pulled in from MOTOPDM --></help>
+        <label><!-- SW Kit Item State --></label>
+        <name>SW_Kit_Item_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Kit --></label>
+        <name>SW_Kit__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;SW_Release&quot; --></help>
+        <label><!-- SW Release --></label>
+        <name>SW_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesModelCount --></label>
+        <name>SalesModelCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Model List Concatenated --></label>
+        <name>Sales_Model_List_Concatenated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date --></label>
+        <name>Shipped_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Based on NPI Device Status --></help>
+        <label><!-- Device Shipped and Completed? --></label>
+        <name>Shipped_and_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip Budget Approval --></label>
+        <name>Skip_Budget_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software Engineering Lead Email --></label>
+        <name>Software_Engineering_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;SoftwareFeatures&quot; --></help>
+        <label><!-- Software Features --></label>
+        <name>Software_Features__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Software_Lockdown_Actual_Date&quot; --></help>
+        <label><!-- SW Lockdown Actual Date --></label>
+        <name>Software_Lockdown_Actual_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Software_Lockdown_CWV_Date&quot; --></help>
+        <label><!-- SW Lockdown CWV Date --></label>
+        <name>Software_Lockdown_CWV_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software and Applications Lead Email --></label>
+        <name>Software_and_Applications_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stable --></label>
+        <name>StableName__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI &quot;Stable Line&quot; --></help>
+        <label><!-- Stable Line --></label>
+        <name>Stable_Line__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stable selected for this Device. To change use the Edit Core &amp; Stable button. --></help>
+        <label><!-- Stable --></label>
+        <name>Stable__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Product Family ship status, based on data feed from NPI
+
+&quot;Shippable&quot; = Earliest device in Product Family is past SA date
+
+&quot;Active&quot; = Product Family active, and currently being worked on
+
+&quot;Cancelled&quot; = Product Family has been cancelled --></help>
+        <label><!-- Product Family Ship Status --></label>
+        <name>Status_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the number of days it took to complete the Google TA process --></help>
+        <label><!-- Submission Completion Time --></label>
+        <name>Submission_Completion_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;System_Version&quot; --></help>
+        <label><!-- System Version --></label>
+        <name>System_Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;TA CWV Date&quot; --></help>
+        <label><!-- TA Date --></label>
+        <name>TA_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total number of Apps related to this Device --></help>
+        <label><!-- Total Number of Apps on Device --></label>
+        <name>TOTAL_of_APPS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target FTRR Date --></label>
+        <name>Target_FTRR_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target STRR Date --></label>
+        <name>Target_STRR_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapped from NPI &quot;Tech Description&quot; field --></help>
+        <label><!-- Tech Description --></label>
+        <name>Tech_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Product Group&quot; field in NPI --></help>
+        <label><!-- NPI Product Group --></label>
+        <name>Technology__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost of device in Tigers for internal orders --></help>
+        <label><!-- Tigers Cost --></label>
+        <name>Tigers_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Part # referenced in Tigers when placing an Order --></help>
+        <label><!-- Tigers Part # --></label>
+        <name>Tigers_Part__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Apps AIF-Approved on Device --></help>
+        <label><!-- Approved Apps on Device --></label>
+        <name>Total_Number_of_Approved_Apps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the device to web sites and other servers.  Servers use this to characterize the device and select suitable content and parameters for the session; ie.a web server uses this string to format a webpage for the screen size of a particular device --></help>
+        <label><!-- User Agent (UA) String --></label>
+        <name>User_Agent_UA_String__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI --></help>
+        <label><!-- User Interface &amp; User Experience Lead --></label>
+        <name>User_Interface_User_Experience_Lead__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field, &quot;VOIP Support&quot; --></help>
+        <label><!-- VOIP Support --></label>
+        <name>VOIP_Support__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Video Encode Codecs&quot; --></help>
+        <label><!-- Video Encode Codecs --></label>
+        <name>Video_Encode_Codecs__c</name>
+    </fields>
+    <fields>
+        <help><!-- From NPI field &quot;Video Playback Codecs&quot; --></help>
+        <label><!-- Video Playback Codecs --></label>
+        <name>Video_Playback_Codecs__c</name>
+    </fields>
+    <fields>
+        <help><!-- The White Listed Build Fingerprint unique ID provided by Google after official Technical Acceptance. --></help>
+        <label><!-- White Listed Build Fingerprint --></label>
+        <name>White_Listed_Build_Fingerprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wireless --></label>
+        <name>Wireless__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Party Apps Approved by 3rd Party --></label>
+        <name>X3rd_Party_Apps_Approved_by_3rd_Party__c</name>
+    </fields>
+    <fields>
+        <help><!-- For MotoReady Contact Information purposes --></help>
+        <label><!-- 3rd Party SW Integration Lead --></label>
+        <name>X3rd_Party_SW_Integration_Lead__c</name>
+    </fields>
+    <fields>
+        <help><!-- For MotoReady Contact Information purposes --></help>
+        <label><!-- 3rd Party SW Integration PM --></label>
+        <name>X3rd_Party_SW_Integration_PM__c</name>
+    </fields>
+    <fields>
+        <label><!-- apc_device_concatenate --></label>
+        <name>apc_device_concatenate__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of 3rd Party Approvals Completed --></label>
+        <name>of_3rd_Party_Approvals_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Apps Approved on Device --></label>
+        <name>of_Apps_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percent of apps Approved on BOM --></help>
+        <label><!-- % of Apps Approved on BOM --></label>
+        <name>of_Apps_Approved_on_BOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many times have we re spun this submission? --></help>
+        <label><!-- # of Respin --></label>
+        <name>of_Respin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to trigger sending of AIF Compliance email notification. Not for user interface. --></help>
+        <label><!-- sendAIFComplianceEmail --></label>
+        <name>sendAIFComplianceEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- sendBOMComplianceEmail --></label>
+        <name>sendBOMComplianceEmail__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to trigger sending of Contract Compliance email notification. Not for user interface. --></help>
+        <label><!-- sendContractComplianceEmail --></label>
+        <name>sendContractComplianceEmail__c</name>
+    </fields>
+    <layouts>
+        <layout>Device Layout</layout>
+        <sections>
+            <label><!-- Contacts --></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Device Application Totals --></label>
+            <section>Device Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Device Characteristics --></label>
+            <section>Device Characteristics</section>
+        </sections>
+        <sections>
+            <label><!-- Device Countries --></label>
+            <section>Device Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Device Dates --></label>
+            <section>Device Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Device Final Approvals --></label>
+            <section>Device Final Approvals</section>
+        </sections>
+        <sections>
+            <label><!-- Google TA Submission --></label>
+            <section>Google TA Submission</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Languages Supported --></label>
+            <section>Languages Supported</section>
+        </sections>
+        <sections>
+            <label><!-- Qualcomm Apps --></label>
+            <section>Qualcomm Apps</section>
+        </sections>
+        <sections>
+            <label><!-- SW Kit Information --></label>
+            <section>SW Kit Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Device Layout - Admin Layout</layout>
+        <sections>
+            <label><!-- Contacts --></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Device Application Totals --></label>
+            <section>Device Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Device Characteristics --></label>
+            <section>Device Characteristics</section>
+        </sections>
+        <sections>
+            <label><!-- Device Countries --></label>
+            <section>Device Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Device Dates --></label>
+            <section>Device Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Device Final Approvals --></label>
+            <section>Device Final Approvals</section>
+        </sections>
+        <sections>
+            <label><!-- Google TA Submission --></label>
+            <section>Google TA Submission</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Languages Supported --></label>
+            <section>Languages Supported</section>
+        </sections>
+        <sections>
+            <label><!-- Qualcomm Apps --></label>
+            <section>Qualcomm Apps</section>
+        </sections>
+        <sections>
+            <label><!-- SW KIT Information --></label>
+            <section>SW KIT Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Device Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Contacts --></label>
+            <section>Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Device Application Totals --></label>
+            <section>Device Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Device Characteristics --></label>
+            <section>Device Characteristics</section>
+        </sections>
+        <sections>
+            <label><!-- Device Countries --></label>
+            <section>Device Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Device Dates --></label>
+            <section>Device Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Device Final Approvals --></label>
+            <section>Device Final Approvals</section>
+        </sections>
+        <sections>
+            <label><!-- Google TA Submission --></label>
+            <section>Google TA Submission</section>
+        </sections>
+        <sections>
+            <label><!-- IP Applications --></label>
+            <section>IP Applications</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Languages Supported --></label>
+            <section>Languages Supported</section>
+        </sections>
+        <sections>
+            <label><!-- MOTOREADY Status --></label>
+            <section>MOTOREADY Status</section>
+        </sections>
+        <sections>
+            <label><!-- Qualcomm Apps --></label>
+            <section>Qualcomm Apps</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Google Approval Layout</layout>
+        <sections>
+            <label><!-- CTS Submissions - Final Software --></label>
+            <section>CTS Submissions - Final Software</section>
+        </sections>
+        <sections>
+            <label><!-- CTS Submissions - Lab Entry --></label>
+            <section>CTS Submissions - Lab Entry</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Device --></label>
+            <section>Device</section>
+        </sections>
+        <sections>
+            <label><!-- Device Contacts --></label>
+            <section>Device Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- GMS Submissions - Final Software --></label>
+            <section>GMS Submissions - Final Software</section>
+        </sections>
+        <sections>
+            <label><!-- GMS Submissions - Lab Entry --></label>
+            <section>GMS Submissions - Lab Entry</section>
+        </sections>
+        <sections>
+            <label><!-- Google TA Submission --></label>
+            <section>Google TA Submission</section>
+        </sections>
+        <sections>
+            <label><!-- Google Technical Acceptance Approval - Final Software --></label>
+            <section>Google Technical Acceptance Approval - Final Software</section>
+        </sections>
+        <sections>
+            <label><!-- Launch Addendum Submission --></label>
+            <section>Launch Addendum Submission</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please select the &quot;Android Release&quot; located on the Device object. --></errorMessage>
+        <name>Android_Platform_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please complete the Platform Version field location on the Device object. --></errorMessage>
+        <name>Android_Platform_Version_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter the Build Fingerprint being submitted for approval --></errorMessage>
+        <name>Build_Fingerprint_Last_Submitted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Device is FULLY APPROVED and cannot be edited.
+Please contact Kirsten Rowe if changes need to be made. --></errorMessage>
+        <name>Device_Fully_Approved_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not authorized to change the Internal Name of a Device! --></errorMessage>
+        <name>Disallow_editing_Internal_Name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 1.GMS or CTS Checklist can not be entered unless &quot;SW BOM Reviewed and Approved&quot; is set to &quot;Yes&quot;. 
+2.SW BOM approval can not be set to &quot;No&quot; if GMS or CTS checklist is entered. 
+
+To change to the SW BOM please contact dan.quicker@motorola.com --></errorMessage>
+        <name>GTA_GMS_AND_CTS_SW_BOM_Approved_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Email address is required if submitting for Google TA --></errorMessage>
+        <name>GTA_Submitter_Email_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Not all apps on this device have been AIF-approved yet.
+All apps on this device need to be AIF-approved or Conditional, prior to setting the SWBOM Reviewed and Approved to YES --></errorMessage>
+        <name>Need_all_AIF_Approvals_for_SWBOM_Review</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Requested date for Google TA required --></errorMessage>
+        <name>Requested_Date_for_Google_TA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If SWBOM has been reviewed and approved, must select who reviewed it --></errorMessage>
+        <name>SWBOM_Approver_Field_Filled</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Link to SW build Folder is required --></errorMessage>
+        <name>SW_Build_Folder_URL_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Device cannot be FULLY APPROVED because it has 3rd Party Apps still requiring 3rd Party Approval. --></errorMessage>
+        <name>X3rd_Party_Approved</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AppContracts --></label>
+        <name>AppContracts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Check_Now --></label>
+        <name>Check_Now</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_W_Status_Reset --></label>
+        <name>Clone_W_Status_Reset</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Copy_To_An_Existing_Device_With_Approvals --></label>
+        <name>Copy_To_An_Existing_Device_With_Approvals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Copy_To_Existing_Device --></label>
+        <name>Copy_To_Existing_Device</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_new_Core_from_Device --></label>
+        <name>Create_new_Core_from_Device</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deleted_DeviceApps --></label>
+        <name>Deleted_DeviceApps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Core_Stable --></label>
+        <name>Edit_Core_Stable</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Google_TA_View --></label>
+        <name>Google_TA_View</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MotoReady_Status_Report --></label>
+        <name>MotoReady_Status_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Product_Family_Apps_Matrix --></label>
+        <name>Product_Family_Apps_Matrix</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Royalty_Summary_by_Product --></label>
+        <name>Royalty_Summary_by_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Royalty_for_BCM_Family --></label>
+        <name>Royalty_for_BCM_Family</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SD_Card_Apps --></label>
+        <name>SD_Card_Apps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SW_BOM --></label>
+        <name>SW_BOM</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unique_Apps --></label>
+        <name>Unique_Apps</name>
+    </webLinks>
+</CustomObjectTranslation>

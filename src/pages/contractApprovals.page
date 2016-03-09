@@ -1,0 +1,137 @@
+<apex:page controller="contractApprovals" tabStyle="Contract" sidebar="{!showSidebar}" showHeader="{!showHeader}" >
+<style type="text/css">      
+ .customPopup{            
+   background-color: white; 
+  border-style: solid; 
+  border-width: 2px;
+  left: 50%;           
+  padding:10px;           
+  position: absolute;           
+  z-index: 9999;           
+   /* These are the 3 css properties you will need to tweak so the pop             
+   up displays in the center of the screen. First set the width. Then set            
+   margin-left to negative half of what the width is. You can also add            
+   the height property for a fixed size pop up.*/            
+  width: 500px;            
+  margin-left: -250px;           
+  top:100px;        
+}    
+</style>
+
+    <apex:form id="page" >
+		<div style="text-align: right;">
+            <apex:commandLink title="Show this page in full screen view." target="_parent" action="{!fullScreen}" value="Full Screen" rendered="{!showFullScreenLink}"/>
+        </div>
+        <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock>
+        <apex:pageBlock title="My Contracts to Approve" id="approvals" >
+            <apex:repeat value="{!requestsList}" var="rList" id="repeat">            	
+            	<apex:outputLabel for="initialContractApprovals2" ><BR/><h3>
+            		<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!rList.requestedDate}" /> 
+                    </apex:outputText>
+            	 	Approvals
+           	 	</h3></apex:outputLabel>
+            	
+	            <apex:pageBlockTable value="{!rList.contractApprovals}" var="cListItem" id="initialContractApprovals2" >
+	            	<apex:column headerValue="Approval Type" >
+	                    <apex:outputText >{!cListItem.approvalType}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Contract Number" >
+	                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Contract.View, cListItem.Contract.Id)}">{!cListItem.contract.contractNumber}</apex:outputLink>
+	                </apex:column>
+	                <apex:column headerValue="Contract Name" >
+	                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Contract.View, cListItem.Contract.Id)}">{!cListItem.contract.Name}</apex:outputLink>
+	                </apex:column>
+	                <apex:column headerValue="Account Name" >
+	                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Account.View, cListItem.Contract.Account.Id)}">{!cListItem.contract.Account.Name}</apex:outputLink>
+	                </apex:column>
+	                <apex:column headerValue="Account Owner" >
+	                    <apex:outputText >{!cListItem.contract.Account.Owner.Name}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Updates since LB Initial Deal Review" >
+	                    <apex:outputText >{!cListItem.contract.Updates_since_LB_Initial_Deal_Review__c}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Business Model" >
+	                    <apex:outputText >{!cListItem.contract.Business_Model__c}</apex:outputText>
+	                </apex:column>
+	                <!--<apex:column headerValue="Is there royalty?" >
+	                    <apex:outputText >{!cListItem.contract.Is_there_Royalty__c}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Is there rev share?" >
+	                    <apex:outputText >{!cListItem.contract.Rev_Share__c}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Is there prepay?" >
+	                    <apex:outputText >{!cListItem.contract.Is_there_Prepay__c}</apex:outputText>
+	                </apex:column>
+	                <apex:column headerValue="Is there minimum guarantee?" >
+	                    <apex:outputText >{!cListItem.contract.Is_there_Minimum_Guarantee__c}</apex:outputText>
+	                </apex:column> -->
+	                <apex:column headerValue="Any Unusual Risks?" >
+	                    <apex:outputText >{!cListItem.contract.Any_Unusual_Risks__c}</apex:outputText>
+	                </apex:column>
+	                
+	                <apex:column headerValue="Generate Docs">
+	                    <apex:commandButton action="{!generateSlides}" value="Generate Docs" id="theButton" rerender="all">
+	                        <apex:param name="contractId" value="{!cListItem.Contract.Id}" assignTo="{!contractIdChosen}"/>
+	                        <apex:param name="accountId" value="{!cListItem.Contract.Account.Id}" assignTo="{!accountIdChosen}"/>
+	                  	</apex:commandButton>
+	                </apex:column>
+	               <!--  <apex:column >
+	                	<apex:commandButton action="{!showPopup}" value="Generate" id="theButton2" rerender="popup">
+	                        <apex:param name="contractId" value="{!cListItem.Contract.Id}" assignTo="{!contractIdChosen}"/>
+	                        <apex:param name="accountId" value="{!cListItem.Contract.Account.Id}" assignTo="{!accountIdChosen}"/>
+	                  	</apex:commandButton>
+	                	
+	                </apex:column>
+	                  -->
+	            </apex:pageBlockTable>
+            </apex:repeat>
+            
+            
+            <apex:outputPanel id="popup">
+	            <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUp}">
+	                Lorem ipsum <br/><br/><br/>
+	                <apex:iframe src="http://www.salesforce.com" scrolling="true" id="theIframe"/>
+	                <apex:commandButton value="Hide Pop up" action="{!closePopup}" rerender="popup"/>
+	            </apex:outputPanel>
+			</apex:outputPanel>
+
+            <apex:outputLabel for="sopContractApprovals"><BR/><h3>SOP E-1 Approvals</h3></apex:outputLabel>           
+            <apex:pageBlockTable value="{!sopContracts}" var="c" id="sopContractApprovals" >
+                <apex:column headerValue="Contract Number" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Contract.View, c.Id)}">{!c.contractNumber}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Contract Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Contract.View, c.Id)}">{!c.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Account Name" >
+                    <apex:outputLink target="_blank" value="{!URLFOR($Action.Account.View, c.Account.Id)}">{!c.Account.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Account Owner" >
+                    <apex:outputText >{!c.Account.Owner.Name}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="SOP Approval Submission Date" >
+                    <apex:outputText >{!c.SOP_Approval_Submission_Date__c}</apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Generate Docs">
+                    <apex:commandButton action="{!generateSlides}" value="Generate Docs" id="theButton" rerender="all">
+                        <apex:param name="contractId" value="{!c.Id}" assignTo="{!contractIdChosen}"/>
+                        <apex:param name="accountId" value="{!c.Account.Id}" assignTo="{!accountIdChosen}"/>
+                  	</apex:commandButton>
+                </apex:column>
+                <!-- <apex:column headerValue="Generate Slides">
+                    <apex:commandButton action="{!generateSlides}" value="Generate" id="theButton">
+                        <apex:param name="contractId" value="{!a.contractId}"/>
+                        <apex:param name="accountId" value="{!a.accountId}"/>
+                        -->
+                        <!--assignTo="{!generateSlidesId}"  assignTo="{!generateSlidesId2}" -->
+                 <!--     </apex:commandButton>
+                </apex:column>
+                 -->
+            </apex:pageBlockTable>
+                         
+        </apex:pageBlock>
+     
+    </apex:form>
+
+</apex:page>

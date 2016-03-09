@@ -1,0 +1,2634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>NDA_Create</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>NDA_Create</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AmendmentSent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Amendment Sent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AmendmentSigned__c</fullName>
+        <externalId>false</externalId>
+        <label>Amendment Signed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>true</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>false</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approved_By__c</fullName>
+        <description>Device Product Lead who actually approved the NDA</description>
+        <externalId>false</externalId>
+        <label>Approved By</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Premium Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Companion Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Companion_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR Leave value for companion products</description>
+        <externalId>false</externalId>
+        <label>Companion MCR</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Companion_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Product Category Companion</description>
+        <externalId>false</externalId>
+        <label>Companion Products</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Companion_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype Leave value for companion products</description>
+        <externalId>false</externalId>
+        <label>Companion Prototype</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Company_Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays contacts for the Outide party selected</inlineHelpText>
+        <label>NDA Company Contact</label>
+        <referenceTo>NDA_CompanyContact__c</referenceTo>
+        <relationshipLabel>NDAs</relationshipLabel>
+        <relationshipName>NDAs</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NDA Company</label>
+        <referenceTo>NDA_Company__c</referenceTo>
+        <relationshipLabel>NDAs</relationshipLabel>
+        <relationshipName>NDAs</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Connected_Party_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Connected Party Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DPLStatus__c</fullName>
+        <description>Device Product Lead Status</description>
+        <externalId>false</externalId>
+        <label>DPL Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DPL_Approved_On__c</fullName>
+        <description>NDA Approved Date by Device Product Lead</description>
+        <externalId>false</externalId>
+        <label>DPL Approved On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DPL_Comments__c</fullName>
+        <description>Comments entered by Device Product Lead when approving/rejecting NDA</description>
+        <externalId>false</externalId>
+        <label>DPL Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Approval_Purpose__c</fullName>
+        <description>Describe about why approvals are requested to help Category leads approve requests</description>
+        <externalId>false</externalId>
+        <label>Disclosure Approval Purpose</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Period__c</fullName>
+        <defaultValue>3</defaultValue>
+        <externalId>false</externalId>
+        <label>Disclosure Period</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Purpose__c</fullName>
+        <defaultValue>&quot;In order to evaluate a potential business transaction and/or technical requirements&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Disclosure Purpose</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Expires_On__c</fullName>
+        <externalId>false</externalId>
+        <label>Expires On</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FPL_UserID__c</fullName>
+        <description>Family Product Lead User ID</description>
+        <externalId>false</externalId>
+        <label>FPL UserID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GPPD_Color__c</fullName>
+        <description>GPPD Product Color. Legacy purposes only</description>
+        <externalId>false</externalId>
+        <label>GPPD Color</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Governing_Law__c</fullName>
+        <description>List of all Governing laws per country and State based on Region</description>
+        <externalId>false</externalId>
+        <label>Governing Law</label>
+        <picklist>
+            <controllingField>NDARegion__c</controllingField>
+            <picklistValues>
+                <fullName>Alberta</fullName>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Argentina</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Austria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahamas</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barbados</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belize</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bermuda</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bolivia</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brasil</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>British Columbia</fullName>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chile</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China P.R.</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colombia</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Costa Rica</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cuba</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delaware</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dominican Republic</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecuador</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>El Salvador</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>England and Wales</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>France</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Germany</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guatemala</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guiana</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haiti</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honduras</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hong Kong</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Illinois</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Israel</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jamaica</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japan</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malaysia</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mexico</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Netherlands</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New York</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nicaraqua</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ontario</fullName>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panama</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paraguay</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peru</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Puerto Rico</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic of Korea</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russian Federation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singapore</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Africa</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spain</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suriname</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Switzerland</fullName>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Taiwan</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trinidad</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uruguay</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venezuela</fullName>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Victoria-Australia</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Product_ID__c</fullName>
+        <description>Product ID from GPPD for Product NDAs. Legacy Purposes only</description>
+        <externalId>false</externalId>
+        <label>Internal Product ID</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsProductNDA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is this Product NDA</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Outside_Party_on_Connected_Person__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Outside Party on Connected Person</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_this_Multiparty__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is this Multiparty?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Disclosure_Type__c</fullName>
+        <description>This is for legacy purposes</description>
+        <externalId>false</externalId>
+        <label>Legacy Disclosure Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MCR_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>MCR Content</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Modification_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Modification Text</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Motorola_Entity__c</fullName>
+        <externalId>false</externalId>
+        <label>Motorola Entity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Motorola Mobility LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 Intellectual Property Investments, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>280 North, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4thpass Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AirDefense, Inc. a wholly owned subsidiary of Motorola, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dansk Beredskabskommunikation A/S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digianswer A/S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DP Acquisition 2006, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Authorization Services, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Belgium BVBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Canada Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Czech Republic s.r.o.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument de Guatemala S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument del Ecuador Getrument del Ecuador S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Germany GmbH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Holdings, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Israel LTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument LLC (Russia)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Netherlands B.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument New Zealand Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument of Taiwan, Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Poland sp. z o.o.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Portugal, Unipessoal LDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Sweden AB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Instrument Vietnam LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good Technology, Inc., a wholly owned subsidiary of Motorola, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hangzhou General Instrument Technologies Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Engines, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INO Servs. Esp. de Telecomunications Ltda.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iridium Central America and Mexico, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorla Communications Israel Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola(Beijing) Mobility Technologies Co., Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola (Suisse) S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola (Thailand) Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola A/S, Denmark</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola A.B.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Arabia, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Arabia Communications, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Asia Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Bretagne SAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Centre de Recherche Crolles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Comercial, S.A. de C.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Communications Philippines, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Cyprus Holding Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Bolivia S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Centro America S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Costa Rica S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de El Salvador S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Guatemala S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Juarez, S de R.L. de C.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de la Republica Dominicana S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola del Peru S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Nogales S.A. de C.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola de Reynosa, S. de R.L. de C.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola EAD Bulgaria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Egypt Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Electronica de Puerto Rico, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Electronics Sdn. Bhd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Finance B.V. Netherlands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Hungary Communications Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Inversiones S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Ireland Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Israel Information Systems Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Izhradio Services Center Russia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Korea, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Korea Technology Center, Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Maroc SA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola MCSC, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobile Communications, Russia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobilite ve Telekomunikasyon Cihazlari Limited Sirketi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Australia Pty Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Austria GmgH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Aviation Holdings N158M, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Aviation Holdings N550M, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Canada Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Chennai Private Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Chile Limitada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Colombia S.A.S.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Comércio de Produtos Eletrônicos Ltda.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility de Mexico, S.A. de C.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility España, S.L</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility France S.A.S.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Germany GmbH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Greece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Holdings B.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Holdings LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Hong Kong Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility India Private Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility International Capital LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility International Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Investments, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Ireland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Italia S.r.l.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Japan Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Mobile Communication Technologies Greece Single-Partner E.P.E.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Netherlands One Cooperatief U.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Netherlands Two B.V.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility of Argentina S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Peru S.R.L.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Poland Sp.z.o.o.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Puerto Rico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Sales and Services, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Singapore Pte. Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility South Africa (Proprietary) Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Taiwan Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Beijing Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Chengdu Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Guangzhou Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Nanjing Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Shanghai Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Technologies (China) Co., Ltd. Shenzhen Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility UK Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility UK Ltd. Dubai Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Mobility Venezuela S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Multimedia Sdn. Bhd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Nigeria Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Norway A/S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Polska Electronics Sp.z.o.o.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Radio Systems BV The Netherlands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Romania SRL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola S.p.A Italy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Semiconductor Hong Kong Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Semiconductor Israel Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Seniconducteurs S.A.S.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Smartnet Pty Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola South Asia Pte Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola South - Israel Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Technologies Lanka Private Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Technology Sdn. Bhd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Telecommunications Bangladesh Private Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Trademark Holdings, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Trading Center Pte. Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Ukraine TZOV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola Uruguay S.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT Motorola Mobility Indonesia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soundbuzz Australia Pty Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soundbuzz India Pvt. Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soundbuzz Pte ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbol Technologies, Inc., the Enterprise Mobility business of Motorola, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbol Technologies India Private Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Symbol Technologies Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TETRON Sicherheitsnetz Einrichtungs- und BetriebsgmbH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Three Laws Mobility, Inc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTPCom Consultancy (Shanghai) Company Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTPCom Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTP Communications Ltd</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Viewdle Inc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WR Hambrecht Ventures II-B, LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zecter, Inc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Multiparty_Company__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Multiparty Company</label>
+        <referenceTo>NDA_Company__c</referenceTo>
+        <relationshipLabel>NDAs (NDA_Company)</relationshipLabel>
+        <relationshipName>MultipartyNDAs</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NDAFileID__c</fullName>
+        <externalId>false</externalId>
+        <label>NDA File ID</label>
+        <length>225</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDAID_Migration__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NDAID Migration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDARegion__c</fullName>
+        <description>NDA Regions</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Asia Pac - Chinese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asia Pac - English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asia-Pacific (Japan)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asia-Pacific (North Asia)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brasil - Portuguese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil  - English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA - English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe, Middle East &amp; Africa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe - German</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe - Poland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe - Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America - English &amp; Portuguese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America - English &amp; Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America - Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North America - English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NDAStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>NDA Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executed-Mod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NDA_Color__c</fullName>
+        <description>Product Color in NDA. Legacy purposes only</description>
+        <externalId>false</externalId>
+        <label>NDA Color</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDA_Multiparty_Company_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays contact for multiparty company selected</inlineHelpText>
+        <label>NDA Multiparty Company Contact</label>
+        <referenceTo>NDA_CompanyContact__c</referenceTo>
+        <relationshipLabel>NDAs (NDA Multiparty Company Contact)</relationshipLabel>
+        <relationshipName>NDAs1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NDA_Specialist__c</fullName>
+        <description>This is to send modification requests to the listed NDA specialists and is controlled by Region field. These are the default values for regions active</description>
+        <externalId>false</externalId>
+        <label>NDA Specialist</label>
+        <picklist>
+            <controllingField>NDARegion__c</controllingField>
+            <picklistValues>
+                <fullName>cmwf84@motorola.com</fullName>
+                <controllingFieldValues>Asia Pac - Chinese</controllingFieldValues>
+                <controllingFieldValues>Asia Pac - English</controllingFieldValues>
+                <controllingFieldValues>EMEA - English</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Portuguese</controllingFieldValues>
+                <controllingFieldValues>Latin America - English &amp; Spanish</controllingFieldValues>
+                <controllingFieldValues>North America - English</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>esw001c@motorola.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mwcp74@motorola.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cwnj83@motorola.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NDA_file_signed_date__c</fullName>
+        <externalId>false</externalId>
+        <label>NDA file signed date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Premium_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR Leave value for Premium</description>
+        <externalId>false</externalId>
+        <label>Premium MCR</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Premium_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Product Category Premium</description>
+        <externalId>false</externalId>
+        <label>Premium Products</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Premium_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype Leave value for premium products</description>
+        <externalId>false</externalId>
+        <label>Premium Prototype</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prototype__c</fullName>
+        <externalId>false</externalId>
+        <label>Prototype</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Requested_By_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested By Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Motorola Core Directory</label>
+        <referenceTo>Motorola_Core_Directory__c</referenceTo>
+        <relationshipLabel>NDAs</relationshipLabel>
+        <relationshipName>NDAs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Software_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR Leave value for Software</description>
+        <externalId>false</externalId>
+        <label>Software MCR</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Software_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype Leave value for Software</description>
+        <externalId>false</externalId>
+        <label>Software Prototype</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Software__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Product Category Software</description>
+        <externalId>false</externalId>
+        <label>Software</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Term_of_Protection__c</fullName>
+        <defaultValue>5</defaultValue>
+        <externalId>false</externalId>
+        <label>Term of Protection</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ToBeApprovedByID__c</fullName>
+        <description>Device Product Lead Assigned for Approval when NDA created</description>
+        <externalId>false</externalId>
+        <label>ToBeApprovedByID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VP_Name_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>VP Name 2</label>
+        <referenceTo>NDA_Signatory__c</referenceTo>
+        <relationshipLabel>NDAs (NDA)</relationshipLabel>
+        <relationshipName>NDAVPs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VP_Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Look up Motorola VP names for the NDA</description>
+        <externalId>false</externalId>
+        <label>VP Name</label>
+        <referenceTo>NDA_Signatory__c</referenceTo>
+        <relationshipLabel>NDAs</relationshipLabel>
+        <relationshipName>NDAs</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Value_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR Leave value for Value products</description>
+        <externalId>false</externalId>
+        <label>Value MCR</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Product Category Value</description>
+        <externalId>false</externalId>
+        <label>Value Products</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype Leave value for Value products</description>
+        <externalId>false</externalId>
+        <label>Value Prototype</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>NDA</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>LAST_UPDATE</columns>
+        <columns>NDAFileID__c</columns>
+        <columns>Company__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>NDAStatus__c</columns>
+        <columns>Is_this_Multiparty__c</columns>
+        <columns>NDARegion__c</columns>
+        <columns>Motorola_Entity__c</columns>
+        <columns>Governing_Law__c</columns>
+        <columns>VP_Name__c</columns>
+        <columns>Category__c</columns>
+        <columns>Expires_On__c</columns>
+        <columns>IsProductNDA__c</columns>
+        <columns>Company_Contact__c</columns>
+        <columns>NDA_Multiparty_Company_Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Company__c</field>
+            <operation>contains</operation>
+            <value>Skuid</value>
+        </filters>
+        <label>All</label>
+        <sharedTo>
+            <role>NDA</role>
+            <role>NDA_Specialist</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>DPL_Approvals</fullName>
+        <columns>NDAFileID__c</columns>
+        <columns>Category__c</columns>
+        <columns>MCR_Content__c</columns>
+        <columns>Prototype__c</columns>
+        <columns>ToBeApprovedByID__c</columns>
+        <columns>DPL_Comments__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DPLStatus__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <filters>
+            <field>IsProductNDA__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>DPL Approvals</label>
+    </listViews>
+    <nameField>
+        <displayFormat>NDA-{00000}</displayFormat>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NDAs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>NDA</fullName>
+        <active>true</active>
+        <label>NDA</label>
+        <picklistValues>
+            <picklist>AmendmentSigned__c</picklist>
+            <values>
+                <fullName>false</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>true</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Companion Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Products</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Connected_Party_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DPLStatus__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Governing_Law__c</picklist>
+            <values>
+                <fullName>Alberta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Argentina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Austria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bahamas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barbados</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bermuda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bolivia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brasil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>British Columbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China P%2ER%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colombia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Costa Rica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cuba</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delaware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dominican Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecuador</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>El Salvador</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>England and Wales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guatemala</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haiti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honduras</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illinois</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Israel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jamaica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malaysia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nicaraqua</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ontario</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panama</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paraguay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peru</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Republic of Korea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian Federation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suriname</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taiwan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trinidad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uruguay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venezuela</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria-Australia</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_Outside_Party_on_Connected_Person__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legacy_Disclosure_Type__c</picklist>
+            <values>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MCR_Content__c</picklist>
+            <values>
+                <fullName>Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motorola_Entity__c</picklist>
+            <values>
+                <fullName>2013 Intellectual Property Investments%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>280 North%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4thpass Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DP Acquisition 2006%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Instrument Holdings%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Engines%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iridium Central America and Mexico%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Comercial%2C S%2EA%2E de C%2EV%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Korea%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Australia Pty Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Austria GmgH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Aviation Holdings N158M%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Aviation Holdings N550M%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Canada Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Chennai Private Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Chile Limitada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Colombia S%2EA%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Comércio de Produtos Eletrônicos Ltda%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility España%2C S%2EL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility France S%2EA%2ES%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Germany GmbH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Greece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Holdings B%2EV%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Holdings LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Hong Kong Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility India Private Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility International Capital LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility International Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Investments%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Italia S%2Er%2El%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Japan Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Netherlands One Cooperatief U%2EA%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Netherlands Two B%2EV%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Peru S%2ER%2EL%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Poland Sp%2Ez%2Eo%2Eo%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Sales and Services%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Singapore Pte%2E Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility South Africa %28Proprietary%29 Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Taiwan Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Beijing Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Chengdu Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Guangzhou Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Nanjing Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Shanghai Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Technologies %28China%29 Co%2E%2C Ltd%2E Shenzhen Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility UK Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility UK Ltd%2E Dubai Branch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility Venezuela S%2EA%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility de Mexico%2C S%2EA%2E de C%2EV%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Mobility of Argentina S%2EA%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola Trademark Holdings%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motorola%28Beijing%29 Mobility Technologies Co%2E%2C Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT Motorola Mobility Indonesia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soundbuzz India Pvt%2E Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soundbuzz Pte ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP Communications Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPCom Consultancy %28Shanghai%29 Company Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPCom Ltd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Three Laws Mobility%2C Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viewdle Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WR Hambrecht Ventures II-B%2C LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zecter%2C Inc</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NDARegion__c</picklist>
+            <values>
+                <fullName>Asia Pac - Chinese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asia Pac - English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMEA - English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America - English %26 Portuguese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latin America - English %26 Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North America - English</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NDAStatus__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executed-Mod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NDA_Specialist__c</picklist>
+            <values>
+                <fullName>cmwf84%40motorola%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cwnj83%40motorola%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>esw001c%40motorola%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>mwcp74%40motorola%2Ecom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Prototype__c</picklist>
+            <values>
+                <fullName>Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>NDAFileID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Company__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Motorola_Entity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NDAStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NDA_file_signed_date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NDARegion__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VP_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>NDAFileID__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NDAFileID__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NDAFileID__c</searchFilterFields>
+        <searchResultsAdditionalFields>NDAFileID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Company__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Motorola_Entity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NDARegion__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NDAStatus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expires_On__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Governing_Law__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VP_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <webLinks>
+        <fullName>EchoSign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>EchoSign</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/loop__looplus?eid={!NDA__c.Id}&amp;sessionId={!$Api.Session_ID}&amp;ddpIds=a23e0000000IqjE&amp;deploy=a22e0000000od9D</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop_Attach_as_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Loop</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/loop__looplus?eid={!NDA__c.Id}&amp;sessionId={!$Api.Session_ID}&amp;contactId={!Contact.Id}&amp;ddpIds=a23e0000000Iqk2&amp;deploy=a22e0000000odBN</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop_Plus</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Loop Plus</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/loop__looplus?eid={!NDA__c.Id}&amp;AnyParameter={!NDA__c.VP_Name__c},{!NDA_Signatory__c.Email__c}&amp;sessionId={!$Api.Session_ID}</url>
+    </webLinks>
+</CustomObject>

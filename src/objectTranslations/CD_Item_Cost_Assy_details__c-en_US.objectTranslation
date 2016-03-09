@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD Cost Assy Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD Cost Assy Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assembly Details --></label>
+        <name>Assembly_Details__c</name>
+        <relationshipLabel><!-- CD Item Cost Assy details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Assy Details ID --></label>
+        <name>Cost_Assy_Details_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost ID --></label>
+        <name>Cost_ID__c</name>
+        <relationshipLabel><!-- CD Item Cost Assy details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

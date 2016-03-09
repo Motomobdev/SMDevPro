@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>VHD# 472706</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Definition of Oppt</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&apos;https://docs.google.com/a/motorola.com/presentation/d/1N2I2GBP0eM7c6iDakwV6EFhvkoE-h3JgWO93AKXYZuA/edit#slide=id.g105cc32ca_147&apos;);</url>
+</CustomPageWebLink>

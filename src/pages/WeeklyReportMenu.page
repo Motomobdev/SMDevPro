@@ -1,0 +1,51 @@
+<apex:page controller="WeeklyReportMenuCtr" showHeader="false" sidebar="false" standardStylesheets="true">
+<style type="text/css">
+    body{background-color: #CFEEF8;}
+    #menu a {color: #1468B6; text-decoration: none;}
+    #menu a:hover {color: #1468B6; text-decoration: underline;}
+    #menu table tr td {padding: 2px 0; color: #1468B6;}
+</style>
+
+    <div id="menu">
+        <table>
+            <tr><td>
+                <apex:outputLink value="/apex/weeklyreport" target="_parent">
+                    <apex:outputText style="color:#1468B6;" value="Custom Weekly Reports" />
+                </apex:outputLink>
+            </td></tr>
+            <tr><td>
+                <apex:outputLink value="/apex/WeeklyReportGrid?function=GTM" target="_parent">
+                    <apex:outputText style="color:#1468B6;" value="GTM Weekly Report" />
+                </apex:outputLink>
+            </td></tr>
+            <tr><td>
+                <apex:outputLink value="/apex/WeeklyReportGrid?function=Finance" target="_parent">
+                    <apex:outputText style="color:#1468B6;" value="Finance Weekly Report" />
+                </apex:outputLink>
+            </td></tr>
+            <!--
+            <tr><td>
+                <apex:dataTable value="{!LatestWeeklyList}" var="wl">
+                    <apex:column rendered="{!IF(AND(NOT(ISBLANK(wl.Attachments)), wl.Attachments.size > 0), TRUE, FALSE)}" style="padding:2px 0;">
+                        <apex:outputLink value="{!URLFOR($Action.Attachment.Download, wl.Attachments[0].Id)}" target="_parent">
+                            {!wl.Function__c}&nbsp;:&nbsp;
+                            <apex:outputText value="{0,date,MMM' 'dd', 'yyyy}">
+                                <apex:param value="{!wl.Week_Ending__c}" /> 
+                            </apex:outputText>
+                        </apex:outputLink>
+                    </apex:column>
+                </apex:dataTable>
+            </td></tr>
+            -->
+            <tr><td>
+                <apex:dataTable value="{!LatestWeeklyLinks}" var="wl">
+                    <apex:column style="padding:2px 0;">
+                        <apex:outputLink value="/apex/weeklyreportexport?{!LatestWeeklyLinks[wl]}" target="_blank">
+                            {!wl}
+                        </apex:outputLink>
+                    </apex:column>
+                </apex:dataTable>
+            </td></tr>
+        </table>
+    </div>
+</apex:page>

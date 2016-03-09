@@ -1,0 +1,30 @@
+<apex:page standardController="Account" extensions="WeeklyAccountSummaryCtr" sidebar="false" showHeader="false">
+    <style>
+        .activeTabCurr {background-color:white; color:blue; font-weight:bold; background-image:none}
+        .activeTabPrev {background-color:white; color:green; font-weight:bold; background-image:none}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none}
+    </style>
+    <apex:form >
+        <apex:pageBlock title="Week Ending: {!weekEnding}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton id="toggleWeeklyView" value="{!toggleButtonText}" action="{!toggleWeeklyView}" style="{!IF(currentWeek, 'color:black;', 'color:black;')}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" collapsible="false">
+                <apex:tabPanel switchType="client" selectedTab="tabdetails" id="AccountTabPanel1" tabClass="activeTabCurr" inactiveTabClass="inactiveTab" rendered="{!currentWeek}">
+                    <apex:tab id="allcur" label="All">
+                        <iframe id="gridFrame1" scrolling="yes" height="390" width="100%" frameborder="0"
+                          src="/apex/gblite__grid?gname=WR Account All&ID={!Account.Id}&sbb=1&sh=0&ssb=0&ea=1&ro=0">
+                        </iframe>
+                    </apex:tab>
+                </apex:tabPanel>
+                <apex:tabPanel switchType="client" selectedTab="tabdetails" id="AccountTabPanel2" tabClass="activeTabPrev" inactiveTabClass="inactiveTab" rendered="{!NOT(currentWeek)}">
+                    <apex:tab id="allprev" label="All">
+                        <iframe id="gridFrame3" scrolling="yes" height="390" width="100%" frameborder="0"
+                          src="/apex/gblite__grid?gname=WR Account All Prev&ID={!Account.Id}&sbb=1&sh=0&ssb=0&ea=1">
+                        </iframe>
+                    </apex:tab>
+                </apex:tabPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

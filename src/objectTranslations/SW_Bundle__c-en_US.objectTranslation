@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Bundle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Bundles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bundle State --></label>
+        <name>Bundle_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bundle Type --></label>
+        <name>Bundle_Type__c</name>
+        <picklistValues>
+            <masterLabel>Apps Bundle</masterLabel>
+            <translation><!-- Apps Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arctic Fox Options</masterLabel>
+            <translation><!-- Arctic Fox Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLUR</masterLabel>
+            <translation><!-- BLUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMP</masterLabel>
+            <translation><!-- CMP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD Card</masterLabel>
+            <translation><!-- SD Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet Bundle</masterLabel>
+            <translation><!-- Tablet Bundle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter the due date for this Deployment. This date will drive the contract completion dates for any partners associated with this Bundle. --></help>
+        <label><!-- Deployment Due Date --></label>
+        <name>Deployment_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Apps --></label>
+        <name>of_Apps__c</name>
+    </fields>
+    <layouts>
+        <layout>SW Bundle Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SW Bundle Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

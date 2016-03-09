@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Component</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Components</value>
+    </caseValues>
+    <fields>
+        <label><!-- Component Type --></label>
+        <name>Component_Type__c</name>
+        <picklistValues>
+            <masterLabel>HW</masterLabel>
+            <translation><!-- HW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SW</masterLabel>
+            <translation><!-- SW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost (CWV) --></label>
+        <name>Cost_CWV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost (Opp) --></label>
+        <name>Cost_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <layouts>
+        <layout>Component Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please specify if component is HW or SW --></errorMessage>
+        <name>Component_Type_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

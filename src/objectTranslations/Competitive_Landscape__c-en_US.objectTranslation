@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competitive Landscape</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitive Landscapes</value>
+    </caseValues>
+    <fields>
+        <label><!-- ASP($) Range --></label>
+        <name>ASP_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <lookupFilter>
+            <errorMessage><!-- No matching GTM account found. --></errorMessage>
+            <informationalMessage><!-- Search GTM account --></informationalMessage>
+        </lookupFilter>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Competitive Landscapes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Competitor Vendor --></label>
+        <name>Competitor_Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor Product --></label>
+        <lookupFilter>
+            <errorMessage><!-- No matching competitor product found --></errorMessage>
+            <informationalMessage><!-- Search competitor product --></informationalMessage>
+        </lookupFilter>
+        <name>Competitor_Product__c</name>
+        <relationshipLabel><!-- Competitive Landscapes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Market Share rank on the account in the price tier for latest period (Week / Month) --></help>
+        <label><!-- Device Rank --></label>
+        <name>Device_Rank__c</name>
+    </fields>
+    <fields>
+        <help><!-- History of Latest Updates --></help>
+        <label><!-- History --></label>
+        <name>History__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Updates --></label>
+        <name>Latest_Updates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Product --></label>
+        <name>Motorola_Product__c</name>
+        <relationshipLabel><!-- Competitive Landscapes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Why It Is Winning --></label>
+        <name>Why_Winning__c</name>
+    </fields>
+    <layouts>
+        <layout>Competitive Landscape Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Updates_to_Weekly --></label>
+        <name>Add_Updates_to_Weekly</name>
+    </webLinks>
+</CustomObjectTranslation>

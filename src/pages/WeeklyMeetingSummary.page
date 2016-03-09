@@ -1,0 +1,21 @@
+<apex:page standardController="Customer_Meeting__c" sidebar="false" showHeader="false"> 
+    <apex:tabPanel switchType="client" selectedTab="tabdetails"
+                      id="MeetingTabPanel" tabClass="activeTab"
+                      inactiveTabClass="inactiveTab">
+        <apex:tab label="GTM">
+            <iframe id="gridFrame" scrolling="auto" height="600" width="100%" frameborder="0"
+                src="/apex/gblite__grid?gname=WR Meeting GTM&id={!Customer_Meeting__c.Id}&sh=0&ssb=0&sbb=1">
+            </iframe>
+        </apex:tab>
+        <apex:tab label="Product Ops">
+             <iframe id="gridFrame" scrolling="auto" height="600" width="100%" frameborder="0"
+                src="/apex/gblite__grid?gname=WR Meeting Product Ops&id={!Customer_Meeting__c.Id}&sh=0&ssb=0&sbb=1">
+              </iframe>
+        </apex:tab>
+        <apex:tab label="Others">
+             <iframe id="gridFrame" scrolling="auto" height="600" width="100%" frameborder="0"
+                src="/apex/gblite__grid?gname=WR Meeting Others&id={!Customer_Meeting__c.Id}&sh=0&ssb=0&sbb=1">
+              </iframe>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

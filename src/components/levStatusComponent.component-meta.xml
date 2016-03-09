@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>32.0</apiVersion>
+    <description>Status Component for Ajax calls, after adding this component in your VFP, in your ajax enabled component type status=&quot;status&quot; to activate this component</description>
+    <label>levStatusComponent</label>
+</ApexComponent>

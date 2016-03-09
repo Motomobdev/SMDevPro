@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agreement Accessory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agreement Accessories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- Agreement Accessories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Interested? --></label>
+        <name>Interested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Price --></label>
+        <name>Invoice_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Agreement Accessories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2013 Invoice Price --></label>
+        <name>X2013_Invoice_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2013 MSRP --></label>
+        <name>X2013_MSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2013 Selected? --></label>
+        <name>X2013_Selected__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2014 Invoice Price --></label>
+        <name>X2014_Invoice_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2014 MSRP --></label>
+        <name>X2014_MSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2014 Selected? --></label>
+        <name>X2014_Selected__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Check Interested? --></errorMessage>
+        <name>Accessory_Price_Requires_Interested</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter price --></errorMessage>
+        <name>Interested_Requires_Price</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invoice price for 2013 is required --></errorMessage>
+        <name>MAX_Deal_Requires_2013_Mot_Accessories</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invoice price for 2014 is required --></errorMessage>
+        <name>MAX_Deal_Requires_2014_Mot_Accessories</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit_Accessories --></label>
+        <name>Edit_Accessories</name>
+    </webLinks>
+</CustomObjectTranslation>

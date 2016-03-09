@@ -1,0 +1,19 @@
+<apex:page sidebar="false">
+    <script>
+        function adjustIframe(){
+            var container = document.getElementById('container1');
+            console.log(container);
+            console.log(container.children.length);
+            if(container.children.length > 0) container1.children[2].style.display = 'block';   
+        }
+    </script>
+    <style>
+        iframe{
+            display: block;
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+    <div id="container1" class="div_center" ></div>
+    <apex:canvasApp applicationName="MotoPlay_Stats" containerId="container1" width="960" onCanvasAppLoad="window.setTimeout(adjustIframe,2500)"/>
+</apex:page>

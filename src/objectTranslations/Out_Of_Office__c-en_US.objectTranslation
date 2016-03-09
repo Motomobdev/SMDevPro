@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Out Of Office</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Out Of Office</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active? --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delegated Approver --></label>
+        <name>Delegated_Approver__c</name>
+        <relationshipLabel><!-- Out Of Office (Delegated Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Time --></label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Out Of Office (User) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Out Of Office Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- End Time has to be after Start Time --></errorMessage>
+        <name>End_Date_greater_than_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot create Out Of Office records for other users. --></errorMessage>
+        <name>Only_admins_can_create_for_other_users</name>
+    </validationRules>
+</CustomObjectTranslation>

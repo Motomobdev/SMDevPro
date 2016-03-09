@@ -1,0 +1,36 @@
+<apex:page standardController="Account" sidebar="false" showHeader="false">
+    <apex:tabPanel switchType="client" selectedTab="tabdetails"
+                      id="AccountTabPanel" tabClass="activeTab"
+                      inactiveTabClass="inactiveTab">
+        <apex:tab label="Weekly Report (Current)">
+             <iframe id="gridFrame3" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=WR Account All&ID={!Account.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        <apex:tab label="Weekly Report (Last)">
+             <iframe id="gridFrame4" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=WR Account All Prev&ID={!Account.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab> 
+        <apex:tab label="Opportunities">
+            <iframe id="gridFrame1" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Opportunities&ID={!Account.Id}&sbb=1&sh=0&ssb=0&ro=1">
+            </iframe>
+        </apex:tab>
+        <apex:tab label="Campaigns">
+             <iframe id="gridFrame2" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Account-Campaigns&ID={!Account.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>       
+        <apex:tab label="Ranging">
+             <iframe id="gridFrame5" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Ranging-Account&ID={!Account.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+        <apex:tab label="Channel Profile">
+             <iframe id="gridFrame6" scrolling="auto" height="480" width="100%" frameborder="0"
+              src="/apex/gblite__grid?gname=Channel Profile-Account&ID={!Account.Id}&sbb=1&sh=0&ssb=0">
+            </iframe>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

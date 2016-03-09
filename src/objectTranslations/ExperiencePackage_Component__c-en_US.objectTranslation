@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExperiencePackage_Component</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExperiencePackage_Components</value>
+    </caseValues>
+    <fields>
+        <label><!-- Component Type --></label>
+        <name>Component_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Component --></label>
+        <name>Component__c</name>
+        <relationshipLabel><!-- Experience Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost_CWV1 --></label>
+        <name>Cost_CWV1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost (CWV) --></label>
+        <name>Cost_CWV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost (Opp) --></label>
+        <name>Cost_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Experience Package --></label>
+        <name>Experience_Package__c</name>
+        <relationshipLabel><!-- Components --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>ExperiencePackageComponent Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

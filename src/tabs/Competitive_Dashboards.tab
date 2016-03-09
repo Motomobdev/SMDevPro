@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Competitive Dashboards</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom68: Globe</motif>
+    <url>https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=t/Site6/views/CompetitiveDashboard_1_0/CompetitiveDashboard&amp;tableauSite=Site6&amp;userName=bizops&amp;container=iframe&amp;:toolbar=yes</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

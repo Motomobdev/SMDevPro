@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Model</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Models</value>
+    </caseValues>
+    <fields>
+        <help><!-- From MotoPDM field --></help>
+        <label><!-- Sales Model Description --></label>
+        <name>Sales_Model_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field visible to admins only --></help>
+        <label><!-- Sales Model External ID --></label>
+        <name>Sales_Model_External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Item State in MOTOPDM. Data is pulled every 5 minutes --></help>
+        <label><!-- Sales Model Item State --></label>
+        <name>Sales_Model_Item_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment Code --></label>
+        <name>Segment_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Devices on Sales Model --></label>
+        <name>of_SW_Kits_on_Sales_Model__c</name>
+    </fields>
+    <layouts>
+        <layout>Sales Model Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Model Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

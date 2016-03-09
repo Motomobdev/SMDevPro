@@ -1,0 +1,40 @@
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+           showHeader="true" 
+           sidebar="true"
+           cache="false" 
+           tabstyle="Apttus_Approval__Approval_Request__c" >
+        
+    <apex:sectionHeader title="{!$Label.Apttus_Approval__ApprovalRequest}" 
+                        subtitle="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Name}"/>
+    
+    <apex:pageBlock title="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!$Label.Apttus_Approval__Information}">
+           
+        <apex:pageBlockSection columns="1">
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__c}"  rendered="false" />
+            <!--<apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Account__c}" />-->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.RecordType.Name}"  rendered="false"/>
+            <!--<apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.OwnerId}" />-->
+            <!--<apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Description__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__FF_Agreement_Number__c}" />-->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Status_Category__c}"  rendered="false" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Status__c}"  rendered="false" />
+            <!--<apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Contract_Start_Date__c}" />-->
+            <!--<apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Contract_End_Date__c}" />-->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__r.Apttus__Total_Contract_Value__c}"  rendered="false" />
+            <!-- DO NOT REMOVE THESE - THESE ARE USED BY THE CHECK ATTACHMENT FUNCTIONALITY -->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Assigned_To__c}" rendered="false" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Assigned_To_Id__c}" rendered="false" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Assigned_To_Type__c}" rendered="false"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Object_Id__c}" rendered="false" />
+            <!-- END OF FIELD THAT CAN NOT BE REMOVED -->
+           
+            <p/>&nbsp;
+      
+        
+        <apex:include pageName="APTPS_MassApprovalAction" />   
+     </apex:pageBlockSection>     
+    </apex:pageBlock>
+    
+   <!-- <apex:include pageName="Apttus_Approval__ApprovalRequestsList"/> -->
+    
+</apex:page>

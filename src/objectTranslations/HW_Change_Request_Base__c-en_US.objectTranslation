@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW Change Request  Base</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW Change Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Counter --></label>
+        <name>Active_Counter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Record ID --></label>
+        <name>Base_Record_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Impact --></label>
+        <name>Business_Impact__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category Manager Comments --></label>
+        <name>Category_Manager_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Manager Reviewer --></label>
+        <name>Category_Manager_Reviewer__c</name>
+        <relationshipLabel><!-- HW Change Requests (Category Manager Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Change Description --></label>
+        <name>Change_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Request Stage --></label>
+        <name>Change_Request_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting EOL Process</masterLabel>
+            <translation><!-- Awaiting EOL Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECR Released</masterLabel>
+            <translation><!-- ECR Released --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eng Assessment</masterLabel>
+            <translation><!-- Eng Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eng Review</masterLabel>
+            <translation><!-- Eng Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution</masterLabel>
+            <translation><!-- Execution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial Review</masterLabel>
+            <translation><!-- Initial Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Record</masterLabel>
+            <translation><!-- New Record --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EOL-if EOL last purchase date and last manufacture date to be visible
+Design- change leading to alteration of function
+Fab- Wafer fab for IC
+Location- final packaging or test of component
+Material- update of core materials used for production --></help>
+        <label><!-- Change Type --></label>
+        <name>Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>2nd Source</masterLabel>
+            <translation><!-- 2nd Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design</masterLabel>
+            <translation><!-- Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EOL</masterLabel>
+            <translation><!-- EOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fab</masterLabel>
+            <translation><!-- Fab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location</masterLabel>
+            <translation><!-- Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material</masterLabel>
+            <translation><!-- Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part Package</masterLabel>
+            <translation><!-- Part Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process</masterLabel>
+            <translation><!-- Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ship Package</masterLabel>
+            <translation><!-- Ship Package --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Closed Month --></label>
+        <name>Closed_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Month --></label>
+        <name>Create_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Order --></label>
+        <name>Display_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date ECR number was completed within MotoPDM --></help>
+        <label><!-- ECR Approval Date --></label>
+        <name>ECR_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effected Part Numbers --></label>
+        <name>Effected_Part_Numbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Date --></label>
+        <name>Entry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Month --></label>
+        <name>Entry_Month__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated gross savings, revenue from supply shortage/avoidance, or savings/cost avoidance from quality improvement. --></help>
+        <label><!-- Estimated Revenue --></label>
+        <name>Estimated_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Request --></label>
+        <name>External_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change administrator to maintain throughout process. --></help>
+        <label><!-- Final HCR Status --></label>
+        <name>Final_HCR_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please Select</masterLabel>
+            <translation><!-- Please Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HCR Complete Date --></label>
+        <name>HCR_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCR Cycle Time --></label>
+        <name>HCR_Cycle_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Top status of approval, ensure to add road-blocks or critical dates to comments.  Important field for dashboard use. --></help>
+        <label><!-- HCR Top Status Comment --></label>
+        <name>HCR_Top_Status_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Paste information from CRIS mass part report --></help>
+        <label><!-- Impacted Components and Where Use --></label>
+        <name>Impacted_Components_and_Where_Use__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Request Core Id --></label>
+        <name>Internal_Request_Core_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Request --></label>
+        <name>Internal_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Requester eMail --></label>
+        <name>Internal_Requester_eMail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Manufacture Date --></label>
+        <name>Last_Manufacture_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last PO Date --></label>
+        <name>Last_PO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- ECR number associated with approval of the change. --></help>
+        <label><!-- MotoPDM ECR Number --></label>
+        <name>MotoPDM_ECR_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Member of the MotoPDM PCM team responsible for entry of the final ECR to track change acceptance. --></help>
+        <label><!-- MotoPDM Owner --></label>
+        <name>MotoPDM_Owner__c</name>
+        <relationshipLabel><!-- HW Change Requests (MotoPDM Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Initial date the change requester entered.  Effective date will be the &apos;living&apos; date when change is formally approved. --></help>
+        <label><!-- Original Need By: --></label>
+        <name>Original_Need_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Category --></label>
+        <name>Part_Category__c</name>
+        <picklistValues>
+            <masterLabel>Accessories/Companion Products</masterLabel>
+            <translation><!-- Accessories/Companion Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acoustics</masterLabel>
+            <translation><!-- Acoustics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antennas</masterLabel>
+            <translation><!-- Antennas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batteries</masterLabel>
+            <translation><!-- Batteries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batteries/Coins</masterLabel>
+            <translation><!-- Batteries/Coins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Operations</masterLabel>
+            <translation><!-- Business Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crystal Filters</masterLabel>
+            <translation><!-- Crystal Filters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DLLO</masterLabel>
+            <translation><!-- DLLO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Die Casts</masterLabel>
+            <translation><!-- Die Casts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Die Cuts</masterLabel>
+            <translation><!-- Die Cuts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Display</masterLabel>
+            <translation><!-- Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical, Packaging, Logistics &amp; Repair</masterLabel>
+            <translation><!-- Electrical, Packaging, Logistics &amp; Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extrusions</masterLabel>
+            <translation><!-- Extrusions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flexes</masterLabel>
+            <translation><!-- Flexes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flip &amp; Slider Assemblies</masterLabel>
+            <translation><!-- Flip &amp; Slider Assemblies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hinges</masterLabel>
+            <translation><!-- Hinges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imager</masterLabel>
+            <translation><!-- Imager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interconnects/Cables</masterLabel>
+            <translation><!-- Interconnects/Cables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keypads</masterLabel>
+            <translation><!-- Keypads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keypads Stamped</masterLabel>
+            <translation><!-- Keypads Stamped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keypads/Rubber &amp; Die Cuts</masterLabel>
+            <translation><!-- Keypads/Rubber &amp; Die Cuts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LGF/EL Panel</masterLabel>
+            <translation><!-- LGF/EL Panel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lens and Touch Panel</masterLabel>
+            <translation><!-- Lens and Touch Panel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics &amp; Repair Services</masterLabel>
+            <translation><!-- Logistics &amp; Repair Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical &amp; Sub-Assemblies</masterLabel>
+            <translation><!-- Mechanical &amp; Sub-Assemblies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Memory Cards, eMMC,  NOR</masterLabel>
+            <translation><!-- Memory Cards, eMMC,  NOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Memory NAND &amp; Memory</masterLabel>
+            <translation><!-- Memory NAND &amp; Memory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metals</masterLabel>
+            <translation><!-- Metals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCB</masterLabel>
+            <translation><!-- PCB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCB/Rigid Flex</masterLabel>
+            <translation><!-- PCB/Rigid Flex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaging</masterLabel>
+            <translation><!-- Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passives</masterLabel>
+            <translation><!-- Passives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passives/Crystal Filters</masterLabel>
+            <translation><!-- Passives/Crystal Filters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastics</masterLabel>
+            <translation><!-- Plastics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastics/Paint</masterLabel>
+            <translation><!-- Plastics/Paint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power</masterLabel>
+            <translation><!-- Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Precision Stamping</masterLabel>
+            <translation><!-- Precision Stamping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair Services</masterLabel>
+            <translation><!-- Repair Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sheet Metal</masterLabel>
+            <translation><!-- Sheet Metal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switches</masterLabel>
+            <translation><!-- Switches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Strategy and MEM&apos;s</masterLabel>
+            <translation><!-- Technology Strategy and MEM&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USB, GPS WLAN, NFC</masterLabel>
+            <translation><!-- USB, GPS WLAN, NFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VLSI &amp; CDMA/iDEN—Qualcomm</masterLabel>
+            <translation><!-- VLSI &amp; CDMA/iDEN—Qualcomm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VLSI &amp; Common/SCT—Transceivers &amp; PA&apos;s</masterLabel>
+            <translation><!-- VLSI &amp; Common/SCT—Transceivers &amp; PA&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VLSI &amp; GSM/UMTS—Micro-controllers</masterLabel>
+            <translation><!-- VLSI &amp; GSM/UMTS—Micro-controllers --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Approval Path --></label>
+        <name>Product_1_Approval_Path__c</name>
+        <picklistValues>
+            <masterLabel>Approve by Similarity</masterLabel>
+            <translation><!-- Approve by Similarity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineer Pilot + FLT</masterLabel>
+            <translation><!-- Engineer Pilot + FLT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLT Only</masterLabel>
+            <translation><!-- FLT Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Factory ALT + FLT</masterLabel>
+            <translation><!-- Factory ALT + FLT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Part</masterLabel>
+            <translation><!-- New Part --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Eng Comment --></label>
+        <name>Product_1_Eng_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Engineer --></label>
+        <name>Product_1_Engineer__c</name>
+        <relationshipLabel><!-- HW Change Requests (Product 1 Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Pilot Qty --></label>
+        <name>Product_1_Pilot_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only select test required if product level testing is absolutely necessary.  Rejection or qualification via similarity to other product testing does not warrant selection of this field. --></help>
+        <label><!-- Product 1 Test Required --></label>
+        <name>Product_1_Test_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 1 --></label>
+        <name>Product_1__c</name>
+        <relationshipLabel><!-- HW Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Critical- significant cost avoidance, reduction, or good-to improvement.  Needed in &lt; 40 days.
+Moderate- significant cost avoidance, reduction, or good-to improvement.  Needed in &lt; 60 days.
+Low- common change request.  Needed in &lt; 90 days. --></help>
+        <label><!-- Request Priority --></label>
+        <name>Request_Priority__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field size 255 characters.  Please enter brief comment.  If more detail required save a note or upload documentation at the bottom of this record. --></help>
+        <label><!-- SC Operations Comment --></label>
+        <name>SC_Operations_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval will close this record and Schedule Share PCN without further processing.
+Rejection will reject this record and Schedule Share PCN without further processing. --></help>
+        <label><!-- SC Operations Status --></label>
+        <name>SC_Operations_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SDE Comments --></label>
+        <name>SDE_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDE Reviewer --></label>
+        <name>SDE_Reviewer__c</name>
+        <relationshipLabel><!-- HW Change Requests (SDE Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SDE Risk Level --></label>
+        <name>SDE_Risk_Level_1__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SME Comments --></label>
+        <name>SME_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME Reviewer --></label>
+        <name>SME_Reviewer__c</name>
+        <relationshipLabel><!-- HW Change Requests (SME Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SME Risk Level --></label>
+        <name>SME_Risk_Level_1__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supplier Contact Name --></label>
+        <name>Supplier_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Id --></label>
+        <name>Supplier_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Name --></label>
+        <name>Supplier_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier PCN --></label>
+        <name>Supplier_PCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Phone --></label>
+        <name>Supplier_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier eMail --></label>
+        <name>Supplier_eMail__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Base Request Id --></label>
+        <name>System_Base_Request_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>2nd Copy HW Change Request Base</layout>
+        <sections>
+            <label><!-- Change Detail --></label>
+            <section>Change Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Effective Part Numbers --></label>
+            <section>Effective Part Numbers</section>
+        </sections>
+        <sections>
+            <label><!-- MotoPDM Tracking --></label>
+            <section>MotoPDM Tracking</section>
+        </sections>
+        <sections>
+            <label><!-- Part Detail --></label>
+            <section>Part Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Requester Detail --></label>
+            <section>Requester Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>HW Change Request Base All Locked</layout>
+        <sections>
+            <label><!-- Change Detail --></label>
+            <section>Change Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Part Detail --></label>
+            <section>Part Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Requester Detail --></label>
+            <section>Requester Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Schedule_Share --></label>
+        <name>Schedule_Share</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- A change request has completed the approval process.  Please review the impacted part numbers and release MotoPDM ECR accordingly. --></description>
+        <name>Approved_Change_Pending_Release_of_ECR</name>
+        <subject><!-- Approved Change Pending Release of ECR --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Enter a new corresponding HW CR Initial Review record.  Also update HCR &apos;Change Request Stage&apos; to &apos;Initial Review&apos; --></description>
+        <name>Create_Initial_Review_PR_Record</name>
+        <subject><!-- Create Initial Review &apos;PR&apos; Record --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

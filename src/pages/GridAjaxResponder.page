@@ -1,0 +1,5 @@
+<!-- Used for custom Ajax requests made from GridBuddy grids.
+     The contentType must be text/javascript since the Ajax calls use JSONP. -->
+<apex:page controller="GridAjaxDelegator" action="{!processRequest}" contentType="text/javascript; charset=utf-8" showHeader="false" standardStylesheets="false" sidebar="false">
+handleJsonpCallback({!jsonResponse})
+</apex:page>

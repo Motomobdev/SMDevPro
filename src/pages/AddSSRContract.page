@@ -1,0 +1,35 @@
+<apex:page standardController="Project_Spend__c" extensions="SSRContractController" sidebar="false" showHeader="false">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <script>
+        $(document).ready(function (){
+            if({!closed}) window.close();    
+        });
+    </script>
+    <apex:form >
+        <apex:pageBlock title="New Contract">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" onclick="window.close()"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Contract Information" columns="2">
+                <apex:outputField value="{!newContract.OwnerId}"/>
+                <apex:inputField value="{!newContract.StartDate}"/>
+                <apex:inputField value="{!newContract.Name}"/>
+                <apex:inputField value="{!newContract.EndDate}"/>
+                <apex:inputField value="{!newContract.AccountId}" required="true"/>
+                <apex:inputField value="{!newContract.NRE_Cost__c}" />
+                <apex:inputField value="{!newContract.Contract_Type__c}" />
+                <apex:inputField value="{!newContract.Let_Expire__c}" />
+                <apex:inputField value="{!newContract.Contract_Status__c}" />
+                <apex:inputField value="{!newContract.Contract_Phase__c}" />
+                <apex:inputField value="{!newContract.ContractTerm}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputField value="{!Project_Spend__c.Name__c}" rendered="false"/>
+        <apex:outputField value="{!Project_Spend__c.Vendor__c}" rendered="false"/>
+        <apex:outputField value="{!Project_Spend__c.Start_Date__c}" rendered="false"/>
+        <apex:outputField value="{!Project_Spend__c.End_Date__c}" rendered="false"/>
+        <apex:outputField value="{!Project_Spend__c.Estimated_Spend__c}" rendered="false"/>
+        <apex:outputField value="{!Project_Spend__c.Contract__c}" rendered="false"/>
+    </apex:form>
+</apex:page>

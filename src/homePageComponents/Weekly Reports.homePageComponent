@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Custom_Weekly_Reports</links>
+    <links>GTM_Weekly_Report</links>
+    <links>Finance_Weekly_Report</links>
+    <links>Biz_Ops_Weekly_Report_document</links>
+    <links>Finance_Weekly_Report_document</links>
+    <links>GTM_Weekly_Report_document</links>
+    <links>Marketing_Weekly_Report_document</links>
+    <links>Product_Ops_Weekly_Report_document</links>
+    <links>Sales_Ops_Weekly_Report_document</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

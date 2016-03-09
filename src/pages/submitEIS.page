@@ -1,0 +1,195 @@
+<apex:page standardController="External_Idea_Submission__c" extensions="submitEIS" showHeader="false" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Motorola Mobility, Inc. - EIS</title>
+</head>
+<style>
+inputField{
+width: 50%;
+}
+</style>
+
+<body>
+<table width="1024" align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="22"></td>
+    <td><table width="980" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="980" height="30"><apex:image url="{!URLFOR($Resource.eisImages, 'top_banner.jpg')}" width="980" height="30"/></td>
+      </tr>
+      <tr>
+        <td width="980" height="50"><apex:image url="{!URLFOR($Resource.eisImages, 'eis_banner.jpg')}" width="980" height="50"/></td>
+      </tr>
+      <tr>
+        <td width="980">
+        <!-- ******************************************************** -->
+    <apex:form id="page1" rendered="{!showPage1}" >
+        
+        <!--<apex:panelGrid columns="1" width="960">-->
+        <apex:pageBlock >
+<!--title="EIS <BR/> Motorola Mobility, Inc.<BR/> External Idea Submission"-->
+                <Center><B>
+                    EIS <BR/>
+                    Motorola Mobility, Inc.<BR/>
+                    External Idea Submission<BR/><BR/>
+                </B></Center>
+                
+                <BR/>
+                Welcome to EIS.   EIS is a system provided by Motorola Mobility, Inc. to those who wish to submit an unsolicited idea. <BR/><BR/>
+                EIS is the only method by which Motorola Mobility will receive and/or review any unsolicited external idea.  
+                Any external idea submitted to Motorola Mobility, Inc. by any other means will not be reviewed and will be promptly returned to the submitter, 
+                if physical, or automatically deleted, if electronic.<BR/><BR/>
+                
+                <apex:commandButton action="{!goToForm}" value="Submit Unsolicited Idea" id="submit"/>
+        </apex:pageBlock>
+       <!-- </apex:panelGrid>-->
+        
+    </apex:form>
+
+    <apex:form id="form" rendered="{!showForm}" enctype="multipart/form-data">
+    <!--<apex:panelGrid columns="1"  width="960">-->
+        <apex:pageBlock > <!-- title="EIS Unsolicited Idea Application"-->
+            <Center><B>EIS Unsolicited Idea Application</B></Center>
+        <BR/>
+            <!--<apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Submit"/>
+            </apex:pageBlockButtons>
+            -->
+            
+            <apex:pageBlockSection columns="1" collapsible="false" >
+            <!--style="width: 360px; height: 40px"-->
+                <apex:inputField value="{!eis.Salutation__c}"/>
+                <apex:inputField value="{!eis.First_Name__c}" required="true"/>
+                <apex:inputField value="{!eis.Last_Name__c}" required="true"/>
+                <apex:inputField value="{!eis.Company_if_any__c}"/>
+                <apex:inputField value="{!eis.Email__c}" style="width: 200px;" required="true"/>
+                <apex:inputField value="{!eis.Phone__c}"/>
+                <apex:inputField value="{!eis.Address_1__c}" />
+                <apex:inputField value="{!eis.Address_2__c}"/>
+                <apex:inputField value="{!eis.City__c}"/>
+                <apex:inputField value="{!eis.State__c}"/>
+                <apex:inputField value="{!eis.Zip_Code__c}"/>
+                <apex:inputField value="{!eis.Unsolicited_Idea_Name__c}" style="width: 400px;" required="true"/>
+                <apex:inputField value="{!eis.Unsolicited_Idea_Details__c}" style="width: 80%;"/>
+
+                
+                <apex:pageBlockSection >
+                    <!--<apex:inputFile value="{!a.Body}" filename="{!a.Name}"/>-->
+                    <apex:outputLabel >
+                        <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}"/>
+                    </apex:outputLabel>
+                    <apex:commandButton value="Add attachment" id="EmailAttachAdd" action="{!add_attachment}" />
+                    <apex:dataTable id="table" value="{!aNames}" var="a" >
+                        <apex:column >
+                            <apex:facet name="header"><b>Uploaded Attachments</b></apex:facet>
+                                {!a}
+                        </apex:column>                        
+                    </apex:dataTable>                                 
+                </apex:pageBlockSection>
+
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                
+            </apex:pageBlockSection>
+            EIS LEGAL NOTICE:
+            <p>You must read and accept the following terms and conditions prior to clicking the "SUBMIT" button below.</p>
+            
+            <p>Once you have read and accepted these terms and conditions, You can proceed and acknowledge Your acceptance by clicking “SUBMIT” below.</p>
+            
+            <p>PLEASE BE ADVISED, MOTOROLA MOBILITY INC. IS ONLY WILLING TO RECEIVE YOUR UNSOLICITED IDEA SUBMISSION UPON THE CONDITION THAT YOU AGREE TO 
+            ALL THE TERMS AND CONDITIONS CONTAINED IN THE BELOW AGREEMENT.  IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT, 
+            CLICK THE "CANCEL" BUTTON AND YOUR INFORMATION WILL NOT BE SUBMITTED TO MOTOROLA MOBILITY, INC.</p>
+            
+            <p>MOTOROLA MOBILITY, INC. -- EIS LEGAL AGREEMENT</p>
+            
+            <p>Over the years many ideas for improvements have been voluntarily submitted to us by persons outside of Motorola Mobility, Inc. ("Motorola").  
+            We appreciate the confidence in Motorola shown by such persons.  We do not require that the submitter obtain, or even to have applied for, 
+            a patent on an idea before submitting the idea.  If a disclosure is made under the conditions recited herein, and Motorola is interested 
+            thereafter in further considering the idea, negotiations will be undertaken to try to arrive at terms which are equitable to both parties 
+            and will take care of the needs of the particular situation.</p>
+            
+            <p>Motorola is only willing to permit submission of Your unsolicited idea, if You agree and acknowledge that Your submission hereunder does 
+            not imply or create:<BR/><BR/>
+        
+            1. A confidential relationship for any idea submitted to Motorola; <BR/>
+            2. A promise to pay, inasmuch as Motorola's obligations to You (the submitter) under all circumstances shall be only those which are made 
+            to You in writing; and<BR/>
+            3. A recognition by Motorola of either the novelty or originality of Your unsolicited idea.</p><BR/>
+            
+            <p>Motorola cannot consider an idea on the condition that it shall return any material submitted if the idea is not found to be of interest.  
+            When the material is submitted to Motorola hereunder, You (the submitter) should keep a duplicate for Your own records, and should any 
+            controversy unfortunately arise, this material is necessary as evidence of what was disclosed to Motorola.</p><BR/>
+            
+            <p>If a patent has issued, You may simply submit a copy of the same with additional comments that might be helpful.</p><BR/>
+            
+            <p>If an application for patent has been filed, a copy of the same can be submitted to Motorola for its consideration.  Otherwise, the 
+            disclosure should be by written description and sketches, and all should be sufficiently complete and clear so that Your unsolicited 
+            idea can be readily understood.</p><BR/>
+ 
+            <p>In whatever form an unsolicited idea or a patent invention is submitted to Motorola, it will be helpful if You, the submitter, point 
+            out what You believe to be new, and set forth some of the advantages which You think Your unsolicited idea has over known devices or 
+            processes.</p><BR/>
+             
+            <p>Motorola will give Your submission such consideration as in the judgment of Motorola it merits, but in reporting its conclusion can 
+            assume no obligation further than to say whether or not it is interested in acquiring patent rights or other rights.</p><BR/>
+             
+            <p>This Agreement constitutes the entire agreement between You and Motorola with respect to Your submission hereunder, and supersedes 
+            all previous communications, representations, understandings and agreements, either oral or written, between You and Motorola regarding 
+            Your submission.  This Agreement may not be modified or waived except in writing and signed by an officer or other authorized 
+            representative of each party.  If any provision is held invalid, all other provisions shall remain valid, unless such invalidity would 
+            frustrate the purpose of our Agreement.  The failure of either party to enforce any rights granted hereunder or to take action against 
+            the other party in the event of any breach hereunder shall not be deemed a waiver by that party as to subsequent enforcement of rights 
+            or subsequent action in the event of future breaches.</p><BR/>
+            <apex:pageBlockSection >
+           
+                <apex:actionRegion >
+                Accept Terms<apex:inputCheckbox value="{!acceptedTerms}" >
+                <apex:actionSupport event="onclick" rerender="buttons" status="acceptStatus"/>            
+                </apex:inputCheckbox>
+                </apex:actionRegion>
+ 
+            
+            <BR/><BR/>
+            </apex:pageBlockSection> 
+            
+            
+            <apex:outputpanel id="buttons" >
+            <apex:commandButton disabled="{!!acceptedTerms}" action="{!submit}" value="Submit"/>
+            <apex:commandButton action="{!cancel}" value="Cancel" id="cancel"/>
+            </apex:outputpanel>
+
+        </apex:pageBlock>
+        <!--</apex:panelGrid>-->
+
+    </apex:form>
+    
+    <apex:form id="page2" rendered="{!showPage2}" >
+
+        <!--<apex:panelGrid columns="1"  width="100%">-->
+            <apex:pageBlock >
+                Thank you for submitting your unsolicited idea to Motorola Mobility, Inc.<BR/><BR/>
+                An email receipt has been sent to the email address you provided as a receipt of your submission, 
+                and record of the terms and conditions under which you have agreed and submitted.<BR/><BR/>
+                Thank you.    
+            </apex:pageBlock>
+        <!--</apex:panelGrid>-->
+
+    </apex:form>             
+        
+        
+        </td>
+      </tr>
+      <tr>
+        <td width="980" height="20"><apex:image url="{!URLFOR($Resource.eisImages, 'bottom_banner.jpg')}" width="980" height="20"/></td>
+      </tr>
+      <tr>
+        <td width="980" height="20"><apex:image url="{!URLFOR($Resource.eisImages, 'copyright_banner.jpg')}" width="980" height="20"/></td>
+      </tr>
+    </table></td>
+    <td width="22"></td>
+  </tr>
+</table>
+</body>
+
+
+   
+
+</apex:page>

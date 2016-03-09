@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD_Cost_TakeDown</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD_Cost_TakeDowns</value>
+    </caseValues>
+    <fields>
+        <label><!-- CD Category Managers --></label>
+        <name>CD_Category_Manager__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Category --></label>
+        <name>CD_Category__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD ExternalKey --></label>
+        <name>CD_ExternalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- GCL --></label>
+        <name>CD_GCL__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Item Categories --></label>
+        <name>CD_Item_categories__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Items --></label>
+        <name>CD_Items__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Subcategory1 --></label>
+        <name>CD_SubCategory1__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Subcategory2 --></label>
+        <name>CD_Subcategory2__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Subcategory3 --></label>
+        <name>CD_Subcategory3__c</name>
+        <relationshipLabel><!-- CD_Cost_TakeDowns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TD Criteria --></label>
+        <name>TD_Criteria__c</name>
+        <picklistValues>
+            <masterLabel>By Amount</masterLabel>
+            <translation><!-- By Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>By Percentage</masterLabel>
+            <translation><!-- By Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TD Value --></label>
+        <name>TD_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

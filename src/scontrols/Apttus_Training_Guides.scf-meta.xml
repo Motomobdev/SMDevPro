@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>A list of links to download Apttus Training Guides for Supply Chain, Go to market and Marketing</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Apttus Training Guides</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

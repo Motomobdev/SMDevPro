@@ -1,0 +1,3 @@
+<apex:page controller="outOfOfficeMonitor" showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:outputLink value="/a2I/o" target="_parent">{!currentStatus}</apex:outputLink>    
+</apex:page>

@@ -1,0 +1,60 @@
+<apex:page standardController="DeviceApplicationAssoc__c" recordSetVar="DeviceApplicationAssoc__c" extensions="viewDeviceRelatedDevApps">
+    <style type="text/css"> 
+        .currentStepText{         
+        font-style:italic;
+        //background-color:Darkorange ; 
+        }
+        
+        .errorText{
+        color:red;
+        font-style:italic;
+        font-size:16px;
+        }
+        
+        .messageText{
+        //color:blue;
+        font-style:italic;
+        font-weight:bold;
+        font-size:16px;
+        }
+        
+        .titleText{
+        font-style:bold;
+        }            
+        
+    </style>
+    <apex:pageBlock title="Device Applications for {!recordName} (Only showing DevApps marked as Include in BOM or Include on SD Card)" >
+        <apex:outputLink rendered="{!isDevice}" value="{!URLFOR($Action.Device__c.View, recordId)}">Return to Device {!recordName}</apex:outputLink><BR/>
+        <apex:outputLink rendered="{!!isDevice}" value="{!URLFOR($Action.Application__c.View, recordId)}">Return to Application {!recordName}</apex:outputLink><BR/>        
+        <apex:pageBlocktable value="{!finalList}" var="da">
+            <apex:column headerValue="Device Application">
+            <apex:outputLink value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, da.devApp.Id)}">{!da.devApp.Name}</apex:outputLink> 
+            </apex:column>  
+            <apex:column headerValue="Application Name">
+            <apex:outputLink value="{!URLFOR($Action.Application__c.View, da.devApp.Application__r.Id)}">{!da.devApp.Application__r.Name}</apex:outputLink> 
+            </apex:column>             
+            <apex:column headerValue="Account Owner" value="{!da.devApp.AcctOwner__r.Name}"/>
+            <apex:column headerValue="AIF Approval Status" value="{!da.devApp.Approval_Status__c}"/>
+            <apex:column headerValue="Current Approval Step" value="{!da.currentStep}" styleClass="currentStepText"/>
+            <apex:column headerValue="Current Approver" value="{!da.currentApprover}" styleClass="currentStepText"/>
+            <apex:column headerValue="Queue Date"  styleClass="currentStepText">
+                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                    <apex:param value="{!da.queueDate}" /> 
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="LRB Approver" value="{!da.devApp.LRB_Approver__r.Name}"/>
+            <apex:column headerValue="SDS Approver" value="{!da.devApp.DTS_Approver__r.Name}"/>
+            <apex:column headerValue="Application Manager Approver" value="{!da.devApp.Application_Manager_Selection_Approver__r.Name}"/>
+            <apex:column headerValue="Budget Royalty Approver" value="{!da.devApp.Finance_Approver__r.Name}"/>
+            <apex:column headerValue="Partner Manager Approver" value="{!da.devApp.AcctOwner__r.Name}"/>
+            <apex:column headerValue="3rd Party Approval Required?" value="{!da.devApp.X3rd_Party_Approval_Required__c}"/>
+            <apex:column headerValue="3rd Party Approval Status" value="{!da.devApp.X3rd_Party_Approval_Status__c}"/>
+            
+        </apex:pageBlocktable>
+    </apex:pageBlock>
+
+
+
+
+
+</apex:page>

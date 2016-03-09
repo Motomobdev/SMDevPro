@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>External Spend Request Cost</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External Spend Request Costs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Part Number --></label>
+        <name>Account_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- External Spend Request Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Capital Amount --></label>
+        <name>Capital_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Construction In Progress # --></label>
+        <name>Construction_In_Progress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense Amount --></label>
+        <name>Expense_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Spend Request --></label>
+        <name>External_Spend_Request__c</name>
+        <relationshipLabel><!-- External Spend Request Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Funding Organization --></label>
+        <name>Funding_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Non Labor Expense Amount --></label>
+        <name>Non_Labor_Expense_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAR # --></label>
+        <name>SAR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Commodity Type --></label>
+        <name>Sub_Commodity_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of all cost fields --></help>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <layouts>
+        <layout>External Spend Request Cost Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- SAR# is required --></errorMessage>
+        <name>Capital_Amount_Requires_SAR</name>
+    </validationRules>
+</CustomObjectTranslation>

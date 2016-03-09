@@ -1,0 +1,45 @@
+<apex:page standardController="Account" extensions="sendEmail" sidebar="false" showHeader="false" >
+<!-- <apex:page controller="sendEmail" sidebar="false" showHeader="false"> -->
+ <div style="background-color:#545254;">
+    <apex:image value="{!$Resource.logo_imoto}"/>
+ </div>
+      <div style="background-color:white;margin-right:140px;margin-left:300px;">
+       <apex:pageBlock title="Send an Email">
+               <p>Fill out the fields below.</p>
+               <apex:form >
+               
+                      <b> <apex:outputLabel value="Your Name" for="Your Name"/>: </b> <br />     
+                       <apex:inputText value="{!yourname}" id="yourname" maxlength="80"/>                                           
+                       <br /><br />
+                      <b> <apex:outputLabel value="Your Email Address" for="email"/>: </b> <br />     
+                       <apex:inputText value="{!emailaddr}" id="email" maxlength="80"/>
+                       <br /><br />
+                      <b> <apex:outputLabel value="Account you are looking for" for="Accname"/>: </b> <br />
+                      <apex:outputPanel styleClass="requiredInput" layout="block">  
+                          <apex:outputPanel styleClass="requiredBlock" layout="block"/>     
+                               <apex:inputText value="{!accname}" id="Accname" maxlength="80"/>
+                      </apex:outputPanel>
+                      <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessage)>0}"/>
+                      <apex:outputText value="{!errorMessage}" style="color:red;" rendered="{!LEN(errorMessage)>0}"/>
+                       <br /><br />
+                        <b> <apex:outputLabel value="Account Category" for="category"/>: </b> <br />
+                       <apex:pageblocksection >
+                       <apex:pageblocksectionItem >                    
+                                            
+                       <apex:selectList value="{!cat}" size="1" id="category">
+                          <apex:selectOptions value="{!category}"/>
+                       </apex:selectList>                                              
+                       </apex:pageblocksectionItem> 
+                       <br />
+                       <apex:outputText value="{!errorMessageCategory}" style="color:red;" rendered="{!LEN(errorMessageCategory)>0}"/>
+                       <apex:outputText value="{!errorMessageCategoryNull}" style="color:red;" rendered="{!LEN(errorMessageCategoryNull)>0}"/>
+                       </apex:pageblocksection>
+                       <br /><br />
+                      <b> <apex:outputLabel value="Comments" for="Body"/>: </b> <br />     
+                       <apex:inputTextarea value="{!body}" id="Body"  rows="10" cols="80"/>           
+                       <br /><br /><br />
+                      <apex:commandButton value="Send Email" action="{!send}" /> 
+               </apex:form>
+       </apex:pageBlock>
+       </div>
+</apex:page>

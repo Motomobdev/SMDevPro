@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>App Version</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>App Versions</value>
+    </caseValues>
+    <fields>
+        <help><!-- From the related Application record --></help>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Name --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- AppVersions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- JIRA ID --></label>
+        <name>JIRA_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA URL --></label>
+        <name>JIRA_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Date --></label>
+        <name>Launch_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launch Location --></label>
+        <name>Launch_Location__c</name>
+        <picklistValues>
+            <masterLabel>Apple Store</masterLabel>
+            <translation><!-- Apple Store --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chrome Store</masterLabel>
+            <translation><!-- Chrome Store --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LE Store</masterLabel>
+            <translation><!-- LE Store --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Play Store</masterLabel>
+            <translation><!-- Play Store --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Type --></label>
+        <name>Release_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bug Fix</masterLabel>
+            <translation><!-- Bug Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance</masterLabel>
+            <translation><!-- Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Version</masterLabel>
+            <translation><!-- New Version --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version # --></label>
+        <name>Version__c</name>
+    </fields>
+    <layouts>
+        <layout>App Version Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,109 @@
+<apex:page standardController="PMD_Product__c" id="accountLookup" extensions="ProductAccountsFilterController">
+  <apex:form id="form1">
+        <apex:sectionHeader title="Accounts" subtitle="Select the Account Filter Criteria" />
+        <apex:pageMessages id="msg" />
+        <apex:actionFunction name="changeSubRegionFilters" action="{!updateSubRegionFilters}" rerender="msg,filterRegionSection" status="waitStatus"/>
+        <apex:actionFunction name="changeCountryFilters" action="{!updateCountryFilters}" rerender="msg,filterRegionSection" status="waitStatus"/>
+        <apex:actionFunction name="changeAccountFilters" action="{!updateAccountFilters}" rerender="msg,filterRegionSection,blockResult" status="waitStatus"/>
+        <!--<apex:actionFunction name="changeTechnologytypeFilters" action="{!updateTechnologyTypeFilters}" rerender="msg,filterRegionSection,blockResult" status="waitStatus"/>-->
+        
+      <apex:pageBlock >
+      <apex:pageBlockSection columns="5" id="filterRegionSection" collapsible="true">
+            <apex:pageBlockSectionItem id="region">
+                Region
+                <apex:selectList size="1" value="{!selectedRegion}" onchange="changeSubRegionFilters();" id="regionSelection">
+                    <apex:selectOptions value="{!regionSelectList}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="sRegion" >
+               SubRegion
+                <apex:selectList id="sregionSelection" size="1" value="{!selectedSubRegion}" onchange="changeCountryFilters();"  disabled="{!IF(OR(ISBLANK(selectedRegion),selectedRegion='-1'),true,false)}">
+                    <apex:selectOptions value="{!subRegionSelectList}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem id="country" >
+               Country
+                <apex:selectList id="countrySelection" size="1" value="{!selectedCountry}" disabled="{!IF(OR(ISBLANK(selectedSubRegion),selectedSubRegion='-1'),true,false)}">
+                    <apex:selectOptions value="{!countrySelectList}" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="EMPTY1"/ >
+                <apex:pageBlockSectionItem id="EMPTY2"/ >
+                <apex:pageBlockSectionItem id="EMPTY3"/ >
+                <apex:pageBlockSectionItem id="EMPTY4"/ >
+                <apex:pageBlockSectionItem id="EMPTY5"/ >
+                <apex:pageBlockSectionItem id="EMPTY6"/ >
+                <apex:pageBlockSectionItem id="EMPTY7"/ >
+                <apex:pageBlockSectionItem id="EMPTY8"/ >
+                <apex:pageBlockSectionItem id="EMPTY9"/ >
+                <apex:pageBlockSectionItem id="EMPTY10"/ >
+                <apex:pageBlockSectionItem id="EMPTY11"/ >
+                <apex:pageBlockSectionItem id="EMPTY12"/ >
+           <apex:pageBlockSectionItem id="TechnoType">
+              TechnologyType
+        <apex:outputPanel id="multiSelectPanel" >
+                <c:Multiselect leftLabel="Available" leftOptionsAttr="{!AvailableProductOptions}" rightLabel="Selected" rightOptionsAttr="{!selectedOptions}" size="5" width="200px" />
+            </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+      <apex:pageblockbuttons location="bottom" id="buttons"> 
+                <apex:commandButton value="Lookup" action="{!updateAccountFilters}" status="waitStatus" /> 
+                <apex:actionStatus id="waitStatus" onstart="disable();" onstop="enable();" >
+                    <apex:facet name="start">
+                        <span style="font-weight:bold; color: red;">
+                        Please Wait...<img src="/img/loading.gif" />
+                        </span>
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:commandButton value="Save" action="{!saveAccounts}" /> 
+        </apex:pageblockbuttons>
+      </apex:pageBlock>
+      
+      <apex:outputPanel rendered="{!IF(accountsList.size>0,'true','false')}" id="blockResult" >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!accountsPaginationObj.records}" var="eachAcc" width="100%" id="accList">                          
+                            <!-- Sub Region rendered if Group By Sub Region  -->
+                            <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important; " >   
+                                      <apex:facet name="header">
+                                    <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                                    </apex:facet>
+                                       <apex:inputCheckbox value="{!eachAcc.isSelected}" id="inputId"/>
+                            </apex:column>  
+                            <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important; ">                          
+                                    <apex:facet name="header">Account Name</apex:facet>
+                                   <apex:outputText value="{!eachAcc.recName}" />                               
+                            </apex:column> 
+                            <apex:column style="white-space:nowrap;border-bottom-width:1px;text-align: left !important; ">                          
+                                    <apex:facet name="header">Technology Type</apex:facet>
+                                   <apex:outputText value="{!eachAcc.techName}" />                               
+                            </apex:column> 
+                                                    
+                </apex:pageBlockTable>              
+                <div align='right'>
+                <apex:panelGrid id="paginationPanel1" columns="2">                 
+                     <apex:commandLink action="{!accountsPaginationObj.previous}" rendered="{!accountsPaginationObj.hasPrevious}"> Previous </apex:commandLink>
+                      <apex:commandLink action="{!accountsPaginationObj.next}" rendered="{!accountsPaginationObj.hasNext}" >Next </apex:commandLink>           
+                </apex:panelGrid>
+                </div>   
+            </apex:pageBlockSection>
+            <!--<apex:commandButton value="Save" action="{!saveAccounts}" /> --> 
+        </apex:pageBlock>
+       </apex:outputPanel>
+   </apex:form>
+   <script>
+        function hideResults(){
+              document.getElementById("accountLookup:form1:blockResult").style.display = 'none';
+          }
+          
+          function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+            }
+   </script>
+</apex:page>

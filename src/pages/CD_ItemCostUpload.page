@@ -1,0 +1,18 @@
+<apex:page controller="ItemCostLoader1" sidebar="true" showHeader="true">
+  <apex:form >
+  <br/> &nbsp;&nbsp;&nbsp;   <img src="{!$Resource.cd_Motorola}" />
+<apex:outputlabel style="font-size:25px;" value="Cost Item Upload"></apex:outputlabel>  
+      <apex:pagemessages />
+    
+      <apex:pageBlock title="Upload Your CSV File"  >
+             <center>
+             Please choose your file to upload : <apex:inputFile value="{!csvFile}" filename="{!nameFile}" /> <br/>
+             <br/><br/><apex:commandButton action="{!ReadFile}" value="Insert" id="theButton" style="background:#216BB5;color:white; width:10%;"/>
+             </center>
+            <apex:outputPanel rendered="{!display}">
+        Please check your mail in 30 minutes for the results of Data Upload.
+     </apex:outputPanel> 
+     </apex:pageBlock>    
+          
+   </apex:form>
+</apex:page>

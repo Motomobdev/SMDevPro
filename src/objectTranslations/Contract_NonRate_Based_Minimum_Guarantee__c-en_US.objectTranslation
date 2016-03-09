@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract NonRate Based Minimum Guarantee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract NonRate Based Minimum Guarantee</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount of Guarantee --></label>
+        <name>Amount_of_Guarantee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Basis(Units or $) --></label>
+        <name>Basis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract NonRate Based Minimum Guarantee --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- From When --></label>
+        <name>From_When__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting SA? --></label>
+        <name>Meeting_SA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Why is a Minimum Guarantee requested? --></label>
+        <name>Minimum_Guarantee_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- P&amp;L Treatment --></label>
+        <name>P_L_Treatment__c</name>
+    </fields>
+    <fields>
+        <label><!-- To When --></label>
+        <name>To_When__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

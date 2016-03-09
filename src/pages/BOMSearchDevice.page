@@ -1,0 +1,361 @@
+<apex:page controller="BOMDeviceViewController" showHeader="true" sidebar="true" standardStylesheets="false" docType="html-5.0">
+    <html lang="en">
+        <head>
+          <meta charset="utf-8"/>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta name="description" content=""/>
+          <meta name="author" content=""/>
+          <style>
+                .vfHelpText a            {position:relative;}
+                .vfHelpText a span       {display: none;}
+                .vfHelpText a:hover span {display: block;
+                                          position:absolute;
+                                          top:1.25em;
+                                          padding:2px 5px;
+                                          left:-15em; width:15em;
+                                          z-index:200;
+                                          border:1px solid orange;
+                                          background-color:#FEFDB9;
+                                          color:black;
+                                         }
+                 .underline{
+                    text-decoration: underline;
+                    cursor: pointer;
+                  }
+                  .no-underline{
+                    text-decoration: none;
+                  }
+                  .link{
+                    cursor: pointer;
+                  }
+                  .center {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 70px;
+                  }
+          </style>
+        </head>
+        <body>
+            <apex:form id="searchDevices">
+                <apex:sectionHeader title="Version 2.0" subtitle="Mass Create BOMs"/>
+                <apex:pageBlock title="Device Filters" mode="edit" id="filterArea">
+                        <table border="0" celspacing="0">
+                            <tr>
+                                <td>
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="internalName" escape="false" value="<b>Internal Name</b>  "/>
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="internalName" value="{!deviceFilter.internalName}" />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            Internal Device Name.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="launchType" escape="false" value="<b>Launch Type</b>"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="launchType" value="{!deviceFilter.launchType}" />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            Mapped from NPI field &quot;SA Release Type&quot; 
+                                                            -- identifies whether a device is an initial launch, or is an MOL.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="swKit" escape="false" value="<b>SW Kit</b>"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="swKit" value="{!deviceFilter.swKit}" />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            SW KIT Number.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="deviceId" escape="false" value="<b>Device Id</b>" />
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="deviceID" value="{!deviceFilter.deviceId}"/>
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            To enter multiple values, use a comma in between different values.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="carrierName" escape="false" value="<b>Carrier</b>"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="carrierName" value="{!deviceFilter.carrierName}"  />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            To enter multiple values, use a comma in between different values.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="countryCode" escape="false" value="<b>Country Code</b>"/>
+                                            </td>
+                                            <td>
+                                                <apex:inputText id="countryCode" value="{!deviceFilter.countryCode}" />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            To enter multiple values, use a comma in between different values.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>  
+                                    </table>
+                                </td>
+                                <td>
+                                	<table border="0">
+                                        <tr>
+                                            <td>
+                                                <apex:outputLabel for="saStatus" escape="false" value="<b>SA Status</b>" />
+                                            </td>
+                                            <td>
+                                                 <apex:inputText id="saStatus" value="{!deviceFilter.saStatus}" />
+                                            </td>
+                                            <td>
+                                                <span class="vfHelpText">
+                                                    <apex:outputLink value="javascript:return false;">
+                                                        <img src="/s.gif" alt="" class="helpOrb" />
+                                                        <span>
+                                                            Device SA Status, based on NPI.
+                                                        </span>
+                                                    </apex:outputLink>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                       </table>
+                    <apex:pageMessages />
+                    <apex:pageBlock >
+                        <apex:commandButton value="Apply Filter" action="{!searchDevices}" />                    
+                    </apex:pageBlock>
+                </apex:pageBlock>
+                <apex:pageBlock title="Your request resulted in {!Devices.size} Devices" rendered="{!hasDevices}" id="devDetails">
+                    <span>
+                        <b>
+                            Select up to 50 devices for Mass BOM Creation, due to internal Salesforce limits.<br/>
+							If you have more than 50 devices to work on, you can do them in filtered batches.
+                        </b>
+                        <br/><br/>
+                        <apex:commandButton value="Choose Selected Devices" action="{!processSelectedDevices}" onclick="return chooseDevices();"/>
+                    </span>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!Devices}" var="wrapper" rowClasses="" id="devTable" styleClass="tablesorter" headerClass="header">
+                        <apex:column width="20">
+                            <apex:facet name="header">
+                                <apex:inputCheckbox id="checkAllDevices" onclick="checkAll(this,'.chkDevice')" styleClass="all" label="Add" title="Check / Uncheck All Devices"/>
+                            </apex:facet>
+                            <apex:inputCheckbox styleClass="{!IF(wrapper.device.SWBOM_Reviewed_and_Approved__c=='No','chkDevice','')}" value="{!wrapper.selected}" disabled="{!IF(wrapper.device.SWBOM_Reviewed_and_Approved__c=='No',false,true)}" />
+                        </apex:column>
+                        <apex:column headerValue="Device ID" headerClass="underline"   width="3%">
+                            <a href="#" onclick="popup('{!wrapper.device.ID}');">
+                            	{!wrapper.device.Device_ID__c}
+                            </a>
+                        </apex:column>
+                        <apex:column headerClass="underline"	headerValue="Name">
+                             <a href="#" id="{!wrapper.sfObject.Id}" onclick="popup('{!wrapper.device.ID}');">
+                                {!wrapper.device.Name}
+                            </a>
+                        </apex:column>
+                        <apex:column headerValue="SA Date"                                          headerClass="underline"   width="5%">
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!wrapper.device.SA_Date__c}" /> 
+                            </apex:outputText>
+                        </apex:column>
+                        <apex:column value="{!wrapper.device.SA_Status__c}"                         headerValue="Status"                        headerClass="underline"   width="5%"/>
+                        <apex:column value="{!wrapper.device.Core_Device_Package__c}"               headerValue="Core Package"                  headerClass="underline"   width="10%"/> 
+                        <apex:column value="{!wrapper.device.Stable__c}"                            headerValue="Stable"                        headerClass="underline"   width="7%"/>
+                        <apex:column value="{!wrapper.device.Sales_Model_List_Concatenated__c}"     headerValue="Sales Models"                  headerClass="underline"   width="7%"/>
+                        <apex:column value="{!wrapper.device.SW_Kit__c}"                            headerValue="SW Kit"                        headerClass="underline"   width="8%"/>
+                        <apex:column value="{!wrapper.device.Number_of_Apps_on_BOM__c}"             headerValue="Apps on BOM"                   headerClass="underline"   width="5%"/> 
+                        <apex:column value="{!wrapper.device.Product_PMD__c}"                       headerValue="PMD Product"                   headerClass="underline"   width="10%"/>
+                        <apex:column value="{!wrapper.device.SWBOM_Reviewed_and_Approved__c}"       headerValue="Rev. and Approved"             headerClass="underline"   width="5%"/>
+                    </apex:pageBlockTable>
+                    <apex:pageBlock >
+                        <apex:commandButton value="Choose Selected Devices" action="{!processSelectedDevices}" onclick="return chooseDevices();"/>
+                    </apex:pageBlock>
+                </apex:pageBlock>
+                <apex:pageBlock title="You've selected {!selectedDevices.size} Devices" rendered="{!hasSelectedDevices}" id="selectedDevDetails">
+                     <apex:pageBlockTable value="{!selectedDevices}" var="wrapper" id="selectedDevTable">
+                        <apex:column >
+                            <apex:facet name="header">
+                                <apex:inputCheckbox id="checkAllSelectedDevices" onclick="checkAll(this,'.chkSelectedDevices')" title="Check / Uncheck All Selected Devices to Remove"/>
+                            </apex:facet>
+                            <apex:inputCheckbox styleClass="chkSelectedDevices" value="{!wrapper.selected}" title="Remove" />
+                        </apex:column>
+                        <apex:column value="{!wrapper.device.Device_ID__c}"                         headerValue="Device ID"                     headerClass="underline"   width="3%" />
+                        <apex:column value="{!wrapper.device.Name}"                                 headerValue="Name"                          headerClass="underline"   width="35%" onclick="popup('{!wrapper.device.ID}');" styleClass="underline" />
+                        <apex:column headerValue="SA Date"                                          headerClass="underline"   width="5%">
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!wrapper.device.SA_Date__c}" /> 
+                            </apex:outputText>
+                        </apex:column>
+                        <apex:column value="{!wrapper.device.SA_Status__c}"                         headerValue="Status"                        headerClass="underline"   width="5%"/>
+                        <apex:column value="{!wrapper.device.Core_Device_Package__c}"               headerValue="Core Package"                  headerClass="underline"   width="10%"/> 
+                        <apex:column value="{!wrapper.device.Stable__c}"                            headerValue="Stable"                        headerClass="underline"   width="7%"/>
+                        <apex:column value="{!wrapper.device.Sales_Model_List_Concatenated__c}"     headerValue="Sales Models"                  headerClass="underline"   width="7%"/>
+                        <apex:column value="{!wrapper.device.SW_Kit__c}"                            headerValue="SW Kit"                        headerClass="underline"   width="8%"/>
+                        <apex:column value="{!wrapper.device.Number_of_Apps_on_BOM__c}"             headerValue="Apps on BOM"                   headerClass="underline"   width="5%"/> 
+                        <apex:column value="{!wrapper.device.Product_PMD__c}"                       headerValue="PMD Product"                   headerClass="underline"   width="10%"/>
+                        <apex:column value="{!wrapper.device.SWBOM_Reviewed_and_Approved__c}"       headerValue="Rev. and Approved"             headerClass="underline"   width="5%"/>
+                    </apex:pageBlockTable>
+                    <apex:pageBlock id="submissionArea">
+                        <apex:commandButton value="Remove Selected Devices" action="{!removeSelectedDevices}"/>
+                        <apex:commandButton value="Next" id="selectApp"             action="{!sendRedirectToSelectApp}"/>
+                    </apex:pageBlock>
+                </apex:pageBlock>
+                
+                <script src="{!$Resource.bom_jquery}"></script>
+                <script src="{!$Resource.jquery_checkboxes}"></script>
+                <script src="{!$Resource.jquery_tablesorter}"></script>
+
+                 
+                <script>
+                    
+                    try{
+                        
+                        var devTable             = $("#j_id0\\:searchDevices\\:devDetails\\:devTable");
+                        var selectedDevTable     = $("#j_id0\\:searchDevices\\:selectedDevDetails\\:selectedDevTable");
+                        
+                        var checkDevices         = $('#j_id0\\:searchDevices\\:devDetails\\:devTable .chkDevice');
+                        var checkSelectedDevices = $("#j_id0\\:searchDevices\\:selectedDevDetails\\:selectedDevTable .chkSelectedDevices");
+                        
+                        var nextButton           = $('#j_id0\\:searchDevices\\:selectedDevDetails\\:submissionArea\\:selectApp');
+                        
+                        //initializing shift selection
+                        if(checkDevices.length){
+                            checkDevices.shiftcheckbox();
+                        }
+
+                        //initializing shift selection
+                        if(checkSelectedDevices.length){
+                            checkSelectedDevices.shiftcheckbox();
+                        }
+
+                        
+                        var checkAll = function(chkbox,field) {
+                            if(chkbox.checked){
+                                chkbox.checked = true;
+                                $(field).each(function(){
+                                    this.checked = true;
+                                });
+                            }else{
+                                chkbox.checked = false;
+                                $(field).each(function(){
+                                    this.checked = false;
+                                });
+                            }
+                        };
+                        
+                        //initializing table sorter
+                        if(devTable.length){
+                            devTable.tablesorter({ widgets: ['zebra'], headers:{0:{sorter:false}} });
+                        }
+                        
+                        //initializing table sorter
+                        if(selectedDevTable.length){
+                            selectedDevTable.tablesorter({ widgets: ['zebra'], headers:{0:{sorter:false}} });
+                            $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+                            //nextButton.focus();
+                        }
+                        
+                        function init() {                
+                           nextButton.focus();
+                        }
+                        
+                        var previousOnload = window.onload;        
+                        window.onload = function() { 
+                            if (previousOnload) { 
+                                previousOnload();
+                            }
+                        
+                            init();
+                        }
+                        
+                        function popup(Id){
+                            if(Id != null){
+                                window.open('/' + Id);
+                            }
+                        }
+                        
+                        function chooseDevices(){
+                            
+                            var checkedDevices = $('#j_id0\\:searchDevices\\:devDetails\\:devTable .chkDevice:checkbox:checked');
+                            
+                            var totalDevices = checkedDevices.length + checkSelectedDevices.length;
+                            if(totalDevices > 50){
+                               alert('Please select up to 50 Devices per \n BOM mass creation.\n You\'ve selected: '+totalDevices +' in total.');
+                               return false; 
+                            }else if(totalDevices == 0){
+                               alert('Please select at least 1 Device.');
+                               return false;
+                            }
+                            return true;
+                        }
+                        
+                    }catch(e){
+                        console.log(e);
+                    }
+                </script>
+            </apex:form>
+        </body>
+    </html>
+</apex:page>

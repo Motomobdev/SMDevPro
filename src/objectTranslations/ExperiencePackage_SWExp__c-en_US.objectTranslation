@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExperiencePackage_SWExp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExperiencePackage_SWExps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Experience Package --></label>
+        <name>Experience_Package__c</name>
+        <relationshipLabel><!-- SW Experiences --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SW Experiences --></label>
+        <name>SW_Experiences__c</name>
+        <relationshipLabel><!-- Experience Packages --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>ExperiencePackage_SWExp Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

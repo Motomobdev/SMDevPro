@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContactSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ownerRules>
+        <fullName>MotoDevAdminD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MotoDevAdmin</roleAndSubordinates>
+        </sharedFrom>
+        <contactAccessLevel>Read</contactAccessLevel>
+        <name>MotoDev - AdminD</name>
+    </ownerRules>
+</ContactSharingRules>

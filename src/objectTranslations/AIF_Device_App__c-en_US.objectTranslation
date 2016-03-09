@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AIF_Device_App</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AIF_Device_Apps</value>
+    </caseValues>
+    <fields>
+        <label><!-- AIF Name --></label>
+        <name>AIF_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- AIF_Device_Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- App SubType --></label>
+        <name>App_SubType__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Type --></label>
+        <name>App_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- AIF_Device_Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Refresh --></label>
+        <name>Last_Refresh__c</name>
+    </fields>
+    <layouts>
+        <layout>AIF_Device_App Layout API User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

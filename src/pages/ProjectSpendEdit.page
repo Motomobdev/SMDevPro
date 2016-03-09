@@ -1,0 +1,266 @@
+<apex:page standardController="Project_Spend__c" extensions="CreateProjectSpendController" showHeader="false" sidebar="false" title="Project Spend Edit">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var fieldSet = {!FieldJSON};
+        fieldSet.push({"fieldPath":"Id","required":false,"type":"id","label":"Record ID","typeApex":"ID","dbRequired":true});
+    
+        function getTDElementsFromFeildsetArray(fieldSetArray){ 
+            var internalHTML = '';
+            $('#saveButton').show();
+            if(fieldSetArray.length > 0){
+                for( var arrayItr = 0; arrayItr < fieldSetArray.length-1; arrayItr++){
+                    console.log("Field Type",fieldSetArray[arrayItr].typeApex);
+                    if( fieldSetArray[arrayItr].typeApex == "TEXTAREA" ) internalHTML += '<td class="dataCell  " colspan="1" ><input type="textarea" id="'+fieldSetArray[arrayItr].fieldPath+'"></td>';
+                    else if(fieldSetArray[arrayItr].typeApex == "BOOLEAN") internalHTML += '<td class="dataCell  " colspan="1" ><input type="checkbox" id="'+fieldSetArray[arrayItr].fieldPath+'" value="false"></td>';
+                    else if( fieldSetArray[arrayItr].typeApex == "DATE" ) internalHTML += '<td class="dataCell  " colspan="1" ><input type="text" id="'+fieldSetArray[arrayItr].fieldPath+'" fieldtype="'+fieldSetArray[arrayItr].typeApex+'" onfocus="DatePicker.pickDate(true, \''+fieldSetArray[arrayItr].fieldPath+'\', false);"></td>';
+                    else internalHTML += '<td class="dataCell  " colspan="1" ><input type="text" id="'+fieldSetArray[arrayItr].fieldPath+'"></td>';
+                }
+            }
+            
+            return internalHTML;
+        }
+        
+        function addEditableProperty(){
+            $('table[id$="Available_Milestones_Table"]').find('tbody').append('<tr id="newTable"><td></td>'+getTDElementsFromFeildsetArray(fieldSet)+'</tr>')
+            $('input[type=button]').hide();
+            $('input[id$="SAVE"]').hide();
+            $('input[id$="CANCEL"]').hide();
+            $('a[id^="edit"]').hide();
+            $('a[id^="delete"]').hide();
+            $('span[id^="break"]').hide();
+            $('#saveButton').show();
+            $('#cancelButton').show();
+        }
+        
+        function createAccountListJSON(){
+            var accountArray = [];
+            $('table[id$="Available_Milestones_Table"] tbody').children('tr[id$="newTable"]').each(function(){
+                //console.log($(this).html());
+                var newAccount = {};
+                newAccount['Project_Spend__c'] = '{!Project_Spend__c.id}';
+                $(this).children('td').each(function(){
+                    console.log($(this),$(this).html());
+                    var varID = $(this).children('input').attr('id');
+                    console.log("var ID",varID,$(this).children('input').val(),$(this).children('input').attr('fieldtype'));
+                    if( varID != undefined && $(this).children('input').val() != "" && $(this).children('input').val() != undefined ){
+                        if($(this).children('input').attr('fieldtype') != "DATE") newAccount[varID] = $(this).children('input').val();
+                        else newAccount[varID] = convertDate($(this).children('input').val());
+                    }
+                });
+                accountArray.push(newAccount);
+            });
+            console.log(accountArray);
+            
+            return accountArray;
+        }
+    
+        function addMilestone(){
+            var jsonString = JSON.stringify(createAccountListJSON());
+            $('input[id$="addedMilestone"]').val(jsonString);
+            $('input[id$="insertButton"]').click();
+        }
+        
+        function convertDate(dateString){
+            var theDate = new Date(dateString);
+            var returnString = theDate.getFullYear() + '-' + doubleDigit(theDate.getMonth() + 1) + '-' + doubleDigit(theDate.getDate())
+            return returnString;
+        }
+        
+        function doubleDigit(int){
+            if( int < 9 ) return "0" + int;
+            else return "" + int; 
+        }
+        
+        function cancel(){
+            $('input[type=button]').show();
+            $('#saveButton').hide();
+            $('#cancelButton').hide();
+            $('input[id$="doneButton"]').hide();
+            $('#newTable').remove();
+            $('a[id^="edit"]').show();
+            $('a[id^="delete"]').show();
+            $('span[id^="break"]').show();
+            $('input[id$="SAVE"]').show();
+            $('input[id$="CANCEL"]').show();
+        }
+        
+        function cancelbutton(){
+            if('{!MMID}' != '' && '{!TypeName}' != '') window.location='/ProjectSpend/CreateProjectSpend?MMID={!MMID}&Type={!TypeName}';
+            else if('{!MMID}' != '') window.location='/ProjectSpend/CreateProjectSpend?MMID={!MMID}';
+            else  window.location='/ProjectSpend/CreateProjectSpend';
+        }
+    
+        function editMilestone(editLink){
+            var editLinkParentTR = $(editLink).parent().parent();
+            editLinkParentTR.attr('editing','true');
+            editLinkParentTR.children('td').hide();
+            editLinkParentTR.append('<td id="tempID"></td>'+getTDElementsFromFeildsetArray(fieldSet));
+            var spanValues = [];
+            var itr = 0;
+            editLinkParentTR.children('td').each(function(){
+                var spanValue = $(this).children('span').text();
+                var tdID = $(this).attr('id');
+                console.log(spanValue,spanValues,itr);
+                if(spanValue != "" && spanValue != '|') spanValues.push(spanValue);
+                else if(spanValue == "" && tdID != 'tempID'){ 
+                    $(this).children('input').val(spanValues[itr]);
+                    itr++;    
+                }
+            });
+            $('input[type=button]').hide();
+            $('input[id$="SAVE"]').hide();
+            $('input[id$="CANCEL"]').hide();
+            $('a[id^="edit"]').hide();
+            $('a[id^="delete"]').hide();
+            $('span[id^="break"]').hide();
+            $('#updateButton').show();
+            $('#cancelUpdateButton').show();
+        }
+    
+        function updateMilstones(){
+            var accountArray = [];
+            $('table[id$="Available_Milestones_Table"] tbody').children('tr[editing=true]').each(function(){
+                //console.log($(this).html());
+                var newAccount = {};
+                newAccount['Project_Spend__c'] = '{!Project_Spend__c.id}';
+                $(this).children('td').each(function(){
+                    if( $(this).children('input[fieldtype=ID]').val() != undefined) newAccount['Id'] = $(this).children('input[fieldtype=ID]').val();
+                    //console.log($(this),$(this).html());
+                    var varID = $(this).children('input').attr('id');
+                    console.log("var ID",varID,$(this).children('input').val(),$(this).children('input').attr('fieldtype'));
+                    if( varID != undefined && $(this).children('input').val() != "" && $(this).children('input').val() != undefined ){
+                        if($(this).children('input').attr('fieldtype') != "DATE") newAccount[varID] = $(this).children('input').val();
+                        else newAccount[varID] = convertDate($(this).children('input').val());
+                    }
+                });
+                accountArray.push(newAccount);
+            });
+            var jsonString = JSON.stringify(accountArray);
+            $('input[id$="addedMilestone"]').val(jsonString);
+            $('input[id$="editButton"]').click();
+        }
+    
+        function cancelUpdate(){
+            $('table[id$="Available_Milestones_Table"] tbody').children('tr[editing=true]').each(function(){
+                $(this).removeAttr('editing');
+                $(this).children('td').each(function(){
+                    if( ($(this).attr('id') == 'tempID'  || $(this).children('input').length > 0) && $(this).children('input').attr('fieldtype') != 'ID') $(this).remove();
+                    else $(this).show();
+                });
+            });
+            $('input[id$="SAVE"]').show();
+            $('input[id$="CANCEL"]').show();
+            $('a[id^="edit"]').show();
+            $('a[id^="delete"]').show();
+            $('span[id^="break"]').show();
+            $('#addMilestoneButton').show();
+            $('#updateButton').hide();
+            $('#cancelUpdateButton').hide();
+        }
+    
+        function deleteMilestone(deletelink){
+            $('.btn').hide();
+            var accountArray = [];
+                var newAccount = {};
+                $(deletelink).parent().parent().children('td').each(function(){
+                    console.log($(this),$(this).html());
+                    var varID = $(this).children('input').val();
+                    console.log(varID);
+                    if( varID != undefined){
+                        newAccount['ID'] = varID;
+                    }
+                });
+            accountArray.push(newAccount);
+            $('input[id$="addedMilestone"]').val(JSON.stringify(accountArray));
+            $('input[id$="deleteButton"]').click();
+        }
+        
+    </script>
+    <style>
+        .hidden{
+            display:none;
+        }
+        td span{
+            margin: auto .2em;
+        }
+    </style>
+    
+    <apex:form >
+        <apex:inputText value="{!addedMilestone}" id="addedMilestone" styleClass="hidden"/>
+        <apex:pageBlock title="Project: '{!primaryRecord.Name__c}' submitted for approval" rendered="{!primaryRecord.Being_Approved__c}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Back" action="/ProjectSpend/ProjectSpendSummary?id={!primaryRecord.id}&Type={!TypeName}"/>
+            </apex:pageBlockButtons>
+            <apex:outputText value=""/>
+            <apex:outputText value=" This project been submitted for Approval and cannot be edited. If you would like to recall the approval, edit and then re-submit please email EricaViola@motorola.com"/>
+            <apex:outputText value=""/>
+        </apex:pageBlock>
+        <apex:pageBlock title="Project: {!primaryRecord.Name}" rendered="{!(!primaryRecord.Being_Approved__c)}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!updatePrimaryRecord}" id="SAVE"/>
+                <apex:commandButton value="Cancel" action="/ProjectSpend/ProjectSpendSummary?id={!primaryRecord.id}&Type={!TypeName}" id="CANCEL"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="{!primaryRecord.Name__c}">
+                <apex:inputField value="{!primaryRecord.SW_Project__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputText value="" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Estimated_Spend__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.Preferred_Vendor__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Team__c}" rendered="{!nonSoftware}"/>
+                <apex:inputField value="{!primaryRecord.Start_Date__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.End_Date__c}" required="true"/>
+                <apex:inputField value="{!primaryRecord.New_or_Existing_Engagement__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Engagement_Type__c}" required="true" rendered="{!NOT(nonSoftware)}"/>
+                <apex:outputText value="" rendered="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Location__c}" required="{!NOT(nonSoftware)}"/>
+                <apex:inputField value="{!primaryRecord.Comments__c}" required="true"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Milestones">
+            <apex:pageBlockButtons location="top">
+                <input type="button" value="Add Milestone" onclick="addEditableProperty()" class="btn" id="addMilestoneButton"/>
+                <input type="button" value="Save" onclick="addMilestone()" class="btn hidden" id="saveButton"/>
+                <input type="button" value="Save" onclick="updateMilstones()" class="btn hidden" id="updateButton"/>
+                <input type="button" value="Cancel" onclick="cancelUpdate()" class="btn hidden" id="cancelUpdateButton"/>
+                <input type="button" value="Cancel" onclick="cancel()" class="btn hidden" id="cancelButton"/>
+                <apex:commandButton value="Insert" action="{!insertMilestones}" id="insertButton" styleClass="hidden"/>
+                <apex:commandButton value="Update" action="{!editMilestones}" id="editButton" styleClass="hidden"/>
+                <apex:commandButton value="Delete" action="{!removeMilestones}" id="deleteButton" styleClass="hidden"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!ExistingMilestones}" var="milestone" id="Available_Milestones_Table">
+                <apex:column headerValue="Action"><input type="text" value="{!milestone.id}" fieldtype="ID" class="hidden"/><a onclick="editMilestone(this)" id="edit{!milestone.id}">Edit</a><span id="break{!milestone.id}">|</span><a onclick="deleteMilestone(this)" id="delete{!milestone.id}">Delete</a></apex:column>
+                <apex:repeat value="{!FieldSet}" var="f">
+                    <apex:column value="{!milestone[f.fieldPath]}" headerValue="{!f.label}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+    
+    <!-- Fields needed from Project_Spend__c Record -->
+    
+                <apex:outputField value="{!Project_Spend__c.Being_Approved__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Name}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Name__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Requester__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Requester__r.MMID__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Estimated_Spend__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Actual_Spend__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Preferred_Vendor__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Alternate_Vendor__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Vendor__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Start_Date__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.End_Date__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.New_or_Existing_Engagement__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Engagement_Type__c}" rendered="false"/>
+                <apex:outputField value="{!Project_Spend__c.Comments__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.SSR_Status__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.PR__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.PO__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.SOW__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.Competitively_Bid__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.NDA__c}" rendered="false"/>
+                <apex:outputText value="{!Project_Spend__c.SW_Project__c}" rendered="false"/>
+    			<apex:outputText value="{!Project_Spend__c.Team__c}" rendered="false"/>
+    			<apex:outputText value="{!Project_Spend__c.Location__c}" rendered="false"/>
+
+</apex:page>

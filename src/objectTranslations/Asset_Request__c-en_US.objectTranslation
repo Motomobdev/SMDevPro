@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asset Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Asset Requests</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please enter the start and end dates for the asset&apos;s use --></help>
+        <label><!-- Asset Active End Date --></label>
+        <name>Asset_Active_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the start and end dates for the asset&apos;s use --></help>
+        <label><!-- Asset Active Start Date --></label>
+        <name>Asset_Active_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe how the device or service is using this asset (box, hero image, etc.) --></help>
+        <label><!-- How will the Asset be Used? --></label>
+        <name>How_will_the_Asset_be_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter any other relevant information for the request for approval --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the partner for whom you are requesting access --></help>
+        <label><!-- Partner --></label>
+        <name>Partner__c</name>
+        <relationshipLabel><!-- Asset Requests --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Asset Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

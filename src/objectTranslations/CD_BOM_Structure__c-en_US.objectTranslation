@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD BOM Structure</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CD BOM Structure</value>
+    </caseValues>
+    <fields>
+        <label><!-- BOM Disable date --></label>
+        <name>BOM_Disable_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BOM ID --></label>
+        <name>BOM_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- BOM Rev No --></label>
+        <name>BOM_Rev_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- BOM effective date --></label>
+        <name>BOM_effective_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Item Disable date --></label>
+        <name>Child_Item_Disable_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Item IOD IN --></label>
+        <name>Child_Item_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Item --></label>
+        <name>Child_Item__c</name>
+        <relationshipLabel><!-- CD BOM Structure --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Child Item effective date --></label>
+        <name>Child_Item_effective_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DM Type --></label>
+        <name>DM_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Cost Flag --></label>
+        <name>NPI_Cost_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Cost Flag update date --></label>
+        <name>NPI_Cost_Flag_update_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrganizationCode IOD IN --></label>
+        <name>OrganizationCode_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrganizationCode --></label>
+        <name>OrganizationCode__c</name>
+        <relationshipLabel><!-- CD BOM Structure --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Assembly IOD IN --></label>
+        <name>Parent_Assembly_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Assembly --></label>
+        <name>Parent_Assembly__c</name>
+        <relationshipLabel><!-- CD BOM Structure (Parent Assembly) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prod Cost Flag --></label>
+        <name>Prod_Cost_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prod Cost Flag update date --></label>
+        <name>Prod_Cost_Flag_update_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Used --></label>
+        <name>Quantity_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Level Assembly IOD IN --></label>
+        <name>Top_Level_Assembly_IOD_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Level Assembly Name --></label>
+        <name>Top_Level_Assembly_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Level Assembly --></label>
+        <name>Top_Level_Assembly__c</name>
+        <relationshipLabel><!-- CD BOM Structure (Top Level Assembly) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unique External Key --></label>
+        <name>Unique_External_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Identifier In BOM Structure --></label>
+        <name>Unique_Identifier_In_BOM_Structure__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

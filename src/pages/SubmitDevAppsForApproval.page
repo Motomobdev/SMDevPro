@@ -1,0 +1,40 @@
+<apex:page StandardController="DeviceApplicationAssoc__c" recordSetVar="DeviceApplicationAssoc__c" extensions="SubmitDevAppsForApproval">
+        <apex:form >
+        <apex:sectionHeader title="Device Applications for Approval" />
+        <apex:pageMessage rendered="{!deviceCancelled}" strength="2" summary="This Device has been cancelled, no more Applications can be submitted for approval." severity="error" />
+        <!--
+        <apex:pageMessage rendered="{!!UserApproved}" strength="2" summary="You are not authorized to submit approvals in Bulk. For questions on Bulk Submission please contact Daniel Quicker (QUICKER1)." severity="error" />
+        -->
+        <apex:pageMessage rendered="{!!deviceCancelled}" strength="2" summary="DevApp's that are NOT Include in BOM can not be submited from this page. They will not be listed here and must be submitted manually." severity="info" />        
+        <apex:pageBlock rendered="{!ShowMainWindow}">        
+            <apex:pageMessage rendered="{!DisplaySelectionError}" strength="2" summary="One or more of the Device Applications selected could not be submitted. They are listed below with any others that have not yet been submitted." severity="error" />
+
+            <BR/>   
+            <apex:pageBlockTable value="{!cDevAppList}" var="i" title="These are all Device Applications that can be submitted for Approval" id="devAppList">
+                <apex:column headerValue="Selected">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{!selectAll}" value="Select All/None" rerender="devAppList" />
+                    </apex:facet>                
+                    <apex:inputCheckbox value="{!i.selected}"/>
+                </apex:column> 
+                <apex:column headerValue="Device Application Name">
+                <apex:outputLink target="_blank" value="{!URLFOR($Action.DeviceApplicationAssoc__c.View, i.devAppId)}">{!i.devAppName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Device">
+                <apex:outputLink target="_blank" value="{!URLFOR($Action.Device__c.View, i.deviceId)}">{!i.deviceName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Application">
+                <apex:outputLink target="_blank" value="{!URLFOR($Action.Application__c.View, i.applicationId)}">{!i.applicationName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="AIF Approval Status" value="{!i.approvalStatus}"/>
+            </apex:pageBlockTable>
+            <BR/>
+        
+            <apex:commandButton value="Submit" action="{!submit}"/> 
+            <apex:commandButton value="Return" action="{!cancel}"/>
+        </apex:pageBlock>
+        <BR/>
+        <apex:commandButton rendered="{!!ShowMainWindow}" value="Return" action="{!cancel}"/>
+    </apex:form>
+
+</apex:page>

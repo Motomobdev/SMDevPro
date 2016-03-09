@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD GMT Top Level Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Top Level Item</value>
+    </caseValues>
+    <fields>
+        <label><!-- APC Code from Top Level --></label>
+        <name>APC_Code_from_Top_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- APC description from Top Level --></label>
+        <name>APC_description_from_Top_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bom Structure Name --></label>
+        <name>Bom_Structure_Name_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- CD BOM Structure --></label>
+        <name>CD_BOM_Structure_del__c</name>
+        <relationshipLabel><!-- Top Level Item --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Market Name --></label>
+        <name>CD_Market_Name__c</name>
+        <relationshipLabel><!-- Top Level Item --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CD Segment --></label>
+        <name>CD_Segment__c</name>
+        <relationshipLabel><!-- Top Level Item --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Child Item Name --></label>
+        <name>Child_Item_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Item --></label>
+        <name>Child_Item__c</name>
+        <relationshipLabel><!-- Top Level Item (Child Item) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- External Id in Bom Structure --></label>
+        <name>External_Id_in_Bom_Structure__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrganizationCode Name --></label>
+        <name>OrganizationCode_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrganizationCode --></label>
+        <name>OrganizationCode__c</name>
+        <relationshipLabel><!-- Top Level Item --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Top Level Assembly --></label>
+        <name>Top_Level_Assembly__c</name>
+        <relationshipLabel><!-- Top Level Item (Top Level Assembly) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unique Identifier In BOM Structure --></label>
+        <name>Unique_Identifier_In_BOM_Structure__c</name>
+    </fields>
+    <fields>
+        <label><!-- XCRV from Child Item --></label>
+        <name>XCRV_from_Child_Item__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

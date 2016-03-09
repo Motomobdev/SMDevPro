@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A related list object which will initiate new part number activity.  Records will be started by Initial Reviewers within the change management process (SDE, SME, or Category Management).  Objective is to have the new status 12 part numbers available at the close of the change approval cycle.  In this manner engineering teams can immediately begin the task of BOM update/implementation.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Current_Part_Series_Number__c</fullName>
+        <description>Enter the current part number extension (for series) or the exact part number to be replaced by new qualification.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the current part number extension (for series) or the exact part number to be replaced by new qualification.</inlineHelpText>
+        <label>Current Part-Series Number</label>
+        <length>12</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_CR_Initial_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>HW CR Initial Review</label>
+        <referenceTo>HW_CR_Initial_Review__c</referenceTo>
+        <relationshipLabel>HW CR New Part Requests</relationshipLabel>
+        <relationshipName>HW_CR_New_Part_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>MRT_Number__c</fullName>
+        <description>MCMS MRT record id for the submission of w18 data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>MCMS MRT record id for the submission of w18 data.</inlineHelpText>
+        <label>MRT Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MotoPDM_ECR__c</fullName>
+        <description>MotoPDM ECR record number for the request of new part number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>MotoPDM ECR record number for the request of new part number.</inlineHelpText>
+        <label>MotoPDM ECR</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Part_Series_Description__c</fullName>
+        <description>Enter the description for the new part number as it appears in ICCS or MotoPDM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the description for the new part number as it appears in ICCS or MotoPDM.</inlineHelpText>
+        <label>New Part-Series Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>New_Part_Series_Number__c</fullName>
+        <description>Enter the new part extension (for series qualification) or the exact part number of the soon to be qualified component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the new part extension (for series qualification) or the exact part number of the soon to be qualified component.</inlineHelpText>
+        <label>New Part-Series Number</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Supplier_Code__c</fullName>
+        <description>Supplier id associated to new part creation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Supplier Id associated to the new part creation.  Must synchronize with the supplier name.</inlineHelpText>
+        <label>New Supplier Code</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Supplier_Name__c</fullName>
+        <description>Supplier name who will be qualified for newly created part</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the supplier name as it appears within eGVM or CRIS.</inlineHelpText>
+        <label>New Supplier Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>New_Supplier_Part_Number__c</fullName>
+        <description>The cross reference between MMI part number and the supplier internal part number.  These must synchronize for proper w18 compliance.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The cross reference between MMI part number and the supplier internal part number.  These must synchronize for proper w18 compliance.</inlineHelpText>
+        <label>New Supplier Part Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SDE_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Responsible SDE for gathering ePAF signature, MRT/w18 submission, and additional supplier qualification pack data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Responsible SDE for gathering ePAF signature, MRT/w18 submission, and additional supplier qualification pack data.</inlineHelpText>
+        <label>SDE Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_New_Part_Requests1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Spec_Released__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Verification the new part specification is available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The spec owner should confirm release of documentation by checking the confirmation box and uploading the document to this record.</inlineHelpText>
+        <label>Spec Released</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Specification_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Person responsible for creation of new 51R specification and generation of new part or series number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person responsible for creation of new 51R specification and generation of new part or series number.</inlineHelpText>
+        <label>Specification Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>HW_CR_New_Part_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>W18_Compliance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Confirmation w18 compliance has been achieved and record exists in EMARS.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirmation w18 compliance has been achieved and record exists in EMARS.</inlineHelpText>
+        <label>W18 Compliance</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ePAF_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Confirmation the supplier has signed and is in compliance with the MCMS ePAF request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirmation the supplier has signed and is in compliance with the MCMS ePAF request.</inlineHelpText>
+        <label>ePAF Complete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ePAF_Number__c</fullName>
+        <description>The MCMS ePAF record number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The MCMS ePAF record number</inlineHelpText>
+        <label>ePAF Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HW CR New Part Request</label>
+    <nameField>
+        <displayFormat>NP{00000000}</displayFormat>
+        <label>HW CR New Part Request Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HW CR New Part Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

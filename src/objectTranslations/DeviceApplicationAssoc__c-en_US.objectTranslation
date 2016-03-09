@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Device Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Device Applications</value>
+    </caseValues>
+    <fields>
+        <help><!-- From the related Device object --></help>
+        <label><!-- APC --></label>
+        <name>APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>Account_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcctOwner --></label>
+        <name>AcctOwner__c</name>
+        <relationshipLabel><!-- Device Applications (AcctOwner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Actual Alpha --></label>
+        <name>Actual_Alpha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Beta --></label>
+        <name>Actual_Beta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual GM Release Candidate --></label>
+        <name>Actual_GM_Release_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual GM --></label>
+        <name>Actual_GM__c</name>
+    </fields>
+    <fields>
+        <help><!-- AppID, from Application object --></help>
+        <label><!-- AppID --></label>
+        <name>AppID__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Application record --></help>
+        <label><!-- App Available For Use? --></label>
+        <name>App_Available_For_Use__c</name>
+    </fields>
+    <fields>
+        <help><!-- The item state of this DevApp. --></help>
+        <label><!-- DevApp Item State --></label>
+        <name>App_Item_State__c</name>
+        <picklistValues>
+            <masterLabel>10 - Assigned</masterLabel>
+            <translation><!-- 10 - Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12 - Prelim</masterLabel>
+            <translation><!-- 12 - Prelim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32 - Controlled</masterLabel>
+            <translation><!-- 32 - Controlled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35 - Full Release</masterLabel>
+            <translation><!-- 35 - Full Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55 - Obsolete</masterLabel>
+            <translation><!-- 55 - Obsolete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- App Risk Flag Condition --></label>
+        <name>App_Risk_Flag_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Risk Flag --></label>
+        <name>App_Risk_Flag__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- App SubType --></label>
+        <name>App_SubType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Category --></label>
+        <name>Application_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Decision --></label>
+        <name>Application_Contract_Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Approved_Device --></label>
+        <name>Application_Contract_LRB_Approved_Devic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Approved_Region --></label>
+        <name>Application_Contract_LRB_Approved_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Pipeline_ID --></label>
+        <name>Application_Contract_LRB_Pipeline_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- From related Application record --></help>
+        <label><!-- Contract Name --></label>
+        <name>Application_Contract_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- From related Application record --></help>
+        <label><!-- Contract Number --></label>
+        <name>Application_Contract_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- From related Application record --></help>
+        <label><!-- Contract Phase --></label>
+        <name>Application_Contract_Phase__c</name>
+    </fields>
+    <fields>
+        <help><!-- From related Application record --></help>
+        <label><!-- Contract Status --></label>
+        <name>Application_Contract_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- From related Application record --></help>
+        <label><!-- Governing End Date --></label>
+        <name>Application_Governing_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Group --></label>
+        <name>Application_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Manager Selection Approver: --></label>
+        <name>Application_Manager_Selection_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (Application Manager Selection Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the person who is responsible for delivering this application from the vendor to the software team on this particular device. --></help>
+        <label><!-- Application Manager --></label>
+        <name>Application_Manager__c</name>
+        <relationshipLabel><!-- Device Applications (Application Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Mgr Selection Approval --></label>
+        <name>Application_Mgr_Selection_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Source Id --></label>
+        <name>Application_Source_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The application type is defined at the application level, and is shown here for reference. --></help>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is MotoReady&apos;s final approval of this application on this Device. This field is what shows through to the device object to show the MotoReady status of this app on this device. --></help>
+        <label><!-- AIF Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitable</masterLabel>
+            <translation><!-- Not Submitable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Carrier_furnished --></label>
+        <name>Carrier_furnished__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only required if the application is conditionally approved --></help>
+        <label><!-- Conditional Approval Details --></label>
+        <name>Conditional_Approval_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirmation of Budget Approver: --></label>
+        <name>Confirmation_of_Budget_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (Confirmation of Budget Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Confirmation of Budget Royalties --></label>
+        <name>Confirmation_of_Budget_Royalties__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Confirmation of Schedule from 3rd Party --></label>
+        <name>Confirmation_of_Schedule_from_3rd_Party__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Application object --></help>
+        <label><!-- Contract Let Expire --></label>
+        <name>Contract_Let_Expire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Owner --></label>
+        <name>Contract_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- SDS Approval --></label>
+        <name>DTS_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DTS Approver: --></label>
+        <name>DTS_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (DTS Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SDS Support --></label>
+        <name>DTS_Support__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DTS Support of Included API&apos;s --></label>
+        <name>DTS_Support_of_Included_API_s__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DevApp Item Effective Date --></label>
+        <name>DevApp_Item_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the DevApp Effective Date Match the SW KIT Effective Date? By default these should all match. --></help>
+        <label><!-- DevApps EFF Date Match? --></label>
+        <name>DevApps_EFF_Date_Match__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Device Object --></help>
+        <label><!-- DeviceID --></label>
+        <name>DeviceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device_Application External Unique ID --></label>
+        <name>Device_Application_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Cancelled? --></label>
+        <name>Device_Cancelled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device carrier, from Device object --></help>
+        <label><!-- Device Carrier --></label>
+        <name>Device_Carrier__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device country, from Device object --></help>
+        <label><!-- Device Country --></label>
+        <name>Device_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Please enter the FID you use to reference this feature for your program/device if it is different from that used within SalesForce.&quot; --></help>
+        <label><!-- Device Feature ID --></label>
+        <name>Device_Feature_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Fully Approved --></label>
+        <name>Device_Fully_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Device Object --></help>
+        <label><!-- Device Product Segment --></label>
+        <name>Device_Product_Segment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device Status, from the Device object - -  Read Only --></help>
+        <label><!-- Device SA Status --></label>
+        <name>Device_SA_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Business disclosure by MDM --></help>
+        <label><!-- Disclosure Complete --></label>
+        <name>Disclosure_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date MOTOREADY asks the Partner Manager to disclose the business award to the developer --></help>
+        <label><!-- Disclosure Requested --></label>
+        <name>Disclosure_Requested__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the related contract for this app Fully Executed? --></help>
+        <label><!-- Executed Contract --></label>
+        <name>Executed_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed Alpha --></label>
+        <name>Expected_Alpha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed Beta --></label>
+        <name>Expected_Beta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed GM --></label>
+        <name>Expected_GM__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;This is the FMD feature ID tagged to this application within SF at the application level.&quot; --></help>
+        <label><!-- FMD Feature ID - SF --></label>
+        <name>FMD_Feature_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the state of the Feature ID above in FMDB. --></help>
+        <label><!-- FMD State --></label>
+        <name>FMD_State__c</name>
+        <picklistValues>
+            <masterLabel>00 - Drop</masterLabel>
+            <translation><!-- 00 - Drop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01 - Submit</masterLabel>
+            <translation><!-- 01 - Submit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 - Evaluate</masterLabel>
+            <translation><!-- 02 - Evaluate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 - Candidate</masterLabel>
+            <translation><!-- 03 - Candidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 - Lockdown</masterLabel>
+            <translation><!-- 04 - Lockdown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 - Commit</masterLabel>
+            <translation><!-- 05 - Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06 - Build</masterLabel>
+            <translation><!-- 06 - Build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07 - Ship</masterLabel>
+            <translation><!-- 07 - Ship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08 - Already in Base</masterLabel>
+            <translation><!-- 08 - Already in Base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11 - Deleted</masterLabel>
+            <translation><!-- 11 - Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12 - RRB Submit</masterLabel>
+            <translation><!-- 12 - RRB Submit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FMD Status Approval --></label>
+        <name>FMD_Status_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No/Unacceptable State Selected</masterLabel>
+            <translation><!-- No/Unacceptable State Selected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FMD Status Check Approver: --></label>
+        <name>FMD_Status_Check_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (FMD Status Check Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Finance Approval --></label>
+        <name>Finance_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Finance Approver: --></label>
+        <name>Finance_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (Finance Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- For LATAM, Translation Table Approved --></label>
+        <name>For_LATAM_Translation_Table_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- For LATAM, Translation Table Received --></label>
+        <name>For_LATAM_Translation_Table_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- GMS App --></label>
+        <name>GMS_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This indicates that this software is included on the BOM for this device.  We could run into a situation where software is approved for a device, but not shipped initially, so in that case, this box would be unchecked. --></help>
+        <label><!-- Include in BOM --></label>
+        <name>Include_in_BOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes whether this app will be included on an accompanying SD Card (along with the device in the box) --></help>
+        <label><!-- Include on SD Card --></label>
+        <name>Include_on_SD_Card__c</name>
+    </fields>
+    <fields>
+        <label><!-- LRB Approval --></label>
+        <name>LRB_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LRB Approver: --></label>
+        <name>LRB_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (LRB Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Launch MFG Site --></label>
+        <name>Launch_MFG_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Device for MOTOREADY --></label>
+        <name>Lead_Device_for_MOTOREADY__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this field is yes, click on the application link to review the actual api&apos;s used. --></help>
+        <label><!-- Leveraging Motorola Proprietary APIs --></label>
+        <name>Leveraging_Motorola_Proprietary_APIs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to COMPASS File --></label>
+        <name>Link_to_COMPASS_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOTOREADY App Status --></label>
+        <name>MOTOREADY_App_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- MOTOREADY PM, from the Device object --></help>
+        <label><!-- Motoready_PM --></label>
+        <name>Motoready_PM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Manager Checklist Approval --></label>
+        <name>Partner_Manager_Checklist_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Manager Checklist Approver: --></label>
+        <name>Partner_Manager_Checklist_Approver__c</name>
+        <relationshipLabel><!-- Device Applications (Partner Manager Checklist Approver:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Manager --></label>
+        <name>Partner_Manager__c</name>
+        <relationshipLabel><!-- Device Applications (Partner Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Past App Mgr Approval --></label>
+        <name>Past_App_Mgr_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Past Budget Approval --></label>
+        <name>Past_Budget_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Past LRB Approval --></label>
+        <name>Past_LRB_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Past Partner Manager Approval --></label>
+        <name>Past_Partner_Manager_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Past SDS Approval --></label>
+        <name>Past_SDS_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Device &quot;Platform Release&quot; field --></help>
+        <label><!-- Platform Release --></label>
+        <name>Platform_Release__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Device &quot;Platform&quot; field --></help>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Description --></label>
+        <name>Program_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Instructions --></label>
+        <name>Program_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Questionnaire Received from 3rd Party --></label>
+        <name>Questionnaire_Received_from_3rd_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed GM Release Candidate --></label>
+        <name>Requested_Committed_GM_Release_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Approval --></label>
+        <name>Requester_Approval__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropped</masterLabel>
+            <translation><!-- Dropped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>Requester__c</name>
+        <relationshipLabel><!-- Device Applications (Requester) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the current Royalty price. To properly determine pricing, please consider royalty high, royalty current and royalty low, as well as the royalty payment attribute. --></help>
+        <label><!-- Royalty Current --></label>
+        <name>Royalty_Current__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the High Royalty. To properly determine pricing, please consider royalty high, royalty current and royalty low, as well as the royalty payment attribute. --></help>
+        <label><!-- Royalty High --></label>
+        <name>Royalty_High__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Low Royalty. To properly determine pricing, please consider royalty high, royalty current and royalty low, as well as the royalty payment attribute. --></help>
+        <label><!-- Royalty Low --></label>
+        <name>Royalty_Low__c</name>
+    </fields>
+    <fields>
+        <help><!-- This helps describe the royalty type. I.E. is it a fixed per unit rate, a rate table, a rate table that resets annually. This fields helps to characterize the high, low, and current royalty rates above. --></help>
+        <label><!-- Royalty Payment Attribute --></label>
+        <name>Royalty_Payment_Attribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- SA_Date, from the Device object - -  Read Only --></help>
+        <label><!-- SA_Date --></label>
+        <name>SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID_Device --></label>
+        <name>SFID_Device__c</name>
+    </fields>
+    <fields>
+        <help><!-- SWKIT from related Device record --></help>
+        <label><!-- SWKIT --></label>
+        <name>SWKIT__c</name>
+    </fields>
+    <fields>
+        <label><!-- SWKitId --></label>
+        <name>SWKitId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW KIT Effective Date --></label>
+        <name>SW_KIT_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please specify any localization requirements - i.e. language requirements or customizations such as branding requirements. --></help>
+        <label><!-- Signature Requirements --></label>
+        <name>Signature_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola</masterLabel>
+            <translation><!-- Motorola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Further Investigation</masterLabel>
+            <translation><!-- Needs Further Investigation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Skip App Manager Selection Approval --></label>
+        <name>Skip_App_Manager_Selection_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip Partner Manager Approval - Country --></label>
+        <name>Skip_Partner_Manager_Approval_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip Partner Manager Approval - Language --></label>
+        <name>Skip_Partner_Manager_Approval_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip SDS Approval --></label>
+        <name>Skip_SDS_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please specify any localization requirements - i.e. language requirements or customizations such as branding requirements. --></help>
+        <label><!-- Specific Requirements --></label>
+        <name>Specific_Requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Device &quot;Stable Line&quot; field --></help>
+        <label><!-- Stable Line --></label>
+        <name>Stable_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stable --></label>
+        <name>Stable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stable_count --></label>
+        <name>Stable_count__c</name>
+    </fields>
+    <fields>
+        <help><!-- special field visible to admins only; used for manual refresh triggers of &quot;state&quot; --></help>
+        <label><!-- Temp --></label>
+        <name>Temp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Results Received from 3rd Party --></label>
+        <name>Test_Results_Received_from_3rd_Party__c</name>
+    </fields>
+    <fields>
+        <help><!-- Technical and process info provided by EMD PM --></help>
+        <label><!-- Welcome Package Sent --></label>
+        <name>Welcome_Package_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Party Approval Required? --></label>
+        <name>X3rd_Party_Approval_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only available if the related Application requires 3rd party approval. --></help>
+        <label><!-- 3rd Party Approval Status --></label>
+        <name>X3rd_Party_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Admin</layout>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- MOTOREADY Status --></label>
+            <section>MOTOREADY Status</section>
+        </sections>
+        <sections>
+            <label><!-- Royalty Information --></label>
+            <section>Royalty Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Device Application Layout</layout>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- MOTOREADY Status --></label>
+            <section>MOTOREADY Status</section>
+        </sections>
+        <sections>
+            <label><!-- Royalty Information --></label>
+            <section>Royalty Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Device Application Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- MOTOREADY Status --></label>
+            <section>MOTOREADY Status</section>
+        </sections>
+        <sections>
+            <label><!-- Royalty Information --></label>
+            <section>Royalty Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &quot;Include on BOM&quot; and &quot;Include on SD Card&quot; cannot *BOTH* be checked.
+Please select one or the other, in reference to this app on this device. --></errorMessage>
+        <name>Cannot_have_both_Includes_checked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Conditionally approved, the field &quot;Conditional Approval Details&quot; must be filled in. --></errorMessage>
+        <name>Conditional_Approval_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Select the Appropriate Value on the &quot;Supported&quot; picklist. --></errorMessage>
+        <name>DTS_Support_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose an alternative value for &quot;DTS Supported.&quot; --></errorMessage>
+        <name>DTS_Supported_Field_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- FMD in an unacceptable state to approve the application. --></errorMessage>
+        <name>FMD_State_Check_for_Final_Approval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The FMD feature ID cannot be blank when a FMD State is selected. --></errorMessage>
+        <name>fmd_feature_id_ck</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Approval_Status_for_All_DevApps --></label>
+        <name>Approval_Status_for_All_DevApps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Device_Application --></label>
+        <name>New_Device_Application</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- STATE_STATUS --></label>
+        <name>STATE_STATUS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_All_Selected_Applications_For_Approval --></label>
+        <name>Submit_All_Selected_Applications_For_Approval</name>
+    </webLinks>
+</CustomObjectTranslation>

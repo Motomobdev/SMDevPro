@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NPI Customer SA Tracker</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NPI Customer SA Trackers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device ID --></label>
+        <name>Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Key Account --></label>
+        <name>Key_Account__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NPI APC --></label>
+        <name>NPI_APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Country Code --></label>
+        <name>NPI_Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Country --></label>
+        <name>NPI_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Customer Finance Key Account --></label>
+        <name>NPI_Customer_Finance_Key_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Customer Key Account --></label>
+        <name>NPI_Customer_Key_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Customer --></label>
+        <name>NPI_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI First Customer Shipment (FCS) Qty --></label>
+        <name>NPI_FCS_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI First Customer Shipment (FSC) Date --></label>
+        <name>NPI_FSC_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI In Market Date --></label>
+        <name>NPI_In_Market_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Lab Entry (LE) Date --></label>
+        <name>NPI_LE_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Market Name --></label>
+        <name>NPI_Market_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Model Number --></label>
+        <name>NPI_Model_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Project ID --></label>
+        <name>NPI_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Project Name --></label>
+        <name>NPI_Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Record Revised By --></label>
+        <name>NPI_Record_Revised_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Record Revision Date --></label>
+        <name>NPI_Record_Revision_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Region --></label>
+        <name>NPI_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Ship Authorization (SA) Date --></label>
+        <name>NPI_SA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI SA Type --></label>
+        <name>NPI_SA_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI SW Platform Version --></label>
+        <name>NPI_SW_Platform_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI SW Platform --></label>
+        <name>NPI_SW_Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI SW Stable Line --></label>
+        <name>NPI_SW_Stable_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Sales Model --></label>
+        <name>NPI_Sales_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Segment Code --></label>
+        <name>NPI_Segment_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Technical Acceptance (TA) Date --></label>
+        <name>NPI_TA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Product ID --></label>
+        <name>PMD_Product_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Product Name --></label>
+        <name>PMD_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Product --></label>
+        <name>PMD_Product__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PMD Program ID --></label>
+        <name>PMD_Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Program Name --></label>
+        <name>PMD_Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Program --></label>
+        <name>PMD_Program__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PMD Project ID --></label>
+        <name>PMD_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Project Name --></label>
+        <name>PMD_Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMD Project --></label>
+        <name>PMD_Project__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Oracle Part Number --></label>
+        <name>Product_Oracle_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- NPI Customer SA Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SA Status --></label>
+        <name>SA_Status__c</name>
+    </fields>
+    <layouts>
+        <layout>NPI Customer SA Tracker Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,216 @@
+<apex:page standardController="report" tabStyle="Finance_Reports_Moto_Secure__tab" >
+
+
+<!-- Set-Up Table Column Widths -->
+
+<style>
+    .container{
+        width:100%;
+        height:90px;
+    }
+    .body{
+        width:100%;  
+    }
+    .Col1 { 
+        width: 1%;
+        padding-bottom: 10px;
+    }
+    .Col2 { 
+        width: 29%; 
+        padding-bottom: 10px;
+    }
+    .Col3 { 
+        width: 50%;    
+        padding-bottom: 10px;
+    }
+    .Col4 { 
+        width: 20%;
+        padding-bottom: 10px;
+    }  
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/soap/ajax/20.0/connection.js" type="text/javascript"></script>
+
+<script>  
+    function mapAuthentication(reportURL) { 
+    //var srcVal = "/apex/iframe?sfdc.tabName=01r40000000ACA2&url=" + encodeURIComponent(mapURL + reportURL + "&token=" + token);
+    var srcVal = "/apex/iframe/GTM_Secure_Open_Reports?viewname=" + reportURL;
+        window.open(srcVal);    
+     }
+</script>
+
+<apex:form >
+
+    <!--  Column Headers -->
+    <apex:pageblock title="Finance Top Reports">
+        <apex:panelGrid columns="4" columnClasses="Col1, Col2, Col3, Col4" width="100%">            
+            <apex:outputText >&nbsp;</apex:outputText>
+            <apex:outputText ><strong><u>Report Name</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Description</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Remarks</u></strong></apex:outputText>
+        </apex:panelGrid>
+    <!--</apex:pageblock>-->
+    <br />
+    <!-- Rows -->
+    <apex:outputPanel layout="block" styleclass="body">
+        <!--<apex:pageBlock mode="view">-->
+        
+            <apex:pageBlockSection title="Reports/Dahboard" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">  
+                
+                
+                <!--    <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ACA2&url=https://analytics.motorola.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname%3dt%2fSite6%2fviews%2fGlobalScenarioDashboard%2fFinancialSummary%26tableauSite%3dSite6%26userName%3dbizops%26container%3diframe%26%3atoolbar%3dyes">
+                        Current View
+                    </apex:outputLink>
+                    <apex:outputText >This report gives the current view of sales pipeline and linked to Sales force Opportunity Management module</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>    
+                    
+                    -->                  
+                <!--
+                    <apex:outputText >1.</apex:outputText>                           
+                   <apex:outputLink style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/Cross_Country_Activation/Cross_Country&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                       Cross Country Activation Dashboard
+                    </apex:outputLink>                   
+                    <apex:outputText >Shows activations for handsets activated outside of original country</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour </apex:outputText>
+                 -->   
+                                                       
+                  <apex:outputText >1.</apex:outputText>                           
+                   <apex:outputLink style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/SLTDashboard/Trends&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                      SLT Dashboard - WIP
+                    </apex:outputLink>
+                    <apex:outputText >SLT Dashboard - WIP</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                                       
+                    <apex:outputText >2.</apex:outputText>                           
+                    <apex:outputLink id="gdeck1" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/GlobalFPADeckGraphical-Lenovo/HistoricTrends&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          Global FPA Deck Graphical Lenovo
+                    </apex:outputLink>                      
+                    <apex:outputText >Global FPA Deck Graphical Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >3.</apex:outputText>                           
+                    <apex:outputLink id="gdeck2" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/GlobalFPADashboardTabular-Lenovo/ExecutiveSummary&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          Global FPA Dashboard Tabular-Lenovo
+                    </apex:outputLink>                      
+                    <apex:outputText >Global FPA Dashboard Tabular-Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                     <apex:outputText >4.</apex:outputText>                           
+                    <apex:outputLink id="gdeck3" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/APACFPADashboard-Lenovo/ExecutiveSummary&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          APAC FPA Dashboard- Lenovo
+                    </apex:outputLink>                      
+                    <apex:outputText >APAC FPA Dashboard- Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >5.</apex:outputText>                           
+                    <apex:outputLink id="gdeck4" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/EMEAFPADashboard-Lenovo/ExecutiveSummary&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          EMEA FPA Dashboard- Lenovo
+                    </apex:outputLink>                      
+                    <apex:outputText >EMEA FPA Dashboard- Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >6.</apex:outputText>                           
+                    <apex:outputLink id="gdeck5" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/NAFPADashboard-Lenovo/ExecutiveSummary&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          NA FPA Dashboard- Lenovo
+                    </apex:outputLink>                      
+                    <apex:outputText >NA FPA Dashboard- Lenovo</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    
+                     <apex:outputText >7.</apex:outputText>                           
+                    <apex:outputLink id="gdeck6" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/LAFPADashboard-Lenovo/ExecutiveSummary&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          LA FPA Dashboard- Lenovo  
+                    </apex:outputLink>                      
+                    <apex:outputText >LA FPA Dashboard- Lenovo  </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                     <apex:outputText >8.</apex:outputText>                           
+                    <apex:outputLink id="gdeck7" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/GlobalSupplyChainDashboard/Dashboard1&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          Global Supply Chain Dashboard - WIP  
+                    </apex:outputLink>                      
+                    <apex:outputText >Global Supply Chain Dashboard - WIP </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                     <apex:outputText >9.</apex:outputText>                           
+                    <apex:outputLink id="gdeck8" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk/ScenarioBridgeByLenovoGeo&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >10.</apex:outputText>                           
+                    <apex:outputLink id="gdeck9" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WarrantyDashboard/WarrantyTrends&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          Warranty Dashboard - WIP 
+                    </apex:outputLink>                      
+                    <apex:outputText >Warranty Dashboard - WIP</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >11.</apex:outputText>                           
+                    <apex:outputLink id="gdeck10" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/HistoricDataAnalysis-CR/CustomerLevelView1&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          Historic Data Analysis- CR  
+                    </apex:outputLink>                      
+                    <apex:outputText >Historic Data Analysis- CR</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >12.</apex:outputText>                           
+                    <apex:outputLink id="gdeck11" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-LA/LAScenarioBridgeByCountry&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - LA  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - LA</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >13.</apex:outputText>                           
+                    <apex:outputLink id="gdeck12" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-NA/NAScenarioBridgeByCountry&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - NA  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - NA</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >14.</apex:outputText>                           
+                    <apex:outputLink id="gdeck13" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-EMEAI/EMEAIScenarioBridgeByCountry&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - EMEAI  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - EMEAI</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >15.</apex:outputText>                           
+                    <apex:outputLink id="gdeck14" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-PRC/PRCScenarioBridgeBySegment&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - PRC  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - PRC</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >16.</apex:outputText>                           
+                    <apex:outputLink id="gdeck15" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-RestofAsiaExcludingIndiaChina/RestofASIAExcludingIndiaChinaScenarioBridgeByCountry&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - Rest of Asia(Excluding India/China)  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - Rest of Asia(Excluding India/China)</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    <apex:outputText >17.</apex:outputText>                           
+                    <apex:outputLink id="gdeck17" style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/WoWOutlookWalk-RestofAsiaExcludingIndiaChina/RestofASIAExcludingIndiaChinaScenarioBridgeByCountry&tableauSite=Site6&userName=bizops&:refresh=yes&:embed=yes&:tabs=yes&:toolbar=yes&container=iframe&server=tableau'); return false;">
+                          WoW Outlook Walk - Rest of Asia(Excluding India/China)  
+                    </apex:outputLink>                      
+                    <apex:outputText >WoW Outlook Walk - Rest of Asia(Excluding India/China)</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Week </apex:outputText>
+                    
+                    
+                  </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Category 2" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                  
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+
+        <!--</apex:pageblock>-->
+    </apex:outputpanel>
+</apex:pageblock>
+</apex:form> 
+</apex:page>

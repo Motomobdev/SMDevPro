@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time Record</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Cost --></label>
+        <name>Actual_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related to a contact record. --></help>
+        <label><!-- Contractor --></label>
+        <name>Contractor__c</name>
+        <relationshipLabel><!-- Time Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hourly Rate --></label>
+        <name>Hourly_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Per Day --></label>
+        <name>Hours_Per_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours --></label>
+        <name>Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Time Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team Member Assignment --></label>
+        <name>Team_Member_Assignment__c</name>
+        <relationshipLabel><!-- Time Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related to User Record. --></help>
+        <label><!-- Team Member --></label>
+        <name>Team_Member__c</name>
+        <relationshipLabel><!-- Time Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Time Status --></label>
+        <name>Time_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Work Request --></label>
+        <name>Work_Request__c</name>
+        <relationshipLabel><!-- Time Records --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

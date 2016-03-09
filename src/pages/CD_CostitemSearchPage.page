@@ -1,0 +1,251 @@
+<apex:page id="costSearch" controller="CD_CostItemSearch" readOnly="true" tabStyle="Cost_Item_Download__tab">
+ <apex:form id="costForm" >
+<br/> &nbsp;&nbsp;&nbsp;   <img src="{!$Resource.cd_Motorola}" />
+<apex:outputlabel style="font-size:25px;" value="Cost Item Download"></apex:outputlabel>
+       
+ <script>                          
+function loading(val) {
+        if (val=='true') {
+           document.getElementById('contentLoading').style.display = 'block';
+          
+         }
+         else {
+           document.getElementById('contentLoading').style.display = 'none';
+           
+         }
+    }
+  /*   function addLoadEvent(func) {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+        window.onload = func;
+      } else {
+        window.onload = function() {
+          if (oldonload) {
+            oldonload();
+          }
+          func();
+        }
+      }
+    } */
+
+    function collapsePbSec() {
+     
+     if(document.getElementById('costSearch:costForm:searchCriteria:searchSection') != null){
+         twistSection(document.getElementById('costSearch:costForm:searchCriteria:searchSection').childNodes[0].childNodes[0]);
+      }
+       if(document.getElementById('costSearch:costForm:searchCriteria:periodSection') != null){
+         twistSection(document.getElementById('costSearch:costForm:searchCriteria:periodSection').childNodes[0].childNodes[0]);
+      }
+    }
+
+    //addLoadEvent(dotest);
+  
+  
+    
+    
+
+</script>
+<style type="text/CSS">
+body .bPageBlock .pbBody .blue .pbSubheader{
+                background-color:#82CAFA;
+            }
+            body .bPageBlock .pbBody .grey .pbSubheader{
+                background-color:#82CAFA;
+            }
+            body .bPageBlock .pbBody .grey .pbSubheader h3{
+                color:#82CAFA;
+            }
+            
+         .bPageBlock .detailList tr td.dataCol
+        {
+            border-bottom:0px ;
+        }
+      .bPageBlock .detailList .labelCol 
+      {
+       border-bottom:0px ;
+       float:left;
+       text-align:left;
+       font-weight:normal;
+       font-size:12px;
+       font-family: sans-serif;
+      }  
+ 
+</style>
+<apex:pagemessages ></apex:pagemessages>
+<apex:pageBlock id="searchCriteria">
+          <div id="contentLoading" style="display:none;">
+               <div style="text-align: center; border:none,padding:15px,backgroundColor:#000,-webkit-border-radius: 10px,-moz-border-radius:10px,opacity: .5,color:#fff">
+                  <FONT FACE="Helvetica,Verdana,Arial" SIZE="3" COLOR="#000066"><B>Please wait...</B></FONT>
+               </div>
+           </div>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Search" action="{!Search}"  rerender="resultsForm" style="margin-left:3cm;font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;"  id="searchBtn" status="Status" onclick="loading('true');collapsePbSec();" oncomplete="loading('false')"/>
+<apex:commandButton value="Reset" action="{!Reset}" style="font-family: sans-serif;background:#000000;background:-moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#000000));  background:-webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:-ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);background:linear-gradient(top,#25A6E1 0%,#188BC0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);padding:4px 11px;color:#fff;font-family:'Helvetica Neue',sans-serif;font-size:20px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; font-size:11px ;border:1px solid #1A87B9 ; background-position: 0 0;" id="resetBtn" onclick="loading('false')" />
+</apex:pageBlockButtons>
+ <apex:outputPanel styleClass="blue" layout="block">
+
+<apex:pageBlockSection columns="3"  id="searchSection"  >
+<apex:facet name="header" >
+<apex:outputPanel >
+<apex:outputLabel style="font-weight:bold;font-size:14px;" value="Search Criteria   "></apex:outputLabel>
+<apex:image url="{!$Resource.CD_QuestionMark}" onmouseover="document.getElementById('PopUp').style.display = 'inline'" onmouseout="document.getElementById('PopUp').style.display = 'none'"/>
+<DIV id='PopUp' style="display: none; position: absolute;    background-color:#56A5EC; text-align: left; font-size: 12px; height:30px; width:120px;">
+<SPAN id='PopUpText'> Ctrl+Click to select Multiple Values. </SPAN>
+</DIV>
+</apex:outputPanel>
+</apex:facet>
+<!-- <apex:inputField value="{!cat.CD_Category__c}"  label="Category" /> -->
+
+<apex:selectList value="{!selectedGCL}" size="4"   title="Ctrl+Click to select multiple GCls" multiselect="true"  id="GCL"  Label="GCL" style="width: 140px;" >
+
+<apex:selectOptions value="{!GCL}" />
+<apex:actionSupport event="onchange"    rerender="catMgr,cat,subCat1,subCat2,subCat3"/>
+
+</apex:selectList>
+
+
+<apex:selectList value="{!selectedCatMgr}" size="1" multiselect="true" label="Category Manager" id="catMgr" style="width: 140px;">
+
+<apex:selectOptions value="{!CatMgr}" />
+<apex:actionSupport event="onchange"    rerender="GCL,cat,subCat1,subCat2,subCat3"/>
+</apex:selectList>
+
+<apex:selectList value="{!selectedCats}" size="2" multiselect="true"  id="cat"  label="Category" style="width: 140px;" >
+<apex:selectOptions value="{!Categories}" />
+<apex:actionSupport event="onchange"  rerender="subCat1,GCL,catMgr,cat,subCat2,subCat3"/>
+</apex:selectList>
+
+
+<!-- <apex:inputField value="{!cat.CD_Subcategory1__c}" label="Sub Category1" /> -->
+<apex:selectList value="{!selectedSubCat1}" size="2" multiselect="true" label="Sub Category1" id="subCat1" style="width: 140px;" >
+<apex:selectOptions value="{!subCat1}" />
+<apex:actionSupport event="onchange"  rerender="catMgr,cat,GCL,subCat2,subCat3"/>
+</apex:selectList>
+
+<apex:selectList value="{!selectedSubCat2}" size="2" multiselect="true" label="Sub Category2" id="subCat2" style="width: 140px;">
+<apex:selectOptions value="{!subCat2}" />
+<apex:actionSupport event="onchange"  rerender="catMgr,cat,GCL,subCat1,subCat3"/>
+</apex:selectList>
+
+<apex:selectList value="{!selectedSubCat3}" size="2" multiselect="true" label="Sub Category3" id="subCat3" style="width: 140px;">
+<apex:selectOptions value="{!subCat3}" />
+<apex:actionSupport event="onchange"  rerender="catMgr,cat,GCL,subCat1,subCat2"/> 
+</apex:selectList>
+
+<!--<apex:selectList value="{!selectedCostCat}" size="3" multiselect="true" Label="Cost Category" id="costCat" style="width: 140px;">
+<apex:selectOptions value="{!CostCat}" />
+<!-- <apex:actionSupport event="onchange"  rerender="cat"/> 
+</apex:selectList> -->
+<!-- <apex:inputField value="{!cat.CD_Subcategory2__c}"  label="Sub Category2"/> 
+<apex:inputField value="{!cat.CD_Subcategory3__c}"  label="Sub Category3"/>
+<apex:inputField value="{!cat.CD_GCL__c}" label="GCL"/>
+<apex:inputField value="{!cat.CD_Category_Managers__c}" label="Category Manager"/> -->
+
+<apex:inputField value="{!cat.CD_Cost_Category__c}"  label="Cost Category" style="width: 140px;"/> 
+
+<apex:inputField value="{!items.CD_APC__c}"  label="Market Name" style="width: 140px;"/> 
+
+<apex:inputField value="{!costItem.Item_Number__c}"  style="width: 140px;" />
+
+<apex:inputField value="{!costItem.Supplier_del__c}" label="Supplier Name"  id="accName" required="false" style="width: 140px;"/> 
+
+<apex:inputField value="{!items.Item_Description__c}" style="width: 140px;"/> 
+
+
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2" id="periodSection">
+<apex:facet name="header" >
+<apex:outputPanel >
+<apex:outputLabel style="font-weight:bold;font-size:14px;" value="Period Selection   "></apex:outputLabel>
+<apex:image url="{!$Resource.CD_QuestionMark}" onmouseover="document.getElementById('PopUp2').style.display = 'inline'" onmouseout="document.getElementById('PopUp2').style.display = 'none'"/>
+<DIV id='PopUp2' style="display: none; position: absolute;    background-color:#56A5EC; text-align: left; font-size: 12px; height:30px; width:350px;">
+<SPAN id='PopUpText'>Defaults to current year and quarter.Can be edited by clicking on dropdown.</SPAN>
+</DIV>
+</apex:outputPanel>
+</apex:facet>
+<apex:outputpanel >
+      <TABLE style="margin-left:4cm;width:100%"><TR> <td  style="width:100px">
+        <apex:outputlabel style="float:left;text-align:left;font-size: 13px;"  > </apex:outputlabel>
+      </td> <td  style="width:100px">
+       <apex:outputlabel style="float:left;text-align:left;font-size: 13px;"  > </apex:outputlabel>
+      </td> <td  style="width:100px" >
+      
+      </td> 
+       <td style="width:100px">
+        <apex:outputlabel style="float:left;text-align:left;font-size: 13px;"  value="Start Quarter"> </apex:outputlabel>
+        
+        </td> 
+      <td style="width:100px">
+      
+         <apex:selectlist size="1" style="float:left;text-align:left;font-size: 13px;"    value="{!squarter}" >
+      
+      <apex:selectOption itemValue="Q1" itemLabel="Q1"/>
+            <apex:selectOption itemValue="Q2" itemLabel="Q2"/>
+            <apex:selectOption itemValue="Q3" itemLabel="Q3"/>
+            <apex:selectOption itemValue="Q4" itemLabel="Q4"/>
+        </apex:selectList>
+        
+       
+        </td>
+         
+          <td style="width:100px">
+          
+          
+            <apex:outputlabel style="float:left;text-align:left;font-size: 13px;"  value="Start Year"> </apex:outputlabel>
+          </td> 
+       
+         <td style="width:100px">
+         
+             <apex:selectlist size="1"   style="float:left;text-align:left;font-size: 13px;"  value="{!sYear}" >
+         
+         
+         <apex:selectoptionS value="{!Years}" ></apex:selectoptions>
+        
+          
+         </apex:selectlist>
+         
+         
+         
+       </td>
+       </tr>
+       
+          </TABLE>
+         
+  
+               </apex:outputpanel>
+
+ 
+</apex:pageBlockSection>     
+ </apex:outputPanel>        
+</apex:pageBlock>
+<apex:actionStatus id="status" startText="please wait..."/> 
+</apex:form>
+
+<apex:form id="resultsForm"  > 
+<apex:outputPanel id="noSearchRes" rendered="{!(SearchResult.size==0 && SearchResult!=null ) }">
+There are no Item Cost Details for the entered Search Criteria.Please change search values and try again.
+</apex:outputPanel>    
+
+<apex:pageBlock id="SearchResults"  rendered="{!(SearchResult.size!=0 && SearchResult!='' && SearchResult!=null ) }" >
+<apex:pageBlockButtons location="top">
+<apex:commandButton value="Export To Excel" action="{!exportToExcel}" id="excelBtn" rerender="SearchResults" />
+</apex:pageBlockButtons>
+<apex:outputPanel styleClass="blue" layout="block">
+<apex:pageBlockSection title="Search Results">
+<apex:pageblockTable value="{!searchResult}" var="costItem" border="0.8px" >
+<apex:column value="{!costItem.Cost_Type__c}"/>
+<apex:column value="{!costItem.Item_Number_IOD__c}" headerValue="Item Number"/>
+<apex:column value="{!costItem.SupplierName__c}"/>
+<apex:column value="{!costItem.Cost_Category_IOD__c}" headerValue="Cost Category" />
+<apex:column value="{!costItem.Quarter__c}"/>
+<apex:column headerValue="Year"> <apex:outputtext value="{!costItem.Year__c}"/> </apex:column>
+<apex:column value="{!costItem.Award__c}"/> 
+<apex:column value="{!costItem.Price__c}"/>
+</apex:pageblockTable> 
+</apex:pageBlockSection>
+</apex:outputPanel>
+</apex:pageBlock>
+
+
+</apex:form> 
+</apex:page>

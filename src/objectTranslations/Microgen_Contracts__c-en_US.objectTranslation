@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Microgen_Contracts</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Microgen_Contracts</value>
+    </caseValues>
+    <fields>
+        <label><!-- APP_Currency_Code --></label>
+        <name>APP_Currency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountID --></label>
+        <name>AccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcctBillingCountryCode_microgen --></label>
+        <name>AcctBillingCountryCode_microgen__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcctBillingCountry --></label>
+        <name>AcctBillingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcctOwner --></label>
+        <name>AcctOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- ApplicationName --></label>
+        <name>ApplicationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_Category --></label>
+        <name>Application_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application_Type --></label>
+        <name>Application_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- CONTRACT_PMT_TERMS --></label>
+        <name>CONTRACT_PMT_TERMS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Currency_Code --></label>
+        <name>Contract_Currency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Name --></label>
+        <name>Contract_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_Number --></label>
+        <name>Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_status --></label>
+        <name>Contract_status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_type --></label>
+        <name>Contract_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- EARLIEST_DEVICE_SA_DATE --></label>
+        <name>EARLIEST_DEVICE_SA_DATE__c</name>
+    </fields>
+    <fields>
+        <label><!-- EARLIEST_SA_DATE_DEVICE__C_Name --></label>
+        <name>EARLIEST_SA_DATE_DEVICE_C_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- End_date --></label>
+        <name>End_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_ACCOUNT --></label>
+        <name>Last_Modified_ACCOUNT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_APPLICATION --></label>
+        <name>Last_Modified_APPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_CONTRACTAPPLICATION --></label>
+        <name>Last_Modified_CONTRACTAPPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_CONTRACT --></label>
+        <name>Last_Modified_CONTRACT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_PLATFORMAPPLICATION --></label>
+        <name>Last_Modified_PLATFORMAPPLICATION__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last_Modified_PLATFORM --></label>
+        <name>Last_Modified_PLATFORM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legally_shippable --></label>
+        <name>Legally_shippable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola_entity --></label>
+        <name>Motorola_entity__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlatformAppname --></label>
+        <name>PlatformAppname__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlatformName --></label>
+        <name>PlatformName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason_code --></label>
+        <name>Reason_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason_code_last_modified --></label>
+        <name>Reason_code_last_modified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev_Share_App_Microgen --></label>
+        <name>Rev_Share_App_microgen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev_Share_Details --></label>
+        <name>Rev_Share_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start_date --></label>
+        <name>Start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax_Withholding --></label>
+        <name>Tax_Withholding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid_W8BEN_microgen --></label>
+        <name>Valid_W8BEN_microgen__c</name>
+    </fields>
+    <fields>
+        <label><!-- eGVM_Number --></label>
+        <name>eGVM_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- rev_share_contract_microgen --></label>
+        <name>rev_share_contract_microgen__c</name>
+    </fields>
+    <layouts>
+        <layout>Microgen_Contracts Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

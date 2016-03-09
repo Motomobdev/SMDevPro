@@ -1,0 +1,5 @@
+<apex:page standardController="Campaign"  
+     extensions="CampiagnCloneWithproductsController"
+     action="{!cloneWithProducts}">
+     <apex:pageMessages />
+</apex:page>

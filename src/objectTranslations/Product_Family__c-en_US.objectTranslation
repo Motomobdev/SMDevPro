@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Family</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Families</value>
+    </caseValues>
+    <fields>
+        <label><!-- Total # of Devices --></label>
+        <name>Total_of_Devices__c</name>
+    </fields>
+    <layouts>
+        <layout>AIF Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>AIF Layout - Motodev Api/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>HW Change Management View</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Link_to_NPI --></label>
+        <name>Link_to_NPI</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Product_Royalty_Summary --></label>
+        <name>Product_Royalty_Summary</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unique_Apps_on_AIF --></label>
+        <name>Unique_Apps_on_AIF</name>
+    </webLinks>
+</CustomObjectTranslation>

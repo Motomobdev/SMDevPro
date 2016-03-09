@@ -1,0 +1,21 @@
+<apex:page controller="GPSFileUpload" showHeader="false" sidebar="false" title="MotoPlay Summary">
+    <c:Logo />
+    <apex:messages />
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Start Another Upload" action="{!start}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Upload Summary">
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="app"> Application</apex:outputLabel>
+                    <apex:outputText value="{!ParentAppHolder.application__r.name}" id="app"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="num_downloads"> Total Unique Stats Downloaded</apex:outputLabel>
+                    <apex:outputText value="{!NumberOfDownloads}" id="num_downloads"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>  
+		</apex:pageBlock>
+    </apex:form> 
+</apex:page>

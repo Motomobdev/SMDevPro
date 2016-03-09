@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Apttus__NewAgreementRequest</links>
+    <links>Apttus__CreateOfflineAgreement</links>
+    <links>Apttus__StoreExecutedAgreement</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

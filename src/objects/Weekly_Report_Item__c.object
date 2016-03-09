@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This will be used to store weekly items entered for various sources e.g. Meeting , Task,  Account  etc.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Business</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Handset</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Companion Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <controllingField>Function__c</controllingField>
+            <picklistValues>
+                <fullName>Highlights</fullName>
+                <controllingFieldValues>Biz Ops</controllingFieldValues>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>GTM</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Market Intelligence</fullName>
+                <controllingFieldValues>Biz Ops</controllingFieldValues>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>GTM</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Next Week&apos;s Priorities</fullName>
+                <controllingFieldValues>Biz Ops</controllingFieldValues>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>GTM</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Key Highlights</fullName>
+                <controllingFieldValues>Biz Ops</controllingFieldValues>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+                <controllingFieldValues>Product Ops</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upcoming Meetings</fullName>
+                <controllingFieldValues>Biz Ops</controllingFieldValues>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+                <controllingFieldValues>Product Ops</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support Needed</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <controllingFieldValues>GTM</controllingFieldValues>
+                <controllingFieldValues>Sales Ops</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Competitive_Landscape__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Competitive Landscape</label>
+        <referenceTo>Competitive_Landscape__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Competitive_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Competitive Product</label>
+        <referenceTo>Competitive_Product__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT( Account__r.Country__c), &quot;United States&quot;, &quot;US&quot;, TEXT( Account__r.Country__c))</formula>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Week__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Current Week</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Friendly_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Friendly_Account_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Friendly Account Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>GTM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biz Ops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_Report__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Report?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Meeting__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Meeting</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Customer_Meeting__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Customer_Meeting__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Playbook__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Playbook</label>
+        <referenceTo>Retail_Playbook__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Week__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Previous Week</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program (PMD)</label>
+        <referenceTo>PMD_Program__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region_Sort_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Account__r.Region__c), 
+&apos;North America&apos;, 
+IF(OR(ISPICKVAL(Account__r.PublicCalendar__c, &apos;Retail Sales (NA)&apos;),
+      ISPICKVAL(Account__r.PublicCalendar__c, &apos;Retail Sales (Non NA)&apos;)), 4, 1), 
+&apos;Latin America&apos;, 2, 
+&apos;Europe Middle East &amp; Africa&apos;, 3, 
+&apos;APAC&apos;, 5, 
+&apos;Global&apos;, 6, 99)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region Sort Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Account__r.Region__c), &apos;North America&apos;, IF(OR(ISPICKVAL(Account__r.PublicCalendar__c, &apos;Retail Sales (NA)&apos;), ISPICKVAL(Account__r.PublicCalendar__c, &apos;Retail Sales (Non NA)&apos;)) , &apos;Retail &amp; Distribution&apos;, &apos;NA&apos;), &apos;Latin America&apos;, &apos;LA&apos;, &apos;Europe Middle East &amp; Africa&apos;, &apos;EMEA&apos;, &apos;APAC&apos;, &apos;APAC&apos;, &apos;Global&apos;, &apos;Global&apos;, &apos;&apos;)</formula>
+        <label>Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Source ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Source_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Task</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitive Landscape</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Category</label>
+        <picklist>
+            <controllingField>Category__c</controllingField>
+            <picklistValues>
+                <fullName>Pricing info</fullName>
+                <controllingFieldValues>Highlights</controllingFieldValues>
+                <controllingFieldValues>Key Highlights</controllingFieldValues>
+                <controllingFieldValues>Market Intelligence</controllingFieldValues>
+                <controllingFieldValues>Next Week&apos;s Priorities</controllingFieldValues>
+                <controllingFieldValues>Upcoming Meetings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New product Launch</fullName>
+                <controllingFieldValues>Highlights</controllingFieldValues>
+                <controllingFieldValues>Key Highlights</controllingFieldValues>
+                <controllingFieldValues>Market Intelligence</controllingFieldValues>
+                <controllingFieldValues>Next Week&apos;s Priorities</controllingFieldValues>
+                <controllingFieldValues>Upcoming Meetings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advertising &amp; Promotions</fullName>
+                <controllingFieldValues>Highlights</controllingFieldValues>
+                <controllingFieldValues>Key Highlights</controllingFieldValues>
+                <controllingFieldValues>Market Intelligence</controllingFieldValues>
+                <controllingFieldValues>Next Week&apos;s Priorities</controllingFieldValues>
+                <controllingFieldValues>Upcoming Meetings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General</fullName>
+                <controllingFieldValues>Highlights</controllingFieldValues>
+                <controllingFieldValues>Key Highlights</controllingFieldValues>
+                <controllingFieldValues>Market Intelligence</controllingFieldValues>
+                <controllingFieldValues>Next Week&apos;s Priorities</controllingFieldValues>
+                <controllingFieldValues>Upcoming Meetings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Time_Period__c</fullName>
+        <description>This should display Weekly as the default option and next 3 to 6 quarters based on requirement. As of 08/22/2014, this has the values of Weekly, 2014 Q3, 2014 Q4, 2015 Q1</description>
+        <externalId>false</externalId>
+        <label>Time Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015 Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014 FY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Week_Ending__c</fullName>
+        <externalId>false</externalId>
+        <formula>Weekly_Report__r.Week_Ending__c</formula>
+        <label>Week Ending</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Weekly_Report__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Weekly Report</label>
+        <referenceTo>Weekly_Report__c</referenceTo>
+        <relationshipLabel>Weekly Report Items</relationshipLabel>
+        <relationshipName>Weekly_Report_Items_del</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Weekly Report Item</label>
+    <nameField>
+        <displayFormat>WRI-{000000}</displayFormat>
+        <label>Weekly Report Item Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Weekly Report Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Sub_Category_For_Market_Intelligence</fullName>
+        <active>true</active>
+        <description>Sub Category mandatory for Market Intelligence</description>
+        <errorConditionFormula>ISPICKVAL(Function__c, &apos;GTM&apos;) &amp;&amp; ISPICKVAL(Category__c, &apos;Market Intelligence&apos;) &amp;&amp; ISPICKVAL(Sub_Category__c, &apos;&apos;)</errorConditionFormula>
+        <errorMessage>Sub Category cannot be blank when category selected is Market Intelligence.</errorMessage>
+    </validationRules>
+</CustomObject>

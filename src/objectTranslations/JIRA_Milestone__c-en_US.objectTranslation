@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SW Project Milestone</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SW Project Milestones</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this Milestone is related to a SW Experience or Release --></help>
+        <label><!-- Experiences and Releases --></label>
+        <name>Experiences_and_Releases__c</name>
+        <relationshipLabel><!-- SW Exp/Rel Milestones --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If this Milestone is related to a SW Project --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- SW Project Milestones --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Indicator --></label>
+        <name>Status_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>At Risk</masterLabel>
+            <translation><!-- At Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behind Plan</masterLabel>
+            <translation><!-- Behind Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluate</masterLabel>
+            <translation><!-- Evaluate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Plan</masterLabel>
+            <translation><!-- On Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-Plan</masterLabel>
+            <translation><!-- Re-Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Dogfood</masterLabel>
+            <translation><!-- Dogfood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enabler</masterLabel>
+            <translation><!-- Enabler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fishfood</masterLabel>
+            <translation><!-- Fishfood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform Integration</masterLabel>
+            <translation><!-- Platform Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform Test</masterLabel>
+            <translation><!-- Platform Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Play Release</masterLabel>
+            <translation><!-- Play Release --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <layouts>
+        <layout>JIRA Milestone Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

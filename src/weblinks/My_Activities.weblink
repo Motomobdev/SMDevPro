@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>800</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>KW Unassigned/Unrelated Activities</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/gblite__Grid?gname=KW UnRelated Activities&amp;fpf=ownerid&amp;fpv={!User.Id}</url>
+    <width>1280</width>
+</CustomPageWebLink>

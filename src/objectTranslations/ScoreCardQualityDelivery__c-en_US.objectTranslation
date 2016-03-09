@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ScoreCardQualityDelivery</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ScoreCardQualityDeliverys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- ScoreCardQualityDeliverys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agility Score --></label>
+        <name>Agility_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commitment Score --></label>
+        <name>Commitment_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Defective PPM Score --></label>
+        <name>Defective_PPM_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escaping MCAR Score --></label>
+        <name>Escaping_MCAR_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- L3 SubMetric Name --></label>
+        <name>L3_SubMetric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardQualityDeliverys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Time Score --></label>
+        <name>Lead_Time_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Metric Name --></label>
+        <name>Metric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardQualityDeliverys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORacle Customer Number --></label>
+        <name>ORacle_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTD Score --></label>
+        <name>OTD_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- OracleCustNum --></label>
+        <name>OracleCustNum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality Capability Score --></label>
+        <name>Quality_Capability_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Current</masterLabel>
+            <translation><!-- Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous</masterLabel>
+            <translation><!-- Previous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Metric Name --></label>
+        <name>Sub_Metric_Name__c</name>
+        <relationshipLabel><!-- ScoreCardQualityDeliverys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supplier Score --></label>
+        <name>Supplier_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

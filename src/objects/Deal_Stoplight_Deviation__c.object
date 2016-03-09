@@ -1,0 +1,2440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>DealStopLight</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>DealStopLight</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>DealStopLightView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a generic template for Custom Object.  With this template, you may adjust the default elements and values and add new elements and values.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CP_Attach_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach ASP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>CP Attach Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach VMImp</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CP_Attach_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>CP Attach VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_Standard__c</fullName>
+        <defaultValue>&quot;Value Prod = None; Premium Prod = If approved; 360 = None&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Carrier Branding Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Carrier Branding Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Branding_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Branding VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Channel Fill Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Fill_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Fill VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_Dev__c</fullName>
+        <description>Value Products Only</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value Products Only</inlineHelpText>
+        <label>Charger / Accessories Dev</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_Standard__c</fullName>
+        <description>Value Products Only</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value Products Only</inlineHelpText>
+        <label>Charger / Accessories Standard</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Charger Accessories Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charger_Accessories_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Charger / Accessories VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_App__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications App</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Core Device Specifications Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_Std__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications Std</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Core_Device_Specifications_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Device Specifications VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Deal__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>Deal Stoplight Deviations</relationshipLabel>
+        <relationshipName>Deal_Stoplight_Deviations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid Dev</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid Standard</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>ELX Prepaid Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ELX_Prepaid_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>ELX = Prepaid VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Forecasting_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecasting_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Forecasting_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecasting_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecasting_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Forecasting_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecasting_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Forecasting Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Forecasting_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecasting_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecasting VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>IPP_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPP_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IPP_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPP_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPP_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IPP_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPP_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>IPP Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IPP_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPP_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>IPP VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Incoterms_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Incoterms_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms Dev</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incoterms_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incoterms_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms Standard</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incoterms_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Incoterms Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Incoterms_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Late_Delivery_Penalty_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Late Delivery Penalty VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MDF_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDF_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MDF_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDF_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDF_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MDF_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDF_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>MDF Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MDF_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDF_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>MDF VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MFN_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFN_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MFN_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFN_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFN_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MFN_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFN_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>MFN Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MFN_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFN_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>MFN VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_to_Exceed_Retail_Price_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Not to Exceed Retail Price VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Payment Terms Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Product Exclusivity Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Exclusivity_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Exclusivity VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Provision_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Provision Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AT&amp;T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>SW Updates Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SW_Updates_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>SW Updates VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Seeding Demo Units Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_Std__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units Std</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seeding_Demo_Units_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Seeding/Demo Units VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Sell Through Plan Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Through_Plan_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell-Through Plan VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Shipping and Handling Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_and_Handling_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping and Handling VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Software PreLoads Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_Std__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads Std</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Software_PreLoads_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Software PreLoads VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Green = No Deviation from Standard
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation from Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deviation w/min risk or No/Minimal ASP Increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deviation w/High risk or significant ASP Increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Volume Commitment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume_Commitment_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Volume Commitment VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair Dev</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Warranty Service Repair Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_Std__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair Std</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Service_Repair_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Service/Repair VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_ASP__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term ASP</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_AppDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term AppDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_Dev__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term Dev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term Exp</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term Standard</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_Status__c</fullName>
+        <description>Green = No Deviation
+Yellow = Deviation w/min risk &amp; No (or minimal) ASP Increase
+Red = Deviation w/High risk or results in significant ASP Increase</description>
+        <externalId>false</externalId>
+        <label>Warranty Term Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Deviation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minimal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_VMImp__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term VMImp</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Term_VM__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Term VM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Deal Stoplight Deviation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>D-{0000}</displayFormat>
+        <label>Deviation Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Deal Stoplight Deviations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_DealStopLight_Exist</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISNEW(), Deal__r.StoplightRecords__c &gt;= 1)</errorConditionFormula>
+        <errorMessage>Stoplight already exist for this Deal. You cannot create more than one Stoplight for a Deal.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>These are key financials and other metrics internal to the account</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Select / search the account you wish to update the financial information for</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select / search the account you wish to update the financial information for</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Financials</relationshipLabel>
+        <relationshipName>Account_Financials</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Cash_ST_Investments_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash &amp; ST Investments % Change</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cash_ST_Investments__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash &amp; ST Investments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Days_Payable_Outstanding__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Days Payable Outstanding (DPO)</inlineHelpText>
+        <label>Days Payable Outstanding (DPO)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Sales_Inventory__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Days Sales of Inventory (DSI)</inlineHelpText>
+        <label>Days Sales of Inventory (DSI)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Sales_Outstanding__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Days Sales Outstanding (DSO)</inlineHelpText>
+        <label>Days Sales Outstanding (DSO)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_TAM_Overall__c</fullName>
+        <description>This is the Overall Mobile Devices TAM (Feature Phonoe + Smartphone) for the calendar year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Overall Mobile Devices TAM (Feature Phonoe + Smartphone) for the calendar year</inlineHelpText>
+        <label>Estimated TAM Overall</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_TAM_Smartphone__c</fullName>
+        <description>This is the Smartphone TAM for the Account for calendar year in question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Smartphone TAM for the Account for calendar year in question</inlineHelpText>
+        <label>Estimated TAM Smartphone</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Financial_Calendar__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Calendar</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiscal Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Quarter</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Year__c</fullName>
+        <description>Financial Year for which you wish to update the financial information for</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Financial Year for which you wish to update the financial information for</inlineHelpText>
+        <label>Financial Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Gross_Margin_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross Margin %</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Employees__c</fullName>
+        <description>Total number of employees for the account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of employees for the account</inlineHelpText>
+        <label>Number of Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Post_paid__c</fullName>
+        <description>Percentage of Subscribers using Post paid plans</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of Subscribers using Post paid plans</inlineHelpText>
+        <label>% Post-paid</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pre_paid__c</fullName>
+        <description>% of Subscriber who are on Pre Paid plan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>% of Subscriber who are on Pre Paid plan</inlineHelpText>
+        <label>% Pre-paid</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Profit_Margin_Percent__c</fullName>
+        <description>This is profit margin % for the financial Year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is profit margin % for the financial Year</inlineHelpText>
+        <label>Profit Margin %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Profit_Margin__c</fullName>
+        <description>Absolute Profit for the financial year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Absolute Profit for the financial year</inlineHelpText>
+        <label>Profit Margin $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Growth_YOY__c</fullName>
+        <description>Revenue Growth % Y-o-Y</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Revenue Growth % Y-o-Y</inlineHelpText>
+        <label>Revenue Growth YOY %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue__c</fullName>
+        <description>This is the Full year Revenue for financial year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Full year Revenue for financial year</inlineHelpText>
+        <label>Revenue $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Subscriber_YOY_Growth_trend__c</fullName>
+        <description>This is subscriber growth rate for the year (Applies in case of a carrie / operator)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is subscriber growth rate for the year (Applies in case of a carrie / operator)</inlineHelpText>
+        <label>Subscriber YOY Growth %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Subscribers__c</fullName>
+        <description>Total number of mobile subscribers. Applies in case of carrier / operator</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of mobile subscribers. Applies in case of carrier / operator</inlineHelpText>
+        <label>Total Subscribers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Financial</label>
+    <nameField>
+        <displayFormat>AF-{00000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Financials</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

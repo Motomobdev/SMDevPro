@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Foundation Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Foundation Approvals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Details --></label>
+        <name>Amount_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fund Amount --></help>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Budget (YTD Remaining) --></label>
+        <name>Annual_Budget_YTD_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Justification for Approval --></label>
+        <name>Justification_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Justification for approval request --></help>
+        <label><!-- Justification for Approval --></label>
+        <name>Justifications_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Details on Organization for approvers --></help>
+        <label><!-- Organization Summary --></label>
+        <name>Organization_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization URL --></label>
+        <name>Organization_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of Organization funding --></help>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategic Focus Area Budget YTD Remain --></label>
+        <name>Strategic_Focus_Area_Budget_YTD_Remain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategic Focus Area Budget --></label>
+        <name>Strategic_Focus_Area_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategic Focus Area Details --></label>
+        <name>Strategic_Focus_Area_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Annual Budget --></label>
+        <name>Total_Annual_Budget__c</name>
+    </fields>
+    <layouts>
+        <layout>Foundation Approval Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

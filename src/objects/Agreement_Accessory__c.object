@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agreement__c</fullName>
+        <externalId>false</externalId>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>Agreement Accessories</relationshipLabel>
+        <relationshipName>Agreement_Accessories</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Interested__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this accessories was opted by the channel partner or not</description>
+        <externalId>false</externalId>
+        <label>Interested?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Agreement Accessories</relationshipLabel>
+        <relationshipName>Agreement_Accessories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <description>Estimated (purchase quantity)</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2013_Invoice_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>2013 Invoice Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X2013_MSRP__c</fullName>
+        <externalId>false</externalId>
+        <label>2013 MSRP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X2013_Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>2013 Selected?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X2014_Invoice_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>2014 Invoice Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X2014_MSRP__c</fullName>
+        <externalId>false</externalId>
+        <label>2014 MSRP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X2014_Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>2014 Selected?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Agreement Accessory</label>
+    <nameField>
+        <displayFormat>AA-{000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Agreement Accessories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Accessory_Price_Requires_Interested</fullName>
+        <active>true</active>
+        <description>The user has to check &quot;Interested?&quot; checkbox for entering the price</description>
+        <errorConditionFormula>AND(NOT(ISNULL(Invoice_Price__c)), Interested__c = false)</errorConditionFormula>
+        <errorDisplayField>Interested__c</errorDisplayField>
+        <errorMessage>Check Interested?</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Interested_Requires_Price</fullName>
+        <active>true</active>
+        <description>The user has to enter price if Interested? is checked.</description>
+        <errorConditionFormula>AND(ISNULL(Invoice_Price__c), Interested__c)</errorConditionFormula>
+        <errorDisplayField>Invoice_Price__c</errorDisplayField>
+        <errorMessage>Enter price</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MAX_Deal_Requires_2013_Mot_Accessories</fullName>
+        <active>true</active>
+        <description>The Motorola Accessory invoice price cannot be blank if the user opts in for an accessory.</description>
+        <errorConditionFormula>AND( Product_Type__c = &apos;Accessory-MOTO&apos;, X2013_Selected__c,  ISNULL(X2013_Invoice_Price__c))</errorConditionFormula>
+        <errorDisplayField>X2013_Invoice_Price__c</errorDisplayField>
+        <errorMessage>Invoice price for 2013 is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MAX_Deal_Requires_2014_Mot_Accessories</fullName>
+        <active>true</active>
+        <description>The Motorola Accessory invoice price cannot be blank if the user opts in for an accessory.</description>
+        <errorConditionFormula>AND( Product_Type__c = &apos;Accessory-MOTO&apos;, X2014_Selected__c,  ISNULL(X2014_Invoice_Price__c))</errorConditionFormula>
+        <errorDisplayField>X2014_Invoice_Price__c</errorDisplayField>
+        <errorMessage>Invoice price for 2014 is required</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Edit_Accessories</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Edit Accessories</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/Edit_Apttus_Deal_Accessories?id={!Apttus__APTS_Agreement__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,22 @@
+<apex:page controller="AppsOnSWBundleForDeviceController" showHeader="false" sidebar="false">
+    <p style="margin:20px">List of Applications on SW Bundle for Device: <b> {!device.Name} ({!device.Device_ID__c})</b></p>
+    <table border="1" cellpadding="5" cellspacing="0" width="90%" style="margin:20px">
+    <tr><th>Account</th><th>Application Name</th><th>Application ID</th><th>Contract Phase</th></tr>
+    <apex:repeat value="{!AppsOnSWBundle}" var="a">
+        <tr>
+            <td>
+                <apex:outputText value="{!a.Account__r.Name}"></apex:outputText> <br />
+            </td>
+            <td>
+                <apex:outputText value="{!a.Name}"></apex:outputText> <br />
+            </td>
+            <td>
+                <apex:outputText value="{!a.Application_ID__c}"></apex:outputText> <br />
+            </td>
+            <td>
+                <apex:outputText value="{!a.Application_Contract_Phase__c}"></apex:outputText> <br />
+            </td>
+        </tr>
+    </apex:repeat>
+    </table>
+</apex:page>

@@ -1,0 +1,541 @@
+<apex:page standardcontroller="Contract" extensions="LRBInitialDealController" sidebar="false">
+
+<style>
+    .headerStyle{
+        background-color:#787878 !important;
+        color:#787878;
+    }
+</style>
+        
+<body>
+<!-- <table width="1280" align="center" border=".5" cellspacing="0" cellpadding="0"> -->
+<table width="100%" align="center" border=".5" cellspacing="0" cellpadding="0">
+<tr>
+<!-- <td width="1280"> -->
+<td>
+<apex:form >
+    <apex:pageBlock mode="edit">
+    <h1>
+        <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+            <span style="font-size:20px;color:#FFFFFF;align:center;"><strong>LRB INITIAL DEAL REQUEST FORM (Page 1/5)</strong></span>
+        </div>
+    </h1>
+
+    <br />   
+    <br />
+
+    <h2>
+        <span style="font-size:20px;color:#000000;align:center;"><strong>Contract Details:</strong></span>
+    </h2>
+    
+    <div align="center">
+        <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMainMessage)>0}"/>
+        <apex:outputText value="{!errorMainMessage}" style="font-size:14px;color:red;margin-left:1%;" rendered="{!LEN(errorMainMessage)>0}"/>
+    </div>
+   
+    <br />
+    <br />
+
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Business Need">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                <apex:inputField value="{!contract.Business_Need__c}" id="acc" style="width:400px"/>
+            </apex:outputPanel>
+        </apex:column>
+        <apex:column >
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+            <apex:outputText value="Briefly describe the customer, product, or market reason(s) that the business unit needs to license this software." style="font-style:italic;"/>
+        </apex:column>
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorBusNeed)>0}"/>
+    <apex:outputText value="{!errorBusNeed}" style="color:red;margin-left:1%;" rendered="{!LEN(errorBusNeed)>0}"/>
+    
+    <br /> <br />
+   
+    <apex:dataTable id="appSel" value="{!varLQA1}" var="apptable" style="line-height:200%;white-space:nowrap;margin-left:1%;">   
+        <apex:column headerValue="Applications">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                <apex:inputField value="{!varLQA1.Application__c}" required="false" id="appInput" style="width:200px"/>
+            </apex:outputPanel>                  
+        </apex:column>      
+   
+        <apex:column >
+            <apex:commandButton action="{!DynamicRow}" id="appButton" value="ADD APP" reRender="appSel, appErrorPanel" style="width:92px;"/>           
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        </apex:column>      
+      
+        <apex:column >
+            <apex:facet name="header"><b>Selected Applications</b></apex:facet>   
+            <apex:outputText value="No Application Selected" style="font-style:italic" rendered="{!(aNames.size<=0)}"/>                     
+            <apex:repeat value="{!aNames}" var="string" id="theRepeat" >               
+                <apex:outputText value="{!string}" id="theValue" style="line-height:100%;"/><br/>               
+            </apex:repeat>          
+        </apex:column> 
+        
+        <apex:column >
+           &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+           <apex:outputText value="Note: If there is no App for this Contract please search for and select the App named 'None' from the Account 'Motorola Mobility, Inc'" style="font-style:italic;"/> 
+        </apex:column>        
+    
+    </apex:dataTable>
+    
+    <apex:outputPanel id="appErrorPanel">
+        <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageApp)>0}"/>
+        <apex:outputText value="{!errorMessageApp}" style="margin-left:1%;color:red;" rendered="{!LEN(errorMessageApp)>0}" />   
+    </apex:outputPanel>
+
+      
+    <br />  <br />  
+   
+    <apex:dataTable value="{!contract}" var="cont" style="font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Requested LRB: Initial Deal Present Date" style="line-height:200%;">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Requested_LRB_Initial_Deal_Present_Date__c}" id="acc" style="width:200px"/>
+            </apex:outputPanel>        
+            <!-- &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; -->
+        </apex:column>
+
+        <apex:column >
+           &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+           <apex:outputText value="Note: Selected date should be a Tuesday or Thursday." style="font-style:italic;"/> 
+           <!-- <br />
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;           
+           <apex:outputText value="" style="font-style:italic;"/>
+            -->
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageDate)>0}"/>
+    <apex:outputText value="{!errorMessageDate}" style="color:red;margin-left:1%;" rendered="{!LEN(errorMessageDate)>0}"/>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Legal Owner">
+            <apex:inputField value="{!contract.Legal_Owner__c}" id="lrb" style="width:200px;"/>
+        </apex:column>       
+    </apex:dataTable>
+    
+    <!-- Added as part of incident INM000005733171 fix-->
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="LRB requester (if different then Account Owner)">
+            <apex:inputField value="{!contract.LRB_Requester__c}" id="lrb" style="width:200px;"/>
+        </apex:column>       
+    </apex:dataTable>
+    
+
+    <br />
+    <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:20px;color:#FFFFFF;align:center;"><strong>Business Model &amp; Competitive Language</strong></span>
+    </div>
+   
+   <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Business Owner/Sponsor/Champion">
+        <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Business_Owner__c}" id="lrb" style="width:200px"/>
+        </apex:outputPanel>    
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorBusOwner)>0}"/>
+    <apex:outputText value="{!errorBusOwner}" style="color:red;margin-left:1%;" rendered="{!LEN(errorBusOwner)>0}"/>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Business Model">
+        <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Business_Model__c}" id="lrb" style="width:400px"/>
+        </apex:outputPanel>            
+        </apex:column>
+
+        <apex:column >
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+            <apex:outputText value="What revenue model is the partner using for this specific product   license (zero cost, rev share, freemium, one time buyout, in-kind marketing, etc.)" style="font-style:italic;"/>
+            <BR/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;     
+            <apex:outputText value="Edit prepoulated text data and add free text at the end to add any additional business model details.." style="font-style:italic;"/>
+            <BR/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;     
+            <apex:outputText value="Minimum guarantee should reflect payments in the future (as opposed to a prepay)." style="font-style:italic;"/>
+        </apex:column>
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorBusModel)>0}"/>
+    <apex:outputText value="{!errorBusModel}" style="color:red;margin-left:1%;" rendered="{!LEN(errorBusModel)>0}"/>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Comparison of Current situation with new proposed deal">
+            <apex:inputField value="{!contract.Comparison_of_Current_situation_with_new__c}" id="lrb" style="width:400px"/>
+        </apex:column>       
+    </apex:dataTable>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="How do you know the rate is competitive?">           
+            <apex:inputField value="{!contract.Rate_is_Competitive__c}" id="lrb" style="width:400px"/>           
+        </apex:column>       
+    </apex:dataTable>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Alternatives to 3rd Party">
+            <apex:inputField value="{!contract.Alternative_Source__c}" id="lrb" style="width:400px"/>
+        </apex:column>       
+    </apex:dataTable>
+           
+    <br />
+    <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:20px;color:#FFFFFF;align:center;"><strong>Planned Usage of Software:</strong></span>
+    </div>
+   
+    <br />
+    <apex:dataTable id="selectdev" value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Does this request cover 1 or more devices?">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Request_covers_1_or_more_devices__c}" id="lrb" style="width:200px"/> 
+            </apex:outputPanel>
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorRequestCoverage)>0}"/>
+    <apex:outputText value="{!errorRequestCoverage}" style="color:red;margin-left:1%;" rendered="{!LEN(errorRequestCoverage)>0}"/>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Intended Use in Motorola products" style="line-height:200%;">           
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Intended_Use_in_Motorola_products__c}" id="lrb" style="width:400px"/> 
+            </apex:outputPanel>            
+            <!--&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          -->
+        </apex:column>
+        
+        <apex:column >
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+           <apex:outputText value="Example: For use in all Android products or for marketing purposes only." style="font-style:italic;"/> 
+           <!-- <br />
+           &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+           <apex:outputText value="for marketing purposes only" style="font-style:italic;"/>
+           -->
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorIntendedUse)>0}"/>
+    <apex:outputText value="{!errorIntendedUse}" style="color:red;margin-left:1%;" rendered="{!LEN(errorIntendedUse)>0}"/>
+       
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Lead Device">         
+            <apex:actionRegion >
+                <apex:outputPanel styleClass="requiredInput" layout="block">
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Lead_Device__c}" id="lrb" style="width:200px">
+                        <apex:actionSupport event="onchange" rerender="dependentSADate" action="{!getSADate}"/>
+                    </apex:inputField>
+                </apex:outputPanel> 
+            </apex:actionRegion>            
+        </apex:column>
+        <apex:column >
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;          
+           <apex:outputText value="Select Device named 'None' if there is no Lead Device." style="font-style:italic;"/>
+        </apex:column>
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorLeadDevice)>0}"/>
+    <apex:outputText value="{!errorLeadDevice}" style="color:red;margin-left:1%;" rendered="{!LEN(errorLeadDevice)>0}"/>
+   
+    <br />
+    <apex:outputPanel id="dependentSADate">
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;white-space:nowrap;margin-left:1%;">        
+        <apex:column headerValue="Lead Device SA Date">                  
+            <apex:outputField value="{!contract.Lead_Device_SA_Date__c}" id="lrb" style="width:200px"/>           
+            <apex:outputText value="No Device Selected" style="font-style:italic" rendered="{!(ISNULL(contract.Lead_Device__c))}"/>           
+        </apex:column>              
+    </apex:dataTable>
+    </apex:outputPanel>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Is the software planned to be part of stable?">                   
+            <apex:actionRegion >                
+                <apex:outputPanel styleClass="requiredInput" layout="block">
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{!contract.Software_planned_to_be_part_of_stable__c}" id="lrb" style="width:200px">           
+                            <apex:actionSupport event="onchange"
+                                rerender="platformSel, stableSel"
+                                />
+                        </apex:inputField> 
+                </apex:outputPanel>  
+            </apex:actionRegion>            
+        </apex:column>       
+    </apex:dataTable> 
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorSWstable)>0}"/>
+    <apex:outputText value="{!errorSWstable}" style="color:red;margin-left:1%;" rendered="{!LEN(errorSWstable)>0}"/>   
+    
+    <br />
+    <apex:outputPanel id="platformSel">   
+    <apex:dataTable value="{!varContPlat}" var="platformtable" rendered="{!contract.Software_planned_to_be_part_of_stable__c=='No'}" style="line-height:200%;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Software Platforms">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!varContPlat.Platform__c}" required="false" id="textques1" style="width:200px"/>
+            </apex:outputPanel>            
+        </apex:column>      
+   
+        <apex:column >
+            <apex:commandButton action="{!DynamicRowPlatform}" value="ADD PLATFORM" reRender="platformSel" style="width:92px;"/>
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        </apex:column>      
+   
+        <apex:column >
+            <apex:facet name="header"><b>Selected Platforms</b></apex:facet>
+            <apex:outputText value="No Software Platform Selected" style="font-style:italic" rendered="{!(pNames.size<=0)}"/>           
+            <apex:repeat value="{!pNames}" var="platforms" id="theRepeat" >
+                <apex:outputText value="{!platforms}" id="theValue" style="line-height:100%;"/><br/>
+            </apex:repeat>
+        </apex:column>
+    </apex:dataTable>
+    </apex:outputPanel>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessagePlatform)>0}"/>
+    <apex:outputText value="{!errorMessagePlatform}" style="color:red;margin-left:1%;" rendered="{!LEN(errorMessagePlatform)>0}"/>
+    
+    <apex:outputPanel id="stableSel">   
+    <apex:dataTable value="{!varContStab}" var="stableTable" rendered="{!contract.Software_planned_to_be_part_of_stable__c=='Yes'}" style="line-height:200%;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Stables">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!varContStab.Stable__c}" required="false" id="textques1" style="width:200px"/>
+            </apex:outputPanel>            
+        </apex:column>      
+   
+        <apex:column >
+            <apex:commandButton action="{!DynamicRowStable}" value="ADD STABLE" reRender="stableSel" style="width:92px;"/>
+            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        </apex:column>      
+   
+        <apex:column >
+            <apex:facet name="header"><b>Selected Stables</b></apex:facet>
+            <apex:outputText value="No Stables Selected" style="font-style:italic" rendered="{!(sNames.size<=0)}"/>           
+            <apex:repeat value="{!sNames}" var="stables" id="theRepeat" >
+                <apex:outputText value="{!stables}" id="theValue" style="line-height:100%;"/><br/>
+            </apex:repeat>
+        </apex:column>
+    </apex:dataTable>
+    </apex:outputPanel>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageStable)>0}"/>
+    <apex:outputText value="{!errorMessageStable}" style="color:red;margin-left:1%;" rendered="{!LEN(errorMessageStable)>0}"/>
+       
+    <br />
+    <br />
+    <div style="background-color:#787878 ;height:40px;border-radius:0px;line-height:350%;">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-size:20px;color:#FFFFFF;align:center;"><strong>Finance Details:</strong></span>
+    </div>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Business Unit">   
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.BusinessUnit__c}" id="lrb" style="width:200px"/>           
+            </apex:outputPanel>                    
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorBusUnit)>0}"/>
+    <apex:outputText value="{!errorBusUnit}" style="color:red;margin-left:1%;" rendered="{!LEN(errorBusUnit)>0}"/>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Motorola Entity"> 
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:actionRegion > 
+                        <apex:inputField value="{!contract.Motorola_Entity__c}" id="lrb" style="width:200px">
+                            <apex:actionSupport event="onchange" rerender="entity" />
+                        </apex:inputField>
+                    </apex:actionRegion>           
+            </apex:outputPanel>                      
+        </apex:column>                    
+    </apex:dataTable>
+    
+    <br />
+    <apex:outputPanel id="entity">
+        <apex:dataTable value="{!contract}" var="cont" rendered="{!contract.Motorola_Entity__c!='Motorola Mobility Inc'}" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+            <apex:column id="entity" headerValue="If Motorola Mobility Inc is not signing entity has there been tax approval?" > 
+                <apex:outputPanel styleClass="requiredInput" layout="block">  
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{!contract.Tax_Approval_For_Non_MMI_Entity__c}" id="taxapproval" style="width:200px"/>
+                </apex:outputPanel>                      
+            </apex:column>   
+        </apex:dataTable>
+    </apex:outputPanel>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMotoEntity)>0}"/>
+    <apex:outputText value="{!errorMotoEntity}" style="color:red;margin-left:1%;" rendered="{!LEN(errorMotoEntity)>0}"/>
+    
+         
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Business Unit Type/Seconday Finance Approval">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Business_Unit_Type__c}" id="cat" style="width:200px"/>
+            </apex:outputPanel>            
+        </apex:column>       
+    </apex:dataTable>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorFinApproval)>0}"/>
+    <apex:outputText value="{!errorFinApproval}" style="color:red;margin-left:1%;" rendered="{!LEN(errorFinApproval)>0}"/>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Is there any cost associated with the contract? (i.e. NRE, services, or maintenance)">
+            <apex:actionRegion >           
+            <apex:inputField value="{!contract.Is_there_NRE__c}" id="lrb" style="width:200px">
+            <apex:actionSupport event="onchange" rerender="dependentCost" />
+            </apex:inputField>  
+            </apex:actionRegion>       
+        </apex:column>       
+    </apex:dataTable>
+
+    <br />
+    <apex:outputPanel id="dependentCost">   
+    <apex:dataTable value="{!contract}" var="cont1" rendered="{!contract.Is_there_NRE__c=='Yes'}" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Cost Center">
+        <div style="font-size:0.8em;">*If there are multiple cost centers, separate by commas and add explanation for what each will cover</div>
+        <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Cost_Center__c}" id="lrb1"  style="width:400px"/>
+            </apex:outputPanel>            
+        </apex:column>       
+    </apex:dataTable>   
+    </apex:outputPanel>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorCostCenter)>0}"/>
+    <apex:outputText value="{!errorCostCenter}" style="color:red;margin-left:1%;" rendered="{!LEN(errorCostCenter)>0}"/>
+    
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Has Finance done NPV analysis? (If there is a Prepay or Minimum Guarantee)">
+            <apex:inputField value="{!contract.Has_Finance_done_NPV_Analysis__c}" id="npv" style="width:200px"/>
+        </apex:column>       
+    </apex:dataTable>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Category/Commodity">
+            <apex:inputField value="{!contract.Category_Commodity__c}" id="cat" style="width:200px"/>
+        </apex:column>       
+    </apex:dataTable>
+   
+    <br />
+     <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Risks/Mitigations Plans">           
+            <apex:inputField value="{!contract.Risks_Mitigations_Plans__c}" id="lrb" style="width:400px"/>           
+        </apex:column>       
+    </apex:dataTable>
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;"> 
+        <apex:column headerValue="Proposed Payment Triggers">           
+            <apex:inputField value="{!contract.Payment_Triggers__c}" id="lrb" style="width:400px"/>           
+        </apex:column>       
+    </apex:dataTable>
+   
+     <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Is there Revenue Share?">           
+            <apex:inputField value="{!contract.Rev_Share__c}" id="lrb" style="margin-left:1%">           
+            <apex:actionSupport event="onchange"
+                                rerender="dependentRevShare"
+                                />
+            </apex:inputField>
+        </apex:column>       
+    </apex:dataTable>
+    
+    <br />
+    <apex:outputPanel id="dependentRevShare">   
+    <apex:dataTable value="{!contract}" var="cont1" rendered="{!contract.Rev_Share__c=true}" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Revenue Share Details">
+            <apex:outputPanel styleClass="requiredInput" layout="block">  
+                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{!contract.Rev_Share_Details__c}" id="lrb1"  style="width:400px"/>
+            </apex:outputPanel>            
+        </apex:column>       
+    </apex:dataTable>   
+    </apex:outputPanel>
+    <apex:outputText value=" " style="color:red;" rendered="{!LEN(errorRevShare)>0}"/>
+    <apex:outputText value="{!errorRevShare}" style="color:red;margin-left:1%;" rendered="{!LEN(errorRevShare)>0}"/>   
+    
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Is there a Cap?">           
+            <apex:inputField value="{!contract.Is_there_a_Cap__c}" id="lrb" style="width:400px"/>           
+        </apex:column>       
+    </apex:dataTable>
+   
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Parent Contract">           
+            <apex:inputField value="{!contract.Parent_Contract__c}" id="lrb" required="False" style="width:200px"/>           
+        </apex:column>       
+    </apex:dataTable>  
+    
+    <apex:dataTable value="{!contract}" var="cont" rendered="false">
+        <apex:column headerValue="Print out contractNumber so it is included in controller.getrecord()">           
+            <apex:inputField value="{!contract.ContractNumber }"/>           
+        </apex:column>       
+    </apex:dataTable>
+    
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;" rendered="false">
+        <apex:column headerValue="This should be hidden, only on page to pull AccountId field from standardController getRecord()">
+            <apex:inputField value="{!contract.AccountId}" id="lrb" style="width:200px"/>           
+        </apex:column>        
+    </apex:dataTable>   
+   
+    <!--<br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Related Contract">           
+            <apex:inputField value="{!applyRulesContract.Contract_Related__c}" id="lrb" required="False" style="width:200px"/>           
+        </apex:column>       
+    </apex:dataTable>   
+   
+    <br />
+    <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-left:1%;">
+        <apex:column headerValue="Bundling Contract">           
+            <apex:inputField value="{!bundlingContract.Contract_Related__c}" id="lrb" style="width:200px"/>           
+        </apex:column>       
+    </apex:dataTable>  --> 
+    <br />
+    <br />          
+    <br />
+       
+    <div align="center">
+    <apex:panelGrid columns="4" id="theGrid">
+        <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        <apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:auto;" />
+        <apex:commandButton action="{!nextAppLegalCountries}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+    </apex:panelGrid>
+    
+    <!-- <apex:dataTable value="{!contract}" var="cont" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:41%;">
+        <apex:column >
+            <apex:commandButton action="{!cancelmainform}" value="Cancel" style="width:65px;align:center;margin-right:auto;margin-left:auto;" />
+        </apex:column>
+        
+        <apex:column >
+            <apex:commandButton action="{!submit}" value="Save & Continue Later" style="width:150px;align:center;margin-right:auto;margin-left:10%;" />
+        </apex:column>  
+       
+        <apex:column >
+            <apex:commandButton action="{!nextAppLegalCountries}" value="Next" style="width:65px;align:center;margin-right:auto;margin-left:20%;" />
+        </apex:column>       
+    </apex:dataTable>
+    -->
+    </div>
+    <br /> 
+   </apex:pageBlock>          
+</apex:form>
+
+</td>
+</tr>
+</table>
+</body>
+</apex:page>

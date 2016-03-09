@@ -1,0 +1,57 @@
+<apex:page standardController="zqu__Quote__c" extensions="SendToZBillingController">
+<!-- Need a preview page for the custom send to zbilling process -->
+    <apex:form >
+        <apex:pageMessages id="message"/>
+        <apex:pageBlock title="Quote Details" >
+            <apex:pageBlockButtons id="operations">
+	            <apex:actionStatus id="statusId">
+				  <apex:facet name="stop">
+				    <apex:outputPanel >
+		                <apex:commandButton value="Send to Z-Billing" action="{!send}" reRender="operations, message" status="statusId" rendered="{!!sendCalled}"/>
+		                
+		                <apex:commandButton value="Return to Quote Overview" action="{!goToQuote}" status="statusId" />
+				    </apex:outputPanel>
+				  </apex:facet>
+				  <apex:facet name="start">
+				    <apex:outputPanel >
+				      <apex:image value="/img/loading32.gif" style="height: 12px" />  
+				      <apex:commandButton value="Processing..."
+				                status="statusId"
+				                disabled="true"
+				                rerender="operations" />  
+				    </apex:outputPanel>
+				  </apex:facet>
+				</apex:actionStatus>
+        
+<!--                 <apex:commandButton value="Send to Z-Billing" action="{!send}" reRender="operations, message"/> -->
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Basic Information" columns="2" rendered="{!quote.zqu__SubscriptionType__c == 'New Subscription'}">
+                <apex:repeat value="{!$ObjectType.zqu__Quote__c.FieldSets.zqu__Account_Details}" var="previewBasicInfoField">
+                <apex:outputField value="{!quote[previewBasicInfoField]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information" columns="2" rendered="{!quote.zqu__SubscriptionType__c == 'New Subscription'}">
+                <apex:repeat value="{!$ObjectType.zqu__Quote__c.FieldSets.zqu__Contact_Info}" var="previewContactField">
+                <apex:outputField value="{!quote[previewContactField]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Subscription Information" columns="2">
+                <apex:repeat value="{!IF(quote.zqu__SubscriptionType__c == 'New Subscription',
+                $ObjectType.zqu__Quote__c.FieldSets.zqu__Subscription_Terms,
+                $ObjectType.zqu__Quote__c.FieldSets.zqu__Amend_Quote_Subscription_Terms)}" var="previewSubscriptionField">
+                <apex:outputField value="{!quote[previewSubscriptionField]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Charge Groups" columns="1">
+                <apex:outputPanel >
+                     <apex:repeat value="{!chargeGroupList}" var="group">
+           	             <c:z_SampleChargeSection id="cChargeSec"  chargeGroup="{!group}" quoteIdVal="{!zqu__Quote__c.Id}" editableVal="false" from="SendToZBillingPage"/> 
+<!-- 					 		<zqu:zChargeGroup chargeGroup="{!group}" editMode="false" /> -->
+                     </apex:repeat>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+
+</apex:page>

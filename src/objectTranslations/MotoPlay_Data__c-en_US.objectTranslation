@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MotoPlay Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MotoPlay Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- App Version --></label>
+        <name>App_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Rating --></label>
+        <name>Current_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Daily User Uninstalls --></label>
+        <name>Daily_User_Uninstalls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emporium Date Last Downloaded --></label>
+        <name>Emporium_Date_Last_Downloaded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emporium ID --></label>
+        <name>Emporium_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emporium Last Uploader --></label>
+        <name>Emporium_Last_Uploader__c</name>
+        <relationshipLabel><!-- MotoPlay Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Emporium Name --></label>
+        <name>Emporium_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- GPS Name --></label>
+        <name>GPS_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Push Date --></label>
+        <name>Push_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+        <picklistValues>
+            <masterLabel>Chrome</masterLabel>
+            <translation><!-- Chrome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emporium</masterLabel>
+            <translation><!-- Emporium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS</masterLabel>
+            <translation><!-- GPS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total User Installs --></label>
+        <name>Total_User_Installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total User installs with active device --></label>
+        <name>Total_User_installs_with_active_device__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Devices w/ installs --></label>
+        <name>Total_of_Devices_w_installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Installs on active Devices --></label>
+        <name>Total_of_Installs_on_active_Devices__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Downloads --></label>
+        <name>of_Downloads__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

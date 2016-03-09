@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application Download Stats</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Application Download Stats</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Application Download Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Carrier Input --></label>
+        <name>Carrier_Input__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <relationshipLabel><!-- Application Download Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- Application Download Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date_last_download --></label>
+        <name>Date_last_download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language Input --></label>
+        <name>Language_Input__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number_of_downloads --></label>
+        <name>Number_of_downloads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall --></label>
+        <name>Overall__c</name>
+        <relationshipLabel><!-- Application Download Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Package Name --></label>
+        <name>Package_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqueID Length --></label>
+        <name>UniqueID_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqueID --></label>
+        <name>UniqueID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uploaded By --></label>
+        <name>Uploaded_by__c</name>
+        <relationshipLabel><!-- Application Download Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Uploaded_on --></label>
+        <name>Uploaded_on__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- country Input --></label>
+        <name>country_Input__c</name>
+    </fields>
+    <fields>
+        <label><!-- current_device_installs --></label>
+        <name>current_device_installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- current_user_installs --></label>
+        <name>current_user_installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_anrs --></label>
+        <name>daily_anrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_avg_rating --></label>
+        <name>daily_avg_rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_crashes --></label>
+        <name>daily_crashes__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_device_installs --></label>
+        <name>daily_device_installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_device_uninstalls --></label>
+        <name>daily_device_uninstalls__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_device_upgrades --></label>
+        <name>daily_device_upgrades__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_user_installs --></label>
+        <name>daily_user_installs__c</name>
+    </fields>
+    <fields>
+        <label><!-- daily_user_uninstalls --></label>
+        <name>daily_user_uninstalls__c</name>
+    </fields>
+    <fields>
+        <label><!-- os_version --></label>
+        <name>os_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- total_avg_rating --></label>
+        <name>total_avg_rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- total_user_installs --></label>
+        <name>total_user_installs__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Download Stats Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Emporium --></label>
+        <name>Emporium</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Google Play Store --></label>
+        <name>Google_Play_Store</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

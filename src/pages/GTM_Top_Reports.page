@@ -1,0 +1,498 @@
+<apex:page standardController="Report" tabStyle="GTM_Top_Reports__tab">
+
+
+<!-- Set-Up Table Column Widths -->
+
+<style>
+    .container{
+        width:100%;
+        height:90px;
+    }
+    .body{
+        width:100%;  
+    }
+    .Col1 { 
+        width: 1%;
+        padding-bottom: 10px;
+    }
+    .Col2 { 
+        width: 29%; 
+        padding-bottom: 10px;
+    }
+    .Col3 { 
+        width: 50%;    
+        padding-bottom: 10px;
+    }
+    .Col4 { 
+        width: 20%;
+        padding-bottom: 10px;
+    }  
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="/soap/ajax/20.0/connection.js" type="text/javascript"></script>
+
+<script>
+   
+    var getTokenURL = 'https://devtab.blurdev.com/rss-portal/app/reports/getToken';
+    //var mapURL = 'https://devtab.blurdev.com/rss-portal/app/reports/unauthorizedViewRedirect?viewname=';
+    var mapURL = 'https://devtab.blurdev.com/rss-portal/app/reports/securedViewRedirect?viewname=';
+    var token = '';
+    var user_id;         
+
+    var j$ = jQuery.noConflict();
+
+    // Get the MAP token when the page loads
+    j$(function(){
+
+        // Replace the core ID dynamically with the logged in user's core ID
+        var core_or_mm_id;         
+        try{    
+           sforce.connection.sessionId = "{!$Api.Session_ID}"; //Used for Session out        
+           var qr = sforce.connection.query("Select Id,FederationIdentifier from User Where Username ='" + '{!$User.Username}' + "'");                    
+           records = qr.getArray("records");
+           if(records[0]) {
+                core_or_mm_id = records[0].FederationIdentifier;
+            }
+            user_id = core_or_mm_id;
+
+        var dataString = 'userid=' + core_or_mm_id + 
+                        '&appid=salesforce&privatekey=5674234567';
+                        
+        token = getTokenURL + '?userid=' + core_or_mm_id + '&appid=salesforce&privatekey=5674234567';
+
+        j$.ajax({
+            type: "POST",
+            url: getTokenURL,
+            dataType: "jsonp",
+            data: dataString,
+            crossDomain: true,
+            timeout: 10000,
+
+            success: function(data) {
+                token = data.value;
+                console.log('Token: ' + token);
+            },
+
+            error: function(xhr, ajaxOptions, error) {
+                console.log('You are NOT authorized view this Tableau report. Error: ' 
+                      + error + ', Error Status: ' + xhr.status);
+            }
+        });
+         } catch(e){ 
+            alert('An Error has Occured. Error:' +e); 
+        }
+    });
+
+    function mapAuthentication(reportURL) {
+       if (token == '') {
+            alert('You are NOT authorized to view this report.');
+        } else {
+            var srcVal = "/apex/iframe?sfdc.tabName=01r40000000ADjD&url=" +
+                        encodeURIComponent(mapURL + reportURL + "&token=" + token);
+            window.open(srcVal);
+        }
+    }
+
+</script>
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NNK2FX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NNK2FX');</script>
+<!-- End Google Tag Manager -->
+
+
+<apex:form >
+
+    <!--  Column Headers -->
+    <apex:pageblock title="Top Reports (No VPN/Citrix required)">
+     <apex:panelGrid columns="4" columnClasses="Col1, Col2, Col3, Col4" width="100%">            
+            <apex:outputText >&nbsp;</apex:outputText>
+            <apex:outputText ><strong><u>Report Name</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Description</u></strong></apex:outputText>
+            <apex:outputText ><strong><u>Remarks</u></strong></apex:outputText>
+        </apex:panelGrid>    
+    <!--</apex:pageblock>-->
+    <strong><font color="red">These reports are now restricted based on your Geo-access.<br/>To request or modify your data access please fill this <a href="https://docs.google.com/a/motorola.com/forms/d/1nAoKDE46hFK-dw3hjkdfD4R5rvhmw7pZY5IqaK15tjY/viewform" target = "BLANK">form </a> or contact GEO Sales Ops if unable to open form.</font></strong>
+    <br />
+    <br />
+    <!-- Rows -->
+    <apex:outputPanel layout="block" styleclass="body">
+        <!--<apex:pageBlock mode="view">-->
+           
+                 <apex:panelGrid columns="1" id="theGrid2" columnClasses="Col1" width="100%">
+                 </apex:panelGrid>           
+                 <apex:pageBlockSection title="Moto Sales Performance Management" columns="1" collapsible="true">
+                  
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+                    <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Global_Operations_Summary/GlobalOperationsSummary?:embed=yes" >Global Ops Report</apex:outputLink>
+                    <apex:outputText >Shipment, Open Order, Supply Request vs Sales Fcst vs Finance Fcst vs Targets </apex:outputText>
+                    <apex:outputText >Refresh rate - 30 Minutes</apex:outputText>
+                    
+                    <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/GlobalOpsExceptionReport/GlobalOpsExceptionDashboard?:embed=yes" >Operational Exception Report </apex:outputLink>
+                    <apex:outputText > Check Excpetions for Shipment vs Sales Forecast vs Outlook</apex:outputText>
+                    <apex:outputText >Refresh rate - 30 Minutes</apex:outputText>   
+
+                    <apex:outputText >3.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Moto-OnePagerSummary/OnePagerSummary?:embed=yes" >One Pager Summary</apex:outputLink>                  
+                    <apex:outputText >Financials, Sales Fcst, Orders, Activation Targets, Activation Trends, SIC and WOH</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+                    
+                    <apex:outputText >4.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/IDCTAM2/TAMSummary?:embed=yes">TAM Dashboard</apex:outputLink>                  
+                    <apex:outputText >Compares Market Trends using IDC and internal data</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                    
+                    <apex:outputText >5.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/EOLSummary/LifetimeConsumptionSummary?:embed=yes">EOL Dashboard</apex:outputLink>                  
+                    <apex:outputText >Creates a scenario of EOL plans for products based on targets</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+                    
+                    <apex:outputText >6.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Sell-InWoWTrend/Sell-InWoWSummary?:embed=yes">Order + Shipment Trend</apex:outputLink>                  
+                    <apex:outputText >WOW trend for open order + Shipment vs Targets/Outlook/Plan </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+        
+            <apex:pageBlockSection title="Sales Forecast / Opportunity" columns="1" collapsible="true" showHeader="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">
+
+                    <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/OpportunitySummaryDashboardMDW/OpportunitySummary?:embed=yes">Current View</apex:outputLink>
+                    <apex:outputText >Sales Forecast Summary</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+
+                    <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/OpportunitySummaryDashboardMDW-ReasonCode/ReasonCode?:embed=yes" >
+                        Product Forecast Category Reason Code
+                    </apex:outputLink>
+                    <apex:outputText > Check the Reason for Forecast Category for Sales Forecast</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+              
+                    <apex:outputText >3.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/WoWProductOpportunityDashboard/UCDSalesPipelineWoW?:embed=yes" >Week on Week Comparison</apex:outputLink>
+                    <apex:outputText >Combines Week on Week and Last Snapshot vs CWV reports to allow Sales Forecast comparison on either</apex:outputText>
+                    <apex:outputText >Refresh rate - Every Saturday</apex:outputText>
+                     
+                    <apex:outputText >4.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/DoDProductOpportunityDashboard/UCDSalesPipelineDoD?:embed=yes" > DOD Opportunity Summary</apex:outputLink>
+                    <apex:outputText >Day on Day change in Sales Forecast</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Day</apex:outputText>
+     
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Ranging & SA" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/NPICustomerSATracker/NPISATracker?:embed=yes" >NPI SA Tracker</apex:outputLink>
+                    <!-- <apex:outputLink style="font-weight:bold" target="_blank" onclick="mapAuthentication('t/Site6/views/NPISATracker/NPISATracker&tableauSite=Site6&userName=bizops&:refresh=yes&container=iframe&server=tableau'); return false;">
+                       NPI SA Tracker
+                    </apex:outputLink> -->
+                    <apex:outputText > Dates for SA and In-Market availability for Product</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+                    
+                    <apex:outputText >2.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/RangingDashboard/RangingDashboard?:embed=yes" >Ranging Dashboard</apex:outputLink>
+                    <apex:outputText >Which customers are "Ranging" our products </apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hours</apex:outputText>
+
+                    <apex:outputText >3.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/RangingWoW/View1?:embed=yes">Ranging WOW</apex:outputLink>
+                    <apex:outputText > Compare week on week for Ranging changes</apex:outputText>
+                    <apex:outputText >Refresh Rate - 1 Week</apex:outputText>
+                    
+                    <apex:outputText >4.</apex:outputText>     
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ProductRangingMatrix/CountryWiseRanging?:embed=yes">Product Ranging Matrix</apex:outputLink>
+                    <apex:outputText > Tabular View of ranging for NPI Product, Customer Account and Region</apex:outputText>
+                    <apex:outputText >Refresh Rate - 1 Day</apex:outputText>
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Activations" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                      <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ActivationDashboard-Amit/MarketSummary?:embed=yes" >Activation Summary</apex:outputLink>
+                    <apex:outputText >Activation Dashboard (includes activation trend @ SKU level)</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                    
+                    <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/TownCityActivations/CityLevel?:embed=yes" >Town / City Activations</apex:outputLink>                  
+                    <apex:outputText >Town/City Activation (US/Canada)</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                 
+                    <apex:outputText >3.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ProductLaunchVelocity/ProductLaunchVelocity_1?:embed=yes" >Product Activation Velocity Dashboard</apex:outputLink>                  
+                    <apex:outputText >Product Activation Velocity Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                
+                    <apex:outputText >4.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Cross_Country_Activation/Cross_Country?:embed=yes">Cross Country Activation Dashboard</apex:outputLink>
+                    <apex:outputText >Shows activation for handsets activated outside of original Country</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                
+                  <apex:outputText >5.</apex:outputText> 
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/OperatorDashboard/Summary?:embed=yes">Operator Dashboard</apex:outputLink>                          
+                    <apex:outputText >Shows activations for key account to operator for non-carrier accounts</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hour </apex:outputText>
+                    
+                    
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="Activation Targets" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">  
+               
+                <apex:outputText >1.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/FYQ2TargetVsActivations/ExecutiveSummary?:embed=yes" >FY Q2 2015 Activation Target Dashboard</apex:outputLink>                  
+                    <apex:outputText >2015 FY Q2 Actual Activations vs. Targets</apex:outputText>
+                    <apex:outputText > Refresh rate - 24 Hours</apex:outputText>
+                
+                <apex:outputText >2.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/FYQ1TargetVsActivations/ExecutiveSummary?:embed=yes" >FY Q1 2015 Activation Target Dashboard</apex:outputLink>                  
+                    <apex:outputText >2015 FY Q1 Actual Activations vs. Targets</apex:outputText>
+                    <apex:outputText > Completed</apex:outputText>
+                       
+                    <apex:outputText >3.</apex:outputText>
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/CPTargets/ExecSummary?:embed=yes" > FY Q1 2015 CP Sellout Target Dashboard</apex:outputLink>                  
+                    <apex:outputText >2015 FY Q1 CP Actual Sellout vs. Targets</apex:outputText>
+                    <apex:outputText >Completed</apex:outputText>                    
+                   
+                    
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="SIC (Stock in Channel)" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                    
+                    <apex:outputText >1.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/SICTrends/SICOverview?:embed=yes" >
+                        SIC - Trends Dashboard
+                    </apex:outputLink>
+                    <apex:outputText >Where is excess stock, Stock out scenario ? - By Account by Product</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                    
+                                        
+                    <apex:outputText >2.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/SICMoto360/SICOverview?:embed=yes" >SIC - Moto 360</apex:outputLink>
+                    <apex:outputText >Moto 360 SIC Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>  
+                    
+                                            
+                     <apex:outputText >3.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/SICNexus6/SICOverview?:embed=yes" >SIC - Nexus 6</apex:outputLink>
+                    <apex:outputText >Nexus 6 SIC Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                    
+                    <apex:outputText >4.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/POTracker/POTracker?:embed=yes" >PO Tracker</apex:outputLink>
+                    <apex:outputText >PO Tracker</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+                         <apex:pageBlockSection title="Retail Channel Management" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                    <apex:outputText >1.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/RetailerDashboard/RetailerSummary?:embed=yes" >Consolidated Channel Data Dashboard</apex:outputLink>
+                    <apex:outputText >Consolidated Channel Dashboard (includes retailers and carriers)</apex:outputText>
+                    <apex:outputText >Refresh rate – Weekly (Sunday)</apex:outputText>
+
+                    <apex:outputText >2.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ATTChannelManagement/ATTSummary?:embed=yes" >ATT Channel Management</apex:outputLink>
+                    <apex:outputText >ATT Channel reporting using daily Sellthru feed</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                    
+                    <apex:outputText >3.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/VerizonChannelManagement/Summary?:embed=yes" >Verizon Channel Management</apex:outputLink>
+                    <apex:outputText >Verizon Channel reporting using daily Sellthru feed</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+
+                    <apex:outputText >4.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/USCChannelManagement/Summary?:embed=yes" >USC Channel Management</apex:outputLink>
+                    <apex:outputText >USC Channel reporting using daily Sellthru feed</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+
+                    <apex:outputText >5.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/MexicoRetailChannelManagement/Mexico?:embed=yes" >Mexico Retail Channel Management</apex:outputLink>
+                    <apex:outputText >Mexico Retail Channel reporting using weekly sellthru and inventory feeds</apex:outputText>
+                    <apex:outputText >Refresh rate - Weekly (Thursday)</apex:outputText>
+                    
+                     <apex:outputText >6.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/NARetailChannelManagement/BestBuySummary?:embed=yes" >NA Retail Channel Management</apex:outputLink>
+                    <apex:outputText >NA Retail Channel dashboard (includes Best Buy, Best Buy Canada, Target currently)</apex:outputText>
+                    <apex:outputText >Refresh rate – Weekly (Sunday)</apex:outputText>
+                    
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Campaign Reports / Dashboards" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                     <apex:outputText >1.</apex:outputText>     
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/CampaignDashboard/CAMPAIGNSUMMARY?:embed=yes" > Campaign Dashboard (New Version) </apex:outputLink>
+                    <apex:outputText >Campaign/Promotion Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+
+                    <apex:outputText >2.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/Campaign_Timeline">Campaign Timeline</apex:outputLink>
+                    <apex:outputText >Timeline of Promotion Campaigns.</apex:outputText>
+                    <apex:outputText >Refresh rate - Realtime</apex:outputText>
+                    
+                          <apex:outputText >3.</apex:outputText>     
+                   <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/Marketing/views/MARKETINGCALENDARVIEW/CAMPAIGNCALENDARVIEW#1?:embed=yes" > Campaign Calendar (Marketing) </apex:outputLink>
+                    <apex:outputText >Timeline of Marketing Campaigns</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+
+               
+                    
+                   
+
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Miscellaneous" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                    
+                                                            
+                    <apex:outputText >1.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/MotoAgents/MotoKPIs?:embed=yes" > Moto Agents Dashboard (North America Only)</apex:outputLink>
+                    <apex:outputText >Moto Agents Dashboard</apex:outputText>
+                    <apex:outputText >Refresh rate - Monthly</apex:outputText>
+                    
+                    <apex:outputText >2.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=/apex/CES?id={!$User.Id}">Meetings Dashboard (formerly CES)</apex:outputLink>
+                    <apex:outputText >Table of all CES/MWS/CTIA/etc Meetings and related materials</apex:outputText>
+                    <apex:outputText >Refresh rate - Realtime</apex:outputText>
+                    
+                    <apex:outputText >3.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/KPIMeasurement/CurrentQuarter?:embed=yes" >  KPI Dashboard(Pilot)  </apex:outputLink>
+                    <apex:outputText >KPI Measurement Pilot. Global Ops, Activations, SIC</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText>
+                
+                    <apex:outputText >4.</apex:outputText>
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/WoWSupplyTrend/SupplyRequestWeekComparison?:embed=yes" > Supply Request Dashboard (Pilot)</apex:outputLink>
+                    <apex:outputText >Supply Request WoW</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+                     <apex:outputText >5.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ExecutiveSummary/ExecutiveSummaryFINANCIAL?:embed=yes" >WoW Executive Summary</apex:outputLink>
+                    <apex:outputText > Comparison of Supply Request vs Sales Fcst vs Finance Fcst Week over Week and Daily</apex:outputText>
+                    <apex:outputText >Refresh rate - 24  Hours</apex:outputText>
+                    
+                     <apex:outputText >6.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ChinaActivationDashboard/ChinaSummary?:embed=yes" >China Dashboard</apex:outputLink>
+                    <apex:outputText > China Activations by Carrier, location, and products</apex:outputText>
+                    <apex:outputText >Refresh rate - 24  Hours</apex:outputText>
+                    
+                    <apex:outputText >7.</apex:outputText>     
+                     <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ScenarioPlanning/ScenarioPlanning?:embed=yes" >Global Ops Summary (Graphical Scenario)</apex:outputLink>
+                    <apex:outputText >Global Ops Summary - Graphical Scenario</apex:outputText>
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>    
+                    
+                    <apex:outputText >8.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/AggregateReport/AggregateReport?:embed=yes" >Aggregate View Dashboard</apex:outputLink>
+                    <apex:outputText >Includes Ranging, SA Date, Market Launch Date, Opportunity</apex:outputText>
+                    <apex:outputText >Refresh rate - 24 Hours</apex:outputText> 
+                    
+                                     
+                    <apex:outputText >9.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/WeeklyOnePageSummary/Q1Summary?:embed=yes">
+                        Current Quarter One Page Summary
+                    </apex:outputLink>
+                    <apex:outputText >Projects SIC, WOH, and other metrics for current quarter</apex:outputText>                    
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+                      <apex:outputText >10.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/ProductLifetimeTransition2/ProductLifetimeTransition?:embed=yes">
+                        Product Lifecycle Transition 
+                    </apex:outputLink>
+                    <apex:outputText >Transition from one gen to gen of products, including sell in, sell out, woh, and SIC</apex:outputText>                    
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+                     <apex:outputText >11.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/HWM/GlobalHWMSummary?:embed=yes">
+                        High Water Mark 
+                    </apex:outputLink>
+                    <apex:outputText >Calculates Global HWM for each product, also shows country distribution, and supply within lead time</apex:outputText>                    
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+          
+                    
+                      <apex:outputText >12.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SupplyChain/views/Demandforecastingtool/RegionalDemandplannerstab?:embed=yes">
+                        Demand Forecasting Tool
+                    </apex:outputLink>
+                    <apex:outputText >Sales Planning Tool (MuSigma)</apex:outputText>                    
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+                    
+                    <apex:outputText >13.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/OnePlan/OnePlanSummary?:embed=yes">
+                        One Plan Report (Pilot)
+                     </apex:outputLink>
+                    <apex:outputText ></apex:outputText>                    
+                    <apex:outputText >Refresh rate - 24 Hour</apex:outputText>
+                    
+                    <apex:outputText >14.</apex:outputText>     
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Deal/DealAgenda?:embed=yes">
+                        Deal Agenda (Pilot)
+                     </apex:outputLink>
+                    <apex:outputText >Deal Agenda</apex:outputText>                    
+                    <apex:outputText >Refresh rate - 1 Hour</apex:outputText>
+
+                    
+                    
+                   
+                                      
+                    </apex:panelgrid>
+            </apex:pageBlockSection>
+          
+            <apex:pageBlockSection title="CI Tools and Dashboards" columns="1" collapsible="true">
+                <apex:panelGrid columns="4" id="theGrid1" columnClasses="Col1, Col2, Col3, Col4" width="100%">                         
+
+                    <apex:outputText >1.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/CIBuildCompSet?sfdc.tabName=01r40000000HfWS">Competitive side by side Tool</apex:outputLink>
+                    <apex:outputText >Generates side-by-side views for existing and upcoming MOT products</apex:outputText>
+                    <apex:outputText ></apex:outputText>
+                    
+                    <apex:outputText >2.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/CompetitiveDashboard_1_0/SpecificationMatrix?:embed=yes" >Competitive Dashboard</apex:outputLink>
+                    <apex:outputText >To provide information with regard to - Total Competitive products by key segments, Competitive Matrix and SKU Intensity by Price tiers</apex:outputText>
+                    <apex:outputText ></apex:outputText>
+                    
+                    <apex:outputText >3.</apex:outputText>                           
+                    <apex:outputLink style="font-weight:bold" target="_blank" value="https://mobility.my.salesforce.com/a4w?fcf=00B40000006hLHd&rolodexIndex=-1&page=1">Saved Competitive Side by Side</apex:outputLink>
+                    <apex:outputText >Competitive Side by Side generated by Competitive Intelligence team</apex:outputText>
+                    <apex:outputText ></apex:outputText>
+
+                </apex:panelgrid>
+            </apex:pageBlockSection>
+            
+        <!--</apex:pageblock>-->
+    </apex:outputpanel>
+</apex:pageblock>
+</apex:form> 
+</apex:page>

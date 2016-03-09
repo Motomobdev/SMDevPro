@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal (custom-old)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deals (custom-old)</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Country --></label>
+        <name>Account_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Region --></label>
+        <name>Account_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Sub Region --></label>
+        <name>Account_Sub_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Sales force Account for which Deal is being created --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Deals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Deal Description --></label>
+        <name>Deal_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal # --></label>
+        <name>Deal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Finance Director for the Account --></help>
+        <label><!-- Finance Director --></label>
+        <name>Finance_Director__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Finance Director) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Has Attachments? --></label>
+        <name>Has_Attachments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has MDF/SDF Discount? --></label>
+        <name>Has_MDF_SDF_Discount__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is ASP &lt; Floor? --></label>
+        <name>Is_ASP_Less_Than_Floor__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is MDF/SDF Discount &gt; $500k? --></label>
+        <name>Is_MDF_SDF_Discount_Over_500k__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is NSBD &gt; $25M ? --></label>
+        <name>Is_NSBD_Greater_Than_25M__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Total Discount &gt; $100K? --></label>
+        <name>Is_Total_Discount_100K__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legal Approver1 --></label>
+        <name>Legal_Approver1__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Legal Approver1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legal Approver2 --></label>
+        <name>Legal_Approver2__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Legal Approver2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legal Approver3 --></label>
+        <name>Legal_Approver3__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Legal Approver3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legal Approver4 --></label>
+        <name>Legal_Approver4__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Legal Approver4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NSA --></label>
+        <name>NSA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Net Sales Before Discount --></help>
+        <label><!-- NSBD --></label>
+        <name>NSBD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portfolio Segment --></label>
+        <name>Portfolio_Segment__c</name>
+        <picklistValues>
+            <masterLabel>CP</masterLabel>
+            <translation><!-- CP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iDEN</masterLabel>
+            <translation><!-- iDEN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rejected By --></label>
+        <name>Rejected_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates how many times the deal has been rejected. --></help>
+        <label><!-- Rejection Counter --></label>
+        <name>Rejection_Counter__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date on which this deal will be reviewed --></help>
+        <label><!-- Review Date --></label>
+        <name>Review_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be checked by the Sales Ops team after the review. --></help>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales GM Responsible for the account --></help>
+        <label><!-- Sales GM --></label>
+        <name>Sales_GM__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Sales GM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sales VP for the account --></help>
+        <label><!-- Sales VP --></label>
+        <name>Sales_VP__c</name>
+        <relationshipLabel><!-- Deals (custom-old) (Sales VP) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted For Approval</masterLabel>
+            <translation><!-- Submitted For Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How many times did the user submit this deal for approval? --></help>
+        <label><!-- Submit Counter --></label>
+        <name>Submit_Counter__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Layout</layout>
+        <sections>
+            <label><!-- Approvers (This section will be auto updated upon saving the deal-1st time only) --></label>
+            <section>Approvers (This section will be auto updated upon saving the deal-1st time only)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Portfolio Segment --></label>
+            <section>Portfolio Segment</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Deal Name</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to check this during deal creation. --></errorMessage>
+        <name>Deal_Disallow_Has_Attachments</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Is MDF/SDF Discount &gt; 500k? --></errorMessage>
+        <name>MDF_SDF_Discount_Over_250K_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Portfolio</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Portfolios</value>
+    </caseValues>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Budget --></label>
+        <name>Planned_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portfolio Goals --></label>
+        <name>Portfolio_Goals__c</name>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction</masterLabel>
+            <translation><!-- Customer Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grow Business</masterLabel>
+            <translation><!-- Grow Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Run Business</masterLabel>
+            <translation><!-- Run Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformation</masterLabel>
+            <translation><!-- Transformation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Portfolio Long Description --></label>
+        <name>Portfolio_Long_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Investment Nature --></label>
+        <name>Portfolio_Type__c</name>
+        <picklistValues>
+            <masterLabel>Core</masterLabel>
+            <translation><!-- Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discretionary</masterLabel>
+            <translation><!-- Discretionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Discretionary</masterLabel>
+            <translation><!-- Non-Discretionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture</masterLabel>
+            <translation><!-- Venture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Portfolio Layout</layout>
+        <sections>
+            <label><!-- Detail --></label>
+            <section>Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

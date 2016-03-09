@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Rate Based Royalty Row</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Rate Based Royalty Row&apos;s</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract Rate Based Royalty --></label>
+        <name>Contract_Rate_Based_Royalty__c</name>
+        <relationshipLabel><!-- Contract Rate Based Royalty Row&apos;s --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- High Volume --></label>
+        <name>High_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Low Volume --></label>
+        <name>Low_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate per Unit --></label>
+        <name>Rate_per_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

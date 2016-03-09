@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <narrowComponents>NDA Menu</narrowComponents>
+    <narrowComponents>PMD Hierarchy</narrowComponents>
+    <narrowComponents>PMD Links</narrowComponents>
+    <narrowComponents>standard-RecentItems</narrowComponents>
+    <narrowComponents>standard-CreateNew</narrowComponents>
+    <narrowComponents>standard-UsefulLinks</narrowComponents>
+    <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
+    <wideComponents>Welcome to the Product Management Database</wideComponents>
+    <wideComponents>PMD Employee Obligation and Acknowledgment Confirmation:</wideComponents>
+    <wideComponents>standard-Dashboard</wideComponents>
+    <wideComponents>standard-ProcessWorkitems</wideComponents>
+</HomePageLayout>

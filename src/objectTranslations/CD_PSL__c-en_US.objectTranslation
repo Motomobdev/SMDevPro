@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CD_Preferred Supplier List</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Preferred Supplier List</value>
+    </caseValues>
+    <fields>
+        <label><!-- CD Category IOD OUT --></label>
+        <name>CD_Category_IOD_OUT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>CD_Category__c</name>
+        <relationshipLabel><!-- Preferred Supplier List --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PSL_ID --></label>
+        <name>PSL_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Name --></label>
+        <name>Supplier_Name__c</name>
+        <relationshipLabel><!-- Preferred Supplier List --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Supplier Number --></label>
+        <name>Supplier_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suppliername --></label>
+        <name>Suppliername__c</name>
+    </fields>
+    <layouts>
+        <layout>Preferred Supplier List</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

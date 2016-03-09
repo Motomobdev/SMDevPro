@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Current Ship Volume</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Current Ship Volumes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Current Ship Volumes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number of Date Range Records --></label>
+        <name>Range_number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a temporary field, used ONLY for the purpose of importing Microgen tables into SFDC.. this field serves no other purpose --></help>
+        <label><!-- Rate Table --></label>
+        <name>Rate_Table__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

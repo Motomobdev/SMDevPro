@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Governing_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract__r.EndDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Governing End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_Available_Countries_Condense__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Available Countries Condense</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Legal_Countries_Condensed__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Legal Countries Condensed</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>R00N40000001hQGjEAM</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BLUR_Type__c</fullName>
+        <description>&quot;pass-thru&quot; field, from Contracts to Application</description>
+        <externalId>false</externalId>
+        <formula>text(Contract__r.BLUR_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BLUR_Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BLUR_contract__c</fullName>
+        <description>pass-thru of the &quot;Blur Contract?&quot; field... from contract object to application object</description>
+        <externalId>false</externalId>
+        <formula>text(Contract__r.BLUR_Contract__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>&quot;pass-thru&quot; field.. only Admins can see this field</inlineHelpText>
+        <label>BLUR_contract</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BLUR_release__c</fullName>
+        <description>&quot;pass-thru&quot; field, from Contracts to Application</description>
+        <externalId>false</externalId>
+        <formula>text(Contract__r.BLUR_Release__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>&quot;pass-thru&quot; field, from Contracts to Application</inlineHelpText>
+        <label>BLUR_release</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractNameOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Governing_End_Date__c = True, Contract__r.Name,&quot;not gov end date&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContractNameOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractNumberOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Governing_End_Date__c = True, Contract__r.ContractNumber,&quot;not gov end date&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContractNumberOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractOwnerOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Governing_End_Date__c=TRUE, Contract__r.OwnerId, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContractOwnerOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractPhaseonCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Governing_End_Date__c = TRUE,
+(if(ispickval(Contract__r.Contract_Phase__c, &quot;Execution and Processing&quot;), &quot;Execution and Processing&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Term Sheet&quot;), &quot;Term Sheet&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;2 - LRB Phase&quot;)  , &quot;2 - LRB Phase&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Initial Legal Draft&quot;), &quot;Initial Legal Draft&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Redlines/Negotiations&quot;), &quot;Redlines/Negotiations&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Approvals&quot;), &quot;Approvals&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Dropped&quot;), &quot;Dropped&quot;,
+(if(ispickval(Contract__r.Contract_Phase__c,&quot;Investigating&quot;), &quot;Investigating&quot;,
+&quot;&quot;)))))))))))))))),
+&quot;not gov end date&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContractPhaseonCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractStatusonCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Governing_End_Date__c = TRUE,
+(if(ispickval(Contract__r.Contract_Status__c, &quot;NOT DRAFTED&quot;), &quot;NOT DRAFTED&quot;,
+(if(ispickval(Contract__r.Contract_Status__c,&quot;DRAFT&quot;), &quot;DRAFT&quot;,
+(if(ispickval(Contract__r.Contract_Status__c,&quot;Fully Executed&quot;), &quot;Fully Executed&quot;,
+(if(ispickval(Contract__r.Contract_Status__c,&quot;Dropped&quot;), &quot;Dropped&quot;,
+(if(ispickval(Contract__r.Contract_Status__c,&quot;Terminated&quot;), &quot;Terminated&quot;,
+&quot;&quot;)))))))))),
+&quot;not gov end date&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContractStatusonCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Application_External_Unique_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Contract_Application External Unique ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract__r.EndDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Rate_Based_Royalty_Table__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract Rate Based Royalty Table</label>
+        <referenceTo>Contract_Rate_Based_Royalty__c</referenceTo>
+        <relationshipLabel>Contract Applications</relationshipLabel>
+        <relationshipName>Contract_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>R00N40000001hQGiEAM</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>DecisionOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Contract__r.LRB_Final_Deal_Review_Decision__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DecisionOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Governing_End_Date__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This Contract governs the end date of this application for contractual coverage.</description>
+        <externalId>false</externalId>
+        <label>Governing End Date</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LRBApprovedDeviceOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(Contract__r.LRB_Approved_Device__c, 100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LRBApprovedDeviceOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LRBApprovedRegionOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract__r.LRB_Approved_Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LRBApprovedRegionOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LRBPipelineIDOnCA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract__r.LRB_Pipeline_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LRBPipelineIDOnCA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legally_Shippable__c</fullName>
+        <externalId>false</externalId>
+        <label>Legally Shippable</label>
+        <length>30000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Devices_App_is_on__c</fullName>
+        <description>From the applications object</description>
+        <externalId>false</externalId>
+        <formula>Application__r.of_Devices__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>From the applications object</inlineHelpText>
+        <label>Number of Devices App is on</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Temp__c</fullName>
+        <externalId>false</externalId>
+        <label>Temp</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Contract Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ContApp-{0000}</displayFormat>
+        <label>Contract Application Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Contract Applications</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Application__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contract__c</lookupPhoneDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Edit_Applications</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit Applications</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var w = 800;
+var h = 600;
+var left = (screen.width / 2) -(w / 2);
+var top = (screen.height / 2)-(h / 2);
+
+var popupWindow = window.open(&apos;/apex/editContractApplications?id={!Contract.Id}&apos;,&apos;Edit Contract Applications&apos;,&apos;width=&apos; + w + &apos;,height=&apos; + h + &apos;,top=&apos; + top + &apos;,left=&apos; + left);
+popupWindow.focus();</url>
+    </webLinks>
+</CustomObject>

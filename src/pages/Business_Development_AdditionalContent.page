@@ -1,0 +1,35 @@
+<apex:page showheader="false" sidebar="false" standardcontroller="Account" extensions="BDSite_Controller" >
+
+
+
+<style>
+.white
+{
+    color:white;
+    font-size:"14";
+
+} 
+
+
+</style>
+<!--Set-Up Banner & Tool Bar -->
+     <apex:image style="margin-top:20px;" url="{!URLFOR($Resource.Motorola_Mobility_Logo)}" width="500px" height="100px" />
+
+  <apex:form >
+
+
+   <apex:toolbar style="margin-top:50px;margin-left:35%;" contentstyle="background-color: #82CAFF;" width="200px;" >
+
+ <apex:outputLink styleclass="white" value="{!$Page.Business_Development_Home}">Home</apex:outputlink><br/>
+ <!-- <apex:outputLink value="{!$Page.Business_Development_CategoryDirectory}">Category Directory</apex:outputlink><br/>
+   <apex:outputLink value="{!$Page.Business_Development_NominatePartner}">Nominate a New Partner!</apex:outputlink><br/> -->
+   <apex:outputLink styleclass="white" value="http://developer.motorola.com/"> Motodev Website</apex:outputlink>
+   <apex:outputLink styleclass="white" value="http://compass.mot-mobility.com/go/247085140/">MotoReady Compass Website </apex:outputlink>
+   <apex:outputLink styleclass="white" value="{!$Page.Business_Development_AdditionalContent}"> Additional Content</apex:outputlink>
+</apex:toolbar>
+    
+    <apex:pageblock ><br/>
+ <center><apex:outputtext >Additional Content is coming soon...</apex:outputtext></center>
+    </apex:pageblock>
+ </apex:form>   
+</apex:page>

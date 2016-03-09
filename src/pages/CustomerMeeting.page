@@ -1,0 +1,112 @@
+<apex:page id="page" standardController="Customer_Meeting__c" title="New Meeting" tabStyle="Customer_Meeting__c" extensions="CustomerMeetingController">
+    <script type="text/javascript">
+        function copyStartDateToEndDate(startDtVal) {
+            var endDt = document.getElementById('page:form:pb1:main:pbsiDateEnd:dateEnd');
+            
+            if(endDt != null)
+                endDt.value = startDtVal;
+        }
+        
+        function setEndTime(startTimeVal) { // end time = start time + 1 hour
+            var endTime = document.getElementById('page:form:pb1:main:timeEndBlock:timeEnd');
+            
+            if(endTime != null){
+                var t = startTimeVal.split(':'); // split hour and minute
+                var h = t[0]; // hour
+                var mm = t[1]; // minute
+                
+                h = String(parseInt(h) + 1); // +1 hour
+                h = (h == "24") ? "0" : h; // change 24 hour to 0 hour
+                
+                endTime.value = h + ":" + mm; // set end time
+            }
+        }
+    </script>
+
+    <apex:sectionHeader title="Customer Meeting"/>
+
+    <apex:pageMessages id="msgs"/>
+
+    <apex:form id="form">
+        <apex:pageBlock id="pb1" title="MeetingInformation" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save & Add Attendees" action="{!addAttendees}"/>
+                <apex:commandButton value="Save" action="{!mySave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:actionRegion >      
+                <apex:pageBlockSection id="main" columns="2" title="Information">
+                    <apex:inputField value="{!Customer_Meeting__c.name}" required="true"/>
+                    <apex:pageBlockSectionItem id="account">                
+                        <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.Account__c.label}"/>
+                        <apex:actionRegion immediate="true">                    
+                            <apex:inputField value="{!Customer_Meeting__c.Account__c}" required="true" id="Account">
+                            <apex:actionSupport event="onchange"
+                                reRender="calendar,msgs"
+                                action="{!updatePublicCalendar}" />
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:pageBlockSectionItem>
+                                                                 
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="dateBegin" value="{!$ObjectType.Customer_Meeting__c.fields.StartDate_d__c.label}"/>
+                        <apex:inputField id="dateBegin" value="{!Customer_Meeting__c.StartDate_d__c}" required="true" onchange="copyStartDateToEndDate(this.value)" />
+                    </apex:pageBlockSectionItem>
+
+                   <apex:pageBlockSectionItem id="pbsiDateEnd" >
+                        <apex:outputLabel for="dateEnd"
+                            value="{!$ObjectType.Customer_Meeting__c.fields.EndDate_d__c.label}"/>
+                        <apex:inputField id="dateEnd" value="{!Customer_Meeting__c.EndDate_d__c}" required="true"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="timeBegin" value="Meeting Start Time"/>
+                        <apex:selectList id="timeBegin" value="{!selectedStartTime}" multiselect="false" size="1" onchange="setEndTime(this.value)">
+                            <apex:selectOptions value="{!selectTimes}"/>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="timeEndBlock">
+                        <apex:outputLabel for="timeEnd" value="Meeting End Time"/>
+                        <apex:selectList id="timeEnd" value="{!selectedEndTime}" multiselect="false" size="1">
+                            <apex:selectOptions value="{!selectTimes}"/>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Customer_Meeting__c.fields.PublicCalendar__c.label}"/>
+                        <apex:inputField value="{!Customer_Meeting__c.PublicCalendar__c}" required="true" id="calendar" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField id="pb" value="{!Customer_Meeting__c.Playbook__c}"/>
+                    <apex:inputField value="{!Customer_Meeting__c.Priority_Scope__c}"/>
+                    <apex:inputField value="{!Customer_Meeting__c.Business__c}" required="true"/>                       
+                    <apex:inputField value="{!Customer_Meeting__c.Location__c}"/>
+                    <apex:inputField value="{!Customer_Meeting__c.Meeting_Type__c}" required="true" />
+                    <!-- To access a field in the controller without having to 
+                        make an SOQL call, add the field to the page and don't render it
+                    -->
+                    <apex:outputField value="{!Customer_Meeting__c.Owner__c}"/>
+                    <apex:inputField value="{!Customer_Meeting__c.Ranging_Record__c}"/>
+                </apex:pageBlockSection>
+                </apex:actionRegion>
+                
+                <apex:pageBlockSection columns="4" title="Attendees" rendered="{!editing}">
+                    <apex:outputField value="{!Customer_Meeting__c.Internal_Attendees__c}" style="width:99%;"/>                   
+                    <apex:outputField value="{!Customer_Meeting__c.External_Attendees__c}" style="width:99%;"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="Objective">
+                    <apex:inputField value="{!Customer_Meeting__c.Objective__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="Agenda" >
+                    <apex:inputField value="{!Customer_Meeting__c.Agenda__c}" style="width:99%;" />
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="Post Meeting Notes/Comments">
+                    <apex:inputField value="{!Customer_Meeting__c.Post_Meeting_Notes__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="Executive Summary" >
+                    <apex:inputField value="{!Customer_Meeting__c.Executive_Summary__c}" style="width:99%;" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

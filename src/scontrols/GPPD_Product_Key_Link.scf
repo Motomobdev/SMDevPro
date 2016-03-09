@@ -1,0 +1,1 @@
+<BODY bgcolor="#F3F3EC"><A href="http://portfolio.pcs.mot.com/Modules/PhoneDetailTab.aspx?ItemID={!Device__c.GPPD_ID__c}&mid=213&ViewOnly=1" target="GPPD{!Device__c.GPPD_ID__c}"><font face="Arial" style="font-size: 9pt">{!Device__c.GPPD_ID__c}</font></A></BODY>

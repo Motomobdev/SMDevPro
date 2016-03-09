@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>31.0</apiVersion>
+    <packageVersions>
+        <majorNumber>7</majorNumber>
+        <minorNumber>255</minorNumber>
+        <namespace>Apttus</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>7</majorNumber>
+        <minorNumber>302</minorNumber>
+        <namespace>Apttus_Approval</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>44</minorNumber>
+        <namespace>Apttus_Echosign</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>16</majorNumber>
+        <minorNumber>2</minorNumber>
+        <namespace>echosign_dev1</namespace>
+    </packageVersions>
+    <status>Active</status>
+</ApexClass>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR Build Request Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Build Request Details</value>
+    </caseValues>
+    <fields>
+        <help><!-- PCBA reference designator --></help>
+        <label><!-- EE Ref-Des --></label>
+        <name>EE_Reference_Designator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Planner must reselect the product name for the proper related list filter.  Product selection must match the product name listed within the FBR planning object. --></help>
+        <label><!-- FBR Product Name --></label>
+        <name>FBR_Product_Name__c</name>
+        <relationshipLabel><!-- Build Request Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Direct link to the engineering review record associated to the pilot build being created and scheduled.  Field will link FBR record to PE record. --></help>
+        <label><!-- HW CR PE Record --></label>
+        <name>HW_CR_PE_Record__c</name>
+        <relationshipLabel><!-- Build Request Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Top purchased assembly level of internal factory or EMS.  Enter &apos;01&apos;, &apos;SNN&apos;, &apos;SHN&apos;, etc. --></help>
+        <label><!-- ME Ref Assembly --></label>
+        <name>ME_Reference_Assembly__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Record --></label>
+        <name>PE_Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- Part description as listed within MotoPDM or Oracle --></help>
+        <label><!-- Part Description --></label>
+        <name>Part_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- If electrical part ensure to enter reference designator, if mechanical part ensure to reference the top MMI kit purchased for use within manufacturing. --></help>
+        <label><!-- Part Number --></label>
+        <name>Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select top level part type in order to help factory to determine if it is a front-end SMT placement or back-end assembly. --></help>
+        <label><!-- Part Type --></label>
+        <name>Part_Type__c</name>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical</masterLabel>
+            <translation><!-- Mechanical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A product family impacted by specific line item HW Change --></help>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <relationshipLabel><!-- Build Request Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related FBR Number --></label>
+        <name>Related_FBR_Number__c</name>
+        <relationshipLabel><!-- Build Request Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Field to record shipment tracking of particular supplier samples. --></help>
+        <label><!-- Related Ship Tracking --></label>
+        <name>Related_Ship_Tracking__c</name>
+    </fields>
+    <layouts>
+        <layout>HW CR Build Request Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Line Item Detail --></label>
+            <section>Line Item Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

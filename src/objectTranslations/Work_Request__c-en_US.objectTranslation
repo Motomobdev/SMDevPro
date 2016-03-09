@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Work Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Work Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware Dev</masterLabel>
+            <translation><!-- Hardware Dev --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Technology</masterLabel>
+            <translation><!-- Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Dev</masterLabel>
+            <translation><!-- Software Dev --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain</masterLabel>
+            <translation><!-- Supply Chain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tableau / Big Query</masterLabel>
+            <translation><!-- Tableau / Big Query --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the work request is either approved or rejected. --></help>
+        <label><!-- Evaluation Date --></label>
+        <name>Approved_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- IT User the Work Request is assigned to --></help>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Work Requests (Assigned To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Associated Project --></label>
+        <name>Associated_Project__c</name>
+        <relationshipLabel><!-- Work Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If completed, the level of impact or value this work request would deliver to the business. --></help>
+        <label><!-- Business Impact --></label>
+        <name>Business_Impact__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Sponsor --></label>
+        <name>Business_Sponsor__c</name>
+        <picklistValues>
+            <masterLabel>Business Ops</masterLabel>
+            <translation><!-- Business Ops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement (Direct)</masterLabel>
+            <translation><!-- Procurement (Direct) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date at which the business unit requires a budget go/no-go decision. --></help>
+        <label><!-- Created Date --></label>
+        <name>Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Cost Budget --></label>
+        <name>Estimated_Cost_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Hours Budget --></label>
+        <name>Estimated_Hours_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executive Sponsor --></label>
+        <name>Executive_Sponsor__c</name>
+        <relationshipLabel><!-- Work Requests (Executive Sponsor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Cost Savings --></label>
+        <name>Expected_Cost_Savings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Revenue Increase --></label>
+        <name>Expected_Revenue_Increase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal --></label>
+        <name>Goal__c</name>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction</masterLabel>
+            <translation><!-- Customer Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grow Business</masterLabel>
+            <translation><!-- Grow Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Run Business</masterLabel>
+            <translation><!-- Run Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformation</masterLabel>
+            <translation><!-- Transformation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date for which IT expects to have work ready for UAT. --></help>
+        <label><!-- IT Ready Target Date --></label>
+        <name>IT_Ready_Target_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Status --></label>
+        <name>IT_Status__c</name>
+        <picklistValues>
+            <masterLabel>Analyzing</masterLabel>
+            <translation><!-- Analyzing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitoring</masterLabel>
+            <translation><!-- Monitoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Business</masterLabel>
+            <translation><!-- Pending Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Test</masterLabel>
+            <translation><!-- Product Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready to Deploy</masterLabel>
+            <translation><!-- Ready to Deploy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT Approved</masterLabel>
+            <translation><!-- UAT Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unplanned Future Release</masterLabel>
+            <translation><!-- Unplanned Future Release --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Checkbox to select a Work Request to include in a Status Report --></help>
+        <label><!-- Include in Status Report --></label>
+        <name>Include_in_Status_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the current state/situation?   Please list all that is known and unknown about the proposed solution. --></help>
+        <label><!-- Assumptions --></label>
+        <name>Known_Assumptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a short description (up to 255 characters) of the latest status of the Work Request --></help>
+        <label><!-- Latest Status --></label>
+        <name>Latest_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Portfolio --></label>
+        <name>Portfolio__c</name>
+        <relationshipLabel><!-- Work Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please describe the business problem you are trying to solve. --></help>
+        <label><!-- Problem Statement --></label>
+        <name>Problem_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please describe your desired solution to the problem statement. --></help>
+        <label><!-- Proposed Solution --></label>
+        <name>Proposed_Solution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regions --></label>
+        <name>Regions__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAN</masterLabel>
+            <translation><!-- LAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAS</masterLabel>
+            <translation><!-- LAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Priority --></label>
+        <name>Request_Priority__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date when Work Request Status occurred --></help>
+        <label><!-- Request Status Date --></label>
+        <name>Request_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+        <relationshipLabel><!-- Work Requests (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If pursued, the amount of resources (people, time, &amp; money) needed to complete this work request. --></help>
+        <label><!-- Resource Impact --></label>
+        <name>Resource_Need__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the associated concerns or risks?  What happens if no action is taken? --></help>
+        <label><!-- Risks --></label>
+        <name>Risks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Description --></label>
+        <name>Short_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sprint Release --></label>
+        <name>Sprint_Release__c</name>
+        <picklistValues>
+            <masterLabel>2.8</masterLabel>
+            <translation><!-- 2.8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.9</masterLabel>
+            <translation><!-- 2.9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.01</masterLabel>
+            <translation><!-- 2015.01 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.06.a</masterLabel>
+            <translation><!-- 2015.06.a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.06.b</masterLabel>
+            <translation><!-- 2015.06.b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.07.a</masterLabel>
+            <translation><!-- 2015.07.a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.07.b</masterLabel>
+            <translation><!-- 2015.07.b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.07.c</masterLabel>
+            <translation><!-- 2015.07.c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015.08.a</masterLabel>
+            <translation><!-- 2015.08.a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.0</masterLabel>
+            <translation><!-- 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.1</masterLabel>
+            <translation><!-- 3.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.2</masterLabel>
+            <translation><!-- 3.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Backlog</masterLabel>
+            <translation><!-- Backlog --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Retains the entries of the Latest Status field. --></help>
+        <label><!-- Status History --></label>
+        <name>Status_History__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that the work is planned to be released on. --></help>
+        <label><!-- Target Release Date --></label>
+        <name>Target_Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- VHD Ticket # --></label>
+        <name>VHD_Ticket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Request Status --></label>
+        <name>Work_Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed</masterLabel>
+            <translation><!-- Reviewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unplanned Future Release</masterLabel>
+            <translation><!-- Unplanned Future Release --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please note that a work request is not a trouble ticket.  Work requests are submitted to the project management office for strategic improvements for business units. --></help>
+        <label><!-- Work Request Type --></label>
+        <name>Work_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Enhancement Request</masterLabel>
+            <translation><!-- Enhancement Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production Defect / Incident</masterLabel>
+            <translation><!-- Production Defect / Incident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Account &amp; Permissions</masterLabel>
+            <translation><!-- User Account &amp; Permissions --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Work Request Layout</layout>
+        <sections>
+            <label><!-- IT Details --></label>
+            <section>IT Details</section>
+        </sections>
+        <sections>
+            <label><!-- Work Request Details --></label>
+            <section>Work Request Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>Create_Project</name>
+    </webLinks>
+</CustomObjectTranslation>

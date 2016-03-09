@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Benefits --></label>
+        <name>Actual_Benefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Cost --></label>
+        <name>Actual_Cost_Timesheets__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual costs is a roll up summary of the cost items actual amount field that meet the following cost item status - Posted, Paid, On Hold, Received, Planned. --></help>
+        <label><!-- Actual Costs --></label>
+        <name>Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual hours is filtered on the time that has been submitted or approved.  Draft time records as well as rejected time records are not included in the roll up summary. --></help>
+        <label><!-- Actual Hours --></label>
+        <name>Actual_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the cost of doing nothing? --></help>
+        <label><!-- Alternatives to Project --></label>
+        <name>Alternatives_to_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total budget for the project. --></help>
+        <label><!-- Budgeted Costs --></label>
+        <name>Budgeted_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated hours for duration of the project. --></help>
+        <label><!-- Budgeted Hours --></label>
+        <name>Budgeted_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please describe project in terms of the business unit requesting work. --></help>
+        <label><!-- Business Need Definition --></label>
+        <name>Business_Need_Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit Sponsor --></label>
+        <name>Business_Unit_Sponsor__c</name>
+        <picklistValues>
+            <masterLabel>Accounting</masterLabel>
+            <translation><!-- Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R&amp;D</masterLabel>
+            <translation><!-- R&amp;D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please define the Change Management Process. --></help>
+        <label><!-- Change Management Process --></label>
+        <name>Change_Management_Process__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please Describe the Communication &amp; Reporting Process. --></help>
+        <label><!-- Communication &amp; Reporting Process --></label>
+        <name>Communication_Reporting_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Center --></label>
+        <name>Cost_Center__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Ops HV976</masterLabel>
+            <translation><!-- Sales Ops HV976 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Meter Percent Complete --></label>
+        <name>Cost_Meter_Percent_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost meter is defined as Actual Costs / Budgeted Costs.  This cost meter is an example of google charts integrated to Salesforce.com via a custom formula field. --></help>
+        <label><!-- Cost Meter --></label>
+        <name>Cost_Meter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivered Business Asset --></label>
+        <name>Delivered_Business_Asset__c</name>
+        <picklistValues>
+            <masterLabel>Application</masterLabel>
+            <translation><!-- Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Capital</masterLabel>
+            <translation><!-- Human Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information</masterLabel>
+            <translation><!-- Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations/Services</masterLabel>
+            <translation><!-- Operations/Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hours Meter Percent Complete --></label>
+        <name>Hours_Meter_Percent_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost meter is defined as Actual hours / Budgeted hours.  This cost meter is an example of google charts integrated to Salesforce.com via a custom formula field. --></help>
+        <label><!-- Hours Meter --></label>
+        <name>Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a &quot;do-it yourself&quot; project or do we need outside vendors/contractor assistance?  Are we forging new relationships and contracts? --></help>
+        <label><!-- Implementation Strategy --></label>
+        <name>Implementation_Strategy__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are the high level infrastructure requirements involved? --></help>
+        <label><!-- Infrastructure Requirements --></label>
+        <name>Infrastructure_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Investment Nature --></label>
+        <name>Investment_Nature__c</name>
+        <picklistValues>
+            <masterLabel>Core</masterLabel>
+            <translation><!-- Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discretionary</masterLabel>
+            <translation><!-- Discretionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Discretionary</masterLabel>
+            <translation><!-- Non-Discretionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture</masterLabel>
+            <translation><!-- Venture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What are the assumptions in terms of budget, process and people? --></help>
+        <label><!-- Key Constraints / Assumptions --></label>
+        <name>Key_Constraints_Assumptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent Complete (Costs) --></label>
+        <name>Percent_Complete_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent Complete (Hours) --></label>
+        <name>Percent_Complete_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Benefits --></label>
+        <name>Planned_Benefits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Planned costs is a roll up summary of the cost items planned amount field that meet the following cost item status - Posted, Paid, On Hold, Received, Planned. --></help>
+        <label><!-- Planned Cost --></label>
+        <name>Planned_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Duration in weeks = (Planned End Date - Planned Start Date) / 7 --></help>
+        <label><!-- Planned Duration --></label>
+        <name>Planned_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned End Date --></label>
+        <name>Planned_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Start Date --></label>
+        <name>Planned_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portfolio --></label>
+        <name>Portfolio__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Manager --></label>
+        <name>Product_Manager__c</name>
+        <relationshipLabel><!-- Projects (Product Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Duration in weeks = (Project End Date - Project Start Date) / 7 --></help>
+        <label><!-- Actual Duration --></label>
+        <name>Project_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Goal --></label>
+        <name>Project_Goal__c</name>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction</masterLabel>
+            <translation><!-- Customer Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grow Business</masterLabel>
+            <translation><!-- Grow Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Run Business</masterLabel>
+            <translation><!-- Run Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformation</masterLabel>
+            <translation><!-- Transformation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Projects (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Note: Implementation Phase Includes user acceptance, training, and post production support. --></help>
+        <label><!-- Project Phase --></label>
+        <name>Project_Phase__c</name>
+        <picklistValues>
+            <masterLabel>Analyze</masterLabel>
+            <translation><!-- Analyze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build</masterLabel>
+            <translation><!-- Build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design</masterLabel>
+            <translation><!-- Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implementation</masterLabel>
+            <translation><!-- Implementation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please describe the scope of the project. --></help>
+        <label><!-- Project Scope --></label>
+        <name>Project_Scope__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Sponsor --></label>
+        <name>Project_Sponsor__c</name>
+        <relationshipLabel><!-- Projects (Project Sponsor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Start Date --></label>
+        <name>Project_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please define Project Success Criteria. --></help>
+        <label><!-- Project Success Criteria --></label>
+        <name>Project_Success_Criteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please select the region(s) that this project supports. --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA</masterLabel>
+            <translation><!-- LACA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Budget - Actual Costs --></help>
+        <label><!-- Remaining (Costs) --></label>
+        <name>Remaing_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remaining (Hours) --></label>
+        <name>Remaining_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Overall Budget  - budget line item actual cost items. --></help>
+        <label><!-- Remaining Budget --></label>
+        <name>Remaining_budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is an example of a conditional, custom formula field that evaluates the Project Phase and the Percent Complete (hours).  Default Value for &quot;Draft - Phase Zero&quot; (Green 0 - .05%, Yellow .06 - .15, Red .16 and above).  For more definition, go into setup --></help>
+        <label><!-- Status Icon --></label>
+        <name>Status_Icon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned - Actual (Duration) --></label>
+        <name>Variance_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Request --></label>
+        <name>Work_Request__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Project Dates --></label>
+            <section>Project Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Project Definition --></label>
+            <section>Project Definition</section>
+        </sections>
+        <sections>
+            <label><!-- Project Detail --></label>
+            <section>Project Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Qualitative Detail --></label>
+            <section>Qualitative Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Quantitative Detail --></label>
+            <section>Quantitative Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

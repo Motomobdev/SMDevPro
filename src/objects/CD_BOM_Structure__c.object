@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOM_Disable_date__c</fullName>
+        <externalId>false</externalId>
+        <label>BOM Disable date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BOM_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>BOM ID</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>BOM_Rev_No__c</fullName>
+        <externalId>false</externalId>
+        <label>BOM Rev No</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOM_effective_date__c</fullName>
+        <externalId>false</externalId>
+        <label>BOM effective date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Child_Item_Disable_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Child Item Disable date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Child_Item_IOD_IN__c</fullName>
+        <externalId>false</externalId>
+        <label>Child Item IOD IN</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Child Item</label>
+        <referenceTo>CD_Items__c</referenceTo>
+        <relationshipLabel>CD BOM Structure</relationshipLabel>
+        <relationshipName>CD_BOM_Structure</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Item_effective_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Child Item effective date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPI_Cost_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>NPI Cost Flag</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPI_Cost_Flag_update_date__c</fullName>
+        <externalId>false</externalId>
+        <label>NPI Cost Flag update date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrganizationCode_IOD_IN__c</fullName>
+        <externalId>false</externalId>
+        <label>OrganizationCode IOD IN</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationCode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>OrganizationCode</label>
+        <referenceTo>CD_Organizations__c</referenceTo>
+        <relationshipLabel>CD BOM Structure</relationshipLabel>
+        <relationshipName>CD_BOM_Structure</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Assembly_IOD_IN__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Assembly IOD IN</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Assembly__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Assembly</label>
+        <referenceTo>CD_Items__c</referenceTo>
+        <relationshipLabel>CD BOM Structure (Parent Assembly)</relationshipLabel>
+        <relationshipName>CD_BOM_Structure1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Prod_Cost_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>Prod Cost Flag</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prod_Cost_Flag_update_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Prod Cost Flag update date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Used__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Used</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Level_Assembly_IOD_IN__c</fullName>
+        <externalId>false</externalId>
+        <label>Top Level Assembly IOD IN</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Level_Assembly_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Top_Level_Assembly__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Top Level Assembly Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Level_Assembly__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Top Level Assembly</label>
+        <referenceTo>CD_Items__c</referenceTo>
+        <relationshipLabel>CD BOM Structure (Top Level Assembly)</relationshipLabel>
+        <relationshipName>CD_BOM_Structure2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unique_External_Key__c</fullName>
+        <externalId>false</externalId>
+        <formula>Top_Level_Assembly__r.Item_Number__c&amp;&apos;-&apos;&amp;Parent_Assembly__r.Item_Number__c&amp;&apos;-&apos;&amp;Child_Item__r.Item_Number__c&amp;&apos;-&apos;&amp;OrganizationCode__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unique External Key</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique_Identifier_In_BOM_Structure__c</fullName>
+        <externalId>false</externalId>
+        <formula>Top_Level_Assembly__r.Name +  OrganizationCode__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unique Identifier In BOM Structure</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CD BOM Structure</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OrganizationCode__c</columns>
+        <columns>Top_Level_Assembly__c</columns>
+        <columns>Unique_Identifier_In_BOM_Structure__c</columns>
+        <columns>Child_Item__c</columns>
+        <columns>Parent_Assembly_IOD_IN__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Level_Assembly__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CD BOM Structure Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CD BOM Structure</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

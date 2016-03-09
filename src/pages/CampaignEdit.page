@@ -1,0 +1,79 @@
+<apex:page id="page" standardController="Campaign" extensions="CampaignController" action="{!redirectToPage}">
+
+<apex:messages Styleclass="errorClass"/>
+<style>
+.errorClass{
+    color:red;
+}
+
+        body .bPageBlock .pbBody .grey .pbSubheader{
+
+                background-color:#c0c0c0;
+
+            }
+
+            body .bPageBlock .pbBody .grey .pbSubheader h3{
+
+                color:#000;
+
+            }
+
+</style>
+<div id="Promotion">
+<apex:form id="promotion_form">
+     
+    <apex:pageBlock id="pb" rendered="{!redirect}" >
+        <apex:pageBlockButtons >
+          
+            <apex:commandButton id="EditSave" value="Save" action="{!save}"/>
+            <apex:commandButton id="bCancel" value="Cancel" action="{!cancel}" />
+
+        </apex:pageBlockButtons>
+<apex:outputPanel styleClass="grey" layout="block">
+
+        <apex:pageBlockSection id="pb" title="Campaign Information" columns="2" >
+          <apex:outputField value="{!Campaign.OwnerId}" style="width: 200px;" />
+            <apex:repeat value="{!$ObjectType.Campaign.FieldSets.Campaign_Information}" 
+                    var="field">
+                    
+             <apex:inputField value="{!camp[field.fieldPath]}" required="{!OR(field.required, field.dbrequired)}"/>
+            
+           </apex:repeat>
+        
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+<apex:outputPanel styleClass="grey" layout="block">
+          <apex:pageBlockSection id="pb5" title="Campaign Analytics" columns="2" >
+
+           
+              <apex:repeat value="{!$ObjectType.Campaign.FieldSets.Campaign_Analytics}" 
+                    var="field">
+              <apex:inputField value="{!camp[field.fieldPath]}" required="{!OR(field.required, field.dbrequired)}"/>
+          </apex:repeat>
+                  
+        </apex:pageBlockSection>
+  </apex:outputPanel>
+  <apex:outputPanel styleClass="grey" layout="block">
+        <apex:pageBlockSection id="pb2" title="Category" columns="2" >
+          <apex:repeat value="{!$ObjectType.Campaign.FieldSets.Category}" 
+                    var="field">
+         <apex:inputField value="{!camp[field.fieldPath]}" required="{!OR(field.required, field.dbrequired)}"/>
+            
+           </apex:repeat>
+        </apex:pageBlockSection>
+</apex:outputPanel>
+         <apex:outputPanel styleClass="grey" layout="block">
+        <apex:pageBlockSection id="pb3" title="Planning" columns="2" >
+         
+               <apex:repeat value="{!$ObjectType.Campaign.FieldSets.Planning}" var="field">
+         <apex:inputField value="{!camp[field.fieldPath]}" required="{!OR(field.required, field.dbrequired)}"/>
+            
+           </apex:repeat>
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+        </apex:pageBlock>
+             
+    </apex:form>
+  
+        </div>
+</apex:page>

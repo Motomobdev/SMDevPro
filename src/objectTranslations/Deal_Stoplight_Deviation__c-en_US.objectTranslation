@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Stoplight Deviation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Stoplight Deviations</value>
+    </caseValues>
+    <fields>
+        <label><!-- CP Attach ASP --></label>
+        <name>CP_Attach_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach AppDate --></label>
+        <name>CP_Attach_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Approver --></label>
+        <name>CP_Attach_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Dev --></label>
+        <name>CP_Attach_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Exp --></label>
+        <name>CP_Attach_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Standard --></label>
+        <name>CP_Attach_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach Status --></label>
+        <name>CP_Attach_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CP Attach VMImp --></label>
+        <name>CP_Attach_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Attach VM --></label>
+        <name>CP_Attach_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding ASP --></label>
+        <name>Carrier_Branding_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding AppDate --></label>
+        <name>Carrier_Branding_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Approver --></label>
+        <name>Carrier_Branding_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Dev --></label>
+        <name>Carrier_Branding_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Exp --></label>
+        <name>Carrier_Branding_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Standard --></label>
+        <name>Carrier_Branding_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding Status --></label>
+        <name>Carrier_Branding_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding VMImp --></label>
+        <name>Carrier_Branding_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Branding VM --></label>
+        <name>Carrier_Branding_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill ASP --></label>
+        <name>Channel_Fill_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill AppDate --></label>
+        <name>Channel_Fill_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Approver --></label>
+        <name>Channel_Fill_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Dev --></label>
+        <name>Channel_Fill_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Exp --></label>
+        <name>Channel_Fill_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Standard --></label>
+        <name>Channel_Fill_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill Status --></label>
+        <name>Channel_Fill_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill VMImp --></label>
+        <name>Channel_Fill_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Fill VM --></label>
+        <name>Channel_Fill_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories ASP --></label>
+        <name>Charger_Accessories_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories AppDate --></label>
+        <name>Charger_Accessories_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories Approver --></label>
+        <name>Charger_Accessories_Approver__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value Products Only --></help>
+        <label><!-- Charger / Accessories Dev --></label>
+        <name>Charger_Accessories_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories Exp --></label>
+        <name>Charger_Accessories_Exp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value Products Only --></help>
+        <label><!-- Charger / Accessories Standard --></label>
+        <name>Charger_Accessories_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger Accessories Status --></label>
+        <name>Charger_Accessories_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories VMImp --></label>
+        <name>Charger_Accessories_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charger / Accessories VM --></label>
+        <name>Charger_Accessories_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications ASP --></label>
+        <name>Core_Device_Specifications_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications AppDate --></label>
+        <name>Core_Device_Specifications_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications App --></label>
+        <name>Core_Device_Specifications_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications Dev --></label>
+        <name>Core_Device_Specifications_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications Exp --></label>
+        <name>Core_Device_Specifications_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications Status --></label>
+        <name>Core_Device_Specifications_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications Std --></label>
+        <name>Core_Device_Specifications_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications VMImp --></label>
+        <name>Core_Device_Specifications_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Device Specifications VM --></label>
+        <name>Core_Device_Specifications_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal --></label>
+        <name>Deal__c</name>
+        <relationshipLabel><!-- Deal Stoplight Deviations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid ASP --></label>
+        <name>ELX_Prepaid_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid AppDate --></label>
+        <name>ELX_Prepaid_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Approver --></label>
+        <name>ELX_Prepaid_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Dev --></label>
+        <name>ELX_Prepaid_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Exp --></label>
+        <name>ELX_Prepaid_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid Standard --></label>
+        <name>ELX_Prepaid_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX Prepaid Status --></label>
+        <name>ELX_Prepaid_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid VMImp --></label>
+        <name>ELX_Prepaid_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- ELX = Prepaid VM --></label>
+        <name>ELX_Prepaid_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting ASP --></label>
+        <name>Forecasting_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting AppDate --></label>
+        <name>Forecasting_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Approver --></label>
+        <name>Forecasting_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Dev --></label>
+        <name>Forecasting_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Exp --></label>
+        <name>Forecasting_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Standard --></label>
+        <name>Forecasting_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting Status --></label>
+        <name>Forecasting_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Forecasting VMImp --></label>
+        <name>Forecasting_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecasting VM --></label>
+        <name>Forecasting_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP ASP --></label>
+        <name>IPP_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP AppDate --></label>
+        <name>IPP_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Approver --></label>
+        <name>IPP_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Dev --></label>
+        <name>IPP_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Exp --></label>
+        <name>IPP_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Standard --></label>
+        <name>IPP_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP Status --></label>
+        <name>IPP_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IPP VMImp --></label>
+        <name>IPP_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- IPP VM --></label>
+        <name>IPP_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms ASP --></label>
+        <name>Incoterms_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms AppDate --></label>
+        <name>Incoterms_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Approver --></label>
+        <name>Incoterms_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Dev --></label>
+        <name>Incoterms_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Exp --></label>
+        <name>Incoterms_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Standard --></label>
+        <name>Incoterms_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Status --></label>
+        <name>Incoterms_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Incoterms VMImp --></label>
+        <name>Incoterms_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms VM --></label>
+        <name>Incoterms_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty ASP --></label>
+        <name>Late_Delivery_Penalty_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty AppDate --></label>
+        <name>Late_Delivery_Penalty_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Approver --></label>
+        <name>Late_Delivery_Penalty_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Dev --></label>
+        <name>Late_Delivery_Penalty_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Exp --></label>
+        <name>Late_Delivery_Penalty_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Standard --></label>
+        <name>Late_Delivery_Penalty_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty Status --></label>
+        <name>Late_Delivery_Penalty_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty VMImp --></label>
+        <name>Late_Delivery_Penalty_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Delivery Penalty VM --></label>
+        <name>Late_Delivery_Penalty_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF ASP --></label>
+        <name>MDF_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF AppDate --></label>
+        <name>MDF_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Approver --></label>
+        <name>MDF_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Dev --></label>
+        <name>MDF_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Exp --></label>
+        <name>MDF_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Standard --></label>
+        <name>MDF_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF Status --></label>
+        <name>MDF_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MDF VMImp --></label>
+        <name>MDF_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDF VM --></label>
+        <name>MDF_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN ASP --></label>
+        <name>MFN_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN AppDate --></label>
+        <name>MFN_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Approver --></label>
+        <name>MFN_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Dev --></label>
+        <name>MFN_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Exp --></label>
+        <name>MFN_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Standard --></label>
+        <name>MFN_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN Status --></label>
+        <name>MFN_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MFN VMImp --></label>
+        <name>MFN_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- MFN VM --></label>
+        <name>MFN_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price ASP --></label>
+        <name>Not_to_Exceed_Retail_Price_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price AppDate --></label>
+        <name>Not_to_Exceed_Retail_Price_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Approver --></label>
+        <name>Not_to_Exceed_Retail_Price_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Dev --></label>
+        <name>Not_to_Exceed_Retail_Price_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Exp --></label>
+        <name>Not_to_Exceed_Retail_Price_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Standard --></label>
+        <name>Not_to_Exceed_Retail_Price_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price Status --></label>
+        <name>Not_to_Exceed_Retail_Price_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price VMImp --></label>
+        <name>Not_to_Exceed_Retail_Price_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not to Exceed Retail Price VM --></label>
+        <name>Not_to_Exceed_Retail_Price_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms ASP --></label>
+        <name>Payment_Terms_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms AppDate --></label>
+        <name>Payment_Terms_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Approver --></label>
+        <name>Payment_Terms_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Dev --></label>
+        <name>Payment_Terms_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Exp --></label>
+        <name>Payment_Terms_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Standard --></label>
+        <name>Payment_Terms_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms Status --></label>
+        <name>Payment_Terms_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms VMImp --></label>
+        <name>Payment_Terms_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Terms VM --></label>
+        <name>Payment_Terms_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity ASP --></label>
+        <name>Product_Exclusivity_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity AppDate --></label>
+        <name>Product_Exclusivity_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Approver --></label>
+        <name>Product_Exclusivity_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Dev --></label>
+        <name>Product_Exclusivity_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Exp --></label>
+        <name>Product_Exclusivity_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Standard --></label>
+        <name>Product_Exclusivity_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity Status --></label>
+        <name>Product_Exclusivity_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity VMImp --></label>
+        <name>Product_Exclusivity_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Exclusivity VM --></label>
+        <name>Product_Exclusivity_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provision Type --></label>
+        <name>Provision_Type__c</name>
+        <picklistValues>
+            <masterLabel>AT&amp;T</masterLabel>
+            <translation><!-- AT&amp;T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Updates ASP --></label>
+        <name>SW_Updates_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates AppDate --></label>
+        <name>SW_Updates_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Approver --></label>
+        <name>SW_Updates_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Dev --></label>
+        <name>SW_Updates_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Exp --></label>
+        <name>SW_Updates_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Standard --></label>
+        <name>SW_Updates_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates Status --></label>
+        <name>SW_Updates_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Updates VMImp --></label>
+        <name>SW_Updates_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Updates VM --></label>
+        <name>SW_Updates_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units ASP --></label>
+        <name>Seeding_Demo_Units_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units AppDate --></label>
+        <name>Seeding_Demo_Units_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Approver --></label>
+        <name>Seeding_Demo_Units_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Dev --></label>
+        <name>Seeding_Demo_Units_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Exp --></label>
+        <name>Seeding_Demo_Units_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding Demo Units Status --></label>
+        <name>Seeding_Demo_Units_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units Std --></label>
+        <name>Seeding_Demo_Units_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units VMImp --></label>
+        <name>Seeding_Demo_Units_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seeding/Demo Units VM --></label>
+        <name>Seeding_Demo_Units_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan ASP --></label>
+        <name>Sell_Through_Plan_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan AppDate --></label>
+        <name>Sell_Through_Plan_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Approver --></label>
+        <name>Sell_Through_Plan_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Dev --></label>
+        <name>Sell_Through_Plan_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Exp --></label>
+        <name>Sell_Through_Plan_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan Standard --></label>
+        <name>Sell_Through_Plan_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell Through Plan Status --></label>
+        <name>Sell_Through_Plan_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan VMImp --></label>
+        <name>Sell_Through_Plan_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell-Through Plan VM --></label>
+        <name>Sell_Through_Plan_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling ASP --></label>
+        <name>Shipping_and_Handling_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling AppDate --></label>
+        <name>Shipping_and_Handling_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Approver --></label>
+        <name>Shipping_and_Handling_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Dev --></label>
+        <name>Shipping_and_Handling_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Exp --></label>
+        <name>Shipping_and_Handling_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Standard --></label>
+        <name>Shipping_and_Handling_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling Status --></label>
+        <name>Shipping_and_Handling_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling VMImp --></label>
+        <name>Shipping_and_Handling_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping and Handling VM --></label>
+        <name>Shipping_and_Handling_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads ASP --></label>
+        <name>Software_PreLoads_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads AppDate --></label>
+        <name>Software_PreLoads_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Approver --></label>
+        <name>Software_PreLoads_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Dev --></label>
+        <name>Software_PreLoads_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Exp --></label>
+        <name>Software_PreLoads_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Status --></label>
+        <name>Software_PreLoads_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads Std --></label>
+        <name>Software_PreLoads_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads VMImp --></label>
+        <name>Software_PreLoads_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software PreLoads VM --></label>
+        <name>Software_PreLoads_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Deviation w/High risk or significant ASP Increase</masterLabel>
+            <translation><!-- Deviation w/High risk or significant ASP Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deviation w/min risk or No/Minimal ASP Increase</masterLabel>
+            <translation><!-- Deviation w/min risk or No/Minimal ASP Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation from Standard</masterLabel>
+            <translation><!-- No Deviation from Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment ASP --></label>
+        <name>Volume_Commitment_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment AppDate --></label>
+        <name>Volume_Commitment_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Approver --></label>
+        <name>Volume_Commitment_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Dev --></label>
+        <name>Volume_Commitment_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Exp --></label>
+        <name>Volume_Commitment_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Standard --></label>
+        <name>Volume_Commitment_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment Status --></label>
+        <name>Volume_Commitment_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment VMImp --></label>
+        <name>Volume_Commitment_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment VM --></label>
+        <name>Volume_Commitment_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair ASP --></label>
+        <name>Warranty_Service_Repair_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair AppDate --></label>
+        <name>Warranty_Service_Repair_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Approver --></label>
+        <name>Warranty_Service_Repair_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Dev --></label>
+        <name>Warranty_Service_Repair_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Exp --></label>
+        <name>Warranty_Service_Repair_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service Repair Status --></label>
+        <name>Warranty_Service_Repair_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair Std --></label>
+        <name>Warranty_Service_Repair_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair VMImp --></label>
+        <name>Warranty_Service_Repair_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Service/Repair VM --></label>
+        <name>Warranty_Service_Repair_VM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term ASP --></label>
+        <name>Warranty_Term_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term AppDate --></label>
+        <name>Warranty_Term_AppDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Approver --></label>
+        <name>Warranty_Term_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Dev --></label>
+        <name>Warranty_Term_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Exp --></label>
+        <name>Warranty_Term_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Standard --></label>
+        <name>Warranty_Term_Standard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term Status --></label>
+        <name>Warranty_Term_Status__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minimal</masterLabel>
+            <translation><!-- Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Deviation</masterLabel>
+            <translation><!-- No Deviation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term VMImp --></label>
+        <name>Warranty_Term_VMImp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Term VM --></label>
+        <name>Warranty_Term_VM__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Stoplight Deviation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Mitigation/Explanation and ASP Increase --></label>
+            <section>Mitigation/Explanation and ASP Increase</section>
+        </sections>
+        <sections>
+            <label><!-- Provision Approver and Approval Date --></label>
+            <section>Provision Approver and Approval Date</section>
+        </sections>
+        <sections>
+            <label><!-- Provision Standard and Deviation --></label>
+            <section>Provision Standard and Deviation</section>
+        </sections>
+        <sections>
+            <label><!-- Value Maker Impact --></label>
+            <section>Value Maker Impact</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Stoplight already exist for this Deal. You cannot create more than one Stoplight for a Deal. --></errorMessage>
+        <name>Check_DealStopLight_Exist</name>
+    </validationRules>
+</CustomObjectTranslation>

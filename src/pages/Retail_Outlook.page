@@ -1,0 +1,9 @@
+<apex:page controller="RetailOutlookController" action="{!init}">
+    <apex:sectionHeader title="Retail Outlook"/>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:outputPanel >
+            <apex:outputLink value="{!forecastURL}" target="_self">Return to Forecast</apex:outputLink>    
+        </apex:outputPanel>
+    </apex:form>    
+</apex:page>

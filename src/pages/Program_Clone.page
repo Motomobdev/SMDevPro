@@ -1,0 +1,23 @@
+<apex:page standardController="Program__c" extensions="Program_Clone" tabStyle="Program__c">
+    <apex:form id="theForm">
+        <apex:sectionHeader title="Clone Program - {!Program__c.Name}"/>
+        <apex:pageMessage rendered="{!LEN(errorMessage)>0}" strength="2" summary="{!errorMessage}" severity="error" />
+        <apex:pageMessage rendered="{!LEN(originalOwnerMessage)>0}" strength="1" summary="{!originalOwnerMessage}" severity="info" />
+        <BR/>
+        <apex:commandButton rendered="{!LEN(errorMessage)>0}" action="{!cancel}" value="Cancel"/>
+        <apex:pageBlock rendered="{!errorMessage==null}">
+            <apex:pageBlockSection columns="2" collapsible="false">        
+                <apex:inputField value="{!newProgram.Name}"/>
+                <apex:inputField value="{!newProgram.Description__c}"/>
+                <apex:inputField value="{!newProgram.Reviewed_Approved__c}"/>
+                <apex:inputField value="{!newProgram.SW_Apps_Instructions__c}"/>
+                <apex:inputField value="{!newProgram.Type__c}"/>
+                <apex:inputField value="{!newProgram.Tech_Team__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!completeClone}" value="Save"/> 
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

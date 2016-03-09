@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>IdpEventLog</baseObject>
+    <category>admin</category>
+    <deployed>true</deployed>
+    <description>Login Platforms Used</description>
+    <label>Login Types</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>InitiatedBy</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Timestamp</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ErrorCode</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SamlEntityUrl</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>User</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ServiceProvider</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>App</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IdentityUsed</field>
+            <table>IdpEventLog</table>
+        </columns>
+        <masterLabel>Identity Event Logs</masterLabel>
+    </sections>
+</ReportType>

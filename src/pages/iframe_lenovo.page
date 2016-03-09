@@ -1,0 +1,4 @@
+<apex:page id="page" showHeader="true" sidebar="false" showChat="false" >
+    <apex:iframe id="if1" frameborder="0" width="100%" height="800px" scrolling="true" html-seamless="seamless" src="{!$CurrentPage.parameters.url}" />
+
+</apex:page>

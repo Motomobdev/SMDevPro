@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>InboundApprovalEmail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>InboundApprovalEmail</value>
+    </caseValues>
+    <fields>
+        <label><!-- Email Message --></label>
+        <name>Email_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Address --></label>
+        <name>From_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Id --></label>
+        <name>User_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

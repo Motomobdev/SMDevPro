@@ -1,0 +1,254 @@
+<apex:page controller="WeeklyReportController" readOnly="true" standardStylesheets="false"> 
+<apex:includeScript value="{!$Resource.jQuery}"/>
+<apex:includeScript value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/js/jquery.dataTables.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/jquery.dataTables.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.TablePaginationSorting, '/DataTables-1.9.4/media/css/styles.for.salesforce.css')}"/>
+<style type="text/css">
+     .pre {
+    font-weight: 500;
+    font-family: Courier New, monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+     min-width: 300px;
+}
+  </style>
+    <apex:pageMessages />    
+    <apex:form id="weeklyForm">                
+        <apex:sectionHeader title="Weekly Reports" subtitle="View Archive Data" />
+        <apex:pageMessages id="msg" />
+        <apex:pageBlock tabStyle="Account" title="Choose Filters for Weekly" id="weekly">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Submit" action="{!ShowReport}" reRender="grid" status="waitStatus" oncomplete="sorting();"/>
+                <apex:commandButton value="Reset" action="{!clearAllFilters}" reRender="weekly,grid" status="waitStatus"/>
+                <apex:actionStatus id="waitStatus" rendered="true">
+                            <apex:facet name="start">
+                                <span style="font-weight:bold; color: red;">
+                                   Please Wait...<img src="/img/loading.gif" />
+                                </span>
+                            </apex:facet>
+                </apex:actionStatus>
+            </apex:pageBlockButtons>    
+            <apex:pageBlockSection id="weeklyFilters" collapsible="false" columns="3">
+                                        
+                    <apex:pageBlockSectionItem id="week">
+                        <apex:outputlabel value="{!$ObjectType.Weekly_Report__c.Fields.Week_Ending__c.label}" />
+                        <apex:selectList multiselect="false" value="{!weekEnding}" id="week" size="1">
+                            <apex:selectOptions value="{!allWeekEndings}" />
+                            <apex:actionSupport event="onchange" action="{!clearAcctFilters}" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+
+
+                    <apex:pageBlockSectionItem id="function">
+                        <apex:outputlabel value="{!$ObjectType.Weekly_Report__c.Fields.Function__c.label}" />
+                        <apex:selectList multiselect="false" value="{!function}" id="function" size="1">
+                            <apex:selectOptions value="{!allFunctions}" />
+                            <apex:actionSupport event="onchange" action="{!clearAcctFilters}" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="business">
+                        <apex:outputlabel value="{!$ObjectType.Weekly_Report_Item__c.Fields.Business__c.label}" />
+                        <apex:selectList multiselect="false" value="{!business}" id="business" size="1">
+                            <apex:selectOptions value="{!allBusinesses}" />
+                            <apex:actionSupport event="onchange" action="{!clearAcctFilters}" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="businessgroup">
+                        <apex:outputlabel value=" Business Group" />
+                        <apex:selectList multiselect="false" value="{!businessgroup}" id="business" size="1">
+                            <apex:selectOptions value="{!allBusinessesgroup}" />
+                            <apex:actionSupport event="onchange" action="{!clearAcctFilters}" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="region">
+                        <apex:outputlabel value="Region" />
+                        <apex:selectList value="{!selectedRegions}" multiselect="true" id="regions" size="6">
+                            <apex:selectOptions value="{!allRegions}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>      
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem id="subregion">
+                        <apex:outputlabel value="Sub Region" />
+                        <apex:selectList value="{!selectedSubRegions}" multiselect="true" id="subregions" size="6">
+                            <apex:selectOptions value="{!allSubRegions}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>      
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem id="country">
+                        <apex:outputlabel value="Country" />
+                        <apex:selectList value="{!selectedCountries}" multiselect="true" id="country" size="6">
+                            <apex:selectOptions value="{!allCountries}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>      
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="account">
+                        <apex:outputlabel value="Account" />
+                        <apex:selectList value="{!selectedAccounts}" multiselect="true" id="account" size="6">
+                            <apex:selectOptions value="{!allAccounts}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>      
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="user">
+                        <apex:outputlabel value="Created By" />
+                        <apex:selectList value="{!userIds}" multiselect="true" id="user" size="6">
+                            <apex:selectOptions value="{!allUsers}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>      
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="included">
+                        <apex:outputLabel value="Include in Report" />
+                        <apex:selectList value="{!included}" multiselect="false" id="included" size="1">
+                            <apex:selectOptions value="{!includeOptions}" />
+                            <apex:actionSupport event="onchange" rerender="weekly,grid" status="status">
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                
+                    <apex:pageBlockSectionItem id="PublicCalendar">
+                        <apex:outputLabel value="Public Calendar" />
+                        <apex:selectList value="{!selectedCalendars}" multiselect="true" id="pc" size="3">
+                            <apex:selectOptions value="{!publicCalendars}" />
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem> 
+                    
+                    
+
+
+                    <!-- Modified by Prelude -->
+                    <!-- Added program,time period,competitive product fields as page black section items -->
+                    
+                    <apex:pageBlockSectionItem id="Program">
+                        <apex:outputLabel value="Program" />
+                        <apex:inputField value="{!weeklyRprtItem.Program__c}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem id="TimeP">
+                    <apex:outputLabel value="TimePeriod" />
+                    <apex:selectList size="1" value="{!weeklyRprtItem.Time_Period__c}">
+                    <apex:selectOptions value="{!options}"/>
+                    </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem id="CompetitiveProduct">
+                        <apex:outputLabel value="Competitive Product" />
+                        <apex:inputField value="{!weeklyRprtItem.Competitive_Product__c}"/>
+                    </apex:pageBlockSectionItem>                                     
+
+                  <apex:pageBlockSectionItem id="message">
+                        <apex:actionStatus id="status" rendered="true">
+                            <apex:facet name="start">
+                                <span style="font-weight:bold; color: red;">
+                                   Please Wait...<img src="/img/loading.gif" />
+                                </span>
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem >
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem >
+                    </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:outputPanel rendered="true" id="grid"> 
+        <apex:pageBlock title="Weekly Summary: {!weekEnding}" id="gridBlock" rendered="{!showResult}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!toggleGrid}" value="{!toggleButtonText}" reRender="grid" status="toggleStatus" rendered="{!showResult}" oncomplete="sorting();"/>
+                <apex:commandButton action="{!exportReport}" value="Export to Word Doc" rendered="{!showResult}"/>
+                <apex:commandButton action="{!ExportReportByCreator}" 
+                                    value="Export to Word Doc By Creator" rendered="{!showResult}"/>
+                <apex:actionStatus id="toggleStatus" rendered="true">
+                    <apex:facet name="start">
+                        <span style="font-weight:bold; color: red;">
+                            Please Wait...<img src="/img/loading.gif" />
+                        </span>
+                    </apex:facet>
+                </apex:actionStatus>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1" collapsible="false" rendered="{!showResult}">
+                <apex:pageBlockSectionItem rendered="{!NOT(showGrid)}">
+                    <apex:pageBlockTable value="{!weeklyItems}" var="wi" Width="100%" id="tableView" styleClass="tableView"  rendered="{!IF(weeklyItems.Size=0,false,true)}">
+                        <apex:column value="{!wi.Include_in_Report__c}" headerValue="Include in Report"/>
+                        <apex:column value="{!wi.Region__c}"/>
+                        <apex:column value="{!wi.Country__c}"/>  
+                        <!-- Modified by Prelude -->
+                        <!-- Added program,time period, competitive product fields to page block to display the columns in the grid -->                   
+                        
+                        <apex:column value="{!wi.Time_Period__c}"/>
+                        
+                        <apex:column >
+                            <apex:facet name="header">{!$ObjectType.Account.Label}</apex:facet>
+                            <apex:outputLink value="/{!wi.Account__c}" target="_blank">{!IF((wi.Friendly_Account_Name__c == null), wi.Account__r.Name, wi.Friendly_Account_Name__c)}</apex:outputLink>
+                        </apex:column> 
+                     
+                        <apex:column style="width: 4500px;" headerValue="Summary" >
+                            <div class="pre">
+                         <apex:outputText value="{!wi.Summary__c}" style="90%" />
+                              </div>
+                         </apex:column>
+                            
+                        <apex:column >
+                            <apex:facet name="header">Created By</apex:facet>
+                            <apex:outputLink value="/{!wi.CreatedById}" target="_blank">{!wi.CreatedBy.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column value="{!wi.CreatedDate}" />
+                        <apex:column value="{!wi.Function__c}" />
+                        <apex:column value="{!wi.Category__c}" />
+                        <apex:column value="{!wi.Sub_Category__c}" />
+                        <apex:column value="{!wi.Business__c}" />
+                        <apex:column value="{!wi.Account__r.Business_Group__c}" /> 
+                        <apex:column value="{!wi.Program__c}" />
+                         <apex:column value="{!wi.Competitive_Product__c}" />
+                                                 
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!showGrid}">
+                        <iframe id="gridFrame2" scrolling="auto" height="560" width="100%" frameborder="0"
+                              src="/apex/gblite__Grid?gname=Weekly Report&fpf=Id&fpv={!weeklyItemsList}&sbb=1&sh=0&ssb=0&ea=1">
+                        </iframe>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+            <apex:pageBlockSection collapsible="false" columns="1" rendered="{!IF(weeklyItems.Size=0,true,false)}">
+                <apex:outputpanel >
+                        No record(s) found.
+                </apex:outputpanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+     </apex:outputPanel>
+    </apex:form>
+    <script type="text/javascript" language="javascript">
+        function sorting(){
+            $('.tableView').dataTable( {
+                "bDestroy": true,
+                "iDisplayLength": 20,
+                "aLengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]]
+            });
+          }
+    </script>  
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page standardController="Retail_Price_Book__c" sidebar="false" showHeader="false">
+  <iframe id="gridFrame" scrolling="auto" height="400" width="100%" frameborder="0"
+    src="/apex/gblite__Grid?gname=Retail Price Book Lines&fpf=Retail_Price_Book__c&fpv={!Retail_Price_Book__c.Id}&sh=0&ssb=0&sbb=1">
+  </iframe>_
+</apex:page>

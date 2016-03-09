@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>NDA_Disclosure_Request</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>NDA_Disclosure_Request</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Product NDA disclosure requests captured in this object</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Companion_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR value Leave for Companion products</description>
+        <externalId>false</externalId>
+        <label>Companion MCR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Companion_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Companion Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Companion_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype value Leave for Companion Products</description>
+        <externalId>false</externalId>
+        <label>Companion Prototype</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DPL_Status__c</fullName>
+        <description>Category Lead approval status</description>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Approval_Purpose__c</fullName>
+        <externalId>false</externalId>
+        <label>Disclosure Approval Purpose</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NDAFileID__c</fullName>
+        <description>NDAFileid for references to disclosures on NDA</description>
+        <externalId>false</externalId>
+        <label>NDAFileID</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDA__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Lookup to NDA For Product disclosures</description>
+        <externalId>false</externalId>
+        <label>NDA</label>
+        <referenceTo>NDA__c</referenceTo>
+        <relationshipLabel>NDA Disclosure Requests</relationshipLabel>
+        <relationshipName>NDA_Disclosure_Requests</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Premium_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR value Leave for Premium Products</description>
+        <externalId>false</externalId>
+        <label>Premium MCR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Premium_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Product Category Premium</description>
+        <externalId>false</externalId>
+        <label>Premium Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Premium_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype value Leave for Premium</description>
+        <externalId>false</externalId>
+        <label>Premium Prototype</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Software_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR value Leave for Software</description>
+        <externalId>false</externalId>
+        <label>Software MCR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Software_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype value Leave for Software</description>
+        <externalId>false</externalId>
+        <label>Software Prototype</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Software__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Software</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value_MCR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>MCR value Leave for Value Products</description>
+        <externalId>false</externalId>
+        <label>Value MCR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value_Products__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Value Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value_Prototype__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prototype value Leave for Value products</description>
+        <externalId>false</externalId>
+        <label>Value Prototype</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>NDA Disclosure Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>DPL_Status__c</columns>
+        <columns>NDAFileID__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Disclosure Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NDA Disclosure Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

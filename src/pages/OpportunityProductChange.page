@@ -1,0 +1,64 @@
+<apex:page id="page" controller="OpportunityProductChangeCtr" showHeader="true" sidebar="true" showChat="false">
+
+<style type="text/css">
+
+    .inputElement
+    {
+        width: 250px;
+    }
+
+</style>
+
+<apex:pageMessages id="pgMsg" showDetail="false" />
+
+<apex:form id="form">
+
+    <apex:pageBlock id="pb" rendered="{!isAdmin}" title="Mass Change Opportunity Products">
+    
+        <apex:pageBlockButtons >
+        
+            <apex:commandButton id="btnChange" value="Change" action="{!change}" onclick="if(confirm('Are you sure?') == false) { return false; }" reRender="pgMsg,pbs" />
+            <apex:commandButton id="btnReset" value="Reset" action="{!reset}" immediate="true" reRender="pgMsg,pbs" />
+        
+        </apex:pageBlockButtons>
+    
+        <apex:pageBlockSection id="pbs" columns="2">
+        
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Opportunity Product/Line IDs" />
+                <apex:outputPanel >
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputTextarea id="txtLineItemIds" value="{!lineItemIds}" rows="10" cols="20" />
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="ID Type" />
+                <apex:selectRadio value="{!idType}" layout="pageDirection" style="position: relative; top: -10px;">
+                    <apex:selectOption itemLabel="SFDC ID (like 00k4000000aIAAX)" itemValue="SFDC ID" />
+                    <apex:selectOption itemLabel="Auto Number (like OL-003007)" itemValue="Auto Number" />
+                </apex:selectRadio>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="New Product Name (replace with)" />
+                <apex:outputPanel >
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputText value="{!productName}" styleClass="inputElement" />
+                    </div>
+                </apex:outputPanel>
+                <!-- <apex:inputField value="{!pbEntry.Product2Id}" required="true" styleClass="inputElement" /> -->
+            </apex:pageBlockSectionItem>
+        
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+
+    <apex:outputPanel rendered="{!NOT(isAdmin)}">
+        <strong>You do not have required privilege to change product(s). Please contact Salesforce administrator (SFDC@motorola.com).</strong>
+    </apex:outputPanel>
+
+</apex:form>
+	
+</apex:page>

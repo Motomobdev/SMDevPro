@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign App</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Apps</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account Name  (read only from related App) --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- App Category, from the Application record --></help>
+        <label><!-- App Category --></label>
+        <name>App_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Status --></label>
+        <name>App_Status__c</name>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Committed</masterLabel>
+            <translation><!-- Not Committed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Feasible</masterLabel>
+            <translation><!-- Not Feasible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Interested</masterLabel>
+            <translation><!-- Not Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready to Ship</masterLabel>
+            <translation><!-- Ready to Ship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a list of all related Applications for this Campaign --></help>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Campaign Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Booth Status --></label>
+        <name>Booth_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invited</masterLabel>
+            <translation><!-- Invited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nominated</masterLabel>
+            <translation><!-- Nominated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a list of all Related Campaigns for this Application --></help>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Campaign Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Have we contacted the partner and discussed this campaign with them? --></help>
+        <label><!-- Contacted Partner? --></label>
+        <name>Contacted_Partner__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter any pertinent notes related to the Application --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the priority of this Application on this list? --></help>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- When do you expect this Application to be submitted? --></help>
+        <label><!-- Projected Submission Date --></label>
+        <name>Projected_Submission_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL for Download, from the related Application record --></help>
+        <label><!-- URL for Download --></label>
+        <name>URL_for_Download__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign App Layout</layout>
+        <sections>
+            <label><!-- Apps Programs Information --></label>
+            <section>Apps Programs Information</section>
+        </sections>
+        <sections>
+            <label><!-- Booth Events --></label>
+            <section>Booth Events</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

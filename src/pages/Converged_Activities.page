@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="Converged_Activity_PageController" showHeader="false">
+    <style type="text/css">
+        .body {background-color: white; color: white; padding-top: 1px}       
+    </style>
+	<apex:pageBlock id="block">   	 				
+		<apex:pageBlockTable value="{!activityList}" var="t">
+			<apex:column headerValue="Type" value="{!t.recordType}"/>
+			<apex:column headerValue="Subject">
+				<apex:outputLink target="_blank" value="/{!t.recordId}">{!t.Subject}</apex:outputLink>
+			</apex:column>
+			<apex:column headerValue="Status" value="{!t.Status}"/>
+			<apex:column headerValue="Priority" value="{!t.Priority}"/>
+			<apex:column headerValue="Location" value="{!t.location}"/>
+			<apex:column headerValue="Date (All Tasks show time as 12:00 AM)">
+				<apex:outputText value="{0,date,MM'/'dd'/'yyyy hh:mm a}">
+					<apex:param value="{!t.ActivityDate}" /> 
+				</apex:outputText>
+			</apex:column>    
+		</apex:pageBlockTable>	            		
+	</apex:pageblock>
+</apex:page>

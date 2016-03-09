@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Migrated Agreement History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Migrated Agreement History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- Migrated Agreement History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FIELD --></label>
+        <name>FIELD__c</name>
+    </fields>
+    <fields>
+        <label><!-- NEWVALUE --></label>
+        <name>NEWVALUE__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLDVALUE --></label>
+        <name>OLDVALUE__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

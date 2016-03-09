@@ -1,0 +1,70 @@
+<apex:page controller="WeeklyReportController" contenttype="application/vnd.ms-word#WeeklyReport.doc" cache="true" showHeader="false" sidebar="false" standardStylesheets="false">
+    <style type="text/css">
+        .category {color:blue;font-weight:bold;font-size:19pt;font-family:Arial;}
+        .filter {font-size:15px;font-family:Arial;color:black;}
+        .headline {font-weight:bold;font-size:24pt;font-family:Arial;margin-left:2em;}
+        .pg {border: 2pt solid white;}
+        .weeklyList {font-size: 12pt;font-family: Arial;border:2pt solid white;line-height:1.5;}
+        .weeklyItem {font-weight:bold;}
+    </style>
+    <apex:outputPanel >
+        <apex:outputText styleClass="headline" value="{!function} Weekly Report"/> <br />
+        <apex:outputText styleClass="filter" value="Week Ending: {!weekEnding}" rendered="{!NOT(ISBLANK(weekEnding))}"/>
+        <br />
+    </apex:outputPanel> 
+
+    <apex:panelGrid styleClass="pg" columns="1" rendered="{!weeklyItems.size>0}">
+        
+        <apex:outputPanel styleClass="weeklyList" rendered="{!highlights.size>0}">
+            <apex:outputText styleClass="category" value="Highlights"/><br />
+            <apex:dataList value="{!highlights}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Region__c}: " />
+                <!-- <apex:outputText styleClass="weeklyItem" value="{!wi.Country__c} : " /> -->
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Friendly_Account_Name__c}: " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!marketIntelligence.size>0}">
+            <apex:outputText styleClass="category" value="Market Intelligence"/><br />
+            <apex:dataList value="{!marketIntelligence}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Region__c}: " />
+                <!-- <apex:outputText styleClass="weeklyItem" value="{!wi.Country__c} : " /> -->
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Friendly_Account_Name__c}: " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!nextWeeksPriorities.size>0}">
+            <apex:outputText styleClass="category" value="Next Week's Priorities"/><br />
+            <apex:dataList value="{!nextWeeksPriorities}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Region__c}: " />
+                <!-- <apex:outputText styleClass="weeklyItem" value="{!wi.Country__c} : " /> -->
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Friendly_Account_Name__c}: " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!keyHighlights.size>0}">
+            <apex:outputText styleClass="category" value="Key Highlights"/><br />
+            <apex:dataList value="{!keyHighlights}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Region__c}: " />
+                <!-- <apex:outputText styleClass="weeklyItem" value="{!wi.Country__c} : " /> -->
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Friendly_Account_Name__c}: " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList><br />
+        </apex:outputPanel>
+
+        <apex:outputPanel styleClass="weeklyList" rendered="{!upcomingMeetings.size>0}">
+            <apex:outputText styleClass="category" value="Upcoming Meetings"/><br />
+            <apex:dataList value="{!upcomingMeetings}" var="wi">
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Region__c}: " />
+                <!-- <apex:outputText styleClass="weeklyItem" value="{!wi.Country__c} : " /> -->
+                <apex:outputText styleClass="weeklyItem" value="{!wi.Friendly_Account_Name__c}: " />
+                <apex:outputField value="{!wi.Summary__c}" />
+            </apex:dataList>
+        </apex:outputPanel>
+
+    </apex:panelGrid>
+
+</apex:page>

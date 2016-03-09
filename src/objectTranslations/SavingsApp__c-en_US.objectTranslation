@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SavingsApp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SavingsApps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Savings Apps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Savings --></label>
+        <name>Savings__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

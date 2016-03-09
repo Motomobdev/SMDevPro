@@ -1,0 +1,1932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- APPLE Top 10 Free App Rank --></label>
+        <name>APPLE_Top_10_Free_App_Rank__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- APPLE Top 10 Free App? --></label>
+        <name>APPLE_Top_10_Free_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- APPLE Top 10 Paid App Rank --></label>
+        <name>APPLE_Top_10_Paid_App_Rank__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- APPLE Top 10 Paid App? --></label>
+        <name>APPLE_Top_10_Paid_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AcctOwnerAppID --></label>
+        <name>AcctOwnerAppID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>AcctOwnerApp__c</name>
+        <relationshipLabel><!-- Applications (Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Acct_App_concatenate --></label>
+        <name>Acct_App_concatenate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Alpha --></label>
+        <name>Actual_Alpha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Beta --></label>
+        <name>Actual_Beta__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual GM minus two weeks --></help>
+        <label><!-- Actual GM Release Candidate --></label>
+        <name>Actual_GM_Release_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual GM --></label>
+        <name>Actual_GM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Added to Solutions Catalog? --></label>
+        <name>Added_to_Solutions_Catalog__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checks if Android 3.0 is listed as a related platform;
+Field visible to ADMINS only  (for reporting purposes) --></help>
+        <label><!-- Android 3.0 related app? --></label>
+        <name>Android_3_0_related_app__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android Availability Date --></label>
+        <name>Android_Availability_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android Status --></label>
+        <name>Android_Status__c</name>
+        <picklistValues>
+            <masterLabel>Delivered / Shipped</masterLabel>
+            <translation><!-- Delivered / Shipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Committed / Started</masterLabel>
+            <translation><!-- Not Committed / Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Android Top 100 --></label>
+        <name>Android_Top_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android Top 10 FREE --></label>
+        <name>Android_Top_10_FREE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android Top 10 PAID --></label>
+        <name>Android_Top_10_PAID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Android Top Showcase Apps on Marketplace --></label>
+        <name>Android_Top_Showcase_Apps_on_Marketplace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this application build on Android --></help>
+        <label><!-- Android --></label>
+        <name>Android__c</name>
+    </fields>
+    <fields>
+        <help><!-- SFDC Power of One formula . When creating reports, please use this to sum up the total # of Applications --></help>
+        <label><!-- App Count --></label>
+        <name>App_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Risk Flag Condition --></label>
+        <name>App_Risk_Flag_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Risk Flag --></label>
+        <name>App_Risk_Flag__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Category --></label>
+        <name>Application_Category__c</name>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core SW: Device Management</masterLabel>
+            <translation><!-- Core SW: Device Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core SW: Drivers &amp; Stacks</masterLabel>
+            <translation><!-- Core SW: Drivers &amp; Stacks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core SW: Security</masterLabel>
+            <translation><!-- Core SW: Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core SW: Voice</masterLabel>
+            <translation><!-- Core SW: Voice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Embedded</masterLabel>
+            <translation><!-- Embedded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Games</masterLabel>
+            <translation><!-- Games --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Fitness</masterLabel>
+            <translation><!-- Health &amp; Fitness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imaging</masterLabel>
+            <translation><!-- Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LBS</masterLabel>
+            <translation><!-- LBS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifestyle</masterLabel>
+            <translation><!-- Lifestyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media SW: Audio</masterLabel>
+            <translation><!-- Media SW: Audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media SW: Codecs &amp; DRM</masterLabel>
+            <translation><!-- Media SW: Codecs &amp; DRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media SW: Image &amp; Camera</masterLabel>
+            <translation><!-- Media SW: Image &amp; Camera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media SW: Sync</masterLabel>
+            <translation><!-- Media SW: Sync --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media SW: Video</masterLabel>
+            <translation><!-- Media SW: Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Messaging</masterLabel>
+            <translation><!-- Messaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Commerce</masterLabel>
+            <translation><!-- Mobile Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Office</masterLabel>
+            <translation><!-- Mobile Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music</masterLabel>
+            <translation><!-- Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Productivity</masterLabel>
+            <translation><!-- Productivity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Interface: Fonts</masterLabel>
+            <translation><!-- User Interface: Fonts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Interface: GUI</masterLabel>
+            <translation><!-- User Interface: GUI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Interface: Input Systems</masterLabel>
+            <translation><!-- User Interface: Input Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities (Backup, Tools, etc)</masterLabel>
+            <translation><!-- Utilities (Backup, Tools, etc) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weather</masterLabel>
+            <translation><!-- Weather --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Widget</masterLabel>
+            <translation><!-- Widget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e-Publishing</masterLabel>
+            <translation><!-- e-Publishing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract_Decision --></label>
+        <name>Application_Contract_Decision__c</name>
+        <picklistValues>
+            <masterLabel>Conditional Approval</masterLabel>
+            <translation><!-- Conditional Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Governing End Date --></label>
+        <name>Application_Contract_Governing_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Approved_Device --></label>
+        <name>Application_Contract_LRB_Approved_Device__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Approved_Region --></label>
+        <name>Application_Contract_LRB_Approved_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract_LRB_Pipeline_ID --></label>
+        <name>Application_Contract_LRB_Pipeline_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Let Expire --></label>
+        <name>Application_Contract_Let_Expire__c</name>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Name --></label>
+        <name>Application_Contract_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Number --></label>
+        <name>Application_Contract_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Owner --></label>
+        <name>Application_Contract_Owner__c</name>
+        <relationshipLabel><!-- Applications (Contract Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Phase --></label>
+        <name>Application_Contract_Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>Application_Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This comes from the related contract record, and is READ-ONLY;  to relate a contract, please go to the Related Lists section --></help>
+        <label><!-- Contract Status --></label>
+        <name>Application_Contract_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>Application_Contract_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application External Unique ID --></label>
+        <name>Application_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this App belongs to an overall &quot;grouping&quot;, for cumulative royalty calculation purposes --></help>
+        <label><!-- Current Ship Volume --></label>
+        <name>Application_Group__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any peculiarities or information specific to this application that you would like the MotoReady PM to be aware of --></help>
+        <label><!-- Application Instructions --></label>
+        <name>Application_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applicable if Type is Preload or Services --></help>
+        <label><!-- Application Sub Type --></label>
+        <name>Application_Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data</masterLabel>
+            <translation><!-- Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMS - Google Mobile Services</masterLabel>
+            <translation><!-- GMS - Google Mobile Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HW Functional Activation</masterLabel>
+            <translation><!-- HW Functional Activation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP License</masterLabel>
+            <translation><!-- IP License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMI Owned</masterLabel>
+            <translation><!-- MMI Owned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MotoPlay App</masterLabel>
+            <translation><!-- MotoPlay App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RSS Feed</masterLabel>
+            <translation><!-- RSS Feed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stand Alone App</masterLabel>
+            <translation><!-- Stand Alone App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trademark License</masterLabel>
+            <translation><!-- Trademark License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WAP Link / Stub</masterLabel>
+            <translation><!-- WAP Link / Stub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Widget</masterLabel>
+            <translation><!-- Widget --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+        <picklistValues>
+            <masterLabel>Carrier App</masterLabel>
+            <translation><!-- Carrier App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Embedded</masterLabel>
+            <translation><!-- Embedded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Settlement</masterLabel>
+            <translation><!-- IP Settlement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Postload</masterLabel>
+            <translation><!-- Postload --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preload</masterLabel>
+            <translation><!-- Preload --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Services</masterLabel>
+            <translation><!-- Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box to auto-approve DevApps or skip the Partner Manager approval step when an Applications Countries match with the associated Devices Countries. --></help>
+        <label><!-- Automate Partner Checklist Approval --></label>
+        <name>Automate_Partner_Checklist_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field used to communicate to SW BOM Managers/Owners  that the application is automatically added and deleted from SW BOMs based on data specified by the Product Teams in the GPPD tool. --></help>
+        <label><!-- Automated into SW BOM from GPPD Specs --></label>
+        <name>Automated_from_GPPD__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Available Commercially? --></label>
+        <name>Available_Commercially__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Can this app be added to devices or copied from one device to another? If the app is already on a device but is no longer available for use it must be manually removed from the device. --></help>
+        <label><!-- Available For Use --></label>
+        <name>Available_For_Use__c</name>
+    </fields>
+    <fields>
+        <label><!-- Binary Name --></label>
+        <name>Binary_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This data is fed in from the SSAS Financial system --></help>
+        <label><!-- CURRENT_ROYALTY_TIER --></label>
+        <name>CURRENT_ROYALTY_TIER__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a Carrier Branded App? --></help>
+        <label><!-- Carrier Branded? --></label>
+        <name>Carrier_Branded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the application carrier furnished or is there a considerable amount of involvement by Motorola? --></help>
+        <label><!-- Carrier Furnished? --></label>
+        <name>Carrier_Furnished__c</name>
+        <picklistValues>
+            <masterLabel>Carrier Managed</masterLabel>
+            <translation><!-- Carrier Managed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Managed</masterLabel>
+            <translation><!-- Motorola Managed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this a Carrier Mandated application? --></help>
+        <label><!-- Carrier Mandated? --></label>
+        <name>Carrier_Mandated__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Commercial Review Status --></label>
+        <name>Commercial_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Commercial Review (legal, license, indemnity, warranty) --></help>
+        <label><!-- Commercial Review --></label>
+        <name>Commercial_Review_legal_license_indem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial Reviewer --></label>
+        <lookupFilter>
+            <errorMessage><!-- Employee must be Active in the Core Directory --></errorMessage>
+        </lookupFilter>
+        <name>Commercial_Reviewer__c</name>
+        <relationshipLabel><!-- Applications (Commercial Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Commercial Risk Level --></label>
+        <name>Commercial_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>C0</masterLabel>
+            <translation><!-- C0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C1</masterLabel>
+            <translation><!-- C1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C2</masterLabel>
+            <translation><!-- C2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C3</masterLabel>
+            <translation><!-- C3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C4</masterLabel>
+            <translation><!-- C4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C5</masterLabel>
+            <translation><!-- C5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If your application is dependent on a server/network/wireless/SMS connection or any connectivity outside the handset, then select Network Connected.
+If the application can run solely on the handset (eg a game), then select Stand-Alone --></help>
+        <label><!-- Connectivity --></label>
+        <name>Connectivity__c</name>
+        <picklistValues>
+            <masterLabel>Network Connected</masterLabel>
+            <translation><!-- Network Connected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stand-Alone</masterLabel>
+            <translation><!-- Stand-Alone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Per Unit --></label>
+        <name>Cost_Per_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of ComptApps --></label>
+        <name>Count_of_ComptApps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count_of_Gov --></label>
+        <name>Count_of_Gov__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of SW Projects --></label>
+        <name>Count_of_SW_Projects__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to track whether IP Settlements have correct countries filled out in preparation for Automation --></help>
+        <label><!-- Countries Status --></label>
+        <name>Countries_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Current shipped volume for this Application.This data is fed in from the SSAS Financial system --></help>
+        <label><!-- Current Ship Volume --></label>
+        <name>Current_Ship_Volume__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Danger? --></help>
+        <label><!-- Danger --></label>
+        <name>Danger__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dev-App # of Defects with Include on BOM checked --></help>
+        <label><!-- # Defects (Include on BOM) --></label>
+        <name>Defects_Include_on_BOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dev-App # of Defects (not included on BOM but unnecessarily created and associated with Device) --></help>
+        <label><!-- # Defects (auto-generated) --></label>
+        <name>Defects_auto_generated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo? --></label>
+        <name>Demo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Basic description of what the app does on the phone. Is it a game, a photo editor, fonts, etc.? What does the app do? --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last day the contract would allow us add an app to a new platform design or APC --></help>
+        <label><!-- Design End Date --></label>
+        <name>Design_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last day the contract would allow us add and app to a new device within in existing APC --></help>
+        <label><!-- Device End Date --></label>
+        <name>Device_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business disclosure by MDM --></help>
+        <label><!-- Disclosure Complete --></label>
+        <name>Disclosure_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- ECCN.subECCN Value --></label>
+        <name>ECCN_subECCN_Value__c</name>
+        <picklistValues>
+            <masterLabel>5D002.a</masterLabel>
+            <translation><!-- 5D002.a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D002.b</masterLabel>
+            <translation><!-- 5D002.b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D002.c.1</masterLabel>
+            <translation><!-- 5D002.c.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D002.c.2</masterLabel>
+            <translation><!-- 5D002.c.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D991NR</masterLabel>
+            <translation><!-- 5D991NR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D992.a</masterLabel>
+            <translation><!-- 5D992.a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D992.b</masterLabel>
+            <translation><!-- 5D992.b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5D992.c</masterLabel>
+            <translation><!-- 5D992.c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAR99NR</masterLabel>
+            <translation><!-- EAR99NR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ENC License Category --></label>
+        <name>ENC_License_Category__c</name>
+        <picklistValues>
+            <masterLabel>ENC-Restricted: 740.17.b.2</masterLabel>
+            <translation><!-- ENC-Restricted: 740.17.b.2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENC-Unrestricted: 740.17.b.1</masterLabel>
+            <translation><!-- ENC-Unrestricted: 740.17.b.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENC-Unrestricted: 740.17.b.3</masterLabel>
+            <translation><!-- ENC-Unrestricted: 740.17.b.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENC-Unrestricted: 740.17.b.4</masterLabel>
+            <translation><!-- ENC-Unrestricted: 740.17.b.4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass Market Components: 742.15.b.3</masterLabel>
+            <translation><!-- Mass Market Components: 742.15.b.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass Market Finished Goods: 742.15.b.1</masterLabel>
+            <translation><!-- Mass Market Finished Goods: 742.15.b.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other 5A992.a and 5D992.a items</masterLabel>
+            <translation><!-- Other 5A992.a and 5D992.a items --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Earliest &quot;Date Sourced&quot; out of all competitive sources listed. --></help>
+        <label><!-- Earliest Competitive App Listing Date --></label>
+        <name>Earliest_Competitive_App_Listing_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field used to document the Exclusion Filter Rules for IP team review --></help>
+        <label><!-- Exclusion Filter Rules - Copied --></label>
+        <name>Exclusion_Filter_Rules_Copied__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status field for Exclusion Reports Filter Rules --></help>
+        <label><!-- Exclusion Filter Rules Status --></label>
+        <name>Exclusion_Filter_Rules_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status field for Exclusion Reports --></help>
+        <label><!-- Exclusion Report Status --></label>
+        <name>Exclusion_Report_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report to capture incorrectly applied Dev-Apps related to IP Settlements &amp; some IP Licenses --></help>
+        <label><!-- Exclusion Report --></label>
+        <name>Exclusion_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- When does the Exclusive period end? --></help>
+        <label><!-- Exclusivity End --></label>
+        <name>Exclusivity_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- When does the Exclusive period start? --></help>
+        <label><!-- Exclusivity Start --></label>
+        <name>Exclusivity_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this app Exclusive to Motorola? --></help>
+        <label><!-- Exclusivity? --></label>
+        <name>Exclusivity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Alpha --></label>
+        <name>Expected_Alpha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Beta --></label>
+        <name>Expected_Beta__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expected GM minus two weeks --></help>
+        <label><!-- Expected GM Release Candidate --></label>
+        <name>Expected_GM_Release_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected GM --></label>
+        <name>Expected_GM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on EzX? --></help>
+        <label><!-- EzX --></label>
+        <name>EzX__c</name>
+    </fields>
+    <fields>
+        <label><!-- FMD Feature ID --></label>
+        <name>FMD_Feature_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Corresponding Feature Request ID --></help>
+        <label><!-- Corresponding Feature Request ID --></label>
+        <name>Feature_Request_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to capture who is working on the filter rules for each of the Apps for Automation project --></help>
+        <label><!-- Filter Rules Owner --></label>
+        <name>Filter_Rules_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application a Google Mobile Service? --></help>
+        <label><!-- GMS App --></label>
+        <name>GMS_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to show whether IP Settlement has been Automated in the SF Sandbox --></help>
+        <label><!-- GPPD Automation Implemented in Sandbox --></label>
+        <name>GPPD_Automation_Implemented_in_Sandbox__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Audit report URL for GPPD Fields required for IP Settlement Automation --></help>
+        <label><!-- GPPD Fields Audit Report --></label>
+        <name>GPPD_Fields_Audit_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- GPPD Fields used by IP Licensing team to determine exposure and impact of IP Settlements. --></help>
+        <label><!-- GPPD Fields --></label>
+        <name>GPPD_Fields__c</name>
+    </fields>
+    <fields>
+        <help><!-- Winner of a Handango App of the Year Award --></help>
+        <label><!-- Handango Award --></label>
+        <name>Handango_Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- Heap Size --></label>
+        <name>Heap_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field for *IP-S* Automation project which captures whether the patent license is Perpetual or Term-based.  Resulting data will be fed into existing FR092649 and then field will be deleted. --></help>
+        <label><!-- IP Settlement License Type --></label>
+        <name>IP_Settlement_License_Type__c</name>
+        <picklistValues>
+            <masterLabel>Perpetual</masterLabel>
+            <translation><!-- Perpetual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Term</masterLabel>
+            <translation><!-- Term --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field used to document the Inclusion Filter Rules for IP team review --></help>
+        <label><!-- Inclusion Filter Rules - Copied --></label>
+        <name>Inclusion_Filter_Rules_Copied__c</name>
+    </fields>
+    <fields>
+        <help><!-- Captures status of IP Settlement Rules for Inclusion Reports --></help>
+        <label><!-- Inclusion Filter Rules Status --></label>
+        <name>Inclusion_Filter_Rules_Status__c</name>
+        <picklistValues>
+            <masterLabel>Rules Approved</masterLabel>
+            <translation><!-- Rules Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rules Reviewed</masterLabel>
+            <translation><!-- Rules Reviewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rules Written</masterLabel>
+            <translation><!-- Rules Written --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Status of Inclusion Report --></help>
+        <label><!-- Inclusion Report Status --></label>
+        <name>Inclusion_Report_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report that identifies the products that need related IP Settlements --></help>
+        <label><!-- Inclusion Report --></label>
+        <name>Inclusion_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Event was selected as the Influencing Reason, which specific event? --></help>
+        <label><!-- Influencing Reason_Specific Event --></label>
+        <name>Influencing_Reason_Specific_Event__c</name>
+        <picklistValues>
+            <masterLabel>CTIA - San Diego Oct&apos;09</masterLabel>
+            <translation><!-- CTIA - San Diego Oct&apos;09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOTODEV Summit - San Diego Oct&apos;09</masterLabel>
+            <translation><!-- MOTODEV Summit - San Diego Oct&apos;09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint Developer Conf - Santa Clara Oct&apos;09</masterLabel>
+            <translation><!-- Sprint Developer Conf - Santa Clara Oct&apos;09 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What was the primary influencing reason that this app is being developed for Android? --></help>
+        <label><!-- Influencing Reason --></label>
+        <name>Influencing_Reason__c</name>
+        <picklistValues>
+            <masterLabel>App Store Pitch Deck</masterLabel>
+            <translation><!-- App Store Pitch Deck --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Meeting</masterLabel>
+            <translation><!-- Business Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold Call</masterLabel>
+            <translation><!-- Cold Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecosystem Pitch Deck</masterLabel>
+            <translation><!-- Ecosystem Pitch Deck --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The last day the contract would allow us to ship a previously built unit from the factory --></help>
+        <label><!-- Inventory Ship End Date --></label>
+        <name>Inventory_Ship_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Java or Native --></label>
+        <name>Java_or_Native__c</name>
+        <picklistValues>
+            <masterLabel>Java</masterLabel>
+            <translation><!-- Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Native</masterLabel>
+            <translation><!-- Native --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Hidden concatenated field of all legally shippable countries for this application for Microgen --></help>
+        <label><!-- Legally Shippable Countries Microgen --></label>
+        <name>Legally_Shippable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether or not the app needs Motorola APIs that are not accessed through Android in order to function --></help>
+        <label><!-- Leveraging Motorola Proprietary APIs? --></label>
+        <name>Leveraging_Motorola_Proprietary_APIs__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Link to Google Doc --></label>
+        <name>Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOTOREADY App Status --></label>
+        <name>MOTOREADY_App_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last day the contract would allow us to manufacture a device with that app --></help>
+        <label><!-- Manufacture End Date --></label>
+        <name>Manufacture_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of this app on Android Market; visible only to ATS/DTS profiles --></help>
+        <label><!-- Market Name --></label>
+        <name>Market_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Review Status --></label>
+        <name>Marketing_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Marketing/TradeMark Comments --></label>
+        <name>Marketing_TradeMark_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Memory Size --></label>
+        <name>Memory_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- How will the user download the app? (applies to demos and trials) e.g. WAP Link, OTA download, bundled in a memory card, etc. --></help>
+        <label><!-- Method of Download --></label>
+        <name>Method_of_Download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Microgen Application ID --></label>
+        <name>Microgen_Application_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is checked, this Application ID has been reviewed and royalty data related to it have been sent to Microgen. --></help>
+        <label><!-- Microgen Reviewed? --></label>
+        <name>Microgen_Reviewed__c</name>
+    </fields>
+    <fields>
+        <label><!-- MotoPlay Type --></label>
+        <name>MotoPlay_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dogfood</masterLabel>
+            <translation><!-- Dogfood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fishfood</masterLabel>
+            <translation><!-- Fishfood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utililites</masterLabel>
+            <translation><!-- Utililites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wearables</masterLabel>
+            <translation><!-- Wearables --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Did Motorola influence the development of this app for Android? --></help>
+        <label><!-- Motorola Influenced Android Development? --></label>
+        <name>Motorola_Influenced_Android_Development__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motorola Proprietary APIs supported list --></label>
+        <name>Motorola_Proprietary_APIs_supported_list__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fields required out of NPI for Automation project --></help>
+        <label><!-- NPI Fields --></label>
+        <name>NPI_Fields__c</name>
+    </fields>
+    <fields>
+        <help><!-- Showcased Apps on Nokia&apos;s MOSH beta site --></help>
+        <label><!-- Nokia Showcased App --></label>
+        <name>Nokia_Showcased_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nokia Top 10 Handango App --></label>
+        <name>Nokia_Top_10_Handango_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nokia Top 10 Handmark App --></label>
+        <name>Nokia_Top_10_Handmark_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- ODM Proprietary OS --></label>
+        <name>ODM_Propriotory__c</name>
+    </fields>
+    <fields>
+        <label><!-- OSS Review Status --></label>
+        <name>OSS_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OSS Review --></label>
+        <name>OSS_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to capture whether an application can be replaced through a software replacement over-the-air (OTA). --></help>
+        <label><!-- OTA Replacement Functionality? --></label>
+        <name>OTA_Replacement_Functionality__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field to capture whether an application can be provided as a software upgrade over-the-air (OTA). --></help>
+        <label><!-- OTA Upgrade Functionality? --></label>
+        <name>OTA_Upgrade_Functionality__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on P2K P08.1.2? --></help>
+        <label><!-- P2K P08.1.2 --></label>
+        <name>P2K_P08_1_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the name of the apk package if applicable --></help>
+        <label><!-- Package Name --></label>
+        <name>Package_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Palm WebOS --></label>
+        <name>Palm_WebOS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Risk Level --></label>
+        <name>Priv_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>P0</masterLabel>
+            <translation><!-- P0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1</masterLabel>
+            <translation><!-- P1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2</masterLabel>
+            <translation><!-- P2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3</masterLabel>
+            <translation><!-- P3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4</masterLabel>
+            <translation><!-- P4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P5</masterLabel>
+            <translation><!-- P5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Comments --></label>
+        <name>Privacy_Review_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Privacy Review Status --></label>
+        <name>Privacy_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Privacy Reviewer --></label>
+        <lookupFilter>
+            <errorMessage><!-- Employee must be Active in the Core Directory --></errorMessage>
+        </lookupFilter>
+        <name>Privacy_Reviewer__c</name>
+        <relationshipLabel><!-- Applications (Privacy Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pursue for China? --></label>
+        <name>Pursue_for_China__c</name>
+    </fields>
+    <fields>
+        <label><!-- RIM/Blackberry Top 10 Handango App --></label>
+        <name>RIM_Blackberry_Top_10_Handango_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- RIM/Blackberry Top 10 Handmark App --></label>
+        <name>RIM_Blackberry_Top_10_Handmark_APp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on RIM? --></help>
+        <label><!-- RIM --></label>
+        <name>RIM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for sorting in Reporting/Dashboards --></help>
+        <label><!-- Rank Priority --></label>
+        <name>Rank_Priority__c</name>
+        <picklistValues>
+            <masterLabel>1 - Low Priority</masterLabel>
+            <translation><!-- 1 - Low Priority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Medium Priority</masterLabel>
+            <translation><!-- 2 - Medium Priority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - High Priority</masterLabel>
+            <translation><!-- 3 - High Priority --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The last day the contract would allow us send out software with that app included in it (i.e. MOL) --></help>
+        <label><!-- Release End Date --></label>
+        <name>Release_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hidden Microgen field used for backend processing. --></help>
+        <label><!-- Rev Share App Microgen --></label>
+        <name>Rev_Share_App_Microgen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Share App? --></label>
+        <name>Rev_Share_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Share Details --></label>
+        <name>Rev_Share_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fed in nightly from SSAS via webMethods --></help>
+        <label><!-- Royalty Cumulative --></label>
+        <name>Royalty_Cumulative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Current --></label>
+        <name>Royalty_Current__c</name>
+    </fields>
+    <fields>
+        <help><!-- What does the royalty cover?  What is Motorola paying for? --></help>
+        <label><!-- Royalty Description --></label>
+        <name>Royalty_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty High --></label>
+        <name>Royalty_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Low --></label>
+        <name>Royalty_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Royalty Payment Attribute --></label>
+        <name>Royalty_Payment_Attribute__c</name>
+        <picklistValues>
+            <masterLabel>Allocated Cost</masterLabel>
+            <translation><!-- Allocated Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per Unit Rate</masterLabel>
+            <translation><!-- Per Unit Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per-unit Cap Annual</masterLabel>
+            <translation><!-- Per-unit Cap Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per-unit Cap Perpetual</masterLabel>
+            <translation><!-- Per-unit Cap Perpetual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Shipment activation</masterLabel>
+            <translation><!-- Post Shipment activation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepaid Long-Term</masterLabel>
+            <translation><!-- Prepaid Long-Term --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepaid Short-Term</masterLabel>
+            <translation><!-- Prepaid Short-Term --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate Table Annual</masterLabel>
+            <translation><!-- Rate Table Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate Table Perpetual</masterLabel>
+            <translation><!-- Rate Table Perpetual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate Table Quarterly</masterLabel>
+            <translation><!-- Rate Table Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty Free</masterLabel>
+            <translation><!-- Royalty Free --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field to track Salesforce IT development status for IP Settlement automation --></help>
+        <label><!-- Rules Development Status --></label>
+        <name>Rules_Development_Status__c</name>
+        <picklistValues>
+            <masterLabel>SF IT - Rules Development Approved</masterLabel>
+            <translation><!-- SF IT - Rules Development Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF IT - Rules Development In Testing</masterLabel>
+            <translation><!-- SF IT - Rules Development In Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF IT - Rules Development Not Started</masterLabel>
+            <translation><!-- SF IT - Rules Development Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF IT - Rules Development Written</masterLabel>
+            <translation><!-- SF IT - Rules Development Written --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this app available on SHOP4APPS, and if so, what region? --></help>
+        <label><!-- SHOP4APPS Availability --></label>
+        <name>SHOP4APPS_Availability__c</name>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SW Part Number --></label>
+        <name>SW_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SW Type --></label>
+        <name>SW_Type__c</name>
+        <picklistValues>
+            <masterLabel>APK</masterLabel>
+            <translation><!-- APK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Binary</masterLabel>
+            <translation><!-- Binary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Code Snippet</masterLabel>
+            <translation><!-- Code Snippet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>File</masterLabel>
+            <translation><!-- File --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name of Salesforce Fields utilized for Automation project --></help>
+        <label><!-- Salesforce Fields --></label>
+        <name>Salesforce_Fields__c</name>
+    </fields>
+    <fields>
+        <help><!-- For internal Biz Ops purposes - to track status of mapping GPPD fields - - &gt; NPI - - &gt; SF for Automation project --></help>
+        <label><!-- Automation Readiness --></label>
+        <name>Salesforce_Readiness__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security/Architecture Review --></label>
+        <name>Security_Architecture_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Review Status --></label>
+        <name>Security_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Reviewer --></label>
+        <lookupFilter>
+            <errorMessage><!-- Employee must be Active in the Core Directory --></errorMessage>
+        </lookupFilter>
+        <name>Security_Reviewer__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Security Risk Level --></label>
+        <name>Security_Risk_Level__c</name>
+        <picklistValues>
+            <masterLabel>S0</masterLabel>
+            <translation><!-- S0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S1</masterLabel>
+            <translation><!-- S1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S2</masterLabel>
+            <translation><!-- S2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S3</masterLabel>
+            <translation><!-- S3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S4</masterLabel>
+            <translation><!-- S4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S5</masterLabel>
+            <translation><!-- S5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Skip LRB Approval --></label>
+        <name>Skip_LRB_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stable_count --></label>
+        <name>Stable_count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Technical Accounting guidance about whether Remaining Balance can be written off for lump-sum IP Settlement --></help>
+        <label><!-- Technical Accounting Input --></label>
+        <name>Technical_Accounting_Input__c</name>
+        <picklistValues>
+            <masterLabel>DIRECTION NEEDED - CREDIT BALANCE</masterLabel>
+            <translation><!-- DIRECTION NEEDED - CREDIT BALANCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HOLD - BORDERLINE BALANCE</masterLabel>
+            <translation><!-- HOLD - BORDERLINE BALANCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO - LOW BALANCE</masterLabel>
+            <translation><!-- NO - LOW BALANCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES - AUTOMATE</masterLabel>
+            <translation><!-- YES - AUTOMATE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This app is part of a Top 10 Competitive app list;
+The field is automatically checked, based on whether the app is related to a Competitive Source --></help>
+        <label><!-- Top 10 Competitive App --></label>
+        <name>Top_10_Competitive_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total = #Defects (Include on BOM) + #Defects (auto-generated) for Automation project metric tracking --></help>
+        <label><!-- Total # of incorrectly generated Dev-App --></label>
+        <name>Total_of_incorrectly_generated_Dev_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the app is NOT available via Android Market, please enter the URL where it is available for download --></help>
+        <label><!-- URL for Download --></label>
+        <name>URL_for_Download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique_App --></label>
+        <name>Unique_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile 7.0 Java? --></help>
+        <label><!-- WM 7 Java --></label>
+        <name>WM_7_Java__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile 7 Native? --></help>
+        <label><!-- WM 7 Native --></label>
+        <name>WM_7_Native__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Pocket PC 5.x Java? --></help>
+        <label><!-- WM Pocket PC 5.x Java --></label>
+        <name>WM_Pocket_PC_5_x_Java__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Pocket PC 5.x Native? --></help>
+        <label><!-- WM Pocket PC 5.x Native --></label>
+        <name>WM_Pocket_PC_5_x_Native__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Pocket PC 6.x Java? --></help>
+        <label><!-- WM Pocket PC 6.x Java --></label>
+        <name>WM_Pocket_PC_6_x_Java__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Pocket PC 6.x Native? --></help>
+        <label><!-- WM Pocket PC 6.x Native --></label>
+        <name>WM_Pocket_PC_6_x_Native__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Smartphone 5.x Java?? --></help>
+        <label><!-- WM Smartphone 5.x Java --></label>
+        <name>WM_Smartphone_5_x_Java__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Smartphone 5.x Native? --></help>
+        <label><!-- WM Smartphone 5.x Native --></label>
+        <name>WM_Smartphone_5_x_Native__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Smartphone 6.x Java? --></help>
+        <label><!-- WM Smartphone 6.x Java --></label>
+        <name>WM_Smartphone_6_x_Java__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on Windows Mobile Smartphone 6.x Native? --></help>
+        <label><!-- WM Smartphone 6.x Native --></label>
+        <name>WM_Smartphone_6_x_Native__c</name>
+    </fields>
+    <fields>
+        <help><!-- Technical and process info provided by EMD PM --></help>
+        <label><!-- Welcome Package Sent --></label>
+        <name>Welcome_Package_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- WinMo Top 10 Handango App --></label>
+        <name>WinMo_Top_10_Handango_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- WinMo Top 10 Handmark App --></label>
+        <name>WinMo_Top_10_Handmark_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- WinMobile Catalog Top 5 Smartphone App --></label>
+        <name>WinMobile_Catalog_Top_5_Smartphone_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this application require 3rd party approval? --></help>
+        <label><!-- 3rd Party Approval Required? --></label>
+        <name>X3rd_Party_Approval_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- iPad --></label>
+        <name>iPad__c</name>
+    </fields>
+    <fields>
+        <help><!-- Listed in the iPhone App Directory --></help>
+        <label><!-- iPhone App Directory --></label>
+        <name>iPhone_App_Directory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this Application build on iPhone? --></help>
+        <label><!-- iPhone --></label>
+        <name>iPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of App Versions --></label>
+        <name>of_App_Versions__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total # of countries where this application is available. This does NOT mean MOT can legally ship to this country. --></help>
+        <label><!-- # of Avalible Countries --></label>
+        <name>of_Avalible_Countries__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total # of devices this app is on --></help>
+        <label><!-- # of Devices --></label>
+        <name>of_Devices__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total # of countries where MOT can legally ship this application to --></help>
+        <label><!-- # of MOT Legally Shippable Countries --></label>
+        <name>of_MOT_Legally_Shippable_Countries__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total # of Stables this application is Mandatory on. --></help>
+        <label><!-- # of Mandatory Stables --></label>
+        <name>of_Mandatory_Stables__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is a CARRIER APP, who is the 3rd Party Account? --></help>
+        <label><!-- 3rd Party Account --></label>
+        <name>third_party_account__c</name>
+        <relationshipLabel><!-- Applications (3rd Party Account) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Application Layout</layout>
+        <sections>
+            <label><!-- Application Totals --></label>
+            <section>Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals Information --></label>
+            <section>Approvals Information</section>
+        </sections>
+        <sections>
+            <label><!-- Available Countries --></label>
+            <section>Available Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Available Languages --></label>
+            <section>Available Languages</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance Reviews --></label>
+            <section>Compliance Reviews</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Information - -  READ ONLY - to edit, go directly to the Contract Record --></label>
+            <section>Contract Information -- READ ONLY - to edit, go directly to the Contract Record</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ECCN Details --></label>
+            <section>ECCN Details</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- MOT Legally Shippable Countries --></label>
+            <section>MOT Legally Shippable Countries</section>
+        </sections>
+        <sections>
+            <label><!-- SW BOM Details --></label>
+            <section>SW BOM Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Application Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Android Information --></label>
+            <section>Android Information</section>
+        </sections>
+        <sections>
+            <label><!-- Application Totals --></label>
+            <section>Application Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals Information --></label>
+            <section>Approvals Information</section>
+        </sections>
+        <sections>
+            <label><!-- Available Countries --></label>
+            <section>Available Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Available Languages --></label>
+            <section>Available Languages</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- MOT Legally Shippable Countries --></label>
+            <section>MOT Legally Shippable Countries</section>
+        </sections>
+        <sections>
+            <label><!-- Platform Details --></label>
+            <section>Platform Details</section>
+        </sections>
+        <sections>
+            <label><!-- SHOP4APPS Information --></label>
+            <section>SHOP4APPS Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- There must be a related Account for this Application --></errorMessage>
+        <name>Application_must_have_an_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this is a Carrier App, please select a value for the field &quot;Carrier Branded&quot; --></errorMessage>
+        <name>Carrier_Branded_required_if_Carrier_Ap</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this is a Carrier App, please select a value for the field &quot;Carrier Furnished&quot; --></errorMessage>
+        <name>Carrier_Furnished_required_if_Carrier_Ap</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this is a Carrier App, please select a value for the field &quot;Carrier Mandated&quot; --></errorMessage>
+        <name>Carrier_Mandated_required_if_Carrier_Ap</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Error:  Only one related Contract may be checked as &quot;Governing&quot; --></errorMessage>
+        <name>Check_for_Single_GOV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This application is tied to a contract in Phase &quot;Approvals&quot; or &quot;Execution and Processing&quot;. You must select an appropriate royalty payment attribute and enter values for Royalty High, Royalty Current and Royalty Low fields. --></errorMessage>
+        <name>Contracts_Current_Phase_Require_Royalty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Exclusive&quot; box is checked, so please enter a START Date --></errorMessage>
+        <name>Date_required_if_Exclusive_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Exclusive&quot; box is checked, so please enter an END Date --></errorMessage>
+        <name>Date_required_if_Exclusive_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Leveraging Motorola Proprietary API picklist is marked yes, then enter the motorola proprietary api supported list --></errorMessage>
+        <name>Mot_Proprietary_API</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract cannot be set to Fully Executed without it&apos;s Royalty High/Low/Current fields being filled out. --></errorMessage>
+        <name>No_executed_contract_without_royalty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must select a SubType for Preload Applications. --></errorMessage>
+        <name>Preload_Apps_must_has_SubType</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;Available for Use&apos; MUST be checked if &apos;Automate Partner Checklist Approval&apos; gets checked. --></errorMessage>
+        <name>Validate_Available_for_Use</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- List_of_Active_Devices --></label>
+        <name>List_of_Active_Devices</name>
+    </webLinks>
+</CustomObjectTranslation>

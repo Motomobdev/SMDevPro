@@ -1,0 +1,58 @@
+<apex:page controller="contractExt" sidebar="false" showHeader="false">
+<div style="background-color:#545254;">
+<apex:image value="{!$Resource.logo_imoto}"/>
+</div>
+<apex:form >
+
+<apex:pageBlock title="CONTRACT REQUEST" mode="edit" id="pgBlock">
+<apex:pageBlockButtons >
+    <apex:commandButton action="{!prePage3}" value="Previous" style="width:60px;text-align:center;"> </apex:commandButton>
+    <apex:commandButton action="{!submit}" value="Submit" style="width:60px;text-align:center;"> </apex:commandButton>
+</apex:pageBlockButtons>
+
+<div style="background-color:#C5D5F6;font-size:7px;height:40px;font-weight:900;color:#FFFFFF !important;line-height:50%;border-radius:10px;">
+<apex:sectionHeader title="STEP 4 of 4"/>
+</div>
+
+<div style="background-color:white;">
+<apex:pageBlockSection >
+<apex:panelGrid columns="2">
+
+<apex:outputLabel value="Targeted NRE Cost" for="nrecost" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:outputPanel styleClass="requiredInput" layout="block">  
+    <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!contract.NRE_Cost__c}"  id="nrecost" style="text-align:left;"/>
+</apex:outputPanel>  
+
+<apex:outputText value=" " style="color:red;" rendered="{!LEN(errorMessageNRE)>0}"/>
+<apex:outputText value="{!errorMessageNRE}" style="color:red;" rendered="{!LEN(errorMessageNRE)>0}"/>      
+   
+<apex:outputLabel value="Target Royalty or one-time License Fee" for="licensefee" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.License_Fee__c}" id="licensefee" style="text-align:left;"/>
+
+<apex:outputLabel value="Estimated annual Maintenance & Support Cost" for="mscost" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Maintenance_Support_Cost__c}" id="mscost" style="text-align:left;"/>
+    
+<apex:outputLabel value="Prepay Amount" for="prepay" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Prepay_Amount__c}" id="prepay" style="text-align:left;"/>
+
+<apex:outputLabel value="Other Costs" for="othercost" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Other_Costs__c}" id="othercost" style="text-align:left;"/>
+
+<apex:outputLabel value="Other Costs Details" for="othercostdet" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+<apex:inputField value="{!contract.Other_Costs_Details__c}" id="othercostdet" style="text-align:left;"/>
+
+   
+        <apex:outputLabel value="Has Finance approved the funding?" for="finapprove" style="line-height:200%;font-weight:bold;white-space:nowrap;margin-right:auto;margin-left:auto;padding-left:230px;padding-right:20px;text-align:right;"/>
+        <apex:selectRadio value="{!financeAppr}" id="finapprove" style="text-align:left;">
+              <apex:selectOption itemValue="True" itemLabel="Yes" />
+              <apex:selectOption itemValue="False" itemLabel="No" />
+        </apex:selectRadio>   
+
+    </apex:panelGrid>
+</apex:pageBlockSection>
+</div>
+
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

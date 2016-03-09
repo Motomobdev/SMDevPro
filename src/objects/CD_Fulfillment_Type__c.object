@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CFC__c</fullName>
+        <externalId>false</externalId>
+        <label>CFC</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FLEXTRONICS MANUFACTURING TIANJIN</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS FtW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foxconn Guan Lan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD - TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS BRASIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Distribution_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <label>Distribution Strategy</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DIRECT SHIP CHINA</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STANDARD SHIP FLEXTRONICS FtW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Ship to Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD - TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crossdock Flex FtW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crossdock at Flextronics FtW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STANDARD SHIP BRAZIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Final_Customer_Shipment_site__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Customer Shipment site</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FLEXTRONICS MANUFACTURING TIANJIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS FtW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foxconn Guan Lan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD - TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKD TDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS BRASIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_ID__c</fullName>
+        <displayFormat>FUL-{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Fulfillment ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Key_Account_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Key Account_Code</label>
+        <referenceTo>Key_Account__c</referenceTo>
+        <relationshipLabel>CD Fulfillment Type</relationshipLabel>
+        <relationshipName>CD_Fulfillment_Type</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Key_Account_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Key_Account_Code__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Key Account Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFG_SITE__c</fullName>
+        <externalId>false</externalId>
+        <label>MFG SITE</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Endo - FLEXTRONICS FtW</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENDO - FLEXTRONICS MANUFACTURING TIANJIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS BRASIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLEXTRONICS MANUFACTURING TIANJIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foxconn Guan Lan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ORG_CODE__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>XTJ - Flex TJ
+XFW - Flex FW
+XPT - Flex BZ
+X41 - Foxconn</inlineHelpText>
+        <label>ORG CODE</label>
+        <picklist>
+            <picklistValues>
+                <fullName>XTJ</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XFW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XPT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>X41</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Model</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CD Fulfillment Type</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Sales_Model__c</columns>
+        <columns>Key_Account_Code__c</columns>
+        <columns>Key_Account_Description__c</columns>
+        <columns>MFG_SITE__c</columns>
+        <columns>CFC__c</columns>
+        <columns>Final_Customer_Shipment_site__c</columns>
+        <columns>Distribution_Strategy__c</columns>
+        <columns>ORG_CODE__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>FUL-{000000}</displayFormat>
+        <label>CD Fulfillment Type Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CD Fulfillment Type</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

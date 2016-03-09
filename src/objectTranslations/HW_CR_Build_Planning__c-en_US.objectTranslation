@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HW CR Build Planning</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HW CR Build Plans</value>
+    </caseValues>
+    <fields>
+        <help><!-- If pilot requires Tianjin ALT, record ALT number here. --></help>
+        <label><!-- ALT Number --></label>
+        <name>ALT_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Detail to help with factory build coordination; work instructions, shipping instructions, general FYI.  You may also upload documentation to assist with instructions and reference the document here. --></help>
+        <label><!-- Additionall FBR Detail --></label>
+        <name>Additionall_FBR_Detail__c</name>
+    </fields>
+    <fields>
+        <help><!-- Completion date of build.  Assumption is HW shipment information will be entered within a day of completion. --></help>
+        <label><!-- Build Completion Date --></label>
+        <name>Build_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual hardware kit for build and distribution. --></help>
+        <label><!-- Build Transceiver --></label>
+        <name>Build_Transceiver__c</name>
+    </fields>
+    <fields>
+        <help><!-- If customer SW is needed for testing, this should be &apos;Yes&apos; --></help>
+        <label><!-- CFC Flex Required --></label>
+        <name>CFC_Flex_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Engineer group contact with top interest in execution statuses. --></help>
+        <label><!-- Central Engineer Contact --></label>
+        <name>Central_Engineer_Contact__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (Central Engineer Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Completed Flag --></label>
+        <name>Completed_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Factory confirmed build quantity.  Issued PO(s) to match HW kit and total quantity. --></help>
+        <label><!-- Confirmed Build Qty --></label>
+        <name>Confirmed_Build_Qty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product reference designation for electrical component 1 --></help>
+        <label><!-- EE 1 Ref-Des --></label>
+        <name>EE_1_Ref_Des__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product reference designation for electrical component 2 --></help>
+        <label><!-- EE 2 Ref-Des --></label>
+        <name>EE_2_Ref_Des__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product reference designation for electrical component 3 --></help>
+        <label><!-- EE 3 Ref-Des --></label>
+        <name>EE_3_Ref_Des__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product reference designation for electrical component 4 --></help>
+        <label><!-- EE 4 Ref-Des --></label>
+        <name>EE_4_Ref_Des__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product reference designation for electrical component 5 --></help>
+        <label><!-- EE 5 Ref-Des --></label>
+        <name>EE_5_Ref_Des__c</name>
+    </fields>
+    <fields>
+        <label><!-- EE Component 1 --></label>
+        <name>EE_Component_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Electrical component associated to engineering record 2 --></help>
+        <label><!-- EE Component 2 --></label>
+        <name>EE_Component_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Electrical component associated to engineering record 3 --></help>
+        <label><!-- EE Component 3 --></label>
+        <name>EE_Component_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Electrical component associated to engineering record 4 --></help>
+        <label><!-- EE Component 4 --></label>
+        <name>EE_Component_4__c</name>
+    </fields>
+    <fields>
+        <help><!-- Electrical component associated to engineering record 5 --></help>
+        <label><!-- EE Component 5 --></label>
+        <name>EE_Component_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineer Test Record 1 --></label>
+        <lookupFilter>
+            <errorMessage><!-- Assessment product has now related engineer requirement, check the product name and try again. --></errorMessage>
+        </lookupFilter>
+        <name>Engineer_Test_Record_1__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engineer Test Record 2 --></label>
+        <lookupFilter>
+            <errorMessage><!-- Product chosen does not have an engineering plan associated.  Verify the product information. --></errorMessage>
+        </lookupFilter>
+        <name>Engineer_Test_Record_2__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engineer Test Record 3 --></label>
+        <lookupFilter>
+            <errorMessage><!-- Product selected does not have any pending engineering activity.  Check product name. --></errorMessage>
+        </lookupFilter>
+        <name>Engineer_Test_Record_3__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engineer Test Record 4 --></label>
+        <name>Engineer_Test_Record_4__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engineer Test Record 5 --></label>
+        <name>Engineer_Test_Record_5__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Estimate Build Start --></label>
+        <name>Estimate_Build_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR All Day Event --></label>
+        <name>FBR_All_Day_Event__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Build Record Link --></label>
+        <name>FBR_Build_Record_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Calendar End Time --></label>
+        <name>FBR_Calendar_End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Calendar Reminder --></label>
+        <name>FBR_Calendar_Reminder__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Calendar Start Time --></label>
+        <name>FBR_Calendar_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Calendar Subject --></label>
+        <name>FBR_Calendar_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Product Name Assigned --></label>
+        <name>FBR_Product_Name_Assigned__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select once build plan is ready for factory scheduling --></help>
+        <label><!-- FBR Ready for Build --></label>
+        <name>FBR_Ready_for_Build__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Reminder Date --></label>
+        <name>FBR_Reminder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Reminder Time --></label>
+        <name>FBR_Reminder_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- FBR Status Sum --></label>
+        <name>FBR_Status_Sum__c</name>
+    </fields>
+    <fields>
+        <help><!-- FBR status field to reflect current status of build request. --></help>
+        <label><!-- FBR Status --></label>
+        <name>FBR_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Factory TOP or ASE team members build summary. --></help>
+        <label><!-- Factory TOP Build Comments --></label>
+        <name>Factory_TOP_Build_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entry used to highlight any reporting desired by engineering.  For instance, board test summary. --></help>
+        <label><!-- Factory Test  Reports --></label>
+        <name>Factory_Test_Reports__c</name>
+    </fields>
+    <fields>
+        <help><!-- Details surrounding ship quantities and allocation.  Specifics listed within the product engineer (PE) record. --></help>
+        <label><!-- HW CR Build Allocation Comment --></label>
+        <name>HW_CR_Build_Allocation_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total quantity for pilot build. --></help>
+        <label><!-- HW CR Build Quantity --></label>
+        <name>HW_CR_Build_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- HW Change Request Base --></label>
+        <name>HW_Change_Request_Base__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (HW Change Request Base) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Join Product --></label>
+        <name>Join_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entry for listing key EE engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00) --></help>
+        <label><!-- Key EE Engineer --></label>
+        <name>Key_EE_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entry for listing key ME engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00) --></help>
+        <label><!-- Key ME engineer --></label>
+        <name>Key_ME_engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entry for listing key SW engineer who can be contacted with questions.  Format for entry: John Smith-core id.  (John Smith-WLJS00) --></help>
+        <label><!-- Key SW Engineer --></label>
+        <name>Key_SW_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing. --></help>
+        <label><!-- ME 1 Parent Assb --></label>
+        <name>ME_1_Parent_Assb__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing. --></help>
+        <label><!-- ME 2 Parent Assb --></label>
+        <name>ME_2_Parent_Assb__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing. --></help>
+        <label><!-- ME 3 Parent Assb --></label>
+        <name>ME_3_Parent_Assb__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing. --></help>
+        <label><!-- ME 4 Parent Assb --></label>
+        <name>ME_4_Parent_Assb__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mechanical part not directly used by MMI manufacturing, reference the next highest kit number purchased for use by manufacturing. --></help>
+        <label><!-- ME 5 Parent Assb --></label>
+        <name>ME_5_Parent_Assb__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mechanical component associated to engineering record 1 --></help>
+        <label><!-- ME Component 1 --></label>
+        <name>ME_Component_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mechanical component associated to engineering record 2 --></help>
+        <label><!-- ME Component 2 --></label>
+        <name>ME_Component_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mechanical component associated to engineering record 3 --></help>
+        <label><!-- ME Component 3 --></label>
+        <name>ME_Component_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mechanical component associated to engineering record 4 --></help>
+        <label><!-- ME Component 4 --></label>
+        <name>ME_Component_4__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mechanical component associated to engineering record 5 --></help>
+        <label><!-- ME Component 5 --></label>
+        <name>ME_Component_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Engineering build and test requirements for ME component 1 --></help>
+        <label><!-- ME Test Record 1 --></label>
+        <name>ME_Test_Record_1__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (ME Test Record 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Engineering build and test requirements for ME component 2 --></help>
+        <label><!-- ME Test Record 2 --></label>
+        <name>ME_Test_Record_2__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (ME Test Record 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Engineering build and test requirements for ME component 3 --></help>
+        <label><!-- ME Test Record 3 --></label>
+        <name>ME_Test_Record_3__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (ME Test Record 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Engineering build and test requirements for ME component 4 --></help>
+        <label><!-- ME Test Record 4 --></label>
+        <name>ME_Test_Record_4__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (ME Test Record 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Engineering build and test requirements for ME component 5 --></help>
+        <label><!-- ME Test Record 5 --></label>
+        <name>ME_Test_Record_5__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (ME Test Record 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity shipping against PO number 1. --></help>
+        <label><!-- PO 1 Ship Quantity --></label>
+        <name>PO_1_Ship_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shipment tracking information for PO 1. --></help>
+        <label><!-- PO 1 Ship Tracking --></label>
+        <name>PO_1_Ship_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO 1 --></label>
+        <name>PO_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- HW ship quantity against PO number 2. --></help>
+        <label><!-- PO 2 Ship Quantity --></label>
+        <name>PO_2_Ship_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shipment tracking information for PO 2. --></help>
+        <label><!-- PO 2 Ship Tracking --></label>
+        <name>PO_2_Ship_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO 2 --></label>
+        <name>PO_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- HW quantity shipping against PO 3. --></help>
+        <label><!-- PO 3 Ship Quantity --></label>
+        <name>PO_3_Ship_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shipment tracking information for PO 3. --></help>
+        <label><!-- PO 3 Ship Tracking --></label>
+        <name>PO_3_Ship_Tracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO 3 --></label>
+        <name>PO_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Flag --></label>
+        <name>Planned_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Family for use in build planning --></help>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+        <relationshipLabel><!-- HW CR Build Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reporting Blank 1 --></label>
+        <name>Reporting_Blank_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requested HW ship date. --></help>
+        <label><!-- Requested Ship Date --></label>
+        <name>Requested_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If a specific test XCVR is required, enter this information (i.e. SJUG####AA). --></help>
+        <label><!-- Required XCVR --></label>
+        <name>Required_XCVR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Software Requirements (PA Table link, Bootloader, SW Version, Reflash File, etc).  If no special SW need, then enter &quot;Production&quot; --></help>
+        <label><!-- SW Requirements --></label>
+        <name>SW_Requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Planned start date of build --></help>
+        <label><!-- Scheduled Build Date --></label>
+        <name>Scheduled_Build_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship Date Less Seven --></label>
+        <name>Ship_Date_Less_Seven__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submit Flag --></label>
+        <name>Submit_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Factory Technical Operations Contact.  Person responsible for monitoring build schedule, performance, and completion. --></help>
+        <label><!-- TOP Contact --></label>
+        <name>TOP_Contact__c</name>
+        <relationshipLabel><!-- HW CR Build Plans (TOP Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Transfer cost of hardware kit --></help>
+        <label><!-- Transceiver Cost --></label>
+        <name>Transceiver_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Engineering Secure=Open for engineering debug or SW reflashing.
+Customer Secure=Locked, will only accept certain SW reflash
+Non-Secure=Open for engineering AND software debug.  Full prototype unit. --></help>
+        <label><!-- XCVR Security --></label>
+        <name>XCVR_Security__c</name>
+        <picklistValues>
+            <masterLabel>Customer Secure</masterLabel>
+            <translation><!-- Customer Secure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Secure</masterLabel>
+            <translation><!-- Engineering Secure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Secure</masterLabel>
+            <translation><!-- Non-Secure --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>HW CR Build Planning Layout</layout>
+        <sections>
+            <label><!-- Build Detail --></label>
+            <section>Build Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Factory Execution --></label>
+            <section>Factory Execution</section>
+        </sections>
+        <sections>
+            <label><!-- Hardware Allocation Detail --></label>
+            <section>Hardware Allocation Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detail --></label>
+            <section>Product Detail</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- HW Change Build Plan --></label>
+        <name>HW_Change_Build_Plan</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- TJ_Build_Event --></label>
+        <name>TJ_Build_Event</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- A scheduled build request is awaiting purchase order creation.  PO(s) to be used for distribution of pilot transceivers. --></description>
+        <name>FBR_Awaiting_PO_Creation</name>
+        <subject><!-- FBR Awaiting PO Creation --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Please note the requested ship date within this task.   Then complete/confirm the following &apos;Factory Execution&apos; fields before task completion:
+Build Transceiver
+Transceiver Cost
+Confirmed Build Qty
+Scheduled Build Date
+Build Completion Date --></description>
+        <name>HW_FBR_Released_for_Schedule_Confirmation</name>
+        <subject><!-- HW FBR Released for Schedule Confirmation --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

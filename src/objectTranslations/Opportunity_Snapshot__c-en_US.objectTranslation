@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Snapshot</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Snapshots</value>
+    </caseValues>
+    <fields>
+        <label><!-- APC --></label>
+        <name>APC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Subtype --></label>
+        <name>Account_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Agent</masterLabel>
+            <translation><!-- Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Owned Retail</masterLabel>
+            <translation><!-- Company Owned Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Preferred Supplier</masterLabel>
+            <translation><!-- Non Preferred Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preferred Supplier</masterLabel>
+            <translation><!-- Preferred Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retailer</masterLabel>
+            <translation><!-- Retailer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goverment</masterLabel>
+            <translation><!-- Goverment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect</masterLabel>
+            <translation><!-- Indirect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operator</masterLabel>
+            <translation><!-- Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solutions Partner</masterLabel>
+            <translation><!-- Solutions Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor</masterLabel>
+            <translation><!-- Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verticle Partners</masterLabel>
+            <translation><!-- Verticle Partners --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Opportunity Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business Unit of the Product - -  Used for separating Companion Product and Handset products --></help>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country (Account) --></label>
+        <name>Country_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- DP Segment --></label>
+        <name>DP_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Category Changed? --></label>
+        <name>Forecast_Category_Changed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Category Overridden? --></label>
+        <name>Forecast_Category_Overridden__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Category --></label>
+        <name>Forecast_Category__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omitted</masterLabel>
+            <translation><!-- Omitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline</masterLabel>
+            <translation><!-- Pipeline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Forecast Date --></label>
+        <name>Forecast_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in R &amp; O --></label>
+        <name>Include_in_R_O__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Price --></label>
+        <name>Invoice_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsLineItem --></label>
+        <name>IsLineItem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Account (Account) --></label>
+        <name>Key_Account_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key Account --></label>
+        <name>Key_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCV Price --></label>
+        <name>LCV_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- The custom description entered on the opportunity line. --></help>
+        <label><!-- Line Description --></label>
+        <name>Line_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Price --></label>
+        <name>List_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line # --></label>
+        <name>Opportunity_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Number --></label>
+        <name>Opportunity_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Quarter --></label>
+        <name>Opportunity_Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Portfolio Segment --></label>
+        <name>Portfolio_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prev. Forecast Category --></label>
+        <name>Prev_Forecast_Category__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omitted</masterLabel>
+            <translation><!-- Omitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline</masterLabel>
+            <translation><!-- Pipeline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prev. Product Forecast Category --></label>
+        <name>Prev_Product_Forecast_Category__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omitted</masterLabel>
+            <translation><!-- Omitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline</masterLabel>
+            <translation><!-- Pipeline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prev. Quantity --></label>
+        <name>Prev_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prev. Stage --></label>
+        <name>Prev_Stage__c</name>
+        <picklistValues>
+            <masterLabel>1. Prospecting</masterLabel>
+            <translation><!-- 1. Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. Presenting Device</masterLabel>
+            <translation><!-- 2. Presenting Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. Proposal Preparation</masterLabel>
+            <translation><!-- 3. Proposal Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4. Commercial Proposal Delivered</masterLabel>
+            <translation><!-- 4. Commercial Proposal Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5. Active Negotiation</masterLabel>
+            <translation><!-- 5. Active Negotiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6. Finalizing Contract</masterLabel>
+            <translation><!-- 6. Finalizing Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7. Closed Won</masterLabel>
+            <translation><!-- 7. Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8. Closed Lost</masterLabel>
+            <translation><!-- 8. Closed Lost --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prev Week Snapshot --></label>
+        <name>Prev_Week_Snapshot__c</name>
+        <relationshipLabel><!-- Opportunity Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Opportunity Probability --></help>
+        <label><!-- Probability --></label>
+        <name>Probability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <picklistValues>
+            <masterLabel>DVX</masterLabel>
+            <translation><!-- DVX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Droid Category</masterLabel>
+            <translation><!-- Droid Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass Market Category</masterLabel>
+            <translation><!-- Mass Market Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MobileVoice</masterLabel>
+            <translation><!-- MobileVoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multimedia</masterLabel>
+            <translation><!-- Multimedia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Category</masterLabel>
+            <translation><!-- Other Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personalization</masterLabel>
+            <translation><!-- Personalization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portable Bluetooth &amp; Auto</masterLabel>
+            <translation><!-- Portable Bluetooth &amp; Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power</masterLabel>
+            <translation><!-- Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAZR Category</masterLabel>
+            <translation><!-- RAZR Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet Category</masterLabel>
+            <translation><!-- Tablet Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X Category</masterLabel>
+            <translation><!-- X Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iDEN Category</masterLabel>
+            <translation><!-- iDEN Category --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Forecast Category Changed? --></label>
+        <name>Product_Forecast_Category_Changed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Forecast category at the product level --></help>
+        <label><!-- Product Forecast Category --></label>
+        <name>Product_Forecast_Category__c</name>
+        <picklistValues>
+            <masterLabel>Best Case</masterLabel>
+            <translation><!-- Best Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commit</masterLabel>
+            <translation><!-- Commit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omitted</masterLabel>
+            <translation><!-- Omitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline</masterLabel>
+            <translation><!-- Pipeline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Opportunity Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Product&apos;s Program --></help>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product&apos;s project --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Delta --></label>
+        <name>Quantity_Delta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Current Forecast Category --></label>
+        <name>Reason_for_Current_Forecast_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region (Account) --></label>
+        <name>Region_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Price --></label>
+        <name>Sales_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Snapshot Date --></label>
+        <name>Snapshot_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage Changed? --></label>
+        <name>Stage_Changed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>1. Prospecting</masterLabel>
+            <translation><!-- 1. Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. Presenting Device</masterLabel>
+            <translation><!-- 2. Presenting Device --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. Proposal Preparation</masterLabel>
+            <translation><!-- 3. Proposal Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4. Commercial Proposal Delivered</masterLabel>
+            <translation><!-- 4. Commercial Proposal Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5. Active Negotiation</masterLabel>
+            <translation><!-- 5. Active Negotiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6. Finalizing Contract</masterLabel>
+            <translation><!-- 6. Finalizing Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7. Closed Won</masterLabel>
+            <translation><!-- 7. Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8. Closed Lost</masterLabel>
+            <translation><!-- 8. Closed Lost --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Region (Account) --></label>
+        <name>Sub_Region_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Region --></label>
+        <name>Sub_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Number --></label>
+        <name>Week_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week --></label>
+        <name>Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- WoW Flag --></label>
+        <name>WoW_Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Opportunity belongs to this Year --></help>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Opportunity Snapshot Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

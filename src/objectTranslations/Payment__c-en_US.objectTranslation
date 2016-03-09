@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- The account assoicated with this payment --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check # --></label>
+        <name>Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Center --></label>
+        <name>Cost_Center__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count_of_contracts --></label>
+        <name>Count_of_contracts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Cleared --></label>
+        <name>Date_Cleared__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Paid --></label>
+        <name>Date_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days in Current Phase --></label>
+        <name>Days_in_Current_Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Done by Bus Ops? --></label>
+        <name>Done_by_Bus_Ops__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Payment Date --></label>
+        <name>Expected_Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>Invoice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice # --></label>
+        <name>Invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice at AP? --></label>
+        <name>Invoice_at_AP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Approver in Tigers --></label>
+        <name>Next_Approver_Tigers__c</name>
+        <relationshipLabel><!-- Payments (Next Approver in Tigers) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- On Behalf of Field --></label>
+        <name>On_Behald_of_Field__c</name>
+        <relationshipLabel><!-- Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- On Behalf Of --></label>
+        <name>On_Behalf_Of__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO # --></label>
+        <name>PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- PR # --></label>
+        <name>PR__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Partner Manager Approves this Payment --></help>
+        <label><!-- Partner Mgr Approval --></label>
+        <name>Partner_Mgr_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- payment method according to AP --></help>
+        <label><!-- Pay Method --></label>
+        <name>Pay_Method__c</name>
+        <picklistValues>
+            <masterLabel>Check</masterLabel>
+            <translation><!-- Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EFT</masterLabel>
+            <translation><!-- EFT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wire</masterLabel>
+            <translation><!-- Wire --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Description --></label>
+        <name>Payment_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment External Unique ID --></label>
+        <name>Payment_External_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Notes --></label>
+        <name>Payment_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Phase --></label>
+        <name>Payment_Phase__c</name>
+        <picklistValues>
+            <masterLabel>0 - Cancelled</masterLabel>
+            <translation><!-- 0 - Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - Active Phase</masterLabel>
+            <translation><!-- 1 - Active Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - In Process Phase</masterLabel>
+            <translation><!-- 2 - In Process Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - SMART Approval Phase</masterLabel>
+            <translation><!-- 3 - SMART Approval Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Received Phase</masterLabel>
+            <translation><!-- 4 - Received Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - AP Requested Phase</masterLabel>
+            <translation><!-- 5 - AP Requested Phase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 - Paid Phase</masterLabel>
+            <translation><!-- 6 - Paid Phase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>Payment_Status__c</name>
+        <picklistValues>
+            <masterLabel>CANCELLED</masterLabel>
+            <translation><!-- CANCELLED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOT PAID</masterLabel>
+            <translation><!-- NOT PAID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAID</masterLabel>
+            <translation><!-- PAID --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Type --></label>
+        <name>Payment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Expenses</masterLabel>
+            <translation><!-- Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>License Fee</masterLabel>
+            <translation><!-- License Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRE</masterLabel>
+            <translation><!-- NRE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outsourced Development</masterLabel>
+            <translation><!-- Outsourced Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepayment</masterLabel>
+            <translation><!-- Prepayment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rev Share</masterLabel>
+            <translation><!-- Rev Share --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty Payment</masterLabel>
+            <translation><!-- Royalty Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support / Maintenance</masterLabel>
+            <translation><!-- Support / Maintenance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Period Paid For Start Date --></label>
+        <name>Period_Paid_For_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Paid for End Date --></label>
+        <name>Period_Paid_for_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 1 – Active --></label>
+        <name>Phase_1_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 1 Duration --></label>
+        <name>Phase_1_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 2 – In Process --></label>
+        <name>Phase_2_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 2 Duration --></label>
+        <name>Phase_2_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 3 – Tigers Approval --></label>
+        <name>Phase_3_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 3 Duration --></label>
+        <name>Phase_3_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 4 – Received --></label>
+        <name>Phase_4_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 4 Duration --></label>
+        <name>Phase_4_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- An example is NP4747842.  At the top it says: BATCH: OB10_US_20090914_01. This means that AP recieved the invoice on 9/14/09 from OB10. --></help>
+        <label><!-- Phase 5 – AP Invoice Receipt --></label>
+        <name>Phase_5_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 5 Duration --></label>
+        <name>Phase_5_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase 6 – Paid --></label>
+        <name>Phase_6_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Motorola paying a vendor or are we taking payment in? --></help>
+        <label><!-- Payment Direction --></label>
+        <name>Pmt_Direction__c</name>
+        <picklistValues>
+            <masterLabel>Payable</masterLabel>
+            <translation><!-- Payable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receivable</masterLabel>
+            <translation><!-- Receivable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Projected Amount --></label>
+        <name>Projected_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter Paid For --></label>
+        <name>Quarter_Paid_For__c</name>
+        <picklistValues>
+            <masterLabel>2013 Q1</masterLabel>
+            <translation><!-- 2013 Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013 Q2</masterLabel>
+            <translation><!-- 2013 Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013 Q3</masterLabel>
+            <translation><!-- 2013 Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013 Q4</masterLabel>
+            <translation><!-- 2013 Q4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014 Q1</masterLabel>
+            <translation><!-- 2014 Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014 Q2</masterLabel>
+            <translation><!-- 2014 Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014 Q3</masterLabel>
+            <translation><!-- 2014 Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014 Q4</masterLabel>
+            <translation><!-- 2014 Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Tigers Receipt ID --></help>
+        <label><!-- Receipt ID --></label>
+        <name>Receipt_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the royalty report posted on Compass , for the PM to review? --></help>
+        <label><!-- COMPASS Report Ready for PM Review --></label>
+        <name>Report_Posted_on_Compass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Req cancelled? --></label>
+        <name>Req_cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tigers Approval Time (days) --></label>
+        <name>Tigers_Approval_Time_days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project field from Tigers. We are using it to store Application Id so we can auto-create Payment to Application junction. --></help>
+        <label><!-- Tigers Project - Application --></label>
+        <name>Tigers_Project_Application__c</name>
+    </fields>
+    <fields>
+        <help><!-- Task field from Tigers. We are using it to store Contract Id so we can auto-create Payment to Contract junction. --></help>
+        <label><!-- Tigers Task - Contract --></label>
+        <name>Tigers_Task_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Paid Time (days) --></label>
+        <name>Total_Paid_Time_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Variable_Fixed --></label>
+        <name>Variable_Fixed__c</name>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable</masterLabel>
+            <translation><!-- Variable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- egvm contact ID --></label>
+        <name>egvm_contact_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- egvm_contact_email --></label>
+        <name>egvm_contact_email__c</name>
+    </fields>
+    <fields>
+        <label><!-- egvm_contact_firstname --></label>
+        <name>egvm_contact_firstname__c</name>
+    </fields>
+    <fields>
+        <label><!-- egvm_contact_lastname --></label>
+        <name>egvm_contact_lastname__c</name>
+    </fields>
+    <fields>
+        <label><!-- egvm_num --></label>
+        <name>egvm_num__c</name>
+    </fields>
+    <fields>
+        <label><!-- ob10? --></label>
+        <name>ob10__c</name>
+    </fields>
+    <layouts>
+        <layout>Payment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If this is a Rev Share entry, please relate it to an ACCOUNT --></errorMessage>
+        <name>Relate_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A rev share payment must have a negative amount. --></errorMessage>
+        <name>Rev_share_amounts_must_be_negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Phase is &quot;0 - Cancelled&quot;, Status must also show as &quot;CANCELLED&quot; also if status is &quot;CANCELLED&quot; then Phase must be &quot;0 - Cancelled&quot; --></errorMessage>
+        <name>cancelled_phase_and_status_must_match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Phase is &quot;6 - Paid Phase&quot;, Status must also show as &quot;PAID&quot; or is Status is &quot;PAID&quot; then phase but also be &quot;6 - Paid Phase&quot; --></errorMessage>
+        <name>paid_phase_and_status_must_match</name>
+    </validationRules>
+</CustomObjectTranslation>

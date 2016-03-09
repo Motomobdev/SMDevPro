@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExperiencePackage_PMDProgram</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExperiencePackage_PMDPrograms</value>
+    </caseValues>
+    <fields>
+        <label><!-- Experience Package --></label>
+        <name>Experience_Package__c</name>
+        <relationshipLabel><!-- PMD Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program (PMD) --></label>
+        <name>Program_PMD__c</name>
+        <relationshipLabel><!-- Experience Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Experience Package Status --></label>
+        <name>Support_Status__c</name>
+        <picklistValues>
+            <masterLabel>Fully Supported (PlayStore/MR Update)</masterLabel>
+            <translation><!-- Fully Supported (PlayStore/MR Update) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Supported at NPI Launch</masterLabel>
+            <translation><!-- Fully Supported at NPI Launch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Supported</masterLabel>
+            <translation><!-- Not Supported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Supported</masterLabel>
+            <translation><!-- Partially Supported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>ExperiencePackage_PMDProgram Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

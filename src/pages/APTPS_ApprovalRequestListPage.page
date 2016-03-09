@@ -1,0 +1,72 @@
+<apex:page controller="APTPS_RequestListController">
+    
+    <apex:form >
+
+       <apex:pageMessages />
+       
+    
+        <apex:pageBlock >
+        
+            <apex:pageBlockButtons >
+                  <apex:commandButton action="{!doApprove}" 
+                                        value="Approve" />
+                
+                   
+                  <apex:commandButton action="{!doReject}" 
+                                        value="Reject"/>
+                                        
+                  <apex:commandButton action="{!doSuspend}" value="Suspend"/>
+                    
+                  <apex:commandButton action="{!doAddComment}" 
+                                        value="Add Comments" />                
+    
+                  <apex:commandButton action="{!doCancel}" 
+                                        value="Cancel" />
+           </apex:pageBlockButtons>
+       
+            <apex:pageBlockTable style="vertical-align:top" value="{!ApprovalRequests}" var="Item">
+                <apex:column >
+                    <apex:inputCheckbox value="{!Item.isChecked}"/>
+                </apex:column>
+                <!-- apex:column value="{!Item.Request.Name}" headerValue="Name"/ -->
+                <!--<apex:column value="{!Item.Request.APTPS_Approval_Actions__c}" headerValue="Approval Actions"/>-->
+                <!-- apex:column value="{!Item.Request.Apttus_Approval__Date__c}" headerValue="Date"/ -->
+                
+                <!--
+                <apex:column headerValue="Agreement Number">  
+                      <a href="https://mmi--uat4.cs12.my.salesforce.com/{!Item.Request.Apttus_Approval__Related_Agreement__r.id}">
+                      <apex:outputField value="{!Item.Request.Apttus_Approval__Related_Agreement__r.Apttus__FF_Agreement_Number__c}" /></a>                                 
+                </apex:column>
+                -->
+                
+                <apex:column headerValue="Agreement Number">  
+                      <a href="/{!Item.Request.Apttus_Approval__Related_Agreement__r.id}">
+                      <apex:outputField style="vertical-align:top;" value="{!Item.Request.Apttus_Approval__Related_Agreement__r.Apttus__FF_Agreement_Number__c}" /></a>                                 
+                </apex:column>
+
+                <apex:column value="{!Item.Request.Apttus_Approval__Related_Agreement__r.Name}" headerValue="Agreement Name"/>
+                <apex:column value="{!Item.Request.Apttus_Approval__Related_Agreement__r.Apttus__Account__r.name}" headerValue="Account Name"/>
+                <apex:column value="{!Item.Request.Apttus_Approval__Related_Agreement__r.Apttus__Total_Contract_Value__c}" headerValue="Total Agreement Value"/>
+                <!--<apex:column value="{!Item.Request.Apttus_Approval__Approval_Status__c}" headerValue="Approval Status"/>-->
+                <apex:column value="{!Item.Request.APTPS_Status__c}" headerValue="Approval Status"/>
+                <apex:column value="{!Item.Request.Apttus_Approval__Assigned_To_Name__c}" headerValue="Assigned To"/>
+                 <apex:column value="{!Item.Request.Apttus_Approval__Date__c}" headerValue="Date Assigned"/>
+                <!-- apex:column value="{!Item.Request.createdDate}" headerValue="Created Date"/ -->    
+                <!-- Added by SD on 8/29 to fix issue with approval comments -->
+                
+                <!--<apex:column value="{!Item.Request.APTPS_Last_Approval_Comments__c}" headerValue="Last Comments"/>-->
+                            
+                <apex:column headerValue="Last Comments">                
+                    <apex:outputfield value="{!Item.Request.Apttus_Approval__Approver_Comments__c} "/>
+                </apex:column> 
+                <apex:column headerValue="New Comments">                
+                    <apex:inputfield value="{!Item.Request.Approver_Comment__c}"/>
+                </apex:column>
+             </apex:pageBlockTable>
+             
+                           
+         </apex:pageBlock>
+         
+     </apex:form>
+     
+</apex:page>

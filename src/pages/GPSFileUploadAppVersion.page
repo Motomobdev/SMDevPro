@@ -1,0 +1,22 @@
+<apex:page controller="GPSFileUpload" showHeader="false" sidebar="false">
+    <c:Logo />
+    <apex:messages /> 
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection columns="1" title="App Version Files">
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="app_version_Installs"> App_version_Installs.csv</apex:outputLabel>
+                     <apex:inputFile fileName="{!app_version_Installs_Name}" value="{!app_version_Installs}" id="app_version_Installs"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel for="app_version_ratings"> App_version_ratings.csv</apex:outputLabel>
+                    <apex:inputFile fileName="{!app_version_ratings_Name}" value="{!app_version_ratings}" id="app_version_ratings"></apex:inputFile>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="AddAppVersion"> </apex:outputLabel>
+                	<apex:commandButton value="Next" action="{!AddAppVersion}" id="AddAppVersion"/>
+                </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

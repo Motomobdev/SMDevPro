@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application Manager Selection Matrix</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Application Manager Selection Matrices</value>
+    </caseValues>
+    <fields>
+        <label><!-- App Type --></label>
+        <name>App_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Manager --></label>
+        <name>Application_Manager__c</name>
+        <relationshipLabel><!-- Application Manager Selection Matrices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+        <picklistValues>
+            <masterLabel>Embedded</masterLabel>
+            <translation><!-- Embedded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preload</masterLabel>
+            <translation><!-- Preload --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Application Manager Selection Matrices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <relationshipLabel><!-- Application Manager Selection Matrices --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Application Manager Selection Matrix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Application Manager Selection Matrix Layout Motodev Api User/Person</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

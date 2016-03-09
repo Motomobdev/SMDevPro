@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NDA Notifier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NDA Notifiers</value>
+    </caseValues>
+    <fields>
+        <label><!-- NDA --></label>
+        <name>NDA__c</name>
+        <relationshipLabel><!-- NDA Notifiers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notifier Email --></label>
+        <name>Notifier_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notifier --></label>
+        <name>Notifier__c</name>
+        <relationshipLabel><!-- NDA Notifiers --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
