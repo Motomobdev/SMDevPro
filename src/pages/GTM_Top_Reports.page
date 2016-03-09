@@ -136,8 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <apex:outputText >1.</apex:outputText>
                     <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Global_Operations_Summary/GlobalOperationsSummary?:embed=yes" >Global Ops Report</apex:outputLink>
                     <apex:outputText >Shipment, Open Order, Supply Request vs Sales Fcst vs Finance Fcst vs Targets </apex:outputText>
-                    <apex:outputText >Refresh rate - 30 Minutes</apex:outputText>
-					
+                    <apex:outputText >Refresh rate - 30 Minutes</apex:outputText>						
 					<apex:outputText >1.</apex:outputText>
                     <apex:outputLink style="font-weight:bold" target="_blank" value="/apex/iframe?sfdc.tabName=01r40000000ADpz&url=https://tableau.motorola.com/t/SalesOPS/views/Global_Operations_Summary/GlobalOperationsSummary?:embed=yes" >Global Ops Report</apex:outputLink>
                     <apex:outputText >Shipment, Open Order, Supply Request vs Sales Fcst vs Finance Fcst vs Targets </apex:outputText>
